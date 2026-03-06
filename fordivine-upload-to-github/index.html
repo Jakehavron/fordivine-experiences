@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FORDIVINE™ — The Signature Experience | Personal Brand Transformation</title>
+
+<!-- SEO -->
+<meta name="description" content="The Fordivine Signature™ Experience is a complete personal brand transformation for women on a mission. Work directly with Emily Ford to uncover your identity, voice, and visual direction.">
+<meta name="keywords" content="personal branding, brand transformation, women entrepreneurs, Emily Ford, FORDIVINE, Crowned Authority, faith-driven branding">
+<meta name="author" content="FORDIVINE™">
+<link rel="canonical" href="https://experience.fordivine.com">
+
+<!-- Open Graph / Social Sharing -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://experience.fordivine.com">
+<meta property="og:title" content="FORDIVINE™ — The Signature Experience">
+<meta property="og:description" content="Is your brand keeping up with who you've become? A 6-phase personal brand transformation for women on a mission.">
+<!-- Replace with your actual OG image -->
+<meta property="og:image" content="https://experience.fordivine.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FORDIVINE™ — The Signature Experience">
+<meta name="twitter:description" content="Is your brand keeping up with who you've become? A 6-phase personal brand transformation for women on a mission.">
+<meta name="twitter:image" content="https://experience.fordivine.com/og-image.jpg">
+
+<!-- Favicon — replace with your actual favicon files -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<!-- Performance: Preconnect to Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --charcoal: #2d2f2e;
+    --dark: #202020;
+    --darker: #171717;
+    --ghost: #434645;
+    --white: #ffffff;
+    --offwhite: #f5f5f5;
+    --warm-cream: #f3f0ea;
+    --warm-light: #fbf9f6;
+    --text-dark: #1a1a1a;
+    --text-mid: #555;
+    --text-light: #999;
+    --display: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --body: 'Source Sans 3', 'Proxima Nova', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--body);
+    font-weight: 400;
+    color: var(--white);
+    background: var(--white);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ========== MINIMAL NAV ========== */
+  .mini-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 40px;
+    background: var(--charcoal);
+  }
+  .mini-nav .logo {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--white);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .mini-nav .logo .tm { font-size: 9px; vertical-align: super; }
+  .mini-nav .nav-cta {
+    font-family: var(--body);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--charcoal);
+    background: var(--white);
+    padding: 10px 28px;
+    border-radius: 24px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    transition: opacity 0.3s;
+  }
+  .mini-nav .nav-cta:hover { opacity: 0.85; }
+
+  /* ========== HERO ========== */
+  .hero-section {
+    background: var(--charcoal);
+    text-align: center;
+    padding: 60px 32px 40px;
+  }
+  .hero-badge {
+    display: inline-block;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 40px;
+  }
+  .hero-badge .dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #e74c3c;
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  .hero-section h1 {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: clamp(36px, 5.5vw, 68px);
+    text-transform: uppercase;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    max-width: 800px;
+    margin: 0 auto 28px;
+  }
+  .hero-subtitle {
+    font-family: var(--body);
+    font-size: clamp(18px, 2.5vw, 26px);
+    font-weight: 300;
+    line-height: 1.45;
+    color: rgba(255,255,255,0.7);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* ========== VIDEO ========== */
+  .video-section {
+    background: var(--charcoal);
+    padding: 32px 32px 0;
+  }
+  .video-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+    background: var(--darker);
+    border-radius: 12px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .video-ph {
+    position: absolute;
+    bottom: 16px;
+    left: 20px;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.15);
+  }
+  .play-circle {
+    width: 68px; height: 68px;
+    border: 2px solid rgba(255,255,255,0.4);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .video-wrapper:hover .play-circle {
+    border-color: rgba(255,255,255,0.8);
+    transform: scale(1.06);
+  }
+  .play-circle svg { margin-left: 3px; }
+
+  /* ========== BELOW VIDEO TEXT + CTA ========== */
+  .below-video {
+    background: var(--charcoal);
+    text-align: center;
+    padding: 32px 32px 72px;
+  }
+  .below-video p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.65);
+    max-width: 640px;
+    margin: 0 auto 36px;
+  }
+  .below-video strong { color: var(--white); font-weight: 700; }
+
+  /* ========== CTA BUTTON ========== */
+  .cta-btn {
+    display: inline-block;
+    font-family: var(--body);
+    font-size: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 20px 56px;
+    border-radius: 8px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.3s;
+    background: var(--charcoal);
+    color: var(--white);
+  }
+  .cta-btn:hover { transform: translateY(-2px); opacity: 0.9; }
+  .cta-btn.on-dark { background: var(--white); color: var(--charcoal); }
+
+  /* ========== SOCIAL PROOF — TEXTURED BG ========== */
+  .social-proof-section {
+    background: var(--offwhite);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    padding: 80px 32px;
+    text-align: center;
+    position: relative;
+  }
+  .social-proof-section h2 {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: clamp(24px, 3vw, 36px);
+    color: var(--text-dark);
+    margin-bottom: 40px;
+  }
+
+  /* Video testimonial placeholder */
+  .testimonial-video {
+    max-width: 420px;
+    margin: 0 auto 48px;
+    aspect-ratio: 9 / 14;
+    background: #ddd;
+    border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 10px;
+    color: #aaa;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+  }
+  .testimonial-video .play-overlay {
+    width: 56px; height: 56px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  /* Scattered review screenshots */
+  .reviews-scatter {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto 20px;
+    padding: 0 16px;
+  }
+  .review-card {
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    padding: 24px;
+    width: 280px;
+    text-align: left;
+    transform: rotate(var(--rot, 0deg));
+    transition: transform 0.3s;
+  }
+  .review-card:hover { transform: rotate(0deg) scale(1.02); }
+  .review-card:nth-child(1) { --rot: -2deg; }
+  .review-card:nth-child(2) { --rot: 1.5deg; margin-top: 30px; }
+  .review-card:nth-child(3) { --rot: -1deg; margin-top: 10px; }
+  .review-stars { color: #f5a623; font-size: 14px; margin-bottom: 10px; letter-spacing: 2px; }
+  .review-text { font-size: 14px; line-height: 1.6; color: var(--text-mid); margin-bottom: 14px; }
+  .review-author { font-size: 13px; font-weight: 700; color: var(--text-dark); }
+  .review-role { font-size: 12px; color: var(--text-light); }
+  .review-disclaimer {
+    font-size: 12px;
+    color: #aaa;
+    max-width: 680px;
+    margin: 32px auto 0;
+    line-height: 1.5;
+  }
+
+  /* ========== SECTION DIVIDER ========== */
+  .section-divider {
+    text-align: center;
+    padding: 48px 0;
+    background: var(--white);
+  }
+  .section-divider .star {
+    font-size: 18px;
+    color: #ccc;
+    letter-spacing: 24px;
+  }
+
+  /* ========== 3 PILLARS ========== */
+  .pillars-section {
+    background: var(--white);
+    padding: 80px 32px 40px;
+  }
+  .pillars-heading {
+    text-align: center;
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: clamp(24px, 3.5vw, 40px);
+    color: var(--text-dark);
+    margin-bottom: 64px;
+    line-height: 1.15;
+  }
+  .pillars-heading u {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+  }
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .pillar-item h3 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 18px;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+  }
+  .pillar-img {
+    width: 100%;
+    height: 220px;
+    background: #e8e6e2;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 8px;
+    color: #bbb;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .pillar-item p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.65;
+    color: var(--text-mid);
+  }
+  .pillar-item strong { color: var(--text-dark); font-weight: 700; }
+  .pillars-cta { text-align: center; padding: 40px 32px 80px; background: var(--white); }
+
+  /* ========== MORE REVIEWS ========== */
+  .more-reviews {
+    background: var(--white);
+    padding: 0 32px 80px;
+  }
+  .more-reviews .reviews-scatter {
+    margin-bottom: 0;
+  }
+
+  /* ========== BOOKING FORM PLACEHOLDER ========== */
+  .booking-section {
+    background: var(--white);
+    padding: 40px 32px 80px;
+    text-align: center;
+  }
+  .booking-embed {
+    max-width: 580px;
+    margin: 0 auto;
+    background: var(--white);
+    border: 1px solid #e0e0e0;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  }
+  .booking-steps {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 28px;
+    font-size: 13px;
+    color: var(--text-light);
+  }
+  .booking-steps .active {
+    color: var(--charcoal);
+    font-weight: 700;
+  }
+  .booking-steps .active::before {
+    content: '';
+    display: inline-block;
+    width: 8px; height: 8px;
+    background: var(--charcoal);
+    border-radius: 50%;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+  .booking-embed h3 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+  }
+  .booking-embed .booking-sub {
+    font-size: 14px;
+    color: var(--text-mid);
+    margin-bottom: 24px;
+  }
+  .form-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .form-input {
+    flex: 1;
+    padding: 14px 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: var(--body);
+    font-size: 14px;
+    color: var(--text-mid);
+    background: var(--white);
+    outline: none;
+  }
+  .form-input::placeholder { color: #bbb; }
+  .form-input.full { width: 100%; }
+  .form-consent {
+    font-size: 12px;
+    color: var(--text-light);
+    text-align: left;
+    margin: 16px 0 20px;
+    line-height: 1.5;
+  }
+  .form-btn {
+    width: 100%;
+    padding: 16px;
+    background: var(--charcoal);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-family: var(--body);
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.3s;
+  }
+  .form-btn:hover { opacity: 0.85; }
+  .booking-placeholder-note {
+    font-size: 11px;
+    color: #ccc;
+    margin-top: 16px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ========== ACCORDION Q&A ========== */
+  .qa-section {
+    background: var(--white);
+    padding: 60px 32px 40px;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+  .qa-item { margin-bottom: 20px; }
+  .qa-header {
+    background: var(--charcoal);
+    color: var(--white);
+    padding: 20px 28px;
+    border-radius: 10px;
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 17px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s;
+    user-select: none;
+  }
+  .qa-header:hover { background: #383a39; }
+  .qa-toggle {
+    font-size: 20px;
+    font-weight: 300;
+    opacity: 0.5;
+    transition: transform 0.3s;
+  }
+  .qa-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    padding: 0 28px;
+  }
+  .qa-body.open {
+    max-height: 600px;
+    padding: 24px 28px 32px;
+  }
+  .qa-body p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.75;
+    color: var(--text-mid);
+    margin-bottom: 12px;
+  }
+  .qa-body strong { color: var(--text-dark); font-weight: 700; }
+
+  /* ========== FINAL CTA ========== */
+  .final-cta-section {
+    background: var(--white);
+    text-align: center;
+    padding: 40px 32px 100px;
+  }
+
+  /* ========== FOOTER ========== */
+  footer {
+    background: var(--charcoal);
+    padding: 56px 48px 32px;
+  }
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto 40px;
+  }
+  .footer-brand .logo {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--white);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .footer-brand .logo .tm { font-size: 9px; vertical-align: super; }
+  .footer-brand p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+  .footer-nav { display: flex; gap: 36px; }
+  .footer-nav a {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+  .footer-nav a:hover { color: var(--white); }
+  .footer-legal {
+    display: flex; gap: 24px; justify-content: center;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .footer-legal a {
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    text-decoration: none;
+  }
+  .footer-disclaimer {
+    text-align: center;
+    max-width: 800px;
+    margin: 20px auto 0;
+    font-size: 11px;
+    color: rgba(255,255,255,0.25);
+    line-height: 1.6;
+  }
+
+  /* ========== CROWNED CAROUSEL ========== */
+  .crowned-carousel-section {
+    background: var(--white);
+    padding: 20px 0 80px;
+    overflow: hidden;
+  }
+  .crowned-carousel-header {
+    text-align: center;
+    margin-bottom: 36px;
+    padding: 0 32px;
+  }
+  .crowned-carousel-header h2 {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: clamp(24px, 3vw, 36px);
+    color: var(--text-dark);
+    margin-bottom: 8px;
+  }
+  .crowned-carousel-header p {
+    font-size: 15px;
+    color: var(--text-light);
+    max-width: 420px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+  .carousel-container {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 60px;
+  }
+  .carousel-track-wrapper {
+    overflow: hidden;
+    border-radius: 16px;
+  }
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+    gap: 20px;
+  }
+  .carousel-card {
+    flex: 0 0 calc(33.333% - 14px);
+    min-width: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 3 / 4;
+    background: #e8e6e2;
+    cursor: default;
+  }
+  .carousel-card-img {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    color: #bbb;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .carousel-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.55) 100%);
+    z-index: 1;
+  }
+  .carousel-card-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 24px;
+    z-index: 2;
+  }
+  .carousel-card-num {
+    font-size: 13px;
+    font-style: italic;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 4px;
+  }
+  .carousel-card-name {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+  .carousel-card-role {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+  }
+
+  /* Arrows */
+  .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--charcoal);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  }
+  .carousel-arrow:hover { background: #383a39; transform: translateY(-50%) scale(1.06); }
+  .carousel-arrow.disabled { opacity: 0.25; pointer-events: none; }
+  .carousel-arrow.prev { left: 4px; }
+  .carousel-arrow.next { right: 4px; }
+  .carousel-arrow svg { width: 20px; height: 20px; }
+
+  /* Dots */
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 28px;
+  }
+  .carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ddd;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    padding: 0;
+  }
+  .carousel-dot.active { background: var(--charcoal); transform: scale(1.2); }
+
+  /* Responsive: 2 cards on tablet, 1 on mobile */
+  @media (max-width: 900px) {
+    .carousel-card { flex: 0 0 calc(50% - 10px); }
+    .carousel-container { padding: 0 48px; }
+  }
+  @media (max-width: 560px) {
+    .carousel-card { flex: 0 0 100%; }
+    .carousel-container { padding: 0 40px; }
+    .carousel-arrow { width: 36px; height: 36px; }
+    .carousel-arrow.prev { left: 2px; }
+    .carousel-arrow.next { right: 2px; }
+  }
+
+  /* ========== PH ICON ========== */
+  .ph-icon { width: 28px; height: 28px; opacity: 0.3; }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 768px) {
+    .mini-nav { padding: 14px 20px; }
+    .hero-section { padding: 48px 20px 32px; }
+    .pillars-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+    .reviews-scatter { flex-direction: column; align-items: center; }
+    .review-card { width: 100%; max-width: 340px; transform: none !important; margin-top: 0 !important; }
+    .form-row { flex-direction: column; }
+    footer { padding: 40px 24px 24px; }
+    .footer-nav { flex-wrap: wrap; gap: 16px; }
+    .footer-legal { flex-wrap: wrap; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== MINIMAL NAV ===== -->
+<div class="mini-nav">
+  <a href="https://www.fordivine.com" class="logo">FORDIVINE<span class="tm">™</span></a>
+  <a href="#book" class="nav-cta">Inquire Today</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero-section">
+  <div class="hero-badge"><span class="dot"></span>Personal Brand Transformation | Irvine, CA</div>
+  <h1>Is your brand keeping up with who you've become?</h1>
+  <p class="hero-subtitle">It's not a logo refresh. It's tactical clarity, solving the real gap between who you are and how your brand shows up.</p>
+</section>
+
+<!-- ===== VIDEO ===== -->
+<section class="video-section">
+  <div class="video-wrapper">
+    <div class="play-circle">
+      <svg width="20" height="20" fill="none" viewBox="0 0 24 24">
+        <path d="M8 5.14v13.72a1 1 0 001.5.86l11.04-6.86a1 1 0 000-1.72L9.5 4.28A1 1 0 008 5.14z" fill="#fff"/>
+      </svg>
+    </div>
+    <span class="video-ph">Video embed — replace with your video</span>
+  </div>
+</section>
+
+<!-- ===== BELOW VIDEO ===== -->
+<div class="below-video">
+  <p>The Fordivine Signature™ Experience is a complete personal brand transformation where you work directly with <strong>Emily Ford</strong> and our creative team to uncover your <strong>identity, voice, and visual direction</strong> so your brand finally reflects who you actually are.</p>
+  <a href="#book" class="cta-btn on-dark">I'm Ready to Begin</a>
+</div>
+
+<!-- ===== SOCIAL PROOF — SCATTERED SCREENSHOTS ===== -->
+<section class="social-proof-section">
+  <h2>What women are saying:</h2>
+
+  <!-- Video testimonial -->
+  <div class="testimonial-video">
+    <div class="play-overlay">
+      <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M8 5.14v13.72a1 1 0 001.5.86l11.04-6.86a1 1 0 000-1.72L9.5 4.28A1 1 0 008 5.14z" fill="#fff"/></svg>
+    </div>
+    Video testimonial placeholder
+  </div>
+
+  <!-- Scattered review cards -->
+  <div class="reviews-scatter">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"I didn't want to fake anything. I wanted my brand to feel like me. This experience reminded me of who I am and what I'm here to do."</p>
+      <div class="review-author">Christa Crawford</div>
+      <div class="review-role">NWM Leader, Faith-Driven Founder</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"I've never felt so seen in a professional space while also getting crystal clarity with where my brand should be going."</p>
+      <div class="review-author">Lauren Fields</div>
+      <div class="review-role">TEDx Speaker, Wellness Clinic, Podcast Host</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Emily helped me realize that I AM the brand. And I don't have to split who I am online versus in real life."</p>
+      <div class="review-author">Beth Clifford</div>
+      <div class="review-role">Author, Podcast Host</div>
+    </div>
+  </div>
+
+  <p class="review-disclaimer">Individual experiences shared here may not be typical. Results vary depending on background, effort, and application.</p>
+</section>
+
+<!-- ===== DIVIDER ===== -->
+<div class="section-divider"><span class="star">⊹ ⊹ ⊹</span></div>
+
+<!-- ===== 3 PILLARS ===== -->
+<section class="pillars-section">
+  <h2 class="pillars-heading">What you'll receive in the <u>Signature</u> Experience:</h2>
+  <div class="pillars-grid">
+
+    <div class="pillar-item">
+      <h3>#1: Deep Discovery with Emily</h3>
+      <div class="pillar-img">
+        <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        Discovery session photo
+      </div>
+      <p>A private session where Emily uncovers what makes your brand singular. This is the work that <strong>names what you've felt but haven't been able to articulate.</strong></p>
+    </div>
+
+    <div class="pillar-item">
+      <h3>#2: Full Brand Creation</h3>
+      <div class="pillar-img">
+        <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        Brand creation photo
+      </div>
+      <p>Our team translates your essence into a complete identity. Moodboards, messaging, positioning. <strong>Every element refined until it feels unmistakably like you.</strong></p>
+    </div>
+
+    <div class="pillar-item">
+      <h3>#3: Brand Reveal + Brand Bible</h3>
+      <div class="pillar-img">
+        <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        Brand reveal photo
+      </div>
+      <p>Emily presents your complete brand in an unforgettable reveal. You walk away with a <strong>comprehensive Brand Bible</strong> and everything you need to show up as a Crowned Authority™.</p>
+    </div>
+
+  </div>
+</section>
+
+<div class="pillars-cta">
+  <a href="#book" class="cta-btn">I'm Ready to Begin</a>
+</div>
+
+<!-- ===== MORE REVIEWS ===== -->
+<section class="more-reviews">
+  <div class="reviews-scatter">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"I still don't know how to fully describe how much this experience changed me. I feel closer to God. I feel more confident."</p>
+      <div class="review-author">Roni LaVenia</div>
+      <div class="review-role">Author, Speaker, Business Owner</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Now my brand represents that... all while being fully myself. Emily brought the confirmation I didn't know I needed."</p>
+      <div class="review-author">Ali Marie</div>
+      <div class="review-role">Senior VP of LifeSpa</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"This day reminded me of who I am, why I started this journey in the first place, and what I'm here to do from here onward."</p>
+      <div class="review-author">Christa Crawford</div>
+      <div class="review-role">Faith-Driven Founder, Mother of 4</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CROWNED STORIES CAROUSEL ===== -->
+<section class="crowned-carousel-section">
+  <div class="crowned-carousel-header">
+    <h2>Crowned Stories</h2>
+    <p>Real women. Real transformations. Built from identity, not vanity.</p>
+  </div>
+
+  <div class="carousel-container">
+    <button class="carousel-arrow prev disabled" onclick="moveCarousel(-1)" aria-label="Previous">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+
+    <div class="carousel-track-wrapper">
+      <div class="carousel-track" id="carouselTrack">
+
+        <!-- Card 1 -->
+        <div class="carousel-card">
+          <div class="carousel-card-img">
+            <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            Client photo
+          </div>
+          <div class="carousel-card-overlay"></div>
+          <div class="carousel-card-info">
+            <div class="carousel-card-num">01</div>
+            <div class="carousel-card-name">Beth Clifford</div>
+            <div class="carousel-card-role">Sales Leader | Author | Podcast Host</div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="carousel-card">
+          <div class="carousel-card-img">
+            <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            Client photo
+          </div>
+          <div class="carousel-card-overlay"></div>
+          <div class="carousel-card-info">
+            <div class="carousel-card-num">02</div>
+            <div class="carousel-card-name">Christa Crawford</div>
+            <div class="carousel-card-role">NWM Leader | Faith-Driven Founder | Mother of 4</div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="carousel-card">
+          <div class="carousel-card-img">
+            <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            Client photo
+          </div>
+          <div class="carousel-card-overlay"></div>
+          <div class="carousel-card-info">
+            <div class="carousel-card-num">03</div>
+            <div class="carousel-card-name">Lauren Fields</div>
+            <div class="carousel-card-role">TEDx Speaker | Wellness Clinic | Podcast Host</div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="carousel-card">
+          <div class="carousel-card-img">
+            <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            Client photo
+          </div>
+          <div class="carousel-card-overlay"></div>
+          <div class="carousel-card-info">
+            <div class="carousel-card-num">04</div>
+            <div class="carousel-card-name">Roni LaVenia</div>
+            <div class="carousel-card-role">Family Business Owner | Author | Speaker</div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="carousel-card">
+          <div class="carousel-card-img">
+            <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            Client photo
+          </div>
+          <div class="carousel-card-overlay"></div>
+          <div class="carousel-card-info">
+            <div class="carousel-card-num">05</div>
+            <div class="carousel-card-name">Ali Marie</div>
+            <div class="carousel-card-role">Senior Vice President of LifeSpa</div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="carousel-card">
+          <div class="carousel-card-img">
+            <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            Client photo
+          </div>
+          <div class="carousel-card-overlay"></div>
+          <div class="carousel-card-info">
+            <div class="carousel-card-num">06</div>
+            <div class="carousel-card-name">Colette Vanpaemel</div>
+            <div class="carousel-card-role">Midlife Mentor | Beauty Entrepreneur</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <button class="carousel-arrow next" onclick="moveCarousel(1)" aria-label="Next">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+  </div>
+
+  <div class="carousel-dots" id="carouselDots"></div>
+</section>
+
+<!-- ===== BOOKING FORM ===== -->
+<section class="booking-section" id="book">
+  <div class="booking-embed">
+    <div class="booking-steps">
+      <span class="active">Fill out the form</span>
+      <span>Book your call</span>
+    </div>
+    <h3>Fordivine Discovery Call</h3>
+    <p class="booking-sub">Excited to learn about your brand. Book a call below to see if the Signature Experience is the right fit.</p>
+    <input class="form-input full" type="tel" placeholder="+1">
+    <div class="form-row">
+      <input class="form-input" type="text" placeholder="First name *">
+      <input class="form-input" type="text" placeholder="Last name *">
+    </div>
+    <p class="form-consent">By entering your information, you consent to your data being saved in accordance with our Terms &amp; Privacy Policy and to receive communications.</p>
+    <button class="form-btn">Continue →</button>
+    <p class="booking-placeholder-note">iClosed embed placeholder — replace with your live widget</p>
+  </div>
+</section>
+
+<!-- ===== ACCORDION Q&A ===== -->
+<section class="qa-section">
+
+  <div class="qa-item">
+    <div class="qa-header" onclick="toggleQA(this)">
+      <span>What actually happens during the experience?</span>
+      <span class="qa-toggle">✕</span>
+    </div>
+    <div class="qa-body open">
+      <p>It's not a photoshoot. It's not a logo. It's a full brand transformation.</p>
+      <p>We start with deep discovery work. Emily sits with you one-on-one to uncover your brand DNA, your calling, and where the gap lives between who you are and how you're currently showing up.</p>
+      <p>From there, our creative team builds your entire brand identity. Moodboards. Messaging. Visual direction. Voice. Positioning.</p>
+      <p>Then Emily presents it all in a reveal session that our clients describe as one of the most emotional, clarifying moments in their business.</p>
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-header" onclick="toggleQA(this)">
+      <span>What do I walk away with?</span>
+      <span class="qa-toggle">✕</span>
+    </div>
+    <div class="qa-body">
+      <p>A complete personal brand. Not a mood board. Not a few graphics.</p>
+      <p>Your Brand Bible includes your full identity, voice and messaging framework, visual assets, social assets, brand strategy, and content direction.</p>
+      <p>It's everything you need to <strong>stop second-guessing and start showing up as the authority you already are.</strong></p>
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-header" onclick="toggleQA(this)">
+      <span>Is this right for where I am?</span>
+      <span class="qa-toggle">✕</span>
+    </div>
+    <div class="qa-body">
+      <p>If you're a woman building something meaningful and your brand hasn't caught up to who you've become, this was designed for you.</p>
+      <p>Our clients include entrepreneurs, speakers, authors, coaches, network marketing leaders, and executives.</p>
+      <p><strong>The common thread is conviction, not revenue.</strong></p>
+      <p>Industries we've worked with: coaching, consulting, health and wellness, faith-based ministry, real estate, beauty, network marketing, financial services, e-learning, and more.</p>
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-header" onclick="toggleQA(this)">
+      <span>I'm not sure I'm ready.</span>
+      <span class="qa-toggle">✕</span>
+    </div>
+    <div class="qa-body">
+      <p>That feeling is exactly why most women reach out.</p>
+      <p>Clarity doesn't come before the work. It comes from the work.</p>
+      <p><strong>Waiting until you feel ready is the exact reason to begin now.</strong></p>
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-header" onclick="toggleQA(this)">
+      <span>Will this actually feel like me?</span>
+      <span class="qa-toggle">✕</span>
+    </div>
+    <div class="qa-body">
+      <p>FORDIVINE doesn't create a brand for you. It reveals what's already inside you.</p>
+      <p>Every client has said the same thing: <strong>"I've never been able to articulate who I am this clearly."</strong></p>
+    </div>
+  </div>
+
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="final-cta-section">
+  <a href="#book" class="cta-btn">I'm Ready to Begin</a>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="https://www.fordivine.com" class="logo">FORDIVINE<span class="tm">™</span></a>
+      <p>A brand house for women building<br>empires with Heaven's blueprint.</p>
+    </div>
+    <div class="footer-nav">
+      <a href="https://www.fordivine.com">Home</a>
+      <a href="https://www.fordivine.com/crowned-stories">Crowned Stories</a>
+      <a href="https://www.fordivine.com/inquire">Inquire</a>
+      <a href="#">Retreat</a>
+    </div>
+  </div>
+  <div class="footer-legal">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Service</a>
+  </div>
+  <p class="footer-disclaimer">Emily Ford's results are not typical and are not a guarantee of your success. Emily is an experienced brand expert and entrepreneur, and your results will vary depending on your effort, application, experience, and background. We do not give investment, tax, or other professional advice. The information contained within this website is the property of FORDIVINE™. Any use of the images, content, or ideas expressed herein without the express written consent of FORDIVINE™ is prohibited. Copyright © 2026 FORDIVINE™. All Rights Reserved.</p>
+</footer>
+
+<script>
+// === ACCORDION ===
+function toggleQA(header) {
+  const body = header.nextElementSibling;
+  const toggle = header.querySelector('.qa-toggle');
+  const wasOpen = body.classList.contains('open');
+  document.querySelectorAll('.qa-body').forEach(b => b.classList.remove('open'));
+  document.querySelectorAll('.qa-toggle').forEach(t => t.style.transform = 'rotate(0deg)');
+  if (!wasOpen) {
+    body.classList.add('open');
+    toggle.style.transform = 'rotate(45deg)';
+  }
+}
+
+// === CAROUSEL ===
+(function() {
+  const track = document.getElementById('carouselTrack');
+  const dotsContainer = document.getElementById('carouselDots');
+  const prevBtn = document.querySelector('.carousel-arrow.prev');
+  const nextBtn = document.querySelector('.carousel-arrow.next');
+  const cards = track.querySelectorAll('.carousel-card');
+  const totalCards = cards.length;
+  const gap = 20;
+  let currentIndex = 0;
+  let visibleCount = 3;
+  let startX = 0;
+  let isDragging = false;
+
+  function getVisibleCount() {
+    const w = window.innerWidth;
+    if (w <= 560) return 1;
+    if (w <= 900) return 2;
+    return 3;
+  }
+
+  function getMaxIndex() {
+    return Math.max(0, totalCards - visibleCount);
+  }
+
+  function buildDots() {
+    dotsContainer.innerHTML = '';
+    const pages = getMaxIndex() + 1;
+    for (let i = 0; i < pages; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (i === currentIndex ? ' active' : '');
+      dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      dot.addEventListener('click', () => { goTo(i); });
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  function updateArrows() {
+    prevBtn.classList.toggle('disabled', currentIndex <= 0);
+    nextBtn.classList.toggle('disabled', currentIndex >= getMaxIndex());
+  }
+
+  function updateDots() {
+    const dots = dotsContainer.querySelectorAll('.carousel-dot');
+    dots.forEach((d, i) => d.classList.toggle('active', i === currentIndex));
+  }
+
+  function slideToIndex() {
+    const wrapper = track.parentElement;
+    const wrapperWidth = wrapper.clientWidth;
+    const cardWidth = (wrapperWidth - gap * (visibleCount - 1)) / visibleCount;
+    const offset = currentIndex * (cardWidth + gap);
+    track.style.transform = 'translateX(-' + offset + 'px)';
+    updateArrows();
+    updateDots();
+  }
+
+  function goTo(index) {
+    currentIndex = Math.max(0, Math.min(index, getMaxIndex()));
+    slideToIndex();
+  }
+
+  window.moveCarousel = function(dir) {
+    goTo(currentIndex + dir);
+  };
+
+  function onResize() {
+    const newCount = getVisibleCount();
+    if (newCount !== visibleCount) {
+      visibleCount = newCount;
+      if (currentIndex > getMaxIndex()) currentIndex = getMaxIndex();
+      buildDots();
+    }
+    slideToIndex();
+  }
+
+  // Touch / swipe support
+  track.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+    track.style.transition = 'none';
+  }, { passive: true });
+
+  track.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+  }, { passive: true });
+
+  track.addEventListener('touchend', (e) => {
+    if (!isDragging) return;
+    isDragging = false;
+    track.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1)';
+    const endX = e.changedTouches[0].clientX;
+    const diff = startX - endX;
+    if (Math.abs(diff) > 40) {
+      if (diff > 0) moveCarousel(1);
+      else moveCarousel(-1);
+    }
+  });
+
+  // Init
+  visibleCount = getVisibleCount();
+  buildDots();
+  slideToIndex();
+  window.addEventListener('resize', onResize);
+})();
+</script>
+
+</body>
+</html>

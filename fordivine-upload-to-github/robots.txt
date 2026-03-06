@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://experience.fordivine.com/sitemap.xml
