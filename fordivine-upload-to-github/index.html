@@ -377,6 +377,72 @@
     100% { transform: translateX(-50%); }
   }
 
+  /* ========== CLIENT LOGOS MARQUEE ========== */
+  .client-logos-bar {
+    background: var(--charcoal);
+    padding: 56px 0 64px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    border-top: 1px solid rgba(200,184,154,0.1);
+  }
+  .client-logos-bar::before,
+  .client-logos-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 120px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .client-logos-bar::before {
+    left: 0;
+    background: linear-gradient(to right, var(--charcoal), transparent);
+  }
+  .client-logos-bar::after {
+    right: 0;
+    background: linear-gradient(to left, var(--charcoal), transparent);
+  }
+  .client-logos-label {
+    font-family: var(--body);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(200,184,154,0.5);
+    margin-bottom: 36px;
+  }
+  .client-logo-track {
+    display: flex;
+    align-items: center;
+    gap: 72px;
+    animation: clientLogoScroll 40s linear infinite;
+    width: max-content;
+  }
+  .client-logo-track img {
+    height: 44px;
+    width: auto;
+    opacity: 0.55;
+    flex-shrink: 0;
+    transition: opacity 0.4s ease;
+    filter: brightness(1.1);
+  }
+  .client-logo-track img:hover {
+    opacity: 0.9;
+  }
+  @keyframes clientLogoScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @media (max-width: 768px) {
+    .client-logos-bar::before,
+    .client-logos-bar::after { width: 60px; }
+    .client-logo-track { gap: 52px; }
+    .client-logo-track img { height: 36px; }
+  }
+
   /* ========== MICRO-TESTIMONIAL (BELOW CTA) ========== */
   .micro-testimonial {
     display: flex;
@@ -1872,6 +1938,55 @@
   </div>
 
   <div class="carousel-dots" id="carouselDots"></div>
+</section>
+
+
+<!-- ===== CLIENT LOGOS MARQUEE ===== -->
+<section class="client-logos-bar reveal">
+  <p class="client-logos-label">Crowned Authorities&#8482; we created</p>
+  <div class="client-logo-track">
+    <img src="client-logos/client-amber-havalias-logo-white.png" alt="Amber Havalias">
+    <img src="client-logos/client-amy-lacey-logo-white.png" alt="Amy Lacey">
+    <img src="client-logos/client-cindi-frechette-white.png" alt="Cindi Frechette">
+    <img src="client-logos/client-faithfully-found-main-logo-white.png" alt="Faithfully Found">
+    <img src="client-logos/client-greta-elena-primary-white.png" alt="Greta Elena">
+    <img src="client-logos/client-heather-clark-logo-white.png" alt="Heather Clark">
+    <img src="client-logos/client-jennifer-johnson-eterna-haus-white.png" alt="Jennifer Johnson - Eterna Haus">
+    <img src="client-logos/client-jessica-cross-secondary-white.png" alt="Jessica Cross">
+    <img src="client-logos/client-lauren-cashatt-main-logo-linen.png" alt="Lauren Cashatt">
+    <img src="client-logos/client-me-primary-white.png" alt="ME">
+    <img src="client-logos/client-michelle-roby-stamp-white.png" alt="Michelle Roby">
+    <img src="client-logos/client-navigating-between-the-lines-white.png" alt="Navigating Between the Lines">
+    <img src="client-logos/client-o-and-o-secondary-white.png" alt="O&amp;O">
+    <img src="client-logos/client-pamela-oakes-primary-white.png" alt="Pamela Oakes">
+    <img src="client-logos/client-second-act-method-primary-white.png" alt="Second Act Method">
+    <img src="client-logos/client-terra-harvell-white.png" alt="Terra Harvell">
+    <img src="client-logos/client-amy-lacey-logo-variation-white.png" alt="Amy Lacey Variation">
+    <img src="client-logos/client-greta-elena-submark.png" alt="Greta Elena Submark">
+    <img src="client-logos/client-lauren-cashatt-submark-linen.png" alt="Lauren Cashatt Submark">
+    <img src="client-logos/client-terra-harvell-submark-white.png" alt="Terra Harvell Submark">
+    <!-- Duplicate set for seamless infinite loop -->
+    <img src="client-logos/client-amber-havalias-logo-white.png" alt="Amber Havalias">
+    <img src="client-logos/client-amy-lacey-logo-white.png" alt="Amy Lacey">
+    <img src="client-logos/client-cindi-frechette-white.png" alt="Cindi Frechette">
+    <img src="client-logos/client-faithfully-found-main-logo-white.png" alt="Faithfully Found">
+    <img src="client-logos/client-greta-elena-primary-white.png" alt="Greta Elena">
+    <img src="client-logos/client-heather-clark-logo-white.png" alt="Heather Clark">
+    <img src="client-logos/client-jennifer-johnson-eterna-haus-white.png" alt="Jennifer Johnson - Eterna Haus">
+    <img src="client-logos/client-jessica-cross-secondary-white.png" alt="Jessica Cross">
+    <img src="client-logos/client-lauren-cashatt-main-logo-linen.png" alt="Lauren Cashatt">
+    <img src="client-logos/client-me-primary-white.png" alt="ME">
+    <img src="client-logos/client-michelle-roby-stamp-white.png" alt="Michelle Roby">
+    <img src="client-logos/client-navigating-between-the-lines-white.png" alt="Navigating Between the Lines">
+    <img src="client-logos/client-o-and-o-secondary-white.png" alt="O&amp;O">
+    <img src="client-logos/client-pamela-oakes-primary-white.png" alt="Pamela Oakes">
+    <img src="client-logos/client-second-act-method-primary-white.png" alt="Second Act Method">
+    <img src="client-logos/client-terra-harvell-white.png" alt="Terra Harvell">
+    <img src="client-logos/client-amy-lacey-logo-variation-white.png" alt="Amy Lacey Variation">
+    <img src="client-logos/client-greta-elena-submark.png" alt="Greta Elena Submark">
+    <img src="client-logos/client-lauren-cashatt-submark-linen.png" alt="Lauren Cashatt Submark">
+    <img src="client-logos/client-terra-harvell-submark-white.png" alt="Terra Harvell Submark">
+  </div>
 </section>
 
 
