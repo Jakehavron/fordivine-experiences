@@ -76,17 +76,17 @@
   /* ========== SCROLL REVEAL ========== */
   .reveal {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
   }
   .reveal.visible {
     opacity: 1;
     transform: translateY(0);
   }
-  .reveal-delay-1 { transition-delay: 0.12s; }
-  .reveal-delay-2 { transition-delay: 0.24s; }
-  .reveal-delay-3 { transition-delay: 0.36s; }
-  .reveal-delay-4 { transition-delay: 0.48s; }
+  .reveal-delay-1 { transition-delay: 0.05s; }
+  .reveal-delay-2 { transition-delay: 0.1s; }
+  .reveal-delay-3 { transition-delay: 0.15s; }
+  .reveal-delay-4 { transition-delay: 0.2s; }
 
   /* ========== MINIMAL NAV ========== */
   .mini-nav {
@@ -701,7 +701,7 @@
   }
   .review-author-info { display: flex; flex-direction: column; gap: 3px; }
   .review-disclaimer {
-    font-size: 11px;
+    font-size: 10px;
     color: #b0b0b0;
     max-width: 680px;
     margin: 40px auto 0;
@@ -835,7 +835,7 @@
   .pillar-subtitle {
     font-family: var(--serif);
     font-weight: 400;
-    font-size: 15px;
+    font-size: 18px;
     color: var(--text-mid);
     letter-spacing: 0.01em;
     margin-bottom: 18px;
@@ -1061,7 +1061,7 @@
   .qa-body {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1), padding 0.5s ease;
+    transition: max-height 0.25s ease, padding 0.25s ease;
     padding: 0 28px;
     background: var(--white);
   }
@@ -1555,7 +1555,7 @@
     .logo-carousel-track img { height: 30px; }
 
     /* Emily note */
-    .emily-note-photo { width: 100%; height: 300px; }
+    .emily-note-photo { width: 100%; height: auto; overflow: visible; }
     .emily-note-content p { font-size: 16px; }
 
     /* Micro-testimonial */
@@ -1775,6 +1775,7 @@
       </div>
       <h4 class="pillar-subtitle">Strategy That Drives Real Results</h4>
       <p>You have tried "branding" before and it still does not feel like it helps.</p>
+      <br>
       <p>That is because no one has built a real business strategy for you yet. Our in-house Strategy Engineers build your <strong>Crowned Authority Blueprint</strong>, the marketing strategy behind everything.</p>
     </div>
 
@@ -1786,6 +1787,7 @@
       </div>
       <h4 class="pillar-subtitle">Visuals That Command Attention</h4>
       <p>Your current visuals do not match who you have become or where you want to go.</p>
+      <br>
       <p>Our in-house Design Engineers create your <strong>Crowned Identity Bible</strong>, including logos, colors, typography, and every visual asset you need.</p>
     </div>
 
@@ -1797,6 +1799,7 @@
       </div>
       <h4 class="pillar-subtitle">Assets Ready To Deploy Immediately</h4>
       <p>You have probably invested in assets before and watched them collect dust.</p>
+      <br>
       <p>We create ready-to-use assets that activate your authority online, from your Digital HQ to branded content templates.</p>
     </div>
 
@@ -1808,6 +1811,7 @@
       </div>
       <h4 class="pillar-subtitle">Scalable Systems For A Sustainable Empire</h4>
       <p>You were not built to perform 24/7 just to stay visible.</p>
+      <br>
       <p>We engineer your brand like it is an employee working for you around the clock, garnering leads, converting them into prospects, and leading them to paid clients.</p>
     </div>
 
@@ -2079,7 +2083,7 @@
       <p>A complete brand and marketing foundation built to last 2 to 3 years. This is the last stop you will need.</p>
       <p><strong>Crowned Authority Blueprint</strong> (your full marketing strategy):<br>Signature IP Framework, Authority Narratives, Core Offer Alignment, Sales and Marketing Messaging, Ideal Avatar Research, Competitive Analysis, Brand Keywords, Content Pillars, and more.</p>
       <p><strong>Crowned Identity Bible</strong> (your complete visual identity):<br>Brand Moodboard, Color Palette, Primary Logos, Logo Variations, Sub Marks, Asset Mockups, Typography System, Brand Patterns, Social Media Templates, Branded Slide Deck, Email Signature, Business Card Design, and more.</p>
-      <p>After this, you will not need to hire another branding expert, marketing strategist, or designer. We are the last stop.</p>
+      <p><strong>After this, you will not need to hire another branding expert, marketing strategist, or designer. We are the last stop.</strong></p>
     </div>
   </div>
 
