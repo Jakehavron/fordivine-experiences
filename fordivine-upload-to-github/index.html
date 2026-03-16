@@ -113,8 +113,8 @@
     width: auto;
     display: block;
   }
-  .logo-img-wrap { position: relative; display: inline-flex; align-items: center; text-decoration: none; }
-  .logo-img-wrap .tm { position: absolute; top: -6px; right: -12px; font-size: 16px; line-height: 1; font-family: var(--display); font-weight: 700; color: var(--white); opacity: 0.7; letter-spacing: 0; }
+  .logo-img-wrap { position: relative; display: inline-flex; align-items: flex-start; text-decoration: none; gap: 1px; }
+  .logo-img-wrap .tm { position: static; font-size: 9px; line-height: 1; font-family: var(--display); font-weight: 700; color: var(--white); opacity: 0.7; letter-spacing: 0; margin-top: 2px; }
   .mini-nav .nav-cta {
     font-family: var(--body);
     font-size: 11px;
@@ -322,6 +322,7 @@
     text-align: center;
     overflow: hidden;
     position: relative;
+    width: 100%;
   }
   .trust-bar-label {
     font-family: var(--body);
@@ -1108,6 +1109,7 @@
     display: block;
     opacity: 0.85;
   }
+  .footer-brand .logo-img-wrap .tm { font-size: 8px; margin-top: 1px; }
   .footer-brand .logo {
     display: flex;
     align-items: center;
@@ -1899,7 +1901,7 @@
     </div>
     <p class="form-consent">By entering your information, you consent to your data being saved in accordance with our Terms &amp; Privacy Policy and to receive communications.</p>
     <button class="form-btn">Continue →</button>
-    <p class="booking-placeholder-note">iClosed embed placeholder. Replace with your live widget.</p>
+    <p class="booking-placeholder-note" style="display:none;">iClosed embed placeholder. Replace with your live widget.</p>
   </div>
 </section>
 
