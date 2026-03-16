@@ -1391,10 +1391,12 @@
     .carousel-track-wrapper { overflow: hidden; }
     .carousel-card { /* width set by JS */ }
     .carousel-track { gap: 0; }
-    .carousel-container { padding: 0 48px; overflow: hidden; }
+    .carousel-container { padding: 0 44px; overflow: hidden; }
     .carousel-arrow { display: flex; width: 40px; height: 40px; font-size: 14px; }
     .carousel-arrow.prev { left: 2px; }
     .carousel-arrow.next { right: 2px; }
+    .story-card-img { height: 340px; }
+    .story-card { border-radius: 16px; }
   }
 
   /* ========== RESPONSIVE ========== */
@@ -1437,6 +1439,7 @@
     .pillars-heading { font-size: clamp(20px, 4vw, 28px); margin-bottom: 56px; }
     .pillars-grid { grid-template-columns: repeat(2, 1fr); gap: 28px; max-width: 600px; margin: 0 auto; padding: 0 8px; }
     .pillar-img { height: 200px; }
+    .pillar-img img { width: 100%; height: 100%; object-fit: cover; }
     .pillar-item h3 { font-size: 18px; }
     .pillar-item p { font-size: 14px; }
     .pillars-cta { padding: 48px 24px 80px; }
@@ -1500,12 +1503,13 @@
 
     /* Below video */
     .below-video { padding: 32px 20px 72px; }
-    .cta-btn { padding: 18px 36px; font-size: 11px; letter-spacing: 0.12em; width: 100%; max-width: 320px; display: block; margin-left: auto; margin-right: auto; }
+    .cta-btn { padding: 18px 36px; font-size: 11px; letter-spacing: 0.12em; width: 100%; max-width: 360px; display: block; margin-left: auto; margin-right: auto; }
 
     /* Pillars */
     .pillars-grid { grid-template-columns: 1fr; max-width: 420px; padding: 0 12px; gap: 32px; }
     .pillars-heading { font-size: clamp(18px, 5vw, 24px); }
     .pillar-img { height: 240px; border-radius: 14px; }
+    .pillar-img img { width: 100%; height: 100%; object-fit: cover; border-radius: 14px; }
     .pillar-item { text-align: left; }
     .pillar-item h3 { font-size: 19px; }
     .pillar-item p { font-size: 14.5px; }
@@ -1548,10 +1552,14 @@
   /* ===== RESPONSIVE: SMALL MOBILE (375px) ===== */
   @media (max-width: 375px) {
     .hero-section h1 { font-size: clamp(24px, 8vw, 34px); }
-    .cta-btn { padding: 16px 28px; font-size: 10.5px; }
+    .cta-btn { padding: 16px 28px; font-size: 10.5px; max-width: 100%; }
     .cinematic-close h2 { font-size: clamp(26px, 8vw, 36px); }
     .mini-nav { padding: 12px 16px; }
     .nav-wordmark { height: 16px; }
+    .logo-carousel-track img { height: 26px; max-width: 80px; object-fit: contain; }
+    .logo-carousel-track { gap: 36px; }
+    .pillars-section { padding: 60px 16px 32px; }
+    .pillar-img { height: 200px; }
   }
 </style>
 </head>
@@ -2048,8 +2056,7 @@
     <div class="footer-nav">
       <a href="https://www.fordivine.com">Home</a>
       <a href="https://www.fordivine.com/crowned-stories">Crowned Stories</a>
-      <a href="https://www.fordivine.com/inquire">Inquire</a>
-      <a href="#">Retreat</a>
+      <a href="#top">Inquire Now</a>
     </div>
   </div>
   <div class="footer-legal">
