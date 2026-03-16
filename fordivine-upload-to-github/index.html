@@ -1448,16 +1448,14 @@
     transform: scale(1.4);
   }
 
-  /* Responsive: 2 cards on tablet, 1 on mobile */
+  /* 1 card at all sizes */
+  .crowned-carousel-section { overflow: hidden; }
+  .carousel-track-wrapper { overflow: hidden; }
+  .carousel-track { gap: 0; }
   @media (max-width: 900px) {
-    .carousel-card { /* width set by JS */ }
     .carousel-container { padding: 0 52px; }
   }
   @media (max-width: 560px) {
-    .crowned-carousel-section { overflow: hidden; }
-    .carousel-track-wrapper { overflow: hidden; }
-    .carousel-card { /* width set by JS */ }
-    .carousel-track { gap: 0; }
     .carousel-container { padding: 0 44px; overflow: hidden; }
     .carousel-arrow { display: flex; width: 40px; height: 40px; font-size: 14px; }
     .carousel-arrow.prev { left: 2px; }
@@ -2213,15 +2211,12 @@ function toggleQA(header) {
   const originalCards = Array.from(track.querySelectorAll('.carousel-card'));
   const totalCards = originalCards.length;
   const gap = 20;
-  let currentIndex = 3; // logical index into originalCards — starts on Beth, Christa, Lauren
-  let visibleCount = 3;
+  let currentIndex = 0; // starts on first card
+  let visibleCount = 1;
   let isTransitioning = false;
 
   function getVisibleCount() {
-    const w = window.innerWidth;
-    if (w <= 560) return 1;
-    if (w <= 900) return 2;
-    return 3;
+    return 1;
   }
 
   // Clone cards before and after for seamless infinite loop
