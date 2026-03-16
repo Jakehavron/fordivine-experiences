@@ -422,8 +422,9 @@
     width: max-content;
   }
   .client-logo-track img {
-    height: 44px;
-    width: auto;
+    width: 200px;
+    height: 60px;
+    object-fit: contain;
     opacity: 0.55;
     flex-shrink: 0;
     transition: opacity 0.4s ease;
@@ -439,8 +440,8 @@
   @media (max-width: 768px) {
     .client-logos-bar::before,
     .client-logos-bar::after { width: 60px; }
-    .client-logo-track { gap: 52px; }
-    .client-logo-track img { height: 36px; }
+    .client-logo-track { gap: 40px; }
+    .client-logo-track img { width: 150px; height: 46px; }
   }
 
   /* ========== MICRO-TESTIMONIAL (BELOW CTA) ========== */
