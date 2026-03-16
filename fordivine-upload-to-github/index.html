@@ -507,9 +507,10 @@
   }
   .emily-note-photo img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
     object-position: center top;
+    display: block;
   }
   .emily-note-photo::after {
     content: '';
@@ -1481,7 +1482,7 @@
     /* Emily note */
     .emily-note-section { padding: 80px 24px; }
     .emily-note-inner { flex-direction: column; gap: 40px; text-align: left; }
-    .emily-note-photo { width: 100%; min-height: unset; height: 340px; margin: 0 auto; border-radius: 16px; }
+    .emily-note-photo { width: 100%; min-height: unset; height: auto; margin: 0 auto; border-radius: 16px; }
     .emily-note-content p { font-size: 18px; }
 
     /* Nav */
