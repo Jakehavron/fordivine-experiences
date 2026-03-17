@@ -830,16 +830,18 @@
     text-align: center;
   }
   .pillar-num {
-    font-family: var(--serif);
-    font-weight: 400;
-    font-style: italic;
-    font-size: 34px;
-    color: var(--bone);
-    opacity: 0.6;
-    line-height: 1;
-    margin-bottom: 14px;
-    letter-spacing: -0.02em;
+    font-family: var(--display);
+    font-weight: 900;
+    font-style: normal;
+    font-size: clamp(80px, 10vw, 120px);
+    color: rgba(139, 122, 98, 0.18);
+    line-height: 0.85;
+    letter-spacing: -0.06em;
     display: block;
+    margin-bottom: -24px;
+    margin-left: -6px;
+    pointer-events: none;
+    user-select: none;
   }
   .pillar-item h3 {
     font-family: var(--display);
