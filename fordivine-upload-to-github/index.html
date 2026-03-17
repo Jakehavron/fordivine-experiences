@@ -1265,24 +1265,29 @@
     line-height: 1.65;
     font-weight: 400;
   }
+  /* ===== CAROUSEL: bulletproof 1-card-at-a-time ===== */
   .carousel-container {
     position: relative;
     max-width: 520px;
     margin: 0 auto;
-    padding: 0;
+    padding: 0 56px; /* flanking space for arrows */
   }
-  .carousel-track-wrapper {
+  /* The clipping viewport — shows exactly one card */
+  .carousel-viewport {
     overflow: hidden;
     border-radius: 20px;
+    width: 100%;
+    position: relative;
   }
+  /* The moving strip — JS drives translateX(-N*100%) */
   .carousel-track {
     display: flex;
-    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-    gap: 20px;
+    /* no CSS transition here; JS applies it */
   }
+  /* Every card is exactly 100% of the viewport */
   .carousel-card {
-    flex-shrink: 0;
-    min-width: 0;
+    flex: 0 0 100%;
+    width: 100%;
     border-radius: 20px;
     overflow: hidden;
     position: relative;
@@ -1290,10 +1295,6 @@
     max-height: 560px;
     background: linear-gradient(135deg, #f0eeeb 0%, #e8e6e2 100%);
     cursor: default;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .carousel-card:hover {
-    transform: scale(1.02);
   }
   .carousel-card-img {
     position: absolute;
@@ -1302,10 +1303,6 @@
     height: 100%;
     object-fit: cover;
     object-position: center top;
-    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .carousel-card:hover .carousel-card-img {
-    transform: scale(1.05);
   }
   .carousel-card-overlay {
     position: absolute;
@@ -1338,13 +1335,13 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
   }
-  /* Arrows */
+  /* Arrows — sit outside the viewport, inside .carousel-container */
   .carousel-arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     background: var(--charcoal);
     color: var(--white);
@@ -1354,20 +1351,17 @@
     align-items: center;
     justify-content: center;
     z-index: 5;
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: background 0.3s ease, transform 0.3s ease;
     box-shadow: 0 4px 20px rgba(0,0,0,0.2);
   }
   .carousel-arrow:hover {
     background: #222;
     transform: translateY(-50%) scale(1.08);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
   }
-  .carousel-arrow.disabled { opacity: 0.15; pointer-events: none; }
-  .carousel-arrow.prev { left: -24px; }
-  .carousel-arrow.next { right: -24px; }
+  .carousel-arrow.prev { left: 0; }
+  .carousel-arrow.next { right: 0; }
   .carousel-arrow svg { width: 20px; height: 20px; }
-
-  /* Shimmer animation */
+  /* Shimmer bottom line */
   @keyframes shimmer {
     0%   { transform: translateX(-100%); opacity: 0; }
     20%  { opacity: 1; }
@@ -1388,49 +1382,12 @@
   .carousel-shimmer::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 0; left: 0;
     width: 40%;
     height: 100%;
     background: linear-gradient(90deg, transparent 0%, rgba(200,184,154,0.5) 50%, transparent 100%);
     animation: shimmer 4s ease-in-out infinite;
   }
-
-  /* Swipe hint badge */
-  @keyframes swipeHintFade {
-    0%   { opacity: 0; transform: translateY(6px); }
-    15%  { opacity: 1; transform: translateY(0); }
-    75%  { opacity: 1; transform: translateY(0); }
-    100% { opacity: 0; transform: translateY(-4px); }
-  }
-  .carousel-swipe-hint {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: fit-content;
-    transform: translateY(-50%);
-    background: rgba(0,0,0,0.4);
-    color: rgba(255,255,255,0.9);
-    font-family: var(--body);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    padding: 10px 24px;
-    border-radius: 100px;
-    pointer-events: none;
-    z-index: 20;
-    white-space: nowrap;
-    animation: swipeHintFade 4s ease forwards;
-    backdrop-filter: blur(12px);
-  }
-  @media (max-width: 560px) {
-    .carousel-swipe-hint { display: block; }
-  }
-
   /* Dots */
   .carousel-dots {
     display: flex;
@@ -1445,30 +1402,20 @@
     background: #ddd;
     border: none;
     cursor: pointer;
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     padding: 0;
   }
   .carousel-dot.active {
     background: var(--charcoal);
     transform: scale(1.4);
   }
-
-  /* 1 card at all sizes */
-  .crowned-carousel-section { overflow: hidden; }
-  .carousel-track-wrapper { overflow: hidden; border-radius: 20px; }
-  .carousel-track { gap: 0; }
+  /* Responsive */
   @media (max-width: 900px) {
-    .carousel-container { padding: 0; }
-    .carousel-arrow.prev { left: 8px; }
-    .carousel-arrow.next { right: 8px; }
+    .carousel-container { padding: 0 52px; }
   }
   @media (max-width: 560px) {
-    .carousel-container { padding: 0; overflow: hidden; }
-    .carousel-arrow { display: flex; width: 40px; height: 40px; }
-    .carousel-arrow.prev { left: 8px; }
-    .carousel-arrow.next { right: 8px; }
-    .story-card-img { height: 340px; }
-    .story-card { border-radius: 16px; }
+    .carousel-container { padding: 0 48px; }
+    .carousel-arrow { width: 38px; height: 38px; }
   }
 
   /* ========== RESPONSIVE ========== */
@@ -1872,13 +1819,12 @@
   </div>
 
   <div class="carousel-container">
-    <button class="carousel-arrow prev" onclick="moveCarousel(-1)" aria-label="Previous">
+    <button class="carousel-arrow prev" id="carouselPrev" aria-label="Previous">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
     </button>
 
-    <div class="carousel-track-wrapper" style="position:relative;">
+    <div class="carousel-viewport" id="carouselViewport">
       <div class="carousel-shimmer"></div>
-      <div class="carousel-swipe-hint">swipe &rarr;</div>
       <div class="carousel-track" id="carouselTrack">
 
         <!-- Card 1: Colette Vanpaemel -->
@@ -1944,7 +1890,7 @@
       </div>
     </div>
 
-    <button class="carousel-arrow next" onclick="moveCarousel(1)" aria-label="Next">
+    <button class="carousel-arrow next" id="carouselNext" aria-label="Next">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
     </button>
   </div>
@@ -2232,189 +2178,76 @@ function toggleQA(header) {
   }
 }
 
-// === CAROUSEL ===
+// === CAROUSEL: clean translateX, 1 card always ===
 (function() {
-  const track = document.getElementById('carouselTrack');
-  const dotsContainer = document.getElementById('carouselDots');
-  const prevBtn = document.querySelector('.carousel-arrow.prev');
-  const nextBtn = document.querySelector('.carousel-arrow.next');
-  const originalCards = Array.from(track.querySelectorAll('.carousel-card'));
-  const totalCards = originalCards.length;
-  const gap = 20;
-  let currentIndex = 0; // starts on first card
-  let visibleCount = 1;
-  let isTransitioning = false;
+  const viewport = document.getElementById('carouselViewport');
+  const track    = document.getElementById('carouselTrack');
+  const dotsWrap = document.getElementById('carouselDots');
+  const prevBtn  = document.getElementById('carouselPrev');
+  const nextBtn  = document.getElementById('carouselNext');
 
-  function getVisibleCount() {
-    return 1;
-  }
+  const cards  = Array.from(track.querySelectorAll('.carousel-card'));
+  const total  = cards.length;
+  let current  = 0;
+  let busy     = false;
 
-  // Clone cards before and after for seamless infinite loop
-  // We prepend (visibleCount) clones at start and append (visibleCount) clones at end
-  function buildClones() {
-    // Remove any existing clones
-    track.querySelectorAll('.carousel-clone').forEach(c => c.remove());
-    const cloneCount = visibleCount;
-    // Prepend last N originals
-    for (let i = cloneCount - 1; i >= 0; i--) {
-      const clone = originalCards[totalCards - 1 - (i % totalCards)].cloneNode(true);
-      clone.classList.add('carousel-clone');
-      track.insertBefore(clone, track.firstChild);
-    }
-    // Append first N originals
-    for (let i = 0; i < cloneCount; i++) {
-      const clone = originalCards[i % totalCards].cloneNode(true);
-      clone.classList.add('carousel-clone');
-      track.appendChild(clone);
-    }
-  }
-
+  // ---- dots ----
   function buildDots() {
-    dotsContainer.innerHTML = '';
-    for (let i = 0; i < totalCards; i++) {
-      const dot = document.createElement('button');
-      dot.className = 'carousel-dot' + (i === currentIndex ? ' active' : '');
-      dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
-      dot.addEventListener('click', () => { goToWithClones(i); });
-      dotsContainer.appendChild(dot);
-    }
+    dotsWrap.innerHTML = '';
+    cards.forEach((_, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      btn.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      btn.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(btn);
+    });
   }
-
   function updateDots() {
-    const dots = dotsContainer.querySelectorAll('.carousel-dot');
-    dots.forEach((d, i) => d.classList.toggle('active', i === currentIndex));
+    dotsWrap.querySelectorAll('.carousel-dot')
+      .forEach((d, i) => d.classList.toggle('active', i === current));
   }
 
-  function getCardWidth() {
-    const wrapper = track.parentElement;
-    const wrapperWidth = wrapper.clientWidth;
-    if (visibleCount === 1) return wrapperWidth;
-    return (wrapperWidth - gap * (visibleCount - 1)) / visibleCount;
-  }
+  // ---- slide ----
+  function goTo(index, animate) {
+    if (busy && animate !== false) return;
+    busy = true;
+    current = ((index % total) + total) % total;
 
-  function setTrackWidth() {
-    const allCards = track.querySelectorAll('.carousel-card, .carousel-clone');
-    const cardW = getCardWidth();
-    allCards.forEach(c => { c.style.width = cardW + 'px'; c.style.flexShrink = '0'; });
-    track.style.width = (allCards.length * (cardW + gap)) + 'px';
-  }
-
-  // Position track so that currentIndex (offset by clones) is in view
-  function slideToIndex(animate) {
-    const cardW = getCardWidth();
-    // The real cards start after visibleCount clones
-    const realOffset = visibleCount + currentIndex;
-    const offset = realOffset * (cardW + gap);
     if (animate === false) {
       track.style.transition = 'none';
     } else {
       track.style.transition = 'transform 0.55s cubic-bezier(0.16,1,0.3,1)';
     }
-    track.style.transform = 'translateX(-' + offset + 'px)';
+    // Each card is 100% of the viewport — offset is simply N * 100%
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
     updateDots();
+
+    setTimeout(() => { busy = false; }, 580);
   }
 
-  function goTo(index) {
-    if (isTransitioning) return;
-    isTransitioning = true;
-    currentIndex = ((index % totalCards) + totalCards) % totalCards;
-    slideToIndex(true);
-    setTimeout(() => { isTransitioning = false; }, 580);
-  }
+  // ---- arrows ----
+  prevBtn.addEventListener('click', () => goTo(current - 1));
+  nextBtn.addEventListener('click', () => goTo(current + 1));
 
-  // After transition ends, silently jump if we went past a clone boundary
-  track.addEventListener('transitionend', () => {
-    const cardW = getCardWidth();
-    // If we navigated into the prepended clones (before real cards)
-    if (currentIndex < 0) {
-      currentIndex = ((currentIndex % totalCards) + totalCards) % totalCards;
-      track.style.transition = 'none';
-      const realOffset = (visibleCount + currentIndex) * (cardW + gap);
-      track.style.transform = 'translateX(-' + realOffset + 'px)';
-      updateDots();
-    }
-    // If we navigated into the appended clones (after real cards)
-    else if (currentIndex >= totalCards) {
-      currentIndex = currentIndex % totalCards;
-      track.style.transition = 'none';
-      const realOffset = (visibleCount + currentIndex) * (cardW + gap);
-      track.style.transform = 'translateX(-' + realOffset + 'px)';
-      updateDots();
-    }
-  });
-
-  // Override goTo to allow temporary out-of-bounds index for clone traversal
-  function goToWithClones(rawIndex) {
-    if (isTransitioning) return;
-    isTransitioning = true;
-    // Allow rawIndex to go one step out of bounds so clone is visible during transition
-    currentIndex = rawIndex;
-    slideToIndex(true);
-    setTimeout(() => { isTransitioning = false; }, 580);
-  }
-
-  window.moveCarousel = function(dir) {
-    const nextRaw = currentIndex + dir;
-    goToWithClones(nextRaw);
-  };
-
-  function onResize() {
-    const newCount = getVisibleCount();
-    if (newCount !== visibleCount) {
-      visibleCount = newCount;
-      buildClones();
-      buildDots();
-    }
-    setTrackWidth();
-    slideToIndex(false);
-    // Re-enable transitions after a tick
-    setTimeout(() => { track.style.transition = 'transform 0.55s cubic-bezier(0.16,1,0.3,1)'; }, 50);
-  }
-
-  // Dismiss swipe hint on first swipe
-  const swipeHint = document.querySelector('.carousel-swipe-hint');
-  let hintDismissed = false;
-  function dismissHint() {
-    if (!hintDismissed && swipeHint) {
-      hintDismissed = true;
-      swipeHint.style.transition = 'opacity 0.4s ease';
-      swipeHint.style.opacity = '0';
-      setTimeout(() => { swipeHint.style.display = 'none'; }, 400);
-    }
-  }
-
-  // Touch / swipe support
-  track.addEventListener('touchstart', (e) => {
-    startX = e.touches[0].clientX;
-    isDragging = true;
-    track.style.transition = 'none';
+  // ---- touch / swipe ----
+  let startX = 0, dragging = false;
+  viewport.addEventListener('touchstart', (e) => {
+    startX   = e.touches[0].clientX;
+    dragging = true;
+  }, { passive: true });
+  viewport.addEventListener('touchend', (e) => {
+    if (!dragging) return;
+    dragging = false;
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
   }, { passive: true });
 
-  track.addEventListener('touchmove', (e) => {
-    if (!isDragging) return;
-  }, { passive: true });
+  // ---- resize: % widths auto-adjust, just re-snap ----
+  window.addEventListener('resize', () => goTo(current, false));
 
-  track.addEventListener('touchend', (e) => {
-    if (!isDragging) return;
-    isDragging = false;
-    track.style.transition = 'transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)';
-    const endX = e.changedTouches[0].clientX;
-    const diff = startX - endX;
-    if (Math.abs(diff) > 40) {
-      dismissHint();
-      if (diff > 0) moveCarousel(1);
-      else moveCarousel(-1);
-    }
-  });
-
-  // Init
-  visibleCount = getVisibleCount();
-  buildClones();
-  setTrackWidth();
+  // ---- init ----
   buildDots();
-  slideToIndex(false);
-  setTimeout(() => { track.style.transition = 'transform 0.55s cubic-bezier(0.16,1,0.3,1)'; }, 50);
-  window.addEventListener('resize', onResize);
+  goTo(0, false);
 })();
 
 // ===== AMBIENT SMOKE BACKGROUND =====
