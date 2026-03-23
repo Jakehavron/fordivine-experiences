@@ -2331,8 +2331,8 @@ function toggleQA(header) {
   const LAYER_COUNT = isMobile ? 4 : 8;
 
   function resize() {
-    W = canvas.width = window.innerWidth;
-    H = canvas.height = window.innerHeight;
+    W = canvas.width = document.documentElement.clientWidth;
+    H = canvas.height = document.documentElement.clientHeight;
   }
 
   function SmokeLayer(i) {
