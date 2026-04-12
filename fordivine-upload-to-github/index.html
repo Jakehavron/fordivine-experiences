@@ -869,7 +869,7 @@
   }
   .pillar-img {
     width: 100%;
-    height: 220px;
+    aspect-ratio: 4 / 3;
     background: linear-gradient(135deg, #f0eeeb 0%, #e8e6e2 100%);
     border-radius: 16px;
     overflow: hidden;
@@ -881,6 +881,19 @@
     letter-spacing: 0.06em;
     text-transform: uppercase;
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .pillar-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    display: block;
+  }
+  .pillar-img-foundation img {
+    object-position: 52% center;
+  }
+  .pillar-img-systems img {
+    object-position: 58% center;
   }
   .pillar-item:hover .pillar-img {
     transform: scale(1.03);
@@ -1522,7 +1535,7 @@
     .pillars-section { padding: 80px 24px 40px; }
     .pillars-heading { font-size: clamp(20px, 4vw, 28px); margin-bottom: 56px; }
     .pillars-grid { grid-template-columns: repeat(2, 1fr); gap: 28px; max-width: 600px; margin: 0 auto; padding: 0 8px; }
-    .pillar-img { height: 200px; }
+    .pillar-img { aspect-ratio: 4 / 3; }
     .pillar-img img { width: 100%; height: 100%; object-fit: cover; }
     .pillar-item h3 { font-size: 18px; }
     .pillar-item p { font-size: 14px; }
@@ -1593,8 +1606,10 @@
     /* Pillars */
     .pillars-grid { grid-template-columns: 1fr; max-width: 420px; padding: 0 12px; gap: 32px; }
     .pillars-heading { font-size: clamp(18px, 5vw, 24px); }
-    .pillar-img { height: 240px; border-radius: 14px; }
+    .pillar-img { aspect-ratio: 4 / 3; border-radius: 14px; }
     .pillar-img img { width: 100%; height: 100%; object-fit: cover; border-radius: 14px; }
+    .pillar-img-foundation img { object-position: 54% center; }
+    .pillar-img-systems img { object-position: 61% center; }
     .pillar-item { text-align: left; }
     .pillar-item h3 { font-size: 19px; }
     .pillar-item p { font-size: 14.5px; }
@@ -1647,7 +1662,7 @@
     .logo-carousel-track img { height: 26px; max-width: 80px; object-fit: contain; }
     .logo-carousel-track { gap: 36px; }
     .pillars-section { padding: 60px 16px 32px; }
-    .pillar-img { height: 200px; }
+    .pillar-img { aspect-ratio: 4 / 3; }
   }
 </style>
 </head>
@@ -1787,8 +1802,8 @@
     <div class="pillar-item reveal">
       <span class="pillar-num">01</span>
       <h3>The Foundation</h3>
-      <div class="pillar-img">
-        <img src="mockup_blueprint_final_web.jpg" alt="The Foundation" style="width:100%;height:100%;object-fit:cover;border-radius:16px;" loading="lazy">
+      <div class="pillar-img pillar-img-foundation">
+        <img src="foundation_feminine_editorial_v5_web.png" alt="The Foundation" loading="lazy">
       </div>
       <h4 class="pillar-subtitle">Strategy That Drives Real Results</h4>
       <p>You have tried "branding" before and it still does not feel like it helps.</p>
@@ -1823,8 +1838,8 @@
     <div class="pillar-item reveal reveal-delay-3">
       <span class="pillar-num">04</span>
       <h3>Scalable Systems</h3>
-      <div class="pillar-img">
-        <img src="mockup_systems_final_web.jpg" alt="Scalable Systems" style="width:100%;height:100%;object-fit:cover;border-radius:16px;" loading="lazy">
+      <div class="pillar-img pillar-img-systems">
+        <img src="systems_feminine_editorial_v5_web.png" alt="Scalable Systems" loading="lazy">
       </div>
       <h4 class="pillar-subtitle">Scalable Systems For A Sustainable Empire</h4>
       <p>You were not built to perform 24/7 just to stay visible.</p>
