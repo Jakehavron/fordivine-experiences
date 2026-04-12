@@ -405,6 +405,7 @@
     position: relative;
     width: 100%;
     border-top: 1px solid rgba(200,184,154,0.1);
+    isolation: isolate;
   }
   .client-logos-bar::before,
   .client-logos-bar::after {
@@ -440,6 +441,8 @@
     animation: clientLogoScroll 34s linear infinite;
     width: max-content;
     will-change: transform;
+    transform: translate3d(0, 0, 0);
+    contain: layout paint;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
   }
@@ -450,6 +453,7 @@
     object-fit: contain;
     opacity: 1;
     flex-shrink: 0;
+    display: block;
     filter: brightness(0) invert(1);
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
@@ -465,13 +469,19 @@
   }
   @media (max-width: 768px) {
     .client-logos-bar::before,
-    .client-logos-bar::after { width: 48px; }
+    .client-logos-bar::after { width: 40px; }
     .client-logo-track {
       gap: 32px;
       animation-duration: 18s;
     }
     .client-logo-track img { height: 44px; max-width: 240px; }
     .client-logo-track img.client-logo-submark { height: 64px; max-width: 96px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .client-logo-track {
+      animation: none;
+      transform: translate3d(0, 0, 0);
+    }
   }
 
   /* ========== MICRO-TESTIMONIAL (BELOW CTA) ========== */
@@ -1994,7 +2004,7 @@
 
 
 <!-- ===== CLIENT LOGOS MARQUEE ===== -->
-<section class="client-logos-bar reveal">
+<section class="client-logos-bar">
   <p class="client-logos-label">Crowned Authorities&#8482; we created</p>
   <div class="client-logo-track">
     <img src="client-logos/client-amber-havalias-logo-white.png" alt="Amber Havalias" loading="eager">
