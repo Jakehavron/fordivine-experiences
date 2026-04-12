@@ -437,8 +437,11 @@
     display: flex;
     align-items: center;
     gap: 70px;
-    animation: clientLogoScroll 40s linear infinite;
+    animation: clientLogoScroll 34s linear infinite;
     width: max-content;
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
   .client-logo-track img {
     height: 56px;
@@ -448,6 +451,8 @@
     opacity: 1;
     flex-shrink: 0;
     filter: brightness(0) invert(1);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
   /* Tall icon-style submarks — render taller so they feel proportional */
   .client-logo-track img.client-logo-submark {
@@ -455,13 +460,16 @@
     max-width: 120px;
   }
   @keyframes clientLogoScroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); }
   }
   @media (max-width: 768px) {
     .client-logos-bar::before,
-    .client-logos-bar::after { width: 60px; }
-    .client-logo-track { gap: 38px; }
+    .client-logos-bar::after { width: 48px; }
+    .client-logo-track {
+      gap: 32px;
+      animation-duration: 22s;
+    }
     .client-logo-track img { height: 44px; max-width: 240px; }
     .client-logo-track img.client-logo-submark { height: 64px; max-width: 96px; }
   }
@@ -1718,20 +1726,20 @@
 <section class="trust-bar reveal">
   <p class="trust-bar-label">Our Work Represented In</p>
   <div class="logo-carousel-track">
-    <img src="logos/mastermind.png" alt="Mastermind.com" class="logo-invert" loading="lazy">
-    <img src="logos/forbes.png" alt="Forbes" loading="lazy">
-    <img src="logos/auralis_magazine.png" alt="Auralis Magazine" loading="lazy">
-    <img src="logos/cbs_news.png" alt="CBS News" loading="lazy">
-    <img src="logos/yahoo.png" alt="Yahoo" loading="lazy">
-    <img src="logos/good_morning_america.png" alt="Good Morning America" loading="lazy">
-    <img src="logos/business_insider.png" alt="Business Insider" loading="lazy">
-    <img src="logos/mastermind.png" alt="Mastermind.com" class="logo-invert" loading="lazy">
-    <img src="logos/forbes.png" alt="Forbes" loading="lazy">
-    <img src="logos/auralis_magazine.png" alt="Auralis Magazine" loading="lazy">
-    <img src="logos/cbs_news.png" alt="CBS News" loading="lazy">
-    <img src="logos/yahoo.png" alt="Yahoo" loading="lazy">
-    <img src="logos/good_morning_america.png" alt="Good Morning America" loading="lazy">
-    <img src="logos/business_insider.png" alt="Business Insider" loading="lazy">
+    <img src="logos/mastermind.png" alt="Mastermind.com" class="logo-invert" loading="eager">
+    <img src="logos/forbes.png" alt="Forbes" loading="eager">
+    <img src="logos/auralis_magazine.png" alt="Auralis Magazine" loading="eager">
+    <img src="logos/cbs_news.png" alt="CBS News" loading="eager">
+    <img src="logos/yahoo.png" alt="Yahoo" loading="eager">
+    <img src="logos/good_morning_america.png" alt="Good Morning America" loading="eager">
+    <img src="logos/business_insider.png" alt="Business Insider" loading="eager">
+    <img src="logos/mastermind.png" alt="Mastermind.com" class="logo-invert" loading="eager">
+    <img src="logos/forbes.png" alt="Forbes" loading="eager">
+    <img src="logos/auralis_magazine.png" alt="Auralis Magazine" loading="eager">
+    <img src="logos/cbs_news.png" alt="CBS News" loading="eager">
+    <img src="logos/yahoo.png" alt="Yahoo" loading="eager">
+    <img src="logos/good_morning_america.png" alt="Good Morning America" loading="eager">
+    <img src="logos/business_insider.png" alt="Business Insider" loading="eager">
   </div>
 </section>
 
@@ -1989,42 +1997,42 @@
 <section class="client-logos-bar reveal">
   <p class="client-logos-label">Crowned Authorities&#8482; we created</p>
   <div class="client-logo-track">
-    <img src="client-logos/client-amber-havalias-logo-white.png" alt="Amber Havalias" loading="lazy">
-    <img src="client-logos/client-amy-lacey-logo-white.png" alt="Amy Lacey" loading="lazy">
-    <img src="client-logos/client-cindi-frechette-white.png" alt="Cindi Frechette" loading="lazy">
-    <img src="client-logos/client-greta-elena-primary-white.png" alt="Greta Elena" loading="lazy">
-    <img src="client-logos/client-heather-clark-logo-white.png" alt="Heather Clark" class="client-logo-submark" loading="lazy">
-    <img src="client-logos/client-jennifer-johnson-eterna-haus-white.png" alt="Jennifer Johnson - Eterna Haus" loading="lazy">
-    <img src="client-logos/client-jessica-cross-secondary-white.png" alt="Jessica Cross" loading="lazy">
-    <img src="client-logos/client-lauren-cashatt-main-logo-linen.png" alt="Lauren Cashatt" loading="lazy">
-    <img src="client-logos/client-me-primary-white.png" alt="ME" loading="lazy">
-    <img src="client-logos/client-navigating-between-the-lines-white.png" alt="Navigating Between the Lines" loading="lazy">
-    <img src="client-logos/client-o-and-o-secondary-white.png" alt="O&amp;O" loading="lazy">
-    <img src="client-logos/client-pamela-oakes-primary-white.png" alt="Pamela Oakes" loading="lazy">
-    <img src="client-logos/client-second-act-method-primary-white.png" alt="Second Act Method" loading="lazy">
-    <img src="client-logos/client-terra-harvell-white.png" alt="Terra Harvell" loading="lazy">
-    <img src="client-logos/client-amy-lacey-logo-variation-white.png" alt="Amy Lacey Variation" loading="lazy">
-    <img src="client-logos/client-greta-elena-submark.png" alt="Greta Elena Submark" class="client-logo-submark" loading="lazy">
-    <img src="client-logos/client-lauren-cashatt-submark-linen.png" alt="Lauren Cashatt Submark" loading="lazy">
-    <img src="client-logos/client-terra-harvell-submark-white.png" alt="Terra Harvell Submark" class="client-logo-submark" loading="lazy">
-    <!-- Duplicate set for seamless infinite loop -->    <img src="client-logos/client-amber-havalias-logo-white.png" alt="Amber Havalias" loading="lazy">
-    <img src="client-logos/client-amy-lacey-logo-white.png" alt="Amy Lacey" loading="lazy">
-    <img src="client-logos/client-cindi-frechette-white.png" alt="Cindi Frechette" loading="lazy">
-    <img src="client-logos/client-greta-elena-primary-white.png" alt="Greta Elena" loading="lazy">
-    <img src="client-logos/client-heather-clark-logo-white.png" alt="Heather Clark" class="client-logo-submark" loading="lazy">
-    <img src="client-logos/client-jennifer-johnson-eterna-haus-white.png" alt="Jennifer Johnson - Eterna Haus" loading="lazy">
-    <img src="client-logos/client-jessica-cross-secondary-white.png" alt="Jessica Cross" loading="lazy">
-    <img src="client-logos/client-lauren-cashatt-main-logo-linen.png" alt="Lauren Cashatt" loading="lazy">
-    <img src="client-logos/client-me-primary-white.png" alt="ME" loading="lazy">
-    <img src="client-logos/client-navigating-between-the-lines-white.png" alt="Navigating Between the Lines" loading="lazy">
-    <img src="client-logos/client-o-and-o-secondary-white.png" alt="O&amp;O" loading="lazy">
-    <img src="client-logos/client-pamela-oakes-primary-white.png" alt="Pamela Oakes" loading="lazy">
-    <img src="client-logos/client-second-act-method-primary-white.png" alt="Second Act Method" loading="lazy">
-    <img src="client-logos/client-terra-harvell-white.png" alt="Terra Harvell" loading="lazy">
-    <img src="client-logos/client-amy-lacey-logo-variation-white.png" alt="Amy Lacey Variation" loading="lazy">
-    <img src="client-logos/client-greta-elena-submark.png" alt="Greta Elena Submark" class="client-logo-submark" loading="lazy">
-    <img src="client-logos/client-lauren-cashatt-submark-linen.png" alt="Lauren Cashatt Submark" loading="lazy">
-    <img src="client-logos/client-terra-harvell-submark-white.png" alt="Terra Harvell Submark" class="client-logo-submark" loading="lazy">
+    <img src="client-logos/client-amber-havalias-logo-white.png" alt="Amber Havalias" loading="eager">
+    <img src="client-logos/client-amy-lacey-logo-white.png" alt="Amy Lacey" loading="eager">
+    <img src="client-logos/client-cindi-frechette-white.png" alt="Cindi Frechette" loading="eager">
+    <img src="client-logos/client-greta-elena-primary-white.png" alt="Greta Elena" loading="eager">
+    <img src="client-logos/client-heather-clark-logo-white.png" alt="Heather Clark" class="client-logo-submark" loading="eager">
+    <img src="client-logos/client-jennifer-johnson-eterna-haus-white.png" alt="Jennifer Johnson - Eterna Haus" loading="eager">
+    <img src="client-logos/client-jessica-cross-secondary-white.png" alt="Jessica Cross" loading="eager">
+    <img src="client-logos/client-lauren-cashatt-main-logo-linen.png" alt="Lauren Cashatt" loading="eager">
+    <img src="client-logos/client-me-primary-white.png" alt="ME" loading="eager">
+    <img src="client-logos/client-navigating-between-the-lines-white.png" alt="Navigating Between the Lines" loading="eager">
+    <img src="client-logos/client-o-and-o-secondary-white.png" alt="O&amp;O" loading="eager">
+    <img src="client-logos/client-pamela-oakes-primary-white.png" alt="Pamela Oakes" loading="eager">
+    <img src="client-logos/client-second-act-method-primary-white.png" alt="Second Act Method" loading="eager">
+    <img src="client-logos/client-terra-harvell-white.png" alt="Terra Harvell" loading="eager">
+    <img src="client-logos/client-amy-lacey-logo-variation-white.png" alt="Amy Lacey Variation" loading="eager">
+    <img src="client-logos/client-greta-elena-submark.png" alt="Greta Elena Submark" class="client-logo-submark" loading="eager">
+    <img src="client-logos/client-lauren-cashatt-submark-linen.png" alt="Lauren Cashatt Submark" loading="eager">
+    <img src="client-logos/client-terra-harvell-submark-white.png" alt="Terra Harvell Submark" class="client-logo-submark" loading="eager">
+    <!-- Duplicate set for seamless infinite loop -->    <img src="client-logos/client-amber-havalias-logo-white.png" alt="Amber Havalias" loading="eager">
+    <img src="client-logos/client-amy-lacey-logo-white.png" alt="Amy Lacey" loading="eager">
+    <img src="client-logos/client-cindi-frechette-white.png" alt="Cindi Frechette" loading="eager">
+    <img src="client-logos/client-greta-elena-primary-white.png" alt="Greta Elena" loading="eager">
+    <img src="client-logos/client-heather-clark-logo-white.png" alt="Heather Clark" class="client-logo-submark" loading="eager">
+    <img src="client-logos/client-jennifer-johnson-eterna-haus-white.png" alt="Jennifer Johnson - Eterna Haus" loading="eager">
+    <img src="client-logos/client-jessica-cross-secondary-white.png" alt="Jessica Cross" loading="eager">
+    <img src="client-logos/client-lauren-cashatt-main-logo-linen.png" alt="Lauren Cashatt" loading="eager">
+    <img src="client-logos/client-me-primary-white.png" alt="ME" loading="eager">
+    <img src="client-logos/client-navigating-between-the-lines-white.png" alt="Navigating Between the Lines" loading="eager">
+    <img src="client-logos/client-o-and-o-secondary-white.png" alt="O&amp;O" loading="eager">
+    <img src="client-logos/client-pamela-oakes-primary-white.png" alt="Pamela Oakes" loading="eager">
+    <img src="client-logos/client-second-act-method-primary-white.png" alt="Second Act Method" loading="eager">
+    <img src="client-logos/client-terra-harvell-white.png" alt="Terra Harvell" loading="eager">
+    <img src="client-logos/client-amy-lacey-logo-variation-white.png" alt="Amy Lacey Variation" loading="eager">
+    <img src="client-logos/client-greta-elena-submark.png" alt="Greta Elena Submark" class="client-logo-submark" loading="eager">
+    <img src="client-logos/client-lauren-cashatt-submark-linen.png" alt="Lauren Cashatt Submark" loading="eager">
+    <img src="client-logos/client-terra-harvell-submark-white.png" alt="Terra Harvell Submark" class="client-logo-submark" loading="eager">
   </div>
 </section>
 
