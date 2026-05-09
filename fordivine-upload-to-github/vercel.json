@@ -15,11 +15,11 @@
   "rewrites": [
     {
       "source": "/assessment/",
-      "destination": "https://fordivine-quiz-jjm94r5q4-fordivine.vercel.app/"
+      "destination": "https://fordivine-quiz.vercel.app/"
     },
     {
       "source": "/assessment/:path*",
-      "destination": "https://fordivine-quiz-jjm94r5q4-fordivine.vercel.app/:path*"
+      "destination": "https://fordivine-quiz.vercel.app/:path*"
     }
   ]
 }
