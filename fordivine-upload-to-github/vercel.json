@@ -3,8 +3,8 @@
   "redirects": [
     {
       "source": "/",
-      "destination": "/discover",
-      "permanent": false
+      "destination": "https://home.fordivine.com/",
+      "permanent": true
     },
     {
       "source": "/assessment",
