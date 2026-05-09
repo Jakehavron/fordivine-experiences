@@ -5,6 +5,21 @@
       "source": "/",
       "destination": "/discover",
       "permanent": false
+    },
+    {
+      "source": "/assessment",
+      "destination": "/assessment/",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/assessment/",
+      "destination": "https://fordivine-quiz-jjm94r5q4-fordivine.vercel.app/"
+    },
+    {
+      "source": "/assessment/:path*",
+      "destination": "https://fordivine-quiz-jjm94r5q4-fordivine.vercel.app/:path*"
     }
   ]
 }
