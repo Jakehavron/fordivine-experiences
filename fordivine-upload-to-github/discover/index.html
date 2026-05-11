@@ -797,13 +797,14 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   .arch-intro h2 {
     font-family: var(--display);
     font-weight: 800;
-    font-size: clamp(32px, 4.5vw, 56px);
+    font-size: clamp(32px, 4.35vw, 54px);
     color: var(--white);
-    letter-spacing: -0.03em;
-    line-height: 1.15;
-    max-width: 700px;
+    letter-spacing: -0.035em;
+    line-height: 1.12;
+    max-width: 860px;
     margin: 0 auto 24px;
     position: relative;
+    text-wrap: balance;
   }
   .arch-intro h2 .accent {
     background: linear-gradient(135deg, var(--bone) 0%, #e0d4c0 50%, var(--bone) 100%);
@@ -829,11 +830,20 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     opacity: 0.3;
   }
   @media (max-width: 768px) {
-    .arch-intro { padding: 80px 24px 60px; }
-    .arch-intro h2 { font-size: clamp(26px, 5vw, 40px); }
+    .arch-intro { padding: 80px 20px 60px; }
+    .arch-intro h2 {
+      font-size: clamp(24px, 6.2vw, 40px);
+      max-width: min(620px, 96vw);
+      line-height: 1.14;
+    }
   }
   @media (max-width: 480px) {
-    .arch-intro { padding: 64px 20px 48px; }
+    .arch-intro { padding: 64px 12px 48px; }
+    .arch-intro h2 {
+      font-size: clamp(20px, 6.4vw, 26px);
+      max-width: 96vw;
+      letter-spacing: -0.04em;
+    }
   }
 
   /* ========== 4 PILLARS ========== */
@@ -1828,7 +1838,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 <!-- ===== AUTHORITY ARCHITECTURE INTRO ===== -->
 <section class="arch-intro">
   <p class="arch-intro-label reveal">THE FORDIVINE PHILOSOPHY</p>
-  <h2 class="reveal">Your brand is not broken.<br>It is just <span class="accent">missing the architecture.</span></h2>
+  <h2 class="reveal">Your brand is not broken. It is just <span class="accent">missing the architecture.</span></h2>
   <p class="arch-intro-sub reveal">Most feel broken because they only focus on one layer of the brand. We engineer all four layers, so your brand works as a complete system that <strong style="color: #fff; font-weight: 700;">attracts higher level clientele and business opportunities</strong>.</p>
   <div class="arch-intro-line"></div>
 </section>
