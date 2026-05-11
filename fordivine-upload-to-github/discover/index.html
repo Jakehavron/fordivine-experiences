@@ -817,10 +817,11 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     font-size: 16px;
     font-weight: 400;
     color: rgba(255,255,255,0.4);
-    line-height: 1.7;
-    max-width: 520px;
+    line-height: 1.68;
+    max-width: 660px;
     margin: 0 auto;
     position: relative;
+    text-wrap: balance;
   }
   .arch-intro-line {
     width: 40px;
@@ -836,6 +837,11 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
       max-width: min(620px, 96vw);
       line-height: 1.14;
     }
+    .arch-intro-sub {
+      font-size: clamp(13px, 3.6vw, 15px);
+      line-height: 1.6;
+      max-width: 96vw;
+    }
   }
   @media (max-width: 480px) {
     .arch-intro { padding: 64px 12px 48px; }
@@ -843,6 +849,11 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
       font-size: clamp(20px, 6.4vw, 26px);
       max-width: 96vw;
       letter-spacing: -0.04em;
+    }
+    .arch-intro-sub {
+      font-size: clamp(10px, 2.62vw, 11px);
+      line-height: 1.52;
+      max-width: calc(100vw - 12px);
     }
   }
 
