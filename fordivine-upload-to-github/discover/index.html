@@ -264,6 +264,39 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     opacity: 0.94;
     filter: blur(8px) saturate(0.95);
   }
+  .section-beams-enabled {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .section-beams-enabled > *:not(.section-beams-canvas) {
+    position: relative;
+    z-index: 2;
+  }
+  .section-beams-enabled::before,
+  .section-beams-enabled::after {
+    z-index: 1;
+  }
+  .section-beams-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.42;
+    filter: blur(18px) saturate(0.82);
+  }
+  .trust-bar .section-beams-canvas,
+  .client-logos-bar .section-beams-canvas {
+    opacity: 0.24;
+    filter: blur(20px) saturate(0.72);
+  }
+  .arch-intro .section-beams-canvas,
+  .emily-note-section .section-beams-canvas,
+  .cinematic-close .section-beams-canvas {
+    opacity: 0.48;
+  }
   .hero-beams-live .hero-section,
   .hero-beams-live .video-section,
   .hero-beams-live .below-video {
@@ -291,6 +324,9 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   }
   @media (max-width: 768px) {
     #hero-beams-canvas { opacity: 0.78; filter: blur(10px) saturate(0.9); }
+    .section-beams-canvas { opacity: 0.34; filter: blur(18px) saturate(0.78); }
+    .trust-bar .section-beams-canvas,
+    .client-logos-bar .section-beams-canvas { opacity: 0.20; }
     .mini-nav { gap: 14px; }
     .mini-nav .nav-cta { max-width: min(176px, 46vw); padding-left: 16px; padding-right: 16px; overflow: hidden; white-space: nowrap; }
   }
@@ -2404,121 +2440,175 @@ function toggleQA(header) {
 })();
 
 
-// ===== FORDIVINE TAN BEAMS HERO BACKGROUND =====
+// ===== FORDIVINE TAN BEAMS BACKGROUNDS =====
 (function() {
-  const canvas = document.getElementById('hero-beams-canvas');
-  const shell = document.querySelector('.hero-beams-live');
-  if (!canvas || !shell) return;
-  const ctx = canvas.getContext('2d');
-  if (!ctx) return;
-
-  let width = 0;
-  let height = 0;
-  let dpr = 1;
-  let beams = [];
-  let raf = 0;
-  let lastFrame = 0;
-
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const palette = [
     { h: 38, s: 30, l: 68 },
     { h: 42, s: 28, l: 62 },
     { h: 34, s: 24, l: 58 },
     { h: 48, s: 20, l: 74 }
   ];
+  const instances = [];
 
-  function createBeam(index) {
-    const color = palette[index % palette.length];
-    const mobile = window.innerWidth <= 768;
-    return {
-      x: Math.random() * width * 1.35 - width * 0.18,
-      y: Math.random() * height * 1.2 - height * 0.15,
-      width: (mobile ? 58 : 88) + Math.random() * (mobile ? 48 : 92),
-      length: height * (mobile ? 1.7 : 2.05),
-      angle: -36 + Math.random() * 8,
-      speed: (mobile ? 0.72 : 0.92) + Math.random() * 0.72,
-      opacity: (mobile ? 0.14 : 0.17) + Math.random() * 0.10,
-      pulse: Math.random() * Math.PI * 2,
-      pulseSpeed: 0.010 + Math.random() * 0.014,
-      color
+  function createSectionCanvas(section) {
+    if (!section || section.querySelector(':scope > .section-beams-canvas')) return null;
+    section.classList.add('section-beams-enabled');
+    const canvas = document.createElement('canvas');
+    canvas.className = 'section-beams-canvas';
+    canvas.setAttribute('aria-hidden', 'true');
+    section.prepend(canvas);
+    return canvas;
+  }
+
+  function createInstance(canvas, shell, mode) {
+    const ctx = canvas && canvas.getContext('2d');
+    if (!canvas || !shell || !ctx) return null;
+
+    const instance = {
+      canvas,
+      shell,
+      ctx,
+      mode,
+      width: 0,
+      height: 0,
+      dpr: 1,
+      beams: [],
+      lastFrame: 0
     };
+
+    function mobile() { return window.innerWidth <= 768; }
+    function scale(value, compactValue) { return mobile() ? compactValue : value; }
+
+    function createBeam(index) {
+      const color = palette[index % palette.length];
+      const sectionMode = instance.mode === 'section';
+      return {
+        x: Math.random() * instance.width * 1.35 - instance.width * 0.18,
+        y: Math.random() * instance.height * 1.2 - instance.height * 0.15,
+        width: (sectionMode ? scale(64, 46) : scale(88, 58)) + Math.random() * (sectionMode ? scale(76, 38) : scale(92, 48)),
+        length: instance.height * (sectionMode ? scale(1.62, 1.42) : scale(2.05, 1.7)),
+        angle: -36 + Math.random() * 8,
+        speed: (sectionMode ? scale(0.54, 0.42) : scale(0.92, 0.72)) + Math.random() * (sectionMode ? scale(0.48, 0.34) : scale(0.72, 0.72)),
+        opacity: (sectionMode ? scale(0.075, 0.055) : scale(0.17, 0.14)) + Math.random() * (sectionMode ? scale(0.065, 0.045) : scale(0.10, 0.10)),
+        pulse: Math.random() * Math.PI * 2,
+        pulseSpeed: 0.010 + Math.random() * 0.014,
+        color
+      };
+    }
+
+    function resetBeam(beam, index) {
+      const color = palette[index % palette.length];
+      const columns = mobile() ? 2 : (instance.mode === 'section' ? 3 : 4);
+      const column = index % columns;
+      const spacing = instance.width / columns;
+      beam.x = column * spacing + spacing / 2 + (Math.random() - 0.5) * spacing * 0.84;
+      beam.y = instance.height + 120 + Math.random() * instance.height * 0.35;
+      beam.width = (instance.mode === 'section' ? scale(62, 44) : scale(92, 62)) + Math.random() * (instance.mode === 'section' ? scale(72, 36) : scale(86, 44));
+      beam.length = instance.height * (instance.mode === 'section' ? scale(1.64, 1.44) : scale(2.08, 1.72));
+      beam.speed = (instance.mode === 'section' ? scale(0.52, 0.40) : scale(0.90, 0.70)) + Math.random() * (instance.mode === 'section' ? scale(0.50, 0.34) : scale(0.76, 0.76));
+      beam.opacity = (instance.mode === 'section' ? scale(0.07, 0.05) : scale(0.16, 0.13)) + Math.random() * (instance.mode === 'section' ? scale(0.065, 0.045) : scale(0.10, 0.10));
+      beam.color = color;
+    }
+
+    function resize() {
+      const rect = shell.getBoundingClientRect();
+      instance.dpr = Math.min(window.devicePixelRatio || 1, 2);
+      instance.width = Math.max(1, rect.width);
+      instance.height = Math.max(1, rect.height);
+      canvas.width = Math.round(instance.width * instance.dpr);
+      canvas.height = Math.round(instance.height * instance.dpr);
+      canvas.style.width = instance.width + 'px';
+      canvas.style.height = instance.height + 'px';
+      ctx.setTransform(instance.dpr, 0, 0, instance.dpr, 0, 0);
+      const count = instance.mode === 'section'
+        ? (mobile() ? 5 : Math.min(10, Math.max(5, Math.round(instance.height / 95))))
+        : (mobile() ? 13 : 22);
+      instance.beams = Array.from({ length: count }, (_, index) => createBeam(index));
+    }
+
+    function drawBeam(beam) {
+      const alpha = beam.opacity * (0.74 + Math.sin(beam.pulse) * 0.26);
+      const { h, s, l } = beam.color;
+      ctx.save();
+      ctx.translate(beam.x, beam.y);
+      ctx.rotate((beam.angle * Math.PI) / 180);
+      const gradient = ctx.createLinearGradient(0, 0, 0, beam.length);
+      gradient.addColorStop(0, `hsla(${h}, ${s}%, ${l}%, 0)`);
+      gradient.addColorStop(0.13, `hsla(${h}, ${s}%, ${l}%, ${alpha * 0.42})`);
+      gradient.addColorStop(0.42, `hsla(${h}, ${s}%, ${l}%, ${alpha})`);
+      gradient.addColorStop(0.62, `hsla(${h}, ${s}%, ${l}%, ${alpha * 0.86})`);
+      gradient.addColorStop(0.9, `hsla(${h}, ${s}%, ${l}%, ${alpha * 0.34})`);
+      gradient.addColorStop(1, `hsla(${h}, ${s}%, ${l}%, 0)`);
+      ctx.fillStyle = gradient;
+      ctx.fillRect(-beam.width / 2, 0, beam.width, beam.length);
+      ctx.restore();
+    }
+
+    function draw(timestamp) {
+      ctx.clearRect(0, 0, instance.width, instance.height);
+      ctx.save();
+      ctx.globalCompositeOperation = 'screen';
+      ctx.filter = instance.mode === 'section'
+        ? (mobile() ? 'blur(18px)' : 'blur(20px)')
+        : (mobile() ? 'blur(22px)' : 'blur(24px)');
+      instance.beams.forEach((beam, index) => {
+        if (!reducedMotion.matches) {
+          beam.y -= beam.speed;
+          beam.x += Math.sin((timestamp * (instance.mode === 'section' ? 0.00052 : 0.00072)) + index) * (instance.mode === 'section' ? 0.16 : 0.26);
+          beam.pulse += beam.pulseSpeed;
+          if (beam.y + beam.length < -160) resetBeam(beam, index);
+        }
+        drawBeam(beam);
+      });
+      ctx.restore();
+    }
+
+    instance.resize = resize;
+    instance.draw = draw;
+    resize();
+    // Defer the first paint to requestAnimationFrame so canvas blur work never blocks DOM readiness.
+    return instance;
   }
 
-  function resetBeam(beam, index) {
-    const color = palette[index % palette.length];
-    const columns = window.innerWidth <= 768 ? 2 : 4;
-    const column = index % columns;
-    const spacing = width / columns;
-    beam.x = column * spacing + spacing / 2 + (Math.random() - 0.5) * spacing * 0.84;
-    beam.y = height + 140 + Math.random() * height * 0.35;
-    beam.width = (window.innerWidth <= 768 ? 62 : 92) + Math.random() * (window.innerWidth <= 768 ? 44 : 86);
-    beam.length = height * (window.innerWidth <= 768 ? 1.72 : 2.08);
-    beam.speed = (window.innerWidth <= 768 ? 0.70 : 0.90) + Math.random() * 0.76;
-    beam.opacity = (window.innerWidth <= 768 ? 0.13 : 0.16) + Math.random() * 0.10;
-    beam.color = color;
-  }
+  const heroCanvas = document.getElementById('hero-beams-canvas');
+  const heroShell = document.querySelector('.hero-beams-live');
+  const heroInstance = createInstance(heroCanvas, heroShell, 'hero');
+  if (heroInstance) instances.push(heroInstance);
 
-  function resize() {
-    const rect = shell.getBoundingClientRect();
-    dpr = Math.min(window.devicePixelRatio || 1, 2);
-    width = Math.max(1, rect.width);
-    height = Math.max(1, rect.height);
-    canvas.width = Math.round(width * dpr);
-    canvas.height = Math.round(height * dpr);
-    canvas.style.width = width + 'px';
-    canvas.style.height = height + 'px';
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    const count = window.innerWidth <= 768 ? 13 : 22;
-    beams = Array.from({ length: count }, (_, index) => createBeam(index));
-  }
+  ['.trust-bar', '.arch-intro', '.client-logos-bar', '.emily-note-section', '.cinematic-close'].forEach((selector) => {
+    const section = document.querySelector(selector);
+    const canvas = createSectionCanvas(section);
+    const instance = createInstance(canvas, section, 'section');
+    if (instance) instances.push(instance);
+  });
 
-  function drawBeam(beam) {
-    const alpha = beam.opacity * (0.74 + Math.sin(beam.pulse) * 0.26);
-    const { h, s, l } = beam.color;
-    ctx.save();
-    ctx.translate(beam.x, beam.y);
-    ctx.rotate((beam.angle * Math.PI) / 180);
-    const gradient = ctx.createLinearGradient(0, 0, 0, beam.length);
-    gradient.addColorStop(0, `hsla(${h}, ${s}%, ${l}%, 0)`);
-    gradient.addColorStop(0.13, `hsla(${h}, ${s}%, ${l}%, ${alpha * 0.42})`);
-    gradient.addColorStop(0.42, `hsla(${h}, ${s}%, ${l}%, ${alpha})`);
-    gradient.addColorStop(0.62, `hsla(${h}, ${s}%, ${l}%, ${alpha * 0.86})`);
-    gradient.addColorStop(0.9, `hsla(${h}, ${s}%, ${l}%, ${alpha * 0.34})`);
-    gradient.addColorStop(1, `hsla(${h}, ${s}%, ${l}%, 0)`);
-    ctx.fillStyle = gradient;
-    ctx.fillRect(-beam.width / 2, 0, beam.width, beam.length);
-    ctx.restore();
+  let raf = 0;
+  function isVisible(instance) {
+    const rect = instance.shell.getBoundingClientRect();
+    return rect.bottom > -80 && rect.top < window.innerHeight + 80;
   }
-
   function loop(timestamp) {
-    const targetFps = 60;
-    const interval = 1000 / targetFps;
     raf = requestAnimationFrame(loop);
-    if (timestamp - lastFrame < interval) return;
-    lastFrame = timestamp;
-
-    ctx.clearRect(0, 0, width, height);
-    ctx.save();
-    ctx.globalCompositeOperation = 'screen';
-    ctx.filter = window.innerWidth <= 768 ? 'blur(22px)' : 'blur(24px)';
-    beams.forEach((beam, index) => {
-      beam.y -= beam.speed;
-      beam.x += Math.sin((timestamp * 0.00072) + index) * 0.26;
-      beam.pulse += beam.pulseSpeed;
-      if (beam.y + beam.length < -160) resetBeam(beam, index);
-      drawBeam(beam);
+    instances.forEach((instance) => {
+      if (!isVisible(instance)) return;
+      const targetFps = instance.mode === 'section' ? 30 : 45;
+      const interval = 1000 / targetFps;
+      if (timestamp - instance.lastFrame < interval) return;
+      instance.lastFrame = timestamp;
+      instance.draw(timestamp);
     });
-    ctx.restore();
   }
 
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  resize();
-  window.addEventListener('resize', resize);
-  if (!reducedMotion.matches) raf = requestAnimationFrame(loop);
-  else {
-    ctx.globalCompositeOperation = 'screen';
-    beams.forEach(drawBeam);
+  window.addEventListener('resize', () => instances.forEach((instance) => instance.resize()));
+  function startBeams() {
+    if (!reducedMotion.matches && !raf) raf = requestAnimationFrame(loop);
   }
-
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => window.setTimeout(startBeams, 350), { once: true });
+  } else {
+    window.setTimeout(startBeams, 350);
+  }
   window.addEventListener('beforeunload', () => {
     if (raf) cancelAnimationFrame(raf);
   });
