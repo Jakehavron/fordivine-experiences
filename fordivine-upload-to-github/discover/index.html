@@ -261,8 +261,8 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     height: 100%;
     z-index: 0;
     pointer-events: none;
-    opacity: 0.82;
-    filter: blur(10px) saturate(0.88);
+    opacity: 0.94;
+    filter: blur(8px) saturate(0.95);
   }
   .hero-beams-live .hero-section,
   .hero-beams-live .video-section,
@@ -290,7 +290,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     box-shadow: 0 18px 55px rgba(0,0,0,0.26), 0 0 0 1px rgba(200,184,154,0.10);
   }
   @media (max-width: 768px) {
-    #hero-beams-canvas { opacity: 0.65; filter: blur(13px) saturate(0.82); }
+    #hero-beams-canvas { opacity: 0.78; filter: blur(10px) saturate(0.9); }
     .mini-nav { gap: 14px; }
     .mini-nav .nav-cta { max-width: min(176px, 46vw); padding-left: 16px; padding-right: 16px; overflow: hidden; white-space: nowrap; }
   }
@@ -2435,8 +2435,8 @@ function toggleQA(header) {
       width: (mobile ? 58 : 88) + Math.random() * (mobile ? 48 : 92),
       length: height * (mobile ? 1.7 : 2.05),
       angle: -36 + Math.random() * 8,
-      speed: (mobile ? 0.24 : 0.34) + Math.random() * 0.32,
-      opacity: (mobile ? 0.09 : 0.12) + Math.random() * 0.07,
+      speed: (mobile ? 0.72 : 0.92) + Math.random() * 0.72,
+      opacity: (mobile ? 0.14 : 0.17) + Math.random() * 0.10,
       pulse: Math.random() * Math.PI * 2,
       pulseSpeed: 0.010 + Math.random() * 0.014,
       color
@@ -2452,8 +2452,8 @@ function toggleQA(header) {
     beam.y = height + 140 + Math.random() * height * 0.35;
     beam.width = (window.innerWidth <= 768 ? 62 : 92) + Math.random() * (window.innerWidth <= 768 ? 44 : 86);
     beam.length = height * (window.innerWidth <= 768 ? 1.72 : 2.08);
-    beam.speed = (window.innerWidth <= 768 ? 0.22 : 0.32) + Math.random() * 0.34;
-    beam.opacity = (window.innerWidth <= 768 ? 0.08 : 0.11) + Math.random() * 0.07;
+    beam.speed = (window.innerWidth <= 768 ? 0.70 : 0.90) + Math.random() * 0.76;
+    beam.opacity = (window.innerWidth <= 768 ? 0.13 : 0.16) + Math.random() * 0.10;
     beam.color = color;
   }
 
@@ -2472,17 +2472,17 @@ function toggleQA(header) {
   }
 
   function drawBeam(beam) {
-    const alpha = beam.opacity * (0.82 + Math.sin(beam.pulse) * 0.18);
+    const alpha = beam.opacity * (0.74 + Math.sin(beam.pulse) * 0.26);
     const { h, s, l } = beam.color;
     ctx.save();
     ctx.translate(beam.x, beam.y);
     ctx.rotate((beam.angle * Math.PI) / 180);
     const gradient = ctx.createLinearGradient(0, 0, 0, beam.length);
     gradient.addColorStop(0, `hsla(${h}, ${s}%, ${l}%, 0)`);
-    gradient.addColorStop(0.13, `hsla(${h}, ${s}%, ${l}%, ${alpha * 0.33})`);
+    gradient.addColorStop(0.13, `hsla(${h}, ${s}%, ${l}%, ${alpha * 0.42})`);
     gradient.addColorStop(0.42, `hsla(${h}, ${s}%, ${l}%, ${alpha})`);
-    gradient.addColorStop(0.62, `hsla(${h}, ${s}%, ${l}%, ${alpha * 0.78})`);
-    gradient.addColorStop(0.9, `hsla(${h}, ${s}%, ${l}%, ${alpha * 0.28})`);
+    gradient.addColorStop(0.62, `hsla(${h}, ${s}%, ${l}%, ${alpha * 0.86})`);
+    gradient.addColorStop(0.9, `hsla(${h}, ${s}%, ${l}%, ${alpha * 0.34})`);
     gradient.addColorStop(1, `hsla(${h}, ${s}%, ${l}%, 0)`);
     ctx.fillStyle = gradient;
     ctx.fillRect(-beam.width / 2, 0, beam.width, beam.length);
@@ -2490,7 +2490,7 @@ function toggleQA(header) {
   }
 
   function loop(timestamp) {
-    const targetFps = window.innerWidth <= 768 ? 30 : 45;
+    const targetFps = 60;
     const interval = 1000 / targetFps;
     raf = requestAnimationFrame(loop);
     if (timestamp - lastFrame < interval) return;
@@ -2499,10 +2499,10 @@ function toggleQA(header) {
     ctx.clearRect(0, 0, width, height);
     ctx.save();
     ctx.globalCompositeOperation = 'screen';
-    ctx.filter = window.innerWidth <= 768 ? 'blur(30px)' : 'blur(34px)';
+    ctx.filter = window.innerWidth <= 768 ? 'blur(22px)' : 'blur(24px)';
     beams.forEach((beam, index) => {
       beam.y -= beam.speed;
-      beam.x += Math.sin((timestamp * 0.00018) + index) * 0.08;
+      beam.x += Math.sin((timestamp * 0.00072) + index) * 0.26;
       beam.pulse += beam.pulseSpeed;
       if (beam.y + beam.length < -160) resetBeam(beam, index);
       drawBeam(beam);
