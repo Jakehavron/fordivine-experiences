@@ -215,6 +215,10 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     margin: 0 auto;
     letter-spacing: 0.01em;
   }
+  .hero-title-line,
+  .hero-subtitle-line {
+    display: contents;
+  }
   .hero-subtitle strong {
     color: rgba(255,255,255,0.85);
     font-weight: 600;
@@ -1696,9 +1700,25 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     .mini-nav .nav-cta { font-size: 10px; padding: 12px 22px; letter-spacing: 0.08em; min-height: 44px; display: flex; align-items: center; }
 
     /* Hero */
-    .hero-section { padding: 64px 24px 40px; }
-    .hero-section h1 { font-size: clamp(28px, 8vw, 48px); }
-    .hero-subtitle { font-size: clamp(15px, 3.8vw, 18px); }
+    .hero-section { padding: 64px 16px 40px; }
+    .hero-section h1,
+    .hero-beams-live .hero-section h1 {
+      font-size: clamp(25px, 6.65vw, 29px);
+      line-height: 1.05;
+      max-width: 365px;
+      margin-bottom: 34px;
+    }
+    .hero-title-line,
+    .hero-subtitle-line {
+      display: block;
+    }
+    .hero-subtitle,
+    .hero-beams-live .hero-subtitle {
+      font-size: clamp(13px, 3.3vw, 14px);
+      line-height: 1.72;
+      max-width: 365px;
+      letter-spacing: 0;
+    }
 
     /* Video */
     .video-section { padding: 40px 24px 0; }
@@ -1863,8 +1883,8 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   <canvas id="hero-beams-canvas" aria-hidden="true"></canvas>
   <section class="hero-section">
   <div class="hero-badge reveal">Personal Branding House</div>
-  <h1 class="reveal reveal-delay-1">Is your brand limiting your impact?</h1>
-  <p class="hero-subtitle reveal reveal-delay-2">It's not due to your lack of passion. It's an unclear, scattered brand that is limiting your impact to getting <strong style="color: var(--bone); font-weight: 700;">more clients, stages, and business success.</strong></p>
+  <h1 class="reveal reveal-delay-1"><span class="hero-title-line">Is your brand</span> <span class="hero-title-line">limiting your impact?</span></h1>
+  <p class="hero-subtitle reveal reveal-delay-2"><span class="hero-subtitle-line">It's not due to your lack of passion. It's an unclear,</span> <span class="hero-subtitle-line">scattered brand that is limiting your impact to getting</span> <span class="hero-subtitle-line"><strong style="color: var(--bone); font-weight: 700;">more clients, stages, and business success.</strong></span></p>
 </section>
 
 <!-- ===== VIDEO ===== -->
