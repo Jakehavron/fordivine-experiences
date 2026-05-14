@@ -15,11 +15,11 @@
   "rewrites": [
     {
       "source": "/assessment-dm",
-      "destination": "https://fordivine-quiz.vercel.app/?ref=patricia_dm"
+      "destination": "https://fordivine-quiz.vercel.app/"
     },
     {
       "source": "/discover-dm",
-      "destination": "/discover/?ref=patricia_dm"
+      "destination": "/discover/"
     },
     {
       "source": "/assessment/",

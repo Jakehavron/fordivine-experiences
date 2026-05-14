@@ -30,9 +30,12 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 <!-- ===== PATRICIA DM ATTRIBUTION BRIDGE ===== -->
 <script>
 (function() {
+  // Detect Patricia's bridge route by pathname OR query param (covers both rewrite and direct)
+  var path = window.location.pathname;
   var params = new URLSearchParams(window.location.search);
-  var ref = params.get('ref');
-  if (ref === 'patricia_dm') {
+  var isPatricia = (path.indexOf('discover-dm') !== -1) || (params.get('ref') === 'patricia_dm');
+
+  if (isPatricia) {
     // 1. Store attribution in first-party cookie (30-day expiry)
     var d = new Date(); d.setTime(d.getTime() + 30*24*60*60*1000);
     document.cookie = 'fd_ref=patricia_dm; expires=' + d.toUTCString() + '; path=/; SameSite=Lax';
@@ -47,10 +50,9 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
       });
     }
 
-    // 3. Clean the URL: remove ?ref=patricia_dm from the browser bar
+    // 3. Clean the URL to show /discover (the canonical page)
     if (window.history && window.history.replaceState) {
-      var cleanURL = window.location.pathname;
-      window.history.replaceState({}, document.title, cleanURL);
+      window.history.replaceState({}, document.title, '/discover/');
     }
 
     // 4. Append attribution to iClosed widget URL so booking record carries it
