@@ -10,6 +10,16 @@
       "source": "/assessment",
       "destination": "/assessment/",
       "permanent": false
+    },
+    {
+      "source": "/assessment-dm",
+      "destination": "/assessment?utm_source=instagram&utm_medium=dm&utm_campaign=patricia_dm&utm_content=assessment",
+      "permanent": false
+    },
+    {
+      "source": "/discover-dm",
+      "destination": "/discover?utm_source=instagram&utm_medium=dm&utm_campaign=patricia_dm&utm_content=discover",
+      "permanent": false
     }
   ],
   "rewrites": [
