@@ -55,13 +55,8 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
       window.history.replaceState({}, document.title, '/discover/');
     }
 
-    // 4. Append attribution to iClosed widget URL so booking record carries it
-    var icWidget = document.querySelector('.iclosed-widget[data-url]');
-    if (icWidget) {
-      var icURL = icWidget.getAttribute('data-url');
-      var sep = icURL.indexOf('?') !== -1 ? '&' : '?';
-      icWidget.setAttribute('data-url', icURL + sep + 'utm_source=instagram&utm_medium=dm&utm_campaign=patricia_dm&utm_content=discover');
-    }
+    // 4. iClosed UTM injection is handled inline (just before the widget div)
+    //    The cookie set above is read by the inline script at the widget section
   }
 })();
 </script>
@@ -2282,9 +2277,19 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   <div class="booking-embed reveal">
     <h3>Discover What's Possible For You</h3>
     <!-- iClosed inline widget begin -->
-    <div class="iclosed-widget" data-url="https://app.iclosed.io/e/jakehavron/discovery-call" title="Discovery Call" style="width: 100%; height: 620px"></div>
+    <!-- Patricia UTM injection: reads fd_ref cookie to append attribution -->
+    <script>
+    (function() {
+      var c = document.cookie.match('(^|;)\\s*fd_ref\\s*=\\s*([^;]+)');
+      var baseUrl = 'https://app.iclosed.io/e/jakehavron/discovery-call';
+      if (c && c[2] === 'patricia_dm') {
+        baseUrl += '?utm_source=instagram&utm_medium=dm&utm_campaign=patricia_dm&utm_content=discover';
+      }
+      document.write('<div class="iclosed-widget" data-url="' + baseUrl + '" title="Discovery Call" style="width: 100%; height: 620px"></div>');
+    })();
+    </script>
     <script type="text/javascript" src="https://app.iclosed.io/assets/widget.js" async></script>
-     <!-- iClosed inline widget end -->
+    <!-- iClosed inline widget end -->
     <p class="booking-question-line">Got a question? Email <a href="mailto:Hello@fordivine.com?subject=I%20have%20a%20question!%20re%3A%20Discovery%20page&body=Hi%20team!%0A%0AI%20have%20a%20question%20regarding..%20(insert%20your%20details%20here)" class="booking-question-link">Hello@fordivine.com</a></p>
   </div>
 </section>
