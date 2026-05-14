@@ -26,6 +26,44 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   gtag('js', new Date());
   gtag('config', 'G-Q8TH5MKKZ0');
 </script>
+
+<!-- ===== PATRICIA DM ATTRIBUTION BRIDGE ===== -->
+<script>
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var ref = params.get('ref');
+  if (ref === 'patricia_dm') {
+    // 1. Store attribution in first-party cookie (30-day expiry)
+    var d = new Date(); d.setTime(d.getTime() + 30*24*60*60*1000);
+    document.cookie = 'fd_ref=patricia_dm; expires=' + d.toUTCString() + '; path=/; SameSite=Lax';
+
+    // 2. Fire GA4 campaign event with Patricia attribution
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'campaign_attribution', {
+        campaign_source: 'instagram',
+        campaign_medium: 'dm',
+        campaign_name: 'patricia_dm',
+        campaign_content: 'discover'
+      });
+    }
+
+    // 3. Clean the URL: remove ?ref=patricia_dm from the browser bar
+    if (window.history && window.history.replaceState) {
+      var cleanURL = window.location.pathname;
+      window.history.replaceState({}, document.title, cleanURL);
+    }
+
+    // 4. Append attribution to iClosed widget URL so booking record carries it
+    var icWidget = document.querySelector('.iclosed-widget[data-url]');
+    if (icWidget) {
+      var icURL = icWidget.getAttribute('data-url');
+      var sep = icURL.indexOf('?') !== -1 ? '&' : '?';
+      icWidget.setAttribute('data-url', icURL + sep + 'utm_source=instagram&utm_medium=dm&utm_campaign=patricia_dm&utm_content=discover');
+    }
+  }
+})();
+</script>
+
 <!-- Hotjar Tracking Code for FORDIVINE Discovery Page -->
 <script>
   (function(h,o,t,j,a,r){
