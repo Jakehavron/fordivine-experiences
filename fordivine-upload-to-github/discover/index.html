@@ -1168,18 +1168,18 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   .pillar-item strong { color: var(--text-dark); font-weight: 700; }
   .pillars-cta { text-align: center; padding: 56px 48px 112px; background: var(--white); }
 
-  /* ========== MORE REVIEWS ========== */
-  .more-reviews {
+  /* ========== COMBINED STORIES (reviews + carousel) ========== */
+  .combined-stories-section {
     background: var(--offwhite);
     padding: 64px 16px 80px;
     position: relative;
     z-index: 1;
   }
-  .more-reviews-card {
+  .combined-stories-card {
     max-width: 1360px;
     margin: 0 auto;
     border-radius: 32px;
-    padding: 80px 48px;
+    padding: 80px 48px 0;
     position: relative;
     overflow: hidden;
     background-color: #f3f0eb;
@@ -1187,7 +1187,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
       0 1px 4px rgba(0,0,0,0.06),
       0 12px 48px rgba(0,0,0,0.12);
   }
-  .more-reviews-card::before {
+  .combined-stories-card::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -1197,8 +1197,9 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.8' numOctaves='6' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='512' height='512' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
     mix-blend-mode: multiply;
   }
-  .more-reviews .reviews-scatter {
+  .combined-stories-card .reviews-scatter {
     margin-bottom: 0;
+    padding-bottom: 80px;
   }
 
   /* ========== BOOKING FORM PLACEHOLDER ========== */
@@ -1598,36 +1599,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     font-weight: 300;
   }
 
-  /* ========== CROWNED CAROUSEL ========== */
-  .crowned-carousel-section {
-    background: var(--offwhite);
-    padding: 64px 16px 80px;
-    overflow: visible;
-    position: relative;
-    z-index: 1;
-  }
-  .crowned-carousel-card {
-    max-width: 1360px;
-    margin: 0 auto;
-    border-radius: 32px;
-    padding: 80px 0;
-    position: relative;
-    overflow: hidden;
-    background-color: #f3f0eb;
-    box-shadow:
-      0 1px 4px rgba(0,0,0,0.06),
-      0 12px 48px rgba(0,0,0,0.12);
-  }
-  .crowned-carousel-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 32px;
-    pointer-events: none;
-    opacity: 0.28;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.8' numOctaves='6' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='512' height='512' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-    mix-blend-mode: multiply;
-  }
+  /* crowned-carousel-section removed — merged into combined-stories-section */
   .crowned-carousel-header {
     text-align: center;
     margin-bottom: 48px;
@@ -1869,8 +1841,8 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     .review-card { width: 100%; max-width: 360px; }
     .reviews-scatter .review-card:nth-child(2) { margin-top: 0; }
     .reviews-scatter .review-card:nth-child(3) { margin-top: 0; }
-    .more-reviews { padding: 48px 12px 64px; }
-    .more-reviews-card { padding: 56px 24px; border-radius: 24px; }
+    .combined-stories-section { padding: 48px 12px 64px; }
+    .combined-stories-card { padding: 56px 24px 0; border-radius: 24px; }
 
     /* Booking */
     .form-row { flex-direction: column; }
@@ -1952,8 +1924,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     .crowned-carousel-header { padding: 0 24px; }
     .crowned-carousel-header h2 { font-size: clamp(22px, 6vw, 28px); }
     .carousel-container { max-width: 100%; width: calc(100% - 32px); margin: 0 auto; }
-    .crowned-carousel-section { padding: 48px 12px 64px; }
-    .crowned-carousel-card { padding: 56px 0; border-radius: 24px; }
+    /* crowned-carousel mobile override removed — merged into combined-stories */
 
     /* Cinematic close */
     .cinematic-close { padding: 80px 24px 100px; }
@@ -2187,9 +2158,9 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   <a href="#book" class="cta-btn reveal">Schedule Discovery Call</a>
 </div>
 
-<!-- ===== MORE REVIEWS ===== -->
-<section class="more-reviews">
-  <div class="more-reviews-card">
+<!-- ===== MORE REVIEWS + CROWNED STORIES (combined floating card) ===== -->
+<section class="combined-stories-section">
+  <div class="combined-stories-card">
   <div class="reviews-scatter">
     <div class="review-card reveal">
       <div class="review-stars">★★★★★</div>
@@ -2225,12 +2196,6 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
       </div>
     </div>
   </div>
-  </div><!-- /.more-reviews-card -->
-</section>
-
-<!-- ===== CROWNED STORIES CAROUSEL ===== -->
-<section class="crowned-carousel-section">
-  <div class="crowned-carousel-card">
   <div class="crowned-carousel-header reveal">
     <h2>More Crowned Stories</h2>
     <p>Women just like you who went from disarrayed messaging and digital footprint to now walking out their God-given calling and seeing the results in real time.</p>
@@ -2314,7 +2279,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   </div>
 
   <div class="carousel-dots" id="carouselDots"></div>
-  </div><!-- /.crowned-carousel-card -->
+  </div><!-- /.combined-stories-card -->
 </section>
 
 
