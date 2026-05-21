@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://experience.fordivine.com/sitemap.xml
+Sitemap: https://www.fordivine.com/sitemap.xml
