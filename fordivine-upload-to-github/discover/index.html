@@ -249,9 +249,16 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
-<!-- Performance: Preconnect to Google Fonts -->
+<!-- Performance: Preconnect to fonts and third-party services -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="preconnect" href="https://connect.facebook.net" crossorigin>
+<link rel="preconnect" href="https://static.hotjar.com" crossorigin>
+<link rel="preconnect" href="https://fast.vidalytics.com" crossorigin>
+<link rel="preconnect" href="https://app.iclosed.io" crossorigin>
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="dns-prefetch" href="//script.hotjar.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=GFS+Didot&display=swap" rel="stylesheet">
 
 <style>
@@ -2126,14 +2133,14 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 
 <!-- ===== MINIMAL NAV ===== -->
 <div class="mini-nav">
-  <a href="https://www.fordivine.com" class="logo logo-img-wrap" aria-label="FORDIVINE home"><picture><source srcset="/fordivine-logo.webp" type="image/webp"><img src="/fordivine-logo.png" alt="FORDIVINE" class="nav-wordmark" width="1287" height="201" decoding="async"></picture></a>
+  <a href="https://www.fordivine.com" class="logo logo-img-wrap" aria-label="FORDIVINE home"><picture><source srcset="/fordivine-logo.webp" type="image/webp"><img src="/fordivine-logo.png" alt="FORDIVINE" class="nav-wordmark" width="1287" height="201" loading="eager" fetchpriority="high" decoding="async"></picture></a>
 </div>
 
 <!-- ===== HERO ===== -->
 <section class="hero-beams-live" aria-label="Discover hero with champagne beam background">
   <canvas id="hero-beams-canvas" aria-hidden="true"></canvas>
   <section class="hero-section">
-  <div class="hero-badge reveal"><img src="/fd-submark.png" alt="FD" class="hero-badge-logo" width="1345" height="855" decoding="async">Personal Branding House</div>
+  <div class="hero-badge reveal"><img src="/fd-submark.png" alt="FD" class="hero-badge-logo" width="1345" height="855" loading="eager" fetchpriority="high" decoding="async">Personal Branding House</div>
   <h1 class="reveal reveal-delay-1"><span class="hero-title-line">Is your brand</span> <span class="hero-title-line">limiting your impact?</span></h1>
   <p class="hero-subtitle reveal reveal-delay-2"><span class="hero-subtitle-line">It's not due to your lack of passion. It's an unclear,</span> <span class="hero-subtitle-line">scattered brand that is limiting your impact to getting</span> <span class="hero-subtitle-line"><strong style="color: #e8dfc8; font-weight: 700;">more clients, stages, and business success.</strong></span></p>
   <div class="hero-video-wrap reveal reveal-delay-3">
@@ -2183,20 +2190,20 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 <section class="trust-bar reveal">
   <p class="trust-bar-label">Our Work Represented In</p>
   <div class="logo-carousel-track">
-    <img src="/logos/mastermind.png" alt="Mastermind.com" class="logo-invert" loading="eager" width="1204" height="211" decoding="async">
-    <img src="/logos/forbes.png" alt="Forbes" loading="eager" width="2400" height="931" decoding="async">
-    <img src="/logos/auralis_magazine.png" alt="Auralis Magazine" loading="eager" width="1838" height="600" decoding="async">
-    <img src="/logos/cbs_news.png" alt="CBS News" loading="eager" width="2400" height="870" decoding="async">
-    <img src="/logos/yahoo.png" alt="Yahoo" loading="eager" width="1200" height="500" decoding="async">
-    <img src="/logos/good_morning_america.png" alt="Good Morning America" loading="eager" width="860" height="476" decoding="async">
-    <img src="/logos/business_insider.png" alt="Business Insider" loading="eager" width="2704" height="855" decoding="async">
-    <img src="/logos/mastermind.png" alt="Mastermind.com" class="logo-invert" loading="eager" width="1204" height="211" decoding="async">
-    <img src="/logos/forbes.png" alt="Forbes" loading="eager" width="2400" height="931" decoding="async">
-    <img src="/logos/auralis_magazine.png" alt="Auralis Magazine" loading="eager" width="1838" height="600" decoding="async">
-    <img src="/logos/cbs_news.png" alt="CBS News" loading="eager" width="2400" height="870" decoding="async">
-    <img src="/logos/yahoo.png" alt="Yahoo" loading="eager" width="1200" height="500" decoding="async">
-    <img src="/logos/good_morning_america.png" alt="Good Morning America" loading="eager" width="860" height="476" decoding="async">
-    <img src="/logos/business_insider.png" alt="Business Insider" loading="eager" width="2704" height="855" decoding="async">
+    <img src="/logos/mastermind.png" alt="Mastermind.com" class="logo-invert" loading="lazy" width="1204" height="211" decoding="async">
+    <img src="/logos/forbes.png" alt="Forbes" loading="lazy" width="2400" height="931" decoding="async">
+    <img src="/logos/auralis_magazine.png" alt="Auralis Magazine" loading="lazy" width="1838" height="600" decoding="async">
+    <img src="/logos/cbs_news.png" alt="CBS News" loading="lazy" width="2400" height="870" decoding="async">
+    <img src="/logos/yahoo.png" alt="Yahoo" loading="lazy" width="1200" height="500" decoding="async">
+    <img src="/logos/good_morning_america.png" alt="Good Morning America" loading="lazy" width="860" height="476" decoding="async">
+    <img src="/logos/business_insider.png" alt="Business Insider" loading="lazy" width="2704" height="855" decoding="async">
+    <img src="/logos/mastermind.png" alt="Mastermind.com" class="logo-invert" loading="lazy" width="1204" height="211" decoding="async">
+    <img src="/logos/forbes.png" alt="Forbes" loading="lazy" width="2400" height="931" decoding="async">
+    <img src="/logos/auralis_magazine.png" alt="Auralis Magazine" loading="lazy" width="1838" height="600" decoding="async">
+    <img src="/logos/cbs_news.png" alt="CBS News" loading="lazy" width="2400" height="870" decoding="async">
+    <img src="/logos/yahoo.png" alt="Yahoo" loading="lazy" width="1200" height="500" decoding="async">
+    <img src="/logos/good_morning_america.png" alt="Good Morning America" loading="lazy" width="860" height="476" decoding="async">
+    <img src="/logos/business_insider.png" alt="Business Insider" loading="lazy" width="2704" height="855" decoding="async">
   </div>
 </section>
 
@@ -2641,7 +2648,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <a href="https://www.fordivine.com" class="logo logo-img-wrap" aria-label="FORDIVINE home"><picture><source srcset="/fordivine-logo.webp" type="image/webp"><img src="/fordivine-logo.png" alt="FORDIVINE" class="footer-wordmark" width="1287" height="201" decoding="async"></picture></a>
+      <a href="https://www.fordivine.com" class="logo logo-img-wrap" aria-label="FORDIVINE home"><picture><source srcset="/fordivine-logo.webp" type="image/webp"><img src="/fordivine-logo.png" alt="FORDIVINE" class="footer-wordmark" width="1287" height="201" loading="lazy" decoding="async"></picture></a>
       <p>An Authority Engineering House helping women<br>become Crowned Authorities™ in their space.</p>
     </div>
     <div class="footer-nav">
