@@ -10,6 +10,11 @@
       "source": "/assessment",
       "destination": "/assessment/",
       "permanent": false
+    },
+    {
+      "source": "/crowned-authority-kickstart",
+      "destination": "/crowned-authority-kickstart/",
+      "permanent": false
     }
   ],
   "rewrites": [
@@ -28,6 +33,14 @@
     {
       "source": "/assessment/:path*",
       "destination": "https://fordivine-quiz.vercel.app/:path*"
+    },
+    {
+      "source": "/crowned-authority-kickstart/",
+      "destination": "https://fordivine-crowned-authority-kicksta.vercel.app/crowned-authority-kickstart/"
+    },
+    {
+      "source": "/crowned-authority-kickstart/:path*",
+      "destination": "https://fordivine-crowned-authority-kicksta.vercel.app/crowned-authority-kickstart/:path*"
     }
   ]
 }
