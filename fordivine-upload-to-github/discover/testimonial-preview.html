@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FORDIVINE Testimonial Concepts — Preview</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --charcoal: #1a1a1a;
+    --offwhite: #f8f6f2;
+    --bone: #c8b89a;
+    --gold: #a8926a;
+    --white: #ffffff;
+    --serif: 'Cormorant Garamond', 'Georgia', serif;
+    --body: 'Inter', -apple-system, sans-serif;
+    --display: 'Inter', -apple-system, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--charcoal); color: var(--white); font-family: var(--body); }
+
+  .concept-label {
+    text-align: center;
+    padding: 80px 24px 24px;
+    font-family: var(--body);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .concept-label span {
+    display: block;
+    font-size: 11px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.06em;
+    margin-top: 8px;
+    text-transform: none;
+  }
+  .divider {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--bone), transparent);
+    margin: 60px auto;
+    opacity: 0.4;
+  }
+
+  /* ========== CONCEPT A: EDITORIAL SPOTLIGHT ========== */
+  .editorial-section {
+    background: var(--charcoal);
+    padding: 80px 24px 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .editorial-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(ellipse, rgba(200,184,154,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .editorial-inner {
+    max-width: 780px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .editorial-slide {
+    display: none;
+    animation: editorialFadeIn 0.6s ease;
+  }
+  .editorial-slide.active {
+    display: block;
+  }
+  @keyframes editorialFadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .editorial-quote-mark {
+    font-family: var(--serif);
+    font-size: 72px;
+    color: var(--bone);
+    opacity: 0.3;
+    line-height: 1;
+    margin-bottom: -10px;
+  }
+  .editorial-quote {
+    font-family: var(--serif);
+    font-size: clamp(22px, 3.2vw, 32px);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.92);
+    margin-bottom: 48px;
+    letter-spacing: 0.01em;
+  }
+  .editorial-author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .editorial-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(200,184,154,0.3);
+  }
+  .editorial-name {
+    font-family: var(--body);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--bone);
+    letter-spacing: 0.04em;
+  }
+  .editorial-role {
+    font-family: var(--body);
+    font-size: 11px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.04em;
+  }
+  .editorial-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 48px;
+  }
+  .editorial-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .editorial-dot.active {
+    background: var(--bone);
+    transform: scale(1.3);
+  }
+  .editorial-arrows {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 32px;
+  }
+  .editorial-arrow {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(200,184,154,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--bone);
+    font-size: 18px;
+    background: transparent;
+  }
+  .editorial-arrow:hover {
+    border-color: var(--bone);
+    background: rgba(200,184,154,0.08);
+  }
+
+  /* ========== CONCEPT C: CINEMATIC CAROUSEL ========== */
+  .cinematic-section {
+    background: var(--charcoal);
+    padding: 80px 24px 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cinematic-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      radial-gradient(ellipse at 30% 40%, rgba(200,184,154,0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 60%, rgba(168,146,106,0.04) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .cinematic-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .cinematic-card {
+    display: none;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(200,184,154,0.15);
+    border-radius: 20px;
+    padding: 56px 48px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    animation: cinematicSlideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .cinematic-card.active {
+    display: block;
+  }
+  .cinematic-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(200,184,154,0.4), transparent);
+  }
+  @keyframes cinematicSlideIn {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  .cinematic-stars {
+    font-size: 16px;
+    color: var(--bone);
+    letter-spacing: 4px;
+    margin-bottom: 32px;
+  }
+  .cinematic-quote {
+    font-family: var(--serif);
+    font-size: clamp(20px, 2.8vw, 26px);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 40px;
+  }
+  .cinematic-quote .highlight {
+    background: linear-gradient(135deg, #c8b89a 0%, #e8d5b0 50%, #c8b89a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 500;
+  }
+  .cinematic-author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(200,184,154,0.1);
+  }
+  .cinematic-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(200,184,154,0.2);
+  }
+  .cinematic-author-info {
+    text-align: left;
+  }
+  .cinematic-name {
+    font-family: var(--body);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.02em;
+  }
+  .cinematic-role {
+    font-family: var(--body);
+    font-size: 11px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.5);
+    margin-top: 3px;
+    letter-spacing: 0.02em;
+  }
+  .cinematic-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    margin-top: 40px;
+  }
+  .cinematic-nav-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(200,184,154,0.2);
+    background: transparent;
+    color: var(--bone);
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+  .cinematic-nav-btn:hover {
+    border-color: var(--bone);
+    background: rgba(200,184,154,0.1);
+  }
+  .cinematic-counter {
+    font-family: var(--body);
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.08em;
+  }
+  .cinematic-progress {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 24px;
+  }
+  .cinematic-progress-bar {
+    width: 32px;
+    height: 2px;
+    border-radius: 1px;
+    background: rgba(255,255,255,0.12);
+    transition: background 0.3s ease;
+  }
+  .cinematic-progress-bar.active {
+    background: var(--bone);
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .editorial-quote { font-size: 20px; }
+    .editorial-avatar { width: 56px; height: 56px; }
+    .cinematic-card { padding: 40px 28px; }
+    .cinematic-quote { font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== CONCEPT A: EDITORIAL SPOTLIGHT ===== -->
+<div class="concept-label">
+  Concept A: The Editorial Spotlight
+  <span>Full-width, one at a time. Magazine-feature feel. Large serif pull-quote.</span>
+</div>
+
+<section class="editorial-section">
+  <div class="editorial-inner">
+    <div class="editorial-slide active" data-index="0">
+      <div class="editorial-quote-mark">"</div>
+      <p class="editorial-quote">It was absolutely the best thing I could invest in because I never really had a brand mission or plan to grow my businesses. I never fully knew what I wanted to do or how I wanted to do it...but now they brought everything together and I'm able to help more women with my coaching!</p>
+      <div class="editorial-author">
+        <img class="editorial-avatar" src="/bio_greta_elena.jpg" alt="Greta Elena-Bosch">
+        <div class="editorial-name">Greta Elena-Bosch</div>
+        <div class="editorial-role">Wellness + Mental Health Advocate</div>
+      </div>
+    </div>
+    <div class="editorial-slide" data-index="1">
+      <div class="editorial-quote-mark">"</div>
+      <p class="editorial-quote">My time with the FORDIVINE team was an amazing one. Epic for the records. Definitely confirms that this was one of the best investments that I made and now I can launch my new events and seminars under 'The Second Act Method'.</p>
+      <div class="editorial-author">
+        <img class="editorial-avatar" src="/bio_jessica_cross.jpg" alt="Jessica Cross">
+        <div class="editorial-name">Jessica Cross</div>
+        <div class="editorial-role">Govt. Manager, Event Host, Speaker</div>
+      </div>
+    </div>
+    <div class="editorial-slide" data-index="2">
+      <div class="editorial-quote-mark">"</div>
+      <p class="editorial-quote">I was up in the corporate leadership but had no brand. Just a bunch of family and fun photos. The team helped pull out of me who I really am and make it real. I wouldn't have been able to relaunch my podcast, write my book, or start my own consulting if it wasn't for their strategies.</p>
+      <div class="editorial-author">
+        <img class="editorial-avatar" src="/bio_beth_clifford.jpg" alt="Beth Clifford">
+        <div class="editorial-name">Beth Clifford</div>
+        <div class="editorial-role">Sales Leader, Author, Podcast Host</div>
+      </div>
+    </div>
+    <div class="editorial-dots">
+      <div class="editorial-dot active" data-slide="0"></div>
+      <div class="editorial-dot" data-slide="1"></div>
+      <div class="editorial-dot" data-slide="2"></div>
+    </div>
+    <div class="editorial-arrows">
+      <button class="editorial-arrow" id="ed-prev">←</button>
+      <button class="editorial-arrow" id="ed-next">→</button>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===== CONCEPT C: CINEMATIC CAROUSEL ===== -->
+<div class="concept-label">
+  Concept C: The Cinematic Carousel
+  <span>Frosted glass card. Gold accents. Slide transitions. Each client gets their moment.</span>
+</div>
+
+<section class="cinematic-section">
+  <div class="cinematic-inner">
+    <div class="cinematic-card active" data-index="0">
+      <div class="cinematic-stars">★ ★ ★ ★ ★</div>
+      <p class="cinematic-quote">"It was absolutely the best thing I could invest in because I never really had a brand mission or plan to grow my businesses. Now they <span class="highlight">brought everything together</span> and I'm able to help more women with my coaching!"</p>
+      <div class="cinematic-author">
+        <img class="cinematic-avatar" src="/bio_greta_elena.jpg" alt="Greta Elena-Bosch">
+        <div class="cinematic-author-info">
+          <div class="cinematic-name">Greta Elena-Bosch</div>
+          <div class="cinematic-role">Wellness + Mental Health Advocate</div>
+        </div>
+      </div>
+    </div>
+    <div class="cinematic-card" data-index="1">
+      <div class="cinematic-stars">★ ★ ★ ★ ★</div>
+      <p class="cinematic-quote">"My time with the FORDIVINE team was an amazing one. Epic for the records. Definitely confirms that this was <span class="highlight">one of the best investments</span> that I made and now I can launch my new events and seminars under 'The Second Act Method'."</p>
+      <div class="cinematic-author">
+        <img class="cinematic-avatar" src="/bio_jessica_cross.jpg" alt="Jessica Cross">
+        <div class="cinematic-author-info">
+          <div class="cinematic-name">Jessica Cross</div>
+          <div class="cinematic-role">Govt. Manager, Event Host, Speaker</div>
+        </div>
+      </div>
+    </div>
+    <div class="cinematic-card" data-index="2">
+      <div class="cinematic-stars">★ ★ ★ ★ ★</div>
+      <p class="cinematic-quote">"The team helped <span class="highlight">pull out of me who I really am</span> and make it real. I wouldn't have been able to relaunch my podcast, write my book, or start my own consulting if it wasn't for their strategies."</p>
+      <div class="cinematic-author">
+        <img class="cinematic-avatar" src="/bio_beth_clifford.jpg" alt="Beth Clifford">
+        <div class="cinematic-author-info">
+          <div class="cinematic-name">Beth Clifford</div>
+          <div class="cinematic-role">Sales Leader, Author, Podcast Host</div>
+        </div>
+      </div>
+    </div>
+    <div class="cinematic-nav">
+      <button class="cinematic-nav-btn" id="cin-prev">←</button>
+      <span class="cinematic-counter"><span id="cin-current">1</span> / <span id="cin-total">3</span></span>
+      <button class="cinematic-nav-btn" id="cin-next">→</button>
+    </div>
+    <div class="cinematic-progress">
+      <div class="cinematic-progress-bar active"></div>
+      <div class="cinematic-progress-bar"></div>
+      <div class="cinematic-progress-bar"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+// Concept A: Editorial Spotlight
+(function() {
+  const slides = document.querySelectorAll('.editorial-slide');
+  const dots = document.querySelectorAll('.editorial-dot');
+  let current = 0;
+
+  function goTo(index) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (index + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  document.getElementById('ed-prev').addEventListener('click', () => goTo(current - 1));
+  document.getElementById('ed-next').addEventListener('click', () => goTo(current + 1));
+  dots.forEach(dot => dot.addEventListener('click', () => goTo(+dot.dataset.slide)));
+
+  // Auto-advance every 7s
+  setInterval(() => goTo(current + 1), 7000);
+})();
+
+// Concept C: Cinematic Carousel
+(function() {
+  const cards = document.querySelectorAll('.cinematic-card');
+  const bars = document.querySelectorAll('.cinematic-progress-bar');
+  const counter = document.getElementById('cin-current');
+  let current = 0;
+
+  function goTo(index) {
+    cards[current].classList.remove('active');
+    bars[current].classList.remove('active');
+    current = (index + cards.length) % cards.length;
+    cards[current].classList.add('active');
+    bars[current].classList.add('active');
+    counter.textContent = current + 1;
+  }
+
+  document.getElementById('cin-prev').addEventListener('click', () => goTo(current - 1));
+  document.getElementById('cin-next').addEventListener('click', () => goTo(current + 1));
+
+  // Auto-advance every 8s
+  setInterval(() => goTo(current + 1), 8000);
+
+  // Swipe support
+  let startX = 0;
+  const section = document.querySelector('.cinematic-section');
+  section.addEventListener('touchstart', e => { startX = e.touches[0].clientX; });
+  section.addEventListener('touchend', e => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) goTo(diff > 0 ? current + 1 : current - 1);
+  });
+})();
+</script>
+</body>
+</html>
