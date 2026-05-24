@@ -957,7 +957,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 
   /* ========== SOCIAL PROOF ========== */
   .social-proof-section {
-    background: var(--charcoal);
+    background: var(--offwhite);
     padding: 64px 16px 80px;
     text-align: center;
     position: relative;
@@ -982,7 +982,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     pointer-events: none;
     opacity: 0.12;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.8' numOctaves='6' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='512' height='512' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-    mix-blend-mode: screen;
+    mix-blend-mode: multiply;
   }
   .proof-subtitle {
     font-family: var(--body);
@@ -990,7 +990,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--bone);
+    color: rgba(30,30,30,0.6);
     margin-top: 12px;
     margin-bottom: 40px;
   }
@@ -1004,7 +1004,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     font-family: var(--display);
     font-weight: 700;
     font-size: clamp(22px, 2.6vw, 32px);
-    color: var(--white);
+    color: var(--charcoal);
     margin-bottom: 8px;
     line-height: 1.35;
     letter-spacing: -0.02em;
@@ -1134,7 +1134,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   .review-author-info { display: flex; flex-direction: column; gap: 3px; }
   .review-disclaimer {
     font-size: 10px;
-    color: rgba(255,255,255,0.4);
+    color: rgba(30,30,30,0.45);
     max-width: 680px;
     margin: 40px auto 0;
     line-height: 1.6;
@@ -1346,7 +1346,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 
   /* ========== COMBINED STORIES (reviews + carousel) ========== */
   .combined-stories-section {
-    background: var(--charcoal);
+    background: var(--offwhite);
     padding: 64px 16px 80px;
     position: relative;
     z-index: 1;
@@ -1369,7 +1369,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     pointer-events: none;
     opacity: 0.12;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.8' numOctaves='6' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='512' height='512' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-    mix-blend-mode: screen;
+    mix-blend-mode: multiply;
   }
   .combined-stories-card .reviews-scatter {
     margin-bottom: 0;
@@ -1783,13 +1783,13 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     font-family: var(--display);
     font-weight: 700;
     font-size: clamp(24px, 2.6vw, 32px);
-    color: var(--white);
+    color: var(--charcoal);
     margin-bottom: 12px;
     letter-spacing: -0.02em;
   }
   .crowned-carousel-header p {
     font-size: 14px;
-    color: rgba(255,255,255,0.65);
+    color: rgba(30,30,30,0.6);
     max-width: 440px;
     margin: 0 auto;
     line-height: 1.65;
@@ -1873,21 +1873,21 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.1);
-    color: var(--white);
-    border: 1px solid rgba(200,184,154,0.25);
+    background: rgba(30,30,30,0.06);
+    color: var(--charcoal);
+    border: 1px solid rgba(30,30,30,0.15);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 5;
     transition: background 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
     backdrop-filter: blur(8px);
   }
   .carousel-arrow:hover {
-    background: rgba(200,184,154,0.15);
-    border-color: var(--bone);
+    background: rgba(30,30,30,0.1);
+    border-color: rgba(30,30,30,0.3);
     transform: translateY(-50%) scale(1.08);
   }
   .carousel-arrow.prev { left: 0; }
@@ -1909,7 +1909,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     overflow: hidden;
     z-index: 10;
     pointer-events: none;
-    background: rgba(255,255,255,0.04);
+    background: rgba(30,30,30,0.06);
   }
   .carousel-shimmer::after {
     content: '';
@@ -1917,7 +1917,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     top: 0; left: 0;
     width: 40%;
     height: 100%;
-    background: linear-gradient(90deg, transparent 0%, rgba(200,184,154,0.5) 50%, transparent 100%);
+    background: linear-gradient(90deg, transparent 0%, rgba(200,184,154,0.7) 50%, transparent 100%);
     animation: shimmer 4s ease-in-out infinite;
   }
   /* Dots */
@@ -1931,14 +1931,14 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.25);
+    background: rgba(30,30,30,0.2);
     border: none;
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     padding: 0;
   }
   .carousel-dot.active {
-    background: var(--bone);
+    background: var(--charcoal);
     transform: scale(1.4);
   }
   /* Responsive */
