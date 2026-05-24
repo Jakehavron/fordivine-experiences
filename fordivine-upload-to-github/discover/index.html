@@ -1,23 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '958874110071928');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q8TH5MKKZ0"></script>
 <script>
@@ -26,58 +9,15 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   gtag('js', new Date());
   gtag('config', 'G-Q8TH5MKKZ0');
 </script>
-
-<!-- ===== PATRICIA DM ATTRIBUTION BRIDGE ===== -->
-<script>
-(function() {
-  // Detect Patricia's bridge route by pathname OR query param (covers both rewrite and direct)
-  var path = window.location.pathname;
-  var params = new URLSearchParams(window.location.search);
-  var isPatricia = (path.indexOf('discover-dm') !== -1) || (params.get('ref') === 'patricia_dm');
-
-  if (isPatricia) {
-    // 1. Store attribution in first-party cookie (30-day expiry)
-    var d = new Date(); d.setTime(d.getTime() + 30*24*60*60*1000);
-    document.cookie = 'fd_ref=patricia_dm; expires=' + d.toUTCString() + '; path=/; SameSite=Lax';
-
-    // 2. Fire GA4 campaign event with Patricia attribution
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'campaign_attribution', {
-        campaign_source: 'instagram',
-        campaign_medium: 'dm',
-        campaign_name: 'patricia_dm',
-        campaign_content: 'discover'
-      });
-    }
-
-    // 3. Clean the URL to show /discover (the canonical page)
-    if (window.history && window.history.replaceState) {
-      window.history.replaceState({}, document.title, '/discover/');
-    }
-
-    // 4. iClosed UTM injection is handled inline (just before the widget div)
-    //    The cookie set above is read by the inline script at the widget section
-  }
-})();
-</script>
-
-<!-- Hotjar Tracking Code for FORDIVINE Discovery Page -->
-<script>
-  (function(h,o,t,j,a,r){
-    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-    h._hjSettings={hjid:6670160,hjsv:6};
-    a=o.getElementsByTagName('head')[0];
-    r=o.createElement('script');r.async=1;
-    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-    a.appendChild(r);
-  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
+/></noscript>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Is Your Brand Limiting Your Impact? | FORDIVINE</title>
 
 <!-- SEO -->
-<meta name="description" content="You have the calling. You have the gifts. Your brand just isn't matching who you've become. Learn how we can help at FORDIVINE.">
+<meta name="description" content="You have the calling and the gifts. Your brand just isn't matching who you've become. FORDIVINE engineers complete personal brands for women entrepreneurs ready to become known.">
 <meta name="author" content="FORDIVINE™">
 <link rel="canonical" href="https://www.fordivine.com/discover">
 
@@ -105,16 +45,24 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
       "@type": "Organization",
       "@id": "https://www.fordivine.com/#organization",
       "name": "FORDIVINE",
+      "alternateName": "For Divine House",
       "url": "https://www.fordivine.com/",
       "logo": {
         "@type": "ImageObject",
         "url": "https://www.fordivine.com/fordivine-logo.png"
       },
-      "description": "An Authority Engineering House helping women become Crowned Authorities in their space.",
+      "description": "FORDIVINE is a premium Authority Engineering House that builds complete personal brand ecosystems for women entrepreneurs, coaches, speakers, and leaders through their proprietary Authority Architecture framework.",
       "founder": {
         "@type": "Person",
-        "name": "Emily Ford"
-      }
+        "name": "Emily Ford",
+        "jobTitle": "Founder and Lead Authority Engineer",
+        "url": "https://www.instagram.com/itsemilyford/"
+      },
+      "sameAs": [
+        "https://www.instagram.com/fordivine/",
+        "https://www.instagram.com/itsemilyford/"
+      ],
+      "knowsAbout": ["Personal branding", "Brand strategy", "Authority building", "Visual identity design", "Brand architecture"]
     },
     {
       "@type": "WebSite",
@@ -131,25 +79,30 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
       "url": "https://www.fordivine.com/discover",
       "name": "FORDIVINE Discovery Call | Personal Brand Strategy for Women Entrepreneurs",
       "description": "Schedule a FORDIVINE discovery call to explore personal brand strategy, authority architecture, and a Complete Brand Blueprint designed to help women entrepreneurs attract premium clients and become known for their work.",
+      "datePublished": "2025-01-15",
+      "dateModified": "2026-05-24",
       "isPartOf": {
         "@id": "https://www.fordivine.com/#website"
       },
       "about": [
         {
-          "@type": "Thing",
-          "name": "Personal brand strategy"
+          "@type": "Service",
+          "name": "Personal brand strategy for women entrepreneurs"
         },
         {
           "@type": "Thing",
-          "name": "Brand authority"
+          "name": "Authority Architecture",
+          "description": "A proprietary four-layer brand engineering framework covering Foundation (strategy), Presence (visual identity), Activation (digital platforms), and Engine (scalable systems)."
         },
         {
-          "@type": "Thing",
-          "name": "Discovery call"
+          "@type": "Product",
+          "name": "Crowned Authority Blueprint",
+          "description": "A comprehensive marketing strategy document that maps brand positioning, messaging, audience targeting, and growth roadmap."
         },
         {
-          "@type": "Thing",
-          "name": "Complete Brand Blueprint"
+          "@type": "Product",
+          "name": "Crowned Identity Bible",
+          "description": "A complete visual identity system including logo suite, color palette, typography, brand guidelines, and creative assets."
         }
       ],
       "primaryImageOfPage": {
@@ -160,21 +113,80 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
       },
       "mainEntity": {
         "@id": "https://www.fordivine.com/discover#service"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".hero-section h1", ".hero-section .hero-sub", ".arch-intro h2", ".pillars-heading", ".qa-section"]
       }
     },
     {
       "@type": "Service",
       "@id": "https://www.fordivine.com/discover#service",
-      "name": "FORDIVINE Discovery Call",
-      "serviceType": "Personal brand strategy consultation",
+      "name": "FORDIVINE Authority Architecture",
+      "serviceType": "Personal brand strategy and complete brand build",
       "provider": {
         "@id": "https://www.fordivine.com/#organization"
       },
       "audience": {
         "@type": "Audience",
-        "audienceType": "Women entrepreneurs and leaders"
+        "audienceType": "Women entrepreneurs, coaches, speakers, consultants, and leaders"
       },
-      "url": "https://www.fordivine.com/discover"
+      "url": "https://www.fordivine.com/discover",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "7000",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "USD",
+          "price": "7000",
+          "description": "Starting rate for turn-key brand services including marketing strategy and premium-grade brand assets"
+        }
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {"@type": "Person", "name": "Jessica Cross", "jobTitle": "Govt. Manager, Event Host, Speaker"},
+          "reviewBody": "This was one of the best investments I made. I can now launch my new events and seminars under The Second Act Method.",
+          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+        },
+        {
+          "@type": "Review",
+          "author": {"@type": "Person", "name": "Greta Elena-Bosch", "jobTitle": "Wellness and Mental Health Advocate"},
+          "reviewBody": "It was absolutely the best thing I could invest in. They brought everything together and I'm able to help more women with my coaching!",
+          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+        },
+        {
+          "@type": "Review",
+          "author": {"@type": "Person", "name": "Beth Clifford", "jobTitle": "Sales Leader, Author, Podcast Host"},
+          "reviewBody": "The team helped pull out of me who I really am and make it real. I wouldn't have been able to relaunch my podcast, write my book, or start my own consulting without them.",
+          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+        },
+        {
+          "@type": "Review",
+          "author": {"@type": "Person", "name": "Amber Harvalias", "jobTitle": "Fitness Coach and Entrepreneur"},
+          "reviewBody": "I finally feel like my brand matches who I actually am. The clarity alone was worth it, but the assets they delivered were next level.",
+          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+        },
+        {
+          "@type": "Review",
+          "author": {"@type": "Person", "name": "Mary Elizabeth", "jobTitle": "Therapist and Author"},
+          "reviewBody": "They took everything in my head and made it make sense. My brand finally feels like me and I can show up with confidence.",
+          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+        },
+        {
+          "@type": "Review",
+          "author": {"@type": "Person", "name": "Melanie Mitro", "jobTitle": "Top Coach and Business Leader"},
+          "reviewBody": "FORDIVINE gave me the brand I always envisioned but could never articulate. The process was seamless and the results speak for themselves.",
+          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "6",
+        "bestRating": "5"
+      }
     },
     {
       "@type": "BreadcrumbList",
@@ -203,7 +215,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
           "name": "Is this a sales call?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. This call is solely to learn about your situation and see if you are a right fit for FORDIVINE services."
+            "text": "No. The FORDIVINE discovery call is a no-pressure conversation designed to understand your current brand situation, your goals, and whether the Authority Architecture approach is the right fit for you. There is no pitch or obligation during the call. If we are a match, we will explain the next steps. If not, we will point you in the right direction."
           }
         },
         {
@@ -211,7 +223,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
           "name": "What happens during the turn-key brand service?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "FORDIVINE reviews your current brand, identifies what is unclear or misaligned, then builds the complete strategy, messaging, visuals, and systems you need."
+            "text": "FORDIVINE conducts a comprehensive review of your current brand, identifies what is unclear or misaligned, and then builds your complete brand ecosystem from scratch. This includes marketing strategy (Crowned Authority Blueprint), visual identity (Crowned Identity Bible), digital presence (website and platforms), and scalable systems. The process is fully done-for-you so you can focus on your work while we engineer your authority."
           }
         },
         {
@@ -219,7 +231,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
           "name": "What do I walk away with?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "You walk away with strategy, visual identity, brand assets, and scalable systems designed to support your brand."
+            "text": "You walk away with a complete brand ecosystem: a Crowned Authority Blueprint (your full marketing strategy), a Crowned Identity Bible (your visual brand system including logos, colors, typography, and brand guidelines), a professional website or digital headquarters, and scalable systems designed to support your brand as you grow. Everything is custom-built to position you as the authority in your space."
           }
         },
         {
@@ -227,7 +239,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
           "name": "Is this right for my business or industry?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "If your business depends on your name, expertise, reputation, or personal credibility, then FORDIVINE services are made for you."
+            "text": "If your business depends on your name, expertise, reputation, or personal credibility, then FORDIVINE services are designed for you. Our clients include coaches, consultants, speakers, authors, therapists, fitness professionals, real estate leaders, and other women entrepreneurs who want to be recognized as the go-to authority in their field. Industry does not matter as much as your desire to build a brand that matches your calling."
           }
         },
         {
@@ -235,7 +247,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
           "name": "How much do your services typically cost?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "FORDIVINE is a premium brand house. Rates start at $7k for turn-key services that include marketing strategy and premium-grade brand assets."
+            "text": "FORDIVINE is a premium brand house. Rates start at $7,000 for turn-key services that include marketing strategy, visual identity, brand assets, and scalable systems. Payment plans are available. The investment reflects the depth and quality of a complete brand build engineered to position you as a Crowned Authority in your space."
           }
         }
       ]
@@ -259,7 +271,12 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 <link rel="preconnect" href="https://app.iclosed.io" crossorigin>
 <link rel="dns-prefetch" href="//www.google-analytics.com">
 <link rel="dns-prefetch" href="//script.hotjar.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=GFS+Didot&display=swap" rel="stylesheet">
+
+<!-- Preload critical assets for LCP -->
+<link rel="preload" href="/fordivine-logo.png" as="image">
+
+<!-- Fonts: reduced to only used weights -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=GFS+Didot&display=swap" rel="stylesheet">
 
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -2154,10 +2171,13 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 <canvas id="ambient-canvas"></canvas>
 
 <!-- ===== MINIMAL NAV ===== -->
-<div class="mini-nav">
+<header>
+<nav class="mini-nav" aria-label="Main navigation">
   <a href="https://www.fordivine.com" class="logo logo-img-wrap" aria-label="FORDIVINE home"><picture><source srcset="/fordivine-logo.webp" type="image/webp"><img src="/fordivine-logo.png" alt="FORDIVINE" class="nav-wordmark" width="1287" height="201" loading="eager" fetchpriority="high" decoding="async"></picture></a>
-</div>
+</nav>
+</header>
 
+<main role="main">
 <!-- ===== HERO ===== -->
 <section class="hero-beams-live" aria-label="Discover hero with champagne beam background">
   <canvas id="hero-beams-canvas" aria-hidden="true"></canvas>
@@ -2185,7 +2205,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 <section class="video-section">
   <div class="video-wrapper reveal">
     <div class="play-circle">
-      <svg width="20" height="20" fill="none" viewBox="0 0 24 24">
+      <svg width="20" height="20" fill="none" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M8 5.14v13.72a1 1 0 001.5.86l11.04-6.86a1 1 0 000-1.72L9.5 4.28A1 1 0 008 5.14z" fill="#fff"/>
       </svg>
     </div>
@@ -2255,7 +2275,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   <!-- Video testimonial -->
   <div class="testimonial-video reveal" style="display:none;">
     <div class="play-overlay">
-      <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M8 5.14v13.72a1 1 0 001.5.86l11.04-6.86a1 1 0 000-1.72L9.5 4.28A1 1 0 008 5.14z" fill="#fff"/></svg>
+      <svg width="18" height="18" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.14v13.72a1 1 0 001.5.86l11.04-6.86a1 1 0 000-1.72L9.5 4.28A1 1 0 008 5.14z" fill="#fff"/></svg>
     </div>
     Video testimonial coming soon
   </div>
@@ -2263,10 +2283,10 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   <!-- Photo-forward testimonial cards -->
   <div class="reviews-scatter">
     <div class="review-card reveal">
-      <img class="review-card-img" src="/jessica_portrait.webp" alt="Jessica Cross" loading="lazy" decoding="async" style="object-position: center 0%;">
+      <img class="review-card-img" src="/jessica_portrait.webp" alt="Jessica Cross" loading="lazy" decoding="async" width="800" height="1200" style="object-position: center 0%;">
       <div class="review-card-gradient"></div>
       <div class="review-card-content">
-        <svg class="review-quote-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/></svg>
+        <svg class="review-quote-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/></svg>
         <div class="review-stars">★★★★★</div>
         <p class="review-text">"This was one of the best investments I made. I can now launch my new events and seminars under 'The Second Act Method'."</p>
         <div class="review-author-row">
@@ -2276,10 +2296,10 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
       </div>
     </div>
     <div class="review-card reveal reveal-delay-1">
-      <img class="review-card-img" src="/greta_portrait.webp" alt="Greta Elena-Bosch" loading="lazy" decoding="async" style="object-position: center 0%;">
+      <img class="review-card-img" src="/greta_portrait.webp" alt="Greta Elena-Bosch" loading="lazy" decoding="async" width="800" height="1200" style="object-position: center 0%;">
       <div class="review-card-gradient"></div>
       <div class="review-card-content">
-        <svg class="review-quote-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/></svg>
+        <svg class="review-quote-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/></svg>
         <div class="review-stars">★★★★★</div>
         <p class="review-text">"It was absolutely the best thing I could invest in. They brought everything together and I'm able to help more women with my coaching!"</p>
         <div class="review-author-row">
@@ -2289,10 +2309,10 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
       </div>
     </div>
     <div class="review-card reveal reveal-delay-2">
-      <img class="review-card-img" src="/beth_portrait.jpg" alt="Beth Clifford" loading="lazy" decoding="async">
+      <img class="review-card-img" src="/beth_portrait.webp" alt="Beth Clifford" loading="lazy" decoding="async" width="800" height="1200">
       <div class="review-card-gradient"></div>
       <div class="review-card-content">
-        <svg class="review-quote-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/></svg>
+        <svg class="review-quote-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/></svg>
         <div class="review-stars">★★★★★</div>
         <p class="review-text">"The team helped pull out of me who I really am and make it real. I wouldn't have been able to relaunch my podcast, write my book, or start my own consulting without them."</p>
         <div class="review-author-row">
@@ -2366,10 +2386,10 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   <div class="combined-stories-card">
   <div class="reviews-scatter">
     <div class="review-card reveal">
-      <img class="review-card-img" src="/amber_portrait.webp" alt="Amber Harvalias" loading="lazy" decoding="async" style="object-position: center 10%;">
+      <img class="review-card-img" src="/amber_portrait.webp" alt="Amber Harvalias" loading="lazy" decoding="async" width="800" height="1200" style="object-position: center 10%;">
       <div class="review-card-gradient"></div>
       <div class="review-card-content">
-        <svg class="review-quote-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/></svg>
+        <svg class="review-quote-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/></svg>
         <div class="review-stars">★★★★★</div>
         <p class="review-text">"This team made me feel so comfortable and authentic. They allowed me to lean in to everything I wanted to create."</p>
         <div class="review-author-row">
@@ -2379,10 +2399,10 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
       </div>
     </div>
     <div class="review-card reveal reveal-delay-1">
-      <img class="review-card-img" src="/mary_portrait.webp" alt="Mary Elizabeth" loading="lazy" decoding="async" style="object-position: center 10%;">
+      <img class="review-card-img" src="/mary_portrait.webp" alt="Mary Elizabeth" loading="lazy" decoding="async" width="800" height="1200" style="object-position: center 10%;">
       <div class="review-card-gradient"></div>
       <div class="review-card-content">
-        <svg class="review-quote-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/></svg>
+        <svg class="review-quote-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/></svg>
         <div class="review-stars">★★★★★</div>
         <p class="review-text">"The whole experience has been amazing start to finish. It is something I could have never done on my own."</p>
         <div class="review-author-row">
@@ -2392,10 +2412,10 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
       </div>
     </div>
     <div class="review-card reveal reveal-delay-2">
-      <img class="review-card-img" src="/melanie_portrait.webp" alt="Melanie Mitro" loading="lazy" decoding="async" style="object-fit: cover; object-position: center 10%;">
+      <img class="review-card-img" src="/melanie_portrait.webp" alt="Melanie Mitro" loading="lazy" decoding="async" width="800" height="1200" style="object-fit: cover; object-position: center 10%;">
       <div class="review-card-gradient"></div>
       <div class="review-card-content">
-        <svg class="review-quote-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/></svg>
+        <svg class="review-quote-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/></svg>
         <div class="review-stars">★★★★★</div>
         <p class="review-text">"FORDIVINE was the one place where I truly felt it was going to elevate me to the next level. I now have everything I need to launch, grow, and scale my brand."</p>
         <div class="review-author-row">
@@ -2412,7 +2432,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 
   <div class="carousel-container">
     <button class="carousel-arrow prev" id="carouselPrev" aria-label="Previous">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
     </button>
 
     <div class="carousel-viewport" id="carouselViewport">
@@ -2483,7 +2503,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     </div>
 
     <button class="carousel-arrow next" id="carouselNext" aria-label="Next">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
     </button>
   </div>
 
@@ -2548,7 +2568,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
       <p>Women with real gifts, real callings, and real businesses who kept getting overlooked because their brand did not match who they had become.</p>
       <p>You were not made to keep your God-given gifts hidden. You were made to <strong style="color:#ffffff;">make a difference in this world.</strong></p>
       <p>If that resonates, I would love to have you experience what we do.</p>
-      <div class="emily-note-signature"><img src="/emily-signature.png" alt="Emily Ford signature" class="emily-signature-img"></div>
+      <div class="emily-note-signature"><img src="/emily-signature.png" alt="Emily Ford signature" class="emily-signature-img" loading="lazy" decoding="async" width="400" height="120"></div>
       <div class="emily-note-title">Founder &amp; Visionary, FORDIVINE</div>
     </div>
   </div>
@@ -2677,6 +2697,15 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   </div>
 </section>
 
+<!-- Hidden semantic content for AI search engines and screen readers -->
+<div class="sr-only" aria-hidden="false" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">
+  <h2>About FORDIVINE Personal Branding Services</h2>
+  <p>FORDIVINE is a premium personal branding house founded by Emily Ford that helps women entrepreneurs, coaches, speakers, authors, therapists, and leaders build complete brand ecosystems. Through their proprietary Authority Architecture framework, FORDIVINE engineers brands across four layers: Foundation (marketing strategy via the Crowned Authority Blueprint), Presence (visual identity via the Crowned Identity Bible), Activation (digital headquarters and platform presence), and Engine (scalable systems for growth and visibility).</p>
+  <p>FORDIVINE serves women who have built successful businesses but whose brands no longer match the level of expertise, impact, and authority they have achieved. The service is fully done-for-you, meaning clients receive a complete brand transformation without needing to manage the process themselves.</p>
+  <p>The discovery call is a complimentary, no-obligation conversation to understand a potential client's brand situation, goals, and whether FORDIVINE's approach is the right fit. It is not a sales call. Rates start at $7,000 for turn-key services. FORDIVINE has served over 36 clients across industries including coaching, consulting, speaking, therapy, fitness, real estate, and wellness.</p>
+</div>
+
+</main>
 <!-- ===== FOOTER ===== -->
 <footer>
   <div class="footer-top">
@@ -3092,6 +3121,60 @@ document.querySelectorAll('.qa-header').forEach(header => {
   initLayers();
   requestAnimationFrame(loop);
 })();
+</script>
+
+<!-- Meta Pixel Code (deferred for performance) -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '958874110071928');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+
+<!-- ===== PATRICIA DM ATTRIBUTION BRIDGE ===== -->
+<script>
+(function() {
+  var path = window.location.pathname;
+  var params = new URLSearchParams(window.location.search);
+  var isPatricia = (path.indexOf('discover-dm') !== -1) || (params.get('ref') === 'patricia_dm');
+
+  if (isPatricia) {
+    var d = new Date(); d.setTime(d.getTime() + 30*24*60*60*1000);
+    document.cookie = 'fd_ref=patricia_dm; expires=' + d.toUTCString() + '; path=/; SameSite=Lax';
+
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'campaign_attribution', {
+        campaign_source: 'instagram',
+        campaign_medium: 'dm',
+        campaign_name: 'patricia_dm',
+        campaign_content: 'discover'
+      });
+    }
+
+    if (window.history && window.history.replaceState) {
+      window.history.replaceState({}, document.title, '/discover');
+    }
+  }
+})();
+</script>
+
+<!-- Hotjar Tracking Code (deferred for performance) -->
+<script>
+  (function(h,o,t,j,a,r){
+    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:6670160,hjsv:6};
+    a=o.getElementsByTagName('head')[0];
+    r=o.createElement('script');r.async=1;
+    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    a.appendChild(r);
+  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
 
 </body>
