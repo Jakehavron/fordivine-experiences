@@ -26,41 +26,6 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   gtag('js', new Date());
   gtag('config', 'G-Q8TH5MKKZ0');
 </script>
-
-<!-- ===== PATRICIA DM ATTRIBUTION BRIDGE ===== -->
-<script>
-(function() {
-  // Detect Patricia's bridge route by pathname OR query param (covers both rewrite and direct)
-  var path = window.location.pathname;
-  var params = new URLSearchParams(window.location.search);
-  var isPatricia = (path.indexOf('discover-dm') !== -1) || (params.get('ref') === 'patricia_dm');
-
-  if (isPatricia) {
-    // 1. Store attribution in first-party cookie (30-day expiry)
-    var d = new Date(); d.setTime(d.getTime() + 30*24*60*60*1000);
-    document.cookie = 'fd_ref=patricia_dm; expires=' + d.toUTCString() + '; path=/; SameSite=Lax';
-
-    // 2. Fire GA4 campaign event with Patricia attribution
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'campaign_attribution', {
-        campaign_source: 'instagram',
-        campaign_medium: 'dm',
-        campaign_name: 'patricia_dm',
-        campaign_content: 'discover'
-      });
-    }
-
-    // 3. Clean the URL to show /discover (the canonical page)
-    if (window.history && window.history.replaceState) {
-      window.history.replaceState({}, document.title, '/discover/');
-    }
-
-    // 4. iClosed UTM injection is handled inline (just before the widget div)
-    //    The cookie set above is read by the inline script at the widget section
-  }
-})();
-</script>
-
 <!-- Hotjar Tracking Code for FORDIVINE Discovery Page -->
 <script>
   (function(h,o,t,j,a,r){
@@ -74,191 +39,37 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Is Your Brand Limiting Your Impact? | FORDIVINE</title>
+<title>FORDIVINE | Where Crowned Authorities™ Are Made</title>
 
 <!-- SEO -->
-<meta name="description" content="You have the calling. You have the gifts. Your brand just isn't matching who you've become. Learn how we can help at FORDIVINE.">
+<meta name="description" content="Your brand should be your hardest-working employee. FORDIVINE engineers Complete Brand Blueprints for women on a mission. Your brand attracts premium clients, commands authority, and drives revenue 24/7.">
+<meta name="keywords" content="personal branding, brand transformation, women entrepreneurs, Emily Ford, FORDIVINE, Crowned Authority, faith-driven branding">
 <meta name="author" content="FORDIVINE™">
-<link rel="canonical" href="https://www.fordivine.com/discover">
+<link rel="canonical" href="https://fordivine.com/discover">
 
 <!-- Open Graph / Social Sharing -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.fordivine.com/discover">
-<meta property="og:title" content="Is Your Brand Limiting Your Impact? | FORDIVINE">
-<meta property="og:description" content="You have the calling. You have the gifts. Your brand just isn't matching who you've become. Learn how we can help at FORDIVINE.">
-<meta property="og:image" content="https://www.fordivine.com/og-image.jpg">
+<meta property="og:url" content="https://fordivine.com/discover">
+<meta property="og:title" content="FORDIVINE | Where Crowned Authorities™ Are Made">
+<meta property="og:description" content="Your brand should be your hardest-working employee. Right now, it's costing you money. FORDIVINE builds Crowned Authorities, not influencers.">
+<meta property="og:image" content="https://fordivine.com/og-image.jpg">
 <meta property="og:image:width" content="1107">
 <meta property="og:image:height" content="558">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Is Your Brand Limiting Your Impact? | FORDIVINE">
-<meta name="twitter:description" content="You have the calling. You have the gifts. Your brand just isn't matching who you've become. Learn how we can help at FORDIVINE.">
-<meta name="twitter:image" content="https://www.fordivine.com/og-image.jpg">
-
-<!-- Structured Data: SEO/AEO entity, service, breadcrumb, and FAQ context -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://www.fordivine.com/#organization",
-      "name": "FORDIVINE",
-      "url": "https://www.fordivine.com/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.fordivine.com/fordivine-logo.png"
-      },
-      "description": "An Authority Engineering House helping women become Crowned Authorities in their space.",
-      "founder": {
-        "@type": "Person",
-        "name": "Emily Ford"
-      }
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://www.fordivine.com/#website",
-      "url": "https://www.fordivine.com/",
-      "name": "FORDIVINE",
-      "publisher": {
-        "@id": "https://www.fordivine.com/#organization"
-      }
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://www.fordivine.com/discover#webpage",
-      "url": "https://www.fordivine.com/discover",
-      "name": "FORDIVINE Discovery Call | Personal Brand Strategy for Women Entrepreneurs",
-      "description": "Schedule a FORDIVINE discovery call to explore personal brand strategy, authority architecture, and a Complete Brand Blueprint designed to help women entrepreneurs attract premium clients and become known for their work.",
-      "isPartOf": {
-        "@id": "https://www.fordivine.com/#website"
-      },
-      "about": [
-        {
-          "@type": "Thing",
-          "name": "Personal brand strategy"
-        },
-        {
-          "@type": "Thing",
-          "name": "Brand authority"
-        },
-        {
-          "@type": "Thing",
-          "name": "Discovery call"
-        },
-        {
-          "@type": "Thing",
-          "name": "Complete Brand Blueprint"
-        }
-      ],
-      "primaryImageOfPage": {
-        "@type": "ImageObject",
-        "url": "https://www.fordivine.com/og-image.jpg",
-        "width": 1107,
-        "height": 558
-      },
-      "mainEntity": {
-        "@id": "https://www.fordivine.com/discover#service"
-      }
-    },
-    {
-      "@type": "Service",
-      "@id": "https://www.fordivine.com/discover#service",
-      "name": "FORDIVINE Discovery Call",
-      "serviceType": "Personal brand strategy consultation",
-      "provider": {
-        "@id": "https://www.fordivine.com/#organization"
-      },
-      "audience": {
-        "@type": "Audience",
-        "audienceType": "Women entrepreneurs and leaders"
-      },
-      "url": "https://www.fordivine.com/discover"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://www.fordivine.com/discover#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.fordivine.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Discover",
-          "item": "https://www.fordivine.com/discover"
-        }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.fordivine.com/discover#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Is this a sales call?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. This call is solely to learn about your situation and see if you are a right fit for FORDIVINE services."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What happens during the turn-key brand service?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "FORDIVINE reviews your current brand, identifies what is unclear or misaligned, then builds the complete strategy, messaging, visuals, and systems you need."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What do I walk away with?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "You walk away with strategy, visual identity, brand assets, and scalable systems designed to support your brand."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is this right for my business or industry?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "If your business depends on your name, expertise, reputation, or personal credibility, then FORDIVINE services are made for you."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How much do your services typically cost?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "FORDIVINE is a premium brand house. Rates start at $7k for turn-key services that include marketing strategy and premium-grade brand assets."
-          }
-        }
-      ]
-    }
-  ]
-}
-</script>
+<meta name="twitter:title" content="FORDIVINE | Where Crowned Authorities™ Are Made">
+<meta name="twitter:description" content="Your brand should be your hardest-working employee. Right now, it's costing you money. FORDIVINE builds Crowned Authorities, not influencers.">
+<meta name="twitter:image" content="https://fordivine.com/og-image.jpg">
 
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
-<!-- Performance: Preconnect to fonts and third-party services -->
+<!-- Performance: Preconnect to Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://www.googletagmanager.com">
-<link rel="preconnect" href="https://connect.facebook.net" crossorigin>
-<link rel="preconnect" href="https://static.hotjar.com" crossorigin>
-<link rel="preconnect" href="https://fast.vidalytics.com" crossorigin>
-<link rel="preconnect" href="https://app.iclosed.io" crossorigin>
-<link rel="dns-prefetch" href="//www.google-analytics.com">
-<link rel="dns-prefetch" href="//script.hotjar.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=GFS+Didot&display=swap" rel="stylesheet">
 
 <style>
@@ -364,33 +175,24 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   .hero-section {
     background: var(--charcoal);
     text-align: center;
-    padding: 64px 48px 0;
+    padding: 100px 48px 0;
     position: relative;
     z-index: 1;
     isolation: isolate;
   }
   /* hero-section::after removed — seamless flow into video section */
-  .hero-badge-logo {
-    width: 16px;
-    height: 16px;
-    object-fit: contain;
-    display: block;
-    flex-shrink: 0;
-  }
   .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    border: 1px solid rgba(255,255,255,0.15);
+    display: inline-block;
+    border: 1px solid rgba(200,184,154,0.25);
     border-radius: 100px;
-    padding: 7px 16px 7px 12px;
-    font-size: 9px;
+    padding: 10px 28px;
+    font-size: 10px;
     font-weight: 600;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: #1a1a1a;
-    margin-bottom: 40px;
-    background: #ffffff;
+    color: var(--bone);
+    margin-bottom: 56px;
+    background: rgba(200,184,154,0.04);
   }
   .hero-section h1 {
     font-family: var(--display);
@@ -408,14 +210,10 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     font-size: clamp(16px, 2vw, 20px);
     font-weight: 300;
     line-height: 1.75;
-    color: rgba(255,255,255,0.92);
+    color: rgba(255,255,255,0.45);
     max-width: 600px;
     margin: 0 auto;
     letter-spacing: 0.01em;
-  }
-  .hero-title-line,
-  .hero-subtitle-line {
-    display: contents;
   }
   .hero-subtitle strong {
     color: rgba(255,255,255,0.85);
@@ -423,11 +221,12 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   }
 
 
-  /* ========== LIVE HERO: FORDIVINE TAN BEAMS BACKGROUND ========== */
-  #ambient-canvas {
+
+  /* ========== LOCAL PROTOTYPE: FORDIVINE TAN BEAMS HERO ========== */
+  .beams-prototype-page #ambient-canvas {
     opacity: 0.08;
   }
-  .hero-beams-live {
+  .hero-beams-prototype {
     position: relative;
     isolation: isolate;
     overflow: hidden;
@@ -436,7 +235,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
       radial-gradient(circle at 18% 82%, rgba(120,98,64,0.12), transparent 36%),
       var(--charcoal);
   }
-  .hero-beams-live::before {
+  .hero-beams-prototype::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -446,7 +245,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
       linear-gradient(180deg, rgba(18,18,18,0.28) 0%, rgba(18,18,18,0.08) 42%, rgba(18,18,18,0.72) 100%),
       radial-gradient(ellipse at center, transparent 0%, rgba(18,18,18,0.22) 58%, rgba(18,18,18,0.66) 100%);
   }
-  .hero-beams-live::after {
+  .hero-beams-prototype::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -463,84 +262,65 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     height: 100%;
     z-index: 0;
     pointer-events: none;
-    opacity: 0.94;
-    filter: blur(8px) saturate(0.95);
+    opacity: 0.82;
+    filter: blur(10px) saturate(0.88);
   }
-  .section-beams-enabled {
-    position: relative;
-    overflow: hidden;
-    isolation: isolate;
-  }
-  .section-beams-enabled > *:not(.section-beams-canvas) {
-    position: relative;
-    z-index: 2;
-  }
-  .section-beams-enabled::before,
-  .section-beams-enabled::after {
-    z-index: 1;
-  }
-  .section-beams-canvas {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none;
-    opacity: 0.42;
-    filter: blur(18px) saturate(0.82);
-  }
-  .trust-bar .section-beams-canvas,
-  .client-logos-bar .section-beams-canvas {
-    opacity: 0.24;
-    filter: blur(20px) saturate(0.72);
-  }
-  .arch-intro .section-beams-canvas,
-  .emily-note-section .section-beams-canvas,
-  .cinematic-close .section-beams-canvas {
-    opacity: 0.48;
-  }
-  .hero-beams-live .hero-section,
-  .hero-beams-live .video-section,
-  .hero-beams-live .below-video {
+  .hero-beams-prototype .hero-section,
+  .hero-beams-prototype .video-section,
+  .hero-beams-prototype .below-video {
     background: transparent;
     position: relative;
     z-index: 2;
   }
-  .hero-beams-live .hero-badge {
-    background: #ffffff;
-    border-color: rgba(255,255,255,0.15);
-    color: #1a1a1a;
-    box-shadow: none;
+  .hero-beams-prototype .hero-badge {
+    background: rgba(200,184,154,0.07);
+    border-color: rgba(200,184,154,0.34);
+    box-shadow: 0 0 34px rgba(200,184,154,0.08);
   }
-  .hero-beams-live .hero-section h1 {
+  .hero-beams-prototype .hero-section h1 {
     text-shadow: 0 18px 60px rgba(0,0,0,0.45), 0 0 34px rgba(200,184,154,0.035);
   }
-  .hero-beams-live .hero-subtitle,
-  .hero-beams-live .below-video p {
-    color: rgba(255,255,255,0.92);
+  .hero-beams-prototype .hero-subtitle,
+  .hero-beams-prototype .below-video p {
+    color: rgba(255,255,255,0.52);
     text-shadow: 0 12px 34px rgba(0,0,0,0.42);
   }
-  .hero-beams-live .cta-btn.on-dark {
-    background: #e8dfc8;
-    color: #1a1a1a;
-    box-shadow: 0 18px 55px rgba(168,146,106,0.25), 0 0 0 1px rgba(168,146,106,0.20);
+  .hero-beams-prototype .cta-btn.on-dark {
+    background: rgba(255,255,255,0.96);
+    color: var(--charcoal);
+    box-shadow: 0 18px 55px rgba(0,0,0,0.26), 0 0 0 1px rgba(200,184,154,0.10);
+  }
+  .prototype-note {
+    position: fixed;
+    left: 18px;
+    bottom: 18px;
+    z-index: 999;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: rgba(18,18,18,0.72);
+    color: rgba(200,184,154,0.9);
+    border: 1px solid rgba(200,184,154,0.22);
+    font-family: var(--body);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    backdrop-filter: blur(14px);
   }
   @media (max-width: 768px) {
-    #hero-beams-canvas { opacity: 0.78; filter: blur(10px) saturate(0.9); }
-    .section-beams-canvas { opacity: 0.34; filter: blur(18px) saturate(0.78); }
-    .trust-bar .section-beams-canvas,
-    .client-logos-bar .section-beams-canvas { opacity: 0.20; }
-    .mini-nav { gap: 14px; }
-    .mini-nav .nav-cta { max-width: min(176px, 46vw); padding-left: 16px; padding-right: 16px; overflow: hidden; white-space: nowrap; }
+    #hero-beams-canvas { opacity: 0.65; filter: blur(13px) saturate(0.82); }
+    .prototype-note { display: none; }
+    .beams-prototype-page .mini-nav { gap: 14px; }
+    .beams-prototype-page .mini-nav .nav-cta { max-width: 176px; padding-left: 16px; padding-right: 16px; overflow: hidden; white-space: nowrap; }
   }
   @media (max-width: 430px) {
-    .mini-nav { padding-left: 18px; padding-right: 18px; gap: 10px; }
-    .mini-nav .nav-cta { max-width: 43vw; min-height: 42px; padding-left: 12px; padding-right: 12px; font-size: 8px; letter-spacing: 0.12em; }
-    .hero-beams-live .hero-section,
-    .hero-beams-live .below-video { width: 100%; max-width: 100%; overflow: hidden; }
-    .hero-beams-live .hero-section h1 { font-size: clamp(25px, 7.65vw, 34px); max-width: 350px; }
-    .hero-beams-live .hero-subtitle { max-width: 340px; }
-    .hero-beams-live .below-video p { max-width: 330px; }
+    .beams-prototype-page .mini-nav { justify-content: center !important; padding-left: 20px !important; padding-right: 20px !important; }
+    .beams-prototype-page .mini-nav .nav-cta { display: none !important; }
+    .beams-prototype-page .hero-section,
+    .beams-prototype-page .below-video { width: 100vw !important; max-width: 100vw !important; overflow: hidden; }
+    .beams-prototype-page .hero-section h1 { font-size: clamp(25px, 7.65vw, 34px); max-width: 350px; }
+    .beams-prototype-page .hero-subtitle { max-width: 340px; }
+    .beams-prototype-page .below-video p { max-width: 330px; }
   }
 
   /* ========== VIDEO ========== */
@@ -604,20 +384,13 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     font-size: 17px;
     font-weight: 300;
     line-height: 1.85;
-    color: rgba(255,255,255,0.92);
+    color: rgba(255,255,255,0.42);
     max-width: 580px;
     margin: 0 auto 28px;
     letter-spacing: 0.01em;
   }
   .below-video p:last-of-type { margin-bottom: 48px; }
   .below-video strong { color: rgba(255,255,255,0.88); font-weight: 600; }
-
-  /* ========== HERO VIDEO EMBED ========== */
-  .hero-video-wrap {
-    max-width: 860px;
-    width: 100%;
-    margin: 48px auto 0;
-  }
 
   /* ========== CTA BUTTON ========== */
   .cta-btn {
@@ -628,7 +401,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     text-transform: uppercase;
     letter-spacing: 0.16em;
     padding: 20px 56px;
-    border-radius: 6px;
+    border-radius: 100px;
     text-decoration: none;
     border: none;
     cursor: pointer;
@@ -643,7 +416,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     content: '';
     position: absolute;
     inset: 0;
-    border-radius: 6px;
+    border-radius: 100px;
     background: linear-gradient(135deg, rgba(200,184,154,0.15) 0%, transparent 50%);
     opacity: 0;
     transition: opacity 0.5s ease;
@@ -672,13 +445,12 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     border-radius: 0;
   }
   .cta-btn.on-dark {
-    background: #e8dfc8;
-    color: #1a1a1a;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    background: var(--white);
+    color: var(--charcoal);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   }
   .cta-btn.on-dark:hover {
-    background: #9a8460;
-    box-shadow: 0 16px 48px rgba(168,146,106,0.3);
+    box-shadow: 0 16px 48px rgba(255,255,255,0.1);
     transform: translateY(-2px) scale(1.02);
   }
 
@@ -694,10 +466,10 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   .trust-bar-label {
     font-family: var(--body);
     font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
+    font-weight: 500;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: rgba(255,255,255,1);
+    color: rgba(255,255,255,0.28);
     margin-bottom: 32px;
   }
   .trust-bar::before,
@@ -776,10 +548,10 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   .client-logos-label {
     font-family: var(--body);
     font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
+    font-weight: 500;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: rgba(255,255,255,1);
+    color: rgba(200,184,154,0.5);
     margin-bottom: 36px;
   }
   .client-logo-track {
@@ -822,8 +594,6 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
       gap: 32px;
       animation-duration: 18s;
     }
-    .client-logos-bar { padding: 48px 0 20px; }
-    .client-logos-label { margin-bottom: 30px; }
     .client-logo-track img { height: 44px; max-width: 240px; }
     .client-logo-track img.client-logo-submark { height: 64px; max-width: 96px; }
   }
@@ -848,7 +618,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     font-style: italic;
     font-size: 16px;
     font-weight: 400;
-    color: rgba(255,255,255,0.95);
+    color: rgba(255,255,255,0.78);
     line-height: 1.6;
     max-width: 420px;
     margin-bottom: 6px;
@@ -861,7 +631,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     font-style: normal;
     font-size: 11px;
     font-weight: 600;
-    color: rgba(255,255,255,0.88);
+    color: rgba(255,255,255,0.55);
     letter-spacing: 0.08em;
     text-transform: uppercase;
   }
@@ -885,8 +655,8 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   }
   .emily-note-photo {
     flex-shrink: 0;
-    width: 420px;
-    height: 520px;
+    width: 320px;
+    height: 360px;
     border-radius: 24px;
     overflow: hidden;
     position: relative;
@@ -894,8 +664,8 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   }
   .emily-note-photo img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
     object-position: center top;
     display: block;
   }
@@ -926,7 +696,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     font-weight: 400;
     font-style: italic;
     line-height: 1.8;
-    color: rgba(255,255,255,0.92);
+    color: rgba(255,255,255,0.55);
     margin-bottom: 20px;
     letter-spacing: 0.01em;
   }
@@ -935,76 +705,47 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     font-weight: 500;
   }
   .emily-note-signature {
+    font-family: var(--serif);
+    font-size: 24px;
+    font-style: italic;
+    color: var(--bone);
+    opacity: 0.5;
     margin-top: 32px;
-  }
-  .emily-signature-img {
-    width: 220px;
-    height: auto;
-    display: block;
-    opacity: 0.9;
+    letter-spacing: 0.02em;
   }
   .emily-note-title {
     font-family: var(--body);
     font-size: 11px;
     font-weight: 500;
-    color: rgba(255,255,255,0.88);
+    color: rgba(255,255,255,0.25);
     letter-spacing: 0.06em;
-    text-transform: uppercase;
-    margin-top: 10px;
-    padding-left: 2px;
+    margin-top: 6px;
   }
 
 
   /* ========== SOCIAL PROOF ========== */
   .social-proof-section {
-    background: var(--charcoal);
-    padding: 64px 16px 80px;
+    background: var(--offwhite);
+    padding: 112px 48px;
     text-align: center;
     position: relative;
     z-index: 1;
-  }
-  .social-proof-card {
-    max-width: 1360px;
-    margin: 0 auto;
-    border-radius: 32px;
-    padding: 112px 48px;
-    position: relative;
-    overflow: hidden;
-    background-color: transparent;
-    box-shadow: none;
-  }
-  /* Subtle grain on dark background */
-  .social-proof-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 32px;
-    pointer-events: none;
-    opacity: 0.12;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.8' numOctaves='6' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='512' height='512' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-    mix-blend-mode: screen;
   }
   .proof-subtitle {
     font-family: var(--body);
     font-size: 11px;
     font-weight: 600;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--bone);
+    color: var(--text-light);
     margin-top: 12px;
-    margin-bottom: 40px;
-  }
-  /* Vidalytics portrait video embed */
-  .vidalytics-wrap {
-    max-width: 380px;
-    width: 100%;
-    margin: 0 auto 56px;
+    margin-bottom: 56px;
   }
   .social-proof-section h2 {
     font-family: var(--display);
     font-weight: 700;
     font-size: clamp(22px, 2.6vw, 32px);
-    color: var(--white);
+    color: var(--text-dark);
     margin-bottom: 8px;
     line-height: 1.35;
     letter-spacing: -0.02em;
@@ -1042,99 +783,84 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     box-shadow: 0 0 30px rgba(0,0,0,0.1);
   }
 
-  /* ========== PHOTO-FORWARD TESTIMONIAL CARDS ========== */
+  /* Review cards */
   .reviews-scatter {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    justify-content: center;
     gap: 24px;
-    max-width: 1080px;
+    flex-wrap: wrap;
+    max-width: 940px;
     margin: 0 auto 20px;
     padding: 0 16px;
   }
   .review-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 32px;
+    width: 280px;
+    text-align: left;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: default;
     position: relative;
     overflow: hidden;
-    border-radius: 16px;
-    height: 520px;
-    cursor: default;
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.03);
   }
+  .review-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(200,184,154,0.3), transparent 60%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+  }
+  .review-card:hover::before { opacity: 1; }
   .review-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.08);
   }
   .review-card:nth-child(1) { margin-top: 0; }
-  .review-card:nth-child(2) { margin-top: 0; }
-  .review-card:nth-child(3) { margin-top: 0; }
-  .review-card-img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
+  .review-card:nth-child(2) { margin-top: 40px; }
+  .review-card:nth-child(3) { margin-top: 16px; }
+  .review-stars { color: var(--bone); font-size: 13px; margin-bottom: 16px; letter-spacing: 3px; }
+  .review-text { font-size: 14px; line-height: 1.75; color: var(--text-mid); margin-bottom: 20px; font-weight: 400; }
+  .review-author { font-size: 13px; font-weight: 700; color: var(--text-dark); letter-spacing: 0.01em; }
+  .review-role { font-size: 11px; color: var(--text-light); letter-spacing: 0.02em; font-weight: 500; }
+  .review-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
     object-fit: cover;
-    object-position: center top;
-  }
-  .review-card-gradient {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.1) 70%, transparent 100%);
-    pointer-events: none;
-  }
-  .review-card-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 32px 28px;
-    text-align: left;
-    z-index: 2;
-  }
-  .review-quote-icon {
-    width: 28px;
-    height: 28px;
-    opacity: 0.4;
-    margin-bottom: 16px;
-  }
-  .review-text {
-    font-family: var(--serif);
-    font-size: 15px;
-    font-style: italic;
-    line-height: 1.7;
-    color: rgba(255,255,255,0.92);
-    margin-bottom: 20px;
-    font-weight: 400;
-  }
-  .review-author {
-    font-family: var(--body);
-    font-size: 13px;
-    font-weight: 600;
+    background: var(--charcoal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 14px;
     color: var(--white);
     letter-spacing: 0.02em;
-  }
-  .review-role {
-    font-family: var(--body);
-    font-size: 11px;
-    color: rgba(255,255,255,0.55);
-    letter-spacing: 0.02em;
-    font-weight: 400;
-    margin-top: 3px;
-  }
-  .review-stars {
-    color: var(--bone);
-    font-size: 13px;
-    margin-bottom: 12px;
-    letter-spacing: 3px;
+    flex-shrink: 0;
   }
   .review-author-row {
     display: flex;
-    flex-direction: column;
-    gap: 2px;
+    align-items: center;
+    gap: 14px;
+    margin-top: 20px;
   }
   .review-author-info { display: flex; flex-direction: column; gap: 3px; }
   .review-disclaimer {
     font-size: 10px;
-    color: rgba(255,255,255,0.4);
+    color: #b0b0b0;
     max-width: 680px;
     margin: 40px auto 0;
     line-height: 1.6;
@@ -1164,10 +890,10 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     font-family: var(--body);
     font-size: 11px;
     font-weight: 600;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: rgba(255,255,255,1);
-    opacity: 1;
+    color: var(--bone);
+    opacity: 0.5;
     margin-bottom: 28px;
     position: relative;
   }
@@ -1193,7 +919,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     font-family: var(--body);
     font-size: 16px;
     font-weight: 400;
-    color: rgba(255,255,255,0.92);
+    color: rgba(255,255,255,0.4);
     line-height: 1.68;
     max-width: 660px;
     margin: 0 auto;
@@ -1344,41 +1070,20 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   .pillar-item strong { color: var(--text-dark); font-weight: 700; }
   .pillars-cta { text-align: center; padding: 56px 48px 112px; background: var(--white); }
 
-  /* ========== COMBINED STORIES (reviews + carousel) ========== */
-  .combined-stories-section {
-    background: var(--charcoal);
-    padding: 64px 16px 80px;
+  /* ========== MORE REVIEWS ========== */
+  .more-reviews {
+    background: var(--white);
+    padding: 0 48px 112px;
     position: relative;
     z-index: 1;
   }
-  .combined-stories-card {
-    max-width: 1360px;
-    margin: 0 auto;
-    border-radius: 32px;
-    padding: 80px 48px 64px;
-    position: relative;
-    overflow: hidden;
-    background-color: transparent;
-    box-shadow: none;
-  }
-  .combined-stories-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 32px;
-    pointer-events: none;
-    opacity: 0.12;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.8' numOctaves='6' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='512' height='512' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-    mix-blend-mode: screen;
-  }
-  .combined-stories-card .reviews-scatter {
+  .more-reviews .reviews-scatter {
     margin-bottom: 0;
-    padding-bottom: 80px;
   }
 
   /* ========== BOOKING FORM PLACEHOLDER ========== */
   .booking-section {
-    background: #ffffff;
+    background: var(--offwhite);
     padding: 56px 48px 52px;
     text-align: center;
     position: relative;
@@ -1593,7 +1298,6 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     color: var(--text-mid);
     margin-bottom: 14px;
   }
-  .qa-body li { color: var(--text-dark); }
   .qa-body strong { color: var(--text-dark); font-weight: 700; }
 
   /* ========== AMBIENT BACKGROUND ========== */
@@ -1612,7 +1316,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   .cinematic-close {
     background: var(--charcoal);
     text-align: center;
-    padding: 100px 48px 120px;
+    padding: 140px 48px 160px;
     position: relative;
     overflow: hidden;
   }
@@ -1635,9 +1339,9 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   }
   .cinematic-close-eyebrow {
     font-family: var(--body);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--gold);
     margin-bottom: 32px;
@@ -1773,7 +1477,14 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     font-weight: 300;
   }
 
-  /* crowned-carousel-section removed — merged into combined-stories-section */
+  /* ========== CROWNED CAROUSEL ========== */
+  .crowned-carousel-section {
+    background: var(--white);
+    padding: 24px 0 112px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
   .crowned-carousel-header {
     text-align: center;
     margin-bottom: 48px;
@@ -1783,13 +1494,13 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     font-family: var(--display);
     font-weight: 700;
     font-size: clamp(24px, 2.6vw, 32px);
-    color: var(--white);
+    color: var(--text-dark);
     margin-bottom: 12px;
     letter-spacing: -0.02em;
   }
   .crowned-carousel-header p {
     font-size: 14px;
-    color: rgba(255,255,255,0.65);
+    color: var(--text-light);
     max-width: 440px;
     margin: 0 auto;
     line-height: 1.65;
@@ -1873,21 +1584,19 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.1);
+    background: var(--charcoal);
     color: var(--white);
-    border: 1px solid rgba(200,184,154,0.25);
+    border: none;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 5;
-    transition: background 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    backdrop-filter: blur(8px);
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
   }
   .carousel-arrow:hover {
-    background: rgba(200,184,154,0.15);
-    border-color: var(--bone);
+    background: #222;
     transform: translateY(-50%) scale(1.08);
   }
   .carousel-arrow.prev { left: 0; }
@@ -1931,14 +1640,14 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.25);
+    background: #ddd;
     border: none;
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     padding: 0;
   }
   .carousel-dot.active {
-    background: var(--bone);
+    background: var(--charcoal);
     transform: scale(1.4);
   }
   /* Responsive */
@@ -1960,37 +1669,19 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     .logo-carousel-track img { height: 34px; }
 
     /* Emily note */
-    .emily-note-section { padding: 24px 24px 80px; }
+    .emily-note-section { padding: 80px 24px; }
     .emily-note-inner { flex-direction: column; gap: 40px; text-align: left; }
     .emily-note-photo { width: 100%; min-height: unset; height: auto; margin: 0 auto; border-radius: 16px; }
     .emily-note-content p { font-size: 18px; }
-    .emily-signature-img { width: 180px; }
-    .emily-note-title { font-size: 10px; margin-top: 8px; }
 
     /* Nav */
     .mini-nav { padding: 14px 20px; }
     .mini-nav .nav-cta { font-size: 10px; padding: 12px 22px; letter-spacing: 0.08em; min-height: 44px; display: flex; align-items: center; }
 
     /* Hero */
-    .hero-section { padding: 64px 16px 40px; }
-    .hero-section h1,
-    .hero-beams-live .hero-section h1 {
-      font-size: clamp(25px, 6.65vw, 29px);
-      line-height: 1.05;
-      max-width: 365px;
-      margin-bottom: 34px;
-    }
-    .hero-title-line,
-    .hero-subtitle-line {
-      display: block;
-    }
-    .hero-subtitle,
-    .hero-beams-live .hero-subtitle {
-      font-size: clamp(13px, 3.3vw, 14px);
-      line-height: 1.72;
-      max-width: 365px;
-      letter-spacing: 0;
-    }
+    .hero-section { padding: 64px 24px 40px; }
+    .hero-section h1 { font-size: clamp(28px, 8vw, 48px); }
+    .hero-subtitle { font-size: clamp(15px, 3.8vw, 18px); }
 
     /* Video */
     .video-section { padding: 40px 24px 0; }
@@ -2001,8 +1692,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     .below-video p { font-size: 15px; }
 
     /* Social proof */
-    .social-proof-section { padding: 48px 12px 64px; }
-    .social-proof-card { padding: 80px 24px; border-radius: 24px; }
+    .social-proof-section { padding: 80px 24px; }
 
     /* Pillars */
     .pillars-section { padding: 80px 24px 40px; }
@@ -2015,10 +1705,11 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     .pillars-cta { padding: 48px 24px 80px; }
 
     /* Reviews */
-    .reviews-scatter { grid-template-columns: 1fr; gap: 20px; max-width: 400px; margin-left: auto; margin-right: auto; }
-    .review-card { height: 440px; }
-    .combined-stories-section { padding: 48px 12px 64px; }
-    .combined-stories-card { padding: 56px 24px 48px; border-radius: 24px; }
+    .reviews-scatter { flex-direction: column; align-items: center; gap: 16px; }
+    .review-card { width: 100%; max-width: 360px; }
+    .reviews-scatter .review-card:nth-child(2) { margin-top: 0; }
+    .reviews-scatter .review-card:nth-child(3) { margin-top: 0; }
+    .more-reviews { padding: 0 24px 80px; }
 
     /* Booking */
     .form-row { flex-direction: column; }
@@ -2034,7 +1725,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     .qa-wrapper { padding: 44px 24px 64px; }
 
     /* Cinematic close */
-    .cinematic-close { padding: 72px 28px 96px; }
+    .cinematic-close { padding: 100px 28px 120px; }
     .cinematic-close h2 { font-size: clamp(32px, 7vw, 60px); }
 
     /* Footer */
@@ -2048,16 +1739,13 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   @media (max-width: 480px) {
     /* Trust bar */
     .trust-bar { padding: 28px 0; }
-    .trust-bar-label { font-size: 9px; letter-spacing: 0.08em; margin-bottom: 20px; }
+    .trust-bar-label { font-size: 9px; letter-spacing: 0.14em; margin-bottom: 20px; }
     .logo-carousel-track { gap: 48px; }
     .logo-carousel-track img { height: 30px; }
 
     /* Emily note */
-    .emily-note-section { padding-top: 18px; }
     .emily-note-photo { width: 100%; height: auto; overflow: visible; }
     .emily-note-content p { font-size: 16px; }
-    .emily-signature-img { width: 160px; }
-    .emily-note-title { font-size: 10px; margin-top: 8px; }
 
     /* Micro-testimonial */
     .micro-testimonial { margin-top: 20px; }
@@ -2065,10 +1753,9 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     .micro-testimonial-author { font-size: 10px; }
 
     /* Hero */
-    .hero-section { padding: 24px 20px 28px; }
+    .hero-section { padding: 48px 20px 36px; }
     .hero-section h1 { font-size: clamp(26px, 8vw, 38px); }
-    .hero-badge { font-size: 6px; padding: 5px 11px; gap: 4px; margin-bottom: 28px; }
-    .hero-badge-logo { width: 11px; height: 11px; }
+    .hero-badge { font-size: 9px; padding: 8px 18px; }
 
     /* Video */
     .video-section { padding: 32px 20px 0; }
@@ -2102,16 +1789,13 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     .crowned-carousel-header { padding: 0 24px; }
     .crowned-carousel-header h2 { font-size: clamp(22px, 6vw, 28px); }
     .carousel-container { max-width: 100%; width: calc(100% - 32px); margin: 0 auto; }
-    /* crowned-carousel mobile override removed — merged into combined-stories */
+    .crowned-carousel-section { padding: 24px 0 80px; }
 
     /* Cinematic close */
-    .cinematic-close { padding: 60px 24px 80px; }
+    .cinematic-close { padding: 80px 24px 100px; }
     .cinematic-close h2 { font-size: clamp(20px, 5.3vw, 30px); line-height: 1.2; }
-    .cinematic-close-eyebrow { font-size: 9px; letter-spacing: 0.08em; }
+    .cinematic-close-eyebrow { font-size: 9px; letter-spacing: 0.18em; }
     .cinematic-close-divider { margin: 28px auto; }
-
-    /* Disclaimer stacked on mobile */
-    .disclaimer-line1, .disclaimer-line2 { display: block; }
 
     /* Booking */
     .booking-embed { padding: 28px 20px; border-radius: 18px; }
@@ -2146,37 +1830,24 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   }
 </style>
 </head>
-<body>
+<body class="beams-prototype-page">
 
 <!-- ===== AMBIENT BACKGROUND CANVAS ===== -->
 <canvas id="ambient-canvas"></canvas>
 
 <!-- ===== MINIMAL NAV ===== -->
 <div class="mini-nav">
-  <a href="https://www.fordivine.com" class="logo logo-img-wrap" aria-label="FORDIVINE home"><picture><source srcset="/fordivine-logo.webp" type="image/webp"><img src="/fordivine-logo.png" alt="FORDIVINE" class="nav-wordmark" width="1287" height="201" loading="eager" fetchpriority="high" decoding="async"></picture></a>
+  <a href="https://www.fordivine.com" class="logo logo-img-wrap"><picture><source srcset="/fordivine-logo.webp" type="image/webp"><img src="/fordivine-logo.png" alt="FORDIVINE" class="nav-wordmark"></picture></a>
+  <a href="#book" class="nav-cta">Book Discovery Call</a>
 </div>
 
 <!-- ===== HERO ===== -->
-<section class="hero-beams-live" aria-label="Discover hero with champagne beam background">
+<section class="hero-beams-prototype" aria-label="Local prototype with champagne Beams background">
   <canvas id="hero-beams-canvas" aria-hidden="true"></canvas>
   <section class="hero-section">
-  <div class="hero-badge reveal"><img src="/fd-submark.png" alt="FD" class="hero-badge-logo" width="1345" height="855" loading="eager" fetchpriority="high" decoding="async">Personal Branding House</div>
-  <h1 class="reveal reveal-delay-1"><span class="hero-title-line">Is your brand</span> <span class="hero-title-line">limiting your impact?</span></h1>
-  <p class="hero-subtitle reveal reveal-delay-2"><span class="hero-subtitle-line">It's not due to your lack of passion. It's an unclear,</span> <span class="hero-subtitle-line">scattered brand that is limiting your impact to getting</span> <span class="hero-subtitle-line"><strong style="color: #e8dfc8; font-weight: 700;">more clients, stages, and business success.</strong></span></p>
-  <div class="hero-video-wrap reveal reveal-delay-3">
-    <div id="vidalytics_embed_3aXl6KdXwDoyvaEt" style="width: 100%; position:relative; padding-top: 56.25%;"></div>
-    <script type="text/javascript">
-    (function (v, i, d, a, l, y, t, c, s) {
-        y='_'+d.toLowerCase();c=d+'L';if(!v[d]){v[d]={};}if(!v[c]){v[c]={};}if(!v[y]){v[y]={};}var vl='Loader',vli=v[y][vl],vsl=v[c][vl + 'Script'],vlf=v[c][vl + 'Loaded'],ve='Embed';
-        if (!vsl){vsl=function(u,cb){
-            if(t){cb();return;}s=i.createElement("script");s.type="text/javascript";s.async=1;s.src=u;
-            if(s.readyState){s.onreadystatechange=function(){if(s.readyState==="loaded"||s.readyState=="complete"){s.onreadystatechange=null;vlf=1;cb();}};}else{s.onload=function(){vlf=1;cb();};}
-            i.getElementsByTagName("head")[0].appendChild(s);
-        };}
-        vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
-    })(window, document, 'Vidalytics', 'vidalytics_embed_3aXl6KdXwDoyvaEt', 'https://fast.vidalytics.com/embeds/Sjy1Iha6/3aXl6KdXwDoyvaEt/');
-    </script>
-  </div>
+  <div class="hero-badge reveal">Personal Branding House</div>
+  <h1 class="reveal reveal-delay-1">Is your brand limiting your impact?</h1>
+  <p class="hero-subtitle reveal reveal-delay-2">It's not due to your lack of passion. It's an unclear, scattered brand that is limiting your impact to getting <strong style="color: var(--bone); font-weight: 700;">more clients, stages, and business success.</strong></p>
 </section>
 
 <!-- ===== VIDEO ===== -->
@@ -2196,7 +1867,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 <div class="below-video">
   <p class="reveal">We engineer your entire brand to help you create greater impact without losing your soul's essence.</p>
   <p class="reveal reveal-delay-1" style="display:none;">You walk in with a scattered, misaligned brand and walk out with a <strong>Crowned Authority™ Blueprint and Crowned Identity™ Bible</strong> ready to use instantly. Authority is engineered, not just designed.</p>
-  <a href="#book" class="cta-btn on-dark reveal reveal-delay-2" aria-label="Schedule a FORDIVINE discovery call">Schedule Discovery Call</a>
+  <a href="#book" class="cta-btn on-dark reveal reveal-delay-2">Schedule Discovery Call</a>
   <div class="micro-testimonial reveal reveal-delay-2" style="display:none;">
     <div>
       <p class="micro-testimonial-text">"I was nervous to book the call, but it was the most clarifying conversation I have had about my brand in years."</p>
@@ -2206,49 +1877,34 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 </div>
 </section>
 
+<div class="prototype-note">Local Beams Prototype</div>
+
 <!-- ===== AS SEEN IN TRUST BAR ===== -->
 <section class="trust-bar reveal">
   <p class="trust-bar-label">Our Work Represented In</p>
   <div class="logo-carousel-track">
-    <img src="/logos/mastermind.png" alt="Mastermind.com" class="logo-invert" loading="lazy" width="1204" height="211" decoding="async">
-    <img src="/logos/forbes.png" alt="Forbes" loading="lazy" width="2400" height="931" decoding="async">
-    <img src="/logos/auralis_magazine.png" alt="Auralis Magazine" loading="lazy" width="1838" height="600" decoding="async">
-    <img src="/logos/cbs_news.png" alt="CBS News" loading="lazy" width="2400" height="870" decoding="async">
-    <img src="/logos/yahoo.png" alt="Yahoo" loading="lazy" width="1200" height="500" decoding="async">
-    <img src="/logos/good_morning_america.png" alt="Good Morning America" loading="lazy" width="860" height="476" decoding="async">
-    <img src="/logos/business_insider.png" alt="Business Insider" loading="lazy" width="2704" height="855" decoding="async">
-    <img src="/logos/mastermind.png" alt="Mastermind.com" class="logo-invert" loading="lazy" width="1204" height="211" decoding="async">
-    <img src="/logos/forbes.png" alt="Forbes" loading="lazy" width="2400" height="931" decoding="async">
-    <img src="/logos/auralis_magazine.png" alt="Auralis Magazine" loading="lazy" width="1838" height="600" decoding="async">
-    <img src="/logos/cbs_news.png" alt="CBS News" loading="lazy" width="2400" height="870" decoding="async">
-    <img src="/logos/yahoo.png" alt="Yahoo" loading="lazy" width="1200" height="500" decoding="async">
-    <img src="/logos/good_morning_america.png" alt="Good Morning America" loading="lazy" width="860" height="476" decoding="async">
-    <img src="/logos/business_insider.png" alt="Business Insider" loading="lazy" width="2704" height="855" decoding="async">
+    <img src="/logos/mastermind.png" alt="Mastermind.com" class="logo-invert" loading="eager">
+    <img src="/logos/forbes.png" alt="Forbes" loading="eager">
+    <img src="/logos/auralis_magazine.png" alt="Auralis Magazine" loading="eager">
+    <img src="/logos/cbs_news.png" alt="CBS News" loading="eager">
+    <img src="/logos/yahoo.png" alt="Yahoo" loading="eager">
+    <img src="/logos/good_morning_america.png" alt="Good Morning America" loading="eager">
+    <img src="/logos/business_insider.png" alt="Business Insider" loading="eager">
+    <img src="/logos/mastermind.png" alt="Mastermind.com" class="logo-invert" loading="eager">
+    <img src="/logos/forbes.png" alt="Forbes" loading="eager">
+    <img src="/logos/auralis_magazine.png" alt="Auralis Magazine" loading="eager">
+    <img src="/logos/cbs_news.png" alt="CBS News" loading="eager">
+    <img src="/logos/yahoo.png" alt="Yahoo" loading="eager">
+    <img src="/logos/good_morning_america.png" alt="Good Morning America" loading="eager">
+    <img src="/logos/business_insider.png" alt="Business Insider" loading="eager">
   </div>
 </section>
 
 
 <!-- ===== SOCIAL PROOF ===== -->
 <section class="social-proof-section">
-  <div class="social-proof-card">
   <h2 class="reveal">Real women. Real results.</h2>
-  <p class="proof-subtitle reveal">YOUR CALLING IS CALLING YOU.</p>
-
-  <!-- Vidalytics video embed -->
-  <div class="vidalytics-wrap reveal">
-    <div id="vidalytics_embed_pIZCIXOhXVvUGLpw" style="width: 100%; position:relative; padding-top: 177.78%;"></div>
-    <script type="text/javascript">
-    (function (v, i, d, a, l, y, t, c, s) {
-        y='_'+d.toLowerCase();c=d+'L';if(!v[d]){v[d]={};}if(!v[c]){v[c]={};}if(!v[y]){v[y]={};}var vl='Loader',vli=v[y][vl],vsl=v[c][vl + 'Script'],vlf=v[c][vl + 'Loaded'],ve='Embed';
-        if (!vsl){vsl=function(u,cb){
-            if(t){cb();return;}s=i.createElement("script");s.type="text/javascript";s.async=1;s.src=u;
-            if(s.readyState){s.onreadystatechange=function(){if(s.readyState==="loaded"||s.readyState=="complete"){s.onreadystatechange=null;vlf=1;cb();}};}else{s.onload=function(){vlf=1;cb();};}
-            i.getElementsByTagName("head")[0].appendChild(s);
-        };}
-        vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
-    })(window, document, 'Vidalytics', 'vidalytics_embed_pIZCIXOhXVvUGLpw', 'https://fast.vidalytics.com/embeds/Sjy1Iha6/pIZCIXOhXVvUGLpw/');
-    </script>
-  </div>
+  <p class="proof-subtitle reveal">This is what Crowned Authority looks like.</p>
 
   <!-- Video testimonial -->
   <div class="testimonial-video reveal" style="display:none;">
@@ -2258,50 +1914,43 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     Video testimonial coming soon
   </div>
 
-  <!-- Photo-forward testimonial cards -->
+  <!-- Scattered review cards -->
   <div class="reviews-scatter">
     <div class="review-card reveal">
-      <img class="review-card-img" src="/bio_greta_elena.jpg" alt="Greta Elena-Bosch" loading="lazy" decoding="async">
-      <div class="review-card-gradient"></div>
-      <div class="review-card-content">
-        <svg class="review-quote-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/></svg>
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"It was absolutely the best thing I could invest in. They brought everything together and I'm able to help more women with my coaching!"</p>
-        <div class="review-author-row">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"It was absolutely the best thing I could invest in because I never really had a brand mission or plan to grow my businesses.<br><br>I never fully knew what I wanted to do or how I wanted to do it...but now they brought everything together and I'm able to help more women with my coaching!"</p>
+      <div class="review-author-row">
+        <img class="review-avatar" src="/bio_greta_elena.jpg" alt="Greta Elena-Bosch" loading="lazy">
+        <div class="review-author-info">
           <div class="review-author">Greta Elena-Bosch</div>
           <div class="review-role">Wellness + Mental Health Advocate</div>
         </div>
       </div>
     </div>
     <div class="review-card reveal reveal-delay-1">
-      <img class="review-card-img" src="/bio_jessica_cross.jpg" alt="Jessica Cross" loading="lazy" decoding="async">
-      <div class="review-card-gradient"></div>
-      <div class="review-card-content">
-        <svg class="review-quote-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/></svg>
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"This was one of the best investments I made. I can now launch my new events and seminars under 'The Second Act Method'."</p>
-        <div class="review-author-row">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"My time with the FORDIVINE team was an amazing one. Epic for the records.<br><br>Definitely confirms that this was one of the best investments that I made and now I can launch my new events and seminars under 'The Second Act Method'."</p>
+      <div class="review-author-row">
+        <img class="review-avatar" src="/bio_jessica_cross.jpg" alt="Jessica Cross" loading="lazy">
+        <div class="review-author-info">
           <div class="review-author">Jessica Cross</div>
           <div class="review-role">Govt. Manager, Event Host, Speaker</div>
         </div>
       </div>
     </div>
     <div class="review-card reveal reveal-delay-2">
-      <img class="review-card-img" src="/bio_beth_clifford.jpg" alt="Beth Clifford" loading="lazy" decoding="async">
-      <div class="review-card-gradient"></div>
-      <div class="review-card-content">
-        <svg class="review-quote-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/></svg>
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"The team helped pull out of me who I really am and make it real. I wouldn't have been able to relaunch my podcast, write my book, or start my own consulting without them."</p>
-        <div class="review-author-row">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"I was up in the corporate leadership but had no brand. Just a bunch of family and fun photos. The team helped pull out of me who I really am and make it real.<br><br>I wouldn't have been able to relaunch my podcast, write my book, or start my own consulting if it wasn't for their strategies."</p>
+      <div class="review-author-row">
+        <img class="review-avatar" src="/bio_beth_clifford.jpg" alt="Beth Clifford" loading="lazy">
+        <div class="review-author-info">
           <div class="review-author">Beth Clifford</div>
           <div class="review-role">Sales Leader, Author, Podcast Host</div>
         </div>
       </div>
     </div>
   </div>
-  <p class="review-disclaimer reveal"><span class="disclaimer-line1">These are real testimonials from FORDIVINE clients.</span><span class="disclaimer-line2"> Individual results may vary.</span></p>
-  </div><!-- /.social-proof-card -->
+  <p class="review-disclaimer reveal">These are real testimonials from FORDIVINE clients. Individual results may vary.</p>
 </section>
 
 
@@ -2309,14 +1958,14 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 <section class="arch-intro">
   <p class="arch-intro-label reveal">THE FORDIVINE PHILOSOPHY</p>
   <h2 class="reveal">Your brand is not broken. It is just <span class="accent">missing the architecture.</span></h2>
-  <p class="arch-intro-sub reveal">Most feel broken because they only have one layer of the brand. We engineer all four layers so your brand works the way it's meant to.</p>
+  <p class="arch-intro-sub reveal">Most feel broken because they only focus on one layer of the brand. We engineer all four layers, so your brand works as a complete system that <strong style="color: #fff; font-weight: 700;">attracts higher level clientele and business opportunities</strong>.</p>
   <div class="arch-intro-line"></div>
 </section>
 
 
 <!-- ===== 4 PILLARS ===== -->
 <section class="pillars-section">
-  <h2 class="pillars-heading reveal">The 4 Layers Your Brand Needs:</h2>
+  <h2 class="pillars-heading reveal">We build all 4 layers.</h2>
   <div class="pillars-grid">
 
     <div class="pillar-item reveal">
@@ -2325,84 +1974,84 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
       <h4 class="pillar-subtitle">Strategy That Drives Real Results</h4>
       <p>You have tried "branding" before and it still does not feel like it helps.</p>
       <br>
-      <p>Before any visuals, you need a <strong>Crowned Authority Blueprint</strong>, aka the marketing strategy behind your entire brand ecosystem.</p>
+      <p>That is because no one has built a real business strategy for you yet. Our in-house Strategy Engineers build your <strong>Crowned Authority Blueprint</strong>, the marketing strategy behind everything.</p>
     </div>
 
     <div class="pillar-item reveal reveal-delay-1">
       <span class="pillar-num">02</span>
       <h3>The Presence</h3>
       <h4 class="pillar-subtitle">Visuals That Command Attention</h4>
-      <p>No AI system out there can fully grasp your soul's essence and materialize it as unique brand assets.</p>
+      <p>Your current visuals do not match who you have become or where you want to go.</p>
       <br>
-      <p>Our in-house Designers craft your <strong>Crowned Identity Bible</strong>, aka all the brand assets for your entire brand ecosystem.</p>
+      <p>Our in-house Design Engineers create your <strong>Crowned Identity Bible</strong>, including logos, colors, typography, and every visual asset you need.</p>
     </div>
 
     <div class="pillar-item reveal reveal-delay-2">
       <span class="pillar-num">03</span>
       <h3>The Activation</h3>
-      <h4 class="pillar-subtitle">Brand Assets Ready To Use</h4>
+      <h4 class="pillar-subtitle">Assets Ready To Deploy Immediately</h4>
+      <p>You have probably invested in assets before and watched them collect dust.</p>
       <br>
-      <p>Activate your digital presence with a <strong>Digital HQ</strong> (full website), <strong>premium brand assets</strong>, and <strong>social content</strong> that converts bystanders into leads.</p>
+      <p>We create ready-to-use assets that activate your authority online, from your Digital HQ to branded content templates.</p>
     </div>
 
     <div class="pillar-item reveal reveal-delay-3">
       <span class="pillar-num">04</span>
-      <h3>The Engine</h3>
-      <h4 class="pillar-subtitle">Scalable Systems To Work For You</h4>
-      <p>We engineer your brand into an <strong>employee working for you 24/7/365</strong> that generates new leads, converting them into clients/customers, and opens new doors of opportunity by the day.</p>
+      <h3>Scalable Systems</h3>
+      <h4 class="pillar-subtitle">Scalable Systems For A Sustainable Empire</h4>
+      <p>You were not built to perform 24/7 just to stay visible.</p>
+      <br>
+      <p>We engineer your brand like it is an employee working for you around the clock, garnering leads, converting them into prospects, and leading them to paid clients.</p>
     </div>
 
   </div>
 </section>
 
 <div class="pillars-cta">
-  <a href="#book" class="cta-btn reveal" aria-label="Schedule a FORDIVINE discovery call">Schedule Discovery Call</a>
+  <a href="#book" class="cta-btn reveal">Schedule Discovery Call</a>
 </div>
 
-<!-- ===== MORE REVIEWS + CROWNED STORIES (combined floating card) ===== -->
-<section class="combined-stories-section">
-  <div class="combined-stories-card">
+<!-- ===== MORE REVIEWS ===== -->
+<section class="more-reviews">
   <div class="reviews-scatter">
     <div class="review-card reveal">
-      <img class="review-card-img" src="/bio_melanie_mitro.jpg" alt="Melanie Mitro" loading="lazy" decoding="async">
-      <div class="review-card-gradient"></div>
-      <div class="review-card-content">
-        <svg class="review-quote-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/></svg>
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"FORDIVINE was the one place where I truly felt it was going to elevate me to the next level. I now have everything I need to launch, grow, and scale my brand."</p>
-        <div class="review-author-row">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"FORDIVINE was the one place where I truly felt like it was not only going to elevate me to the next level, but it also was going to be a one-stop shop.<br><br>I now have everything I need to launch, to grow, and to scale my brand in this next season."</p>
+      <div class="review-author-row">
+        <img class="review-avatar" src="/bio_melanie_mitro.jpg" alt="Melanie Mitro" loading="lazy">
+        <div class="review-author-info">
           <div class="review-author">Melanie Mitro</div>
           <div class="review-role">NWM Top Leader, Speaker, Pod Host</div>
         </div>
       </div>
     </div>
     <div class="review-card reveal reveal-delay-1">
-      <img class="review-card-img" src="/bio_mary_elizabeth.jpg" alt="Mary Elizabeth" loading="lazy" decoding="async">
-      <div class="review-card-gradient"></div>
-      <div class="review-card-content">
-        <svg class="review-quote-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/></svg>
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"The whole experience has been amazing start to finish. It is something I could have never done on my own."</p>
-        <div class="review-author-row">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Speechless is really what I have and I'm never at a lack of words. The whole experience has been amazing start to finish and it's something that I could have ever done on my own."</p>
+      <div class="review-author-row">
+        <img class="review-avatar" src="/bio_mary_elizabeth.jpg" alt="Mary Elizabeth" loading="lazy">
+        <div class="review-author-info">
           <div class="review-author">Mary Elizabeth</div>
           <div class="review-role">MedSpa Owner, Beauty Educator</div>
         </div>
       </div>
     </div>
     <div class="review-card reveal reveal-delay-2">
-      <img class="review-card-img" src="/bio_amber_harvalias.jpg" alt="Amber Harvalias" loading="lazy" decoding="async">
-      <div class="review-card-gradient"></div>
-      <div class="review-card-content">
-        <svg class="review-quote-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" fill="rgba(255,255,255,0.4)"/></svg>
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"This team made me feel so comfortable and authentic. They allowed me to lean in to everything I wanted to create."</p>
-        <div class="review-author-row">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"This team made me feel just so comfortable and authentic and allowed me to lean in to everything I wanted to create, but didn't know how to do it the best way."</p>
+      <div class="review-author-row">
+        <img class="review-avatar" src="/bio_amber_harvalias.jpg" alt="Amber Harvalias" loading="lazy">
+        <div class="review-author-info">
           <div class="review-author">Amber Harvalias</div>
           <div class="review-role">Top Realtor, Pod Host, Founder of Becoming Her</div>
         </div>
       </div>
     </div>
   </div>
+</section>
+
+<!-- ===== CROWNED STORIES CAROUSEL ===== -->
+<section class="crowned-carousel-section">
   <div class="crowned-carousel-header reveal">
     <h2>More Crowned Stories</h2>
     <p>Women just like you who went from disarrayed messaging and digital footprint to now walking out their God-given calling and seeing the results in real time.</p>
@@ -2419,7 +2068,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 
         <!-- Card 1: Colette Vanpaemel -->
         <div class="carousel-card">
-          <img class="carousel-card-img" src="/colette_vanpaemel.webp" alt="Colette Vanpaemel" loading="lazy" style="object-position: 35% 5%;" width="2000" height="1334" decoding="async">
+          <img class="carousel-card-img" src="/colette_vanpaemel.jpg" alt="Colette Vanpaemel" loading="lazy" style="object-position: 35% 5%;">
           <div class="carousel-card-overlay"></div>
           <div class="carousel-card-info">
             <div class="carousel-card-role">From feeling stuck in her mid-life to now a brand empowering women &amp; growing her beauty company</div>
@@ -2429,7 +2078,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 
         <!-- Card 2: Ali Marie -->
         <div class="carousel-card">
-          <img class="carousel-card-img" src="/ali_marie.webp" alt="Ali Marie" loading="lazy" style="object-position: center 20%;" width="2000" height="1124" decoding="async">
+          <img class="carousel-card-img" src="/ali_marie.jpg" alt="Ali Marie" loading="lazy" style="object-position: center 20%;">
           <div class="carousel-card-overlay"></div>
           <div class="carousel-card-info">
             <div class="carousel-card-role">From corporate executive to now established brand &amp; respected voice in her industry</div>
@@ -2439,7 +2088,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 
         <!-- Card 3: Roni LaVenia -->
         <div class="carousel-card">
-          <img class="carousel-card-img" src="/roni_lavenia.webp" alt="Roni LaVenia" loading="lazy" style="object-position: 60% 15%;" width="2000" height="1125" decoding="async">
+          <img class="carousel-card-img" src="/roni_lavenia.jpg" alt="Roni LaVenia" loading="lazy" style="object-position: 60% 15%;">
           <div class="carousel-card-overlay"></div>
           <div class="carousel-card-info">
             <div class="carousel-card-role">From overwhelmed business owner to now empowered speaker, author, &amp; mental health advocate</div>
@@ -2449,7 +2098,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 
         <!-- Card 4: Beth Clifford -->
         <div class="carousel-card">
-          <img class="carousel-card-img" src="/beth_clifford.webp" alt="Beth Clifford" loading="lazy" style="object-position: center 10%;" width="2000" height="1124" decoding="async">
+          <img class="carousel-card-img" src="/beth_clifford.jpg" alt="Beth Clifford" loading="lazy" style="object-position: center 10%;">
           <div class="carousel-card-overlay"></div>
           <div class="carousel-card-info">
             <div class="carousel-card-role">From behind-the-scenes corporate leader to now her own thriving brand &amp; podcast</div>
@@ -2459,7 +2108,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 
         <!-- Card 5: Christa Crawford -->
         <div class="carousel-card">
-          <img class="carousel-card-img" src="/christa_crawford.webp" alt="Christa Crawford" loading="lazy" style="object-position: center 15%;" width="2000" height="1124" decoding="async">
+          <img class="carousel-card-img" src="/christa_crawford.jpg" alt="Christa Crawford" loading="lazy" style="object-position: center 15%;">
           <div class="carousel-card-overlay"></div>
           <div class="carousel-card-info">
             <div class="carousel-card-role">From being seen only as a NWM leader to now a brand expanding her calling &amp; services</div>
@@ -2469,7 +2118,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 
         <!-- Card 6: Lauren Fields -->
         <div class="carousel-card">
-          <img class="carousel-card-img" src="/lauren_fields.webp" alt="Lauren Fields" loading="lazy" style="object-position: center 20%;" width="2000" height="1125" decoding="async">
+          <img class="carousel-card-img" src="/lauren_fields.jpg" alt="Lauren Fields" loading="lazy" style="object-position: center 20%;">
           <div class="carousel-card-overlay"></div>
           <div class="carousel-card-info">
             <div class="carousel-card-role">From a wishful idea to now launching Fieldswell, her own wellness clinic &amp; brand</div>
@@ -2486,7 +2135,6 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   </div>
 
   <div class="carousel-dots" id="carouselDots"></div>
-  </div><!-- /.combined-stories-card -->
 </section>
 
 
@@ -2494,42 +2142,42 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 <section class="client-logos-bar">
   <p class="client-logos-label">Crowned Authorities&#8482; we created</p>
   <div class="client-logo-track">
-    <img src="/client-logos/client-amber-havalias-logo-white.png" alt="Amber Havalias" loading="lazy" width="337" height="100" decoding="async">
-    <img src="/client-logos/client-amy-lacey-logo-white.png" alt="Amy Lacey" loading="lazy" width="480" height="100" decoding="async">
-    <img src="/client-logos/client-cindi-frechette-white.png" alt="Cindi Frechette" loading="lazy" width="875" height="100" decoding="async">
-    <img src="/client-logos/client-greta-elena-primary-white.png" alt="Greta Elena" loading="lazy" width="415" height="100" decoding="async">
-    <img src="/client-logos/client-heather-clark-logo-white.png" alt="Heather Clark" class="client-logo-submark" loading="lazy" width="65" height="100" decoding="async">
-    <img src="/client-logos/client-jennifer-johnson-eterna-haus-white.png" alt="Jennifer Johnson - Eterna Haus" loading="lazy" width="1058" height="100" decoding="async">
-    <img src="/client-logos/client-jessica-cross-secondary-white.png" alt="Jessica Cross" loading="lazy" width="598" height="100" decoding="async">
-    <img src="/client-logos/client-lauren-cashatt-main-logo-linen.png" alt="Lauren Cashatt" loading="lazy" width="1184" height="100" decoding="async">
-    <img src="/client-logos/client-me-primary-white.png" alt="ME" loading="lazy" width="674" height="100" decoding="async">
-    <img src="/client-logos/client-navigating-between-the-lines-white.png" alt="Navigating Between the Lines" loading="lazy" width="228" height="100" decoding="async">
-    <img src="/client-logos/client-o-and-o-secondary-white.png" alt="O&amp;O" loading="lazy" width="231" height="100" decoding="async">
-    <img src="/client-logos/client-pamela-oakes-primary-white.png" alt="Pamela Oakes" loading="lazy" width="898" height="100" decoding="async">
-    <img src="/client-logos/client-second-act-method-primary-white.png" alt="Second Act Method" loading="lazy" width="172" height="100" decoding="async">
-    <img src="/client-logos/client-terra-harvell-white.png" alt="Terra Harvell" loading="lazy" width="941" height="100" decoding="async">
-    <img src="/client-logos/client-amy-lacey-logo-variation-white.png" alt="Amy Lacey Variation" loading="lazy" width="354" height="100" decoding="async">
-    <img src="/client-logos/client-greta-elena-submark.png" alt="Greta Elena Submark" class="client-logo-submark" loading="lazy" width="70" height="100" decoding="async">
-    <img src="/client-logos/client-lauren-cashatt-submark-linen.png" alt="Lauren Cashatt Submark" loading="lazy" width="335" height="100" decoding="async">
-    <img src="/client-logos/client-terra-harvell-submark-white.png" alt="Terra Harvell Submark" class="client-logo-submark" loading="lazy" width="82" height="100" decoding="async">
-    <!-- Duplicate set for seamless infinite loop -->    <img src="/client-logos/client-amber-havalias-logo-white.png" alt="Amber Havalias" loading="lazy" width="337" height="100" decoding="async">
-    <img src="/client-logos/client-amy-lacey-logo-white.png" alt="Amy Lacey" loading="lazy" width="480" height="100" decoding="async">
-    <img src="/client-logos/client-cindi-frechette-white.png" alt="Cindi Frechette" loading="lazy" width="875" height="100" decoding="async">
-    <img src="/client-logos/client-greta-elena-primary-white.png" alt="Greta Elena" loading="lazy" width="415" height="100" decoding="async">
-    <img src="/client-logos/client-heather-clark-logo-white.png" alt="Heather Clark" class="client-logo-submark" loading="lazy" width="65" height="100" decoding="async">
-    <img src="/client-logos/client-jennifer-johnson-eterna-haus-white.png" alt="Jennifer Johnson - Eterna Haus" loading="lazy" width="1058" height="100" decoding="async">
-    <img src="/client-logos/client-jessica-cross-secondary-white.png" alt="Jessica Cross" loading="lazy" width="598" height="100" decoding="async">
-    <img src="/client-logos/client-lauren-cashatt-main-logo-linen.png" alt="Lauren Cashatt" loading="lazy" width="1184" height="100" decoding="async">
-    <img src="/client-logos/client-me-primary-white.png" alt="ME" loading="lazy" width="674" height="100" decoding="async">
-    <img src="/client-logos/client-navigating-between-the-lines-white.png" alt="Navigating Between the Lines" loading="lazy" width="228" height="100" decoding="async">
-    <img src="/client-logos/client-o-and-o-secondary-white.png" alt="O&amp;O" loading="lazy" width="231" height="100" decoding="async">
-    <img src="/client-logos/client-pamela-oakes-primary-white.png" alt="Pamela Oakes" loading="lazy" width="898" height="100" decoding="async">
-    <img src="/client-logos/client-second-act-method-primary-white.png" alt="Second Act Method" loading="lazy" width="172" height="100" decoding="async">
-    <img src="/client-logos/client-terra-harvell-white.png" alt="Terra Harvell" loading="lazy" width="941" height="100" decoding="async">
-    <img src="/client-logos/client-amy-lacey-logo-variation-white.png" alt="Amy Lacey Variation" loading="lazy" width="354" height="100" decoding="async">
-    <img src="/client-logos/client-greta-elena-submark.png" alt="Greta Elena Submark" class="client-logo-submark" loading="lazy" width="70" height="100" decoding="async">
-    <img src="/client-logos/client-lauren-cashatt-submark-linen.png" alt="Lauren Cashatt Submark" loading="lazy" width="335" height="100" decoding="async">
-    <img src="/client-logos/client-terra-harvell-submark-white.png" alt="Terra Harvell Submark" class="client-logo-submark" loading="lazy" width="82" height="100" decoding="async">
+    <img src="/client-logos/client-amber-havalias-logo-white.png" alt="Amber Havalias" loading="eager">
+    <img src="/client-logos/client-amy-lacey-logo-white.png" alt="Amy Lacey" loading="eager">
+    <img src="/client-logos/client-cindi-frechette-white.png" alt="Cindi Frechette" loading="eager">
+    <img src="/client-logos/client-greta-elena-primary-white.png" alt="Greta Elena" loading="eager">
+    <img src="/client-logos/client-heather-clark-logo-white.png" alt="Heather Clark" class="client-logo-submark" loading="eager">
+    <img src="/client-logos/client-jennifer-johnson-eterna-haus-white.png" alt="Jennifer Johnson - Eterna Haus" loading="eager">
+    <img src="/client-logos/client-jessica-cross-secondary-white.png" alt="Jessica Cross" loading="eager">
+    <img src="/client-logos/client-lauren-cashatt-main-logo-linen.png" alt="Lauren Cashatt" loading="eager">
+    <img src="/client-logos/client-me-primary-white.png" alt="ME" loading="eager">
+    <img src="/client-logos/client-navigating-between-the-lines-white.png" alt="Navigating Between the Lines" loading="eager">
+    <img src="/client-logos/client-o-and-o-secondary-white.png" alt="O&amp;O" loading="eager">
+    <img src="/client-logos/client-pamela-oakes-primary-white.png" alt="Pamela Oakes" loading="eager">
+    <img src="/client-logos/client-second-act-method-primary-white.png" alt="Second Act Method" loading="eager">
+    <img src="/client-logos/client-terra-harvell-white.png" alt="Terra Harvell" loading="eager">
+    <img src="/client-logos/client-amy-lacey-logo-variation-white.png" alt="Amy Lacey Variation" loading="eager">
+    <img src="/client-logos/client-greta-elena-submark.png" alt="Greta Elena Submark" class="client-logo-submark" loading="eager">
+    <img src="/client-logos/client-lauren-cashatt-submark-linen.png" alt="Lauren Cashatt Submark" loading="eager">
+    <img src="/client-logos/client-terra-harvell-submark-white.png" alt="Terra Harvell Submark" class="client-logo-submark" loading="eager">
+    <!-- Duplicate set for seamless infinite loop -->    <img src="/client-logos/client-amber-havalias-logo-white.png" alt="Amber Havalias" loading="eager">
+    <img src="/client-logos/client-amy-lacey-logo-white.png" alt="Amy Lacey" loading="eager">
+    <img src="/client-logos/client-cindi-frechette-white.png" alt="Cindi Frechette" loading="eager">
+    <img src="/client-logos/client-greta-elena-primary-white.png" alt="Greta Elena" loading="eager">
+    <img src="/client-logos/client-heather-clark-logo-white.png" alt="Heather Clark" class="client-logo-submark" loading="eager">
+    <img src="/client-logos/client-jennifer-johnson-eterna-haus-white.png" alt="Jennifer Johnson - Eterna Haus" loading="eager">
+    <img src="/client-logos/client-jessica-cross-secondary-white.png" alt="Jessica Cross" loading="eager">
+    <img src="/client-logos/client-lauren-cashatt-main-logo-linen.png" alt="Lauren Cashatt" loading="eager">
+    <img src="/client-logos/client-me-primary-white.png" alt="ME" loading="eager">
+    <img src="/client-logos/client-navigating-between-the-lines-white.png" alt="Navigating Between the Lines" loading="eager">
+    <img src="/client-logos/client-o-and-o-secondary-white.png" alt="O&amp;O" loading="eager">
+    <img src="/client-logos/client-pamela-oakes-primary-white.png" alt="Pamela Oakes" loading="eager">
+    <img src="/client-logos/client-second-act-method-primary-white.png" alt="Second Act Method" loading="eager">
+    <img src="/client-logos/client-terra-harvell-white.png" alt="Terra Harvell" loading="eager">
+    <img src="/client-logos/client-amy-lacey-logo-variation-white.png" alt="Amy Lacey Variation" loading="eager">
+    <img src="/client-logos/client-greta-elena-submark.png" alt="Greta Elena Submark" class="client-logo-submark" loading="eager">
+    <img src="/client-logos/client-lauren-cashatt-submark-linen.png" alt="Lauren Cashatt Submark" loading="eager">
+    <img src="/client-logos/client-terra-harvell-submark-white.png" alt="Terra Harvell Submark" class="client-logo-submark" loading="eager">
   </div>
 </section>
 
@@ -2538,7 +2186,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 <section class="emily-note-section">
   <div class="emily-note-inner reveal">
     <div class="emily-note-photo">
-      <img src="/Emily.avif" alt="Emily Ford, Founder of FORDIVINE" loading="lazy" width="923" height="1024" decoding="async">
+      <img src="/Emily.avif" alt="Emily Ford, Founder of FORDIVINE" loading="lazy">
     </div>
     <div class="emily-note-content">
       <p class="emily-note-label">A Note from Our Founder</p>
@@ -2546,7 +2194,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
       <p>Women with real gifts, real callings, and real businesses who kept getting overlooked because their brand did not match who they had become.</p>
       <p>You were not made to keep your God-given gifts hidden. You were made to <strong style="color:#ffffff;">make a difference in this world.</strong></p>
       <p>If that resonates, I would love to have you experience what we do.</p>
-      <div class="emily-note-signature"><img src="/emily-signature.png" alt="Emily Ford signature" class="emily-signature-img"></div>
+      <div class="emily-note-signature">Emily Ford</div>
       <div class="emily-note-title">Founder &amp; Visionary, FORDIVINE</div>
     </div>
   </div>
@@ -2557,28 +2205,11 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 <section class="booking-section" id="book">
   <div class="booking-embed reveal">
     <h3>Discover What's Possible For You</h3>
+    <p class="booking-sub">Book a call to see if the Crowned Authority™ experience is the right fit for your business endeavor. Note: This is a conversation with our team, not a sales call.</p>
     <!-- iClosed inline widget begin -->
-    <!-- Patricia UTM injection: reads fd_ref cookie to append attribution -->
-    <script>
-    (function() {
-      var c = document.cookie.match('(^|;)\\s*fd_ref\\s*=\\s*([^;]+)');
-      var baseUrl = 'https://app.iclosed.io/e/jakehavron/discovery-call';
-      if (c && c[2] === 'patricia_dm') {
-        baseUrl += '?utm_source=instagram&utm_medium=dm&utm_campaign=patricia_dm&utm_content=discover';
-      }
-      var widget = document.createElement('div');
-      widget.className = 'iclosed-widget';
-      widget.setAttribute('data-url', baseUrl);
-      widget.setAttribute('title', 'Discovery Call');
-      widget.setAttribute('role', 'region');
-      widget.setAttribute('aria-label', 'Schedule a FORDIVINE discovery call');
-      widget.style.width = '100%';
-      widget.style.height = '620px';
-      document.currentScript.parentNode.insertBefore(widget, document.currentScript.nextSibling);
-    })();
-    </script>
+    <div class="iclosed-widget" data-url="https://app.iclosed.io/e/jakehavron/discovery-call" title="Discovery Call" style="width: 100%; height: 620px"></div>
     <script type="text/javascript" src="https://app.iclosed.io/assets/widget.js" async></script>
-    <!-- iClosed inline widget end -->
+     <!-- iClosed inline widget end -->
     <p class="booking-question-line">Got a question? Email <a href="mailto:Hello@fordivine.com?subject=I%20have%20a%20question!%20re%3A%20Discovery%20page&body=Hi%20team!%0A%0AI%20have%20a%20question%20regarding..%20(insert%20your%20details%20here)" class="booking-question-link">Hello@fordivine.com</a></p>
   </div>
 </section>
@@ -2590,50 +2221,44 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   </div>
 
   <div class="qa-item reveal">
-    <div class="qa-header" onclick="toggleQA(this)" role="button" tabindex="0" aria-expanded="false" aria-controls="qa-sales-call">
+    <div class="qa-header" onclick="toggleQA(this)">
       <span>Is this a sales call?</span>
       <span class="qa-toggle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
     </div>
-    <div class="qa-body" id="qa-sales-call" aria-hidden="true">
+    <div class="qa-body">
       <p>No. Keep your credit card in your purse for this one.</p>
       <p>This call is solely to learn about your situation and see if you're a right fit for our services.</p>
     </div>
   </div>
 
   <div class="qa-item reveal reveal-delay-1">
-    <div class="qa-header" onclick="toggleQA(this)" role="button" tabindex="0" aria-expanded="false" aria-controls="qa-turn-key-service">
-      <span>What happens during the turn-key brand service?</span>
+    <div class="qa-header" onclick="toggleQA(this)">
+      <span>What actually happens during the FORDIVINE experience?</span>
       <span class="qa-toggle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
     </div>
-    <div class="qa-body" id="qa-turn-key-service" aria-hidden="true">
+    <div class="qa-body">
       <p>We review your current brand(s), identify what is unclear or misaligned, then build the complete strategy, messaging, visuals, and systems you will need.</p>
-      <p>The goal is to make your brand easier to understand, trust, and buy for your ideal audience after you work with us.</p>
+      <p>The goal is to make your brand easier to understand, trust, and buy from the moment you work with us.</p>
     </div>
   </div>
 
   <div class="qa-item reveal reveal-delay-1">
-    <div class="qa-header" onclick="toggleQA(this)" role="button" tabindex="0" aria-expanded="false" aria-controls="qa-walk-away-with">
+    <div class="qa-header" onclick="toggleQA(this)">
       <span>What do I walk away with?</span>
       <span class="qa-toggle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
     </div>
-    <div class="qa-body" id="qa-walk-away-with" aria-hidden="true">
-      <p>Your entire marketing plan and brand assets that are essential to growing your business and impact in 2026 and onward.</p>
-      <p>This includes your:</p>
-      <ul>
-        <li><strong>Crowned Authority™ Blueprint</strong> (entire marketing strategy)</li>
-        <li><strong>Crowned Identity™ Bible</strong> (all visual + brand assets)</li>
-        <li><strong>Ready-to-use digital assets</strong> (content that actually converts)</li>
-        <li><strong>The Engine</strong> (systems that work 24/7/365 acquiring new clients/customers)</li>
-      </ul>
+    <div class="qa-body">
+      <p>You leave with the core brand assets needed to present, explain, and grow your business with more authority.</p>
+      <p>This includes your <strong>Crowned Authority™ Blueprint</strong> (all marketing strategy), <strong>Crowned Identity™ Bible</strong> (all visual assets), messaging, visual direction, content strategy, and client/customer acquisition systems.</p>
     </div>
   </div>
 
   <div class="qa-item reveal reveal-delay-2">
-    <div class="qa-header" onclick="toggleQA(this)" role="button" tabindex="0" aria-expanded="false" aria-controls="qa-business-fit">
+    <div class="qa-header" onclick="toggleQA(this)">
       <span>Is this right for my business or industry?</span>
       <span class="qa-toggle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
     </div>
-    <div class="qa-body" id="qa-business-fit" aria-hidden="true">
+    <div class="qa-body">
       <p>If your business depends on your name, expertise, reputation, or personal credibility, then our services are made for you.</p>
       <p>Our services are not industry-specific, yet they are tailored to where you're current brand journey is at.</p>
       <p><strong>Industries we have recently worked with:</strong><br><em>Online businesses, Coaching/Consulting, Real Estate, Network Marketing, Ecommerce, Professional Speaking, Medical Practice, Insurance, Fashion, Beauty.</em></p>
@@ -2642,11 +2267,11 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   </div>
 
   <div class="qa-item reveal reveal-delay-3">
-    <div class="qa-header" onclick="toggleQA(this)" role="button" tabindex="0" aria-expanded="false" aria-controls="qa-service-cost">
-      <span>How much do your services typically cost?</span>
+    <div class="qa-header" onclick="toggleQA(this)">
+      <span>How much does it cost?</span>
       <span class="qa-toggle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
     </div>
-    <div class="qa-body" id="qa-service-cost" aria-hidden="true">
+    <div class="qa-body">
       <p>FORDIVINE is a premium brand house. Not low-ticket designers or AI slop generators.</p>
       <p>All services are turn-key.</p>
       <p>Rates start at <strong>$7k</strong>. This allows us to:</p>
@@ -2663,9 +2288,10 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 <!-- ===== CINEMATIC CLOSING ===== -->
 <section class="cinematic-close">
   <div class="cinematic-close-inner">
-    <h2 class="reveal">You were not made to<br>be the best kept secret.<br>You are called to be <span class="gold-word" style="background:linear-gradient(135deg,#c8b89a 0%,#e8d5b0 50%,#c8b89a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:inline;">Crowned.</span></h2>
+    <span class="cinematic-close-eyebrow reveal">The Decision Is Yours</span>
+    <h2 class="reveal">You were not made to<br>be the best kept secret.<br>You were made to be <span class="gold-word" style="background:linear-gradient(135deg,#c8b89a 0%,#e8d5b0 50%,#c8b89a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:inline;">Crowned.</span></h2>
     <div class="cinematic-close-divider reveal"></div>
-    <a href="#book" class="cta-btn on-dark reveal" aria-label="Schedule a FORDIVINE discovery call">Schedule Discovery Call</a>
+    <a href="#book" class="cta-btn reveal">Schedule Discovery Call</a>
     <div class="micro-testimonial reveal" style="margin-top:32px;">
       <div>
         <p class="micro-testimonial-text">"The whole experience has been amazing start to finish. It is something I could have never done on my own."</p>
@@ -2679,19 +2305,19 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <a href="https://www.fordivine.com" class="logo logo-img-wrap" aria-label="FORDIVINE home"><picture><source srcset="/fordivine-logo.webp" type="image/webp"><img src="/fordivine-logo.png" alt="FORDIVINE" class="footer-wordmark" width="1287" height="201" loading="lazy" decoding="async"></picture></a>
+      <a href="https://www.fordivine.com" class="logo logo-img-wrap"><picture><source srcset="/fordivine-logo.webp" type="image/webp"><img src="/fordivine-logo.png" alt="FORDIVINE" class="footer-wordmark"></picture></a>
       <p>An Authority Engineering House helping women<br>become Crowned Authorities™ in their space.</p>
     </div>
     <div class="footer-nav">
       <a href="https://www.fordivine.com" target="_blank" rel="noopener noreferrer">Home</a>
       <a href="https://home.fordivine.com/crowned-stories" target="_blank" rel="noopener noreferrer">Crowned Stories</a>
-      <a href="#top" aria-label="Return to the top of the FORDIVINE Discover page">Inquire Now</a>
+      <a href="#top">Inquire Now</a>
     </div>
   </div>
   <p class="footer-question-line">Got a question? Email <a href="mailto:Hello@fordivine.com?subject=I%20have%20a%20question!%20re%3A%20Discovery%20page&body=Hi%20team!%0A%0AI%20have%20a%20question%20regarding..%20(insert%20your%20details%20here)" class="footer-question-link">Hello@fordivine.com</a></p>
   <div class="footer-legal">
-    <a href="https://home.fordivine.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
-    <a href="https://home.fordivine.com/terms-of-use" target="_blank" rel="noopener">Terms of Service</a>
+    <a href="https://www.fordivine.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+    <a href="https://www.fordivine.com/terms-of-use" target="_blank" rel="noopener">Terms of Service</a>
   </div>
   <p class="footer-disclaimer">Emily Ford and FORDIVINE™'s results are not typical and are not a guarantee of your success. Your results will vary depending on your effort, application, experience, and background. We do not give investment, tax, or other professional advice. The information contained within this website is the property of Fortitude LLC. Any use of the images, content, or ideas expressed herein without the express written consent of Fortitude LLC is prohibited. Copyright &copy; 2025 FORDIVINE™. All Rights Reserved.</p>
 </footer>
@@ -2718,28 +2344,13 @@ function toggleQA(header) {
   const body = header.nextElementSibling;
   const toggle = header.querySelector('.qa-toggle');
   const wasOpen = body.classList.contains('open');
-  document.querySelectorAll('.qa-body').forEach(b => {
-    b.classList.remove('open');
-    b.setAttribute('aria-hidden', 'true');
-  });
-  document.querySelectorAll('.qa-header').forEach(h => h.setAttribute('aria-expanded', 'false'));
+  document.querySelectorAll('.qa-body').forEach(b => b.classList.remove('open'));
   document.querySelectorAll('.qa-toggle').forEach(t => t.style.transform = 'rotate(0deg)');
   if (!wasOpen) {
     body.classList.add('open');
-    body.setAttribute('aria-hidden', 'false');
-    header.setAttribute('aria-expanded', 'true');
     toggle.style.transform = 'rotate(180deg)';
   }
 }
-
-document.querySelectorAll('.qa-header').forEach(header => {
-  header.addEventListener('keydown', event => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      toggleQA(header);
-    }
-  });
-});
 
 // === CAROUSEL: clean translateX, 1 card always ===
 (function() {
@@ -2814,175 +2425,122 @@ document.querySelectorAll('.qa-header').forEach(header => {
 })();
 
 
-// ===== FORDIVINE TAN BEAMS BACKGROUNDS =====
+
+// ===== LOCAL PROTOTYPE: FORDIVINE TAN BEAMS HERO =====
 (function() {
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const canvas = document.getElementById('hero-beams-canvas');
+  const shell = document.querySelector('.hero-beams-prototype');
+  if (!canvas || !shell) return;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return;
+
+  let width = 0;
+  let height = 0;
+  let dpr = 1;
+  let beams = [];
+  let raf = 0;
+  let lastFrame = 0;
+
   const palette = [
-    { h: 38, s: 55, l: 72 },
-    { h: 42, s: 50, l: 66 },
+    { h: 38, s: 30, l: 68 },
+    { h: 42, s: 28, l: 62 },
     { h: 34, s: 24, l: 58 },
     { h: 48, s: 20, l: 74 }
   ];
-  const instances = [];
 
-  function createSectionCanvas(section) {
-    if (!section || section.querySelector(':scope > .section-beams-canvas')) return null;
-    section.classList.add('section-beams-enabled');
-    const canvas = document.createElement('canvas');
-    canvas.className = 'section-beams-canvas';
-    canvas.setAttribute('aria-hidden', 'true');
-    section.prepend(canvas);
-    return canvas;
-  }
-
-  function createInstance(canvas, shell, mode) {
-    const ctx = canvas && canvas.getContext('2d');
-    if (!canvas || !shell || !ctx) return null;
-
-    const instance = {
-      canvas,
-      shell,
-      ctx,
-      mode,
-      width: 0,
-      height: 0,
-      dpr: 1,
-      beams: [],
-      lastFrame: 0
+  function createBeam(index) {
+    const color = palette[index % palette.length];
+    const mobile = window.innerWidth <= 768;
+    return {
+      x: Math.random() * width * 1.35 - width * 0.18,
+      y: Math.random() * height * 1.2 - height * 0.15,
+      width: (mobile ? 58 : 88) + Math.random() * (mobile ? 48 : 92),
+      length: height * (mobile ? 1.7 : 2.05),
+      angle: -36 + Math.random() * 8,
+      speed: (mobile ? 0.24 : 0.34) + Math.random() * 0.32,
+      opacity: (mobile ? 0.09 : 0.12) + Math.random() * 0.07,
+      pulse: Math.random() * Math.PI * 2,
+      pulseSpeed: 0.010 + Math.random() * 0.014,
+      color
     };
-
-    function mobile() { return window.innerWidth <= 768; }
-    function scale(value, compactValue) { return mobile() ? compactValue : value; }
-
-    function createBeam(index) {
-      const color = palette[index % palette.length];
-      const sectionMode = instance.mode === 'section';
-      return {
-        x: Math.random() * instance.width * 1.35 - instance.width * 0.18,
-        y: Math.random() * instance.height * 1.2 - instance.height * 0.15,
-        width: (sectionMode ? scale(64, 46) : scale(88, 58)) + Math.random() * (sectionMode ? scale(76, 38) : scale(92, 48)),
-        length: instance.height * (sectionMode ? scale(1.62, 1.42) : scale(2.05, 1.7)),
-        angle: -36 + Math.random() * 8,
-        speed: (sectionMode ? scale(0.54, 0.42) : scale(0.92, 0.72)) + Math.random() * (sectionMode ? scale(0.48, 0.34) : scale(0.72, 0.72)),
-        opacity: (sectionMode ? scale(0.075, 0.055) : scale(0.32, 0.26)) + Math.random() * (sectionMode ? scale(0.065, 0.045) : scale(0.16, 0.14)),
-        pulse: Math.random() * Math.PI * 2,
-        pulseSpeed: 0.010 + Math.random() * 0.014,
-        color
-      };
-    }
-
-    function resetBeam(beam, index) {
-      const color = palette[index % palette.length];
-      const columns = mobile() ? 2 : (instance.mode === 'section' ? 3 : 4);
-      const column = index % columns;
-      const spacing = instance.width / columns;
-      beam.x = column * spacing + spacing / 2 + (Math.random() - 0.5) * spacing * 0.84;
-      beam.y = instance.height + 120 + Math.random() * instance.height * 0.35;
-      beam.width = (instance.mode === 'section' ? scale(62, 44) : scale(92, 62)) + Math.random() * (instance.mode === 'section' ? scale(72, 36) : scale(86, 44));
-      beam.length = instance.height * (instance.mode === 'section' ? scale(1.64, 1.44) : scale(2.08, 1.72));
-      beam.speed = (instance.mode === 'section' ? scale(0.52, 0.40) : scale(0.90, 0.70)) + Math.random() * (instance.mode === 'section' ? scale(0.50, 0.34) : scale(0.76, 0.76));
-      beam.opacity = (instance.mode === 'section' ? scale(0.07, 0.05) : scale(0.30, 0.24)) + Math.random() * (instance.mode === 'section' ? scale(0.065, 0.045) : scale(0.16, 0.14));
-      beam.color = color;
-    }
-
-    function resize() {
-      const rect = shell.getBoundingClientRect();
-      instance.dpr = Math.min(window.devicePixelRatio || 1, 2);
-      instance.width = Math.max(1, rect.width);
-      instance.height = Math.max(1, rect.height);
-      canvas.width = Math.round(instance.width * instance.dpr);
-      canvas.height = Math.round(instance.height * instance.dpr);
-      canvas.style.width = instance.width + 'px';
-      canvas.style.height = instance.height + 'px';
-      ctx.setTransform(instance.dpr, 0, 0, instance.dpr, 0, 0);
-      const count = instance.mode === 'section'
-        ? (mobile() ? 5 : Math.min(10, Math.max(5, Math.round(instance.height / 95))))
-        : (mobile() ? 13 : 22);
-      instance.beams = Array.from({ length: count }, (_, index) => createBeam(index));
-    }
-
-    function drawBeam(beam) {
-      const alpha = beam.opacity * (0.74 + Math.sin(beam.pulse) * 0.26);
-      const { h, s, l } = beam.color;
-      ctx.save();
-      ctx.translate(beam.x, beam.y);
-      ctx.rotate((beam.angle * Math.PI) / 180);
-      const gradient = ctx.createLinearGradient(0, 0, 0, beam.length);
-      gradient.addColorStop(0, `hsla(${h}, ${s}%, ${l}%, 0)`);
-      gradient.addColorStop(0.13, `hsla(${h}, ${s}%, ${l}%, ${alpha * 0.42})`);
-      gradient.addColorStop(0.42, `hsla(${h}, ${s}%, ${l}%, ${alpha})`);
-      gradient.addColorStop(0.62, `hsla(${h}, ${s}%, ${l}%, ${alpha * 0.86})`);
-      gradient.addColorStop(0.9, `hsla(${h}, ${s}%, ${l}%, ${alpha * 0.34})`);
-      gradient.addColorStop(1, `hsla(${h}, ${s}%, ${l}%, 0)`);
-      ctx.fillStyle = gradient;
-      ctx.fillRect(-beam.width / 2, 0, beam.width, beam.length);
-      ctx.restore();
-    }
-
-    function draw(timestamp) {
-      ctx.clearRect(0, 0, instance.width, instance.height);
-      ctx.save();
-      ctx.globalCompositeOperation = 'screen';
-      ctx.filter = instance.mode === 'section'
-        ? (mobile() ? 'blur(18px)' : 'blur(20px)')
-        : (mobile() ? 'blur(22px)' : 'blur(24px)');
-      instance.beams.forEach((beam, index) => {
-        if (!reducedMotion.matches) {
-          beam.y -= beam.speed;
-          beam.x += Math.sin((timestamp * (instance.mode === 'section' ? 0.00052 : 0.00072)) + index) * (instance.mode === 'section' ? 0.16 : 0.26);
-          beam.pulse += beam.pulseSpeed;
-          if (beam.y + beam.length < -160) resetBeam(beam, index);
-        }
-        drawBeam(beam);
-      });
-      ctx.restore();
-    }
-
-    instance.resize = resize;
-    instance.draw = draw;
-    resize();
-    // Defer the first paint to requestAnimationFrame so canvas blur work never blocks DOM readiness.
-    return instance;
   }
 
-  const heroCanvas = document.getElementById('hero-beams-canvas');
-  const heroShell = document.querySelector('.hero-beams-live');
-  const heroInstance = createInstance(heroCanvas, heroShell, 'hero');
-  if (heroInstance) instances.push(heroInstance);
-
-  ['.trust-bar', '.arch-intro', '.client-logos-bar', '.emily-note-section', '.cinematic-close'].forEach((selector) => {
-    const section = document.querySelector(selector);
-    const canvas = createSectionCanvas(section);
-    const instance = createInstance(canvas, section, 'section');
-    if (instance) instances.push(instance);
-  });
-
-  let raf = 0;
-  function isVisible(instance) {
-    const rect = instance.shell.getBoundingClientRect();
-    return rect.bottom > -80 && rect.top < window.innerHeight + 80;
+  function resetBeam(beam, index) {
+    const color = palette[index % palette.length];
+    const columns = window.innerWidth <= 768 ? 2 : 4;
+    const column = index % columns;
+    const spacing = width / columns;
+    beam.x = column * spacing + spacing / 2 + (Math.random() - 0.5) * spacing * 0.84;
+    beam.y = height + 140 + Math.random() * height * 0.35;
+    beam.width = (window.innerWidth <= 768 ? 62 : 92) + Math.random() * (window.innerWidth <= 768 ? 44 : 86);
+    beam.length = height * (window.innerWidth <= 768 ? 1.72 : 2.08);
+    beam.speed = (window.innerWidth <= 768 ? 0.22 : 0.32) + Math.random() * 0.34;
+    beam.opacity = (window.innerWidth <= 768 ? 0.08 : 0.11) + Math.random() * 0.07;
+    beam.color = color;
   }
+
+  function resize() {
+    const rect = shell.getBoundingClientRect();
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    width = Math.max(1, rect.width);
+    height = Math.max(1, rect.height);
+    canvas.width = Math.round(width * dpr);
+    canvas.height = Math.round(height * dpr);
+    canvas.style.width = width + 'px';
+    canvas.style.height = height + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const count = window.innerWidth <= 768 ? 13 : 22;
+    beams = Array.from({ length: count }, (_, index) => createBeam(index));
+  }
+
+  function drawBeam(beam) {
+    const alpha = beam.opacity * (0.82 + Math.sin(beam.pulse) * 0.18);
+    const { h, s, l } = beam.color;
+    ctx.save();
+    ctx.translate(beam.x, beam.y);
+    ctx.rotate((beam.angle * Math.PI) / 180);
+    const gradient = ctx.createLinearGradient(0, 0, 0, beam.length);
+    gradient.addColorStop(0, `hsla(${h}, ${s}%, ${l}%, 0)`);
+    gradient.addColorStop(0.13, `hsla(${h}, ${s}%, ${l}%, ${alpha * 0.33})`);
+    gradient.addColorStop(0.42, `hsla(${h}, ${s}%, ${l}%, ${alpha})`);
+    gradient.addColorStop(0.62, `hsla(${h}, ${s}%, ${l}%, ${alpha * 0.78})`);
+    gradient.addColorStop(0.9, `hsla(${h}, ${s}%, ${l}%, ${alpha * 0.28})`);
+    gradient.addColorStop(1, `hsla(${h}, ${s}%, ${l}%, 0)`);
+    ctx.fillStyle = gradient;
+    ctx.fillRect(-beam.width / 2, 0, beam.width, beam.length);
+    ctx.restore();
+  }
+
   function loop(timestamp) {
+    const targetFps = window.innerWidth <= 768 ? 30 : 45;
+    const interval = 1000 / targetFps;
     raf = requestAnimationFrame(loop);
-    instances.forEach((instance) => {
-      if (!isVisible(instance)) return;
-      const targetFps = instance.mode === 'section' ? 30 : 45;
-      const interval = 1000 / targetFps;
-      if (timestamp - instance.lastFrame < interval) return;
-      instance.lastFrame = timestamp;
-      instance.draw(timestamp);
+    if (timestamp - lastFrame < interval) return;
+    lastFrame = timestamp;
+
+    ctx.clearRect(0, 0, width, height);
+    ctx.save();
+    ctx.globalCompositeOperation = 'screen';
+    ctx.filter = window.innerWidth <= 768 ? 'blur(30px)' : 'blur(34px)';
+    beams.forEach((beam, index) => {
+      beam.y -= beam.speed;
+      beam.x += Math.sin((timestamp * 0.00018) + index) * 0.08;
+      beam.pulse += beam.pulseSpeed;
+      if (beam.y + beam.length < -160) resetBeam(beam, index);
+      drawBeam(beam);
     });
+    ctx.restore();
   }
 
-  window.addEventListener('resize', () => instances.forEach((instance) => instance.resize()));
-  function startBeams() {
-    if (!reducedMotion.matches && !raf) raf = requestAnimationFrame(loop);
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  resize();
+  window.addEventListener('resize', resize);
+  if (!reducedMotion.matches) raf = requestAnimationFrame(loop);
+  else {
+    ctx.globalCompositeOperation = 'screen';
+    beams.forEach(drawBeam);
   }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => window.setTimeout(startBeams, 350), { once: true });
-  } else {
-    window.setTimeout(startBeams, 350);
-  }
+
   window.addEventListener('beforeunload', () => {
     if (raf) cancelAnimationFrame(raf);
   });
