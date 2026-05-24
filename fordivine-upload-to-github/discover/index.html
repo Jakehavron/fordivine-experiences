@@ -2795,8 +2795,8 @@ document.querySelectorAll('.qa-header').forEach(header => {
 (function() {
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const palette = [
-    { h: 38, s: 30, l: 68 },
-    { h: 42, s: 28, l: 62 },
+    { h: 38, s: 55, l: 72 },
+    { h: 42, s: 50, l: 66 },
     { h: 34, s: 24, l: 58 },
     { h: 48, s: 20, l: 74 }
   ];
@@ -2841,7 +2841,7 @@ document.querySelectorAll('.qa-header').forEach(header => {
         length: instance.height * (sectionMode ? scale(1.62, 1.42) : scale(2.05, 1.7)),
         angle: -36 + Math.random() * 8,
         speed: (sectionMode ? scale(0.54, 0.42) : scale(0.92, 0.72)) + Math.random() * (sectionMode ? scale(0.48, 0.34) : scale(0.72, 0.72)),
-        opacity: (sectionMode ? scale(0.075, 0.055) : scale(0.17, 0.14)) + Math.random() * (sectionMode ? scale(0.065, 0.045) : scale(0.10, 0.10)),
+        opacity: (sectionMode ? scale(0.075, 0.055) : scale(0.32, 0.26)) + Math.random() * (sectionMode ? scale(0.065, 0.045) : scale(0.16, 0.14)),
         pulse: Math.random() * Math.PI * 2,
         pulseSpeed: 0.010 + Math.random() * 0.014,
         color
@@ -2858,7 +2858,7 @@ document.querySelectorAll('.qa-header').forEach(header => {
       beam.width = (instance.mode === 'section' ? scale(62, 44) : scale(92, 62)) + Math.random() * (instance.mode === 'section' ? scale(72, 36) : scale(86, 44));
       beam.length = instance.height * (instance.mode === 'section' ? scale(1.64, 1.44) : scale(2.08, 1.72));
       beam.speed = (instance.mode === 'section' ? scale(0.52, 0.40) : scale(0.90, 0.70)) + Math.random() * (instance.mode === 'section' ? scale(0.50, 0.34) : scale(0.76, 0.76));
-      beam.opacity = (instance.mode === 'section' ? scale(0.07, 0.05) : scale(0.16, 0.13)) + Math.random() * (instance.mode === 'section' ? scale(0.065, 0.045) : scale(0.10, 0.10));
+      beam.opacity = (instance.mode === 'section' ? scale(0.07, 0.05) : scale(0.30, 0.24)) + Math.random() * (instance.mode === 'section' ? scale(0.065, 0.045) : scale(0.16, 0.14));
       beam.color = color;
     }
 
