@@ -1969,13 +1969,21 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   .carousel-card {
     flex: 0 0 100%;
     width: 100%;
-    border-radius: 20px;
+    border-radius: 16px;
     overflow: hidden;
     position: relative;
-    aspect-ratio: 3 / 4;
-    max-height: 560px;
-    background: linear-gradient(135deg, #f0eeeb 0%, #e8e6e2 100%);
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.2);
     cursor: default;
+  }
+  .carousel-card-media {
+    position: relative;
+    width: 100%;
+    padding-top: 133%;
+    overflow: hidden;
+    border-radius: 16px 16px 0 0;
   }
   .carousel-card-img {
     position: absolute;
@@ -1986,35 +1994,45 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     object-position: center top;
   }
   .carousel-card-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, transparent 35%, rgba(0,0,0,0.8) 100%);
-    z-index: 1;
+    display: none;
   }
   .carousel-card-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 24px 28px;
-    z-index: 2;
+    padding: 24px 24px 28px;
+    text-align: left;
+    background: #fff;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .carousel-card-stars {
+    color: var(--bone);
+    font-size: 13px;
+    letter-spacing: 3px;
+    margin-bottom: 4px;
   }
   .carousel-card-role {
     font-family: var(--body);
-    font-weight: 400;
+    font-weight: 500;
     font-size: 14px;
-    color: rgba(255,255,255,0.88);
-    line-height: 1.4;
-    margin-bottom: 8px;
-    letter-spacing: 0;
+    color: var(--text-dark);
+    line-height: 1.7;
+    flex: 1;
   }
   .carousel-card-name {
-    font-family: var(--display);
-    font-weight: 700;
+    font-family: var(--body);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-dark);
+    letter-spacing: 0.02em;
+    margin-top: 8px;
+  }
+  .carousel-card-title {
+    font-family: var(--body);
     font-size: 11px;
-    color: rgba(255,255,255,0.5);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    color: rgba(30,30,30,0.55);
+    letter-spacing: 0.02em;
+    font-weight: 400;
   }
   /* Arrows — sit outside the viewport, inside .carousel-container */
   .carousel-arrow {
@@ -2703,61 +2721,66 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 
         <!-- Card 1: Colette Vanpaemel -->
         <div class="carousel-card">
-          <img class="carousel-card-img" src="/colette_vanpaemel.webp" alt="Colette Vanpaemel" loading="lazy" style="object-position: 35% 5%;" width="2000" height="1334" decoding="async">
-          <div class="carousel-card-overlay"></div>
+          <div class="carousel-card-media">
+            <img class="carousel-card-img" src="/colette_vanpaemel.webp" alt="Colette Vanpaemel" loading="lazy" style="object-position: 35% 5%;" width="2000" height="1334" decoding="async">
+          </div>
           <div class="carousel-card-info">
-            <div class="carousel-card-role">From feeling stuck in her mid-life to now a brand empowering women &amp; growing her beauty company</div>
+            <div class="carousel-card-stars">★★★★★</div>
+            <div class="carousel-card-role">"From feeling stuck in her mid-life to now a brand empowering women &amp; growing her beauty company."</div>
             <div class="carousel-card-name">Colette Vanpaemel</div>
+            <div class="carousel-card-title">Beauty Entrepreneur, Speaker</div>
           </div>
         </div>
 
         <!-- Card 2: Ali Marie -->
         <div class="carousel-card">
-          <img class="carousel-card-img" src="/ali_marie.webp" alt="Ali Marie" loading="lazy" style="object-position: center 20%;" width="2000" height="1124" decoding="async">
-          <div class="carousel-card-overlay"></div>
+          <div class="carousel-card-media">
+            <img class="carousel-card-img" src="/ali_marie.webp" alt="Ali Marie" loading="lazy" style="object-position: center 20%;" width="2000" height="1124" decoding="async">
+          </div>
           <div class="carousel-card-info">
-            <div class="carousel-card-role">From corporate executive to now established brand &amp; respected voice in her industry</div>
+            <div class="carousel-card-stars">★★★★★</div>
+            <div class="carousel-card-role">"From corporate executive to now an established brand &amp; respected voice in her industry."</div>
             <div class="carousel-card-name">Ali Marie</div>
+            <div class="carousel-card-title">Corporate Leader, Brand Strategist</div>
           </div>
         </div>
 
         <!-- Card 3: Roni LaVenia -->
         <div class="carousel-card">
-          <img class="carousel-card-img" src="/roni_lavenia.webp" alt="Roni LaVenia" loading="lazy" style="object-position: 60% 15%;" width="2000" height="1125" decoding="async">
-          <div class="carousel-card-overlay"></div>
+          <div class="carousel-card-media">
+            <img class="carousel-card-img" src="/roni_lavenia.webp" alt="Roni LaVenia" loading="lazy" style="object-position: 60% 15%;" width="2000" height="1125" decoding="async">
+          </div>
           <div class="carousel-card-info">
-            <div class="carousel-card-role">From overwhelmed business owner to now empowered speaker, author, &amp; mental health advocate</div>
+            <div class="carousel-card-stars">★★★★★</div>
+            <div class="carousel-card-role">"From overwhelmed business owner to now an empowered speaker, author, &amp; mental health advocate."</div>
             <div class="carousel-card-name">Roni LaVenia</div>
+            <div class="carousel-card-title">Speaker, Author, Mental Health Advocate</div>
           </div>
         </div>
 
-        <!-- Card 4: Beth Clifford -->
+        <!-- Card 4: Christa Crawford -->
         <div class="carousel-card">
-          <img class="carousel-card-img" src="/beth_clifford.webp" alt="Beth Clifford" loading="lazy" style="object-position: center 10%;" width="2000" height="1124" decoding="async">
-          <div class="carousel-card-overlay"></div>
-          <div class="carousel-card-info">
-            <div class="carousel-card-role">From behind-the-scenes corporate leader to now her own thriving brand &amp; podcast</div>
-            <div class="carousel-card-name">Beth Clifford</div>
+          <div class="carousel-card-media">
+            <img class="carousel-card-img" src="/christa_crawford.webp" alt="Christa Crawford" loading="lazy" style="object-position: center 15%;" width="2000" height="1124" decoding="async">
           </div>
-        </div>
-
-        <!-- Card 5: Christa Crawford -->
-        <div class="carousel-card">
-          <img class="carousel-card-img" src="/christa_crawford.webp" alt="Christa Crawford" loading="lazy" style="object-position: center 15%;" width="2000" height="1124" decoding="async">
-          <div class="carousel-card-overlay"></div>
           <div class="carousel-card-info">
-            <div class="carousel-card-role">From being seen only as a NWM leader to now a brand expanding her calling &amp; services</div>
+            <div class="carousel-card-stars">★★★★★</div>
+            <div class="carousel-card-role">"From being seen only as a NWM leader to now a brand expanding her calling &amp; services."</div>
             <div class="carousel-card-name">Christa Crawford</div>
+            <div class="carousel-card-title">NWM Leader, Brand Entrepreneur</div>
           </div>
         </div>
 
-        <!-- Card 6: Lauren Fields -->
+        <!-- Card 5: Lauren Fields -->
         <div class="carousel-card">
-          <img class="carousel-card-img" src="/lauren_fields.webp" alt="Lauren Fields" loading="lazy" style="object-position: center 20%;" width="2000" height="1125" decoding="async">
-          <div class="carousel-card-overlay"></div>
+          <div class="carousel-card-media">
+            <img class="carousel-card-img" src="/lauren_fields.webp" alt="Lauren Fields" loading="lazy" style="object-position: center 20%;" width="2000" height="1125" decoding="async">
+          </div>
           <div class="carousel-card-info">
-            <div class="carousel-card-role">From a wishful idea to now launching Fieldswell, her own wellness clinic &amp; brand</div>
+            <div class="carousel-card-stars">★★★★★</div>
+            <div class="carousel-card-role">"From a wishful idea to now launching Fieldswell, her own wellness clinic &amp; brand."</div>
             <div class="carousel-card-name">Lauren Fields</div>
+            <div class="carousel-card-title">Founder of Fieldswell, Wellness Entrepreneur</div>
           </div>
         </div>
 
