@@ -2388,33 +2388,27 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   .card-mini-zone.next { right: 0; }
   .card-mini-arrow {
     position: absolute;
-    right: 10px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 4;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.2);
-    backdrop-filter: blur(4px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     cursor: pointer;
-    opacity: 0.7;
-    transition: opacity 0.3s ease, background 0.3s ease;
+    opacity: 0;
+    transition: opacity 0.3s ease;
     pointer-events: none;
+    filter: drop-shadow(0 1px 3px rgba(0,0,0,0.4));
   }
+  .card-mini-arrow.prev { left: 10px; }
+  .card-mini-arrow.next { right: 10px; }
   .card-mini-carousel:hover .card-mini-arrow {
-    opacity: 1;
+    opacity: 0.85;
     pointer-events: auto;
   }
   .card-mini-arrow:hover {
-    background: rgba(255,255,255,0.4);
+    opacity: 1;
   }
   .card-mini-arrow svg {
-    width: 12px;
-    height: 12px;
+    width: 24px;
+    height: 24px;
     fill: none;
     stroke: #fff;
     stroke-width: 2.5;
@@ -2561,7 +2555,10 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
         </div>
         <div class="card-mini-zone prev" data-mini-prev></div>
         <div class="card-mini-zone next" data-mini-next></div>
-        <div class="card-mini-arrow" data-mini-arrow>
+        <div class="card-mini-arrow prev" data-mini-arrow-prev>
+          <svg viewBox="0 0 24 24"><polyline points="15 6 9 12 15 18"/></svg>
+        </div>
+        <div class="card-mini-arrow next" data-mini-arrow-next>
           <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg>
         </div>
         <div class="card-mini-dots"></div>
@@ -3263,9 +3260,14 @@ document.querySelectorAll('.qa-header').forEach(header => {
     if (prevZone) prevZone.addEventListener('click', function() { goTo(current - 1); });
     if (nextZone) nextZone.addEventListener('click', function() { goTo(current + 1); });
 
-    // Arrow button (right side)
-    var arrowBtn = carousel.querySelector('[data-mini-arrow]');
-    if (arrowBtn) arrowBtn.addEventListener('click', function(e) {
+    // Arrow buttons (left + right)
+    var arrowPrev = carousel.querySelector('[data-mini-arrow-prev]');
+    var arrowNext = carousel.querySelector('[data-mini-arrow-next]');
+    if (arrowPrev) arrowPrev.addEventListener('click', function(e) {
+      e.stopPropagation();
+      goTo(current - 1);
+    });
+    if (arrowNext) arrowNext.addEventListener('click', function(e) {
       e.stopPropagation();
       goTo(current + 1);
     });
