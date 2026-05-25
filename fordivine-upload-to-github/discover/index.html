@@ -3585,7 +3585,15 @@ document.querySelectorAll('.qa-header').forEach(header => {
     });
   }
 
-  window.addEventListener('resize', () => instances.forEach((instance) => instance.resize()));
+  // On mobile Safari, toolbar show/hide triggers resize events that change only height.
+  // This causes beams to jump. Only resize when width actually changes.
+  let lastBeamWidth = window.innerWidth;
+  window.addEventListener('resize', () => {
+    const newWidth = window.innerWidth;
+    if (Math.abs(newWidth - lastBeamWidth) < 2) return; // ignore toolbar height changes
+    lastBeamWidth = newWidth;
+    instances.forEach((instance) => instance.resize());
+  });
   function startBeams() {
     if (!reducedMotion.matches && !raf) raf = requestAnimationFrame(loop);
   }
@@ -3695,7 +3703,16 @@ document.querySelectorAll('.qa-header').forEach(header => {
     mouse.x = e.clientX;
     mouse.y = e.clientY + window.scrollY * 0; // fixed position
   });
-  window.addEventListener('resize', () => { resize(); initLayers(); });
+  // On mobile Safari, toolbar show/hide triggers resize that only changes height.
+  // This causes smoke layers to reinitialize and jump. Only resize on width change.
+  let lastSmokeWidth = window.innerWidth;
+  window.addEventListener('resize', () => {
+    const newWidth = window.innerWidth;
+    if (Math.abs(newWidth - lastSmokeWidth) < 2) return; // ignore toolbar height changes
+    lastSmokeWidth = newWidth;
+    resize();
+    initLayers();
+  });
 
   resize();
   initLayers();
