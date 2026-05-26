@@ -1415,11 +1415,12 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     margin-bottom: 24px;
   }
   .layers-subtitle {
-    font-family: var(--body);
-    font-weight: 400;
-    font-size: clamp(14px, 1.5vw, 18px);
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(16px, 1.6vw, 21px);
     color: rgba(255, 255, 255, 0.7);
-    line-height: 1.5;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
     max-width: 500px;
   }
   .layers-accordion {
@@ -1473,12 +1474,12 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   .layer-collapsed .layer-num {
     font-family: 'Bebas Neue', 'Arial Narrow', Impact, sans-serif;
     font-weight: 400;
-    font-size: clamp(60px, 9vw, 110px);
+    font-size: clamp(70px, 10vw, 130px);
     color: #1a1a1a;
-    line-height: 0.85;
+    line-height: 0.75;
     letter-spacing: -0.02em;
     position: relative;
-    top: 0.08em;
+    top: 0.25em;
   }
   /* Expanded content panel - height controlled by JS */
   .layer-expanded {
@@ -4021,7 +4022,7 @@ fbq('track', 'PageView');
     });
   }, {
     root: null,
-    rootMargin: '-40% 0px -40% 0px',
+    rootMargin: '-25% 0px -55% 0px',
     threshold: 0
   });
 
