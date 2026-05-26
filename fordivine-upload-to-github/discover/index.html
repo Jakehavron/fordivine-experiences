@@ -117,7 +117,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
       },
       "speakable": {
         "@type": "SpeakableSpecification",
-        "cssSelector": [".hero-section h1", ".hero-section .hero-sub", ".arch-intro h2", ".pillars-heading", ".qa-section"]
+        "cssSelector": [".hero-section h1", ".hero-section .hero-sub", ".arch-intro h2", ".layers-title", ".qa-section"]
       }
     },
     {
@@ -1394,115 +1394,157 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     }
   }
 
-  /* ========== 4 PILLARS ========== */
-  .pillars-section {
-    background: var(--white);
-    padding: 112px 48px 56px;
+  /* ========== 4 LAYERS SCROLL ACCORDION ========== */
+  .layers-accordion-section {
     position: relative;
     z-index: 1;
   }
-  .pillars-heading {
+  .layers-header {
+    background: var(--charcoal);
+    padding: 80px 48px 60px;
     text-align: center;
+  }
+  .layers-title {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(24px, 3.5vw, 42px);
+    color: var(--white);
+    letter-spacing: 0.04em;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+  .layers-accordion {
+    background: linear-gradient(180deg, #f7f5f2 0%, #ede8e0 100%);
+  }
+  .layer-row {
+    border-bottom: 1px solid rgba(139, 122, 98, 0.15);
+    cursor: pointer;
+    position: relative;
+  }
+  .layer-row:last-child {
+    border-bottom: none;
+  }
+  .layer-collapsed {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 36px 48px;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  .layer-row.is-open .layer-collapsed {
+    opacity: 0;
+    height: 0;
+    padding: 0 48px;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .layer-name {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(22px, 3vw, 32px);
+    color: var(--text-dark);
+    letter-spacing: -0.01em;
+  }
+  .layer-collapsed .layer-num {
+    font-family: 'GFS Didot', 'Didot', 'Bodoni MT', Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(48px, 6vw, 80px);
+    color: rgba(139, 122, 98, 0.2);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  /* Expanded state */
+  .layer-expanded {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    background: var(--charcoal);
+    transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease 0.1s;
+  }
+  .layer-row.is-open .layer-expanded {
+    max-height: 600px;
+    opacity: 1;
+    padding: 48px;
+  }
+  .layer-expanded-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  .layer-name-expanded {
     font-family: var(--display);
     font-weight: 700;
     font-size: clamp(24px, 3vw, 36px);
-    color: var(--text-dark);
-    margin-bottom: 80px;
-    line-height: 1.25;
-    letter-spacing: -0.02em;
+    color: var(--white);
+    letter-spacing: -0.01em;
   }
-  .pillars-heading u {
-    text-decoration: underline;
-    text-underline-offset: 6px;
-    text-decoration-thickness: 2px;
-    text-decoration-color: var(--bone);
-  }
-  .pillars-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  .pillar-num {
+  .layer-num-badge {
     font-family: 'GFS Didot', 'Didot', 'Bodoni MT', Georgia, serif;
     font-weight: 400;
-    font-style: normal;
-    font-size: clamp(70px, 9vw, 112px);
-    color: rgba(139, 122, 98, 0.18);
-    line-height: 0.85;
-    letter-spacing: -0.02em;
-    display: block;
-    text-align: left;
-    margin-bottom: -8px;
-    margin-left: 0;
-    pointer-events: none;
-    user-select: none;
+    font-size: 20px;
+    color: var(--charcoal);
+    background: var(--bone);
+    padding: 8px 16px;
+    border-radius: 6px;
+    letter-spacing: 0.02em;
   }
-  .pillar-item h3 {
-    font-family: var(--display);
-    font-weight: 700;
-    font-size: 19px;
-    color: var(--text-dark);
-    margin-bottom: 16px;
-    margin-top: 4px;
-    letter-spacing: -0.01em;
-    line-height: 1.2;
-  }
-  .pillar-subtitle {
+  .layer-subtitle {
     font-family: var(--serif);
     font-weight: 400;
     font-size: 18px;
-    color: var(--text-mid);
-    letter-spacing: 0.01em;
-    margin-top: 10px;
-    margin-bottom: 18px;
+    color: rgba(255,255,255,0.7);
     font-style: italic;
-    line-height: 1.4;
+    margin-bottom: 32px;
+    letter-spacing: 0.01em;
   }
-  .pillar-img {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    background: linear-gradient(135deg, #f0eeeb 0%, #e8e6e2 100%);
-    border-radius: 16px;
-    overflow: hidden;
-    margin-bottom: 24px;
-    display: flex; align-items: center; justify-content: center;
-    flex-direction: column; gap: 8px;
-    color: #bbb;
-    font-size: 10px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  .layer-subitems {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
   }
-  .pillar-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 16px;
-    display: block;
+  .layer-subitem h4 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--white);
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
   }
-  .pillar-img-foundation img {
-    object-position: 52% center;
-  }
-  .pillar-img-systems img {
-    object-position: 58% center;
-  }
-  .pillar-img-presence img {
-    object-position: 52% center;
-  }
-  .pillar-item:hover .pillar-img {
-    transform: scale(1.03);
-  }
-  .pillar-item p {
-    font-size: 15px;
+  .layer-subitem p {
+    font-family: var(--body);
+    font-size: 14px;
     font-weight: 400;
-    line-height: 1.75;
-    color: var(--text-mid);
+    line-height: 1.7;
+    color: rgba(255,255,255,0.75);
   }
-  .pillar-item strong { color: var(--text-dark); font-weight: 700; }
-  .pillars-cta { text-align: center; padding: 56px 48px 112px; background: var(--white); }
+  .pillars-cta { text-align: center; padding: 56px 48px 112px; background: linear-gradient(180deg, #ede8e0 0%, var(--white) 100%); }
+
+  /* Layers accordion responsive */
+  @media (max-width: 768px) {
+    .layers-header { padding: 60px 24px 44px; }
+    .layers-title { font-size: clamp(18px, 5vw, 28px); letter-spacing: 0.03em; }
+    .layer-collapsed { padding: 28px 24px; }
+    .layer-row.is-open .layer-collapsed { padding: 0 24px; }
+    .layer-row.is-open .layer-expanded { padding: 36px 24px; }
+    .layer-subitems { grid-template-columns: 1fr; gap: 24px; }
+    .layer-name { font-size: clamp(18px, 4.5vw, 26px); }
+    .layer-collapsed .layer-num { font-size: clamp(36px, 8vw, 56px); }
+    .layer-name-expanded { font-size: clamp(20px, 4.5vw, 28px); }
+    .pillars-cta { padding: 48px 24px 80px; }
+  }
+  @media (max-width: 480px) {
+    .layers-header { padding: 48px 16px 36px; }
+    .layers-title { font-size: clamp(16px, 5.5vw, 22px); }
+    .layer-collapsed { padding: 24px 16px; }
+    .layer-row.is-open .layer-collapsed { padding: 0 16px; }
+    .layer-row.is-open .layer-expanded { padding: 28px 16px; max-height: 900px; }
+    .layer-subitems { gap: 20px; }
+    .layer-subitem h4 { font-size: 15px; }
+    .layer-subitem p { font-size: 13.5px; }
+    .layer-subtitle { font-size: 15px; margin-bottom: 24px; }
+    .pillars-cta { padding: 40px 16px 64px; }
+  }
 
   /* ========== COMBINED STORIES (reviews + carousel) ========== */
   .combined-stories-section {
@@ -2200,15 +2242,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     .social-proof-section { padding: 48px 12px 64px; }
     .social-proof-card { padding: 80px 24px; border-radius: 24px; }
 
-    /* Pillars */
-    .pillars-section { padding: 80px 24px 40px; }
-    .pillars-heading { font-size: clamp(20px, 4vw, 28px); margin-bottom: 56px; }
-    .pillars-grid { grid-template-columns: repeat(2, 1fr); gap: 28px; max-width: 600px; margin: 0 auto; padding: 0 8px; }
-    .pillar-img { aspect-ratio: 4 / 3; }
-    .pillar-img img { width: 100%; height: 100%; object-fit: cover; }
-    .pillar-item h3 { font-size: 18px; }
-    .pillar-item p { font-size: 14px; }
-    .pillars-cta { padding: 48px 24px 80px; }
+    /* Pillars (legacy - removed, see layers-accordion responsive above) */
 
     /* Reviews */
     .reviews-scatter { grid-template-columns: 1fr; gap: 20px; max-width: 400px; margin-left: auto; margin-right: auto; }
@@ -2279,17 +2313,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     .below-video p { font-size: 13.5px; }
     .cta-btn { padding: 18px 36px; font-size: 11px; letter-spacing: 0.12em; width: 100%; max-width: 360px; display: block; margin-left: auto; margin-right: auto; }
 
-    /* Pillars */
-    .pillars-grid { grid-template-columns: 1fr; max-width: 420px; padding: 0 12px; gap: 32px; }
-    .pillars-heading { font-size: clamp(18px, 5vw, 24px); }
-    .pillar-img { aspect-ratio: 4 / 3; border-radius: 14px; }
-    .pillar-img img { width: 100%; height: 100%; object-fit: cover; border-radius: 14px; }
-    .pillar-img-foundation img { object-position: 54% center; }
-    .pillar-img-systems img { object-position: 61% center; }
-    .pillar-img-presence img { object-position: 52% center; }
-    .pillar-item { text-align: left; }
-    .pillar-item h3 { font-size: 19px; }
-    .pillar-item p { font-size: 14.5px; }
+    /* Pillars (legacy - removed, see layers-accordion responsive above) */
 
     /* Q&A */
     .qa-header { font-size: 14px; padding: 18px 20px; }
@@ -2346,8 +2370,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     .nav-wordmark { height: 14px; }
     .logo-carousel-track img { height: 26px; max-width: 80px; object-fit: contain; }
     .logo-carousel-track { gap: 36px; }
-    .pillars-section { padding: 60px 16px 32px; }
-    .pillar-img { aspect-ratio: 4 / 3; }
+
   }
 
   /* ===== MINI CARD CAROUSEL (inside testimonial cards) ===== */
@@ -2692,42 +2715,127 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 </section>
 
 
-<!-- ===== 4 PILLARS ===== -->
-<section class="pillars-section">
-  <h2 class="pillars-heading reveal">The 4 Layers Your Brand Needs:</h2>
-  <div class="pillars-grid">
+<!-- ===== 4 LAYERS SCROLL ACCORDION ===== -->
+<section class="layers-accordion-section">
+  <div class="layers-header">
+    <h2 class="layers-title reveal">THE 4 LAYERS OF A PERSONAL BRAND</h2>
+  </div>
+  <div class="layers-accordion">
 
-    <div class="pillar-item reveal">
-      <span class="pillar-num">01</span>
-      <h3>The Foundation</h3>
-      <h4 class="pillar-subtitle">Strategy That Drives Real Results</h4>
-      <p>You have tried "branding" before and it still does not feel like it helps.</p>
-      <br>
-      <p>Before any visuals, you need a <strong>Crowned Authority Blueprint</strong>, aka the marketing strategy behind your entire brand ecosystem.</p>
+    <!-- Layer 01 -->
+    <div class="layer-row" data-layer="1">
+      <div class="layer-collapsed">
+        <h3 class="layer-name">The Foundation</h3>
+        <span class="layer-num">01</span>
+      </div>
+      <div class="layer-expanded">
+        <div class="layer-expanded-header">
+          <h3 class="layer-name-expanded">The Foundation</h3>
+          <div class="layer-num-badge">01</div>
+        </div>
+        <p class="layer-subtitle">Strategy That Drives Real Results</p>
+        <div class="layer-subitems">
+          <div class="layer-subitem">
+            <h4>Crowned Authority Blueprint</h4>
+            <p>Your complete marketing strategy mapped out so every piece of your brand works together toward one clear goal.</p>
+          </div>
+          <div class="layer-subitem">
+            <h4>Ideal Avatar Psychology</h4>
+            <p>We research exactly who your audience is, what they need, and what makes them trust and buy from someone like you.</p>
+          </div>
+          <div class="layer-subitem">
+            <h4>Competitive Positioning</h4>
+            <p>We identify what makes your voice different in a crowded market so you stand out without trying to be someone you are not.</p>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="pillar-item reveal reveal-delay-1">
-      <span class="pillar-num">02</span>
-      <h3>The Presence</h3>
-      <h4 class="pillar-subtitle">Visuals That Command Attention</h4>
-      <p>No AI system out there can fully grasp your soul's essence and materialize it as unique brand assets.</p>
-      <br>
-      <p>Our in-house Designers craft your <strong>Crowned Identity Bible</strong>, aka all the brand assets for your entire brand ecosystem.</p>
+    <!-- Layer 02 -->
+    <div class="layer-row" data-layer="2">
+      <div class="layer-collapsed">
+        <h3 class="layer-name">The Presence</h3>
+        <span class="layer-num">02</span>
+      </div>
+      <div class="layer-expanded">
+        <div class="layer-expanded-header">
+          <h3 class="layer-name-expanded">The Presence</h3>
+          <div class="layer-num-badge">02</div>
+        </div>
+        <p class="layer-subtitle">Visuals That Command Attention</p>
+        <div class="layer-subitems">
+          <div class="layer-subitem">
+            <h4>Crowned Identity Bible</h4>
+            <p>A fully comprehensive brand guide with your visual identity, logo system, color palette, typography, and brand assets all designed by our in-house team.</p>
+          </div>
+          <div class="layer-subitem">
+            <h4>Custom Brand Assets</h4>
+            <p>Original design elements crafted specifically for you. No templates, no AI-generated graphics. Every asset reflects your essence.</p>
+          </div>
+          <div class="layer-subitem">
+            <h4>Brand Reveal Experience</h4>
+            <p>Your brand is personally unveiled to you by Emily Ford in a powerful moment of reflection, narrative, and excitement.</p>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="pillar-item reveal reveal-delay-2">
-      <span class="pillar-num">03</span>
-      <h3>The Activation</h3>
-      <h4 class="pillar-subtitle">Brand Assets Ready To Use</h4>
-      <br>
-      <p>Activate your digital presence with a <strong>Digital HQ</strong> (full website), <strong>premium brand assets</strong>, and <strong>social content</strong> that converts bystanders into leads.</p>
+    <!-- Layer 03 -->
+    <div class="layer-row" data-layer="3">
+      <div class="layer-collapsed">
+        <h3 class="layer-name">The Activation</h3>
+        <span class="layer-num">03</span>
+      </div>
+      <div class="layer-expanded">
+        <div class="layer-expanded-header">
+          <h3 class="layer-name-expanded">The Activation</h3>
+          <div class="layer-num-badge">03</div>
+        </div>
+        <p class="layer-subtitle">Brand Assets Ready To Use</p>
+        <div class="layer-subitems">
+          <div class="layer-subitem">
+            <h4>Digital HQ</h4>
+            <p>A full website designed and built to convert visitors into leads and position you as the authority in your space.</p>
+          </div>
+          <div class="layer-subitem">
+            <h4>Social Content System</h4>
+            <p>Ready-to-post content assets, templates, and frameworks so you show up consistently without starting from scratch every day.</p>
+          </div>
+          <div class="layer-subitem">
+            <h4>Premium Brand Collateral</h4>
+            <p>Presentation decks, lead magnets, email headers, and every touchpoint designed to match your elevated brand standard.</p>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="pillar-item reveal reveal-delay-3">
-      <span class="pillar-num">04</span>
-      <h3>The Engine</h3>
-      <h4 class="pillar-subtitle">Scalable Systems To Work For You</h4>
-      <p>We engineer your brand into an <strong>employee working for you 24/7/365</strong> that generates new leads, converting them into clients/customers, and opens new doors of opportunity by the day.</p>
+    <!-- Layer 04 -->
+    <div class="layer-row" data-layer="4">
+      <div class="layer-collapsed">
+        <h3 class="layer-name">The Engine</h3>
+        <span class="layer-num">04</span>
+      </div>
+      <div class="layer-expanded">
+        <div class="layer-expanded-header">
+          <h3 class="layer-name-expanded">The Engine</h3>
+          <div class="layer-num-badge">04</div>
+        </div>
+        <p class="layer-subtitle">Scalable Systems To Work For You</p>
+        <div class="layer-subitems">
+          <div class="layer-subitem">
+            <h4>Lead Generation System</h4>
+            <p>Automated funnels and strategies that bring qualified leads to you 24/7 without trading more of your time.</p>
+          </div>
+          <div class="layer-subitem">
+            <h4>Conversion Architecture</h4>
+            <p>The systems that turn strangers into followers, followers into leads, and leads into paying clients on autopilot.</p>
+          </div>
+          <div class="layer-subitem">
+            <h4>Growth & Accountability</h4>
+            <p>Ongoing support, community access, and brand coaching to ensure your brand keeps opening new doors long after launch.</p>
+          </div>
+        </div>
+      </div>
     </div>
 
   </div>
@@ -3814,6 +3922,47 @@ fbq('track', 'PageView');
     r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
     a.appendChild(r);
   })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<script>
+(function() {
+  const rows = document.querySelectorAll('.layer-row');
+  if (!rows.length) return;
+
+  // Scroll-triggered open/close using IntersectionObserver
+  const observerOptions = {
+    root: null,
+    rootMargin: '-50% 0px -50% 0px', // triggers when row hits center of viewport
+    threshold: 0
+  };
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      const row = entry.target;
+      if (entry.isIntersecting) {
+        row.classList.add('is-open');
+      } else {
+        // Only close if scrolling back up (element is below viewport center)
+        const rect = row.getBoundingClientRect();
+        const viewportCenter = window.innerHeight / 2;
+        if (rect.top > viewportCenter) {
+          row.classList.remove('is-open');
+        }
+      }
+    });
+  }, observerOptions);
+
+  rows.forEach(function(row) {
+    observer.observe(row);
+  });
+
+  // Click to toggle (non-buggy because it just toggles the class)
+  rows.forEach(function(row) {
+    row.addEventListener('click', function() {
+      row.classList.toggle('is-open');
+    });
+  });
+})();
 </script>
 
 </body>
