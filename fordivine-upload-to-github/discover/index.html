@@ -3987,6 +3987,7 @@ fbq('track', 'PageView');
   function openRow(row) {
     if (openState.get(row)) return;
     openState.set(row, true);
+    row.classList.add('is-open');
     var panel = row.querySelector('.layer-expanded');
     var inner = row.querySelector('.layer-expanded-inner');
     var targetHeight = inner.offsetHeight;
@@ -3998,6 +3999,7 @@ fbq('track', 'PageView');
   function closeRow(row) {
     if (!openState.get(row)) return;
     openState.set(row, false);
+    row.classList.remove('is-open');
     var panel = row.querySelector('.layer-expanded');
     panel.style.height = '0px';
     // Move slider to the last remaining open row, or hide
