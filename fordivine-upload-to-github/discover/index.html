@@ -4015,17 +4015,15 @@ fbq('track', 'PageView');
   }
 
   // Scroll-triggered open/close using IntersectionObserver
-  var observer = new IntersectionObserver(function(entries) {
+  // We use two observers:
+  // 1. Open observer: triggers open when row enters the upper trigger zone
+  // 2. Close observer: triggers close when row exits below the close threshold (scrolling back up)
+  var openObserver = new IntersectionObserver(function(entries) {
     if (clickLock) return;
     entries.forEach(function(entry) {
       var row = entry.target;
       if (entry.isIntersecting) {
         openRow(row);
-      } else {
-        var rect = row.getBoundingClientRect();
-        if (rect.top > window.innerHeight * 0.5) {
-          closeRow(row);
-        }
       }
     });
   }, {
@@ -4034,9 +4032,30 @@ fbq('track', 'PageView');
     threshold: 0
   });
 
+  // Close observer: uses a slightly lower threshold so rows close when scrolling back up
+  // A row should close when it goes back below the viewport center
+  var closeObserver = new IntersectionObserver(function(entries) {
+    if (clickLock) return;
+    entries.forEach(function(entry) {
+      var row = entry.target;
+      if (!entry.isIntersecting) {
+        // Row left the close zone - check if it went downward (scrolled up)
+        var rect = row.getBoundingClientRect();
+        if (rect.top > window.innerHeight * 0.4) {
+          closeRow(row);
+        }
+      }
+    });
+  }, {
+    root: null,
+    rootMargin: '-20% 0px -60% 0px',
+    threshold: 0
+  });
+
   rows.forEach(function(row) {
     openState.set(row, false);
-    observer.observe(row);
+    openObserver.observe(row);
+    closeObserver.observe(row);
   });
 
   // Click to toggle (with brief lock to prevent scroll observer from fighting)
