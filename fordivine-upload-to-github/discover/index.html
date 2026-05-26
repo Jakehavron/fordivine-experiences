@@ -1420,25 +1420,17 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     border-bottom: 1px solid rgba(139, 122, 98, 0.15);
     cursor: pointer;
     position: relative;
+    overflow: hidden;
   }
   .layer-row:last-child {
     border-bottom: none;
   }
+  /* Collapsed header bar */
   .layer-collapsed {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 36px 48px;
-    transition: opacity 0.3s ease, height 0.3s ease 0.05s, padding 0.3s ease 0.05s;
-    overflow: hidden;
-  }
-  .layer-row.is-open .layer-collapsed {
-    opacity: 0;
-    height: 0;
-    padding: 0 48px;
-    overflow: hidden;
-    pointer-events: none;
-    transition: opacity 0.2s ease, height 0.3s ease, padding 0.3s ease;
   }
   .layer-name {
     font-family: var(--display);
@@ -1455,20 +1447,15 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     line-height: 1;
     letter-spacing: -0.02em;
   }
-  /* Expanded state */
+  /* Expanded content panel - height controlled by JS */
   .layer-expanded {
-    max-height: 0;
+    height: 0;
     overflow: hidden;
-    opacity: 0;
-    padding: 0 48px;
     background: var(--charcoal);
-    transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease, padding 0.4s ease;
+    transition: height 0.55s cubic-bezier(0.32, 0.72, 0, 1);
   }
-  .layer-row.is-open .layer-expanded {
-    max-height: 600px;
-    opacity: 1;
+  .layer-expanded-inner {
     padding: 48px;
-    transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s, opacity 0.4s ease 0.2s, padding 0.4s ease 0.15s;
   }
   .layer-expanded-header {
     display: flex;
@@ -1529,8 +1516,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     .layers-header { padding: 60px 24px 44px; }
     .layers-title { font-size: clamp(18px, 5vw, 28px); letter-spacing: 0.03em; }
     .layer-collapsed { padding: 28px 24px; }
-    .layer-row.is-open .layer-collapsed { padding: 0 24px; }
-    .layer-row.is-open .layer-expanded { padding: 36px 24px; }
+    .layer-expanded-inner { padding: 36px 24px; }
     .layer-subitems { grid-template-columns: 1fr; gap: 24px; }
     .layer-name { font-size: clamp(18px, 4.5vw, 26px); }
     .layer-collapsed .layer-num { font-size: clamp(36px, 8vw, 56px); }
@@ -1541,8 +1527,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     .layers-header { padding: 48px 16px 36px; }
     .layers-title { font-size: clamp(16px, 5.5vw, 22px); }
     .layer-collapsed { padding: 24px 16px; }
-    .layer-row.is-open .layer-collapsed { padding: 0 16px; }
-    .layer-row.is-open .layer-expanded { padding: 28px 16px; max-height: 900px; }
+    .layer-expanded-inner { padding: 28px 16px; }
     .layer-subitems { gap: 20px; }
     .layer-subitem h4 { font-size: 15px; }
     .layer-subitem p { font-size: 13.5px; }
@@ -2733,23 +2718,25 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
         <span class="layer-num">01</span>
       </div>
       <div class="layer-expanded">
-        <div class="layer-expanded-header">
-          <h3 class="layer-name-expanded">The Foundation</h3>
-          <div class="layer-num-badge">01</div>
-        </div>
-        <p class="layer-subtitle">Strategy That Drives Real Results</p>
-        <div class="layer-subitems">
-          <div class="layer-subitem">
-            <h4>Crowned Authority Blueprint</h4>
-            <p>Your complete marketing strategy mapped out so every piece of your brand works together toward one clear goal.</p>
+        <div class="layer-expanded-inner">
+          <div class="layer-expanded-header">
+            <h3 class="layer-name-expanded">The Foundation</h3>
+            <div class="layer-num-badge">01</div>
           </div>
-          <div class="layer-subitem">
-            <h4>Ideal Avatar Psychology</h4>
-            <p>We research exactly who your audience is, what they need, and what makes them trust and buy from someone like you.</p>
-          </div>
-          <div class="layer-subitem">
-            <h4>Competitive Positioning</h4>
-            <p>We identify what makes your voice different in a crowded market so you stand out without trying to be someone you are not.</p>
+          <p class="layer-subtitle">Strategy That Drives Real Results</p>
+          <div class="layer-subitems">
+            <div class="layer-subitem">
+              <h4>Crowned Authority Blueprint</h4>
+              <p>Your complete marketing strategy mapped out so every piece of your brand works together toward one clear goal.</p>
+            </div>
+            <div class="layer-subitem">
+              <h4>Ideal Avatar Psychology</h4>
+              <p>We research exactly who your audience is, what they need, and what makes them trust and buy from someone like you.</p>
+            </div>
+            <div class="layer-subitem">
+              <h4>Competitive Positioning</h4>
+              <p>We identify what makes your voice different in a crowded market so you stand out without trying to be someone you are not.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -2762,23 +2749,25 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
         <span class="layer-num">02</span>
       </div>
       <div class="layer-expanded">
-        <div class="layer-expanded-header">
-          <h3 class="layer-name-expanded">The Presence</h3>
-          <div class="layer-num-badge">02</div>
-        </div>
-        <p class="layer-subtitle">Visuals That Command Attention</p>
-        <div class="layer-subitems">
-          <div class="layer-subitem">
-            <h4>Crowned Identity Bible</h4>
-            <p>A fully comprehensive brand guide with your visual identity, logo system, color palette, typography, and brand assets all designed by our in-house team.</p>
+        <div class="layer-expanded-inner">
+          <div class="layer-expanded-header">
+            <h3 class="layer-name-expanded">The Presence</h3>
+            <div class="layer-num-badge">02</div>
           </div>
-          <div class="layer-subitem">
-            <h4>Custom Brand Assets</h4>
-            <p>Original design elements crafted specifically for you. No templates, no AI-generated graphics. Every asset reflects your essence.</p>
-          </div>
-          <div class="layer-subitem">
-            <h4>Brand Reveal Experience</h4>
-            <p>Your brand is personally unveiled to you by Emily Ford in a powerful moment of reflection, narrative, and excitement.</p>
+          <p class="layer-subtitle">Visuals That Command Attention</p>
+          <div class="layer-subitems">
+            <div class="layer-subitem">
+              <h4>Crowned Identity Bible</h4>
+              <p>A fully comprehensive brand guide with your visual identity, logo system, color palette, typography, and brand assets all designed by our in-house team.</p>
+            </div>
+            <div class="layer-subitem">
+              <h4>Custom Brand Assets</h4>
+              <p>Original design elements crafted specifically for you. No templates, no AI-generated graphics. Every asset reflects your essence.</p>
+            </div>
+            <div class="layer-subitem">
+              <h4>Brand Reveal Experience</h4>
+              <p>Your brand is personally unveiled to you by Emily Ford in a powerful moment of reflection, narrative, and excitement.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -2791,23 +2780,25 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
         <span class="layer-num">03</span>
       </div>
       <div class="layer-expanded">
-        <div class="layer-expanded-header">
-          <h3 class="layer-name-expanded">The Activation</h3>
-          <div class="layer-num-badge">03</div>
-        </div>
-        <p class="layer-subtitle">Brand Assets Ready To Use</p>
-        <div class="layer-subitems">
-          <div class="layer-subitem">
-            <h4>Digital HQ</h4>
-            <p>A full website designed and built to convert visitors into leads and position you as the authority in your space.</p>
+        <div class="layer-expanded-inner">
+          <div class="layer-expanded-header">
+            <h3 class="layer-name-expanded">The Activation</h3>
+            <div class="layer-num-badge">03</div>
           </div>
-          <div class="layer-subitem">
-            <h4>Social Content System</h4>
-            <p>Ready-to-post content assets, templates, and frameworks so you show up consistently without starting from scratch every day.</p>
-          </div>
-          <div class="layer-subitem">
-            <h4>Premium Brand Collateral</h4>
-            <p>Presentation decks, lead magnets, email headers, and every touchpoint designed to match your elevated brand standard.</p>
+          <p class="layer-subtitle">Brand Assets Ready To Use</p>
+          <div class="layer-subitems">
+            <div class="layer-subitem">
+              <h4>Digital HQ</h4>
+              <p>A full website designed and built to convert visitors into leads and position you as the authority in your space.</p>
+            </div>
+            <div class="layer-subitem">
+              <h4>Social Content System</h4>
+              <p>Ready-to-post content assets, templates, and frameworks so you show up consistently without starting from scratch every day.</p>
+            </div>
+            <div class="layer-subitem">
+              <h4>Premium Brand Collateral</h4>
+              <p>Presentation decks, lead magnets, email headers, and every touchpoint designed to match your elevated brand standard.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -2820,23 +2811,25 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
         <span class="layer-num">04</span>
       </div>
       <div class="layer-expanded">
-        <div class="layer-expanded-header">
-          <h3 class="layer-name-expanded">The Engine</h3>
-          <div class="layer-num-badge">04</div>
-        </div>
-        <p class="layer-subtitle">Scalable Systems To Work For You</p>
-        <div class="layer-subitems">
-          <div class="layer-subitem">
-            <h4>Lead Generation System</h4>
-            <p>Automated funnels and strategies that bring qualified leads to you 24/7 without trading more of your time.</p>
+        <div class="layer-expanded-inner">
+          <div class="layer-expanded-header">
+            <h3 class="layer-name-expanded">The Engine</h3>
+            <div class="layer-num-badge">04</div>
           </div>
-          <div class="layer-subitem">
-            <h4>Conversion Architecture</h4>
-            <p>The systems that turn strangers into followers, followers into leads, and leads into paying clients on autopilot.</p>
-          </div>
-          <div class="layer-subitem">
-            <h4>Growth & Accountability</h4>
-            <p>Ongoing support, community access, and brand coaching to ensure your brand keeps opening new doors long after launch.</p>
+          <p class="layer-subtitle">Scalable Systems To Work For You</p>
+          <div class="layer-subitems">
+            <div class="layer-subitem">
+              <h4>Lead Generation System</h4>
+              <p>Automated funnels and strategies that bring qualified leads to you 24/7 without trading more of your time.</p>
+            </div>
+            <div class="layer-subitem">
+              <h4>Conversion Architecture</h4>
+              <p>The systems that turn strangers into followers, followers into leads, and leads into paying clients on autopilot.</p>
+            </div>
+            <div class="layer-subitem">
+              <h4>Growth & Accountability</h4>
+              <p>Ongoing support, community access, and brand coaching to ensure your brand keeps opening new doors long after launch.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -3931,56 +3924,84 @@ fbq('track', 'PageView');
 
 <script>
 (function() {
-  const rows = document.querySelectorAll('.layer-row');
+  var rows = document.querySelectorAll('.layer-row');
   if (!rows.length) return;
 
-  // Track which rows were manually toggled by click
-  const manuallyToggled = new WeakSet();
-  let clickCooldown = false;
+  // State tracking
+  var openState = new Map();
+  var clickLock = false;
+
+  // Open a row: measure inner height, set explicit height for smooth transition
+  function openRow(row) {
+    if (openState.get(row)) return;
+    openState.set(row, true);
+    var panel = row.querySelector('.layer-expanded');
+    var inner = row.querySelector('.layer-expanded-inner');
+    var targetHeight = inner.offsetHeight;
+    panel.style.height = targetHeight + 'px';
+  }
+
+  // Close a row: animate height back to 0
+  function closeRow(row) {
+    if (!openState.get(row)) return;
+    openState.set(row, false);
+    var panel = row.querySelector('.layer-expanded');
+    panel.style.height = '0px';
+  }
 
   // Scroll-triggered open/close using IntersectionObserver
-  const observerOptions = {
-    root: null,
-    rootMargin: '-45% 0px -45% 0px', // triggers when row hits center 10% band of viewport
-    threshold: 0
-  };
-
-  const observer = new IntersectionObserver(function(entries) {
+  // rootMargin '-40% 0px -40% 0px' means the trigger zone is the center 20% of the viewport
+  var observer = new IntersectionObserver(function(entries) {
+    if (clickLock) return;
     entries.forEach(function(entry) {
-      const row = entry.target;
-      // Skip rows that were just manually clicked (avoid fighting with click)
-      if (clickCooldown) return;
+      var row = entry.target;
       if (entry.isIntersecting) {
-        row.classList.add('is-open');
-        manuallyToggled.delete(row);
+        openRow(row);
       } else {
-        // Only close if scrolling back up (element is below viewport center)
-        const rect = row.getBoundingClientRect();
-        const viewportCenter = window.innerHeight / 2;
-        if (rect.top > viewportCenter && !manuallyToggled.has(row)) {
-          row.classList.remove('is-open');
+        // Only close if the row is BELOW the viewport center (scrolling back up)
+        var rect = row.getBoundingClientRect();
+        if (rect.top > window.innerHeight * 0.5) {
+          closeRow(row);
         }
       }
     });
-  }, observerOptions);
+  }, {
+    root: null,
+    rootMargin: '-40% 0px -40% 0px',
+    threshold: 0
+  });
 
   rows.forEach(function(row) {
+    openState.set(row, false);
     observer.observe(row);
   });
 
-  // Click to toggle
+  // Click to toggle (with brief lock to prevent scroll observer from fighting)
   rows.forEach(function(row) {
     row.addEventListener('click', function() {
-      clickCooldown = true;
-      row.classList.toggle('is-open');
-      if (row.classList.contains('is-open')) {
-        manuallyToggled.add(row);
+      clickLock = true;
+      if (openState.get(row)) {
+        closeRow(row);
       } else {
-        manuallyToggled.delete(row);
+        openRow(row);
       }
-      // Reset cooldown after a short delay so scroll observer can resume
-      setTimeout(function() { clickCooldown = false; }, 600);
+      setTimeout(function() { clickLock = false; }, 700);
     });
+  });
+
+  // Handle window resize: recalculate open panel heights
+  var resizeTimer;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+      rows.forEach(function(row) {
+        if (openState.get(row)) {
+          var panel = row.querySelector('.layer-expanded');
+          var inner = row.querySelector('.layer-expanded-inner');
+          panel.style.height = inner.offsetHeight + 'px';
+        }
+      });
+    }, 150);
   });
 })();
 </script>
