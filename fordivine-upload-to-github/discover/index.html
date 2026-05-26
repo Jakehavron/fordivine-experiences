@@ -1481,11 +1481,11 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     position: relative;
     top: 0.35em;
     margin-bottom: -0.35em;
-    opacity: 1;
-    transition: opacity 0.4s ease;
+    transition: top 0.5s cubic-bezier(0.32, 0.72, 0, 1), margin-bottom 0.5s cubic-bezier(0.32, 0.72, 0, 1);
   }
   .layer-row.is-open .layer-collapsed .layer-num {
-    opacity: 0;
+    top: 0;
+    margin-bottom: 0;
   }
   /* Expanded content panel - height controlled by JS */
   .layer-expanded {
