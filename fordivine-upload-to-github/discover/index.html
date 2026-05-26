@@ -1429,7 +1429,8 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     align-items: center;
     justify-content: space-between;
     padding: 36px 48px;
-    transition: opacity 0.4s ease, transform 0.4s ease;
+    transition: opacity 0.3s ease, height 0.3s ease 0.05s, padding 0.3s ease 0.05s;
+    overflow: hidden;
   }
   .layer-row.is-open .layer-collapsed {
     opacity: 0;
@@ -1437,6 +1438,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     padding: 0 48px;
     overflow: hidden;
     pointer-events: none;
+    transition: opacity 0.2s ease, height 0.3s ease, padding 0.3s ease;
   }
   .layer-name {
     font-family: var(--display);
@@ -1458,13 +1460,15 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     max-height: 0;
     overflow: hidden;
     opacity: 0;
+    padding: 0 48px;
     background: var(--charcoal);
-    transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease 0.1s;
+    transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease, padding 0.4s ease;
   }
   .layer-row.is-open .layer-expanded {
     max-height: 600px;
     opacity: 1;
     padding: 48px;
+    transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s, opacity 0.4s ease 0.2s, padding 0.4s ease 0.15s;
   }
   .layer-expanded-header {
     display: flex;
@@ -2842,7 +2846,8 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 </section>
 
 <div class="pillars-cta">
-  <a href="#book" class="cta-btn reveal" aria-label="Schedule a FORDIVINE discovery call">Schedule Discovery Call</a>
+  <a href="#book" class="cta-btn reveal" aria-label="Schedule a FORDIVINE discovery call">SCHEDULE DISCOVERY CALL</a>
+  <p class="pillars-cta-sub reveal" style="font-family: var(--serif); font-style: italic; font-size: 16px; color: var(--text-dark); opacity: 0.7; margin-top: 16px;">See the transformation firsthand.</p>
 </div>
 
 <!-- ===== MORE REVIEWS + CROWNED STORIES (combined floating card) ===== -->
@@ -3929,23 +3934,30 @@ fbq('track', 'PageView');
   const rows = document.querySelectorAll('.layer-row');
   if (!rows.length) return;
 
+  // Track which rows were manually toggled by click
+  const manuallyToggled = new WeakSet();
+  let clickCooldown = false;
+
   // Scroll-triggered open/close using IntersectionObserver
   const observerOptions = {
     root: null,
-    rootMargin: '-50% 0px -50% 0px', // triggers when row hits center of viewport
+    rootMargin: '-45% 0px -45% 0px', // triggers when row hits center 10% band of viewport
     threshold: 0
   };
 
   const observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
       const row = entry.target;
+      // Skip rows that were just manually clicked (avoid fighting with click)
+      if (clickCooldown) return;
       if (entry.isIntersecting) {
         row.classList.add('is-open');
+        manuallyToggled.delete(row);
       } else {
         // Only close if scrolling back up (element is below viewport center)
         const rect = row.getBoundingClientRect();
         const viewportCenter = window.innerHeight / 2;
-        if (rect.top > viewportCenter) {
+        if (rect.top > viewportCenter && !manuallyToggled.has(row)) {
           row.classList.remove('is-open');
         }
       }
@@ -3956,10 +3968,18 @@ fbq('track', 'PageView');
     observer.observe(row);
   });
 
-  // Click to toggle (non-buggy because it just toggles the class)
+  // Click to toggle
   rows.forEach(function(row) {
     row.addEventListener('click', function() {
+      clickCooldown = true;
       row.classList.toggle('is-open');
+      if (row.classList.contains('is-open')) {
+        manuallyToggled.add(row);
+      } else {
+        manuallyToggled.delete(row);
+      }
+      // Reset cooldown after a short delay so scroll observer can resume
+      setTimeout(function() { clickCooldown = false; }, 600);
     });
   });
 })();
