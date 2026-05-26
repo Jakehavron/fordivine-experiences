@@ -1414,10 +1414,16 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     text-transform: uppercase;
   }
   .layers-accordion {
-    background: linear-gradient(180deg, #f7f5f2 0%, #ede8e0 100%);
+    position: relative;
+    overflow: hidden;
   }
+  /* Per-row gradient backgrounds matching homepage cream-to-tan */
+  .layer-row:nth-child(1) { background: #fbf9f6; }
+  .layer-row:nth-child(2) { background: #f4f0ea; }
+  .layer-row:nth-child(3) { background: #ebe5dc; }
+  .layer-row:nth-child(4) { background: #e0d8cd; }
   .layer-row {
-    border-bottom: 1px solid rgba(139, 122, 98, 0.15);
+    border-bottom: 1px solid rgba(139, 122, 98, 0.12);
     cursor: pointer;
     position: relative;
     overflow: hidden;
@@ -1425,27 +1431,45 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   .layer-row:last-child {
     border-bottom: none;
   }
+  /* Sliding highlight bar */
+  .layer-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.45);
+    border-radius: 0;
+    pointer-events: none;
+    z-index: 1;
+    transition: transform 0.5s cubic-bezier(0.32, 0.72, 0, 1), height 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+    will-change: transform, height;
+  }
   /* Collapsed header bar */
   .layer-collapsed {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 36px 48px;
+    padding: 40px 48px;
+    position: relative;
+    z-index: 2;
   }
   .layer-name {
     font-family: var(--display);
     font-weight: 700;
-    font-size: clamp(22px, 3vw, 32px);
+    font-size: clamp(32px, 5vw, 56px);
     color: var(--text-dark);
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
   }
   .layer-collapsed .layer-num {
     font-family: 'Bebas Neue', 'Arial Narrow', Impact, sans-serif;
     font-weight: 400;
-    font-size: clamp(52px, 7vw, 90px);
+    font-size: clamp(60px, 9vw, 110px);
     color: #1a1a1a;
-    line-height: 1;
+    line-height: 0.85;
     letter-spacing: -0.02em;
+    position: relative;
+    top: 0.08em;
   }
   /* Expanded content panel - height controlled by JS */
   .layer-expanded {
@@ -1518,20 +1542,22 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     .layer-collapsed { padding: 28px 24px; }
     .layer-expanded-inner { padding: 36px 24px; }
     .layer-subitems { grid-template-columns: 1fr; gap: 24px; }
-    .layer-name { font-size: clamp(18px, 4.5vw, 26px); }
-    .layer-collapsed .layer-num { font-size: clamp(36px, 8vw, 56px); }
+    .layer-name { font-size: clamp(24px, 6vw, 38px); }
+    .layer-collapsed .layer-num { font-size: clamp(48px, 12vw, 72px); }
     .layer-name-expanded { font-size: clamp(20px, 4.5vw, 28px); }
     .pillars-cta { padding: 48px 24px 80px; }
   }
   @media (max-width: 480px) {
     .layers-header { padding: 48px 16px 36px; }
     .layers-title { font-size: clamp(16px, 5.5vw, 22px); }
-    .layer-collapsed { padding: 24px 16px; }
+    .layer-collapsed { padding: 22px 16px; }
     .layer-expanded-inner { padding: 28px 16px; }
     .layer-subitems { gap: 20px; }
     .layer-subitem h4 { font-size: 15px; }
     .layer-subitem p { font-size: 13.5px; }
     .layer-subtitle { font-size: 15px; margin-bottom: 24px; }
+    .layer-name { font-size: clamp(22px, 6.5vw, 32px); }
+    .layer-collapsed .layer-num { font-size: clamp(40px, 13vw, 60px); }
     .pillars-cta { padding: 40px 16px 64px; }
   }
 
@@ -2710,6 +2736,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     <h2 class="layers-title reveal">THE 4 LAYERS OF A PERSONAL BRAND</h2>
   </div>
   <div class="layers-accordion">
+    <div class="layer-slider"></div>
 
     <!-- Layer 01 -->
     <div class="layer-row" data-layer="1">
@@ -3909,11 +3936,33 @@ fbq('track', 'PageView');
 <script>
 (function() {
   var rows = document.querySelectorAll('.layer-row');
+  var slider = document.querySelector('.layer-slider');
   if (!rows.length) return;
 
   // State tracking
   var openState = new Map();
   var clickLock = false;
+  var lastActiveRow = null;
+
+  // Position the sliding highlight bar behind the most recently opened row
+  function updateSlider(row) {
+    if (!slider || !row) return;
+    var accordion = document.querySelector('.layers-accordion');
+    var collapsedEl = row.querySelector('.layer-collapsed');
+    var offsetTop = collapsedEl.offsetTop;
+    var height = collapsedEl.offsetHeight;
+    slider.style.height = height + 'px';
+    slider.style.transform = 'translateY(' + offsetTop + 'px)';
+    slider.style.opacity = '1';
+    lastActiveRow = row;
+  }
+
+  // Hide slider when no row is active
+  function hideSlider() {
+    if (!slider) return;
+    slider.style.opacity = '0';
+    lastActiveRow = null;
+  }
 
   // Open a row: measure inner height, set explicit height for smooth transition
   function openRow(row) {
@@ -3923,6 +3972,7 @@ fbq('track', 'PageView');
     var inner = row.querySelector('.layer-expanded-inner');
     var targetHeight = inner.offsetHeight;
     panel.style.height = targetHeight + 'px';
+    updateSlider(row);
   }
 
   // Close a row: animate height back to 0
@@ -3931,10 +3981,19 @@ fbq('track', 'PageView');
     openState.set(row, false);
     var panel = row.querySelector('.layer-expanded');
     panel.style.height = '0px';
+    // Move slider to the last remaining open row, or hide
+    var lastOpen = null;
+    rows.forEach(function(r) {
+      if (openState.get(r)) lastOpen = r;
+    });
+    if (lastOpen) {
+      updateSlider(lastOpen);
+    } else {
+      hideSlider();
+    }
   }
 
   // Scroll-triggered open/close using IntersectionObserver
-  // rootMargin '-40% 0px -40% 0px' means the trigger zone is the center 20% of the viewport
   var observer = new IntersectionObserver(function(entries) {
     if (clickLock) return;
     entries.forEach(function(entry) {
@@ -3942,7 +4001,6 @@ fbq('track', 'PageView');
       if (entry.isIntersecting) {
         openRow(row);
       } else {
-        // Only close if the row is BELOW the viewport center (scrolling back up)
         var rect = row.getBoundingClientRect();
         if (rect.top > window.innerHeight * 0.5) {
           closeRow(row);
@@ -3973,7 +4031,7 @@ fbq('track', 'PageView');
     });
   });
 
-  // Handle window resize: recalculate open panel heights
+  // Handle window resize: recalculate open panel heights and slider
   var resizeTimer;
   window.addEventListener('resize', function() {
     clearTimeout(resizeTimer);
@@ -3985,6 +4043,9 @@ fbq('track', 'PageView');
           panel.style.height = inner.offsetHeight + 'px';
         }
       });
+      if (lastActiveRow && openState.get(lastActiveRow)) {
+        updateSlider(lastActiveRow);
+      }
     }, 150);
   });
 })();
