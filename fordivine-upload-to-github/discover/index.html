@@ -3746,66 +3746,114 @@ fbq('track', 'PageView');
 </script>
 <!-- End Meta Pixel Code -->
 
-<!-- ===== META PIXEL MICRO-CONVERSION EVENTS ===== -->
+<!-- ===== META PIXEL GRANULAR FUNNEL EVENTS ===== -->
 <script>
 (function() {
   // Guard: only fire if fbq is loaded
   if (typeof fbq === 'undefined') return;
 
-  // Track flags to prevent duplicate fires
-  var firedViewContent = false;
-  var firedContact = false;
-
-  // 1. ViewContent — fires once when user scrolls past the hero video
-  var heroVideo = document.querySelector('.hero-video-wrap');
-  if (heroVideo) {
-    var vcObserver = new IntersectionObserver(function(entries) {
+  // ─── 1. SCROLLED PAST HERO (ViewContent) ───
+  // Fires once when the below-video section becomes visible,
+  // meaning the user scrolled past the entire hero section.
+  var firedScrollPastHero = false;
+  var belowVideo = document.querySelector('.below-video');
+  if (belowVideo) {
+    var heroObserver = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
-        if (entry.isIntersecting && !firedViewContent) {
-          firedViewContent = true;
+        if (entry.isIntersecting && !firedScrollPastHero) {
+          firedScrollPastHero = true;
           fbq('track', 'ViewContent', {
-            content_name: 'FORDIVINE Discover Page - Engaged',
+            content_name: 'Scrolled Past Hero',
             content_category: 'Discovery Funnel'
           });
-          vcObserver.disconnect();
+          heroObserver.disconnect();
         }
       });
-    }, { threshold: 0.5 });
-    vcObserver.observe(heroVideo);
+    }, { threshold: 0.3 });
+    heroObserver.observe(belowVideo);
   }
 
-  // 2. Lead — fires once when user clicks any "Schedule Discovery Call" CTA button
+  // ─── 2. HERO VIDEO PLAY ───
+  // Fires once when user clicks on the hero Vidalytics video embed.
+  var firedHeroVideo = false;
+  var heroVideoWrap = document.querySelector('.hero-video-wrap');
+  if (heroVideoWrap) {
+    heroVideoWrap.addEventListener('click', function() {
+      if (!firedHeroVideo) {
+        firedHeroVideo = true;
+        fbq('trackCustom', 'HeroVideoPlay', {
+          content_name: 'Hero Video',
+          content_category: 'Discovery Funnel'
+        });
+      }
+    });
+  }
+
+  // ─── 3. SCROLL DEPTH (25%, 50%, 75%, 100%) ───
+  // Fires a custom event at each scroll depth milestone.
+  var scrollMilestones = { 25: false, 50: false, 75: false, 100: false };
+  var ticking = false;
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(function() {
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (docHeight <= 0) { ticking = false; return; }
+        var pct = Math.round((scrollTop / docHeight) * 100);
+        [25, 50, 75, 100].forEach(function(milestone) {
+          if (pct >= milestone && !scrollMilestones[milestone]) {
+            scrollMilestones[milestone] = true;
+            fbq('trackCustom', 'ScrollDepth', {
+              depth: milestone + '%',
+              content_name: 'Discover Page Scroll ' + milestone + '%',
+              content_category: 'Discovery Funnel'
+            });
+          }
+        });
+        ticking = false;
+      });
+    }
+  }, { passive: true });
+
+  // ─── 4. CTA BUTTON CLICKS (Lead) ───
+  // Fires for each CTA click with a label identifying which button.
+  // Each button fires Lead only once, but different buttons can each fire.
   var ctaButtons = document.querySelectorAll('a.cta-btn[href="#book"]');
-  var firedLead = false;
-  ctaButtons.forEach(function(btn) {
+  var ctaLabels = ['Hero CTA', 'Mid-Page CTA', 'Closing CTA'];
+  var ctaFired = {};
+  ctaButtons.forEach(function(btn, index) {
+    var label = ctaLabels[index] || 'CTA ' + (index + 1);
     btn.addEventListener('click', function() {
-      if (!firedLead) {
-        firedLead = true;
+      if (!ctaFired[label]) {
+        ctaFired[label] = true;
         fbq('track', 'Lead', {
-          content_name: 'Schedule Discovery Call CTA Click',
+          content_name: label,
           content_category: 'Discovery Funnel'
         });
       }
     });
   });
 
-  // 3. Contact — fires once when the booking section scrolls into view
-  var bookingSection = document.getElementById('book');
-  if (bookingSection) {
-    var contactObserver = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting && !firedContact) {
-          firedContact = true;
-          fbq('track', 'Contact', {
-            content_name: 'Booking Section Viewed',
-            content_category: 'Discovery Funnel'
-          });
-          contactObserver.disconnect();
-        }
-      });
-    }, { threshold: 0.3 });
-    contactObserver.observe(bookingSection);
-  }
+  // ─── 5. TESTIMONIAL VIDEO CLICKS ───
+  // Fires once per testimonial when user clicks on a testimonial video card.
+  var testimonialCards = document.querySelectorAll('.video-review-card');
+  var testimonialFired = {};
+  testimonialCards.forEach(function(card) {
+    var mediaArea = card.querySelector('.video-review-card-media');
+    var authorEl = card.querySelector('.video-review-author');
+    if (!mediaArea) return;
+    var authorName = authorEl ? authorEl.textContent.trim() : 'Unknown';
+    mediaArea.addEventListener('click', function() {
+      if (!testimonialFired[authorName]) {
+        testimonialFired[authorName] = true;
+        fbq('trackCustom', 'TestimonialVideoPlay', {
+          content_name: authorName,
+          content_category: 'Discovery Funnel'
+        });
+      }
+    });
+  });
 })();
 </script>
 
