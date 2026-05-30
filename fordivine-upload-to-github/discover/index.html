@@ -3835,25 +3835,78 @@ fbq('track', 'PageView');
     });
   });
 
-  // ─── 5. TESTIMONIAL VIDEO CLICKS ───
-  // Fires once per testimonial when user clicks on a testimonial video card.
-  var testimonialCards = document.querySelectorAll('.video-review-card');
+  // ─── 5. TESTIMONIAL VIDEO/CARD CLICKS ───
+  // Numbered sequentially across all grids.
+  // Grid 1 (image cards): Melanie, Greta, Beth
+  // Grid 2 (video cards): Dr. Stephanie, Amy, Dr. Luiza
+  // Grid 3 (image cards): Amber, Jessica, Mary
+  // Also includes the standalone portrait testimony video below the hero.
   var testimonialFired = {};
-  testimonialCards.forEach(function(card) {
-    var mediaArea = card.querySelector('.video-review-card-media');
-    var authorEl = card.querySelector('.video-review-author');
-    if (!mediaArea) return;
-    var authorName = authorEl ? authorEl.textContent.trim() : 'Unknown';
-    mediaArea.addEventListener('click', function() {
-      if (!testimonialFired[authorName]) {
-        testimonialFired[authorName] = true;
+  var testimonialCounter = 0;
+
+  // 5a. Standalone portrait testimony video (below hero, in .vidalytics-wrap)
+  var portraitTestimony = document.querySelector('.vidalytics-wrap');
+  if (portraitTestimony) {
+    testimonialCounter++;
+    var ptLabel = 'Testimony ' + testimonialCounter + ' - Portrait Video';
+    portraitTestimony.addEventListener('click', function() {
+      if (!testimonialFired[ptLabel]) {
+        testimonialFired[ptLabel] = true;
         fbq('trackCustom', 'TestimonialVideoPlay', {
-          content_name: authorName,
+          content_name: ptLabel,
+          content_category: 'Discovery Funnel'
+        });
+      }
+    });
+  }
+
+  // 5b. All video-review-card elements (across all 3 grids)
+  var testimonialCards = document.querySelectorAll('.video-review-card');
+  testimonialCards.forEach(function(card) {
+    testimonialCounter++;
+    var authorEl = card.querySelector('.video-review-author');
+    var authorName = authorEl ? authorEl.textContent.trim() : 'Unknown';
+    var label = 'Testimony ' + testimonialCounter + ' - ' + authorName;
+
+    // Listen on the entire card (covers both .video-review-card-media for video
+    // cards and .card-mini-carousel for image carousel cards)
+    card.addEventListener('click', function() {
+      if (!testimonialFired[label]) {
+        testimonialFired[label] = true;
+        fbq('trackCustom', 'TestimonialVideoPlay', {
+          content_name: label,
           content_category: 'Discovery Funnel'
         });
       }
     });
   });
+
+  // ─── 6. iCLOSED SCHEDULER ENGAGEMENT ───
+  // Fires once when user clicks into the iClosed booking iframe.
+  // Uses focus detection on the iframe (when user clicks into it,
+  // the main window loses focus and the iframe gains it).
+  var firedSchedulerEngage = false;
+  function checkSchedulerFocus() {
+    var iframe = document.querySelector('.iclosed-widget iframe, .booking-embed iframe');
+    if (iframe && document.activeElement === iframe && !firedSchedulerEngage) {
+      firedSchedulerEngage = true;
+      fbq('trackCustom', 'SchedulerEngaged', {
+        content_name: 'iClosed Scheduler Clicked',
+        content_category: 'Discovery Funnel'
+      });
+    }
+  }
+  // Poll for iframe focus since we can't add click listeners inside cross-origin iframes
+  window.addEventListener('blur', function() {
+    setTimeout(checkSchedulerFocus, 100);
+  });
+  // Also check on mousedown within the booking section as a backup
+  var bookingEmbed = document.querySelector('.booking-embed');
+  if (bookingEmbed) {
+    bookingEmbed.addEventListener('click', function() {
+      setTimeout(checkSchedulerFocus, 200);
+    });
+  }
 })();
 </script>
 
