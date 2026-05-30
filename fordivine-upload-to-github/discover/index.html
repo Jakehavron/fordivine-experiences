@@ -3910,6 +3910,116 @@ fbq('track', 'PageView');
 })();
 </script>
 
+<!-- ===== GA4 FUNNEL EVENTS (mirrors Meta Pixel events) ===== -->
+<script>
+(function() {
+  // Guard: only fire if gtag is loaded
+  if (typeof gtag === 'undefined') return;
+
+  // ─── 1. VIEW CONTENT (Scroll Past Hero) ───
+  var firedGA4ViewContent = false;
+  var belowVideoGA4 = document.querySelector('.below-video');
+  if (belowVideoGA4) {
+    var ga4HeroObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting && !firedGA4ViewContent) {
+          firedGA4ViewContent = true;
+          gtag('event', 'view_content', {
+            content_type: 'Scrolled Past Hero',
+            content_id: 'discovery_funnel'
+          });
+          ga4HeroObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+    ga4HeroObserver.observe(belowVideoGA4);
+  }
+
+  // ─── 2. HERO VIDEO PLAY ───
+  var firedGA4HeroVideo = false;
+  var heroVideoWrapGA4 = document.querySelector('.hero-video-wrap');
+  if (heroVideoWrapGA4) {
+    heroVideoWrapGA4.addEventListener('click', function() {
+      if (!firedGA4HeroVideo) {
+        firedGA4HeroVideo = true;
+        gtag('event', 'hero_video_play', {
+          content_type: 'Hero Video',
+          content_id: 'discovery_funnel'
+        });
+      }
+    });
+  }
+
+  // ─── 3. SCROLL DEPTH (25%, 50%, 75%, 100%) ───
+  var ga4ScrollMilestones = { 25: false, 50: false, 75: false, 100: false };
+  var ga4Ticking = false;
+  window.addEventListener('scroll', function() {
+    if (!ga4Ticking) {
+      ga4Ticking = true;
+      requestAnimationFrame(function() {
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (docHeight <= 0) { ga4Ticking = false; return; }
+        var pct = Math.round((scrollTop / docHeight) * 100);
+        [25, 50, 75, 100].forEach(function(milestone) {
+          if (pct >= milestone && !ga4ScrollMilestones[milestone]) {
+            ga4ScrollMilestones[milestone] = true;
+            gtag('event', 'scroll_depth', {
+              depth: milestone + '%',
+              content_type: 'Discover Page Scroll ' + milestone + '%',
+              content_id: 'discovery_funnel'
+            });
+          }
+        });
+        ga4Ticking = false;
+      });
+    }
+  }, { passive: true });
+
+  // ─── 4. CTA BUTTON CLICKS → generate_lead ───
+  // This is the critical event for Google Ads conversion tracking.
+  // Maps to the SUBMIT_LEAD_FORM / generate_lead conversion action.
+  var ga4CtaButtons = document.querySelectorAll('a.cta-btn[href="#book"]');
+  var ga4CtaLabels = ['Hero CTA', 'Mid-Page CTA', 'Closing CTA'];
+  var ga4CtaFired = {};
+  ga4CtaButtons.forEach(function(btn, index) {
+    var label = ga4CtaLabels[index] || 'CTA ' + (index + 1);
+    btn.addEventListener('click', function() {
+      if (!ga4CtaFired[label]) {
+        ga4CtaFired[label] = true;
+        gtag('event', 'generate_lead', {
+          event_category: 'Discovery Funnel',
+          event_label: label,
+          value: 1
+        });
+      }
+    });
+  });
+
+  // ─── 5. iCLOSED SCHEDULER ENGAGEMENT ───
+  var firedGA4Scheduler = false;
+  function checkGA4SchedulerFocus() {
+    var iframe = document.querySelector('.iclosed-widget iframe, .booking-embed iframe');
+    if (iframe && document.activeElement === iframe && !firedGA4Scheduler) {
+      firedGA4Scheduler = true;
+      gtag('event', 'scheduler_engaged', {
+        event_category: 'Discovery Funnel',
+        event_label: 'iClosed Scheduler Clicked'
+      });
+    }
+  }
+  window.addEventListener('blur', function() {
+    setTimeout(checkGA4SchedulerFocus, 100);
+  });
+  var bookingEmbedGA4 = document.querySelector('.booking-embed');
+  if (bookingEmbedGA4) {
+    bookingEmbedGA4.addEventListener('click', function() {
+      setTimeout(checkGA4SchedulerFocus, 200);
+    });
+  }
+})();
+</script>
+
 <!-- ===== PATRICIA DM ATTRIBUTION BRIDGE ===== -->
 <script>
 (function() {
