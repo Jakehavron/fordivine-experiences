@@ -3746,6 +3746,69 @@ fbq('track', 'PageView');
 </script>
 <!-- End Meta Pixel Code -->
 
+<!-- ===== META PIXEL MICRO-CONVERSION EVENTS ===== -->
+<script>
+(function() {
+  // Guard: only fire if fbq is loaded
+  if (typeof fbq === 'undefined') return;
+
+  // Track flags to prevent duplicate fires
+  var firedViewContent = false;
+  var firedContact = false;
+
+  // 1. ViewContent — fires once when user scrolls past the hero video
+  var heroVideo = document.querySelector('.hero-video-wrap');
+  if (heroVideo) {
+    var vcObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting && !firedViewContent) {
+          firedViewContent = true;
+          fbq('track', 'ViewContent', {
+            content_name: 'FORDIVINE Discover Page - Engaged',
+            content_category: 'Discovery Funnel'
+          });
+          vcObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.5 });
+    vcObserver.observe(heroVideo);
+  }
+
+  // 2. Lead — fires once when user clicks any "Schedule Discovery Call" CTA button
+  var ctaButtons = document.querySelectorAll('a.cta-btn[href="#book"]');
+  var firedLead = false;
+  ctaButtons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      if (!firedLead) {
+        firedLead = true;
+        fbq('track', 'Lead', {
+          content_name: 'Schedule Discovery Call CTA Click',
+          content_category: 'Discovery Funnel'
+        });
+      }
+    });
+  });
+
+  // 3. Contact — fires once when the booking section scrolls into view
+  var bookingSection = document.getElementById('book');
+  if (bookingSection) {
+    var contactObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting && !firedContact) {
+          firedContact = true;
+          fbq('track', 'Contact', {
+            content_name: 'Booking Section Viewed',
+            content_category: 'Discovery Funnel'
+          });
+          contactObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+    contactObserver.observe(bookingSection);
+  }
+})();
+</script>
+
 <!-- ===== PATRICIA DM ATTRIBUTION BRIDGE ===== -->
 <script>
 (function() {
