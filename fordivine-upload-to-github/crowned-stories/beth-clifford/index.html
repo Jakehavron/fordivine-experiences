@@ -426,7 +426,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   min-height: 650px !important;
   max-height: 650px !important;
   overflow: auto !important;
-  padding: 98px 18px 54px !important;
+  padding: 98px 18px 96px !important;
   scroll-behavior: smooth;
   width: 100% !important;
 }
@@ -440,6 +440,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   min-height: 100%;
   justify-content: flex-start;
   width: 100%;
+}
+.beth-chat-restored-thread::after {
+  content: "";
+  display: block;
+  flex: 0 0 52px;
 }
 .beth-chat-restored-message {
   align-items: flex-end;
@@ -551,9 +556,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     height: 610px !important;
     min-height: 610px !important;
     max-height: 610px !important;
-    padding: 92px 16px 52px !important;
+    padding: 92px 16px 128px !important;
   }
   .beth-chat-restored-thread { gap: 9px; }
+  .beth-chat-restored-thread::after { flex-basis: 88px; }
   .beth-chat-restored-avatar { flex-basis: 28px; height: 28px; line-height: 28px; width: 28px; }
   .beth-chat-restored-stack { max-width: min(78%, 292px); }
   .beth-chat-restored-bubble { font-size: 12px; line-height: 1.25; padding: 9px 11px; }
