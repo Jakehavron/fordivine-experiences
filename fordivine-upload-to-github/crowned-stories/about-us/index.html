@@ -8,17 +8,14 @@
 <link href="https://framerusercontent.com/images/EVHYk2X1Pox4laF2GJ5ect21mRc.png" media="(prefers-color-scheme: light)" rel="icon"/>
 <link href="https://framerusercontent.com/images/AfHTgAnYktvWnhvW6zppd93K7g.png" media="(prefers-color-scheme: dark)" rel="icon"/>
 <link href="https://framerusercontent.com/images/qwKBb1sUCE8ctEtOgjnZV1C5fZs.png" rel="apple-touch-icon"/>
-<!-- Open Graph -->
 <meta content="website" property="og:type"/>
 <meta content="About Us — FORDIVINE™" property="og:title"/>
 <meta content="Where Brand Perfectionism Ends | A Brand House For Women Building Empires With Heaven's Blueprint" property="og:description"/>
 <meta content="https://files.manuscdn.com/user_upload_by_module/session_file/310519663434805712/gQIoHjcjEzdoOnyf.jpg" property="og:image"/>
-<!-- Twitter -->
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="About Us — FORDIVINE™" name="twitter:title"/>
 <meta content="Where Brand Perfectionism Ends | A Brand House For Women Building Empires With Heaven's Blueprint" name="twitter:description"/>
 <meta content="https://files.manuscdn.com/user_upload_by_module/session_file/310519663434805712/gQIoHjcjEzdoOnyf.jpg" name="twitter:image"/>
-<!-- Google Analytics -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QN0Z76WK07"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -26,183 +23,152 @@
   gtag('js', new Date());
   gtag('config', 'G-QN0Z76WK07');
 </script>
-<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fragment+Mono&display=swap" rel="stylesheet"/>
-<!-- Shared Crowned Stories Enhancements -->
 <link data-cs-enhancement-asset="css" href="/crowned-stories/shared/crowned-story-enhancements.css" rel="stylesheet"/>
 <style>
-/* ============================================
-   FORDIVINE About Us — 1:1 Framer Clone
-   ============================================ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;color:#1a1a1a;background:#fff;line-height:1.6;overflow-x:hidden}
+body{font-family:'Inter',sans-serif;color:#171717;background:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
 /* Navigation */
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-.nav__logo{font-family:'Inter',sans-serif;font-size:15px;font-weight:800;letter-spacing:-.02em;color:#1a1a1a;text-decoration:none}
-.nav__logo sup{font-size:8px;vertical-align:super;margin-left:1px}
-.nav__links{display:flex;gap:40px;align-items:center}
-.nav__links a{font-size:14px;font-weight:400;color:#1a1a1a;text-decoration:none;transition:opacity .2s}
-.nav__links a:hover{opacity:.5}
-@media(max-width:809px){
-  .nav{padding:16px 20px}
-  .nav__links{display:none}
-}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.nav-logo{font-family:'Inter',sans-serif;font-size:14px;font-weight:800;letter-spacing:-.02em;color:#171717;text-decoration:none}
+.nav-logo sup{font-size:7px;vertical-align:super}
+.nav-links{display:flex;gap:40px}
+.nav-links a{font-size:14px;font-weight:400;color:#171717;text-decoration:none;transition:opacity .2s}
+.nav-links a:hover{opacity:.5}
+@media(max-width:809px){.nav{padding:16px 20px}.nav-links{display:none}}
 
-/* Hero Video Section */
+/* Hero Video */
 .hero{position:relative;width:100%;height:100vh;min-height:600px;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.hero__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero__overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 0%,rgba(0,0,0,.02) 40%,rgba(0,0,0,.1) 100%)}
-.hero__content{position:relative;z-index:2;text-align:center;color:#fff}
-.hero__welcome{font-size:14px;font-weight:400;letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px;opacity:.9}
-.hero__title{font-size:clamp(72px,12vw,140px);font-weight:800;letter-spacing:-.06em;line-height:.85}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,.05)}
+.hero-text{position:relative;z-index:2;text-align:center;color:#fff}
+.hero-text .welcome{font-size:14px;font-weight:400;letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px;opacity:.9}
+.hero-text .title{font-size:clamp(80px,14vw,160px);font-weight:800;letter-spacing:-.06em;line-height:.85}
 
-/* Trust Badge */
-.trust-badge{display:flex;align-items:center;gap:14px;padding:20px 0}
-.trust-badge__avatars{display:flex;align-items:center}
-.trust-badge__avatars img{width:34px;height:34px;border-radius:50%;border:2px solid #fff;object-fit:cover;margin-left:-8px}
-.trust-badge__avatars img:first-child{margin-left:0}
-.trust-badge__count{width:34px;height:34px;border-radius:50%;background:#1a1a1a;color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-left:-8px}
-.trust-badge__info{display:flex;flex-direction:column;gap:2px}
-.trust-badge__label{font-size:13px;font-weight:400;color:#666}
-.trust-badge__stars{color:#1a1a1a;font-size:11px;letter-spacing:1px}
+/* Page wrapper */
+.page-wrap{max-width:1580px;margin:0 auto;padding:0 40px}
+@media(max-width:809px){.page-wrap{padding:0 20px}}
 
-/* Page Container */
-.page-container{max-width:1280px;margin:0 auto;padding:0 48px}
+/* Title Section (FD House) */
+.title-section{padding:120px 0 80px;background:#fff}
+.trust-badge{display:flex;align-items:center;gap:12px;margin-bottom:40px}
+.trust-badge-avatars{display:flex}
+.trust-badge-avatars img{width:32px;height:32px;border-radius:50%;border:2px solid #fff;object-fit:cover;margin-left:-8px}
+.trust-badge-avatars img:first-child{margin-left:0}
+.trust-badge-count{width:32px;height:32px;border-radius:50%;background:#171717;color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-left:-8px}
+.trust-badge-info{display:flex;flex-direction:column;gap:2px}
+.trust-badge-stars{font-size:11px;color:#171717;letter-spacing:1px}
+.trust-badge-label{font-size:13px;color:#767f7a}
+.title-section h1{font-size:clamp(80px,12vw,180px);font-weight:800;letter-spacing:-.06em;line-height:.88;color:#171717}
+.title-section .subtitle{font-size:18px;font-weight:400;color:#767f7a;margin-top:20px;line-height:1.5}
+
+/* Full-width image */
+.full-img{width:100%;overflow:hidden}
+.full-img img{width:100%;height:auto;display:block;object-fit:cover}
+
+/* Section layout */
+.section{padding:120px 0}
+.section-inner{display:flex;gap:60px;align-items:flex-start}
+.section-inner .col-left{flex:7 0 0;min-width:0}
+.section-inner .col-right{flex:2.5 0 0;min-width:0}
 @media(max-width:809px){
-  .page-container{padding:0 20px}
+  .section-inner{flex-direction:column;gap:32px}
+  .section-inner .col-left,.section-inner .col-right{flex:none;width:100%}
 }
 
-/* Section Base */
-.section{padding:100px 0}
-.section--dark{background:#1a1a1a;color:#fff}
-.section--light-gray{background:#f5f5f5}
-.section--white{background:#fff}
+/* Section number */
+.sec-num{font-family:'Fragment Mono',monospace;font-size:13px;color:#999;text-align:right}
+.sec-num-white{color:rgba(255,255,255,.4)}
 
-/* Two Column Layout - Framer Style */
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
-.two-col--wide-left{grid-template-columns:1.2fr 1fr;gap:80px}
-.two-col--wide-right{grid-template-columns:1fr 1.3fr;gap:80px}
-@media(max-width:809px){
-  .two-col,.two-col--wide-left,.two-col--wide-right{grid-template-columns:1fr;gap:40px}
-}
+/* Typography */
+.h-giant{font-size:clamp(56px,9vw,120px);font-weight:700;letter-spacing:-.04em;line-height:1;color:#171717}
+.h-large{font-size:clamp(36px,4.5vw,56px);font-weight:700;letter-spacing:-.03em;line-height:1.1;color:#171717}
+.h-medium{font-size:clamp(24px,2.5vw,32px);font-weight:600;letter-spacing:-.02em;line-height:1.2}
+.body{font-size:16px;font-weight:500;line-height:1.6;color:#202020}
+.body-light{color:rgba(255,255,255,.8)}
+.label{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#999}
+.subtitle-text{font-size:16px;font-weight:400;color:#767f7a;line-height:1.5}
 
-/* Section Number */
-.section-num{font-family:'Fragment Mono',monospace;font-size:13px;color:#999;display:block}
-.section-num--right{text-align:right}
-.section-num--white{color:rgba(255,255,255,.4)}
+/* Dark section */
+.dark-section{background:#424242;color:#fff;padding:120px 0}
+.dark-section .h-giant,.dark-section .h-large{color:#fff}
+.dark-section .body{color:rgba(255,255,255,.8)}
+.dark-section .subtitle-text{color:rgba(255,255,255,.5)}
 
-/* Typography - Matching Framer */
-.h-display{font-size:clamp(36px,4.5vw,56px);font-weight:700;letter-spacing:-.03em;line-height:1.1}
-.h-large{font-size:clamp(32px,3.5vw,44px);font-weight:700;letter-spacing:-.03em;line-height:1.15}
-.h-medium{font-size:clamp(24px,2.5vw,32px);font-weight:700;letter-spacing:-.02em;line-height:1.2}
-.h-small{font-size:clamp(18px,1.8vw,22px);font-weight:500;letter-spacing:-.01em;line-height:1.4}
-.body-text{font-size:16px;font-weight:400;line-height:1.75;color:#555}
-.body-text--white{color:rgba(255,255,255,.75)}
-.body-text--dark{color:#333}
-.subtitle{font-size:15px;font-weight:400;line-height:1.6;color:#777}
-.label-text{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#999}
+/* Image grid (two images side by side) */
+.img-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:80px}
+.img-grid img{width:100%;height:500px;object-fit:cover;display:block}
+@media(max-width:809px){.img-grid{grid-template-columns:1fr}.img-grid img{height:300px}}
 
-/* Image Grid */
-.image-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:80px}
-.image-grid img{width:100%;height:400px;object-fit:cover;display:block}
-@media(max-width:809px){
-  .image-grid{grid-template-columns:1fr;gap:12px}
-  .image-grid img{height:280px}
-}
+/* Quote */
+.quote-section{background:#424242;padding:100px 0;text-align:center}
+.quote-text{font-size:clamp(22px,3.5vw,36px);font-weight:600;letter-spacing:-.02em;line-height:1.3;color:#fff;font-style:italic;max-width:800px;margin:0 auto}
 
-/* Full Width Image */
-.full-width-image{width:100%;overflow:hidden}
-.full-width-image img{width:100%;height:auto;display:block;max-height:700px;object-fit:cover}
+/* FD House list */
+.fd-list{list-style:none;padding:0;margin:32px 0}
+.fd-list li{padding:14px 0;font-size:16px;font-weight:500;color:#202020;border-bottom:1px solid #e1e1e1}
+.fd-list li:last-child{border-bottom:none}
 
-/* Emily Bio */
-.emily-bio-section{background:#1a1a1a;color:#fff;padding:100px 0}
-.emily-bio-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:80px;align-items:start}
-@media(max-width:809px){
-  .emily-bio-grid{grid-template-columns:1fr;gap:40px}
-}
-
-/* Quote Block */
-.quote-block{background:#1a1a1a;color:#fff;padding:80px 0;text-align:center}
-.quote-block__text{font-size:clamp(22px,3.5vw,36px);font-weight:600;letter-spacing:-.02em;line-height:1.2;max-width:800px;margin:0 auto;font-style:italic;color:rgba(255,255,255,.9)}
-
-/* FD House Bullet List */
-.fd-house-list{list-style:none;padding:0;margin:32px 0}
-.fd-house-list li{padding:12px 0;font-size:16px;color:#555;line-height:1.6;border-bottom:1px solid rgba(0,0,0,.06)}
-.fd-house-list li:last-child{border-bottom:none}
-
-/* Testimonial Section */
-.testimonial-section{padding:100px 0;background:#fff}
-.testimonial-quote{font-size:clamp(16px,1.8vw,20px);font-weight:400;line-height:1.7;color:#555;font-style:italic;max-width:700px;margin:40px 0 32px}
+/* Testimonial */
+.testimonial{margin-top:80px}
+.testimonial-quote{font-size:18px;font-weight:400;line-height:1.7;color:#202020;font-style:italic;max-width:700px;margin:40px 0 28px}
 .testimonial-author{display:flex;align-items:center;gap:14px}
 .testimonial-author img{width:48px;height:48px;border-radius:50%;object-fit:cover}
-.testimonial-author__name{font-size:14px;font-weight:600;color:#1a1a1a}
-.testimonial-author__title{font-size:13px;color:#888}
+.testimonial-name{font-size:14px;font-weight:600;color:#171717}
+.testimonial-title{font-size:13px;color:#767f7a}
 
-/* Four Pillars - Horizontal Rows */
-.pillars-rows{border-top:1px solid rgba(0,0,0,.1);margin-top:80px}
-.pillar-row{display:grid;grid-template-columns:1fr 1.5fr auto;gap:40px;align-items:center;padding:40px 0;border-bottom:1px solid rgba(0,0,0,.1)}
-.pillar-row__title{font-size:clamp(24px,3vw,36px);font-weight:700;letter-spacing:-.02em}
-.pillar-row__desc{font-size:15px;color:#555;line-height:1.6}
-.pillar-row__num{font-family:'Fragment Mono',monospace;font-size:13px;color:#999}
-@media(max-width:809px){
-  .pillar-row{grid-template-columns:1fr;gap:12px;padding:28px 0}
-  .pillar-row__num{order:-1}
-}
+/* Pillars */
+.pillars{border-top:1px solid #e1e1e1;margin-top:80px}
+.pillar-row{display:flex;align-items:center;gap:40px;padding:40px 0;border-bottom:1px solid #e1e1e1}
+.pillar-row h3{flex:1;font-size:clamp(24px,3vw,36px);font-weight:700;letter-spacing:-.02em;color:#171717}
+.pillar-row p{flex:1.5;font-size:16px;font-weight:400;color:#646464;line-height:1.6}
+.pillar-row .pillar-num{font-family:'Fragment Mono',monospace;font-size:13px;color:#999;flex:none;width:30px;text-align:right}
+@media(max-width:809px){.pillar-row{flex-direction:column;gap:12px;align-items:flex-start}.pillar-row .pillar-num{order:-1}}
 
 /* Built Differently */
-.built-diff{background:#1a1a1a;color:#fff;padding:100px 0}
-.built-diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
-.built-diff-grid img{width:100%;height:auto;display:block;opacity:.8}
-.built-diff p{font-size:16px;line-height:1.75;color:rgba(255,255,255,.7);margin-bottom:20px}
-.built-diff strong{color:#fff}
-@media(max-width:809px){
-  .built-diff-grid{grid-template-columns:1fr;gap:40px}
-}
+.built-section{background:#424242;color:#fff;padding:120px 0}
+.built-grid{display:flex;gap:60px;align-items:flex-start}
+.built-grid .built-text{flex:1}
+.built-grid .built-img{flex:1}
+.built-grid .built-img img{width:100%;height:auto;display:block}
+.built-grid p{font-size:16px;line-height:1.7;color:rgba(255,255,255,.8);margin-bottom:20px}
+.built-grid strong{color:#fff}
+@media(max-width:809px){.built-grid{flex-direction:column;gap:40px}}
 
 /* Footer */
-.footer{background:#1a1a1a;color:#fff;padding:80px 0 40px}
-.footer__top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:60px;margin-bottom:60px}
-.footer__brand{font-size:16px;font-weight:800;letter-spacing:-.02em;margin-bottom:12px}
-.footer__brand sup{font-size:8px}
-.footer__tagline{font-size:14px;color:rgba(255,255,255,.5);line-height:1.6;max-width:280px}
-.footer__heading{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:14px}
-.footer__links{display:flex;flex-direction:column;gap:10px}
-.footer__links a{font-size:14px;color:rgba(255,255,255,.6);text-decoration:none;transition:color .2s}
-.footer__links a:hover{color:#fff}
-.footer__bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;display:flex;justify-content:space-between;align-items:center}
-.footer__copy{font-size:12px;color:rgba(255,255,255,.35)}
-.footer__email{font-size:13px;color:rgba(255,255,255,.5);text-decoration:none}
-.footer__email:hover{color:#fff}
-@media(max-width:809px){
-  .footer__top{grid-template-columns:1fr;gap:36px}
-  .footer__bottom{flex-direction:column;gap:12px;text-align:center}
-}
+.footer{background:#2D2F2E;color:#fff;padding:80px 0 40px}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:60px;margin-bottom:60px}
+.footer-brand{font-size:15px;font-weight:800;letter-spacing:-.02em;margin-bottom:12px}
+.footer-brand sup{font-size:7px}
+.footer-tagline{font-size:14px;color:rgba(255,255,255,.5);line-height:1.6;max-width:280px}
+.footer-heading{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:14px}
+.footer-links{display:flex;flex-direction:column;gap:10px}
+.footer-links a{font-size:14px;color:rgba(255,255,255,.6);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.35)}
+.footer-email{font-size:13px;color:rgba(255,255,255,.5);text-decoration:none}
+.footer-email:hover{color:#fff}
+@media(max-width:809px){.footer-top{grid-template-columns:1fr;gap:36px}.footer-bottom{flex-direction:column;gap:12px;text-align:center}}
 
-/* Hero Title/Subtitle Section (below video) */
-.hero-title-section{padding:80px 0 60px;text-align:center}
-.hero-title-section .trust-badge{justify-content:center}
-.hero-title-section h1{font-size:clamp(64px,10vw,120px);font-weight:800;letter-spacing:-.06em;line-height:.88;margin-bottom:20px}
-.hero-title-section .subtitle{font-size:clamp(16px,1.8vw,20px);max-width:600px;margin:0 auto}
-
-/* Spacing */
+/* Spacing helpers */
+.mt-xs{margin-top:8px}
 .mt-sm{margin-top:16px}
 .mt-md{margin-top:32px}
 .mt-lg{margin-top:60px}
-.mb-sm{margin-bottom:16px}
-.mb-md{margin-bottom:32px}
-.mb-lg{margin-bottom:60px}
+.mt-xl{margin-top:120px}
 </style>
 </head>
 <body>
 
 <!-- Navigation -->
 <nav class="nav" data-cs-reveal="hero">
-  <a href="https://www.fordivine.com/" class="nav__logo">FORDIVINE<sup>™</sup></a>
-  <div class="nav__links">
+  <a href="https://www.fordivine.com/" class="nav-logo">FORDIVINE<sup>™</sup></a>
+  <div class="nav-links">
     <a href="https://www.fordivine.com/crowned-stories/about-us">About Us</a>
     <a href="https://www.fordivine.com/crowned-stories/">Crowned Stories</a>
     <a href="https://www.fordivine.com/inquire">Contact</a>
@@ -210,263 +176,263 @@ body{font-family:'Inter',sans-serif;color:#1a1a1a;background:#fff;line-height:1.
   </div>
 </nav>
 
-<!-- Hero: Full-screen background video -->
+<!-- Hero Video -->
 <section class="hero" data-cs-reveal="hero-image">
-  <video class="hero__video" autoplay muted loop playsinline preload="metadata"
+  <video autoplay muted loop playsinline preload="metadata"
     poster="https://files.manuscdn.com/user_upload_by_module/session_file/310519663434805712/gQIoHjcjEzdoOnyf.jpg">
     <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663434805712/iEEgfyRAjKmqokwi.mp4" type="video/mp4"/>
     <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663434805712/yIZLdqpKorZcOOPL.webm" type="video/webm"/>
   </video>
-  <div class="hero__overlay"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-text">
+    <p class="welcome">Welcome To</p>
+    <h1 class="title">FORDIVINE</h1>
+  </div>
 </section>
 
-<!-- Trust Badge + Title Section (matches Framer: trust badge, large title, subtitle) -->
-<section class="hero-title-section" data-cs-reveal>
-  <div class="page-container">
+<!-- Title Section: Trust Badge + FD House -->
+<section class="title-section" data-cs-reveal>
+  <div class="page-wrap">
     <div class="trust-badge" data-cs-reveal>
-      <div class="trust-badge__avatars">
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663434805712/xYhOVxOSahLMURUg.jpg" alt="Client" loading="lazy"/>
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663434805712/NSmAWuMCinweMMyi.jpg" alt="Client" loading="lazy"/>
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663434805712/dNwJtlHGADhgcfmz.jpg" alt="Client" loading="lazy"/>
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663434805712/ZNQuptpYDpJXbWeq.jpg" alt="Client" loading="lazy"/>
-        <span class="trust-badge__count">62+</span>
+      <div class="trust-badge-avatars">
+        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663434805712/xYhOVxOSahLMURUg.jpg" alt="Client"/>
+        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663434805712/NSmAWuMCinweMMyi.jpg" alt="Client"/>
+        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663434805712/dNwJtlHGADhgcfmz.jpg" alt="Client"/>
+        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663434805712/ZNQuptpYDpJXbWeq.jpg" alt="Client"/>
+        <span class="trust-badge-count">48+</span>
       </div>
-      <div class="trust-badge__info">
-        <span class="trust-badge__stars">★★★★★</span>
-        <span class="trust-badge__label">Trusted by industry leaders</span>
+      <div class="trust-badge-info">
+        <span class="trust-badge-stars">★★★★★</span>
+        <span class="trust-badge-label">Trusted by industry leaders</span>
       </div>
     </div>
-    <h1 data-cs-reveal>House</h1>
+    <h1 data-cs-reveal>FD<br/>House</h1>
     <p class="subtitle" data-cs-reveal>Created for women who want to build their empire with Heaven's blueprint.</p>
   </div>
 </section>
 
-<!-- Full-width hero event image -->
-<div class="full-width-image" data-cs-reveal="hero-image">
-  <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663434805712/hDOuaRRcgrdsPEAr.jpg" alt="FORDIVINE Event" loading="lazy"/>
+<!-- Full-width Event Image -->
+<div class="full-img" data-cs-reveal="hero-image">
+  <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663434805712/hDOuaRRcgrdsPEAr.jpg" alt="FORDIVINE Event"/>
 </div>
 
-<!-- Section 00: Mission Statement -->
-<section class="section section--white" data-cs-reveal>
-  <div class="page-container">
-    <div class="two-col--wide-left two-col">
-      <div>
-        <h2 class="h-display" data-cs-reveal>We help women build timeless personal brands that grow their businesses without watering down their truth, voice, or anointing.</h2>
+<!-- Section 00: Mission -->
+<section class="section" data-cs-reveal>
+  <div class="page-wrap">
+    <div class="section-inner">
+      <div class="col-left">
+        <h2 class="h-large" data-cs-reveal>We help women build timeless personal brands that grow their businesses without watering down their truth, voice, or anointing.</h2>
       </div>
-      <div>
-        <span class="section-num section-num--right" data-cs-reveal>00</span>
+      <div class="col-right">
+        <p class="sec-num" data-cs-reveal>00</p>
         <div class="mt-md">
-          <p class="body-text body-text--dark" data-cs-reveal><strong>Because brand identity isn't a performance.</strong><br/>It's who you are when Heaven speaks through you.</p>
-          <p class="body-text mt-md" data-cs-reveal><strong>We don't brand for trends. We brand for transcendence.</strong></p>
-          <p class="body-text mt-md" data-cs-reveal>This is a sacred house for women who are done with shallow marketing strategies and ready to lead with <strong>spirit, substance, and strategy.</strong></p>
-          <p class="body-text mt-sm" data-cs-reveal>The ones who know they're not just here to post content, they're here to <strong>carry a mantle.</strong> To build empires with <strong>Heaven's blueprint.</strong><br/>To lead movements that outlive them.</p>
-          <p class="h-small mt-md" style="color:#1a1a1a" data-cs-reveal>Here, The Called are crowned.</p>
-          <p class="label-text mt-lg" data-cs-reveal>FORDIVINE<sup style="font-size:7px">™</sup></p>
+          <p class="body" data-cs-reveal><strong>Because brand identity isn't a performance.</strong><br/>It's who you are when Heaven speaks through you.</p>
+          <p class="body mt-md" data-cs-reveal><strong>We don't brand for trends. We brand for transcendence.</strong></p>
+          <p class="body mt-md" data-cs-reveal>This is a sacred house for women who are done with shallow marketing strategies and ready to lead with <strong>spirit, substance, and strategy.</strong></p>
+          <p class="body mt-sm" data-cs-reveal>The ones who know they're not just here to post content, they're here to <strong>carry a mantle.</strong> To build empires with <strong>Heaven's blueprint.</strong><br/>To lead movements that outlive them.</p>
+          <p class="body mt-md" data-cs-reveal><em>Here, The Called are crowned.</em></p>
+          <p class="label mt-lg" data-cs-reveal>FORDIVINE<sup style="font-size:7px">™</sup></p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Section 01: Our Story (image grid + two-column text) -->
-<section class="section section--white" data-cs-reveal>
-  <div class="page-container">
-    <!-- Two images side by side -->
-    <div class="image-grid" data-cs-reveal="hero-image">
-      <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663434805712/SyVDeIqcZZHUJvbe.jpg" alt="FORDIVINE" loading="lazy"/>
-      <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663434805712/NEsZavoEfOwYSzob.jpg" alt="Emily Ford" loading="lazy"/>
+<!-- Section 01: Our Story -->
+<section class="section" data-cs-reveal>
+  <div class="page-wrap">
+    <div class="img-grid" data-cs-reveal="hero-image">
+      <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663434805712/SyVDeIqcZZHUJvbe.jpg" alt="FORDIVINE"/>
+      <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663434805712/NEsZavoEfOwYSzob.jpg" alt="Emily Ford"/>
     </div>
-    <!-- Text below in two columns -->
-    <div class="two-col">
-      <div>
-        <span class="label-text" data-cs-reveal>FORDIVINE<sup style="font-size:7px">™</sup></span>
-        <h2 class="h-large mt-sm" data-cs-reveal>Our Story</h2>
-        <p class="subtitle mt-sm" data-cs-reveal>A woman with a vision to rebrand the world of personal branding.</p>
+    <div class="section-inner">
+      <div class="col-left">
+        <p class="label" data-cs-reveal>FORDIVINE<sup style="font-size:7px">™</sup></p>
+        <h2 class="h-giant mt-sm" data-cs-reveal>Our Story</h2>
+        <p class="subtitle-text mt-sm" data-cs-reveal>A woman with a vision to rebrand the world of personal branding.</p>
       </div>
-      <div>
-        <span class="section-num section-num--right" data-cs-reveal>01</span>
-        <p class="body-text mt-md" data-cs-reveal>Emily Ford started FORDIVINE, a personal branding house + method because she saw a massive problem: too many purpose-driven women were building businesses without building personal brands that were authentic to who they truly are. Women unable to "keep up" with their social strategy because it lacked depth, honesty and real value. All while leaving influence, income, and impact on the table.</p>
-        <p class="body-text mt-sm" data-cs-reveal>After scaling her own brands, leading in the wellness space, and mentoring hundreds of entrepreneurs, Emily knew how to bridge the gap between identity and visibility. FORDIVINE exists to help you not just market yourself, but become the woman God always called you to be—bold, branded, and fully aligned. This is where strategy meets Heaven's blueprint and your personal brand becomes the launchpad for legacy.</p>
+      <div class="col-right">
+        <p class="sec-num" data-cs-reveal>01</p>
+        <p class="body mt-md" data-cs-reveal>Emily Ford started FORDIVINE, a personal branding house + method because she saw a massive problem: too many purpose-driven women were building businesses without building personal brands that were authentic to who they truly are. Women unable to "keep up" with their social strategy because it lacked depth, honesty and real value. All while leaving influence, income, and impact on the table.</p>
+        <p class="body mt-md" data-cs-reveal>After scaling her own brands, leading in the wellness space, and mentoring hundreds of entrepreneurs, Emily knew how to bridge the gap between identity and visibility. FORDIVINE exists to help you not just market yourself, but become the woman God always called you to be—bold, branded, and fully aligned. This is where strategy meets Heaven's blueprint and your personal brand becomes the launchpad for legacy.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Section 02: Emily Ford Bio (dark background) -->
-<section class="emily-bio-section" data-cs-reveal>
-  <div class="page-container">
-    <div class="emily-bio-grid">
-      <div>
-        <span class="section-num section-num--white" data-cs-reveal>01</span>
-        <h2 class="h-large mt-sm" style="color:#fff" data-cs-reveal>Emily Ford</h2>
-        <p class="subtitle mt-sm" style="color:rgba(255,255,255,.5)" data-cs-reveal>Host of Called &amp; Crowned | Global Speaker | Personal Branding Expert</p>
+<!-- Section 02: Emily Ford (dark) -->
+<section class="dark-section" data-cs-reveal>
+  <div class="page-wrap">
+    <div class="section-inner">
+      <div class="col-left">
+        <p class="sec-num-white" style="font-family:'Fragment Mono',monospace;font-size:13px;text-align:left" data-cs-reveal>02</p>
+        <h2 class="h-giant mt-sm" style="color:#fff" data-cs-reveal>Emily Ford</h2>
+        <p class="subtitle-text mt-sm" data-cs-reveal>Host of Called &amp; Crowned | Global Speaker | Personal Branding Expert</p>
       </div>
-      <div>
-        <p class="body-text body-text--white" data-cs-reveal>Emily Ford built her first business at 23 and grew her wellness company to thousands of customers by age 26 with no personal brand and just under 900 Facebook friends. Since then, she has led organizations across multiple industries, building teams in countries like Australia, the United Kingdom, and South Korea. But it wasn't until she chose to take her personal brand seriously that everything changed.</p>
-        <p class="body-text body-text--white mt-md" data-cs-reveal>She realized that a brand built with Heaven's blueprint would allow her to expand her reach, create deeper impact, and do it without compromising the values she holds sacred. That's when doors of opportunity began to open. Features in Forbes three different times, interviews on KTLA, keynote talks in stadiums with 15,000+ attendees, and even new strategic business partnerships.</p>
-        <p class="body-text body-text--white mt-md" data-cs-reveal>But beyond the platforms and press, Emily's deepest transformation came through seasons of personal reinvention as she has encountered multiple tragic seasons in her life, both professionally and personally. They were seasons that could have easily broken her down to not continue onward. But instead, these trials are what allowed her to be broken open. It was in that transformational revelation that she felt what so many other women silently feel:</p>
+      <div class="col-right">
+        <p class="body body-light" data-cs-reveal>Emily Ford built her first business at 23 and grew her wellness company to thousands of customers by age 26 with no personal brand and just under 900 Facebook friends. Since then, she has led organizations across multiple industries, building teams in countries like Australia, the United Kingdom, and South Korea. But it wasn't until she chose to take her personal brand seriously that everything changed.</p>
+        <p class="body body-light mt-md" data-cs-reveal>She realized that a brand built with Heaven's blueprint would allow her to expand her reach, create deeper impact, and do it without compromising the values she holds sacred. That's when doors of opportunity began to open. Features in Forbes three different times, interviews on KTLA, keynote talks in stadiums with 15,000+ attendees, and even new strategic business partnerships.</p>
+        <p class="body body-light mt-md" data-cs-reveal>But beyond the platforms and press, Emily's deepest transformation came through seasons of personal reinvention as she has encountered multiple tragic seasons in her life, both professionally and personally. They were seasons that could have easily broken her down to not continue onward. But instead, these trials are what allowed her to be broken open. It was in that transformational revelation that she felt what so many other women silently feel:</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Quote Block (dark background) -->
-<section class="quote-block" data-cs-reveal>
-  <div class="page-container">
-    <span class="section-num section-num--white" style="text-align:center;display:block" data-cs-reveal>02</span>
-    <p class="quote-block__text mt-md" data-cs-reveal>"I don't follow fake people yet my own personal brand feels fake."</p>
+<!-- Quote -->
+<section class="quote-section" data-cs-reveal>
+  <div class="page-wrap">
+    <p class="sec-num-white" style="font-family:'Fragment Mono',monospace;font-size:13px;text-align:center;display:block;color:rgba(255,255,255,.4)" data-cs-reveal>02</p>
+    <p class="quote-text mt-md" data-cs-reveal>"I don't follow fake people yet my own personal brand feels fake."</p>
   </div>
 </section>
 
 <!-- Section 03: The FD House -->
-<section class="section section--white" data-cs-reveal>
-  <div class="page-container">
-    <div class="two-col">
-      <div>
-        <h2 class="h-large" data-cs-reveal>The FD House</h2>
-        <p class="subtitle mt-sm" data-cs-reveal>A five-star sanctuary for visionaries' brands to be crowned</p>
-        <p class="body-text mt-md" data-cs-reveal>The most powerful transformations happen inside our flagship space in Southern California: FORDIVINE HOUSE. This is where your brand is no longer built from behind a screen but embodied in real time and in an environment worthy of the crowned woman you're becoming.</p>
-        <p class="body-text mt-sm" data-cs-reveal>Our clients fly in from across the globe to experience their own Coronation Day (The VIP Day). This is a thoroughly curated experience led by our production team in bringing your brand to life with professional styling, world-class photography, and strategic content captured.</p>
-        <p class="body-text mt-md" data-cs-reveal>Inside the FD HOUSE, our signature process provides:</p>
-        <ul class="fd-house-list" data-cs-reveal>
+<section class="section" data-cs-reveal>
+  <div class="page-wrap">
+    <div class="section-inner">
+      <div class="col-left">
+        <h2 class="h-giant" data-cs-reveal>The FD House</h2>
+        <p class="subtitle-text mt-sm" data-cs-reveal>A five-star sanctuary for visionaries' brands to be crowned</p>
+        <p class="body mt-md" data-cs-reveal>The most powerful transformations happen inside our flagship space in Southern California: FORDIVINE HOUSE. This is where your brand is no longer built from behind a screen but embodied in real time and in an environment worthy of the crowned woman you're becoming.</p>
+        <p class="body mt-sm" data-cs-reveal>Our clients fly in from across the globe to experience their own Coronation Day (The VIP Day). This is a thoroughly curated experience led by our production team in bringing your brand to life with professional styling, world-class photography, and strategic content captured.</p>
+        <p class="body mt-md" data-cs-reveal>Inside the FD HOUSE, our signature process provides:</p>
+        <ul class="fd-list" data-cs-reveal>
           <li>Brand clarity through your unique voice &amp; messaging</li>
           <li>A visual identity within your digital presence</li>
           <li>Brand-tailored social media content creation</li>
           <li>Real-time mentorship and coaching</li>
           <li>A brand identity that lasts years, not months</li>
         </ul>
-        <p class="body-text mt-md" data-cs-reveal>We are not a logo factory. We are a brand house of storytellers, strategists, and designers who see the future you, and we help the world finally see her too.</p>
+        <p class="body mt-md" data-cs-reveal>We are not a logo factory. We are a brand house of storytellers, strategists, and designers who see the future you, and we help the world finally see her too.</p>
       </div>
-      <div>
-        <span class="section-num section-num--right" data-cs-reveal>03</span>
+      <div class="col-right">
+        <p class="sec-num" data-cs-reveal>03</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Full-width FD House image -->
-<div class="full-width-image" data-cs-reveal="hero-image">
-  <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663434805712/SUkJIBwdIBOWFCYm.jpg" alt="FORDIVINE Studio Production" loading="lazy"/>
+<!-- Full-width Studio Image -->
+<div class="full-img" data-cs-reveal="hero-image">
+  <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663434805712/SUkJIBwdIBOWFCYm.jpg" alt="FORDIVINE Studio"/>
 </div>
 
 <!-- Section 04: Where Brand Perfectionism Ends -->
-<section class="section section--white" data-cs-reveal>
-  <div class="page-container">
-    <div class="two-col">
-      <div>
-        <h2 class="h-large" data-cs-reveal>Where Brand Perfectionism Ends.</h2>
-        <p class="subtitle mt-sm" data-cs-reveal>You were never called to be perfect. You were called to be perfectly YOU.</p>
+<section class="section" data-cs-reveal>
+  <div class="page-wrap">
+    <div class="section-inner">
+      <div class="col-left">
+        <h2 class="h-giant" data-cs-reveal>Where Brand Perfectionism Ends.</h2>
+        <p class="subtitle-text mt-sm" data-cs-reveal>You were never called to be perfect. You were called to be perfectly YOU.</p>
       </div>
-      <div>
-        <span class="section-num section-num--right" data-cs-reveal>04</span>
-        <p class="body-text mt-md" data-cs-reveal>Yet somewhere along the way, you started believing the lie that your brand had to look perfectly polished before it could be seen. That you had to shrink your truth, filter your voice, and make it all look effortless just to be taken seriously.</p>
-        <p class="body-text mt-md" data-cs-reveal>At FORDIVINE, we reject that lie. Perfection isn't the goal, authenticity is. We don't build brands that perform for the critics. We build brands that pierce the souls of The Called. Because the world doesn't need another perfect image. It needs your real presence.</p>
-        <p class="body-text mt-md" data-cs-reveal>Here is where you stop branding from a place of pressure. And start branding from a place of power.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Section 05: Who We Crown (image grid + two-column text) -->
-<section class="section section--white" data-cs-reveal>
-  <div class="page-container">
-    <!-- Two images side by side -->
-    <div class="image-grid" data-cs-reveal="hero-image">
-      <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663434805712/qOLtmLpEDwRlyPXM.jpg" alt="FORDIVINE Brand Book" loading="lazy"/>
-      <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663434805712/mTArVQYpEnQWaFsn.jpg" alt="Emily Ford presenting" loading="lazy"/>
-    </div>
-    <!-- Text below in two columns -->
-    <div class="two-col">
-      <div>
-        <h2 class="h-large" data-cs-reveal>Who We Crown:<br/><em>The Called</em></h2>
-      </div>
-      <div>
-        <span class="section-num section-num--right" data-cs-reveal>05</span>
-        <p class="body-text mt-md" data-cs-reveal>You're not here to build a fake brand that looks good on the outside but wears you down on the inside.</p>
-        <p class="body-text mt-md" data-cs-reveal>You've tried perfect. And it's exhausting. Deep down, you know real people last. Fake ones don't. So why are you still branding from a place that feels fake? You've asked yourself, "How am I supposed to maintain a brand like that?"</p>
-        <p class="body-text mt-md" data-cs-reveal>Here's the truth – you're not supposed to maintain a brand. You're meant to embody one. Because you've always known you're called for more. And in order to transform your brand, we first have to transform you.</p>
+      <div class="col-right">
+        <p class="sec-num" data-cs-reveal>04</p>
+        <p class="body mt-md" data-cs-reveal>Yet somewhere along the way, you started believing the lie that your brand had to look perfectly polished before it could be seen. That you had to shrink your truth, filter your voice, and make it all look effortless just to be taken seriously.</p>
+        <p class="body mt-md" data-cs-reveal>At FORDIVINE, we reject that lie. Perfection isn't the goal, authenticity is. We don't build brands that perform for the critics. We build brands that pierce the souls of The Called. Because the world doesn't need another perfect image. It needs your real presence.</p>
+        <p class="body mt-md" data-cs-reveal>Here is where you stop branding from a place of pressure. And start branding from a place of power.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Section 06: Great News (light gray background, two-column) -->
-<section class="section section--light-gray" data-cs-reveal>
-  <div class="page-container">
-    <div class="two-col">
-      <div>
-        <h2 class="h-large" data-cs-reveal>Great News..<br/>You Don't Need To<br/>Be "Someone" Yet.</h2>
+<!-- Section 05: Who We Crown -->
+<section class="section" data-cs-reveal>
+  <div class="page-wrap">
+    <div class="img-grid" data-cs-reveal="hero-image">
+      <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663434805712/qOLtmLpEDwRlyPXM.jpg" alt="FORDIVINE Brand Book"/>
+      <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663434805712/mTArVQYpEnQWaFsn.jpg" alt="Emily Ford presenting"/>
+    </div>
+    <div class="section-inner">
+      <div class="col-left">
+        <h2 class="h-giant" data-cs-reveal>Who We Crown:<br/><em>The Called</em></h2>
       </div>
-      <div>
-        <span class="section-num section-num--right" data-cs-reveal>06</span>
-        <p class="body-text mt-md" data-cs-reveal>And you don't need to have it "all together" to build an empire with Heaven's blueprint.</p>
-        <p class="body-text mt-md" data-cs-reveal>You just need to know she's in there<br/>— the woman you're becoming.</p>
-        <p class="body-text mt-md" data-cs-reveal>We help you with the rest onward.</p>
-        <p class="body-text mt-md" data-cs-reveal>If you're a real woman of impact but your brand still feels fake, <strong>The Fordivine™ Experience</strong> is where we change that.</p>
+      <div class="col-right">
+        <p class="sec-num" data-cs-reveal>05</p>
+        <p class="body mt-md" data-cs-reveal>You're not here to build a fake brand that looks good on the outside but wears you down on the inside.</p>
+        <p class="body mt-md" data-cs-reveal>You've tried perfect. And it's exhausting. Deep down, you know real people last. Fake ones don't. So why are you still branding from a place that feels fake? You've asked yourself, "How am I supposed to maintain a brand like that?"</p>
+        <p class="body mt-md" data-cs-reveal>Here's the truth – you're not supposed to maintain a brand. You're meant to embody one. Because you've always known you're called for more. And in order to transform your brand, we first have to transform you.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Full-width studio production image -->
-<div class="full-width-image" data-cs-reveal="hero-image">
-  <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663434805712/SUkJIBwdIBOWFCYm.jpg" alt="FORDIVINE Production Studio" loading="lazy"/>
+<!-- Section 06: Great News -->
+<section class="section" style="background:#f5f5f5" data-cs-reveal>
+  <div class="page-wrap">
+    <div class="section-inner">
+      <div class="col-left">
+        <h2 class="h-giant" data-cs-reveal>Great News..<br/>You Don't Need To<br/>Be "Someone" Yet.</h2>
+      </div>
+      <div class="col-right">
+        <p class="sec-num" data-cs-reveal>06</p>
+        <p class="body mt-md" data-cs-reveal>And you don't need to have it "all together" to build an empire with Heaven's blueprint.</p>
+        <p class="body mt-md" data-cs-reveal>You just need to know she's in there<br/>— the woman you're becoming.</p>
+        <p class="body mt-md" data-cs-reveal>We help you with the rest onward.</p>
+        <p class="body mt-md" data-cs-reveal>If you're a real woman of impact but your brand still feels fake, <strong>The Fordivine™ Experience</strong> is where we change that.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Full-width Studio Image 2 -->
+<div class="full-img" data-cs-reveal="hero-image">
+  <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663434805712/NCwjkvgLCaxBCZzt.jpg" alt="FORDIVINE Studio Production"/>
 </div>
 
-<!-- Section 07: Testimonial + 4 Pillars (horizontal rows) -->
-<section class="section section--white" data-cs-reveal>
-  <div class="page-container">
-    <div class="two-col" style="align-items:center">
-      <div>
-        <span class="section-num" data-cs-reveal>07</span>
+<!-- Section 07: Testimonial + Pillars -->
+<section class="section" data-cs-reveal>
+  <div class="page-wrap">
+    <div class="section-inner" style="align-items:center">
+      <div class="col-left">
+        <p class="sec-num" style="text-align:left" data-cs-reveal>07</p>
         <h2 class="h-large mt-sm" data-cs-reveal>We don't brand with trends.<br/>We brand for transcendence.</h2>
       </div>
-      <div></div>
+      <div class="col-right"></div>
     </div>
 
-    <!-- Testimonial -->
-    <div class="testimonial-quote" data-cs-reveal>I've worked with many teams in my career. This was unlike any other.<br/><br/>It's time for me to get back on tour for my new book and I needed a brand that matches my style and personality. Emily and her team went beyond what I could have even imagined.</div>
-    <div class="testimonial-author" data-cs-reveal>
-      <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663434805712/OtbYRfTCBoxMTGWN.jpg" alt="Moll Anderson"/>
-      <div>
-        <p class="testimonial-author__name">Moll Anderson</p>
-        <p class="testimonial-author__title">Author | Emmy Award-Winning Reporter</p>
+    <div class="testimonial" data-cs-reveal>
+      <p class="testimonial-quote">I've worked with many teams in my career. This was unlike any other.<br/><br/>It's time for me to get back on tour for my new book and I needed a brand that matches my style and personality. Emily and her team went beyond what I could have even imagined.</p>
+      <div class="testimonial-author">
+        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663434805712/OtbYRfTCBoxMTGWN.jpg" alt="Moll Anderson"/>
+        <div>
+          <p class="testimonial-name">Moll Anderson</p>
+          <p class="testimonial-title">Author | Emmy Award-Winning Reporter</p>
+        </div>
       </div>
     </div>
 
-    <!-- 4 Pillars as horizontal rows -->
-    <div class="pillars-rows" data-cs-reveal>
+    <div class="pillars" data-cs-reveal>
       <div class="pillar-row" data-cs-reveal>
-        <h3 class="pillar-row__title">End Perfectionism</h3>
-        <p class="pillar-row__desc">The world doesn't need another perfect looking image. People crave real presence and authenticity.</p>
-        <span class="pillar-row__num">01</span>
+        <h3>End Perfectionism</h3>
+        <p>The world doesn't need another perfect looking image. People crave real presence and authenticity.</p>
+        <span class="pillar-num">01</span>
       </div>
       <div class="pillar-row" data-cs-reveal>
-        <h3 class="pillar-row__title">Your Story Matters</h3>
-        <p class="pillar-row__desc">Every breakthrough, every battle, every healed place in you was meant to help someone else. Your brand gives your testimony a platform. And your platform gives God glory.</p>
-        <span class="pillar-row__num">02</span>
+        <h3>Your Story Matters</h3>
+        <p>Every breakthrough, every battle, every healed place in you was meant to help someone else. Your brand gives your testimony a platform. And your platform gives God glory.</p>
+        <span class="pillar-num">02</span>
       </div>
       <div class="pillar-row" data-cs-reveal>
-        <h3 class="pillar-row__title">Brand Trust Reigns</h3>
-        <p class="pillar-row__desc">In 2025 and beyond, trust is the new currency. A clear, consistent, and cohesive personal brand builds trust and opens doors that hustle and grind never could.</p>
-        <span class="pillar-row__num">03</span>
+        <h3>Brand Trust Reigns</h3>
+        <p>In 2025 and beyond, trust is the new currency. A clear, consistent, and cohesive personal brand builds trust and opens doors that hustle and grind never could.</p>
+        <span class="pillar-num">03</span>
       </div>
       <div class="pillar-row" data-cs-reveal>
-        <h3 class="pillar-row__title">Bold, Not Loud</h3>
-        <p class="pillar-row__desc">You were called to influence. To multiply. To disciple. But in a noisy world, visibility isn't vanity – it's stewardship.</p>
-        <span class="pillar-row__num">04</span>
+        <h3>Bold, Not Loud</h3>
+        <p>You were called to influence. To multiply. To disciple. But in a noisy world, visibility isn't vanity – it's stewardship.</p>
+        <span class="pillar-num">04</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Section 08: Built Differently (dark background, two-column with image) -->
-<section class="built-diff" data-cs-reveal>
-  <div class="page-container">
-    <div class="built-diff-grid">
-      <div>
-        <span class="section-num section-num--white" data-cs-reveal>08</span>
-        <h2 class="h-large mt-sm" style="color:#fff;font-style:italic" data-cs-reveal>Built Differently.<br/>On Purpose.</h2>
+<!-- Section 08: Built Differently (dark) -->
+<section class="built-section" data-cs-reveal>
+  <div class="page-wrap">
+    <div class="built-grid">
+      <div class="built-text">
+        <p class="sec-num-white" style="font-family:'Fragment Mono',monospace;font-size:13px;color:rgba(255,255,255,.4)" data-cs-reveal>08</p>
+        <h2 class="h-giant mt-sm" style="color:#fff;font-style:italic" data-cs-reveal>Built Differently.<br/>On Purpose.</h2>
         <div class="mt-lg">
           <p data-cs-reveal>We've seen what's out there.<br/>The copy-paste templates. The surface-level strategy. The branding that looks polished but represents nothing about who you really are.<br/>And we've heard the stories of women who invested significant amounts into their brand, only to feel more disconnected from it than before.</p>
           <p data-cs-reveal><strong>FORDIVINE was created to be the answer.</strong></p>
@@ -475,8 +441,8 @@ body{font-family:'Inter',sans-serif;color:#1a1a1a;background:#fff;line-height:1.
           <p data-cs-reveal><strong>This isn't branding the traditional way.<br/>This is FORDIVINE.</strong></p>
         </div>
       </div>
-      <div data-cs-reveal="hero-image">
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663434805712/BEEEqxDiGWXzIjVW.jpg" alt="FORDIVINE" loading="lazy"/>
+      <div class="built-img" data-cs-reveal="hero-image">
+        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663434805712/BEEEqxDiGWXzIjVW.jpg" alt="FORDIVINE"/>
       </div>
     </div>
   </div>
@@ -484,15 +450,15 @@ body{font-family:'Inter',sans-serif;color:#1a1a1a;background:#fff;line-height:1.
 
 <!-- Footer -->
 <footer class="footer" data-cs-reveal="footer">
-  <div class="page-container">
-    <div class="footer__top">
+  <div class="page-wrap">
+    <div class="footer-top">
       <div>
-        <p class="footer__brand">FORDIVINE<sup>™</sup></p>
-        <p class="footer__tagline">A brand house for women building empires with Heaven's blueprint.</p>
+        <p class="footer-brand">FORDIVINE<sup>™</sup></p>
+        <p class="footer-tagline">A brand house for women building empires with Heaven's blueprint.</p>
       </div>
       <div>
-        <p class="footer__heading">Pages</p>
-        <div class="footer__links">
+        <p class="footer-heading">Pages</p>
+        <div class="footer-links">
           <a href="https://www.fordivine.com/">Fordivine™</a>
           <a href="https://www.fordivine.com/crowned-stories/about-us">About Us</a>
           <a href="https://www.fordivine.com/crowned-stories/">Crowned Stories</a>
@@ -501,27 +467,26 @@ body{font-family:'Inter',sans-serif;color:#1a1a1a;background:#fff;line-height:1.
         </div>
       </div>
       <div>
-        <p class="footer__heading">Legal</p>
-        <div class="footer__links">
+        <p class="footer-heading">Legal</p>
+        <div class="footer-links">
           <a href="https://www.fordivine.com/privacy-policy">Privacy policy</a>
           <a href="https://www.fordivine.com/terms-of-use">Terms of service</a>
         </div>
         <div class="mt-lg"></div>
-        <p class="footer__heading">Get in touch</p>
-        <div class="footer__links">
+        <p class="footer-heading">Get in touch</p>
+        <div class="footer-links">
           <a href="mailto:hello@fordivine.com">hello@fordivine.com</a>
           <span style="font-size:13px;color:rgba(255,255,255,.4)">Irvine, California</span>
         </div>
       </div>
     </div>
-    <div class="footer__bottom">
-      <p class="footer__copy">™ — Copyright 2025 FORDIVINE. All rights reserved.</p>
-      <a href="mailto:hello@fordivine.com" class="footer__email">hello@fordivine.com</a>
+    <div class="footer-bottom">
+      <p class="footer-copy">™ — Copyright 2025 FORDIVINE. All rights reserved.</p>
+      <a href="mailto:hello@fordivine.com" class="footer-email">hello@fordivine.com</a>
     </div>
   </div>
 </footer>
 
-<!-- Shared Crowned Stories Enhancement JS -->
 <script data-cs-enhancement-asset="js" defer src="/crowned-stories/shared/crowned-story-enhancements.js"></script>
 </body>
 </html>
