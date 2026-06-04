@@ -28,6 +28,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fragment+Mono&display=swap" rel="stylesheet"/>
 <link data-cs-enhancement-asset="css" href="/crowned-stories/shared/crowned-story-enhancements.css" rel="stylesheet"/>
 <style>
+/* Override shared reveal animations - make all content visible immediately */
+html.cs-enhancements-ready [data-cs-reveal],
+[data-cs-reveal] {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+</style>
+<style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;color:#171717;background:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}
