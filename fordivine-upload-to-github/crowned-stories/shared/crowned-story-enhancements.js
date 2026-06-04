@@ -3,6 +3,32 @@
   const root = doc.documentElement;
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  const storyMap = {
+    'ali-marie': 'Ali Marie',
+    'beth-clifford': 'Beth Clifford',
+    'christa-crawford': 'Christa Crawford',
+    'colette-vanpaemel': 'Colette VanPaemel',
+    'lauren-fields': 'Lauren Fields',
+    'roni-lavenia': 'Roni Lavenia'
+  };
+
+  function escapeHtml(value) {
+    return String(value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function getStoryMeta() {
+    const path = window.location.pathname.replace(/\/+$/, '');
+    const slug = path.split('/').filter(Boolean).pop() || '';
+    const name = storyMap[slug] || '';
+    const isCrownedStory = path.includes('/crowned-stories/') && Boolean(name);
+    return { slug, name, isCrownedStory };
+  }
+
   function markVisible(el) {
     el.classList.add('cs-is-visible');
   }
@@ -63,12 +89,16 @@
   }
 
   function enhanceMediaShells() {
-    doc.querySelectorAll('video').forEach((video) => {
+    doc.querySelectorAll('video').forEach((video, index) => {
       const shell = video.closest('[data-cs-media-shell]') || video.parentElement;
       if (shell && shell !== doc.body) {
         shell.dataset.csMediaShell = 'true';
+        shell.dataset.csMediaState = video.readyState >= 2 ? 'ready' : 'loading';
+        shell.dataset.csMediaLabel = shell.dataset.csMediaLabel || 'Loading story film';
         if (!shell.dataset.csReveal) shell.dataset.csReveal = 'media';
       }
+      video.dataset.csVideoEnhanced = 'true';
+      video.dataset.csVideoIndex = String(index + 1);
       video.muted = true;
       video.loop = true;
       video.autoplay = true;
@@ -78,24 +108,105 @@
       video.setAttribute('autoplay', '');
       video.setAttribute('playsinline', '');
       video.setAttribute('preload', video.getAttribute('preload') || 'metadata');
-      video.addEventListener('loadeddata', () => video.closest('[data-cs-media-shell]')?.classList.add('cs-media-loaded'), { once: true });
-      video.addEventListener('canplay', () => video.play?.().catch(() => {}), { once: true });
-      video.addEventListener('error', () => video.closest('[data-cs-media-shell]')?.classList.add('cs-media-error'), { once: true });
+
+      const markReady = () => {
+        const currentShell = video.closest('[data-cs-media-shell]');
+        if (currentShell) {
+          currentShell.classList.add('cs-media-loaded');
+          currentShell.dataset.csMediaState = 'ready';
+        }
+      };
+      const markError = () => {
+        const currentShell = video.closest('[data-cs-media-shell]');
+        if (currentShell) {
+          currentShell.classList.add('cs-media-error');
+          currentShell.dataset.csMediaState = 'error';
+        }
+      };
+
+      if (video.readyState >= 2) markReady();
+      video.addEventListener('loadeddata', markReady, { once: true });
+      video.addEventListener('canplay', () => {
+        markReady();
+        video.play?.().catch(() => {});
+      }, { once: true });
+      video.addEventListener('error', markError, { once: true });
     });
   }
 
-  function enhanceMobileNav() {
+  function enhanceLongHeroTitles(meta) {
+    if (meta.slug !== 'colette-vanpaemel') return;
+    const candidates = Array.from(doc.querySelectorAll('h1, [data-framer-component-type="RichTextContainer"], p, span'));
+    const titleText = 'colette vanpaemel';
+    candidates.forEach((el) => {
+      const normalized = el.textContent.replace(/\s+/g, ' ').trim().toLowerCase();
+      if (normalized !== titleText) return;
+      const target = el.closest('[data-framer-component-type="RichTextContainer"]') || el;
+      target.dataset.csLongHeroTitle = 'true';
+      target.dataset.csReveal = target.dataset.csReveal || 'hero';
+    });
+  }
+
+  function enhanceStoryProgress(meta) {
+    if (!meta.isCrownedStory || doc.querySelector('[data-cs-story-progress]')) return;
+
+    const progress = doc.createElement('div');
+    progress.className = 'cs-story-progress';
+    progress.dataset.csStoryProgress = 'true';
+    progress.setAttribute('role', 'progressbar');
+    progress.setAttribute('aria-label', `${meta.name} story reading progress`);
+    progress.setAttribute('aria-valuemin', '0');
+    progress.setAttribute('aria-valuemax', '100');
+    progress.setAttribute('aria-valuenow', '0');
+    progress.innerHTML = `
+      <span class="cs-story-progress__bar" aria-hidden="true"></span>
+      <span class="cs-story-progress__pill" aria-hidden="true">${escapeHtml(meta.name)} · 0%</span>`;
+    doc.body.appendChild(progress);
+
+    const pill = progress.querySelector('.cs-story-progress__pill');
+    let ticking = false;
+
+    const update = () => {
+      const scrollTop = window.scrollY || doc.documentElement.scrollTop || 0;
+      const scrollHeight = Math.max(doc.documentElement.scrollHeight - window.innerHeight, 1);
+      const percent = Math.max(0, Math.min(100, Math.round((scrollTop / scrollHeight) * 100)));
+      progress.style.setProperty('--cs-progress', `${percent}%`);
+      progress.dataset.csProgressActive = percent > 3 ? 'true' : 'false';
+      progress.setAttribute('aria-valuenow', String(percent));
+      if (pill) pill.textContent = `${meta.name} · ${percent}%`;
+      ticking = false;
+    };
+
+    const requestUpdate = () => {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener('scroll', requestUpdate, { passive: true });
+    window.addEventListener('resize', requestUpdate);
+  }
+
+  function enhanceMobileNav(meta) {
     if (doc.querySelector('[data-cs-mobile-nav]')) return;
 
     const navLinks = [
-      ['Home', 'https://www.fordivine.com/'],
-      ['FD House', 'https://www.fordivine.com/fd-house'],
-      ['Crowned Stories', 'https://www.fordivine.com/crowned-stories/'],
-      ['Services', 'https://www.fordivine.com/discover'],
-      ['Inquire', 'https://www.fordivine.com/inquire'],
-      ['Retreat', 'https://home.fordivine.com/retreat'],
-      ['Email', 'mailto:hello@fordivine.com']
+      { label: 'Home', href: 'https://www.fordivine.com/', match: '/' },
+      { label: 'FD House', href: 'https://www.fordivine.com/fd-house', match: '/fd-house' },
+      { label: 'Crowned Stories', href: 'https://www.fordivine.com/crowned-stories/', match: '/crowned-stories' },
+      { label: 'Services', href: 'https://www.fordivine.com/discover', match: '/discover' },
+      { label: 'Inquire', href: 'https://www.fordivine.com/inquire', match: '/inquire' },
+      { label: 'Retreat', href: 'https://home.fordivine.com/retreat', match: '/retreat' },
+      { label: 'Email', href: 'mailto:hello@fordivine.com', match: 'mailto:' }
     ];
+
+    const currentPath = window.location.pathname.replace(/\/+$/, '') || '/';
+    const isActiveLink = (link) => {
+      if (link.match === '/') return currentPath === '/';
+      if (link.match === '/crowned-stories') return currentPath.includes('/crowned-stories');
+      return currentPath === link.match || currentPath.startsWith(`${link.match}/`);
+    };
 
     const button = doc.createElement('button');
     button.type = 'button';
@@ -121,8 +232,12 @@
           <a class="cs-mobile-nav__brand" href="https://www.fordivine.com/" aria-label="FORDIVINE home">FORDIVINE<span>™</span></a>
           <button type="button" class="cs-mobile-nav__close" data-cs-mobile-nav-close="true" aria-label="Close FORDIVINE navigation menu">Close</button>
         </div>
+        ${meta.isCrownedStory ? `<p class="cs-mobile-nav__context">Viewing <strong>${escapeHtml(meta.name)}</strong></p>` : ''}
         <div class="cs-mobile-nav__links">
-          ${navLinks.map(([label, href]) => `<a href="${href}">${label}</a>`).join('')}
+          ${navLinks.map((link) => {
+            const active = isActiveLink(link);
+            return `<a href="${link.href}"${active ? ' class="cs-mobile-nav__link--active" aria-current="page"' : ''}>${link.label}${active ? '<span>Current</span>' : ''}</a>`;
+          }).join('')}
         </div>
       </nav>`;
 
@@ -203,10 +318,15 @@
   }
 
   function init() {
-    enhanceMobileNav();
+    const meta = getStoryMeta();
+    if (meta.slug) doc.body?.setAttribute('data-cs-story-slug', meta.slug);
+    if (meta.name) doc.body?.setAttribute('data-cs-story-name', meta.name);
+    enhanceMobileNav(meta);
     enhanceLinks();
     enhanceTickers();
     enhanceMediaShells();
+    enhanceLongHeroTitles(meta);
+    enhanceStoryProgress(meta);
     enhanceReveals();
     doc.body?.setAttribute('data-cs-enhancements', 'active');
   }
