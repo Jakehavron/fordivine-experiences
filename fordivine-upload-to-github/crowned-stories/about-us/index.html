@@ -388,12 +388,7 @@
 <link data-cs-enhancement-asset="css" href="/crowned-stories/shared/crowned-story-enhancements.css" rel="stylesheet"/><style>
 /* ===== CUSTOM OVERRIDES FOR ABOUT-US PAGE ===== */
 
-/* Make the fixed nav transparent */
-.framer-1mfn3xj {
-  background: rgba(255, 255, 255, 0.95) !important;
-  backdrop-filter: blur(10px) !important;
-  -webkit-backdrop-filter: blur(10px) !important;
-}
+
 
 
 /* ===== EDITS 1 & 3: Video containers match adjacent photo height ===== */
@@ -473,275 +468,85 @@ footer .framer-z86ie5 {
   opacity: 1 !important;
 }
 
-/* ===== EDIT 9: Mobile hamburger menu ===== */
-@media (max-width: 809px) {
-  /* Hide desktop nav on mobile */
-  [data-framer-name="Desktop nav"] {
-    display: none !important;
-  }
-  
-  /* Show mobile nav structure */
-  [data-framer-name="Mobile nav"] {
-    display: block !important;
-  }
-  
-  /* Mobile nav top bar styling */
-  .mobile-hamburger-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 9999;
-    background: rgba(245, 245, 245, 0.98);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    padding: 16px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .mobile-hamburger-nav .nav-logo {
-    font-family: "Helvetica Bold", "Helvetica Bold Placeholder", sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: -0.04em;
-    color: rgb(23, 23, 23);
-    text-decoration: none;
-    display: flex;
-    align-items: baseline;
-    gap: 2px;
-  }
-  
-  .mobile-hamburger-nav .nav-logo .tm {
-    font-size: 8px;
-    vertical-align: super;
-  }
-  
-  .mobile-hamburger-nav .hamburger-btn {
-    width: 32px;
-    height: 32px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    padding: 4px;
-  }
-  
-  .mobile-hamburger-nav .hamburger-btn span {
-    display: block;
-    width: 22px;
-    height: 2px;
-    background: rgb(23, 23, 23);
-    border-radius: 1px;
-    transition: all 0.3s ease;
-  }
-  
-  .mobile-hamburger-nav .hamburger-btn.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-  
-  .mobile-hamburger-nav .hamburger-btn.active span:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .mobile-hamburger-nav .hamburger-btn.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-  }
-  
-  /* Mobile menu overlay */
-  .mobile-menu-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgb(245, 245, 245);
-    z-index: 9998;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 32px;
-    padding-top: 80px;
-  }
-  
-  .mobile-menu-overlay.active {
-    display: flex;
-  }
-  
-  .mobile-menu-overlay a {
-    font-family: "Helvetica Bold", "Helvetica Bold Placeholder", sans-serif;
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: rgb(23, 23, 23);
-    text-decoration: none;
-    transition: opacity 0.2s ease;
-  }
-  
-  .mobile-menu-overlay a:hover {
-    opacity: 0.6;
-  }
-  
-  .mobile-menu-overlay a.active-link {
-    opacity: 0.5;
-  }
-  
-  /* Hide the Framer navbar on mobile, use our custom one */
-  .framer-1mfn3xj {
-    display: none !important;
-  }
-}
-
-/* Desktop: ensure our mobile elements are hidden */
-@media (min-width: 810px) {
-  .mobile-hamburger-nav,
-  .mobile-menu-overlay {
-    display: none !important;
-  }
+/* ===== Fix all Framer scroll animations (static HTML doesn't trigger them) ===== */
+[style*="opacity:0.1"],
+[style*="opacity: 0.1"],
+[style*="opacity:0.0"],
+[style*="opacity: 0.0"] {
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 
-/* ===== MOBILE RESPONSIVE (max-width: 809px) ===== */
-@media (max-width: 809px) {
-  /* Hero video sizing */
-  section[style*="height:100vh"] {
-    height: 70vh !important;
-    min-height: 500px !important;
-  }
-  .hero-text-overlay h2 {
-    font-size: 12px !important;
-    letter-spacing: 5px !important;
-  }
-  .hero-text-overlay h1 {
-    font-size: 42px !important;
-    letter-spacing: 3px !important;
-  }
-
-  /* Prevent horizontal overflow */
-  .framer-xpzst {
-    overflow-x: hidden !important;
-  }
-
-  /* Fix content padding on mobile */
-  .framer-xpzst > div[class*="framer-"] {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-    overflow: visible !important;
-  }
-
-  /* Text wrapping */
-  [data-framer-component-type="RichTextContainer"],
-  [data-framer-component-type="RichTextContainer"] p,
-  [data-framer-component-type="RichTextContainer"] h1,
-  [data-framer-component-type="RichTextContainer"] h2,
-  [data-framer-component-type="RichTextContainer"] h3 {
-    word-wrap: break-word !important;
-    overflow-wrap: break-word !important;
-    max-width: 100% !important;
-  }
-
-  /* Responsive images */
-  img {
-    max-width: 100% !important;
-    height: auto !important;
-  }
-
-  /* Scale down large headings */
-  .framer-text [style*="font-size:120px"],
-  p[style*="font-size:120px"] {
-    font-size: 48px !important;
-    line-height: 1.1 !important;
-  }
-  .framer-text [style*="font-size:96px"],
-  p[style*="font-size:96px"] {
-    font-size: 40px !important;
-    line-height: 1.1 !important;
-  }
-  .framer-text [style*="font-size:72px"],
-  p[style*="font-size:72px"] {
-    font-size: 32px !important;
-    line-height: 1.2 !important;
-  }
-  .framer-text [style*="font-size:56px"],
-  p[style*="font-size:56px"] {
-    font-size: 28px !important;
-    line-height: 1.2 !important;
-  }
-  .framer-text [style*="font-size:48px"],
-  p[style*="font-size:48px"] {
-    font-size: 24px !important;
-    line-height: 1.3 !important;
-  }
-
-  /* Reduce large gaps */
-  .framer-xpzst [style*="gap:200px"] {
-    gap: 60px !important;
-  }
-  .framer-xpzst [style*="gap:120px"] {
-    gap: 40px !important;
-  }
-  .framer-xpzst [style*="gap:100px"] {
-    gap: 40px !important;
-  }
-  .framer-xpzst [style*="gap:80px"] {
-    gap: 32px !important;
-  }
-  .framer-xpzst [style*="gap:60px"] {
-    gap: 24px !important;
-  }
+/* ===== EDIT 8: Sticky navbar with white background ===== */
+.framer-1mfn3xj {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 9999 !important;
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
 }
 
-@media (max-width: 480px) {
-  section[style*="height:100vh"] {
-    height: 60vh !important;
-    min-height: 400px !important;
-  }
-  .hero-text-overlay h1 {
-    font-size: 36px !important;
-    letter-spacing: 2px !important;
-  }
-  .hero-text-overlay h2 {
-    font-size: 10px !important;
-    letter-spacing: 4px !important;
-  }
-}
-
-/* ===== EDIT 9: Mobile hamburger menu ===== */
-.mobile-menu-toggle {
+/* ===== EDIT 9: Mobile hamburger navigation ===== */
+.mobile-hamburger-nav {
   display: none;
   position: fixed;
-  top: 16px;
-  right: 16px;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   z-index: 10001;
-  width: 44px;
-  height: 44px;
-  background: transparent;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.mobile-hamburger-nav .nav-logo {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #1f1f1f;
+  text-decoration: none;
+}
+.mobile-hamburger-nav .nav-logo .tm {
+  font-size: 10px;
+  vertical-align: super;
+}
+.mobile-hamburger-nav .hamburger-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  background: none;
   border: none;
   cursor: pointer;
-  padding: 8px;
+  padding: 4px;
+  gap: 5px;
 }
-.mobile-menu-toggle span {
+.mobile-hamburger-nav .hamburger-btn span {
   display: block;
-  width: 28px;
+  width: 22px;
   height: 2px;
   background: #1f1f1f;
-  margin: 6px 0;
   transition: all 0.3s ease;
+  border-radius: 1px;
 }
-.mobile-menu-toggle.active span:nth-child(1) {
+.mobile-hamburger-nav .hamburger-btn.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
-.mobile-menu-toggle.active span:nth-child(2) {
+.mobile-hamburger-nav .hamburger-btn.active span:nth-child(2) {
   opacity: 0;
 }
-.mobile-menu-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -7px);
+.mobile-hamburger-nav .hamburger-btn.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 .mobile-menu-overlay {
   display: none;
@@ -774,30 +579,45 @@ footer .framer-z86ie5 {
 .mobile-menu-overlay a:hover {
   opacity: 0.6;
 }
-@media (max-width: 809px) {
-  .mobile-menu-toggle {
-    display: block;
-  }
-  /* Hide the desktop nav on mobile */
-  .framer-1mfn3xj nav,
-  .framer-1mfn3xj [data-framer-name="Links"] {
-    display: none !important;
-  }
+.mobile-menu-overlay a.active-link {
+  font-weight: 600;
 }
+
+/* Desktop: hide mobile nav elements */
 @media (min-width: 810px) {
-  .mobile-menu-toggle,
+  .mobile-hamburger-nav,
   .mobile-menu-overlay {
     display: none !important;
   }
 }
 
-/* ===== Fix all Framer scroll animations (static HTML doesn't trigger them) ===== */
-[style*="opacity:0.1"],
-[style*="opacity: 0.1"],
-[style*="opacity:0.0"],
-[style*="opacity: 0.0"] {
-  opacity: 1 !important;
-  transform: none !important;
+/* ===== MOBILE RESPONSIVE (max-width: 809px) ===== */
+@media (max-width: 809px) {
+  /* Show mobile hamburger nav */
+  .mobile-hamburger-nav {
+    display: flex !important;
+  }
+  /* Hide the desktop sticky nav on mobile */
+  .framer-1mfn3xj {
+    display: none !important;
+  }
+  /* Hero video sizing */
+  section[style*="height:100vh"] {
+    height: 70vh !important;
+    min-height: 500px !important;
+  }
+  /* Stack side-by-side layouts */
+  [data-framer-name="Images"] {
+    flex-direction: column !important;
+  }
+  /* Adjust text sizes */
+  .framer-styles-preset-1x7kyc0 {
+    font-size: 36px !important;
+  }
+  .framer-styles-preset-1lgha58 {
+    font-size: 10px !important;
+    letter-spacing: 4px !important;
+  }
 }
 
 /* ===== END CUSTOM OVERRIDES ===== */
@@ -870,18 +690,6 @@ function toggleMobileMenu() {
 }
 </script>
 
-<!-- Mobile hamburger menu -->
-<button class="mobile-menu-toggle" onclick="document.querySelector('.mobile-menu-overlay').classList.toggle('active');this.classList.toggle('active')" aria-label="Menu">
-  <span></span>
-  <span></span>
-  <span></span>
-</button>
-<div class="mobile-menu-overlay">
-  <a href="./" onclick="document.querySelector('.mobile-menu-overlay').classList.remove('active');document.querySelector('.mobile-menu-toggle').classList.remove('active')">FORDIVINE™</a>
-  <a href="./fd-house" onclick="document.querySelector('.mobile-menu-overlay').classList.remove('active');document.querySelector('.mobile-menu-toggle').classList.remove('active')">About Us</a>
-  <a href="./crowned-stories" onclick="document.querySelector('.mobile-menu-overlay').classList.remove('active');document.querySelector('.mobile-menu-toggle').classList.remove('active')">Crowned Stories</a>
-  <a href="./inquire" onclick="document.querySelector('.mobile-menu-overlay').classList.remove('active');document.querySelector('.mobile-menu-toggle').classList.remove('active')">Contact</a>
-  <a href="https://www.fordivine.com/discover" onclick="document.querySelector('.mobile-menu-overlay').classList.remove('active');document.querySelector('.mobile-menu-toggle').classList.remove('active')">Services</a>
-</div>
+
 </body>
 </html>
