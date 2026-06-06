@@ -620,6 +620,30 @@ a{text-decoration:none;color:inherit}
     <a href="/discover/">Services</a>
   </div>
 </nav>
+<nav class="mobile-hamburger-nav">
+  <a href="https://www.fordivine.com" class="nav-logo">FORDIVINE<span class="tm">&trade;</span></a>
+  <button class="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+<div class="mobile-menu-overlay" id="mobileMenuOverlay">
+  <a href="https://www.fordivine.com">Home</a>
+  <a href="https://www.fordivine.com/about-us">About Us</a>
+  <a href="/crowned-stories/" class="active-link">Crowned Stories</a>
+  <a href="https://www.fordivine.com/inquire">Contact</a>
+  <a href="https://www.fordivine.com/discover" target="_blank">Services</a>
+</div>
+<script>
+function toggleMobileMenu() {
+  const btn = document.querySelector('.hamburger-btn');
+  const overlay = document.getElementById('mobileMenuOverlay');
+  btn.classList.toggle('active');
+  overlay.classList.toggle('active');
+  document.body.style.overflow = overlay.classList.contains('active') ? 'hidden' : '';
+}
+</script>
 
 <!-- Page Header -->
 <section class="page-header">
