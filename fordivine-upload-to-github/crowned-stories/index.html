@@ -19,45 +19,59 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QN0Z76WK07');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Outfit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 *{-webkit-tap-highlight-color:transparent}
 a,button{touch-action:manipulation}
-body{font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:400;color:#111;background:#fff;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:400;color:#111;background:#fff;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
 
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 48px;background:rgba(255,255,255,0.92);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%)}
-.nav-logo{font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.2em;color:#111}
-.nav-logo sup{font-size:8px;margin-left:1px}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 48px;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid rgba(0,0,0,0.04)}
+.nav-logo{display:inline-flex;align-items:center;gap:2px;text-decoration:none}
+.nav-wordmark{height:18px;width:auto;display:block}
+.nav-logo .tm{font-family:'Inter',sans-serif;font-size:9px;font-weight:700;color:#1f1f1f;opacity:0.7;margin-top:-6px;align-self:flex-start}
 .nav-links{display:flex;align-items:center;gap:40px}
-.nav-links a{font-family:'Outfit',sans-serif;font-size:13px;letter-spacing:0.04em;color:rgba(0,0,0,0.6);transition:color 0.2s ease}
+.nav-links a{font-family:'Inter',sans-serif;font-size:13px;letter-spacing:0.04em;color:rgba(0,0,0,0.5);transition:color 0.2s ease;font-weight:400}
 .nav-links a:hover{color:#111}
 .nav-links a.active{color:#111;font-weight:500}
 
 .hero{padding:160px 48px 80px;max-width:900px}
-.hero-year{font-family:'Outfit',sans-serif;font-size:11px;letter-spacing:0.3em;color:rgba(0,0,0,0.35);text-transform:uppercase;margin-bottom:28px}
+.hero-year{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:0.3em;color:rgba(0,0,0,0.35);text-transform:uppercase;margin-bottom:28px}
 .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,8vw,7rem);font-weight:300;line-height:0.9;letter-spacing:-0.02em;color:#111}
-.hero p{font-family:'Outfit',sans-serif;font-size:15px;font-weight:300;color:rgba(0,0,0,0.45);margin-top:36px;max-width:440px;line-height:1.7}
+.hero p{font-family:'Inter',sans-serif;font-size:15px;font-weight:300;color:rgba(0,0,0,0.45);margin-top:36px;max-width:440px;line-height:1.7}
 
 .category-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:0 48px 140px}
 .category-card{position:relative;display:block;overflow:hidden;height:clamp(500px,75vh,800px)}
 .category-card img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform 0.7s cubic-bezier(0.23,1,0.32,1)}
 .category-card:hover img{transform:scale(1.04)}
 .category-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.78) 0%,rgba(0,0,0,0.15) 50%,transparent 100%);pointer-events:none}
-.category-card-number{position:absolute;top:24px;left:24px;font-family:'Outfit',sans-serif;font-size:11px;letter-spacing:0.2em;color:rgba(255,255,255,0.55)}
+.category-card-number{position:absolute;top:24px;left:24px;font-family:'Inter',sans-serif;font-size:11px;letter-spacing:0.2em;color:rgba(255,255,255,0.55)}
 .category-card-content{position:absolute;bottom:0;left:0;right:0;padding:32px}
 .category-card-content h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,2.8vw,2.2rem);font-weight:300;color:#fff;line-height:1.2;white-space:pre-line}
-.category-card-subtitle{font-family:'Outfit',sans-serif;font-size:12px;color:rgba(255,255,255,0.55);margin-top:12px;line-height:1.5;max-width:280px;font-weight:300;opacity:0;transform:translateY(8px);transition:opacity 0.5s cubic-bezier(0.23,1,0.32,1),transform 0.5s cubic-bezier(0.23,1,0.32,1)}
+.category-card-subtitle{font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.55);margin-top:12px;line-height:1.5;max-width:280px;font-weight:300;opacity:0;transform:translateY(8px);transition:opacity 0.5s cubic-bezier(0.23,1,0.32,1),transform 0.5s cubic-bezier(0.23,1,0.32,1)}
 .category-card:hover .category-card-subtitle{opacity:1;transform:translateY(0)}
 .category-card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.2)}
-.category-card-count{font-family:'Outfit',sans-serif;font-size:11px;letter-spacing:0.15em;color:rgba(255,255,255,0.45);text-transform:uppercase}
+.category-card-count{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:0.15em;color:rgba(255,255,255,0.45);text-transform:uppercase}
 .category-card-arrow{width:20px;height:20px;color:rgba(255,255,255,0.65);transition:transform 0.4s cubic-bezier(0.23,1,0.32,1)}
 .category-card:hover .category-card-arrow{transform:translateX(4px)}
 
-.footer{border-top:1px solid rgba(0,0,0,0.08);padding:48px;display:flex;align-items:center;justify-content:space-between}
-.footer span{font-family:'Outfit',sans-serif;font-size:11px;letter-spacing:0.15em;color:rgba(0,0,0,0.3)}
+.site-footer{background:#0b0b0b;padding:72px 48px 40px;border-top:1px solid rgba(255,255,255,0.04)}
+.footer-inner{display:flex;justify-content:space-between;align-items:flex-start;max-width:1000px;margin:0 auto 48px;gap:40px;flex-wrap:wrap}
+.footer-logo{display:inline-flex;align-items:center;gap:2px;text-decoration:none}
+.footer-wordmark{height:16px;width:auto;display:block;opacity:0.85;filter:invert(1)}
+.footer-logo .tm{font-family:'Inter',sans-serif;font-size:8px;font-weight:700;color:#fff;opacity:0.6;margin-top:-4px;align-self:flex-start}
+.footer-tagline{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;font-style:italic;color:rgba(255,255,255,0.5);margin-top:16px}
+.footer-email{font-family:'Inter',sans-serif;font-size:13px;color:rgba(255,255,255,0.6);text-decoration:none;margin-top:8px;display:inline-block;transition:color 0.2s ease}
+.footer-email:hover{color:#fff}
+.footer-info{text-align:right}
+.footer-location{font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.35);letter-spacing:0.05em;margin-bottom:16px}
+.footer-links{display:flex;gap:28px}
+.footer-links a{font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.4);text-decoration:none;letter-spacing:0.03em;transition:color 0.2s ease}
+.footer-links a:hover{color:#fff}
+.footer-bottom{text-align:center;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);max-width:1000px;margin:0 auto}
+.footer-bottom p{font-family:'Inter',sans-serif;font-size:11px;color:rgba(255,255,255,0.2);letter-spacing:0.03em}
 
 @media(max-width:900px){
   .nav{padding:16px 24px}
@@ -79,7 +93,13 @@ a{text-decoration:none;color:inherit}
 <body>
 
 <nav class="nav">
-  <a href="https://www.fordivine.com" class="nav-logo">FORDIVINE<sup>™</sup></a>
+  <a href="https://www.fordivine.com" class="nav-logo" aria-label="FORDIVINE home">
+    <picture>
+      <source srcset="/fordivine-logo.webp" type="image/webp">
+      <img src="/fordivine-logo.png" alt="FORDIVINE" class="nav-wordmark" width="1287" height="201" loading="eager" decoding="async">
+    </picture>
+    <span class="tm">&trade;</span>
+  </a>
   <div class="nav-links">
     <a href="https://www.fordivine.com/about-us">About Us</a>
     <a href="/crowned-stories/" class="active">Crowned Stories</a>
@@ -141,9 +161,32 @@ Business Builders</h2>
   </a>
 </section>
 
-<footer class="footer">
-  <span>FORDIVINE<sup>™</sup> &mdash; IRVINE, CALIFORNIA</span>
-  <span>&copy; 2025 FORDIVINE. All rights reserved.</span>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="https://www.fordivine.com" class="footer-logo" aria-label="FORDIVINE home">
+        <picture>
+          <source srcset="/fordivine-logo.webp" type="image/webp">
+          <img src="/fordivine-logo.png" alt="FORDIVINE" class="footer-wordmark" width="1287" height="201" loading="lazy" decoding="async">
+        </picture>
+        <span class="tm">&trade;</span>
+      </a>
+      <p class="footer-tagline">Let&rsquo;s talk vision</p>
+      <a href="mailto:hello@fordivine.com" class="footer-email">hello@fordivine.com</a>
+    </div>
+    <div class="footer-info">
+      <p class="footer-location">Irvine, California</p>
+      <div class="footer-links">
+        <a href="https://www.fordivine.com">Home</a>
+        <a href="/crowned-stories/">Crowned Stories</a>
+        <a href="https://www.fordivine.com/inquire">Contact</a>
+        <a href="/discover/">Services</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>Copyright &copy; 2025 FORDIVINE. All rights reserved.</p>
+  </div>
 </footer>
 
 <script>
