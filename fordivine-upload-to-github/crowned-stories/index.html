@@ -20,6 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -57,21 +58,6 @@ a{text-decoration:none;color:inherit}
 .category-card-arrow{width:20px;height:20px;color:rgba(255,255,255,0.65);transition:transform 0.4s cubic-bezier(0.23,1,0.32,1)}
 .category-card:hover .category-card-arrow{transform:translateX(4px)}
 
-.site-footer{background:#0b0b0b;padding:72px 48px 40px;border-top:1px solid rgba(255,255,255,0.04)}
-.footer-inner{display:flex;justify-content:space-between;align-items:flex-start;max-width:1000px;margin:0 auto 48px;gap:40px;flex-wrap:wrap}
-.footer-logo{display:inline-flex;align-items:center;gap:2px;text-decoration:none}
-.footer-wordmark{height:16px;width:auto;display:block;opacity:0.85;}
-.footer-logo .tm{font-family:'Inter',sans-serif;font-size:8px;font-weight:700;color:#fff;opacity:0.6;margin-top:-4px;align-self:flex-start}
-.footer-tagline{font-family:'Inter',sans-serif;font-size:14px;font-weight:300;color:rgba(255,255,255,0.5);margin-top:16px;letter-spacing:0.02em}
-.footer-email{font-family:'Inter',sans-serif;font-size:13px;color:rgba(255,255,255,0.6);text-decoration:none;margin-top:8px;display:inline-block;transition:color 0.2s ease}
-.footer-email:hover{color:#fff}
-.footer-info{text-align:right}
-.footer-location{font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.35);letter-spacing:0.05em;margin-bottom:16px}
-.footer-links{display:flex;gap:28px}
-.footer-links a{font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.4);text-decoration:none;letter-spacing:0.03em;transition:color 0.2s ease}
-.footer-links a:hover{color:#fff}
-.footer-bottom{text-align:center;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);max-width:1000px;margin:0 auto}
-.footer-bottom p{font-family:'Inter',sans-serif;font-size:11px;color:rgba(255,255,255,0.2);letter-spacing:0.03em}
 
 @media(max-width:900px){
   .nav{padding:16px 24px}
@@ -88,6 +74,45 @@ a{text-decoration:none;color:inherit}
 .reveal.visible{opacity:1;transform:translateY(0)}
 .reveal-delay-1{transition-delay:0.08s}
 .reveal-delay-2{transition-delay:0.16s}
+
+.site-footer{background:#fff;padding:80px 48px 0;border-top:1px solid rgba(0,0,0,0.06)}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;max-width:1200px;margin:0 auto;padding-bottom:80px;gap:40px;flex-wrap:wrap}
+.footer-brand-block h2{font-family:'Inter',sans-serif;font-size:22px;font-weight:800;color:#0b0b0b;letter-spacing:-0.02em;margin:0}
+.footer-brand-block p{font-family:'Inter',sans-serif;font-size:14px;font-weight:300;color:rgba(0,0,0,0.5);margin-top:12px;line-height:1.6;max-width:240px}
+.footer-newsletter h3{font-family:'Cormorant Garamond','Georgia',serif;font-size:32px;font-weight:400;color:#0b0b0b;margin:0}
+.footer-newsletter h3 em{font-style:italic}
+.footer-newsletter .newsletter-desc{font-family:'Inter',sans-serif;font-size:13px;font-weight:300;color:rgba(0,0,0,0.5);margin-top:12px;line-height:1.6;max-width:320px}
+.footer-newsletter form{display:flex;gap:16px;margin-top:24px;align-items:flex-end}
+.footer-newsletter input{font-family:'Inter',sans-serif;font-size:14px;padding:8px 0;border:none;border-bottom:1px solid rgba(0,0,0,0.15);background:transparent;color:#0b0b0b;outline:none;width:160px;transition:border-color 0.2s}
+.footer-newsletter input:focus{border-bottom-color:#0b0b0b}
+.footer-newsletter input::placeholder{color:rgba(0,0,0,0.35)}
+.footer-newsletter button{font-family:'Inter',sans-serif;font-size:14px;font-weight:500;background:#0b0b0b;color:#fff;border:none;padding:10px 20px;border-radius:24px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:background 0.2s}
+.footer-newsletter button:hover{background:#333}
+.footer-newsletter .newsletter-note{font-family:'Cormorant Garamond','Georgia',serif;font-size:13px;font-style:italic;color:rgba(0,0,0,0.4);margin-top:12px}
+.footer-columns{display:flex;justify-content:space-between;max-width:1200px;margin:0 auto;padding:48px 0 64px;border-top:1px solid rgba(0,0,0,0.06);gap:40px;flex-wrap:wrap}
+.footer-col h4{font-family:'Inter',sans-serif;font-size:12px;font-weight:300;color:rgba(0,0,0,0.4);letter-spacing:0.03em;margin:0 0 20px}
+.footer-col a{display:block;font-family:'Inter',sans-serif;font-size:16px;font-weight:600;color:#0b0b0b;text-decoration:none;margin-bottom:12px;transition:opacity 0.2s}
+.footer-col a:hover{opacity:0.6}
+.footer-col p{font-family:'Inter',sans-serif;font-size:16px;font-weight:600;color:#0b0b0b;margin:0 0 12px}
+.footer-col .location{font-family:'Inter',sans-serif;font-size:16px;font-weight:600;color:#0b0b0b;margin:0 0 20px}
+.footer-social{display:flex;gap:16px;margin-top:4px}
+.footer-social a{display:flex;align-items:center;justify-content:center;width:24px;height:24px;color:#0b0b0b;transition:opacity 0.2s}
+.footer-social a:hover{opacity:0.5}
+.footer-social svg{width:20px;height:20px}
+.footer-ticker{background:#0b0b0b;padding:32px 0;overflow:hidden;white-space:nowrap}
+.footer-ticker-inner{display:inline-flex;animation:ticker 20s linear infinite}
+.footer-ticker-text{font-family:'Inter',sans-serif;font-size:clamp(80px,10vw,140px);font-weight:900;color:#fff;letter-spacing:-0.03em;padding:0 24px}
+.footer-ticker-dash{font-family:'Inter',sans-serif;font-size:clamp(80px,10vw,140px);font-weight:300;color:rgba(255,255,255,0.3);padding:0 24px}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.footer-copyright{background:#0b0b0b;padding:16px 48px;text-align:left}
+.footer-copyright p{font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.35);letter-spacing:0.02em;margin:0}
+@media(max-width:768px){
+.footer-top{flex-direction:column;gap:48px;padding-bottom:48px}
+.footer-columns{flex-direction:column;gap:32px;padding:32px 0 48px}
+.footer-newsletter form{flex-direction:column;align-items:flex-start}
+.footer-newsletter input{width:100%}
+}
+
 </style>
 </head>
 <body>
@@ -158,29 +183,57 @@ Business Builders</h2>
 </section>
 
 <footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <a href="https://www.fordivine.com" class="footer-logo" aria-label="FORDIVINE home">
-        <img src="/fordivine-logo.png" alt="FORDIVINE" class="footer-wordmark" width="1287" height="201" loading="lazy" decoding="async">
-        <span class="tm">&trade;</span>
-      </a>
-      <p class="footer-tagline">Let&rsquo;s talk vision</p>
-      <a href="mailto:hello@fordivine.com" class="footer-email">hello@fordivine.com</a>
+  <div class="footer-top">
+    <div class="footer-brand-block">
+      <h2>FORDIVINE&trade;</h2>
+      <p>A brand house for women building empires with Heaven&rsquo;s blueprint.</p>
     </div>
-    <div class="footer-info">
-      <p class="footer-location">Irvine, California</p>
-      <div class="footer-links">
-        <a href="https://www.fordivine.com">Home</a>
-        <a href="/crowned-stories/">Crowned Stories</a>
-        <a href="https://www.fordivine.com/inquire">Contact</a>
-        <a href="/discover/">Services</a>
+    <div class="footer-newsletter">
+      <h3><em>The Called</em> Letters</h3>
+      <p class="newsletter-desc">Join to receive personal branding guidance, soul-stirring insight, exclusive merch drops, and more &mdash; delivered straight to The Called.</p>
+      <form action="#" onsubmit="return false;">
+        <input type="text" placeholder="Full Name">
+        <input type="email" placeholder="Best Email">
+        <button type="submit">Yes, I&rsquo;m Called <span>&rarr;</span></button>
+      </form>
+      <p class="newsletter-note">You&rsquo;re not too late. You&rsquo;re divinely on time.</p>
+    </div>
+  </div>
+  <div class="footer-columns">
+    <div class="footer-col">
+      <h4>Pages</h4>
+      <a href="https://www.fordivine.com">Fordivine&trade;</a>
+      <a href="https://www.fordivine.com/about-us">About Us</a>
+      <a href="/crowned-stories/">Crowned Stories</a>
+      <a href="https://www.fordivine.com/inquire">Contact</a>
+      <a href="/discover/">Services</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="https://www.fordivine.com/privacy-policy">Privacy policy</a>
+      <a href="https://www.fordivine.com/terms-of-service">Terms of service</a>
+    </div>
+    <div class="footer-col">
+      <h4>Get in touch</h4>
+      <p><a href="mailto:hello@fordivine.com">hello@fordivine.com</a></p>
+      <p class="location">Irvine, California</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/fordivine" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="https://www.facebook.com/fordivine" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="https://www.linkedin.com/company/fordivine" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="https://www.youtube.com/@fordivine" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
       </div>
     </div>
   </div>
-  <div class="footer-bottom">
-    <p>Copyright &copy; 2025 FORDIVINE. All rights reserved.</p>
-  </div>
 </footer>
+<div class="footer-ticker">
+  <div class="footer-ticker-inner">
+    <span class="footer-ticker-text">FORDIVINE&trade;</span><span class="footer-ticker-dash">&mdash;</span><span class="footer-ticker-text">FORDIVINE&trade;</span><span class="footer-ticker-dash">&mdash;</span><span class="footer-ticker-text">FORDIVINE&trade;</span><span class="footer-ticker-dash">&mdash;</span><span class="footer-ticker-text">FORDIVINE&trade;</span><span class="footer-ticker-dash">&mdash;</span>
+  </div>
+</div>
+<div class="footer-copyright">
+  <p>Copyright 2025 FORDIVINE. All rights reserved.</p>
+</div>
 
 <script>
 (function(){
