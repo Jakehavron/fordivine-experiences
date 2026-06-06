@@ -91,6 +91,12 @@ a{text-decoration:none;color:inherit}
 .card-mini-zone{position:absolute;top:0;width:50%;height:100%;z-index:3;cursor:pointer}
 .card-mini-zone.prev{left:0}
 .card-mini-zone.next{right:0}
+.card-mini-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:4;cursor:pointer;opacity:0;transition:opacity 0.3s ease;pointer-events:none;filter:drop-shadow(0 1px 3px rgba(0,0,0,0.4))}
+.card-mini-arrow.prev{left:10px}
+.card-mini-arrow.next{right:10px}
+.card-mini-carousel:hover .card-mini-arrow{opacity:0.85;pointer-events:auto}
+.card-mini-arrow:hover{opacity:1}
+.card-mini-arrow svg{width:24px;height:24px;fill:none;stroke:#fff;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
 
 /* CROWNED CAROUSEL */
 
@@ -114,7 +120,7 @@ a{text-decoration:none;color:inherit}
   .testimonial-section{padding:20px 16px 60px}
   .testimonial-card{padding:56px 20px 48px;border-radius:24px}
   .video-reviews-grid{grid-template-columns:1fr;gap:20px;max-width:400px;margin-left:auto;margin-right:auto}
-  .
+  .card-mini-arrow{opacity:0.7;pointer-events:auto}
 }
 
 }
@@ -742,8 +748,53 @@ a{text-decoration:none;color:inherit}
 </script>
 
 <script>
-// ===== CROWNED STORIES CAROUSEL =====
+// ===== MINI CARD CAROUSELS =====
 (function(){
+  document.querySelectorAll('[data-mini-carousel]').forEach(function(carousel){
+    var track=carousel.querySelector('.card-mini-track');
+    var dotsContainer=carousel.querySelector('.card-mini-dots');
+    var slides=Array.from(track.querySelectorAll('.card-mini-slide'));
+    var total=slides.length;
+    var current=0;
+    var busy=false;
+    slides.forEach(function(_,i){
+      var dot=document.createElement('button');
+      dot.className='card-mini-dot'+(i===0?' active':'');
+      dot.setAttribute('aria-label','Slide '+(i+1));
+      dot.addEventListener('click',function(){goTo(i);});
+      dotsContainer.appendChild(dot);
+    });
+    function updateDots(){
+      dotsContainer.querySelectorAll('.card-mini-dot').forEach(function(d,i){d.classList.toggle('active',i===current);});
+    }
+    function goTo(index,animate){
+      if(busy&&animate!==false)return;
+      busy=true;
+      current=((index%total)+total)%total;
+      if(animate===false){track.style.transition='none';}
+      else{track.style.transition='transform 0.45s cubic-bezier(0.16,1,0.3,1)';}
+      track.style.transform='translateX(-'+(current*100)+'%)';
+      updateDots();
+      setTimeout(function(){busy=false;},480);
+    }
+    var startX=0,dragging=false;
+    carousel.addEventListener('touchstart',function(e){startX=e.touches[0].clientX;dragging=true;},{passive:true});
+    carousel.addEventListener('touchend',function(e){if(!dragging)return;dragging=false;var diff=startX-e.changedTouches[0].clientX;if(Math.abs(diff)>30)goTo(diff>0?current+1:current-1);},{passive:true});
+    var prevZone=carousel.querySelector('[data-mini-prev]');
+    var nextZone=carousel.querySelector('[data-mini-next]');
+    if(prevZone)prevZone.addEventListener('click',function(){goTo(current-1);});
+    if(nextZone)nextZone.addEventListener('click',function(){goTo(current+1);});
+    var arrowPrev=carousel.querySelector('[data-mini-arrow-prev]');
+    var arrowNext=carousel.querySelector('[data-mini-arrow-next]');
+    if(arrowPrev)arrowPrev.addEventListener('click',function(e){e.stopPropagation();goTo(current-1);});
+    if(arrowNext)arrowNext.addEventListener('click',function(e){e.stopPropagation();goTo(current+1);});
+    var mouseStartX=0,mouseDragging=false;
+    carousel.addEventListener('mousedown',function(e){mouseStartX=e.clientX;mouseDragging=true;e.preventDefault();});
+    carousel.addEventListener('mouseup',function(e){if(!mouseDragging)return;mouseDragging=false;var diff=mouseStartX-e.clientX;if(Math.abs(diff)>30)goTo(diff>0?current+1:current-1);});
+    carousel.addEventListener('mouseleave',function(){mouseDragging=false;});
+    goTo(0,false);
+  });
+})();
 </script>
 
 <footer>
