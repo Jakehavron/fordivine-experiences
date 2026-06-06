@@ -143,21 +143,21 @@ a{text-decoration:none;color:inherit}
   .carousel-card-media{padding-top:110%}
   .carousel-card-info{padding:18px 18px 22px}
   .carousel-card-role{font-size:15px}
-  .footer{padding:32px 24px;flex-direction:column;gap:12px;align-items:flex-start}
+  .
 }
 
-.footer-brand-block h2{font-family:'Inter',sans-serif;font-size:22px;font-weight:800;color:#0b0b0b;letter-spacing:-0.02em;margin:0}
-.footer-newsletter h3{font-family:'Cormorant Garamond','Georgia',serif;font-size:32px;font-weight:400;color:#0b0b0b;margin:0}
-.footer-newsletter h3 em{font-style:italic}
-.footer-newsletter .newsletter-desc{font-family:'Inter',sans-serif;font-size:13px;font-weight:300;color:rgba(0,0,0,0.5);margin-top:12px;line-height:1.6;max-width:320px}
-.footer-newsletter input:focus{border-bottom-color:#0b0b0b}
-.footer-newsletter input::placeholder{color:rgba(0,0,0,0.35)}
-.footer-newsletter button:hover{background:#333}
-.footer-newsletter .newsletter-note{font-family:'Cormorant Garamond','Georgia',serif;font-size:13px;font-style:italic;color:rgba(0,0,0,0.4);margin-top:12px}
-.footer-col h4{font-family:'Inter',sans-serif;font-size:12px;font-weight:300;color:rgba(0,0,0,0.4);letter-spacing:0.03em;margin:0 0 20px}
-.footer-col a:hover{opacity:0.6}
-.footer-col .location{font-family:'Inter',sans-serif;font-size:16px;font-weight:600;color:#0b0b0b;margin:0 0 20px}
-.footer-social a:hover{opacity:0.5}}
+
+
+
+
+
+
+
+
+
+
+
+}
 @media(max-width:768px){
 }
 
@@ -544,6 +544,100 @@ a{text-decoration:none;color:inherit}
 .framer-text,div.framer-text,h1.framer-text,h2.framer-text,h3.framer-text,h4.framer-text,h5.framer-text,h6.framer-text,li.framer-text,ol.framer-text,ul.framer-text,span.framer-text:not([data-text-fill]){color:var(--framer-blockquote-text-color-rgb,var(--framer-blockquote-text-color,var(--framer-text-color-rgb,var(--framer-text-color,#000))));-webkit-text-stroke-color:var(--framer-text-stroke-color-rgb,var(--framer-text-stroke-color,initial))}
 .framer-styles-preset-102ypls:not(.rich-text-wrapper),.framer-pEC5M .framer-styles-preset-102ypls.rich-text-wrapper p{--framer-font-family:"Proxima Nova Bold","Proxima Nova Bold Placeholder",sans-serif;--framer-font-family-bold:"Inter","Inter Placeholder",sans-serif;--framer-font-family-bold-italic:"Inter","Inter Placeholder",sans-serif;--framer-font-family-italic:"Inter","Inter Placeholder",sans-serif;--framer-font-open-type-features:normal;--framer-font-size:16px;--framer-font-style:normal;--framer-font-style-bold:normal;--framer-font-style-bold-italic:italic;--framer-font-style-italic:italic;--framer-font-variation-axes:normal;--framer-font-weight:400;--framer-font-weight-bold:700;--framer-font-weight-bold-italic:700;--framer-font-weight-italic:400;--framer-letter-spacing:-.01em;--framer-line-height:1.2em;--framer-paragraph-spacing:20px;--framer-text-alignment:start;--framer-text-color:var(--token-a9158171-15f9-4971-9a34-72731a017454,#fff);--framer-text-decoration:underline;--framer-text-stroke-color:initial;--framer-text-stroke-width:initial;--framer-text-transform:none}
 .framer-text,a.framer-text span.framer-text:not([data-text-fill]),span.framer-text[data-nested-link],span.framer-text[data-nested-link] span.framer-text:not([data-text-fill]){color:inherit;font-family:var(--framer-font-family-preview,var(--framer-blockquote-font-family,var(--framer-link-font-family,var(--framer-font-family,Inter,Inter Placeholder,sans-serif))));font-style:var(--framer-font-style-preview,var(--framer-blockquote-font-style,var(--framer-link-font-style,var(--framer-font-style,normal))));font-weight:var(--framer-font-weight-preview,var(--framer-blockquote-font-weight,var(--framer-link-font-weight,var(--framer-font-weight,400))));font-size:calc(var(--framer-blockquote-font-size,var(--framer-font-size,16px))*var(--framer-font-size-scale,1));text-transform:var(--framer-blockquote-text-transform,var(--framer-link-text-transform,var(--framer-text-transform,none)));cursor:var(--framer-custom-cursors,pointer);background-color:initial;border-radius:var(--framer-link-text-background-radius,initial);corner-shape:var(--framer-link-text-background-corner-shape,initial);padding:var(--framer-link-text-background-padding,initial)}
+
+  /* === FOOTER (1:1 from discover page) === */
+  footer {
+    background: var(--charcoal, #1a1a1a);
+    padding: 72px 48px 40px;
+    border-top: 1px solid rgba(255,255,255,0.03);
+  }
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto 56px;
+  }
+  .footer-brand .logo-img-wrap {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    text-decoration: none;
+  }
+  .footer-wordmark {
+    height: 18px;
+    width: auto;
+    display: block;
+    opacity: 0.85;
+  }
+  .footer-brand p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.3);
+    margin-top: 14px;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+  .footer-nav { display: flex; gap: 36px; }
+  .footer-nav a {
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    transition: color 0.4s ease;
+  }
+  .footer-nav a:hover { color: var(--white, #fff); }
+  .footer-question-line {
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.03em;
+    font-weight: 300;
+    margin: 0 auto 28px;
+    max-width: 1000px;
+  }
+  .footer-question-link {
+    color: var(--bone, #f5f0eb);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    transition: opacity 0.2s ease;
+  }
+  .footer-question-link:hover { opacity: 0.65; }
+  .footer-legal {
+    display: flex; gap: 24px; justify-content: center;
+    padding: 24px 0;
+    border-top: 1px solid rgba(255,255,255,0.04);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .footer-legal a {
+    font-size: 11px;
+    color: rgba(255,255,255,0.25);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    font-weight: 400;
+  }
+  .footer-disclaimer {
+    text-align: center;
+    max-width: 800px;
+    margin: 24px auto 0;
+    font-size: 10px;
+    color: rgba(255,255,255,0.15);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+  @media (max-width: 768px) {
+    footer { padding: 56px 24px 32px; }
+    .footer-top { flex-direction: column; gap: 24px; }
+    .footer-nav { flex-wrap: wrap; gap: 12px 20px; }
+    .footer-wordmark { height: 13px; }
+    .footer-legal { flex-wrap: wrap; justify-content: center; gap: 8px; }
+    .footer-nav { gap: 10px 16px; }
+  }
+
 </style>
 </head>
 <body>
@@ -815,7 +909,27 @@ a{text-decoration:none;color:inherit}
 })();
 </script>
 
-<footer class="framer-uaZRN framer-YYRvm framer-THdlI framer-oNFyb framer-49GyS framer-nWw9K framer-24co9 framer-v-24co9" data-framer-name="Desktop" style="background-color:var(--token-b2f6bff9-7045-4f7f-9022-07af8e5cac99, rgb(245, 245, 245));width:100%"><div class="framer-1g0w3c0" data-framer-name="Max width container"><div class="framer-32ik8y" data-framer-name="Container"><!--$--><a class="framer-1e8dg2e framer-6ulx3s" data-framer-name="Logo" href="/"><div class="framer-7rukqq" data-framer-name="Logo"><div class="framer-1utr8s4" data-framer-name="Fordivine Primary_Black"><div data-framer-background-image-wrapper="true" style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0"><img alt="" decoding="async" height="201" sizes="(max-width: 809.98px) max(100vw, 150px), (min-width: 1200px) max(150px, 100vw), (min-width: 810px) and (max-width: 1199.98px) max(150px, 100vw)" src="https://framerusercontent.com/images/PdxJqq6F6hYZhlF5uIFIBIikUI.png?width=1288&amp;height=201" srcset="https://framerusercontent.com/images/PdxJqq6F6hYZhlF5uIFIBIikUI.png?scale-down-to=512&amp;width=1288&amp;height=201 512w,https://framerusercontent.com/images/PdxJqq6F6hYZhlF5uIFIBIikUI.png?scale-down-to=1024&amp;width=1288&amp;height=201 1024w,https://framerusercontent.com/images/PdxJqq6F6hYZhlF5uIFIBIikUI.png?width=1288&amp;height=201 1288w" style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:center;object-fit:cover" width="1288"/></div></div><div class="framer-hgbqzr"><div class="framer-18lwl38" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--token-854aa346-7c97-4e5c-818f-2ec8e58b4068, rgb(23, 23, 23));transform:none"><p class="framer-text" style='--font-selector:Q1VTVE9NO0hlbHZldGljYSBCb2xk;--framer-font-family:"Helvetica Bold", "Helvetica Bold Placeholder", sans-serif;--framer-font-size:20px;--framer-letter-spacing:-0.03em;--framer-line-height:1em;--framer-text-alignment:left;--framer-text-color:var(--extracted-r6o4lv, var(--token-854aa346-7c97-4e5c-818f-2ec8e58b4068, rgb(23, 23, 23)))'>™</p></div></div></div></a><!--/$--><div class="framer-cptyj" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--token-603409f1-0fcd-420a-b64b-f469b50899a6, rgb(32, 32, 32));--framer-paragraph-spacing:0px;transform:none"><p class="framer-text framer-styles-preset-17hrobq" data-styles-preset="Qg3Tpkxxq" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-603409f1-0fcd-420a-b64b-f469b50899a6, rgb(32, 32, 32)))">A brand house for women building empires with Heaven’s blueprint.</p></div></div><div class="framer-h2ieot" data-framer-name="Subscribe"><div class="framer-yfdofy" data-framer-name="Max width container"><div class="framer-1qaulfj" data-framer-component-type="RichTextContainer" data-framer-name="Stay connected" style="--extracted-a0htzi:var(--token-82f7207c-c530-4be6-9bfb-4ff32df9f9b0, rgb(0, 0, 0));--framer-paragraph-spacing:0px;transform:none"><h3 class="framer-text framer-styles-preset-doaj0l" data-styles-preset="rJxR8n9ji" style="--framer-text-color:var(--extracted-a0htzi, var(--token-82f7207c-c530-4be6-9bfb-4ff32df9f9b0, rgb(0, 0, 0)))"><em class="framer-text">The</em> <em class="framer-text">Called</em> Letters</h3></div><div class="framer-913ywe" data-framer-component-type="RichTextContainer" data-framer-name="Join our newsletter and stay updated on the latest trends in digital design" style="--extracted-r6o4lv:var(--token-603409f1-0fcd-420a-b64b-f469b50899a6, rgb(32, 32, 32));--framer-paragraph-spacing:0px;opacity:0.7;transform:none"><p class="framer-text framer-styles-preset-17hrobq" data-styles-preset="Qg3Tpkxxq" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-603409f1-0fcd-420a-b64b-f469b50899a6, rgb(32, 32, 32)))">Join to receive personal branding guidance, soul-stirring insight, exclusive merch drops, and more — delivered straight to The Called.</p></div><div class="framer-1k6jrq2"><form class="framer-l4rsfp"><div class="framer-1agwwjx"><div class="framer-form-text-input framer-form-input-wrapper framer-p9ol15 framer-form-text-input-type" style="--framer-input-border-bottom-width:1px;--framer-input-border-color:var(--token-b1f3e356-2b5c-429a-9d96-d839b1ec9872, rgb(226, 228, 227));--framer-input-border-left-width:0px;--framer-input-border-right-width:0px;--framer-input-border-style:solid;--framer-input-border-top-width:0px;--framer-input-font-color:var(--token-603409f1-0fcd-420a-b64b-f469b50899a6, rgb(32, 32, 32));--framer-input-icon-color:rgb(153, 153, 153);--framer-input-placeholder-color:var(--token-cd595c29-d616-4033-85b0-90d0e178f8fe, rgb(187, 187, 187))"><input class="framer-form-input framer-form-input-empty" name="Full Name" placeholder="Full Name" required="" type="text" value=""/></div><div class="framer-form-text-input framer-form-input-wrapper framer-1941g8e" style="--framer-input-border-bottom-width:1px;--framer-input-border-color:var(--token-b1f3e356-2b5c-429a-9d96-d839b1ec9872, rgb(226, 228, 227));--framer-input-border-left-width:0px;--framer-input-border-right-width:0px;--framer-input-border-style:solid;--framer-input-border-top-width:0px;--framer-input-font-color:var(--token-603409f1-0fcd-420a-b64b-f469b50899a6, rgb(32, 32, 32));--framer-input-icon-color:rgb(153, 153, 153);--framer-input-placeholder-color:var(--token-cd595c29-d616-4033-85b0-90d0e178f8fe, rgb(187, 187, 187))"><input class="framer-form-input framer-form-input-empty" name="E-mail" placeholder="Best Email" required="" type="email" value=""/></div></div><div class="framer-1etrxf0-container" data-framer-name="Submit newsletter" name="Submit newsletter"><button class="framer-ll6wB framer-oNFyb framer-1gapkin framer-v-1gapkin" data-framer-name="Default" data-reset="button" name="Submit newsletter" style="background-color:var(--token-24837cba-ff61-4e23-87ee-372ea0bee4e7, rgb(66, 66, 66));border-bottom-left-radius:32px;border-bottom-right-radius:32px;border-top-left-radius:32px;border-top-right-radius:32px" type="submit"><div class="framer-1sf36g9" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--variable-reference-fidKvx1aA-enCKc_JGv);--framer-link-text-color:rgb(0, 153, 255);--framer-link-text-decoration:underline;--variable-reference-fidKvx1aA-enCKc_JGv:var(--token-a9158171-15f9-4971-9a34-72731a017454, rgb(255, 255, 255));transform:none"><p class="framer-text framer-styles-preset-adkr2a" data-styles-preset="Kw9v9fKXW" style="--framer-text-color:var(--extracted-r6o4lv, var(--variable-reference-fidKvx1aA-enCKc_JGv))">Yes, I’m Called</p></div><div class="framer-waiiz7-container"><!--$--><div style="display:contents"></div><!--/$--></div></button></div><input aria-hidden="true" autocomplete="one-time-code" data-1p-ignore="true" data-bwignore="true" data-form-type="other" data-lpignore="true" name="website" style="position:absolute;transform:scale(0)" tabindex="-1" type="text" value=""/><input aria-hidden="true" autocomplete="one-time-code" data-1p-ignore="true" data-bwignore="true" data-form-type="other" data-lpignore="true" name="company" style="position:absolute;transform:scale(0)" tabindex="-1" type="text" value=""/><input aria-hidden="true" autocomplete="one-time-code" data-1p-ignore="true" data-bwignore="true" data-form-type="other" data-lpignore="true" name="message" style="position:absolute;transform:scale(0)" tabindex="-1" type="text" value=""/><input aria-hidden="true" autocomplete="one-time-code" data-1p-ignore="true" data-bwignore="true" data-form-type="other" data-lpignore="true" name="subject" style="position:absolute;transform:scale(0)" tabindex="-1" type="text" value=""/><input aria-hidden="true" autocomplete="one-time-code" data-1p-ignore="true" data-bwignore="true" data-form-type="other" data-lpignore="true" name="title" style="position:absolute;transform:scale(0)" tabindex="-1" type="text" value=""/><input aria-hidden="true" autocomplete="one-time-code" data-1p-ignore="true" data-bwignore="true" data-form-type="other" data-lpignore="true" name="description" style="position:absolute;transform:scale(0)" tabindex="-1" type="text" value=""/><input aria-hidden="true" autocomplete="one-time-code" data-1p-ignore="true" data-bwignore="true" data-form-type="other" data-lpignore="true" name="feedback" style="position:absolute;transform:scale(0)" tabindex="-1" type="text" value=""/><input aria-hidden="true" autocomplete="one-time-code" data-1p-ignore="true" data-bwignore="true" data-form-type="other" data-lpignore="true" name="notes" style="position:absolute;transform:scale(0)" tabindex="-1" type="text" value=""/><input aria-hidden="true" autocomplete="one-time-code" data-1p-ignore="true" data-bwignore="true" data-form-type="other" data-lpignore="true" name="details" style="position:absolute;transform:scale(0)" tabindex="-1" type="text" value=""/><input aria-hidden="true" autocomplete="one-time-code" data-1p-ignore="true" data-bwignore="true" data-form-type="other" data-lpignore="true" name="remarks" style="position:absolute;transform:scale(0)" tabindex="-1" type="text" value=""/><input aria-hidden="true" autocomplete="one-time-code" data-1p-ignore="true" data-bwignore="true" data-form-type="other" data-lpignore="true" name="comments" style="position:absolute;transform:scale(0)" tabindex="-1" type="text" value=""/></form><div class="framer-627zyz" data-framer-component-type="RichTextContainer" data-framer-name="Join our newsletter and stay updated on the latest trends in digital design" style="--extracted-r6o4lv:var(--token-603409f1-0fcd-420a-b64b-f469b50899a6, rgb(32, 32, 32));--framer-paragraph-spacing:0px;opacity:0.7;transform:none"><p class="framer-text" style='--font-selector:Q1VTVE9NO1Byb3hpbWEgTm92YSBSZWd1bGFy;--framer-font-family:"Proxima Nova Regular", "Proxima Nova Regular Placeholder", sans-serif;--framer-font-size:12px;--framer-letter-spacing:0.03em;--framer-text-color:var(--extracted-r6o4lv, var(--token-603409f1-0fcd-420a-b64b-f469b50899a6, rgb(32, 32, 32)))'>You’re not too late. You’re divinely on time.</p></div></div></div></div></div><div class="framer-exabkk" data-framer-name="Max width container"><div class="framer-3x1yh3" data-framer-name="Links and contact"><div class="framer-17sy7gw" data-framer-name="Links container"><div class="framer-xcpsmf" data-framer-name="Container"><div class="framer-cec6op" data-framer-component-type="RichTextContainer" data-framer-name="Stay connected" style="--extracted-r6o4lv:var(--token-82f7207c-c530-4be6-9bfb-4ff32df9f9b0, rgb(0, 0, 0));--framer-paragraph-spacing:0px;opacity:0.5;transform:none"><p class="framer-text framer-styles-preset-adkr2a" data-styles-preset="Kw9v9fKXW" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-82f7207c-c530-4be6-9bfb-4ff32df9f9b0, rgb(0, 0, 0)))">Pages</p></div><div class="framer-ujn3wx" data-framer-name="Links"><div class="framer-qjw1dc" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--token-82f7207c-c530-4be6-9bfb-4ff32df9f9b0, rgb(0, 0, 0));transform:none"><p class="framer-text framer-styles-preset-1hsrhwd" data-styles-preset="wCFvaOo3l" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-82f7207c-c530-4be6-9bfb-4ff32df9f9b0, rgb(0, 0, 0)))"><!--$--><a class="framer-text framer-styles-preset-1g7918m" data-styles-preset="eQ842Xx03" href="/">Fordivine™</a><!--/$--></p></div><div class="framer-afxmw4" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--token-82f7207c-c530-4be6-9bfb-4ff32df9f9b0, rgb(0, 0, 0));transform:none"><p class="framer-text framer-styles-preset-1hsrhwd" data-styles-preset="wCFvaOo3l" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-82f7207c-c530-4be6-9bfb-4ff32df9f9b0, rgb(0, 0, 0)))"><!--$--><a class="framer-text framer-styles-preset-1g7918m" data-styles-preset="eQ842Xx03" href="/fd-house">About Us</a><!--/$--></p></div><div class="framer-9eo03j" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--token-82f7207c-c530-4be6-9bfb-4ff32df9f9b0, rgb(0, 0, 0));transform:none"><p class="framer-text framer-styles-preset-1hsrhwd" data-styles-preset="wCFvaOo3l" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-82f7207c-c530-4be6-9bfb-4ff32df9f9b0, rgb(0, 0, 0)))"><!--$--><a class="framer-text framer-styles-preset-1g7918m" data-framer-page-link-current="true" data-styles-preset="eQ842Xx03" href="/crowned-stories/">Crowned Stories</a><!--/$--></p></div><div class="framer-1qo1tn6" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--token-82f7207c-c530-4be6-9bfb-4ff32df9f9b0, rgb(0, 0, 0));transform:none"><p class="framer-text framer-styles-preset-1hsrhwd" data-styles-preset="wCFvaOo3l" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-82f7207c-c530-4be6-9bfb-4ff32df9f9b0, rgb(0, 0, 0)))"><!--$--><a class="framer-text framer-styles-preset-1g7918m" data-styles-preset="eQ842Xx03" href="/inquire">Contact</a><!--/$--></p></div><div class="framer-1c6sjyf" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--token-82f7207c-c530-4be6-9bfb-4ff32df9f9b0, rgb(0, 0, 0));transform:none"><p class="framer-text framer-styles-preset-1hsrhwd" data-styles-preset="wCFvaOo3l" dir="auto" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-82f7207c-c530-4be6-9bfb-4ff32df9f9b0, rgb(0, 0, 0)))"><!--$--><a class="framer-text framer-styles-preset-1g7918m" data-styles-preset="eQ842Xx03" href="https://www.fordivine.com/discover " rel="noopener">Services</a><!--/$--></p></div></div></div><div class="framer-41z8f2" data-framer-name="Container"><div class="framer-ma5l7d" data-framer-component-type="RichTextContainer" data-framer-name="Stay connected" style="--extracted-r6o4lv:var(--token-82f7207c-c530-4be6-9bfb-4ff32df9f9b0, rgb(0, 0, 0));--framer-paragraph-spacing:0px;opacity:0.5;transform:none"><p class="framer-text framer-styles-preset-adkr2a" data-styles-preset="Kw9v9fKXW" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-82f7207c-c530-4be6-9bfb-4ff32df9f9b0, rgb(0, 0, 0)))">Legal</p></div><div class="framer-xn3poa" data-framer-name="Links"><div class="framer-riat98" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--token-82f7207c-c530-4be6-9bfb-4ff32df9f9b0, rgb(0, 0, 0));transform:none"><p class="framer-text framer-styles-preset-1hsrhwd" data-styles-preset="wCFvaOo3l" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-82f7207c-c530-4be6-9bfb-4ff32df9f9b0, rgb(0, 0, 0)))"><!--$--><a class="framer-text framer-styles-preset-1g7918m" data-styles-preset="eQ842Xx03" href="https://home.fordivine.com/privacy-policy">Privacy policy</a><!--/$--></p></div><div class="framer-zqlki5" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--token-82f7207c-c530-4be6-9bfb-4ff32df9f9b0, rgb(0, 0, 0));transform:none"><p class="framer-text framer-styles-preset-1hsrhwd" data-styles-preset="wCFvaOo3l" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-82f7207c-c530-4be6-9bfb-4ff32df9f9b0, rgb(0, 0, 0)))"><!--$--><a class="framer-text framer-styles-preset-1g7918m" data-styles-preset="eQ842Xx03" href="https://home.fordivine.com/terms-of-use">Terms of service</a><!--/$--></p></div></div></div><div class="framer-1th38e7" data-framer-name="Contact"><div class="framer-oj7z97" data-framer-component-type="RichTextContainer" data-framer-name="Stay connected" style="--extracted-r6o4lv:var(--token-82f7207c-c530-4be6-9bfb-4ff32df9f9b0, rgb(0, 0, 0));--framer-paragraph-spacing:0px;opacity:0.5;transform:none"><p class="framer-text framer-styles-preset-adkr2a" data-styles-preset="Kw9v9fKXW" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-82f7207c-c530-4be6-9bfb-4ff32df9f9b0, rgb(0, 0, 0)))">Get in touch</p></div><div class="framer-nnprpn"><div class="framer-1o8wyhy" data-framer-name="Main"><div class="framer-1k6fyde" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--token-82f7207c-c530-4be6-9bfb-4ff32df9f9b0, rgb(0, 0, 0));transform:none"><p class="framer-text framer-styles-preset-1hsrhwd" data-styles-preset="wCFvaOo3l" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-82f7207c-c530-4be6-9bfb-4ff32df9f9b0, rgb(0, 0, 0)))"><!--$--><a class="framer-text framer-styles-preset-1g7918m" data-styles-preset="eQ842Xx03" href="mailto:hello@fordivine.com" rel="noopener" target="_blank">hello@fordivine.com</a><!--/$--></p></div><div class="framer-1m3mrc4" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--token-82f7207c-c530-4be6-9bfb-4ff32df9f9b0, rgb(0, 0, 0));transform:none"><p class="framer-text framer-styles-preset-1hsrhwd" data-styles-preset="wCFvaOo3l" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-82f7207c-c530-4be6-9bfb-4ff32df9f9b0, rgb(0, 0, 0)))">Irvine, California</p></div></div><div class="framer-1okmigm" data-framer-name="Social"><div class="framer-ht3dpu-container"><!--$--><a class="framer-pjIDX framer-YYRvm framer-1ptm0gg framer-v-1ptm0gg framer-1xkcqo8" data-framer-name="Default" data-highlight="true" href="https://www.instagram.com/fordivinehouse/" rel="noopener" tabindex="0" target="_blank"><div class="framer-83fe3w-container"><!--$--><div style="display:contents"></div><!--/$--></div></a><!--/$--></div><div class="framer-fhhqvj-container"><!--$--><a class="framer-pjIDX framer-YYRvm framer-1ptm0gg framer-v-1ptm0gg framer-1xkcqo8" data-framer-name="Default" data-highlight="true" href="https://www.facebook.com/itsemilyford" rel="noopener" tabindex="0" target="_blank"><div class="framer-83fe3w-container"><!--$--><div style="display:contents"></div><!--/$--></div></a><!--/$--></div><div class="framer-6x74v3-container"><!--$--><a class="framer-pjIDX framer-YYRvm framer-1ptm0gg framer-v-1ptm0gg framer-1xkcqo8" data-framer-name="Default" data-highlight="true" href="https://www.linkedin.com/in/itsemily" rel="noopener" tabindex="0" target="_blank"><div class="framer-83fe3w-container"><!--$--><div style="display:contents"></div><!--/$--></div></a><!--/$--></div><div class="framer-17lyajl-container"><!--$--><a class="framer-pjIDX framer-YYRvm framer-1ptm0gg framer-v-1ptm0gg framer-1xkcqo8" data-framer-name="Default" data-highlight="true" href="https://www.youtube.com/@ITSEMILYFORD" rel="noopener" tabindex="0" target="_blank"><div class="framer-83fe3w-container"><!--$--><div style="display:contents"></div><!--/$--></div></a><!--/$--></div></div></div></div></div></div></div><div class="framer-2hdeqv" data-framer-name="Logo ticker"><div class="framer-6tp1ry-container"><div class="framer-biXte framer-IcEei framer-AUAPc framer-12edr8w framer-v-12edr8w" data-framer-appear-id="12edr8w" data-framer-name="Ticker Desktop" style="width:100%;will-change:transform;opacity:0.001;transform:translateY(30px) scale(0.96)"><div class="framer-1aeiq4q-container" data-framer-name="Desktop" name="Desktop"><!--$--><section style="display:flex;width:100%;height:100%;max-width:100%;max-height:100%;place-items:center;margin:0;padding:0px;list-style-type:none;text-indent:none;opacity:0;-webkit-mask-image:linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 100%, rgba(0, 0, 0, 0) 100%);mask-image:linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 100%, rgba(0, 0, 0, 0) 100%);overflow:hidden"><ul style="display:flex;width:100%;height:100%;max-width:100%;max-height:100%;place-items:center;margin:0;padding:0;list-style-type:none;text-indent:none;gap:6px;position:relative;flex-direction:row;will-change:auto;transform:translateX(-0px)"><li aria-hidden="true"><div class="framer-o1d5eh" data-framer-name="Desktop logo" style="flex-shrink:0"><div class="framer-15q3muc"><div class="framer-ayhapl" data-framer-name="Fordivine Primary_Black"><div data-framer-background-image-wrapper="true" style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0"><img alt="" decoding="async" height="201" sizes="(max-width: 809.98px) max(100vw, 150px), (min-width: 1200px) max(150px, 100vw), (min-width: 810px) and (max-width: 1199.98px) max(150px, 100vw)" src="https://framerusercontent.com/images/PdxJqq6F6hYZhlF5uIFIBIikUI.png?scale-down-to=1024&amp;width=1288&amp;height=201" srcset="https://framerusercontent.com/images/PdxJqq6F6hYZhlF5uIFIBIikUI.png?scale-down-to=512&amp;width=1288&amp;height=201 512w,https://framerusercontent.com/images/PdxJqq6F6hYZhlF5uIFIBIikUI.png?scale-down-to=1024&amp;width=1288&amp;height=201 1024w,https://framerusercontent.com/images/PdxJqq6F6hYZhlF5uIFIBIikUI.png?width=1288&amp;height=201 1288w" style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:center;object-fit:cover" width="1288"/></div></div></div><div class="framer-2lv32h" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--variable-reference-gLnvYuzOe-mzaXDB_pt);--variable-reference-gLnvYuzOe-mzaXDB_pt:var(--token-854aa346-7c97-4e5c-818f-2ec8e58b4068, rgb(31, 31, 31));transform:none"><p class="framer-text framer-styles-preset-dwwa0q" data-styles-preset="gexX3e2dK" style="--framer-text-color:var(--extracted-r6o4lv, var(--variable-reference-gLnvYuzOe-mzaXDB_pt))">™</p></div><div class="framer-2uphcw" data-framer-component-type="RichTextContainer" style="justify-content:flex-end;--extracted-r6o4lv:var(--variable-reference-gLnvYuzOe-mzaXDB_pt);--variable-reference-gLnvYuzOe-mzaXDB_pt:var(--token-854aa346-7c97-4e5c-818f-2ec8e58b4068, rgb(31, 31, 31));transform:none"><p class="framer-text framer-styles-preset-1c3evuq" data-styles-preset="iyd2Jl0xc" style="--framer-text-color:var(--extracted-r6o4lv, var(--variable-reference-gLnvYuzOe-mzaXDB_pt))">—</p></div></div></li></ul></section><!--/$--></div></div></div></div><div class="framer-1vxci1d" data-framer-name="Tech details" style="background-color:var(--token-854aa346-7c97-4e5c-818f-2ec8e58b4068, rgb(5, 5, 5))"><div class="framer-z86ie5" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--token-a9158171-15f9-4971-9a34-72731a017454, rgb(255, 255, 255));--framer-link-text-color:rgb(0, 153, 255);--framer-link-text-decoration:underline;opacity:0.7;transform:none"><p class="framer-text framer-styles-preset-adkr2a" data-styles-preset="Kw9v9fKXW" style="--framer-text-alignment:left;--framer-text-color:var(--extracted-r6o4lv, var(--token-a9158171-15f9-4971-9a34-72731a017454, rgb(255, 255, 255)))">Copyright 2025 FORDIVINE. All rights reserved.</p></div></div></footer>
 
+
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="https://www.fordivine.com" class="logo logo-img-wrap" aria-label="FORDIVINE home"><picture><source srcset="/fordivine-logo.webp" type="image/webp"><img src="/fordivine-logo.png" alt="FORDIVINE" class="footer-wordmark" width="1287" height="201" loading="lazy" decoding="async"></picture></a>
+      <p>An Authority Engineering House helping women<br>become Crowned Authorities&trade; in their space.</p>
+    </div>
+    <div class="footer-nav">
+      <a href="https://www.fordivine.com" target="_blank" rel="noopener noreferrer">Home</a>
+      <a href="https://home.fordivine.com/crowned-stories" target="_blank" rel="noopener noreferrer">Crowned Stories</a>
+      <a href="#top" aria-label="Return to the top of the FORDIVINE Discover page">Inquire Now</a>
+    </div>
+  </div>
+  <p class="footer-question-line">Got a question? Email <a href="mailto:Hello@fordivine.com?subject=I%20have%20a%20question!%20re%3A%20Discovery%20page&body=Hi%20team!%0A%0AI%20have%20a%20question%20regarding..%20(insert%20your%20details%20here)" class="footer-question-link">Hello@fordivine.com</a></p>
+  <div class="footer-legal">
+    <a href="https://home.fordivine.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+    <a href="https://home.fordivine.com/terms-of-use" target="_blank" rel="noopener">Terms of Service</a>
+  </div>
+  <p class="footer-disclaimer">Emily Ford and FORDIVINE&trade;'s results are not typical and are not a guarantee of your success. Your results will vary depending on your effort, application, experience, and background. We do not give investment, tax, or other professional advice. The information contained within this website is the property of Fortitude LLC. Any use of the images, content, or ideas expressed herein without the express written consent of Fortitude LLC is prohibited. Copyright &copy; 2025 FORDIVINE&trade;. All Rights Reserved.</p>
+</footer>
 </body>
 </html>
