@@ -23,7 +23,9 @@
 
   function getStoryMeta() {
     const path = window.location.pathname.replace(/\/+$/, '');
-    const slug = path.split('/').filter(Boolean).pop() || '';
+    const segments = path.split('/').filter(Boolean);
+    const lastSegment = segments[segments.length - 1] || '';
+    const slug = lastSegment === 'index.html' ? (segments[segments.length - 2] || '') : lastSegment;
     const name = storyMap[slug] || '';
     const isCrownedStory = path.includes('/crowned-stories/') && Boolean(name);
     return { slug, name, isCrownedStory };
@@ -161,30 +163,262 @@
   function enhanceStoryProgress(meta) {
     if (!meta.isCrownedStory || doc.querySelector('[data-cs-story-progress]')) return;
 
-    const progress = doc.createElement('div');
-    progress.className = 'cs-story-progress';
-    progress.dataset.csStoryProgress = 'true';
-    progress.setAttribute('role', 'progressbar');
-    progress.setAttribute('aria-label', `${meta.name} story reading progress`);
-    progress.setAttribute('aria-valuemin', '0');
-    progress.setAttribute('aria-valuemax', '100');
-    progress.setAttribute('aria-valuenow', '0');
-    progress.innerHTML = `
-      <span class="cs-story-progress__bar" aria-hidden="true"></span>
-      <span class="cs-story-progress__pill" aria-hidden="true">${escapeHtml(meta.name)} · 0%</span>`;
-    doc.body.appendChild(progress);
+    const phases = [
+      { short: 'Meet', label: 'The Introduction', caption: 'Entering her Crowned Story.' },
+      { short: 'Unveil', label: 'The Unveiling', caption: 'Where the deeper identity begins to surface.' },
+      { short: 'Refine', label: 'The Refinement', caption: 'Brand details, visuals, message, and authority polish.' },
+      { short: 'Prepare', label: 'The Preparation', caption: 'The final work before her crowned reveal.' },
+      { short: 'Reign', label: 'Now Reigning', caption: 'The finished presence taking its rightful place.' }
+    ];
 
-    const pill = progress.querySelector('.cs-story-progress__pill');
+    const frame = doc.createElement('iframe');
+    frame.className = 'cs-story-progress-frame';
+    frame.dataset.csStoryProgress = 'true';
+    frame.dataset.csProgressActive = 'false';
+    frame.dataset.csProgressPhase = '0';
+    frame.title = `${meta.name} story reading progress`;
+    frame.setAttribute('aria-label', `${meta.name} story reading progress`);
+    frame.setAttribute('aria-valuemin', '0');
+    frame.setAttribute('aria-valuemax', '100');
+    frame.setAttribute('aria-valuenow', '0');
+    frame.setAttribute('scrolling', 'no');
+    frame.setAttribute('tabindex', '-1');
+    frame.setAttribute('frameborder', '0');
+    frame.setAttribute('allowtransparency', 'true');
+    doc.body.appendChild(frame);
+
+    const frameDoc = frame.contentDocument || (frame.contentWindow && frame.contentWindow.document);
+    if (!frameDoc) return;
+
+    frameDoc.open();
+    frameDoc.write(`<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @font-face { font-family: "Helvetica Bold"; src: url("https://framerusercontent.com/assets/ApKD8HJjYHTqN2owNt8rsd2v0c.woff2"); font-display: swap; font-style: normal; font-weight: 400; }
+  @font-face { font-family: "Proxima Nova Regular"; src: url("https://framerusercontent.com/assets/lk0lI1lYugJk737ZJsSf2yWwcs.woff2"); font-display: swap; font-style: normal; font-weight: 400; }
+  @font-face { font-family: "Proxima Nova Bold"; src: url("https://framerusercontent.com/assets/Ks1NqktMLpAgtXYP9S1oLkSCJQ.woff2"); font-display: swap; font-style: normal; font-weight: 700; }
+  :root {
+    --cs-ink: #241f1a;
+    --cs-muted: #7b6c58;
+    --cs-gold: #9b7a47;
+    --cs-gold-soft: rgba(151, 121, 76, 0.28);
+    --cs-cream: rgba(255, 252, 245, 0.98);
+    --cs-cream-warm: rgba(248, 245, 239, 0.96);
+    --cs-border: rgba(151, 121, 76, 0.32);
+    --cs-progress: 0%;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: transparent; }
+  body { font-family: "Proxima Nova Regular", "Proxima Nova Regular Placeholder", Arial, sans-serif; color: var(--cs-ink); }
+  .cs-story-progress {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 104px;
+    height: 244px;
+    padding: 12px 10px 11px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    overflow: visible;
+  }
+  .cs-story-progress::before {
+    content: none;
+    display: none;
+  }
+  .cs-story-progress__eyebrow {
+    display: block;
+    position: relative;
+    z-index: 2;
+    margin: 0 auto 8px;
+    font-family: "Helvetica Bold", "Helvetica Bold Placeholder", "Proxima Nova Bold", Arial, sans-serif;
+    font-size: 7px;
+    letter-spacing: 0.14em;
+    line-height: 1.15;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--cs-gold);
+    font-weight: 800;
+  }
+  .cs-story-progress__rail {
+    position: relative;
+    z-index: 2;
+    width: 34px;
+    height: 132px;
+    margin: 0 auto 9px;
+  }
+  .cs-story-progress__line,
+  .cs-story-progress__fill {
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    bottom: 10px;
+    width: 2px;
+    transform: translateX(-50%);
+    border-radius: 999px;
+  }
+  .cs-story-progress__line { background: rgba(151, 121, 76, 0.18); }
+  .cs-story-progress__fill {
+    bottom: auto;
+    height: var(--cs-progress);
+    max-height: calc(100% - 20px);
+    background: linear-gradient(180deg, rgba(151,121,76,0.34), rgba(151,121,76,0.78));
+    box-shadow: 0 0 14px rgba(151, 121, 76, 0.14);
+    transition: height 220ms ease;
+  }
+  .cs-story-progress__pearls {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+  .cs-story-progress__pearl {
+    width: 19px;
+    height: 19px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    border: 1px solid rgba(151, 121, 76, 0.30);
+    background: radial-gradient(circle at 35% 28%, #fffdf8 0 28%, #ece8df 72%, #c2b8a3 100%);
+    color: rgba(62, 57, 45, 0.76);
+    font-family: "Helvetica Bold", "Helvetica Bold Placeholder", "Proxima Nova Bold", Arial, sans-serif;
+    font-size: 8px;
+    font-weight: 700;
+    line-height: 1;
+    box-shadow: 0 4px 10px rgba(61, 45, 28, 0.09);
+    transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease, color 220ms ease;
+  }
+  .cs-story-progress__pearl[data-active="true"] {
+    width: 23px;
+    height: 23px;
+    color: #3e392d;
+    border-color: rgba(151, 121, 76, 0.68);
+    box-shadow: 0 0 0 5px rgba(151, 121, 76, 0.10), 0 8px 16px rgba(61, 45, 28, 0.16);
+    transform: scale(1.04);
+  }
+  .cs-story-progress__title {
+    display: block;
+    position: relative;
+    z-index: 2;
+    width: fit-content;
+    max-width: 74px;
+    margin: 0 auto 7px;
+    padding: 5px 8px 4px;
+    border: 1px solid rgba(151, 121, 76, 0.22);
+    border-radius: 999px;
+    background: transparent;
+    font-family: "Helvetica Bold", "Helvetica Bold Placeholder", "Proxima Nova Bold", Arial, sans-serif;
+    font-size: 8px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--cs-ink);
+    white-space: nowrap;
+  }
+  .cs-story-progress__caption {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .cs-story-progress__percent {
+    display: block;
+    position: relative;
+    z-index: 2;
+    font-family: "Helvetica Bold", "Helvetica Bold Placeholder", "Proxima Nova Bold", Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    text-align: center;
+    color: rgba(36, 31, 26, 0.68);
+  }
+  @media (max-width: 700px) {
+    .cs-story-progress {
+      top: 8px;
+      right: 8px;
+      width: 96px;
+      height: 226px;
+      padding: 11px 9px 10px;
+      border-radius: 25px;
+      box-shadow: none;
+    }
+    .cs-story-progress::before { content: none; display: none; }
+    .cs-story-progress__eyebrow { margin-bottom: 7px; font-size: 6.5px; letter-spacing: 0.13em; }
+    .cs-story-progress__rail { height: 122px; margin-bottom: 8px; }
+    .cs-story-progress__pearl { width: 18px; height: 18px; font-size: 7.5px; }
+    .cs-story-progress__pearl[data-active="true"] { width: 22px; height: 22px; box-shadow: 0 0 0 4px rgba(151, 121, 76, 0.10), 0 6px 14px rgba(61, 45, 28, 0.15); }
+    .cs-story-progress__title { max-width: 68px; padding: 5px 7px 4px; font-size: 7.5px; }
+    .cs-story-progress__percent { font-size: 9px; }
+  }
+</style>
+</head>
+<body>
+  <div class="cs-story-progress" role="progressbar" aria-label="${escapeHtml(meta.name)} story reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+    <span class="cs-story-progress__eyebrow">Pearl Timeline</span>
+    <div class="cs-story-progress__rail" aria-hidden="true">
+      <span class="cs-story-progress__line"></span>
+      <span class="cs-story-progress__fill"></span>
+      <div class="cs-story-progress__pearls">
+        ${phases.map((phase, index) => `<span class="cs-story-progress__pearl" data-cs-progress-pearl="${index}" data-active="${index === 0 ? 'true' : 'false'}">${index + 1}</span>`).join('')}
+      </div>
+    </div>
+    <span class="cs-story-progress__title" data-cs-progress-title>${escapeHtml(phases[0].short)}</span>
+    <span class="cs-story-progress__caption" data-cs-progress-caption>${escapeHtml(phases[0].label)} · ${escapeHtml(phases[0].caption)}</span>
+    <span class="cs-story-progress__percent" data-cs-progress-percent>0%</span>
+  </div>
+</body>
+</html>`);
+    frameDoc.close();
+
+    const progress = frameDoc.querySelector('.cs-story-progress');
+    const pearls = Array.from(frameDoc.querySelectorAll('[data-cs-progress-pearl]'));
+    const title = frameDoc.querySelector('[data-cs-progress-title]');
+    const caption = frameDoc.querySelector('[data-cs-progress-caption]');
+    const percentText = frameDoc.querySelector('[data-cs-progress-percent]');
     let ticking = false;
+    let currentPhase = -1;
 
     const update = () => {
       const scrollTop = window.scrollY || doc.documentElement.scrollTop || 0;
       const scrollHeight = Math.max(doc.documentElement.scrollHeight - window.innerHeight, 1);
       const percent = Math.max(0, Math.min(100, Math.round((scrollTop / scrollHeight) * 100)));
-      progress.style.setProperty('--cs-progress', `${percent}%`);
-      progress.dataset.csProgressActive = percent > 3 ? 'true' : 'false';
-      progress.setAttribute('aria-valuenow', String(percent));
-      if (pill) pill.textContent = `${meta.name} · ${percent}%`;
+      const phaseIndex = Math.max(0, Math.min(phases.length - 1, Math.floor((percent / 100) * phases.length)));
+      const phase = phases[phaseIndex];
+      frame.style.setProperty('--cs-progress', `${percent}%`);
+      frame.dataset.csProgressActive = percent > 3 ? 'true' : 'false';
+      frame.dataset.csProgressPhase = String(phaseIndex);
+      frame.setAttribute('aria-valuenow', String(percent));
+      frame.setAttribute('aria-valuetext', `${phase.label}, ${percent}% complete`);
+      if (progress) {
+        progress.style.setProperty('--cs-progress', `${percent}%`);
+        progress.setAttribute('aria-valuenow', String(percent));
+        progress.setAttribute('aria-valuetext', `${phase.label}, ${percent}% complete`);
+      }
+      if (percentText) percentText.textContent = `${percent}%`;
+      if (phaseIndex !== currentPhase) {
+        currentPhase = phaseIndex;
+        pearls.forEach((pearl, index) => {
+          pearl.dataset.active = index === phaseIndex ? 'true' : 'false';
+        });
+        if (title) title.textContent = phase.short;
+        if (caption) caption.textContent = `${phase.label} · ${phase.caption}`;
+      }
       ticking = false;
     };
 

@@ -214,50 +214,209 @@ html.cs-enhancements-ready [data-cs-media-shell].cs-is-visible img {
 
 .cs-story-progress {
   --cs-progress: 0%;
+  --cs-pearl-active: 0;
+  --cs-pearl-ink: #2f2924;
+  --cs-pearl-muted: rgba(47,41,36,.66);
+  --cs-pearl-cream: rgba(255,252,245,.98);
+  --cs-pearl-surface: rgba(248,243,235,.96);
+  --cs-pearl-line: rgba(184,151,90,.42);
+  --cs-pearl-gold: #b8975a;
+  --cs-pearl-shadow: rgba(46,33,19,.16);
+  bottom: 46px;
+  left: auto;
+  top: auto;
   display: block;
-  inset: 0 0 auto 0;
+  font-family: Inter, Arial, sans-serif;
   pointer-events: none;
   position: fixed;
-  z-index: 2147482500;
+  right: 32px;
+  width: min(316px, calc(100vw - 64px));
+  isolation: isolate;
+  z-index: 2147483647;
+}
+
+.cs-story-progress[popover],
+.cs-story-progress:popover-open {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  height: auto;
+  margin: 0;
+  max-height: none;
+  max-width: none;
+  overflow: visible;
+  padding: 0;
+}
+
+.cs-story-progress::backdrop {
+  display: none;
 }
 
 .cs-story-progress__bar {
-  background: linear-gradient(90deg, rgba(184,151,90,.58), rgba(255,255,255,.84), rgba(184,151,90,.78));
-  box-shadow: 0 0 22px rgba(184,151,90,.28);
+  background: linear-gradient(180deg, rgba(184,151,90,.74), rgba(184,151,90,.28));
+  border-radius: 999px;
+  bottom: 72px;
   display: block;
-  height: 3px;
-  opacity: .92;
-  transform: scaleX(calc(var(--cs-progress) / 100%));
-  transform-origin: left center;
-  transition: transform 160ms linear, opacity 320ms var(--cs-ease);
+  left: 31px;
+  opacity: .78;
+  overflow: hidden;
+  position: absolute;
+  top: 72px;
+  width: 2px;
+}
+
+.cs-story-progress__bar::after {
+  background: linear-gradient(180deg, rgba(255,252,245,.96), rgba(184,151,90,.96));
+  border-radius: inherit;
+  box-shadow: 0 0 22px rgba(184,151,90,.35);
+  content: '';
+  display: block;
+  height: var(--cs-progress);
+  max-height: 100%;
+  min-height: 0;
+  transition: height 180ms linear;
   width: 100%;
 }
 
-.cs-story-progress__pill {
-  background: rgba(248,243,235,.82);
-  border: 1px solid rgba(184,151,90,.22);
-  border-radius: 999px;
-  box-shadow: 0 16px 44px rgba(11,9,7,.12);
-  color: rgba(11,9,7,.72);
-  display: inline-flex;
-  font-family: Inter, Arial, sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .08em;
-  line-height: 1;
-  opacity: 0;
-  padding: 10px 12px;
-  position: fixed;
-  right: 22px;
-  text-transform: uppercase;
-  top: 88px;
-  transform: translate3d(0, -6px, 0);
-  transition: opacity 260ms var(--cs-ease), transform 260ms var(--cs-ease);
+.cs-story-progress__inner {
+  align-items: stretch;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,.9), transparent 30%),
+    linear-gradient(142deg, rgba(255,250,240,.995), rgba(244,235,220,.985));
+  border: 1px solid rgba(184,151,90,.52);
+  border-radius: 30px;
+  box-shadow: 0 28px 92px rgba(46,33,19,.28), 0 0 0 1px rgba(255,255,255,.52) inset, inset 0 1px 0 rgba(255,255,255,.86);
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 64px 1fr;
+  min-height: 318px;
+  opacity: .99;
+  padding: 26px 22px 24px 18px;
+  position: relative;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 280ms var(--cs-ease), transform 280ms var(--cs-ease), box-shadow 280ms var(--cs-ease);
 }
 
-.cs-story-progress[data-cs-progress-active='true'] .cs-story-progress__pill {
-  opacity: .88;
-  transform: translate3d(0, 0, 0);
+.cs-story-progress__inner::before {
+  border: 1px solid rgba(255,255,255,.68);
+  border-radius: 25px;
+  content: '';
+  inset: 7px;
+  pointer-events: none;
+  position: absolute;
+}
+
+.cs-story-progress[data-cs-progress-active='false'] .cs-story-progress__inner {
+  opacity: .82;
+  transform: translate3d(0, 4px, 0);
+}
+
+.cs-story-progress__pearls {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 6px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.cs-story-progress__pearl {
+  align-items: center;
+  background: var(--cs-pearl-cream);
+  border: 1px solid rgba(184,151,90,.38);
+  border-radius: 999px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.88), 0 6px 18px rgba(46,33,19,.08);
+  color: rgba(47,41,36,.58);
+  display: inline-flex;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 12px;
+  font-weight: 600;
+  height: 26px;
+  justify-content: center;
+  letter-spacing: .02em;
+  position: relative;
+  transition: border-color 220ms var(--cs-ease), box-shadow 220ms var(--cs-ease), color 220ms var(--cs-ease), transform 220ms var(--cs-ease);
+  width: 26px;
+  z-index: 2;
+}
+
+.cs-story-progress__pearl[data-active='true'] {
+  border-color: rgba(184,151,90,.92);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.95), 0 0 0 5px rgba(184,151,90,.14), 0 10px 26px rgba(184,151,90,.24);
+  color: var(--cs-pearl-ink);
+  transform: scale(1.08);
+}
+
+.cs-story-progress__content {
+  align-self: center;
+  min-width: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.cs-story-progress__eyebrow {
+  color: var(--cs-pearl-gold);
+  display: block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .15em;
+  line-height: 1.25;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.cs-story-progress__title {
+  color: var(--cs-pearl-ink);
+  display: block;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: -.035em;
+  line-height: 1.04;
+  margin-bottom: 9px;
+}
+
+.cs-story-progress__caption {
+  color: var(--cs-pearl-muted);
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .01em;
+  line-height: 1.55;
+  max-width: 170px;
+}
+
+.cs-story-progress__percent {
+  align-items: center;
+  color: rgba(47,41,36,.58);
+  display: inline-flex;
+  font-size: 10px;
+  font-weight: 800;
+  gap: 8px;
+  letter-spacing: .12em;
+  line-height: 1;
+  margin-top: 18px;
+  text-transform: uppercase;
+}
+
+.cs-story-progress__percent::before {
+  background: rgba(184,151,90,.54);
+  content: '';
+  display: block;
+  height: 1px;
+  width: 34px;
+}
+
+.cs-story-progress__pill {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cs-story-progress__inner:hover {
+    box-shadow: 0 26px 82px rgba(46,33,19,.2), inset 0 1px 0 rgba(255,255,255,.74);
+    opacity: 1;
+  }
 }
 
 @media (max-width: 809px) {
@@ -280,11 +439,98 @@ html.cs-enhancements-ready [data-cs-media-shell].cs-is-visible img {
     word-break: normal !important;
   }
 
-  .cs-story-progress__bar {
-    height: 2px;
+  .cs-story-progress {
+    bottom: max(34px, calc(env(safe-area-inset-bottom) + 18px));
+    left: 14px;
+    right: 14px;
+    width: auto;
   }
 
-  .cs-story-progress__pill {
+  .cs-story-progress__inner {
+    align-items: center;
+    background: linear-gradient(142deg, rgba(255,250,240,.995), rgba(244,235,220,.985));
+    border: 1px solid rgba(184,151,90,.5);
+    border-radius: 24px;
+    box-shadow: 0 22px 62px rgba(46,33,19,.28), 0 0 0 1px rgba(255,255,255,.52) inset, inset 0 1px 0 rgba(255,255,255,.82);
+    gap: 12px;
+    grid-template-columns: 1fr;
+    min-height: 0;
+    padding: 17px 16px 16px;
+  }
+
+  .cs-story-progress__inner::before {
+    border-radius: 19px;
+    inset: 5px;
+  }
+
+  .cs-story-progress__bar {
+    background: linear-gradient(90deg, rgba(184,151,90,.88), rgba(184,151,90,.34));
+    bottom: auto;
+    height: 2px;
+    left: 28px;
+    right: 28px;
+    top: 28px;
+    width: auto;
+  }
+
+  .cs-story-progress__bar::after {
+    height: 100%;
+    transition: width 180ms linear;
+    width: var(--cs-progress);
+  }
+
+  .cs-story-progress__pearls {
+    flex-direction: row;
+    grid-row: 1;
+    padding: 0;
+    width: 100%;
+  }
+
+  .cs-story-progress__pearl {
+    font-size: 10px;
+    height: 20px;
+    width: 20px;
+  }
+
+  .cs-story-progress__pearl[data-active='true'] {
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.95), 0 0 0 4px rgba(184,151,90,.15), 0 8px 18px rgba(184,151,90,.2);
+    transform: scale(1.05);
+  }
+
+  .cs-story-progress__content {
+    align-items: center;
+    display: grid;
+    gap: 4px 10px;
+    grid-template-columns: 1fr auto;
+    width: 100%;
+  }
+
+  .cs-story-progress__eyebrow {
+    font-size: 9px;
+    letter-spacing: .13em;
+    margin: 0;
+  }
+
+  .cs-story-progress__title {
+    font-size: 19px;
+    grid-column: 1;
+    margin: 0;
+  }
+
+  .cs-story-progress__caption {
+    display: none;
+  }
+
+  .cs-story-progress__percent {
+    align-self: end;
+    color: rgba(47,41,36,.7);
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  .cs-story-progress__percent::before {
     display: none;
   }
 }
@@ -658,3 +904,38 @@ html.cs-enhancements-ready [data-cs-media-shell].cs-is-visible img {
   }
 }
 
+
+
+/* Pearl Timeline isolated overlay frame
+   Keeps the progress feature as a compact vertical timeline in the top-right corner on desktop and mobile. */
+.cs-story-progress-frame {
+  position: fixed !important;
+  right: 22px !important;
+  top: calc(24px + env(safe-area-inset-top, 0px)) !important;
+  bottom: auto !important;
+  left: auto !important;
+  width: 128px !important;
+  height: 266px !important;
+  max-width: calc(100vw - 24px) !important;
+  border: 0 !important;
+  outline: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  color-scheme: normal !important;
+  overflow: visible !important;
+  pointer-events: none !important;
+  z-index: 2147483647 !important;
+}
+
+@media (max-width: 700px) {
+  .cs-story-progress-frame {
+    right: 10px !important;
+    top: calc(64px + env(safe-area-inset-top, 0px)) !important;
+    bottom: auto !important;
+    left: auto !important;
+    width: 112px !important;
+    height: 244px !important;
+    max-width: calc(100vw - 20px) !important;
+  }
+}
