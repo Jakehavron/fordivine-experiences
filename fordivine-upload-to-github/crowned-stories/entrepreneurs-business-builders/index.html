@@ -27,14 +27,29 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 a{text-decoration:none;color:inherit}
 
 /* NAV */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 48px;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid rgba(0,0,0,0.04)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 48px;background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 .nav-logo{display:inline-flex;align-items:center;gap:2px;text-decoration:none}
 .nav-wordmark{height:18px;width:auto;display:block}
-.nav-logo .tm{font-family:'Inter',sans-serif;font-size:9px;font-weight:700;color:#1f1f1f;opacity:0.7;margin-top:-6px;align-self:flex-start}
+.nav-logo .tm{font-family:'Inter',sans-serif;font-size:10px;font-weight:700;color:#1f1f1f;vertical-align:super}
 .nav-links{display:flex;align-items:center;gap:40px}
 .nav-links a{font-family:'Inter',sans-serif;font-size:13px;letter-spacing:0.04em;color:rgba(0,0,0,0.5);transition:color 0.2s ease;font-weight:400}
 .nav-links a:hover{color:#111}
 .nav-links a.active{color:#111;font-weight:500}
+.mobile-hamburger-nav{display:none;position:fixed;top:0;left:0;right:0;height:60px;background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:10001;align-items:center;justify-content:space-between;padding:0 20px}
+.mobile-hamburger-nav .nav-logo{font-family:'Inter',sans-serif;font-size:16px;font-weight:700;letter-spacing:-0.02em;color:#1f1f1f;text-decoration:none}
+.mobile-hamburger-nav .nav-logo .tm{font-size:10px;vertical-align:super}
+.mobile-hamburger-nav .hamburger-btn{display:flex;flex-direction:column;justify-content:center;align-items:center;width:32px;height:32px;background:none;border:none;cursor:pointer;padding:4px;gap:5px}
+.mobile-hamburger-nav .hamburger-btn span{display:block;width:22px;height:2px;background:#1f1f1f;transition:all 0.3s ease;border-radius:1px}
+.mobile-hamburger-nav .hamburger-btn.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.mobile-hamburger-nav .hamburger-btn.active span:nth-child(2){opacity:0}
+.mobile-hamburger-nav .hamburger-btn.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mobile-menu-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#ffffff;z-index:10000;flex-direction:column;justify-content:center;align-items:center;opacity:0;transition:opacity 0.3s ease}
+.mobile-menu-overlay.active{display:flex;opacity:1}
+.mobile-menu-overlay a{font-family:'Inter',sans-serif;font-size:24px;font-weight:400;color:#1f1f1f;text-decoration:none;padding:16px 0;letter-spacing:-0.02em}
+.mobile-menu-overlay a:hover{opacity:0.6}
+.mobile-menu-overlay a.active-link{font-weight:600}
+@media(min-width:810px){.mobile-hamburger-nav,.mobile-menu-overlay{display:none!important}}
+@media(max-width:809px){.mobile-hamburger-nav{display:flex!important}.nav{display:none!important}}
 
 /* BACK LINK */
 .back-link{display:inline-flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(0,0,0,0.4);transition:color 0.2s ease;margin-bottom:24px}
@@ -111,7 +126,7 @@ a{text-decoration:none;color:inherit}
 /* RESPONSIVE */
 @media(max-width:900px){
   .nav{padding:16px 24px}
-  .nav-links{display:none}
+  .nav{display:none!important}
   .page-header{padding:110px 24px 40px}
   .page-header h1{font-size:clamp(2rem,10vw,3.5rem)}
   .crowned-heroes{padding:0}
@@ -615,7 +630,7 @@ a{text-decoration:none;color:inherit}
     <a href="https://www.fordivine.com/about-us">About Us</a>
     <a href="/crowned-stories/" class="active">Crowned Stories</a>
     <a href="https://www.fordivine.com/inquire">Contact</a>
-    <a href="/discover/">Services</a>
+    <a href="https://www.fordivine.com/discover" target="_blank">Services</a>
   </div>
 </nav>
 <nav class="mobile-hamburger-nav">
