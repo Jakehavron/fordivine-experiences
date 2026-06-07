@@ -594,3 +594,67 @@ html.cs-enhancements-ready [data-cs-media-shell].cs-is-visible img {
   }
 }
 
+/* Static replacements for recovered Crowned Story video slots. These keep the pages self-hosted and prevent blank Vimeo shells. */
+.fd-static-proof-card {
+  background:
+    radial-gradient(circle at 18% 12%, rgba(184, 151, 90, .22), transparent 34%),
+    linear-gradient(145deg, rgba(248, 243, 235, .98), rgba(231, 219, 198, .94));
+  color: #221b15;
+  min-height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.fd-static-proof-card::before {
+  background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, .36) 46%, transparent 66%);
+  content: '';
+  inset: 0;
+  opacity: .55;
+  position: absolute;
+  transform: translateX(-30%);
+}
+
+.fd-static-proof-card__inner {
+  align-items: flex-start;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-end;
+  min-height: 420px;
+  padding: clamp(28px, 4vw, 54px);
+  position: relative;
+  z-index: 2;
+}
+
+.fd-static-proof-card__eyebrow,
+.fd-static-proof-card cite {
+  color: #8b704a;
+  font: 700 11px/1.4 Inter, Arial, sans-serif;
+  letter-spacing: .18em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.fd-static-proof-card blockquote {
+  color: #2f2924;
+  font: 500 clamp(24px, 3.2vw, 42px)/1.08 "Cormorant Garamond", Georgia, serif;
+  margin: 18px 0 18px;
+  max-width: 820px;
+}
+
+.fd-static-proof-card cite {
+  font-style: normal;
+}
+
+@media (max-width: 809px) {
+  .fd-static-proof-card__inner {
+    min-height: 360px;
+    padding: 30px 24px;
+  }
+
+  .fd-static-proof-card blockquote {
+    font-size: 28px;
+  }
+}
+
