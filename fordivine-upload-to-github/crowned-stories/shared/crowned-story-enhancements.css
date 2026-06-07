@@ -559,3 +559,38 @@ html.cs-enhancements-ready [data-cs-media-shell].cs-is-visible img {
     transition: none !important;
   }
 }
+
+/* Mobile hero safe-area and title crop guard. */
+@media (max-width: 809px) {
+  html,
+  body {
+    overflow-x: clip;
+  }
+
+  body[data-cs-story-slug] {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  body[data-cs-story-slug] h1,
+  body[data-cs-story-slug] [data-framer-component-type="RichTextContainer"] {
+    text-wrap: balance;
+  }
+
+  body[data-cs-story-slug] [data-framer-component-type="RichTextContainer"] {
+    max-width: min(100%, calc(100vw - 32px));
+  }
+
+  body[data-cs-story-slug='ali-marie'] h1,
+  body[data-cs-story-slug='beth-clifford'] h1,
+  body[data-cs-story-slug='christa-crawford'] h1,
+  body[data-cs-story-slug='lauren-fields'] h1,
+  body[data-cs-story-slug='roni-lavenia'] h1 {
+    line-height: .9 !important;
+  }
+
+  body[data-cs-story-slug='christa-crawford'] h1,
+  body[data-cs-story-slug='roni-lavenia'] h1 {
+    letter-spacing: -.07em !important;
+  }
+}
+

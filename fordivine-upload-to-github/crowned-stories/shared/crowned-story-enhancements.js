@@ -88,6 +88,17 @@
     });
   }
 
+  function enhanceImageAltText(meta) {
+    if (!meta.isCrownedStory) return;
+    const safeName = meta.name || 'FORDIVINE client';
+    doc.querySelectorAll('img').forEach((img, index) => {
+      const existingAlt = img.getAttribute('alt');
+      if (existingAlt && existingAlt.trim()) return;
+      img.setAttribute('alt', `${safeName} Crowned Story visual ${index + 1}`);
+      img.dataset.csAltEnhanced = 'true';
+    });
+  }
+
   function enhanceMediaShells() {
     doc.querySelectorAll('video').forEach((video, index) => {
       const shell = video.closest('[data-cs-media-shell]') || video.parentElement;
@@ -193,11 +204,10 @@
 
     const navLinks = [
       { label: 'Home', href: 'https://www.fordivine.com/', match: '/' },
-      { label: 'FD House', href: 'https://www.fordivine.com/fd-house', match: '/fd-house' },
+      { label: 'About Us', href: 'https://www.fordivine.com/about-us', match: '/about-us' },
       { label: 'Crowned Stories', href: 'https://www.fordivine.com/crowned-stories/', match: '/crowned-stories' },
       { label: 'Services', href: 'https://www.fordivine.com/discover', match: '/discover' },
-      { label: 'Inquire', href: 'https://www.fordivine.com/inquire', match: '/inquire' },
-      { label: 'Retreat', href: 'https://home.fordivine.com/retreat', match: '/retreat' },
+      { label: 'Contact', href: 'https://www.fordivine.com/discover', match: '/discover' },
       { label: 'Email', href: 'mailto:hello@fordivine.com', match: 'mailto:' }
     ];
 
@@ -323,6 +333,7 @@
     if (meta.name) doc.body?.setAttribute('data-cs-story-name', meta.name);
     enhanceMobileNav(meta);
     enhanceLinks();
+    enhanceImageAltText(meta);
     enhanceTickers();
     enhanceMediaShells();
     enhanceLongHeroTitles(meta);
