@@ -164,11 +164,14 @@
     if (!meta.isCrownedStory || doc.querySelector('[data-cs-story-progress]')) return;
 
     const phases = [
-      { short: 'Meet', label: 'The Introduction', caption: 'Entering her Crowned Story.' },
-      { short: 'Unveil', label: 'The Unveiling', caption: 'Where the deeper identity begins to surface.' },
-      { short: 'Refine', label: 'The Refinement', caption: 'Brand details, visuals, message, and authority polish.' },
-      { short: 'Prepare', label: 'The Preparation', caption: 'The final work before her crowned reveal.' },
-      { short: 'Reign', label: 'Now Reigning', caption: 'The finished presence taking its rightful place.' }
+      { short: 'INTRO', label: 'Intro', caption: 'Before Section 03 begins.', section: null, patterns: [] },
+      { short: 'UNVEIL', label: 'Section 03 · The Unveiling', caption: 'Her deeper identity begins to surface.', section: '03', patterns: [/^The Unveiling( Phase)?$/i] },
+      { short: 'REFINE', label: 'Section 04 · The Refinement', caption: 'Brand details, visuals, message, and authority polish.', section: '04', patterns: [/^The Refinement$/i] },
+      { short: 'REVEAL', label: 'Section 05 · Reveal', caption: 'The completed identity is revealed.', section: '05', patterns: [/^(The )?(Brand )?Reveal$/i] },
+      { short: 'PREP', label: 'Section 06 · Prep', caption: 'The final preparation before Coronation Day.', section: '06', patterns: [/^(Preparation Phase|Coronation Prep)$/i] },
+      { short: 'CORONATION', label: 'Section 07 · Coronation Day', caption: 'Her story steps in front of the camera.', section: '07', patterns: [/^Coronation Day$/i] },
+      { short: 'CROWNED', label: 'Section 08 · Crowned, And Now Reigning', caption: 'The finished presence takes its rightful place.', section: '08', patterns: [/^Crowned,\s*(And|and)\s*Now\s*Reigning$/i] },
+      { short: 'REFLECTION', label: 'Section 09 · Founder’s Reflection', caption: 'Emily reflects on the transformation.', section: '09', patterns: [/^Founder[’']s Reflection$/i] }
     ];
 
     const frame = doc.createElement('iframe');
@@ -215,11 +218,11 @@
   body { font-family: "Proxima Nova Regular", "Proxima Nova Regular Placeholder", Arial, sans-serif; color: var(--cs-ink); }
   .cs-story-progress {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 104px;
-    height: 244px;
-    padding: 12px 10px 11px;
+    top: 12px;
+    right: 12px;
+    width: 125px;
+    height: 293px;
+    padding: 10px 10px 11px;
     border: 0;
     border-radius: 0;
     background: transparent;
@@ -230,26 +233,13 @@
     content: none;
     display: none;
   }
-  .cs-story-progress__eyebrow {
-    display: block;
-    position: relative;
-    z-index: 2;
-    margin: 0 auto 8px;
-    font-family: "Helvetica Bold", "Helvetica Bold Placeholder", "Proxima Nova Bold", Arial, sans-serif;
-    font-size: 7px;
-    letter-spacing: 0.14em;
-    line-height: 1.15;
-    text-align: center;
-    text-transform: uppercase;
-    color: var(--cs-gold);
-    font-weight: 800;
-  }
+  .cs-story-progress__eyebrow { display: none; }
   .cs-story-progress__rail {
     position: relative;
     z-index: 2;
     width: 34px;
-    height: 132px;
-    margin: 0 auto 9px;
+    height: 210px;
+    margin: 0 auto 10px;
   }
   .cs-story-progress__line,
   .cs-story-progress__fill {
@@ -280,8 +270,8 @@
     height: 100%;
   }
   .cs-story-progress__pearl {
-    width: 19px;
-    height: 19px;
+    width: 20px;
+    height: 20px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -290,15 +280,15 @@
     background: radial-gradient(circle at 35% 28%, #fffdf8 0 28%, #ece8df 72%, #c2b8a3 100%);
     color: rgba(62, 57, 45, 0.76);
     font-family: "Helvetica Bold", "Helvetica Bold Placeholder", "Proxima Nova Bold", Arial, sans-serif;
-    font-size: 8px;
+    font-size: 8.5px;
     font-weight: 700;
     line-height: 1;
     box-shadow: 0 4px 10px rgba(61, 45, 28, 0.09);
     transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease, color 220ms ease;
   }
   .cs-story-progress__pearl[data-active="true"] {
-    width: 23px;
-    height: 23px;
+    width: 25px;
+    height: 25px;
     color: #3e392d;
     border-color: rgba(151, 121, 76, 0.68);
     box-shadow: 0 0 0 5px rgba(151, 121, 76, 0.10), 0 8px 16px rgba(61, 45, 28, 0.16);
@@ -309,9 +299,9 @@
     position: relative;
     z-index: 2;
     width: fit-content;
-    max-width: 74px;
+    max-width: 112px;
     margin: 0 auto 7px;
-    padding: 5px 8px 4px;
+    padding: 5px 9px 4px;
     border: 1px solid rgba(151, 121, 76, 0.22);
     border-radius: 999px;
     background: transparent;
@@ -341,7 +331,7 @@
     position: relative;
     z-index: 2;
     font-family: "Helvetica Bold", "Helvetica Bold Placeholder", "Proxima Nova Bold", Arial, sans-serif;
-    font-size: 10px;
+    font-size: 10.5px;
     font-weight: 800;
     line-height: 1;
     letter-spacing: 0.08em;
@@ -354,13 +344,13 @@
       right: 8px;
       width: 96px;
       height: 226px;
-      padding: 11px 9px 10px;
+      padding: 9px 9px 10px;
       border-radius: 25px;
       box-shadow: none;
     }
     .cs-story-progress::before { content: none; display: none; }
-    .cs-story-progress__eyebrow { margin-bottom: 7px; font-size: 6.5px; letter-spacing: 0.13em; }
-    .cs-story-progress__rail { height: 122px; margin-bottom: 8px; }
+    .cs-story-progress__eyebrow { display: none; }
+    .cs-story-progress__rail { height: 156px; margin-bottom: 8px; }
     .cs-story-progress__pearl { width: 18px; height: 18px; font-size: 7.5px; }
     .cs-story-progress__pearl[data-active="true"] { width: 22px; height: 22px; box-shadow: 0 0 0 4px rgba(151, 121, 76, 0.10), 0 6px 14px rgba(61, 45, 28, 0.15); }
     .cs-story-progress__title { max-width: 68px; padding: 5px 7px 4px; font-size: 7.5px; }
@@ -370,7 +360,6 @@
 </head>
 <body>
   <div class="cs-story-progress" role="progressbar" aria-label="${escapeHtml(meta.name)} story reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-    <span class="cs-story-progress__eyebrow">Pearl Timeline</span>
     <div class="cs-story-progress__rail" aria-hidden="true">
       <span class="cs-story-progress__line"></span>
       <span class="cs-story-progress__fill"></span>
@@ -394,11 +383,58 @@
     let ticking = false;
     let currentPhase = -1;
 
+    const normalizeText = (value) => String(value || '').replace(/\s+/g, ' ').trim();
+
+    const isVisibleElement = (el) => {
+      if (!el) return false;
+      const rect = el.getBoundingClientRect();
+      const style = window.getComputedStyle(el);
+      return rect.width > 1 && rect.height > 1 && style.display !== 'none' && style.visibility !== 'hidden';
+    };
+
+    const findSectionNumberElement = (sectionNumber) => {
+      if (!sectionNumber) return null;
+      const explicitAnchor = doc.querySelector(`[data-cs-section-anchor="${sectionNumber}"]`);
+      if (explicitAnchor && isVisibleElement(explicitAnchor)) return explicitAnchor;
+      const candidates = Array.from(doc.querySelectorAll('h1, h2, h3, h4, p, span, [data-framer-component-type="RichTextContainer"]'));
+      return candidates
+        .filter((candidate) => normalizeText(candidate.textContent) === sectionNumber && isVisibleElement(candidate))
+        .sort((a, b) => (a.getBoundingClientRect().top + window.scrollY) - (b.getBoundingClientRect().top + window.scrollY))[0] || null;
+    };
+
+    const findPhaseElement = (phase) => {
+      const sectionMarker = findSectionNumberElement(phase.section);
+      if (sectionMarker) return sectionMarker;
+      if (!phase.patterns || !phase.patterns.length) return null;
+      const candidates = Array.from(doc.querySelectorAll('h1, h2, h3, h4, p, [data-framer-component-type="RichTextContainer"]'));
+      return candidates.find((candidate) => {
+        const text = normalizeText(candidate.textContent);
+        return text && isVisibleElement(candidate) && phase.patterns.some((pattern) => pattern.test(text));
+      }) || null;
+    };
+
+    const getPhaseStarts = () => {
+      const fallbackScrollHeight = Math.max(doc.documentElement.scrollHeight - window.innerHeight, 1);
+      return phases.map((phase, index) => {
+        if (index === 0) return 0;
+        const target = findPhaseElement(phase);
+        if (!target) return Math.round((index / phases.length) * fallbackScrollHeight);
+        const rect = target.getBoundingClientRect();
+        return Math.max(0, Math.round(rect.top + window.scrollY));
+      });
+    };
+
     const update = () => {
       const scrollTop = window.scrollY || doc.documentElement.scrollTop || 0;
       const scrollHeight = Math.max(doc.documentElement.scrollHeight - window.innerHeight, 1);
       const percent = Math.max(0, Math.min(100, Math.round((scrollTop / scrollHeight) * 100)));
-      const phaseIndex = Math.max(0, Math.min(phases.length - 1, Math.floor((percent / 100) * phases.length)));
+      const phaseStarts = getPhaseStarts();
+      const activationPoint = scrollTop + Math.max(160, Math.min(window.innerHeight * 0.86, window.innerHeight - 72));
+      let phaseIndex = 0;
+      phaseStarts.forEach((start, index) => {
+        if (activationPoint >= start) phaseIndex = index;
+      });
+      phaseIndex = Math.max(0, Math.min(phases.length - 1, phaseIndex));
       const phase = phases[phaseIndex];
       frame.style.setProperty('--cs-progress', `${percent}%`);
       frame.dataset.csProgressActive = percent > 3 ? 'true' : 'false';
