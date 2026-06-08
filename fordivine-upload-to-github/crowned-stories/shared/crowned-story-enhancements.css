@@ -911,11 +911,11 @@ html.cs-enhancements-ready [data-cs-media-shell].cs-is-visible img {
 .cs-story-progress-frame {
   position: fixed !important;
   right: 22px !important;
-  top: calc(34px + env(safe-area-inset-top, 0px)) !important;
+  top: calc(78px + env(safe-area-inset-top, 0px)) !important;
   bottom: auto !important;
   left: auto !important;
   width: 154px !important;
-  height: 319px !important;
+  height: 394px !important;
   max-width: calc(100vw - 24px) !important;
   border: 0 !important;
   outline: 0 !important;
@@ -931,11 +931,11 @@ html.cs-enhancements-ready [data-cs-media-shell].cs-is-visible img {
 @media (max-width: 700px) {
   .cs-story-progress-frame {
     right: 10px !important;
-    top: calc(96px + env(safe-area-inset-top, 0px)) !important;
+    top: calc(126px + env(safe-area-inset-top, 0px)) !important;
     bottom: auto !important;
     left: auto !important;
     width: 112px !important;
-    height: 244px !important;
+    height: 394px !important;
     max-width: calc(100vw - 20px) !important;
   }
 }

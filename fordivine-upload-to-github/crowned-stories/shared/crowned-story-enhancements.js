@@ -218,10 +218,10 @@
   body { font-family: "Proxima Nova Regular", "Proxima Nova Regular Placeholder", Arial, sans-serif; color: var(--cs-ink); }
   .cs-story-progress {
     position: absolute;
-    top: 12px;
+    top: 16px;
     right: 12px;
     width: 125px;
-    height: 293px;
+    height: 342px;
     padding: 10px 10px 11px;
     border: 0;
     border-radius: 0;
@@ -238,8 +238,8 @@
     position: relative;
     z-index: 2;
     width: 34px;
-    height: 210px;
-    margin: 0 auto 10px;
+    height: 258px;
+    margin: 0 auto 12px;
   }
   .cs-story-progress__line,
   .cs-story-progress__fill {
@@ -340,17 +340,17 @@
   }
   @media (max-width: 700px) {
     .cs-story-progress {
-      top: 8px;
+      top: 10px;
       right: 8px;
       width: 96px;
-      height: 226px;
+      height: 338px;
       padding: 9px 9px 10px;
       border-radius: 25px;
       box-shadow: none;
     }
     .cs-story-progress::before { content: none; display: none; }
     .cs-story-progress__eyebrow { display: none; }
-    .cs-story-progress__rail { height: 156px; margin-bottom: 8px; }
+    .cs-story-progress__rail { height: 264px; margin-bottom: 12px; }
     .cs-story-progress__pearl { width: 18px; height: 18px; font-size: 7.5px; }
     .cs-story-progress__pearl[data-active="true"] { width: 22px; height: 22px; box-shadow: 0 0 0 4px rgba(151, 121, 76, 0.10), 0 6px 14px rgba(61, 45, 28, 0.15); }
     .cs-story-progress__title { max-width: 68px; padding: 5px 7px 4px; font-size: 7.5px; }
