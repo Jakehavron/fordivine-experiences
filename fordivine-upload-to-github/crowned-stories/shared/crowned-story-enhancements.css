@@ -977,3 +977,33 @@ html.cs-enhancements-ready [data-cs-media-shell].cs-is-visible img {
   }
 }
 
+/* Static self-hosted refinement videos must never remain hidden by reveal hydration.
+   Roni Lavenia exposed a case where the frame received data-cs-reveal/data-cs-media-shell
+   but never received cs-is-visible, leaving the working MP4 at opacity: 0.001. */
+html.cs-enhancements-ready .fd-refinement-video-section,
+html.cs-enhancements-ready .fd-refinement-video-shell,
+html.cs-enhancements-ready .fd-refinement-video-frame,
+html.cs-enhancements-ready .fd-refinement-video-frame[data-cs-reveal],
+html.cs-enhancements-ready .fd-refinement-video-frame[data-cs-media-shell],
+html.cs-enhancements-ready .fd-refinement-video-frame.cs-media-loaded,
+html.cs-enhancements-ready [data-cs-media-shell].cs-media-loaded:has(video.crowned-story-static-video),
+html.cs-enhancements-ready [data-cs-media-shell].cs-is-visible:has(video.crowned-story-static-video),
+html.cs-enhancements-ready [data-cs-media-shell].cs-media-loaded:has(.fd-active-static-video),
+html.cs-enhancements-ready [data-cs-media-shell].cs-is-visible:has(.fd-active-static-video),
+html.cs-enhancements-ready .crowned-story-static-media-frame,
+html.cs-enhancements-ready .crowned-story-static-media-frame video,
+html.cs-enhancements-ready .fd-active-static-video,
+html.cs-enhancements-ready .fd-active-static-video video {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+html.cs-enhancements-ready .fd-refinement-video-frame video {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  filter: none !important;
+}
+
