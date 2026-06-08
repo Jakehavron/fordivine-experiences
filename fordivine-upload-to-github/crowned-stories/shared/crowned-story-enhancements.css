@@ -1265,3 +1265,42 @@ body[data-crowned-story] .framer-dHSaT :where(.framer-l2bll9, .framer-2dg6g8, .f
     padding-right: 20px !important;
   }
 }
+
+/* Crowned Stories optimization: shared mobile hero/name safe areas. */
+body[data-crowned-story] :where(h1, [data-cs-long-hero-title="true"]){
+  overflow-wrap: normal !important;
+  text-wrap: balance !important;
+}
+body[data-crowned-story] [data-framer-name*="Hero"] img,
+body[data-crowned-story] [data-framer-name*="hero"] img{
+  object-position: center 34% !important;
+}
+@media (max-width: 809px){
+  body[data-crowned-story]{
+    overflow-x: clip !important;
+  }
+  body[data-crowned-story] :where(h1, [data-cs-long-hero-title="true"]){
+    max-width: calc(100vw - 40px) !important;
+    letter-spacing: -0.035em !important;
+    line-height: .9 !important;
+  }
+  body[data-crowned-story] [data-framer-name*="Hero"] img,
+  body[data-crowned-story] [data-framer-name*="hero"] img{
+    object-position: center 30% !important;
+  }
+}
+@media (max-width: 390px){
+  body[data-crowned-story] :where(h1, [data-cs-long-hero-title="true"]){
+    max-width: calc(100vw - 32px) !important;
+    letter-spacing: -0.04em !important;
+  }
+}
+
+
+/* Roni desktop collage overflow guard.
+   Preserves the off-canvas visual collage while keeping the page viewport from exposing a horizontal scroll lane. */
+@media (min-width: 810px) {
+  body[data-crowned-story="roni-lavenia"] .framer-Cvkpx.framer-1rhlpnf {
+    overflow: clip !important;
+  }
+}
