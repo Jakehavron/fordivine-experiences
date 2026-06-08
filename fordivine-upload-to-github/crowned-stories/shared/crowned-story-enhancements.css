@@ -813,29 +813,29 @@ html.cs-enhancements-ready [data-cs-media-shell].cs-is-visible img {
     overflow-x: clip;
   }
 
-  body[data-cs-story-slug] {
+  body[data-crowned-story] {
     padding-top: env(safe-area-inset-top);
   }
 
-  body[data-cs-story-slug] h1,
-  body[data-cs-story-slug] [data-framer-component-type="RichTextContainer"] {
+  body[data-crowned-story] h1,
+  body[data-crowned-story] [data-framer-component-type="RichTextContainer"] {
     text-wrap: balance;
   }
 
-  body[data-cs-story-slug] [data-framer-component-type="RichTextContainer"] {
+  body[data-crowned-story] [data-framer-component-type="RichTextContainer"] {
     max-width: min(100%, calc(100vw - 32px));
   }
 
-  body[data-cs-story-slug='ali-marie'] h1,
-  body[data-cs-story-slug='beth-clifford'] h1,
-  body[data-cs-story-slug='christa-crawford'] h1,
-  body[data-cs-story-slug='lauren-fields'] h1,
-  body[data-cs-story-slug='roni-lavenia'] h1 {
+  body[data-crowned-story='ali-marie'] h1,
+  body[data-crowned-story='beth-clifford'] h1,
+  body[data-crowned-story='christa-crawford'] h1,
+  body[data-crowned-story='lauren-fields'] h1,
+  body[data-crowned-story='roni-lavenia'] h1 {
     line-height: .9 !important;
   }
 
-  body[data-cs-story-slug='christa-crawford'] h1,
-  body[data-cs-story-slug='roni-lavenia'] h1 {
+  body[data-crowned-story='christa-crawford'] h1,
+  body[data-crowned-story='roni-lavenia'] h1 {
     letter-spacing: -.07em !important;
   }
 }
@@ -1019,4 +1019,249 @@ body[data-crowned-story="roni-lavenia"] .framer-13bpcj4 {
 
 body[data-crowned-story="roni-lavenia"] .fd-refinement-video-section {
   background: #f8f5ef !important;
+}
+
+/* Crowned Stories copy-layout cleanup.
+   Approved pass: layout presentation only. No story copy, media, section order, or reveal assets are changed.
+   Keeps the prior video visibility and Roni stacking patches intact above this block. */
+html:has(body[data-crowned-story]),
+body[data-crowned-story] {
+  overflow-x: clip;
+}
+
+body[data-crowned-story] {
+  --cs-copy-measure: min(100%, 700px);
+  --cs-copy-line-height: 1.58;
+  --cs-copy-line-height-mobile: 1.64;
+  --cs-copy-paragraph-space: clamp(17px, 1.45vw, 24px);
+  --cs-list-item-space: clamp(14px, 1.2vw, 21px);
+  --cs-section-pad-x: clamp(44px, 5vw, 76px);
+}
+
+/* Priority 1: black Refinement / Creation and Preparation / Coronation Prep sections. */
+body[data-crowned-story] .framer-dHSaT .framer-gfh9rl,
+body[data-crowned-story] .framer-dHSaT .framer-147i4jm {
+  gap: clamp(48px, 4.8vw, 78px) !important;
+  overflow: visible !important;
+}
+
+body[data-crowned-story] .framer-dHSaT .framer-gfh9rl .framer-548o0q {
+  align-items: flex-end !important;
+  gap: clamp(72px, 6.5vw, 112px) !important;
+  overflow: visible !important;
+  padding: clamp(170px, 11vw, 220px) var(--cs-section-pad-x) clamp(78px, 7vw, 116px) !important;
+}
+
+body[data-crowned-story] .framer-dHSaT .framer-gfh9rl .framer-1kugal,
+body[data-crowned-story] .framer-dHSaT .framer-147i4jm .framer-977ljd,
+body[data-crowned-story] .framer-dHSaT .framer-147i4jm .framer-1jwqfe3 {
+  gap: clamp(34px, 3.2vw, 56px) !important;
+  max-width: var(--cs-copy-measure) !important;
+  overflow: visible !important;
+}
+
+body[data-crowned-story] .framer-dHSaT .framer-147i4jm .framer-18rhd00 {
+  align-items: flex-start !important;
+  gap: clamp(78px, 7vw, 118px) !important;
+  overflow: visible !important;
+  padding: clamp(185px, 11.5vw, 235px) var(--cs-section-pad-x) clamp(105px, 8vw, 155px) !important;
+}
+
+body[data-crowned-story] .framer-dHSaT .framer-gfh9rl .framer-1bjm5bx,
+body[data-crowned-story] .framer-dHSaT .framer-147i4jm .framer-51gmdv {
+  --framer-paragraph-spacing: var(--cs-copy-paragraph-space) !important;
+  max-width: var(--cs-copy-measure) !important;
+}
+
+body[data-crowned-story] :where(.framer-gfh9rl, .framer-147i4jm) :where(.framer-1bjm5bx, .framer-51gmdv) :where(p, li) {
+  line-height: var(--cs-copy-line-height) !important;
+}
+
+body[data-crowned-story] :where(.framer-gfh9rl, .framer-147i4jm) :where(.framer-1bjm5bx, .framer-51gmdv) :where(ul, ol) {
+  margin-block: clamp(18px, 1.7vw, 28px) 0 !important;
+  padding-left: 1.35em !important;
+}
+
+body[data-crowned-story] :where(.framer-gfh9rl, .framer-147i4jm) :where(.framer-1bjm5bx, .framer-51gmdv) li {
+  margin-bottom: var(--cs-list-item-space) !important;
+  padding-left: .18em !important;
+}
+
+body[data-crowned-story] :where(.framer-gfh9rl, .framer-147i4jm) :where(.framer-1bjm5bx, .framer-51gmdv) li:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Priority 2 and 3: narrative copy rhythm, heading-to-body rhythm, and copy-to-image spacing. */
+body[data-crowned-story] .framer-E8zGz .framer-s15q4k {
+  gap: clamp(74px, 6vw, 108px) !important;
+}
+
+body[data-crowned-story] .framer-E8zGz .framer-1euj7uy,
+body[data-crowned-story] .framer-E8zGz .framer-ocyo1 {
+  gap: clamp(28px, 2.6vw, 44px) !important;
+  overflow: visible !important;
+}
+
+body[data-crowned-story] .framer-E8zGz .framer-1h58zef {
+  --framer-paragraph-spacing: clamp(16px, 1.45vw, 23px) !important;
+  max-width: var(--cs-copy-measure) !important;
+}
+
+body[data-crowned-story] .framer-E8zGz .framer-1h58zef :where(p, li) {
+  line-height: var(--cs-copy-line-height) !important;
+}
+
+body[data-crowned-story] .framer-E8zGz .framer-1h58zef :where(ul, ol) {
+  margin-block: clamp(16px, 1.4vw, 24px) 0 !important;
+  padding-left: 1.32em !important;
+}
+
+body[data-crowned-story] .framer-E8zGz .framer-1h58zef li {
+  margin-bottom: clamp(13px, 1.1vw, 19px) !important;
+  padding-left: .15em !important;
+}
+
+body[data-crowned-story] .framer-E8zGz .framer-1h58zef li:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Priority 4: Brand Reveal sequence, especially sparse logo and small-copy screens. */
+body[data-crowned-story] .framer-dHSaT .framer-13bpcj4 {
+  gap: clamp(26px, 3vw, 48px) !important;
+  overflow: visible !important;
+  padding-bottom: clamp(118px, 10vw, 170px) !important;
+}
+
+body[data-crowned-story] .framer-dHSaT .framer-13bpcj4 .cs-section-anchor {
+  margin-bottom: clamp(28px, 3.6vw, 52px) !important;
+}
+
+body[data-crowned-story] .framer-dHSaT .framer-13bpcj4 .framer-1tc6de1 {
+  align-items: center !important;
+  gap: clamp(48px, 4.6vw, 78px) !important;
+  padding: clamp(125px, 9vw, 172px) var(--cs-section-pad-x) clamp(140px, 10vw, 205px) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+body[data-crowned-story] .framer-dHSaT .framer-13bpcj4 .framer-13jth04 {
+  gap: clamp(26px, 2.6vw, 42px) !important;
+  max-width: var(--cs-copy-measure) !important;
+  overflow: visible !important;
+}
+
+body[data-crowned-story] .framer-dHSaT .framer-13bpcj4 .framer-d778z3 {
+  --framer-paragraph-spacing: clamp(16px, 1.35vw, 22px) !important;
+  max-width: var(--cs-copy-measure) !important;
+}
+
+body[data-crowned-story] .framer-dHSaT .framer-13bpcj4 .framer-d778z3 :where(p, li) {
+  line-height: var(--cs-copy-line-height) !important;
+}
+
+body[data-crowned-story] .framer-dHSaT .framer-13bpcj4 :where(.framer-1taflvk, .framer-s71e7f, .framer-a874am, .framer-weo6if, .framer-14plf5h, .framer-1y9mtld) {
+  margin-block: clamp(6px, .7vw, 12px) !important;
+}
+
+/* Priority 5: final CTA / lower-page rhythm without changing footer content. */
+body[data-crowned-story] .framer-dHSaT .framer-1w1j7bd,
+body[data-crowned-story] .framer-dHSaT .framer-13me5ri {
+  gap: clamp(22px, 2.4vw, 38px) !important;
+}
+
+body[data-crowned-story] .framer-dHSaT :where(.framer-l2bll9, .framer-2dg6g8, .framer-s9fdq7, .framer-17202x9, .framer-1ejrczl, .framer-fsx6g4) {
+  margin-bottom: clamp(2px, .35vw, 8px) !important;
+}
+
+@media (max-width: 809px) {
+  body[data-crowned-story] {
+    --cs-copy-measure: min(100%, calc(100vw - 48px));
+    --cs-copy-paragraph-space: clamp(18px, 5vw, 24px);
+    --cs-list-item-space: clamp(15px, 4.5vw, 22px);
+  }
+
+  body[data-crowned-story] .framer-dHSaT .framer-gfh9rl,
+  body[data-crowned-story] .framer-dHSaT .framer-147i4jm {
+    gap: clamp(38px, 10vw, 54px) !important;
+  }
+
+  body[data-crowned-story] .framer-dHSaT .framer-gfh9rl .framer-548o0q {
+    align-items: flex-start !important;
+    gap: clamp(38px, 10vw, 54px) !important;
+    padding: clamp(76px, 18vw, 96px) 24px clamp(42px, 12vw, 64px) !important;
+  }
+
+  body[data-crowned-story] .framer-dHSaT .framer-gfh9rl .framer-1kugal,
+  body[data-crowned-story] .framer-dHSaT .framer-147i4jm .framer-977ljd,
+  body[data-crowned-story] .framer-dHSaT .framer-147i4jm .framer-1jwqfe3 {
+    gap: clamp(26px, 7vw, 38px) !important;
+    max-width: var(--cs-copy-measure) !important;
+    width: 100% !important;
+  }
+
+  body[data-crowned-story] .framer-dHSaT .framer-147i4jm .framer-18rhd00 {
+    gap: clamp(40px, 10vw, 58px) !important;
+    padding: clamp(86px, 20vw, 112px) 24px clamp(76px, 17vw, 104px) !important;
+  }
+
+  body[data-crowned-story] :where(.framer-gfh9rl, .framer-147i4jm) :where(.framer-1bjm5bx, .framer-51gmdv) :where(p, li),
+  body[data-crowned-story] .framer-E8zGz .framer-1h58zef :where(p, li),
+  body[data-crowned-story] .framer-dHSaT .framer-13bpcj4 .framer-d778z3 :where(p, li) {
+    line-height: var(--cs-copy-line-height-mobile) !important;
+  }
+
+  body[data-crowned-story] .framer-E8zGz .framer-s15q4k {
+    gap: clamp(36px, 9vw, 50px) !important;
+  }
+
+  body[data-crowned-story] .framer-E8zGz .framer-1euj7uy,
+  body[data-crowned-story] .framer-E8zGz .framer-ocyo1 {
+    gap: clamp(24px, 6.5vw, 34px) !important;
+    max-width: var(--cs-copy-measure) !important;
+    width: 100% !important;
+  }
+
+  body[data-crowned-story] .framer-dHSaT .framer-13bpcj4 {
+    border-radius: 24px !important;
+    gap: clamp(22px, 6vw, 34px) !important;
+    padding-bottom: clamp(76px, 18vw, 106px) !important;
+  }
+
+  body[data-crowned-story] .framer-dHSaT .framer-13bpcj4 .cs-section-anchor {
+    margin-bottom: clamp(18px, 6vw, 30px) !important;
+    width: calc(100% - 48px) !important;
+  }
+
+  body[data-crowned-story] .framer-dHSaT .framer-13bpcj4 .framer-1tc6de1 {
+    gap: clamp(34px, 9vw, 48px) !important;
+    padding: clamp(72px, 18vw, 98px) 24px clamp(86px, 20vw, 118px) !important;
+  }
+
+  body[data-crowned-story] .framer-dHSaT .framer-13bpcj4 .framer-13jth04 {
+    gap: clamp(22px, 6vw, 32px) !important;
+    max-width: var(--cs-copy-measure) !important;
+    width: 100% !important;
+  }
+
+  body[data-crowned-story] .framer-dHSaT .framer-1w1j7bd,
+  body[data-crowned-story] .framer-dHSaT .framer-13me5ri {
+    gap: clamp(18px, 5vw, 30px) !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+}
+
+@media (max-width: 390px) {
+  body[data-crowned-story] {
+    --cs-copy-measure: min(100%, calc(100vw - 40px));
+  }
+
+  body[data-crowned-story] .framer-dHSaT .framer-gfh9rl .framer-548o0q,
+  body[data-crowned-story] .framer-dHSaT .framer-147i4jm .framer-18rhd00,
+  body[data-crowned-story] .framer-dHSaT .framer-13bpcj4 .framer-1tc6de1 {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
 }
