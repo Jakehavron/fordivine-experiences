@@ -1007,3 +1007,16 @@ html.cs-enhancements-ready .fd-refinement-video-frame video {
   filter: none !important;
 }
 
+
+/* Roni section 04/05 stacking fix.
+   Keeps the static refinement video section and the following brand-reveal section above the sticky hero cover. */
+body[data-crowned-story="roni-lavenia"] .fd-refinement-video-section,
+body[data-crowned-story="roni-lavenia"] .framer-13bpcj4 {
+  position: relative !important;
+  z-index: 3 !important;
+  isolation: isolate;
+}
+
+body[data-crowned-story="roni-lavenia"] .fd-refinement-video-section {
+  background: #f8f5ef !important;
+}
