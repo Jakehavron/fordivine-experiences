@@ -456,6 +456,118 @@
       margin-top: 8px;
     }
 
+
+    /* ========== ACCORDION Q&A ========== */
+    .qa-wrapper {
+      background: var(--offwhite);
+      padding: 52px 48px 56px;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .qa-section {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .qa-section-header {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .qa-section-header h2 {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: clamp(22px, 2.6vw, 30px);
+      color: var(--text-dark);
+      letter-spacing: -0.02em;
+      margin-bottom: 0;
+    }
+
+    .qa-item {
+      margin-bottom: 16px;
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--white);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.02);
+      transition: box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .qa-item:hover {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.04);
+    }
+
+    .qa-header {
+      background: var(--charcoal);
+      color: var(--white);
+      padding: 22px 28px;
+      border-radius: 0;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      user-select: none;
+      letter-spacing: -0.005em;
+    }
+
+    .qa-header:hover { background: #1c1c1c; }
+
+    .qa-toggle {
+      font-size: 20px;
+      font-weight: 300;
+      opacity: 0.4;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      flex-shrink: 0;
+      margin-left: 16px;
+    }
+
+    .qa-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.25s ease, padding 0.25s ease;
+      padding: 0 28px;
+      background: var(--white);
+    }
+
+    .qa-body.open {
+      max-height: 1400px;
+      padding: 28px 28px 36px;
+    }
+
+    .qa-body p {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.85;
+      color: var(--text-mid);
+      margin-bottom: 14px;
+    }
+
+    .qa-body ul {
+      margin: 0 0 14px 18px;
+      padding-left: 18px;
+    }
+
+    .qa-body li {
+      color: var(--text-dark);
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+
+    .qa-body strong { color: var(--text-dark); font-weight: 700; }
+
+    .reveal,
+    .reveal-delay-1,
+    .reveal-delay-2 {
+      opacity: 1;
+      transform: none;
+    }
+
     footer {
       background: var(--charcoal);
       padding: 72px 48px 40px;
@@ -629,6 +741,14 @@
         padding: 56px 24px 32px;
       }
 
+      .qa-header { font-size: 14px; padding: 18px 20px; }
+      .qa-body.open { padding: 20px 20px 26px; }
+      .qa-body p,
+      .qa-body li { font-size: 14.5px; }
+      .qa-item { margin-bottom: 12px; border-radius: 14px; }
+      .qa-wrapper { padding: 40px 20px 56px; }
+
+
       .footer-top {
         flex-direction: column;
         align-items: center;
@@ -760,6 +880,93 @@
           </div>
         </aside>
       </section>
+
+      <!-- ===== ACCORDION Q&A ===== -->
+<div class="qa-wrapper">
+<section class="qa-section">
+  <div class="qa-section-header reveal">
+    <h2>Common Questions</h2>
+  </div>
+
+  <div class="qa-item reveal">
+    <div class="qa-header" onclick="toggleQA(this)" role="button" tabindex="0" aria-expanded="false" aria-controls="qa-sales-call">
+      <span>Is this a sales call?</span>
+      <span class="qa-toggle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+    </div>
+    <div class="qa-body" id="qa-sales-call" aria-hidden="true">
+      <p>No. Keep your credit card in your purse for this one.</p>
+      <p>This call is solely to learn about your situation and see if you're a right fit for our services.</p>
+    </div>
+  </div>
+
+  <div class="qa-item reveal reveal-delay-1">
+    <div class="qa-header" onclick="toggleQA(this)" role="button" tabindex="0" aria-expanded="false" aria-controls="qa-business-ready">
+      <span>Do I need to have my business fully figured out before working with you?</span>
+      <span class="qa-toggle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+    </div>
+    <div class="qa-body" id="qa-business-ready" aria-hidden="true">
+      <p>Not at all.</p>
+      <p>Many of our clients came to us with a vision they can't quite articulate yet.. and that's exactly what we help with.</p>
+      <p>Whether you're pivoting, launching something new, or simply outgrowing what you built years ago, we meet you where you are and engineer the brand to amplify where you're going.</p>
+    </div>
+  </div>
+
+  <div class="qa-item reveal reveal-delay-1">
+    <div class="qa-header" onclick="toggleQA(this)" role="button" tabindex="0" aria-expanded="false" aria-controls="qa-turn-key-service">
+      <span>What happens during the turn-key brand service?</span>
+      <span class="qa-toggle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+    </div>
+    <div class="qa-body" id="qa-turn-key-service" aria-hidden="true">
+      <p>We review your current brand(s), identify what is unclear or misaligned, then build the complete strategy, messaging, visuals, and systems you will need.</p>
+      <p>The goal is to make your brand easier to understand, trust, and buy for your ideal audience after you work with us.</p>
+    </div>
+  </div>
+
+  <div class="qa-item reveal reveal-delay-1">
+    <div class="qa-header" onclick="toggleQA(this)" role="button" tabindex="0" aria-expanded="false" aria-controls="qa-walk-away-with">
+      <span>What do I walk away with?</span>
+      <span class="qa-toggle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+    </div>
+    <div class="qa-body" id="qa-walk-away-with" aria-hidden="true">
+      <p>Your entire marketing plan and brand assets that are essential to growing your business and impact in 2026 and onward.</p>
+      <p>This includes your:</p>
+      <ul>
+        <li><strong>Crowned Authority™ Blueprint</strong> (entire marketing strategy)</li>
+        <li><strong>Crowned Identity™ Bible</strong> (all visual + brand assets)</li>
+        <li><strong>Ready-to-use digital assets</strong> (content that actually converts)</li>
+        <li><strong>The Engine</strong> (systems that work 24/7/365 acquiring new clients/customers)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="qa-item reveal reveal-delay-2">
+    <div class="qa-header" onclick="toggleQA(this)" role="button" tabindex="0" aria-expanded="false" aria-controls="qa-time-required">
+      <span>How much of my time does this require?</span>
+      <span class="qa-toggle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+    </div>
+    <div class="qa-body" id="qa-time-required" aria-hidden="true">
+      <p>Very little. This is primarily a done-for-you service.</p>
+      <p>Not a video course. Not a coaching program. And not a DIY template.</p>
+      <p>You show up for a few key conversations and intake forms so we can fully extract your brilliance.</p>
+      <p>Then we do the rest (marketing strategy, full design, build out, etc).</p>
+    </div>
+  </div>
+
+  <div class="qa-item reveal reveal-delay-2">
+    <div class="qa-header" onclick="toggleQA(this)" role="button" tabindex="0" aria-expanded="false" aria-controls="qa-business-fit">
+      <span>Is this right for my business or industry?</span>
+      <span class="qa-toggle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+    </div>
+    <div class="qa-body" id="qa-business-fit" aria-hidden="true">
+      <p>If your business depends on your name, expertise, reputation, or personal credibility, then our services are made for you.</p>
+      <p>Our services are not industry-specific, yet they are tailored to where you're current brand journey is at.</p>
+      <p><strong>Industries we have recently worked with:</strong><br><em>Online businesses, Coaching/Consulting, Real Estate, Network Marketing, Ecommerce, Professional Speaking, Medical Practice, Insurance, Fashion, Beauty.</em></p>
+      <p>If you are one of these, chances are we can help.</p>
+    </div>
+  </div>
+
+</section>
+</div>
     </main>
 
     <footer>
@@ -782,5 +989,37 @@
   <p class="footer-disclaimer">Emily Ford and FORDIVINE™'s results are not typical and are not a guarantee of your success. Your results will vary depending on your effort, application, experience, and background. We do not give investment, tax, or other professional advice. The information contained within this website is the property of Fortitude LLC. Any use of the images, content, or ideas expressed herein without the express written consent of Fortitude LLC is prohibited. Copyright &copy; 2025 FORDIVINE™. All Rights Reserved.</p>
 </footer>
   </div>
+
+  <script>
+    function toggleQA(header) {
+      const body = header.nextElementSibling;
+      const toggle = header.querySelector('.qa-toggle');
+      const wasOpen = body.classList.contains('open');
+
+      document.querySelectorAll('.qa-body').forEach(b => {
+        b.classList.remove('open');
+        b.setAttribute('aria-hidden', 'true');
+      });
+      document.querySelectorAll('.qa-header').forEach(h => h.setAttribute('aria-expanded', 'false'));
+      document.querySelectorAll('.qa-toggle').forEach(t => t.style.transform = 'rotate(0deg)');
+
+      if (!wasOpen) {
+        body.classList.add('open');
+        body.setAttribute('aria-hidden', 'false');
+        header.setAttribute('aria-expanded', 'true');
+        toggle.style.transform = 'rotate(180deg)';
+      }
+    }
+
+    document.querySelectorAll('.qa-header').forEach(header => {
+      header.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          toggleQA(header);
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
