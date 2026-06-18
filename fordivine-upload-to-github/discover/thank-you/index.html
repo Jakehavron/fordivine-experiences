@@ -280,26 +280,66 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 64px;
-      padding: 22px 46px;
-      border: 1px solid var(--charcoal);
-      border-radius: 8px;
+      min-height: 60px;
+      padding: 20px 56px;
+      border: none;
+      border-radius: 100px;
       background: var(--charcoal);
       color: var(--white);
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 0.14em;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
       line-height: 1;
       text-transform: uppercase;
-      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 100px;
+      background: linear-gradient(135deg, rgba(200,184,154,0.15) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+    }
+
+    .cta-btn:hover::after,
+    .cta-btn:focus-visible::after {
+      opacity: 1;
+    }
+
+    @keyframes thank-you-btn-shimmer {
+      0% { transform: translateX(-200%) skewX(-20deg); }
+      100% { transform: translateX(400%) skewX(-20deg); }
+    }
+
+    .cta-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 35%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
+      transform: translateX(-200%) skewX(-20deg);
+      animation: thank-you-btn-shimmer 4s ease-in-out infinite;
+      animation-delay: 2s;
+      pointer-events: none;
+      border-radius: 0;
     }
 
     .cta-btn:hover,
     .cta-btn:focus-visible {
-      background: var(--darker);
       color: var(--white);
-      transform: translateY(-2px);
-      box-shadow: 0 16px 40px rgba(23,23,23,0.16);
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
       outline: none;
     }
 
@@ -572,7 +612,12 @@
 
       .cta-btn {
         width: 100%;
-        padding: 17px 26px;
+        max-width: 360px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 18px 36px;
+        font-size: 11px;
+        letter-spacing: 0.12em;
       }
 
       .text-link {
