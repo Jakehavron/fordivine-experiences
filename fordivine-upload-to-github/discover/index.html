@@ -3762,7 +3762,52 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '958874110071928');
+function fdGetMetaAdvancedMatchingData() {
+  var params = new URLSearchParams(window.location.search);
+  var data = {};
+
+  function getFirstValue(keys) {
+    for (var i = 0; i < keys.length; i++) {
+      var value = params.get(keys[i]);
+      if (value && value.trim()) return value.trim();
+    }
+    return '';
+  }
+
+  function normalizeEmail(value) {
+    return value ? value.trim().toLowerCase() : '';
+  }
+
+  function normalizePhone(value) {
+    return value ? value.replace(/[^0-9]/g, '') : '';
+  }
+
+  function normalizeName(value) {
+    return value ? value.trim().toLowerCase().replace(/[^a-z]/g, '') : '';
+  }
+
+  var email = normalizeEmail(getFirstValue(['iclosedEmail', 'Invitee_email', 'invitee_email', 'email', 'em']));
+  var phone = normalizePhone(getFirstValue(['iclosedPhone', 'text_reminder_number', 'phone', 'ph']));
+  var firstName = normalizeName(getFirstValue(['first_name', 'firstname', 'fn']));
+  var lastName = normalizeName(getFirstValue(['last_name', 'lastname', 'ln']));
+  var fullName = getFirstValue(['iclosedName', 'invitee_full_name', 'name']);
+
+  if ((!firstName || !lastName) && fullName) {
+    var nameParts = fullName.trim().split(/\s+/).filter(Boolean);
+    if (!firstName && nameParts.length) firstName = normalizeName(nameParts[0]);
+    if (!lastName && nameParts.length > 1) lastName = normalizeName(nameParts.slice(1).join(''));
+  }
+
+  if (email) data.em = email;
+  if (phone) data.ph = phone;
+  if (firstName) data.fn = firstName;
+  if (lastName) data.ln = lastName;
+
+  return data;
+}
+
+var fdMetaAdvancedMatchingData = fdGetMetaAdvancedMatchingData();
+fbq('init', '958874110071928', fdMetaAdvancedMatchingData);
 fbq('track', 'PageView');
 </script>
 <!-- End Meta Pixel Code -->
