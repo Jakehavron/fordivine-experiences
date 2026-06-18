@@ -227,18 +227,8 @@
       white-space: nowrap;
     }
 
-    .title-arrow {
-      display: inline-block;
-      margin-left: 0.18em;
-      color: var(--charcoal);
-      font-family: Arial Black, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      font-size: 0.82em;
-      font-weight: 900;
-      line-height: 1;
-      text-shadow: 0.02em 0 0 currentColor, -0.02em 0 0 currentColor;
-      -webkit-text-stroke: 0.018em currentColor;
-      transform: translateY(-0.03em);
-      vertical-align: baseline;
+    .title-accent {
+      color: #cfbfa4;
     }
 
     .booked-accent {
@@ -624,7 +614,8 @@
       }
 
       h1 {
-        font-size: clamp(28px, 8.8vw, 34px);
+        font-size: clamp(25px, 7.45vw, 29px);
+        letter-spacing: -0.065em;
         max-width: none;
       }
 
@@ -683,7 +674,7 @@
     <main id="main-content">
       <section class="confirmation-section" aria-labelledby="thank-you-title">
         <div class="confirmation-copy">
-          <h1 id="thank-you-title"><span class="title-line">Important!</span><span class="title-line">Watch Your</span><span class="title-line">Next Steps Video <span class="title-arrow" aria-hidden="true">↓</span></span></h1>
+          <h1 id="thank-you-title"><span class="title-line">Important! Watch Your</span><span class="title-line"><span class="title-accent">Next Steps</span> Video</span></h1>
           <div class="hero-video" aria-label="Thank-you video from FORDIVINE">
             <div id="vidalytics_embed_rf7C4w3PLncD2ODy" style="width: 100%; position:relative; padding-top: 56.25%;"></div>
             <script type="text/javascript">
