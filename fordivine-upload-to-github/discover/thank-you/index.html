@@ -1014,7 +1014,7 @@
     .proof-story-quote {
       color: var(--charcoal);
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      font-size: clamp(22px, 2.4vw, 32px);
+      font-size: calc(clamp(22px, 2.4vw, 32px) - 2px);
       font-weight: 800;
       letter-spacing: -0.034em;
       line-height: 1.1;
@@ -1115,6 +1115,200 @@
       line-height: 1.3;
       text-align: center;
       text-transform: uppercase;
+    }
+
+
+
+    /* ===== DISCOVER IMAGE CAROUSELS (testimonial cards 5-10) ===== */
+    .proof-video-wrap.proof-carousel-wrap {
+      width: min(100%, 357px);
+    }
+
+    .proof-carousel-wrap::before {
+      display: none;
+    }
+
+    .proof-carousel {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      border-radius: 18px;
+      background: #171717;
+      color: var(--white);
+      isolation: isolate;
+      touch-action: pan-y;
+      user-select: none;
+    }
+
+    .proof-carousel-track {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform;
+    }
+
+    .proof-carousel-slide {
+      position: relative;
+      flex: 0 0 100%;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .proof-carousel-slide img {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      pointer-events: none;
+    }
+
+    .proof-carousel-arrow {
+      position: absolute;
+      top: 50%;
+      z-index: 7;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      border: 1px solid rgba(255,255,255,0.34);
+      border-radius: 999px;
+      background: rgba(23,23,23,0.58);
+      color: #fff;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(-50%);
+      transition: opacity 0.25s ease, background 0.25s ease, transform 0.25s ease;
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+    }
+
+    .proof-carousel-arrow:hover {
+      background: rgba(23,23,23,0.82);
+    }
+
+    .proof-carousel-arrow:active {
+      transform: translateY(-50%) scale(0.94);
+    }
+
+    .proof-carousel-arrow:focus-visible {
+      outline: 3px solid #fff;
+      outline-offset: 3px;
+      opacity: 1;
+    }
+
+    .proof-carousel:hover .proof-carousel-arrow,
+    .proof-carousel:focus-within .proof-carousel-arrow {
+      opacity: 1;
+    }
+
+    .proof-carousel-arrow--prev {
+      left: 10px;
+    }
+
+    .proof-carousel-arrow--next {
+      right: 10px;
+    }
+
+    .proof-carousel-arrow svg {
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .proof-carousel-dots {
+      position: absolute;
+      bottom: 13px;
+      left: 50%;
+      z-index: 8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 6px 8px;
+      border-radius: 999px;
+      background: rgba(23,23,23,0.28);
+      transform: translateX(-50%);
+      -webkit-backdrop-filter: blur(7px);
+      backdrop-filter: blur(7px);
+    }
+
+    .proof-carousel-dot {
+      width: 7px;
+      height: 7px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.54);
+      cursor: pointer;
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+
+    .proof-carousel-dot.is-active {
+      background: #fff;
+      transform: scale(1.38);
+    }
+
+    .proof-carousel-dot:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 3px;
+    }
+
+    .proof-carousel-status {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (hover: none), (pointer: coarse) {
+      .proof-carousel-arrow {
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .proof-video-wrap.proof-carousel-wrap {
+        width: min(100%, 306px);
+      }
+
+      .proof-carousel {
+        border-radius: 15px;
+      }
+
+      .proof-carousel-arrow {
+        width: 38px;
+        height: 38px;
+        opacity: 1;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .proof-carousel-track,
+      .proof-carousel-arrow,
+      .proof-carousel-dot {
+        transition: none !important;
+      }
     }
 
     .stories-proof-toggle-wrap {
@@ -1229,7 +1423,7 @@
       }
 
       .proof-story-quote {
-        font-size: clamp(21px, 6.3vw, 26px);
+        font-size: calc(clamp(21px, 6.3vw, 26px) - 2px);
       }
 
       .proof-person {
@@ -1460,117 +1654,258 @@
             </div>
           </article>
 
-          <article class="proof-story-card">
+          <article class="proof-story-card" data-testimonial-card="05">
             <div class="proof-story-copy">
               <span class="proof-quote-mark" aria-hidden="true">“</span>
-              <h3 class="proof-story-quote">Client outcome quote placeholder. Replace this text with the approved testimonial.</h3>
+              <h3 class="proof-story-quote"><span class="proof-quote-paragraph">I was juggling over 5 different brands/companies and they all felt outdated, not connected, and definitely not representing the woman I am&nbsp;today.</span><span class="proof-quote-paragraph">Seeing FORDIVINE walk the walk, I knew I had to reach out for&nbsp;help.</span><span class="proof-quote-paragraph">Now my brands are attracting premium clients, have new signature IP for my methods, and they're hitting record numbers without making me feel burnt out every single&nbsp;day.</span></h3>
               <div class="proof-person">
                 <div>
-                  <p class="proof-person-name">Client Name 05</p>
-                  <p class="proof-person-title">Founder at Company</p>
+                  <p class="proof-person-name">Melanie Mitro</p>
+                  <p class="proof-person-title">NWM Top Leader, Speaker, Pod Host</p>
                 </div>
               </div>
             </div>
-            <div class="proof-video-wrap">
-              <video class="proof-video" controls playsinline preload="none" poster="/discover/thank-you/video-placeholder.svg" aria-label="Vertical testimonial video placeholder for Client Name 05">
-                Your browser does not support HTML5 video.
-              </video>
-              <p class="proof-placeholder-note">Vertical video placeholder</p>
+            <div class="proof-video-wrap proof-carousel-wrap">
+              <div class="proof-carousel" data-proof-carousel data-client-name="Melanie Mitro" role="region" aria-roledescription="carousel" aria-label="Brand transformation gallery for Melanie Mitro">
+                <div class="proof-carousel-track" data-proof-carousel-track>
+                  <div class="proof-carousel-slide" data-proof-carousel-slide aria-hidden="true">
+                    <img src="/melanie_portrait.webp" alt="Melanie Mitro" loading="lazy" decoding="async" width="1712" height="2048">
+                  </div>
+                  <div class="proof-carousel-slide" data-proof-carousel-slide aria-hidden="true">
+                    <img src="/melanie_paper_logo.webp" alt="Melanie Mitro - Grey Paper Logo" loading="lazy" decoding="async" width="1200" height="800">
+                  </div>
+                  <div class="proof-carousel-slide" data-proof-carousel-slide aria-hidden="true">
+                    <img src="/melanie_assets.webp" alt="Melanie Mitro - Paper Assets" loading="lazy" decoding="async" width="1200" height="955">
+                  </div>
+                  <div class="proof-carousel-slide" data-proof-carousel-slide aria-hidden="true">
+                    <img src="/melanie_show.webp" alt="Melanie Mitro - The Melanie Mitro Show" loading="lazy" decoding="async" width="1200" height="1200">
+                  </div>
+                  <div class="proof-carousel-slide" data-proof-carousel-slide aria-hidden="true">
+                    <img src="/melanie_sign.webp" alt="Melanie Mitro - Mitro Method Sign" loading="lazy" decoding="async" width="2048" height="1533">
+                  </div>
+                </div>
+                <button class="proof-carousel-arrow proof-carousel-arrow--prev" type="button" data-proof-carousel-prev aria-label="Previous image for Melanie Mitro">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 6 9 12 15 18"></polyline></svg>
+                </button>
+                <button class="proof-carousel-arrow proof-carousel-arrow--next" type="button" data-proof-carousel-next aria-label="Next image for Melanie Mitro">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 6 15 12 9 18"></polyline></svg>
+                </button>
+                <div class="proof-carousel-dots" data-proof-carousel-dots aria-label="Choose an image for Melanie Mitro"></div>
+                <p class="proof-carousel-status" data-proof-carousel-status aria-live="polite">Slide 1 of 5 for Melanie Mitro</p>
+              </div>
             </div>
           </article>
 
-          <article class="proof-story-card is-reverse">
+          <article class="proof-story-card is-reverse" data-testimonial-card="06">
             <div class="proof-story-copy">
               <span class="proof-quote-mark" aria-hidden="true">“</span>
-              <h3 class="proof-story-quote">Client outcome quote placeholder. Replace this text with the approved testimonial.</h3>
+              <h3 class="proof-story-quote"><span class="proof-quote-paragraph">For the longest time I would hide on social and not make content. I had major imposter syndrome and paralysis by&nbsp;analysis.</span><span class="proof-quote-paragraph">Now I have a whole brand identity that made me cry my head off when I first saw it (with happy&nbsp;tears!!)</span><span class="proof-quote-paragraph">And I've been consistently posting online showing others 'La Pura&nbsp;Vida!'.</span></h3>
               <div class="proof-person">
                 <div>
-                  <p class="proof-person-name">Client Name 06</p>
-                  <p class="proof-person-title">Founder at Company</p>
+                  <p class="proof-person-name">Greta Elena-Bosch</p>
+                  <p class="proof-person-title">Wellness + Mental Health Advocate</p>
                 </div>
               </div>
             </div>
-            <div class="proof-video-wrap">
-              <video class="proof-video" controls playsinline preload="none" poster="/discover/thank-you/video-placeholder.svg" aria-label="Vertical testimonial video placeholder for Client Name 06">
-                Your browser does not support HTML5 video.
-              </video>
-              <p class="proof-placeholder-note">Vertical video placeholder</p>
+            <div class="proof-video-wrap proof-carousel-wrap">
+              <div class="proof-carousel" data-proof-carousel data-client-name="Greta Elena-Bosch" role="region" aria-roledescription="carousel" aria-label="Brand transformation gallery for Greta Elena-Bosch">
+                <div class="proof-carousel-track" data-proof-carousel-track>
+                  <div class="proof-carousel-slide" data-proof-carousel-slide aria-hidden="true">
+                    <img src="/greta_bio.webp" alt="Greta Elena-Bosch" loading="lazy" decoding="async" width="1425" height="2048">
+                  </div>
+                  <div class="proof-carousel-slide" data-proof-carousel-slide aria-hidden="true">
+                    <img src="/greta_sticker.webp" alt="Greta Elena - G Logo Circle" loading="lazy" decoding="async" width="1091" height="1200">
+                  </div>
+                  <div class="proof-carousel-slide" data-proof-carousel-slide aria-hidden="true">
+                    <img src="/greta_poster.webp" alt="Greta Elena - Brand Poster" loading="lazy" decoding="async" width="1726" height="1077">
+                  </div>
+                  <div class="proof-carousel-slide" data-proof-carousel-slide aria-hidden="true">
+                    <img src="/greta_soap.webp" alt="Greta Elena - Embossed Logo" loading="lazy" decoding="async" width="1200" height="675">
+                  </div>
+                  <div class="proof-carousel-slide" data-proof-carousel-slide aria-hidden="true">
+                    <img src="/greta_phone.webp" alt="Greta Elena - Phone Mockup" loading="lazy" decoding="async" width="1013" height="1080">
+                  </div>
+                </div>
+                <button class="proof-carousel-arrow proof-carousel-arrow--prev" type="button" data-proof-carousel-prev aria-label="Previous image for Greta Elena-Bosch">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 6 9 12 15 18"></polyline></svg>
+                </button>
+                <button class="proof-carousel-arrow proof-carousel-arrow--next" type="button" data-proof-carousel-next aria-label="Next image for Greta Elena-Bosch">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 6 15 12 9 18"></polyline></svg>
+                </button>
+                <div class="proof-carousel-dots" data-proof-carousel-dots aria-label="Choose an image for Greta Elena-Bosch"></div>
+                <p class="proof-carousel-status" data-proof-carousel-status aria-live="polite">Slide 1 of 5 for Greta Elena-Bosch</p>
+              </div>
             </div>
           </article>
 
-          <article class="proof-story-card">
+          <article class="proof-story-card" data-testimonial-card="07">
             <div class="proof-story-copy">
               <span class="proof-quote-mark" aria-hidden="true">“</span>
-              <h3 class="proof-story-quote">Client outcome quote placeholder. Replace this text with the approved testimonial.</h3>
+              <h3 class="proof-story-quote"><span class="proof-quote-paragraph">I avoided creating a brand for a long time because I didn't want to look cheap and was so busy with my corporate&nbsp;job.</span><span class="proof-quote-paragraph">Without the team's help, I wouldn't have relaunched my podcast, publish my first book, or go all in with my consulting&nbsp;business.</span><span class="proof-quote-paragraph">Oh, and I left my job way sooner than planned because of all this&nbsp;happening!</span></h3>
               <div class="proof-person">
                 <div>
-                  <p class="proof-person-name">Client Name 07</p>
-                  <p class="proof-person-title">Founder at Company</p>
+                  <p class="proof-person-name">Beth Clifford</p>
+                  <p class="proof-person-title">Sales Consultant, Author, Podcast Host</p>
                 </div>
               </div>
             </div>
-            <div class="proof-video-wrap">
-              <video class="proof-video" controls playsinline preload="none" poster="/discover/thank-you/video-placeholder.svg" aria-label="Vertical testimonial video placeholder for Client Name 07">
-                Your browser does not support HTML5 video.
-              </video>
-              <p class="proof-placeholder-note">Vertical video placeholder</p>
+            <div class="proof-video-wrap proof-carousel-wrap">
+              <div class="proof-carousel" data-proof-carousel data-client-name="Beth Clifford" role="region" aria-roledescription="carousel" aria-label="Brand transformation gallery for Beth Clifford">
+                <div class="proof-carousel-track" data-proof-carousel-track>
+                  <div class="proof-carousel-slide" data-proof-carousel-slide aria-hidden="true">
+                    <img src="/beth_portrait.webp" alt="Beth Clifford" loading="lazy" decoding="async" width="1191" height="1701">
+                  </div>
+                  <div class="proof-carousel-slide" data-proof-carousel-slide aria-hidden="true">
+                    <img src="/beth_logo.webp" alt="Beth Clifford - Silver Logo" loading="lazy" decoding="async" width="2048" height="1791">
+                  </div>
+                  <div class="proof-carousel-slide" data-proof-carousel-slide aria-hidden="true">
+                    <img src="/beth_magazine.webp" alt="Beth Clifford - Magazine" loading="lazy" decoding="async" width="2048" height="1456">
+                  </div>
+                  <div class="proof-carousel-slide" data-proof-carousel-slide aria-hidden="true">
+                    <img src="/beth_effect.webp" alt="Beth Clifford - The Beth Effect" loading="lazy" decoding="async" width="484" height="635">
+                  </div>
+                  <div class="proof-carousel-slide" data-proof-carousel-slide aria-hidden="true">
+                    <img src="/beth_coffee.webp" alt="Beth Clifford - Coffee" loading="lazy" decoding="async" width="1440" height="1920">
+                  </div>
+                </div>
+                <button class="proof-carousel-arrow proof-carousel-arrow--prev" type="button" data-proof-carousel-prev aria-label="Previous image for Beth Clifford">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 6 9 12 15 18"></polyline></svg>
+                </button>
+                <button class="proof-carousel-arrow proof-carousel-arrow--next" type="button" data-proof-carousel-next aria-label="Next image for Beth Clifford">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 6 15 12 9 18"></polyline></svg>
+                </button>
+                <div class="proof-carousel-dots" data-proof-carousel-dots aria-label="Choose an image for Beth Clifford"></div>
+                <p class="proof-carousel-status" data-proof-carousel-status aria-live="polite">Slide 1 of 5 for Beth Clifford</p>
+              </div>
             </div>
           </article>
 
-          <article class="proof-story-card is-reverse">
+          <article class="proof-story-card is-reverse" data-testimonial-card="08">
             <div class="proof-story-copy">
               <span class="proof-quote-mark" aria-hidden="true">“</span>
-              <h3 class="proof-story-quote">Client outcome quote placeholder. Replace this text with the approved testimonial.</h3>
+              <h3 class="proof-story-quote"><span class="proof-quote-paragraph">The Lord gave me visions on helping more women in other ways outside of Real Estate for quite some time but didn't know how to make it all come to&nbsp;life.</span><span class="proof-quote-paragraph">The team helped me birth multiple new company brands, a full strategy, and have it all be in one&nbsp;ecosystem.</span></h3>
               <div class="proof-person">
                 <div>
-                  <p class="proof-person-name">Client Name 08</p>
-                  <p class="proof-person-title">Founder at Company</p>
+                  <p class="proof-person-name">Amber Harvalias</p>
+                  <p class="proof-person-title">Top Realtor, Pod Host, Founder of Becoming Her</p>
                 </div>
               </div>
             </div>
-            <div class="proof-video-wrap">
-              <video class="proof-video" controls playsinline preload="none" poster="/discover/thank-you/video-placeholder.svg" aria-label="Vertical testimonial video placeholder for Client Name 08">
-                Your browser does not support HTML5 video.
-              </video>
-              <p class="proof-placeholder-note">Vertical video placeholder</p>
+            <div class="proof-video-wrap proof-carousel-wrap">
+              <div class="proof-carousel" data-proof-carousel data-client-name="Amber Harvalias" role="region" aria-roledescription="carousel" aria-label="Brand transformation gallery for Amber Harvalias">
+                <div class="proof-carousel-track" data-proof-carousel-track>
+                  <div class="proof-carousel-slide" data-proof-carousel-slide aria-hidden="true">
+                    <img src="/amber_portrait.webp" alt="Amber Harvalias" loading="lazy" decoding="async" width="1544" height="2048">
+                  </div>
+                  <div class="proof-carousel-slide" data-proof-carousel-slide aria-hidden="true">
+                    <img src="/amber_logo.webp" alt="Amber Harvalias - Gold Logo" loading="lazy" decoding="async" width="900" height="1200">
+                  </div>
+                  <div class="proof-carousel-slide" data-proof-carousel-slide aria-hidden="true">
+                    <img src="/amber_magazine.webp" alt="Amber Harvalias - Magazine" loading="lazy" decoding="async" width="1080" height="1080">
+                  </div>
+                  <div class="proof-carousel-slide" data-proof-carousel-slide aria-hidden="true">
+                    <img src="/amber_window.webp" alt="Amber Harvalias - A Team Window" loading="lazy" decoding="async" width="1197" height="1200">
+                  </div>
+                  <div class="proof-carousel-slide" data-proof-carousel-slide aria-hidden="true">
+                    <img src="/amber_couple.webp" alt="Amber Harvalias - With Husband" loading="lazy" decoding="async" width="1292" height="2048">
+                  </div>
+                  <div class="proof-carousel-slide" data-proof-carousel-slide aria-hidden="true">
+                    <img src="/amber_phone.webp" alt="Amber Harvalias - Phone" loading="lazy" decoding="async" width="2048" height="1536">
+                  </div>
+                </div>
+                <button class="proof-carousel-arrow proof-carousel-arrow--prev" type="button" data-proof-carousel-prev aria-label="Previous image for Amber Harvalias">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 6 9 12 15 18"></polyline></svg>
+                </button>
+                <button class="proof-carousel-arrow proof-carousel-arrow--next" type="button" data-proof-carousel-next aria-label="Next image for Amber Harvalias">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 6 15 12 9 18"></polyline></svg>
+                </button>
+                <div class="proof-carousel-dots" data-proof-carousel-dots aria-label="Choose an image for Amber Harvalias"></div>
+                <p class="proof-carousel-status" data-proof-carousel-status aria-live="polite">Slide 1 of 6 for Amber Harvalias</p>
+              </div>
             </div>
           </article>
 
-          <article class="proof-story-card">
+          <article class="proof-story-card" data-testimonial-card="09">
             <div class="proof-story-copy">
               <span class="proof-quote-mark" aria-hidden="true">“</span>
-              <h3 class="proof-story-quote">Client outcome quote placeholder. Replace this text with the approved testimonial.</h3>
+              <h3 class="proof-story-quote"><span class="proof-quote-paragraph">This was one of the best investments I made because now I successfully launched my events business using the brand plan they made for&nbsp;me.</span></h3>
               <div class="proof-person">
                 <div>
-                  <p class="proof-person-name">Client Name 09</p>
-                  <p class="proof-person-title">Founder at Company</p>
+                  <p class="proof-person-name">Jessica Cross</p>
+                  <p class="proof-person-title">Govt. Manager, Event Host, Speaker</p>
                 </div>
               </div>
             </div>
-            <div class="proof-video-wrap">
-              <video class="proof-video" controls playsinline preload="none" poster="/discover/thank-you/video-placeholder.svg" aria-label="Vertical testimonial video placeholder for Client Name 09">
-                Your browser does not support HTML5 video.
-              </video>
-              <p class="proof-placeholder-note">Vertical video placeholder</p>
+            <div class="proof-video-wrap proof-carousel-wrap">
+              <div class="proof-carousel" data-proof-carousel data-client-name="Jessica Cross" role="region" aria-roledescription="carousel" aria-label="Brand transformation gallery for Jessica Cross">
+                <div class="proof-carousel-track" data-proof-carousel-track>
+                  <div class="proof-carousel-slide" data-proof-carousel-slide aria-hidden="true">
+                    <img src="/jessica_portrait.webp" alt="Jessica Cross - Portrait" loading="lazy" decoding="async" width="1467" height="2048">
+                  </div>
+                  <div class="proof-carousel-slide" data-proof-carousel-slide aria-hidden="true">
+                    <img src="/jessica_poster.webp" alt="Jessica Cross - Brand Poster" loading="lazy" decoding="async" width="2048" height="1365">
+                  </div>
+                  <div class="proof-carousel-slide" data-proof-carousel-slide aria-hidden="true">
+                    <img src="/jessica_emboss.webp" alt="Jessica Cross - Embossed Logo" loading="lazy" decoding="async" width="1920" height="1080">
+                  </div>
+                  <div class="proof-carousel-slide" data-proof-carousel-slide aria-hidden="true">
+                    <img src="/jessica_sticker.webp" alt="Jessica Cross - Brand Sticker" loading="lazy" decoding="async" width="2048" height="1365">
+                  </div>
+                  <div class="proof-carousel-slide" data-proof-carousel-slide aria-hidden="true">
+                    <img src="/jessica_books.webp" alt="Jessica Cross - Books" loading="lazy" decoding="async" width="2048" height="1367">
+                  </div>
+                </div>
+                <button class="proof-carousel-arrow proof-carousel-arrow--prev" type="button" data-proof-carousel-prev aria-label="Previous image for Jessica Cross">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 6 9 12 15 18"></polyline></svg>
+                </button>
+                <button class="proof-carousel-arrow proof-carousel-arrow--next" type="button" data-proof-carousel-next aria-label="Next image for Jessica Cross">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 6 15 12 9 18"></polyline></svg>
+                </button>
+                <div class="proof-carousel-dots" data-proof-carousel-dots aria-label="Choose an image for Jessica Cross"></div>
+                <p class="proof-carousel-status" data-proof-carousel-status aria-live="polite">Slide 1 of 5 for Jessica Cross</p>
+              </div>
             </div>
           </article>
 
-          <article class="proof-story-card is-reverse">
+          <article class="proof-story-card is-reverse" data-testimonial-card="10">
             <div class="proof-story-copy">
               <span class="proof-quote-mark" aria-hidden="true">“</span>
-              <h3 class="proof-story-quote">Client outcome quote placeholder. Replace this text with the approved testimonial.</h3>
+              <h3 class="proof-story-quote"><span class="proof-quote-paragraph">I knew my reach and impact was limited running a local medspa with no personal brand.. which is why I worked with FORDIVINE to now have full clarity on my message and brand&nbsp;position.</span><span class="proof-quote-paragraph">I love educating and supporting women in the beauty world and I could have never done this on my&nbsp;own.</span></h3>
               <div class="proof-person">
                 <div>
-                  <p class="proof-person-name">Client Name 10</p>
-                  <p class="proof-person-title">Founder at Company</p>
+                  <p class="proof-person-name">Mary Elizabeth</p>
+                  <p class="proof-person-title">MedSpa Owner, Beauty Educator</p>
                 </div>
               </div>
             </div>
-            <div class="proof-video-wrap">
-              <video class="proof-video" controls playsinline preload="none" poster="/discover/thank-you/video-placeholder.svg" aria-label="Vertical testimonial video placeholder for Client Name 10">
-                Your browser does not support HTML5 video.
-              </video>
-              <p class="proof-placeholder-note">Vertical video placeholder</p>
+            <div class="proof-video-wrap proof-carousel-wrap">
+              <div class="proof-carousel" data-proof-carousel data-client-name="Mary Elizabeth" role="region" aria-roledescription="carousel" aria-label="Brand transformation gallery for Mary Elizabeth">
+                <div class="proof-carousel-track" data-proof-carousel-track>
+                  <div class="proof-carousel-slide" data-proof-carousel-slide aria-hidden="true">
+                    <img src="/mary_portrait.webp" alt="Mary Elizabeth" loading="lazy" decoding="async" width="1238" height="2048">
+                  </div>
+                  <div class="proof-carousel-slide" data-proof-carousel-slide aria-hidden="true">
+                    <img src="/mary_bag.webp" alt="Mary Elizabeth - Grey Bag" loading="lazy" decoding="async" width="2048" height="1366">
+                  </div>
+                  <div class="proof-carousel-slide" data-proof-carousel-slide aria-hidden="true">
+                    <img src="/mary_magazine.webp" alt="Mary Elizabeth - Black Magazine" loading="lazy" decoding="async" width="2048" height="1365">
+                  </div>
+                  <div class="proof-carousel-slide" data-proof-carousel-slide aria-hidden="true">
+                    <img src="/mary_chair.webp" alt="Mary Elizabeth - Olive Chair" loading="lazy" decoding="async" width="1200" height="800">
+                  </div>
+                  <div class="proof-carousel-slide" data-proof-carousel-slide aria-hidden="true">
+                    <img src="/mary_phone.webp" alt="Mary Elizabeth - Black Phone" loading="lazy" decoding="async" width="1637" height="2048">
+                  </div>
+                </div>
+                <button class="proof-carousel-arrow proof-carousel-arrow--prev" type="button" data-proof-carousel-prev aria-label="Previous image for Mary Elizabeth">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 6 9 12 15 18"></polyline></svg>
+                </button>
+                <button class="proof-carousel-arrow proof-carousel-arrow--next" type="button" data-proof-carousel-next aria-label="Next image for Mary Elizabeth">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 6 15 12 9 18"></polyline></svg>
+                </button>
+                <div class="proof-carousel-dots" data-proof-carousel-dots aria-label="Choose an image for Mary Elizabeth"></div>
+                <p class="proof-carousel-status" data-proof-carousel-status aria-live="polite">Slide 1 of 5 for Mary Elizabeth</p>
+              </div>
             </div>
           </article>
           </div>
@@ -1761,6 +2096,101 @@
         }
       });
     })();
+  </script>
+
+
+
+  <script id="proof-carousel-script">
+  (function() {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    document.querySelectorAll('[data-proof-carousel]').forEach(function(carousel) {
+      const track = carousel.querySelector('[data-proof-carousel-track]');
+      const slides = Array.from(carousel.querySelectorAll('[data-proof-carousel-slide]'));
+      const dotsContainer = carousel.querySelector('[data-proof-carousel-dots]');
+      const previousButton = carousel.querySelector('[data-proof-carousel-prev]');
+      const nextButton = carousel.querySelector('[data-proof-carousel-next]');
+      const status = carousel.querySelector('[data-proof-carousel-status]');
+      const clientName = carousel.getAttribute('data-client-name') || 'testimonial';
+      const total = slides.length;
+      let current = 0;
+      let pointerStartX = null;
+      let pointerId = null;
+
+      if (!track || !dotsContainer || !total) return;
+
+      const dots = slides.map(function(_, index) {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'proof-carousel-dot' + (index === 0 ? ' is-active' : '');
+        dot.setAttribute('aria-label', 'Show slide ' + (index + 1) + ' of ' + total + ' for ' + clientName);
+        dot.setAttribute('aria-current', index === 0 ? 'true' : 'false');
+        dot.addEventListener('click', function() { goTo(index); });
+        dotsContainer.appendChild(dot);
+        return dot;
+      });
+
+      function update() {
+        track.style.transition = reducedMotion.matches ? 'none' : 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)';
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        slides.forEach(function(slide, index) {
+          slide.setAttribute('aria-hidden', index === current ? 'false' : 'true');
+        });
+        dots.forEach(function(dot, index) {
+          const active = index === current;
+          dot.classList.toggle('is-active', active);
+          dot.setAttribute('aria-current', active ? 'true' : 'false');
+        });
+        if (status) status.textContent = 'Slide ' + (current + 1) + ' of ' + total + ' for ' + clientName;
+      }
+
+      function goTo(index) {
+        current = ((index % total) + total) % total;
+        update();
+      }
+
+      if (previousButton) previousButton.addEventListener('click', function() { goTo(current - 1); });
+      if (nextButton) nextButton.addEventListener('click', function() { goTo(current + 1); });
+
+      carousel.addEventListener('keydown', function(event) {
+        if (event.key === 'ArrowLeft') {
+          event.preventDefault();
+          goTo(current - 1);
+        } else if (event.key === 'ArrowRight') {
+          event.preventDefault();
+          goTo(current + 1);
+        } else if (event.key === 'Home') {
+          event.preventDefault();
+          goTo(0);
+        } else if (event.key === 'End') {
+          event.preventDefault();
+          goTo(total - 1);
+        }
+      });
+
+      carousel.addEventListener('pointerdown', function(event) {
+        if (event.target.closest('button')) return;
+        pointerStartX = event.clientX;
+        pointerId = event.pointerId;
+        carousel.setPointerCapture(pointerId);
+      });
+
+      carousel.addEventListener('pointerup', function(event) {
+        if (pointerStartX === null || event.pointerId !== pointerId) return;
+        const distance = pointerStartX - event.clientX;
+        pointerStartX = null;
+        pointerId = null;
+        if (Math.abs(distance) > 34) goTo(distance > 0 ? current + 1 : current - 1);
+      });
+
+      carousel.addEventListener('pointercancel', function() {
+        pointerStartX = null;
+        pointerId = null;
+      });
+
+      update();
+    });
+  })();
   </script>
 
 </body>
