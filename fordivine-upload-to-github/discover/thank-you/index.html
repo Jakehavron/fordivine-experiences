@@ -868,6 +868,409 @@
         height: 13px;
       }
     }
+
+
+    /* ========== CROWNED STORIES PROOF SECTION ========== */
+    .stories-proof-section {
+      position: relative;
+      width: 100%;
+      padding: clamp(84px, 9vw, 124px) 24px clamp(92px, 10vw, 136px);
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 10% 12%, rgba(232, 223, 200, 0.10), transparent 34%),
+        radial-gradient(circle at 90% 88%, rgba(200, 184, 154, 0.08), transparent 30%),
+        var(--charcoal);
+      color: var(--white);
+    }
+
+    .stories-proof-inner {
+      position: relative;
+      z-index: 1;
+      width: min(1120px, 100%);
+      margin: 0 auto;
+    }
+
+    .stories-proof-header {
+      max-width: 790px;
+      margin: 0 auto clamp(44px, 6vw, 72px);
+      text-align: center;
+    }
+
+    .stories-proof-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
+      color: #d8c9ab;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    .stories-proof-eyebrow::before,
+    .stories-proof-eyebrow::after {
+      content: '';
+      width: 34px;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.65;
+    }
+
+    .stories-proof-title {
+      color: var(--white);
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: clamp(36px, 4.6vw, 58px);
+      font-weight: 900;
+      letter-spacing: -0.052em;
+      line-height: 0.98;
+      text-transform: uppercase;
+    }
+
+    .stories-proof-title-accent {
+      color: #e8dfc8;
+    }
+
+    .stories-proof-subcopy {
+      max-width: 660px;
+      margin: 24px auto 0;
+      color: rgba(255,255,255,0.68);
+      font-size: clamp(17px, 1.8vw, 20px);
+      line-height: 1.65;
+    }
+
+    .stories-proof-list,
+    .stories-proof-expanded {
+      display: grid;
+      gap: 26px;
+    }
+
+    .stories-proof-expanded {
+      max-height: 0;
+      margin-top: 0;
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+      transition:
+        max-height 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 0.45s ease,
+        margin-top 0.6s ease,
+        visibility 0s linear 0.8s;
+    }
+
+    .stories-proof-expanded.is-open {
+      max-height: 9000px;
+      margin-top: 26px;
+      opacity: 1;
+      visibility: visible;
+      transition:
+        max-height 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 0.55s ease 0.08s,
+        margin-top 0.6s ease,
+        visibility 0s linear 0s;
+    }
+
+    .proof-story-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(260px, 0.92fr);
+      align-items: center;
+      gap: clamp(34px, 5vw, 68px);
+      min-height: 520px;
+      padding: clamp(34px, 5vw, 58px);
+      overflow: hidden;
+      border: 1px solid rgba(232, 223, 200, 0.15);
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(232,223,200,0.20), transparent 34%),
+        #fbf9f6;
+      box-shadow: 0 22px 70px rgba(0,0,0,0.20);
+      color: var(--text-dark);
+    }
+
+    .proof-story-card.is-reverse .proof-story-copy {
+      order: 2;
+    }
+
+    .proof-story-card.is-reverse .proof-video-wrap {
+      order: 1;
+    }
+
+    .proof-story-copy {
+      min-width: 0;
+    }
+
+    .proof-quote-mark {
+      display: block;
+      height: 56px;
+      margin-bottom: 10px;
+      color: #c8b89a;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 88px;
+      font-weight: 400;
+      line-height: 0.8;
+    }
+
+    .proof-story-quote {
+      color: var(--charcoal);
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: clamp(22px, 2.4vw, 32px);
+      font-weight: 800;
+      letter-spacing: -0.034em;
+      line-height: 1.1;
+    }
+
+    .proof-quote-paragraph {
+      display: block;
+      text-wrap: pretty;
+    }
+
+    .proof-quote-paragraph + .proof-quote-paragraph {
+      margin-top: 0.65em;
+    }
+
+    .proof-person {
+      display: block;
+      margin-top: 30px;
+      padding-left: 16px;
+      border-left: 2px solid rgba(200,184,154,0.88);
+    }
+
+    .proof-person-name {
+      color: var(--charcoal);
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .proof-person-title {
+      margin-top: 3px;
+      color: #77736d;
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    .proof-video-wrap {
+      position: relative;
+      width: min(100%, 292px);
+      margin: 0 auto;
+      padding: 12px 12px 12px;
+      border-radius: 28px;
+      background: linear-gradient(145deg, #e8dfc8 0%, #c8b89a 100%);
+      box-shadow: 0 26px 55px rgba(23,23,23,0.22);
+    }
+
+    .proof-video-wrap::before {
+      content: '9:16 VERTICAL STORY';
+      position: absolute;
+      top: 50%;
+      right: -76px;
+      z-index: 0;
+      color: rgba(45,47,46,0.42);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      transform: translateY(-50%) rotate(90deg);
+      transform-origin: center;
+      pointer-events: none;
+    }
+
+    .proof-video {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      overflow: hidden;
+      border: 0;
+      border-radius: 18px;
+      background: #171717;
+      color: var(--white);
+      object-fit: cover;
+    }
+
+    .proof-video:focus-visible {
+      outline: 3px solid #c8b89a;
+      outline-offset: 4px;
+    }
+
+    .proof-video-embed {
+      isolation: isolate;
+    }
+
+    .proof-video-embed > div {
+      width: 100% !important;
+    }
+
+    .proof-video-embed iframe {
+      border-radius: inherit;
+    }
+
+    .proof-placeholder-note {
+      margin-top: 12px;
+      color: rgba(45,47,46,0.55);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      line-height: 1.3;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .stories-proof-toggle-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 38px;
+    }
+
+    .stories-proof-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      min-height: 54px;
+      padding: 17px 30px;
+      border: 1px solid rgba(255,255,255,0.26);
+      border-radius: 100px;
+      background: rgba(255,255,255,0.08);
+      color: var(--white);
+      font: inherit;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      line-height: 1;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+    }
+
+    .stories-proof-toggle:hover,
+    .stories-proof-toggle:focus-visible {
+      background: var(--white);
+      color: var(--charcoal);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .stories-proof-toggle-icon {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.35s ease;
+    }
+
+    .stories-proof-toggle[aria-expanded='true'] .stories-proof-toggle-icon {
+      transform: rotate(180deg);
+    }
+
+    @media (max-width: 860px) {
+      .proof-story-card {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        min-height: 0;
+      }
+
+      .proof-story-card.is-reverse .proof-story-copy,
+      .proof-story-copy {
+        order: 1;
+      }
+
+      .proof-story-card.is-reverse .proof-video-wrap,
+      .proof-video-wrap {
+        order: 2;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .stories-proof-section {
+        padding: 72px 15px 82px;
+      }
+
+      .stories-proof-header {
+        margin-bottom: 36px;
+      }
+
+      .stories-proof-eyebrow {
+        font-size: 9.5px;
+        letter-spacing: 0.15em;
+      }
+
+      .stories-proof-eyebrow::before,
+      .stories-proof-eyebrow::after {
+        width: 22px;
+      }
+
+      .stories-proof-title {
+        font-size: clamp(32px, 10vw, 42px);
+      }
+
+      .stories-proof-subcopy {
+        margin-top: 20px;
+        font-size: 16px;
+      }
+
+      .stories-proof-list,
+      .stories-proof-expanded {
+        gap: 18px;
+      }
+
+      .stories-proof-expanded.is-open {
+        margin-top: 18px;
+      }
+
+      .proof-story-card {
+        gap: 26px;
+        padding: 28px 22px 26px;
+        border-radius: 18px;
+      }
+
+      .proof-quote-mark {
+        height: 44px;
+        font-size: 72px;
+      }
+
+      .proof-story-quote {
+        font-size: clamp(21px, 6.3vw, 26px);
+      }
+
+      .proof-person {
+        margin-top: 24px;
+      }
+
+      .proof-person-name {
+        font-size: 17px;
+      }
+
+      .proof-video-wrap {
+        width: min(100%, 252px);
+        padding: 10px;
+        border-radius: 23px;
+      }
+
+      .proof-video-wrap::before {
+        display: none;
+      }
+
+      .proof-video {
+        border-radius: 15px;
+      }
+
+      .stories-proof-toggle-wrap {
+        margin-top: 30px;
+      }
+
+      .stories-proof-toggle {
+        width: min(100%, 310px);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .stories-proof-expanded,
+      .stories-proof-toggle,
+      .stories-proof-toggle-icon {
+        transition: none !important;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -924,6 +1327,261 @@
             </div>
           </div>
         </aside>
+      </section>
+
+
+      <!-- ===== CROWNED STORIES TESTIMONIALS ===== -->
+      <section class="stories-proof-section" aria-labelledby="testimonial-stories-title">
+        <div class="stories-proof-inner">
+          <header class="stories-proof-header">
+            <p class="stories-proof-eyebrow">Crowned Stories</p>
+            <h2 class="stories-proof-title" id="testimonial-stories-title">While you wait, <span class="stories-proof-title-accent">see what’s possible.</span></h2>
+            <p class="stories-proof-subcopy">Watch how other women transformed their businesses and lives when their personal brands finally matched the authority they were called to carry.</p>
+          </header>
+
+          <div class="stories-proof-list">
+
+          <article class="proof-story-card">
+            <div class="proof-story-copy">
+              <span class="proof-quote-mark" aria-hidden="true">“</span>
+              <h3 class="proof-story-quote"><span class="proof-quote-paragraph">I wasn't getting any speaking opportunities before honing in my brand and&nbsp;marketing.</span><span class="proof-quote-paragraph">Now I got requested to be the MAIN Keynote Speaker at a women's event of 300+ medical&nbsp;professionals!</span></h3>
+              <div class="proof-person">
+                <div>
+                  <p class="proof-person-name">Dr. Stephanie Byerly</p>
+                  <p class="proof-person-title">Trauma Coach, Anesthesiologist</p>
+                </div>
+              </div>
+            </div>
+            <div class="proof-video-wrap">
+              <div class="proof-video proof-video-embed" aria-label="Video testimonial from Dr. Stephanie Byerly">
+                <div id="vidalytics_embed_keXT9onFdaEZqvRX" style="width: 100%; position:relative; padding-top: 177.78%;"></div>
+                <script type="text/javascript">
+                (function (v, i, d, a, l, y, t, c, s) {
+                    y='_'+d.toLowerCase();c=d+'L';if(!v[d]){v[d]={};}if(!v[c]){v[c]={};}if(!v[y]){v[y]={};}var vl='Loader',vli=v[y][vl],vsl=v[c][vl + 'Script'],vlf=v[c][vl + 'Loaded'],ve='Embed';
+                    if (!vsl){vsl=function(u,cb){
+                        if(t){cb();return;}s=i.createElement("script");s.type="text/javascript";s.async=1;s.src=u;
+                        if(s.readyState){s.onreadystatechange=function(){if(s.readyState==="loaded"||s.readyState==="complete"){s.onreadystatechange=null;vlf=1;cb();}};}else{s.onload=function(){vlf=1;cb();};}
+                        i.getElementsByTagName("head")[0].appendChild(s);
+                    };}
+                    vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
+                })(window, document, 'Vidalytics', 'vidalytics_embed_keXT9onFdaEZqvRX', 'https://fast.vidalytics.com/embeds/Sjy1Iha6/keXT9onFdaEZqvRX/');
+                </script>
+              </div>
+            </div>
+          </article>
+
+          <article class="proof-story-card is-reverse">
+            <div class="proof-story-copy">
+              <span class="proof-quote-mark" aria-hidden="true">“</span>
+              <h3 class="proof-story-quote"><span class="proof-quote-paragraph">You gave me the courage and the confidence to realize I am worthy of speaking as an authority online and on&nbsp;stages.</span><span class="proof-quote-paragraph">Now I am getting wayyy more inbound customers and partnerships because people know what I stand&nbsp;for.</span></h3>
+              <div class="proof-person">
+                <div>
+                  <p class="proof-person-name">Amy Lacey</p>
+                  <p class="proof-person-title">Founder of Livyond, Keynote Speaker</p>
+                </div>
+              </div>
+            </div>
+            <div class="proof-video-wrap">
+              <div class="proof-video proof-video-embed" aria-label="Video testimonial from Amy Lacey">
+                <div id="vidalytics_embed_IKYgElLip9N1Kiwu" style="width: 100%; position:relative; padding-top: 177.78%;"></div>
+                <script type="text/javascript">
+                (function (v, i, d, a, l, y, t, c, s) {
+                    y='_'+d.toLowerCase();c=d+'L';if(!v[d]){v[d]={};}if(!v[c]){v[c]={};}if(!v[y]){v[y]={};}var vl='Loader',vli=v[y][vl],vsl=v[c][vl + 'Script'],vlf=v[c][vl + 'Loaded'],ve='Embed';
+                    if (!vsl){vsl=function(u,cb){
+                        if(t){cb();return;}s=i.createElement("script");s.type="text/javascript";s.async=1;s.src=u;
+                        if(s.readyState){s.onreadystatechange=function(){if(s.readyState==="loaded"||s.readyState==="complete"){s.onreadystatechange=null;vlf=1;cb();}};}else{s.onload=function(){vlf=1;cb();};}
+                        i.getElementsByTagName("head")[0].appendChild(s);
+                    };}
+                    vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
+                })(window, document, 'Vidalytics', 'vidalytics_embed_IKYgElLip9N1Kiwu', 'https://fast.vidalytics.com/embeds/Sjy1Iha6/IKYgElLip9N1Kiwu/');
+                </script>
+              </div>
+            </div>
+          </article>
+
+          <article class="proof-story-card">
+            <div class="proof-story-copy">
+              <span class="proof-quote-mark" aria-hidden="true">“</span>
+              <h3 class="proof-story-quote"><span class="proof-quote-paragraph">Faith alignment is everything to me and I felt that with the brand ecosystem we&nbsp;created.</span><span class="proof-quote-paragraph">My fiancé and I now have built a strong real estate investing brand and are attracting the right type of&nbsp;partners.</span></h3>
+              <div class="proof-person">
+                <div>
+                  <p class="proof-person-name">Tiana Soliday</p>
+                  <p class="proof-person-title">Co-Owner of SheINVESTS</p>
+                </div>
+              </div>
+            </div>
+            <div class="proof-video-wrap">
+              <div class="proof-video proof-video-embed" aria-label="Video testimonial from Tiana Soliday">
+                <div id="vidalytics_embed_Uiu_OAmxpP0YXce3" style="width: 100%; position:relative; padding-top: 177.78%;"></div>
+                <script type="text/javascript">
+                (function (v, i, d, a, l, y, t, c, s) {
+                    y='_'+d.toLowerCase();c=d+'L';if(!v[d]){v[d]={};}if(!v[c]){v[c]={};}if(!v[y]){v[y]={};}var vl='Loader',vli=v[y][vl],vsl=v[c][vl + 'Script'],vlf=v[c][vl + 'Loaded'],ve='Embed';
+                    if (!vsl){vsl=function(u,cb){
+                        if(t){cb();return;}s=i.createElement("script");s.type="text/javascript";s.async=1;s.src=u;
+                        if(s.readyState){s.onreadystatechange=function(){if(s.readyState==="loaded"||s.readyState==="complete"){s.onreadystatechange=null;vlf=1;cb();}};}else{s.onload=function(){vlf=1;cb();};}
+                        i.getElementsByTagName("head")[0].appendChild(s);
+                    };}
+                    vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
+                })(window, document, 'Vidalytics', 'vidalytics_embed_Uiu_OAmxpP0YXce3', 'https://fast.vidalytics.com/embeds/Sjy1Iha6/Uiu_OAmxpP0YXce3/');
+                </script>
+              </div>
+            </div>
+          </article>
+          </div>
+
+          <div class="stories-proof-expanded" id="more-testimonial-stories" aria-hidden="true" inert>
+
+          <article class="proof-story-card is-reverse">
+            <div class="proof-story-copy">
+              <span class="proof-quote-mark" aria-hidden="true">“</span>
+              <h3 class="proof-story-quote"><span class="proof-quote-paragraph">I am now getting so many podcast and partnership inquiries in my inbox because the public now sees me as the expert authority in the Behavioral Services&nbsp;profession.</span></h3>
+              <div class="proof-person">
+                <div>
+                  <p class="proof-person-name">Dr. Luiza Andakyan</p>
+                  <p class="proof-person-title">Owner of Adamant Behavioral Services</p>
+                </div>
+              </div>
+            </div>
+            <div class="proof-video-wrap">
+              <div class="proof-video proof-video-embed" aria-label="Video testimonial from Dr. Luiza Andakyan">
+                <div id="vidalytics_embed_PUEDcgR46XbJHzZA" style="width: 100%; position:relative; padding-top: 177.78%;"></div>
+                <script type="text/javascript">
+                (function (v, i, d, a, l, y, t, c, s) {
+                    y='_'+d.toLowerCase();c=d+'L';if(!v[d]){v[d]={};}if(!v[c]){v[c]={};}if(!v[y]){v[y]={};}var vl='Loader',vli=v[y][vl],vsl=v[c][vl + 'Script'],vlf=v[c][vl + 'Loaded'],ve='Embed';
+                    if (!vsl){vsl=function(u,cb){
+                        if(t){cb();return;}s=i.createElement("script");s.type="text/javascript";s.async=1;s.src=u;
+                        if(s.readyState){s.onreadystatechange=function(){if(s.readyState==="loaded"||s.readyState==="complete"){s.onreadystatechange=null;vlf=1;cb();}};}else{s.onload=function(){vlf=1;cb();};}
+                        i.getElementsByTagName("head")[0].appendChild(s);
+                    };}
+                    vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
+                })(window, document, 'Vidalytics', 'vidalytics_embed_PUEDcgR46XbJHzZA', 'https://fast.vidalytics.com/embeds/Sjy1Iha6/PUEDcgR46XbJHzZA/');
+                </script>
+              </div>
+            </div>
+          </article>
+
+          <article class="proof-story-card">
+            <div class="proof-story-copy">
+              <span class="proof-quote-mark" aria-hidden="true">“</span>
+              <h3 class="proof-story-quote">Client outcome quote placeholder. Replace this text with the approved testimonial.</h3>
+              <div class="proof-person">
+                <div>
+                  <p class="proof-person-name">Client Name 05</p>
+                  <p class="proof-person-title">Founder at Company</p>
+                </div>
+              </div>
+            </div>
+            <div class="proof-video-wrap">
+              <video class="proof-video" controls playsinline preload="none" poster="video-placeholder.svg" aria-label="Vertical testimonial video placeholder for Client Name 05">
+                Your browser does not support HTML5 video.
+              </video>
+              <p class="proof-placeholder-note">Vertical video placeholder</p>
+            </div>
+          </article>
+
+          <article class="proof-story-card is-reverse">
+            <div class="proof-story-copy">
+              <span class="proof-quote-mark" aria-hidden="true">“</span>
+              <h3 class="proof-story-quote">Client outcome quote placeholder. Replace this text with the approved testimonial.</h3>
+              <div class="proof-person">
+                <div>
+                  <p class="proof-person-name">Client Name 06</p>
+                  <p class="proof-person-title">Founder at Company</p>
+                </div>
+              </div>
+            </div>
+            <div class="proof-video-wrap">
+              <video class="proof-video" controls playsinline preload="none" poster="video-placeholder.svg" aria-label="Vertical testimonial video placeholder for Client Name 06">
+                Your browser does not support HTML5 video.
+              </video>
+              <p class="proof-placeholder-note">Vertical video placeholder</p>
+            </div>
+          </article>
+
+          <article class="proof-story-card">
+            <div class="proof-story-copy">
+              <span class="proof-quote-mark" aria-hidden="true">“</span>
+              <h3 class="proof-story-quote">Client outcome quote placeholder. Replace this text with the approved testimonial.</h3>
+              <div class="proof-person">
+                <div>
+                  <p class="proof-person-name">Client Name 07</p>
+                  <p class="proof-person-title">Founder at Company</p>
+                </div>
+              </div>
+            </div>
+            <div class="proof-video-wrap">
+              <video class="proof-video" controls playsinline preload="none" poster="video-placeholder.svg" aria-label="Vertical testimonial video placeholder for Client Name 07">
+                Your browser does not support HTML5 video.
+              </video>
+              <p class="proof-placeholder-note">Vertical video placeholder</p>
+            </div>
+          </article>
+
+          <article class="proof-story-card is-reverse">
+            <div class="proof-story-copy">
+              <span class="proof-quote-mark" aria-hidden="true">“</span>
+              <h3 class="proof-story-quote">Client outcome quote placeholder. Replace this text with the approved testimonial.</h3>
+              <div class="proof-person">
+                <div>
+                  <p class="proof-person-name">Client Name 08</p>
+                  <p class="proof-person-title">Founder at Company</p>
+                </div>
+              </div>
+            </div>
+            <div class="proof-video-wrap">
+              <video class="proof-video" controls playsinline preload="none" poster="video-placeholder.svg" aria-label="Vertical testimonial video placeholder for Client Name 08">
+                Your browser does not support HTML5 video.
+              </video>
+              <p class="proof-placeholder-note">Vertical video placeholder</p>
+            </div>
+          </article>
+
+          <article class="proof-story-card">
+            <div class="proof-story-copy">
+              <span class="proof-quote-mark" aria-hidden="true">“</span>
+              <h3 class="proof-story-quote">Client outcome quote placeholder. Replace this text with the approved testimonial.</h3>
+              <div class="proof-person">
+                <div>
+                  <p class="proof-person-name">Client Name 09</p>
+                  <p class="proof-person-title">Founder at Company</p>
+                </div>
+              </div>
+            </div>
+            <div class="proof-video-wrap">
+              <video class="proof-video" controls playsinline preload="none" poster="video-placeholder.svg" aria-label="Vertical testimonial video placeholder for Client Name 09">
+                Your browser does not support HTML5 video.
+              </video>
+              <p class="proof-placeholder-note">Vertical video placeholder</p>
+            </div>
+          </article>
+
+          <article class="proof-story-card is-reverse">
+            <div class="proof-story-copy">
+              <span class="proof-quote-mark" aria-hidden="true">“</span>
+              <h3 class="proof-story-quote">Client outcome quote placeholder. Replace this text with the approved testimonial.</h3>
+              <div class="proof-person">
+                <div>
+                  <p class="proof-person-name">Client Name 10</p>
+                  <p class="proof-person-title">Founder at Company</p>
+                </div>
+              </div>
+            </div>
+            <div class="proof-video-wrap">
+              <video class="proof-video" controls playsinline preload="none" poster="video-placeholder.svg" aria-label="Vertical testimonial video placeholder for Client Name 10">
+                Your browser does not support HTML5 video.
+              </video>
+              <p class="proof-placeholder-note">Vertical video placeholder</p>
+            </div>
+          </article>
+          </div>
+
+          <div class="stories-proof-toggle-wrap">
+            <button class="stories-proof-toggle" type="button" aria-expanded="false" aria-controls="more-testimonial-stories">
+              <span class="stories-proof-toggle-label">See More Stories</span>
+              <svg class="stories-proof-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+          </div>
+        </div>
       </section>
 
       <!-- ===== ACCORDION Q&A ===== -->
@@ -1077,6 +1735,32 @@
         }
       });
     });
+  </script>
+
+
+  <script>
+    (function () {
+      const toggle = document.querySelector('.stories-proof-toggle');
+      const expanded = document.getElementById('more-testimonial-stories');
+      if (!toggle || !expanded) return;
+
+      const label = toggle.querySelector('.stories-proof-toggle-label');
+
+      toggle.addEventListener('click', function () {
+        const willOpen = toggle.getAttribute('aria-expanded') !== 'true';
+        toggle.setAttribute('aria-expanded', String(willOpen));
+        expanded.setAttribute('aria-hidden', String(!willOpen));
+        expanded.toggleAttribute('inert', !willOpen);
+        expanded.classList.toggle('is-open', willOpen);
+        label.textContent = willOpen ? 'See Fewer Stories' : 'See More Stories';
+
+        if (!willOpen) {
+          expanded.querySelectorAll('video').forEach(function (video) {
+            video.pause();
+          });
+        }
+      });
+    })();
   </script>
 
 </body>
