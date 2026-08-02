@@ -1060,21 +1060,6 @@
       box-shadow: 0 26px 55px rgba(23,23,23,0.22);
     }
 
-    .proof-video-wrap::before {
-      content: '9:16 VERTICAL STORY';
-      position: absolute;
-      top: 50%;
-      right: -76px;
-      z-index: 0;
-      color: rgba(45,47,46,0.42);
-      font-size: 9px;
-      font-weight: 800;
-      letter-spacing: 0.16em;
-      transform: translateY(-50%) rotate(90deg);
-      transform-origin: center;
-      pointer-events: none;
-    }
-
     .proof-video {
       position: relative;
       z-index: 1;
@@ -1394,7 +1379,12 @@
       }
 
       .stories-proof-title {
-        font-size: clamp(32px, 10vw, 42px);
+        font-size: clamp(29px, 8.25vw, 35px);
+      }
+
+      .stories-proof-title-line {
+        display: block;
+        white-space: nowrap;
       }
 
       .stories-proof-subcopy {
@@ -1438,10 +1428,6 @@
         width: min(100%, 252px);
         padding: 10px;
         border-radius: 23px;
-      }
-
-      .proof-video-wrap::before {
-        display: none;
       }
 
       .proof-video {
@@ -1497,9 +1483,6 @@
             </script>
           </div>
           <p class="lead">Your call is confirmed. Watch this quick video from Emily Ford on what to expect for your call.</p>
-          <div class="cta-row" aria-label="Next steps">
-            <a href="https://www.fordivine.com/crowned-stories" class="cta-btn" target="_blank" rel="noopener noreferrer">VIEW CROWNED STORIES</a>
-          </div>
         </div>
 
         <aside class="confirmation-card" aria-label="Discovery call next step reminder">
@@ -1515,7 +1498,7 @@
                 <ol>
                   <li>Check your email and click &quot;YES&quot; to confirm calendar invite</li>
                   <li>The zoom link in your calendar invite (please double check)</li>
-                  <li>Click &quot;View Crowned Stories&quot; to see other women that we have helped</li>
+                  <li>Scroll down below to see what's possible for you</li>
                 </ol>
               </div>
             </div>
@@ -1529,7 +1512,7 @@
         <div class="stories-proof-inner">
           <header class="stories-proof-header">
             <p class="stories-proof-eyebrow">Crowned Stories</p>
-            <h2 class="stories-proof-title" id="testimonial-stories-title">While you wait, <span class="stories-proof-title-accent">see what’s possible.</span></h2>
+            <h2 class="stories-proof-title" id="testimonial-stories-title"><span class="stories-proof-title-line">While you wait,</span> <span class="stories-proof-title-line stories-proof-title-accent">see what’s possible.</span></h2>
             <p class="stories-proof-subcopy">Watch how other women transformed their businesses and lives when their personal brands finally matched the authority they were called to carry.</p>
           </header>
 
