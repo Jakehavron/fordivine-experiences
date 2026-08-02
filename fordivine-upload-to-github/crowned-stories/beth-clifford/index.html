@@ -667,43 +667,69 @@ body[data-crowned-story="beth-clifford"] .framer-dHSaT .framer-13bpcj4 .cs-secti
 </script>
 <script id="fd-beth-coronation-video-visibility">
 (function(){
-  let observer=null;
-  const initialize=()=>{
-    const section=document.querySelector('.framer-ry2bpi');
-    const video=section&&section.querySelector('video');
-    if(!section||!video)return;
-    section.dataset.bethCoronationFlow='smooth-mobile';
-    video.playsInline=true;
-    video.muted=true;
-    video.setAttribute('playsinline','');
-    video.setAttribute('webkit-playsinline','');
-    if(!window.matchMedia('(max-width: 809px)').matches)return;
-    if(observer){observer.disconnect();observer=null}
-    const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(reduced){
-      video.pause();
-      video.autoplay=false;
-      video.removeAttribute('autoplay');
-      window.setTimeout(()=>{video.pause();video.autoplay=false;video.removeAttribute('autoplay')},300);
+  const section=document.querySelector('.framer-ry2bpi');
+  const video=section&&section.querySelector('video');
+  if(!section||!video)return;
+  section.dataset.bethCoronationFlow='smooth-mobile';
+  video.playsInline=true;
+  video.muted=true;
+  video.setAttribute('playsinline','');
+  video.setAttribute('webkit-playsinline','');
+  if(!window.matchMedia('(max-width: 809px)').matches)return;
+  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let shouldPlay=false;
+  let framePending=false;
+  const removeAutoplay=()=>{
+    video.autoplay=false;
+    if(video.hasAttribute('autoplay'))video.removeAttribute('autoplay');
+  };
+  const enforcePlayback=()=>{
+    removeAutoplay();
+    if(reduced||!shouldPlay){
+      if(!video.paused)video.pause();
       return;
     }
-    const syncPlayback=entry=>{
-      if(entry.isIntersecting&&entry.intersectionRatio>=.15){
-        const playPromise=video.play();
-        if(playPromise&&typeof playPromise.catch==='function')playPromise.catch(()=>{});
-      }else{
-        video.pause();
-      }
-    };
-    if('IntersectionObserver' in window){
-      observer=new IntersectionObserver(entries=>entries.forEach(syncPlayback),{rootMargin:'35% 0px 35% 0px',threshold:[0,.15,.5]});
-      observer.observe(video);
-    }
+    const playPromise=video.play();
+    if(playPromise&&typeof playPromise.catch==='function')playPromise.catch(()=>{});
   };
-  const schedule=()=>window.setTimeout(initialize,0);
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',schedule,{once:true});
-  else schedule();
-  window.addEventListener('load',schedule,{once:true});
+  const updateFromGeometry=()=>{
+    framePending=false;
+    const rect=video.getBoundingClientRect();
+    const margin=Math.round(window.innerHeight*.2);
+    shouldPlay=!reduced&&rect.bottom>-margin&&rect.top<window.innerHeight+margin;
+    enforcePlayback();
+  };
+  const scheduleGeometryUpdate=()=>{
+    if(framePending)return;
+    framePending=true;
+    window.requestAnimationFrame(updateFromGeometry);
+  };
+  removeAutoplay();
+  video.setAttribute('preload','metadata');
+  video.addEventListener('play',()=>{
+    if(reduced||!shouldPlay)window.setTimeout(()=>video.pause(),0);
+  });
+  video.addEventListener('canplay',()=>window.setTimeout(enforcePlayback,0),true);
+  const autoplayGuard=new MutationObserver(removeAutoplay);
+  autoplayGuard.observe(video,{attributes:true,attributeFilter:['autoplay']});
+  if('IntersectionObserver' in window){
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        shouldPlay=!reduced&&entry.isIntersecting&&entry.intersectionRatio>.01;
+        enforcePlayback();
+      });
+    },{rootMargin:'20% 0px 20% 0px',threshold:[0,.01,.25]});
+    observer.observe(video);
+  }
+  window.addEventListener('scroll',scheduleGeometryUpdate,{passive:true});
+  window.addEventListener('resize',scheduleGeometryUpdate,{passive:true});
+  document.addEventListener('visibilitychange',()=>{
+    if(document.hidden){video.pause();return}
+    scheduleGeometryUpdate();
+  });
+  scheduleGeometryUpdate();
+  document.addEventListener('DOMContentLoaded',scheduleGeometryUpdate,{once:true});
+  window.addEventListener('load',scheduleGeometryUpdate,{once:true});
 })();
 </script>
 <script data-cs-enhancement-asset="js" defer="True" src="/crowned-stories/shared/crowned-story-enhancements.js"></script></body>
