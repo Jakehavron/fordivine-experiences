@@ -489,6 +489,30 @@ form[data-colette-concierge-form-replaced="true"]{display:none!important;visibil
 @media(prefers-reduced-motion:reduce){.colette-concierge-cta{transition:none!important}.colette-concierge-cta:hover{transform:none}}
 </style>
 
+
+<style id="fd-colette-refinement-video-placement-style">
+body[data-crowned-story="colette-vanpaemel"] .framer-gfh9rl .framer-17j4kqo{isolation:isolate!important}
+body[data-crowned-story="colette-vanpaemel"] .framer-gfh9rl .fd-refinement-video-shell{position:relative!important;display:block!important;aspect-ratio:.5625!important;height:var(--framer-aspect-ratio-supported,672px)!important;flex:none!important;width:100%!important;max-width:378px!important;margin:0!important}
+body[data-crowned-story="colette-vanpaemel"] .framer-gfh9rl .fd-refinement-video-kicker,
+body[data-crowned-story="colette-vanpaemel"] .framer-gfh9rl .fd-refinement-video-caption{display:none!important}
+body[data-crowned-story="colette-vanpaemel"] .framer-gfh9rl .fd-refinement-video-frame{position:absolute!important;inset:0!important;width:auto!important;height:auto!important;min-height:0!important;aspect-ratio:auto!important;margin:0!important;overflow:hidden!important;border:0!important;border-radius:24px!important;background:#171717!important;box-shadow:none!important}
+body[data-crowned-story="colette-vanpaemel"] .framer-gfh9rl .fd-refinement-video-frame:before{content:none!important;display:none!important}
+body[data-crowned-story="colette-vanpaemel"] .framer-gfh9rl .fd-refinement-video-frame video{position:absolute!important;inset:0!important;display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;background:#171717!important}
+body[data-crowned-story="colette-vanpaemel"] .fd-refinement-video-section{display:none!important;height:0!important;min-height:0!important;margin:0!important;padding:0!important;overflow:hidden!important}
+@media(max-width:809px){body[data-crowned-story="colette-vanpaemel"] .framer-gfh9rl .fd-refinement-video-frame{border-radius:20px!important}}
+</style>
+
+<style id="fd-colette-coronation-video-placement-style">
+body[data-crowned-story="colette-vanpaemel"] .framer-ry2bpi #kqjtCssTJ{background:#171717!important}
+body[data-crowned-story="colette-vanpaemel"] .framer-ry2bpi .colette-coronation-day-video{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;background:#171717!important}
+@media(max-width:809px){
+  body[data-crowned-story="colette-vanpaemel"] .framer-dHSaT .framer-ry2bpi .framer-83d5sw{display:block!important;position:relative!important;width:100%!important;height:auto!important;min-height:0!important;aspect-ratio:704/1280!important;margin:0!important;padding:0!important;overflow:hidden!important;border-radius:22px!important;background:#171717!important;box-shadow:0 14px 34px rgba(23,23,23,.1)!important;isolation:isolate!important}
+  body[data-crowned-story="colette-vanpaemel"] .framer-dHSaT .framer-ry2bpi .framer-1qadq14,
+  body[data-crowned-story="colette-vanpaemel"] .framer-dHSaT .framer-ry2bpi .framer-1mlr5sl-container,
+  body[data-crowned-story="colette-vanpaemel"] .framer-dHSaT .framer-ry2bpi #kqjtCssTJ{display:block!important;position:absolute!important;inset:0!important;width:100%!important;height:100%!important;min-height:0!important;max-height:none!important;margin:0!important;overflow:hidden!important;border-radius:inherit!important}
+}
+@media(max-width:360px){body[data-crowned-story="colette-vanpaemel"] .framer-dHSaT .framer-ry2bpi .framer-83d5sw{border-radius:18px!important}}
+</style>
 </head>
 <body data-fd-video-visibility-fix="portrait-frame-2026-06-07" data-crowned-story="colette-vanpaemel" data-fd-cleanup="remaining-crowned-stories">
 <!-- Google Tag Manager (noscript) -->
@@ -594,6 +618,43 @@ form[data-colette-concierge-form-replaced="true"]{display:none!important;visibil
   setTimeout(fixFordivineLogoLinks, 2000);
 })();
 </script><script data-cs-enhancement-asset="js" defer="True" src="/crowned-stories/shared/crowned-story-enhancements.js"></script>
+
+<script id="fd-colette-refinement-video-placement">
+(function(){
+  const target=document.querySelector('body[data-crowned-story="colette-vanpaemel"] .framer-gfh9rl .framer-17j4kqo');
+  const standalone=document.querySelector('section[data-fd-refinement-video="colette-vanpaemel"]');
+  const shell=standalone?.querySelector('.fd-refinement-video-shell');
+  const video=shell?.querySelector('video');
+  if(!target||!standalone||!shell||!video)return;
+  target.dataset.coletteRefinementVideoTarget='true';
+  shell.dataset.coletteRefinementVideoShell='true';
+  video.setAttribute('aria-label','Colette VanPaemel refinement video');
+  target.replaceChildren(shell);
+  standalone.dataset.coletteRefinementVideoRelocated='true';
+  standalone.setAttribute('aria-hidden','true');
+})();
+</script>
+
+<script id="fd-colette-coronation-video-placement">
+(function(){
+  const mount=()=>{
+    const host=document.querySelector('body[data-crowned-story="colette-vanpaemel"] .framer-ry2bpi #kqjtCssTJ');
+    if(!host||host.querySelector('[data-colette-coronation-video]'))return;
+    const video=document.createElement('video');
+    video.className='colette-coronation-day-video';
+    video.dataset.coletteCoronationVideo='true';
+    video.src='/crowned-stories/colette-vanpaemel/media/colette-coronation-day.mp4';
+    video.controls=true;
+    video.playsInline=true;
+    video.preload='metadata';
+    video.setAttribute('aria-label','Colette VanPaemel Coronation Day video');
+    host.replaceChildren(video);
+    host.dataset.coletteCoronationVideoHost='true';
+  };
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount,{once:true});
+  else mount();
+})();
+</script>
 <script id="fd-colette-brand-reveal-builder">
 (function(){
   const mobileSection=document.querySelector('[data-framer-name="Section | 5 | Mobile"]');
