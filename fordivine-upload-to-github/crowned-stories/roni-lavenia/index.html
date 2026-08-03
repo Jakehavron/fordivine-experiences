@@ -488,6 +488,17 @@ form[data-roni-concierge-form-replaced="true"]{display:none!important;visibility
 @media(prefers-reduced-motion:reduce){.roni-concierge-cta{transition:none!important}.roni-concierge-cta:hover{transform:none}}
 </style>
 
+<style id="fd-roni-refinement-video-placement-style">
+body[data-crowned-story="roni-lavenia"] .framer-gfh9rl .framer-17j4kqo{isolation:isolate!important}
+body[data-crowned-story="roni-lavenia"] .framer-gfh9rl .fd-refinement-video-shell{position:relative!important;display:block!important;aspect-ratio:.5625!important;height:var(--framer-aspect-ratio-supported,672px)!important;flex:none!important;width:100%!important;max-width:378px!important;margin:0!important}
+body[data-crowned-story="roni-lavenia"] .framer-gfh9rl .fd-refinement-video-kicker,
+body[data-crowned-story="roni-lavenia"] .framer-gfh9rl .fd-refinement-video-caption{display:none!important}
+body[data-crowned-story="roni-lavenia"] .framer-gfh9rl .fd-refinement-video-frame{position:absolute!important;inset:0!important;width:auto!important;height:auto!important;min-height:0!important;aspect-ratio:auto!important;margin:0!important;overflow:hidden!important;border:0!important;border-radius:24px!important;background:#171717!important;box-shadow:none!important}
+body[data-crowned-story="roni-lavenia"] .framer-gfh9rl .fd-refinement-video-frame:before{content:none!important;display:none!important}
+body[data-crowned-story="roni-lavenia"] .framer-gfh9rl .fd-refinement-video-frame video{position:absolute!important;inset:0!important;display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;background:#171717!important}
+body[data-crowned-story="roni-lavenia"] .fd-refinement-video-section{display:none!important;height:0!important;min-height:0!important;margin:0!important;padding:0!important;overflow:hidden!important}
+@media(max-width:809px){body[data-crowned-story="roni-lavenia"] .framer-gfh9rl .fd-refinement-video-frame{border-radius:20px!important}}
+</style>
 </head>
 <body data-fd-video-visibility-fix="portrait-frame-2026-06-07" data-crowned-story="roni-lavenia" data-fd-cleanup="remaining-crowned-stories">
 <!-- Google Tag Manager (noscript) -->
@@ -593,6 +604,21 @@ form[data-roni-concierge-form-replaced="true"]{display:none!important;visibility
   setTimeout(fixFordivineLogoLinks, 2000);
 })();
 </script><script data-cs-enhancement-asset="js" defer="True" src="/crowned-stories/shared/crowned-story-enhancements.js"></script>
+<script id="fd-roni-refinement-video-placement">
+(function(){
+  const target=document.querySelector('body[data-crowned-story="roni-lavenia"] .framer-gfh9rl .framer-17j4kqo');
+  const standalone=document.querySelector('section[data-fd-refinement-video="roni-lavenia"]');
+  const shell=standalone?.querySelector('.fd-refinement-video-shell');
+  const video=shell?.querySelector('video');
+  if(!target||!standalone||!shell||!video)return;
+  target.dataset.roniRefinementVideoTarget='true';
+  shell.dataset.roniRefinementVideoShell='true';
+  video.setAttribute('aria-label','Roni Lavenia refinement video');
+  target.replaceChildren(shell);
+  standalone.dataset.roniRefinementVideoRelocated='true';
+  standalone.setAttribute('aria-hidden','true');
+})();
+</script>
 <script id="fd-roni-brand-reveal-builder">
 (function(){
   const mobileSection=document.querySelector('[data-framer-name="Section | 5 | Mobile"]');
