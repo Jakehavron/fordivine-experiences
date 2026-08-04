@@ -4,6 +4,8 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <link rel="canonical" href="https://www.fordivine.com/crowned-stories/coaches-speakers-authors/"/>
+<link rel="preload" as="image" href="/beth_clifford.webp" type="image/webp" fetchpriority="high"/>
+<link rel="preload" as="image" href="/roni_lavenia.webp" type="image/webp" fetchpriority="high"/>
 <title>Coaches, Speakers & Authors Crowned Stories | FORDIVINE</title>
 <meta name="twitter:image" content="https://www.fordivine.com/beth_clifford.webp"/>
 <meta name="twitter:description" content="Explore FORDIVINE Crowned Stories from coaches, speakers, and authors who turned invisible expertise into recognizable authority."/>
@@ -699,7 +701,7 @@ function toggleMobileMenu() {
 <section class="crowned-heroes">
 
     <a href="/crowned-stories/beth-clifford/" class="crowned-hero-card">
-      <img src="/beth_clifford.webp" alt="Beth Clifford" loading="lazy" decoding="async" style="object-position: center 15%;"/>
+      <img src="/beth_clifford.webp" alt="Beth Clifford" width="2000" height="1124" loading="eager" fetchpriority="high" decoding="async" data-category-priority-image="01" style="object-position: center 15%;"/>
       <div class="crowned-hero-overlay"></div>
       <div class="crowned-hero-content">
         <h3>Beth Clifford</h3>
@@ -710,7 +712,7 @@ function toggleMobileMenu() {
     </a>
 
     <a href="/crowned-stories/roni-lavenia/" class="crowned-hero-card">
-      <img src="/roni_lavenia.webp" alt="Roni LaVenia" loading="lazy" decoding="async" style="object-position: 60% 15%;"/>
+      <img src="/roni_lavenia.webp" alt="Roni LaVenia" width="2000" height="1125" loading="eager" fetchpriority="high" decoding="async" data-category-priority-image="02" style="object-position: 60% 15%;"/>
       <div class="crowned-hero-overlay"></div>
       <div class="crowned-hero-content">
         <h3>Roni LaVenia</h3>
@@ -940,5 +942,31 @@ function toggleMobileMenu() {
   </div>
   <p class="footer-disclaimer">Emily Ford and FORDIVINE&trade;'s results are not typical and are not a guarantee of your success. Your results will vary depending on your effort, application, experience, and background. We do not give investment, tax, or other professional advice. The information contained within this website is the property of Fortitude LLC. Any use of the images, content, or ideas expressed herein without the express written consent of Fortitude LLC is prohibited. Copyright &copy; 2025 FORDIVINE&trade;. All Rights Reserved.</p>
 </footer>
+<script data-category-carousel-image-preloader>
+(() => {
+  const carousels = Array.from(document.querySelectorAll('[data-mini-carousel]'));
+  if (!carousels.length) return;
+  const preload = carousel => {
+    carousel.querySelectorAll('img[loading="lazy"]').forEach(image => {
+      image.loading = 'eager';
+      const source = image.getAttribute('src');
+      if (source && !image.complete) image.src = source;
+    });
+    carousel.setAttribute('data-images-preloaded', 'true');
+  };
+  if (!('IntersectionObserver' in window)) {
+    carousels.forEach(preload);
+    return;
+  }
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      preload(entry.target);
+      observer.unobserve(entry.target);
+    });
+  }, { rootMargin: '1000px 0px', threshold: 0.01 });
+  carousels.forEach(carousel => observer.observe(carousel));
+})();
+</script>
 </body>
 </html>
