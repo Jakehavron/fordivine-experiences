@@ -24,6 +24,7 @@
   <link rel="dns-prefetch" href="//www.google-analytics.com">
   <link rel="dns-prefetch" href="//script.hotjar.com">
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" rel="stylesheet">
 
   <script>
     (function(w,d,s,u,id){
@@ -509,6 +510,148 @@
       margin-top: 8px;
     }
 
+
+    /* ========== CROWNED STORIES AUDIENCE CARDS ========== */
+    .stories-audience-section {
+      width: 100%;
+      padding: clamp(64px, 7vw, 96px) 0 clamp(80px, 9vw, 128px);
+      background: #ffffff;
+    }
+
+    .stories-audience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      padding: 0 48px;
+    }
+
+    .stories-audience-card {
+      position: relative;
+      display: block;
+      height: clamp(500px, 75vh, 800px);
+      overflow: hidden;
+      color: var(--white);
+      background: var(--charcoal);
+    }
+
+    .stories-audience-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .stories-audience-card:hover img,
+    .stories-audience-card:focus-visible img {
+      transform: scale(1.04);
+    }
+
+    .stories-audience-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.15) 50%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .stories-audience-number {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      color: rgba(255,255,255,0.55);
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      line-height: 1;
+    }
+
+    .stories-audience-content {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 32px;
+    }
+
+    .stories-audience-content h2 {
+      margin: 0;
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      text-transform: uppercase;
+      white-space: pre-line;
+    }
+
+    .stories-audience-subtitle {
+      max-width: 340px;
+      margin: 12px 0 0;
+      color: rgba(255,255,255,0.6);
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(14px, 1.8vw, 18px);
+      font-weight: 400;
+      line-height: 1.7;
+    }
+
+    .stories-audience-footer {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .stories-audience-count {
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(14px, 1.5vw, 16px);
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    .stories-audience-arrow {
+      width: 20px;
+      height: 20px;
+      color: rgba(255,255,255,0.65);
+      transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .stories-audience-card:hover .stories-audience-arrow,
+    .stories-audience-card:focus-visible .stories-audience-arrow {
+      transform: translateX(4px);
+    }
+
+    .stories-audience-card:focus-visible {
+      outline: 2px solid var(--warm-cream);
+      outline-offset: 4px;
+    }
+
+    @media (max-width: 900px) {
+      .stories-audience-section {
+        padding: 56px 0 80px;
+      }
+
+      .stories-audience-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 0 24px;
+      }
+
+      .stories-audience-card {
+        height: 420px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .stories-audience-card img,
+      .stories-audience-arrow {
+        transition: none !important;
+      }
+    }
 
     /* ========== ACCORDION Q&A ========== */
     .qa-wrapper {
@@ -1889,6 +2032,56 @@
         </div>
       </section>
 
+      <!-- ===== EXPANDED CROWNED STORIES AUDIENCE CARDS ===== -->
+      <section class="stories-audience-section" id="stories-audience-section" aria-label="Explore Crowned Stories by audience" aria-hidden="true" hidden>
+        <div class="stories-audience-grid">
+          <a class="stories-audience-card" href="https://www.fordivine.com/crowned-stories/coaches-speakers-authors/" target="_blank" rel="noopener noreferrer" aria-label="Open Coaches, Speakers and Authors Crowned Stories in a new tab">
+            <img src="/crowned-stories/media/crowned-stories-card-01.webp" alt="Coaches, Speakers &amp; Authors" width="1600" height="900" loading="eager" decoding="async">
+            <div class="stories-audience-overlay" aria-hidden="true"></div>
+            <span class="stories-audience-number">01</span>
+            <div class="stories-audience-content">
+              <h2>Coaches, Speakers
+&amp; Authors</h2>
+              <p class="stories-audience-subtitle">Women building authority through their voice, stage, or written work</p>
+              <div class="stories-audience-footer">
+                <span class="stories-audience-count">2 featured stories</span>
+                <svg class="stories-audience-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
+              </div>
+            </div>
+          </a>
+
+          <a class="stories-audience-card" href="https://www.fordivine.com/crowned-stories/health-wellness-beauty/" target="_blank" rel="noopener noreferrer" aria-label="Open Health, Wellness and Beauty Crowned Stories in a new tab">
+            <img src="/crowned-stories/media/crowned-stories-card-02.webp" alt="Health, Wellness &amp; Beauty" width="1600" height="900" loading="eager" decoding="async">
+            <div class="stories-audience-overlay" aria-hidden="true"></div>
+            <span class="stories-audience-number">02</span>
+            <div class="stories-audience-content">
+              <h2>Health, Wellness
+&amp; Beauty</h2>
+              <p class="stories-audience-subtitle">Women in medical, wellness, beauty, or therapeutic spaces</p>
+              <div class="stories-audience-footer">
+                <span class="stories-audience-count">2 featured stories</span>
+                <svg class="stories-audience-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
+              </div>
+            </div>
+          </a>
+
+          <a class="stories-audience-card" href="https://www.fordivine.com/crowned-stories/entrepreneurs-business-builders/" target="_blank" rel="noopener noreferrer" aria-label="Open Entrepreneurs and Business Builders Crowned Stories in a new tab">
+            <img src="/crowned-stories/media/crowned-stories-card-03.webp" alt="Entrepreneurs &amp; Business Builders" width="1600" height="900" loading="eager" decoding="async">
+            <div class="stories-audience-overlay" aria-hidden="true"></div>
+            <span class="stories-audience-number">03</span>
+            <div class="stories-audience-content">
+              <h2>Entrepreneurs &amp;
+Business Builders</h2>
+              <p class="stories-audience-subtitle">Women scaling businesses, launching new ventures, or pivoting</p>
+              <div class="stories-audience-footer">
+                <span class="stories-audience-count">2 featured stories</span>
+                <svg class="stories-audience-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+
       <!-- ===== ACCORDION Q&A ===== -->
 <div class="qa-wrapper">
 <section class="qa-section">
@@ -2047,6 +2240,7 @@
     (function () {
       const toggle = document.querySelector('.stories-proof-toggle');
       const expanded = document.getElementById('more-testimonial-stories');
+      const audienceSection = document.getElementById('stories-audience-section');
       if (!toggle || !expanded) return;
 
       const label = toggle.querySelector('.stories-proof-toggle-label');
@@ -2057,6 +2251,10 @@
         expanded.setAttribute('aria-hidden', String(!willOpen));
         expanded.toggleAttribute('inert', !willOpen);
         expanded.classList.toggle('is-open', willOpen);
+        if (audienceSection) {
+          audienceSection.hidden = !willOpen;
+          audienceSection.setAttribute('aria-hidden', String(!willOpen));
+        }
         label.textContent = willOpen ? 'See Fewer Stories' : 'See More Stories';
 
         if (!willOpen) {
