@@ -4,16 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
-  <title>Crowned Stories | FORDIVINE</title>
-  <meta name="description" content="Watch FORDIVINE client stories and see what becomes possible when your brand reflects the authority you carry.">
+  <title>Crowned Stories: Personal Brand Results | FORDIVINE</title>
+  <meta name="description" content="Explore FORDIVINE client stories from women whose personal brands now reflect the authority, visibility, and impact they are called to carry.">
   <link rel="canonical" href="https://www.fordivine.com/discover/crowned-stories">
-  <meta property="og:title" content="Crowned Stories | FORDIVINE">
-  <meta property="og:description" content="Watch FORDIVINE client stories and see what becomes possible when your brand reflects the authority you carry.">
+  <meta property="og:title" content="Crowned Stories: Personal Brand Results | FORDIVINE">
+  <meta property="og:description" content="Explore FORDIVINE client stories from women whose personal brands now reflect the authority, visibility, and impact they are called to carry.">
   <meta property="og:url" content="https://www.fordivine.com/discover/crowned-stories">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Crowned Stories | FORDIVINE">
-  <meta name="twitter:description" content="Watch FORDIVINE client stories and see what becomes possible when your brand reflects the authority you carry.">
+  <meta name="twitter:title" content="Crowned Stories: Personal Brand Results | FORDIVINE">
+  <meta name="twitter:description" content="Explore FORDIVINE client stories from women whose personal brands now reflect the authority, visibility, and impact they are called to carry.">
+  <meta property="og:site_name" content="FORDIVINE">
+  <meta property="og:image" content="https://www.fordivine.com/crowned-stories/media/crowned-stories-card-01.webp">
+  <meta property="og:image:secure_url" content="https://www.fordivine.com/crowned-stories/media/crowned-stories-card-01.webp">
+  <meta property="og:image:type" content="image/webp">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="900">
+  <meta property="og:image:alt" content="Coaches, Speakers and Authors Crowned Stories by FORDIVINE">
+  <meta name="twitter:image" content="https://www.fordivine.com/crowned-stories/media/crowned-stories-card-01.webp">
+  <meta name="twitter:image:alt" content="Coaches, Speakers and Authors Crowned Stories by FORDIVINE">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,59 +50,10 @@
       var first = d.getElementsByTagName(s)[0];
       first.parentNode.insertBefore(t, first);
     })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js', '958874110071928');
-    function fdGetMetaAdvancedMatchingData() {
-      var params = new URLSearchParams(window.location.search);
-      var data = {};
-
-      function getFirstValue(keys) {
-        for (var i = 0; i < keys.length; i++) {
-          var value = params.get(keys[i]);
-          if (value && value.trim()) return value.trim();
-        }
-        return '';
-      }
-
-      function normalizeEmail(value) {
-        return value ? value.trim().toLowerCase() : '';
-      }
-
-      function normalizePhone(value) {
-        return value ? value.replace(/[^0-9]/g, '') : '';
-      }
-
-      function normalizeName(value) {
-        return value ? value.trim().toLowerCase().replace(/[^a-z]/g, '') : '';
-      }
-
-      var email = normalizeEmail(getFirstValue(['iclosedEmail', 'Invitee_email', 'invitee_email', 'email', 'em']));
-      var phone = normalizePhone(getFirstValue(['iclosedPhone', 'text_reminder_number', 'phone', 'ph']));
-      var firstName = normalizeName(getFirstValue(['first_name', 'firstname', 'fn']));
-      var lastName = normalizeName(getFirstValue(['last_name', 'lastname', 'ln']));
-      var fullName = getFirstValue(['iclosedName', 'invitee_full_name', 'name']);
-
-      if ((!firstName || !lastName) && fullName) {
-        var nameParts = fullName.trim().split(/\s+/).filter(Boolean);
-        if (!firstName && nameParts.length) firstName = normalizeName(nameParts[0]);
-        if (!lastName && nameParts.length > 1) lastName = normalizeName(nameParts.slice(1).join(''));
-      }
-
-      if (email) data.em = email;
-      if (phone) data.ph = phone;
-      if (firstName) data.fn = firstName;
-      if (lastName) data.ln = lastName;
-
-      return data;
-    }
-
-    var fdMetaAdvancedMatchingData = fdGetMetaAdvancedMatchingData();
-    fbq('init', '958874110071928', fdMetaAdvancedMatchingData);
+    fbq('init', '958874110071928');
     fbq('track', 'PageView');
-    fbq('track', 'Schedule', {
-      content_name: 'FORDIVINE Discovery Call Booked',
-      content_category: 'Discovery Call'
-    });
   </script>
-  <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=958874110071928&ev=Schedule&noscript=1"></noscript>
+  <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"></noscript>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q8TH5MKKZ0"></script>
   <script>
@@ -101,13 +61,6 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-Q8TH5MKKZ0');
-    gtag('event', 'discovery_call_booked', {
-      event_category: 'booking',
-      event_label: 'discover_thank_you_page',
-      page_location: 'https://www.fordivine.com/discover/thank-you',
-      page_path: '/discover/thank-you',
-      send_to: 'G-Q8TH5MKKZ0'
-    });
   </script>
 
   <script>
@@ -123,6 +76,25 @@
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  .skip-link {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 10000;
+    padding: 10px 14px;
+    color: #ffffff;
+    background: #2d2f2e;
+    font: 700 14px/1.2 Arial, sans-serif;
+    text-decoration: none;
+    transform: translateY(-180%);
+    transition: transform 0.2s ease;
+  }
+  .skip-link:focus {
+    transform: translateY(0);
+    outline: 2px solid #f3f0ea;
+    outline-offset: 3px;
+  }
+
 
     :root {
       --charcoal: #2d2f2e;
@@ -1624,8 +1596,85 @@
     }
 
   </style>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.fordivine.com/#organization",
+      "name": "FORDIVINE",
+      "url": "https://www.fordivine.com/",
+      "logo": "https://www.fordivine.com/fordivine-logo.png",
+      "description": "FORDIVINE is an Authority Engineering House helping women entrepreneurs, coaches, speakers, authors, and founders build personal brands that reflect their expertise and direction."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.fordivine.com/#website",
+      "url": "https://www.fordivine.com/",
+      "name": "FORDIVINE",
+      "publisher": {
+        "@id": "https://www.fordivine.com/#organization"
+      }
+    },
+    {
+      "@type": [
+        "WebPage",
+        "CollectionPage"
+      ],
+      "@id": "https://www.fordivine.com/discover/crowned-stories#webpage",
+      "url": "https://www.fordivine.com/discover/crowned-stories",
+      "name": "Crowned Stories: Personal Brand Results | FORDIVINE",
+      "description": "Explore FORDIVINE client stories from women whose personal brands now reflect the authority, visibility, and impact they are called to carry.",
+      "isPartOf": {
+        "@id": "https://www.fordivine.com/#website"
+      },
+      "about": {
+        "@id": "https://www.fordivine.com/#organization"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://www.fordivine.com/crowned-stories/media/crowned-stories-card-01.webp",
+        "width": 1600,
+        "height": 900
+      },
+      "mainEntity": {
+        "@id": "https://www.fordivine.com/discover/crowned-stories#collections"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.fordivine.com/discover/crowned-stories#collections",
+      "name": "FORDIVINE Crowned Stories Collections",
+      "numberOfItems": 3,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Coaches, Speakers & Authors",
+          "url": "https://www.fordivine.com/crowned-stories/coaches-speakers-authors/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Health, Wellness & Beauty",
+          "url": "https://www.fordivine.com/crowned-stories/health-wellness-beauty/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Entrepreneurs & Business Builders",
+          "url": "https://www.fordivine.com/crowned-stories/entrepreneurs-business-builders/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to Crowned Stories content</a>
   <div class="page-shell">
     <nav class="mini-nav" aria-label="Thank-you page navigation">
       <a href="https://www.fordivine.com" class="logo logo-img-wrap" aria-label="FORDIVINE home">
@@ -1636,7 +1685,7 @@
       </a>
     </nav>
 
-    <main id="main-content">
+    <main id="main-content" tabindex="-1">
       <!-- ===== CROWNED STORIES TESTIMONIALS ===== -->
       <section class="stories-proof-section" aria-labelledby="crowned-stories-title">
         <div class="stories-proof-inner">
