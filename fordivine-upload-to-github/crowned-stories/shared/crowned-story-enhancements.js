@@ -473,17 +473,16 @@
     if (doc.querySelector('[data-cs-mobile-nav]')) return;
 
     const navLinks = [
-      { label: 'Home', href: 'https://www.fordivine.com/', match: '/' },
-      { label: 'About Us', href: 'https://www.fordivine.com/about-us', match: '/about-us' },
-      { label: 'Crowned Stories', href: 'https://www.fordivine.com/crowned-stories/', match: '/crowned-stories' },
-      { label: 'Services', href: 'https://www.fordivine.com/discover', match: '/discover' },
-      { label: 'Contact', href: 'https://www.fordivine.com/discover', match: '/discover' },
+      { label: 'Home', href: '/discover', match: '/discover' },
+      { label: 'About Us', href: '/about-us', match: '/about-us' },
+      { label: 'Crowned Stories', href: '/crowned-stories', match: '/crowned-stories' },
+      { label: 'Services', href: '/discover', match: '/discover' },
+      { label: 'Contact', href: '/discover#book', match: '/discover' },
       { label: 'Email', href: 'mailto:hello@fordivine.com', match: 'mailto:' }
     ];
 
     const currentPath = window.location.pathname.replace(/\/+$/, '') || '/';
     const isActiveLink = (link) => {
-      if (link.match === '/') return currentPath === '/';
       if (link.match === '/crowned-stories') return currentPath.includes('/crowned-stories');
       return currentPath === link.match || currentPath.startsWith(`${link.match}/`);
     };
@@ -509,7 +508,7 @@
       <div class="cs-mobile-nav__backdrop" data-cs-mobile-nav-close="true"></div>
       <nav class="cs-mobile-nav__panel" aria-label="FORDIVINE mobile navigation links">
         <div class="cs-mobile-nav__topline">
-          <a class="cs-mobile-nav__brand" href="https://www.fordivine.com/" aria-label="FORDIVINE home">FORDIVINE<span>™</span></a>
+          <a class="cs-mobile-nav__brand" href="/discover" aria-label="FORDIVINE home">FORDIVINE<span>™</span></a>
           <button type="button" class="cs-mobile-nav__close" data-cs-mobile-nav-close="true" aria-label="Close FORDIVINE navigation menu">Close</button>
         </div>
         ${meta.isCrownedStory ? `<p class="cs-mobile-nav__context">Viewing <strong>${escapeHtml(meta.name)}</strong></p>` : ''}

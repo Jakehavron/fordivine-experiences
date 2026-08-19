@@ -1,5 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": false,
   "headers": [
     {
       "source": "/:path*.(jpg|jpeg|png|webp|svg|gif|woff|woff2|ico|mp4|webm)",
@@ -35,14 +36,44 @@
       "permanent": true
     },
     {
-      "source": "/assessment",
-      "destination": "/assessment/",
-      "permanent": false
+      "source": "/index.html",
+      "destination": "/discover",
+      "permanent": true
     },
     {
-      "source": "/crowned-authority-kickstart",
-      "destination": "/crowned-authority-kickstart/",
-      "permanent": false
+      "source": "/discover/index.html",
+      "destination": "/discover",
+      "permanent": true
+    },
+    {
+      "source": "/crowned-stories/index.html",
+      "destination": "/crowned-stories",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/index.html",
+      "destination": "/about-us",
+      "permanent": true
+    },
+    {
+      "source": "/discover/crowned-stories",
+      "destination": "/crowned-stories",
+      "permanent": true
+    },
+    {
+      "source": "/crowned-stories/about-us",
+      "destination": "/about-us",
+      "permanent": true
+    },
+    {
+      "source": "/discover/beams-prototype.html",
+      "destination": "/discover",
+      "permanent": true
+    },
+    {
+      "source": "/discover/testimonial-preview.html",
+      "destination": "/discover",
+      "permanent": true
     },
     {
       "source": "/fd-house",
@@ -87,10 +118,10 @@
     },
     {
       "source": "/discover-dm",
-      "destination": "/discover/"
+      "destination": "/discover"
     },
     {
-      "source": "/assessment/",
+      "source": "/assessment",
       "destination": "https://fordivine-quiz.vercel.app/"
     },
     {
@@ -98,7 +129,7 @@
       "destination": "https://fordivine-quiz.vercel.app/:path*"
     },
     {
-      "source": "/crowned-authority-kickstart/",
+      "source": "/crowned-authority-kickstart",
       "destination": "https://fordivine-crowned-authority-kicksta.vercel.app/crowned-authority-kickstart/"
     },
     {
