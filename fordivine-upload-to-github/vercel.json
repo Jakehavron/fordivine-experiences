@@ -30,11 +30,6 @@
   ],
   "redirects": [
     {
-      "source": "/",
-      "destination": "https://home.fordivine.com/",
-      "permanent": true
-    },
-    {
       "source": "/assessment",
       "destination": "/assessment/",
       "permanent": false
