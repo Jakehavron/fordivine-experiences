@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.fordivine.com/discover</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -13,49 +13,45 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.fordivine.com/crowned-stories/</loc>
-    <lastmod>2026-08-04</lastmod>
+    <loc>https://www.fordivine.com/crowned-stories</loc>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.fordivine.com/discover/crowned-stories</loc>
+    <loc>https://www.fordivine.com/crowned-stories/coaches-speakers-authors</loc>
     <lastmod>2026-08-12</lastmod>
   </url>
   <url>
-    <loc>https://www.fordivine.com/crowned-stories/coaches-speakers-authors/</loc>
+    <loc>https://www.fordivine.com/crowned-stories/health-wellness-beauty</loc>
     <lastmod>2026-08-12</lastmod>
   </url>
   <url>
-    <loc>https://www.fordivine.com/crowned-stories/health-wellness-beauty/</loc>
+    <loc>https://www.fordivine.com/crowned-stories/entrepreneurs-business-builders</loc>
     <lastmod>2026-08-12</lastmod>
   </url>
   <url>
-    <loc>https://www.fordivine.com/crowned-stories/entrepreneurs-business-builders/</loc>
-    <lastmod>2026-08-12</lastmod>
-  </url>
-  <url>
-    <loc>https://www.fordivine.com/crowned-stories/beth-clifford/</loc>
+    <loc>https://www.fordivine.com/crowned-stories/beth-clifford</loc>
     <lastmod>2026-08-19</lastmod>
   </url>
   <url>
-    <loc>https://www.fordivine.com/crowned-stories/roni-lavenia/</loc>
+    <loc>https://www.fordivine.com/crowned-stories/roni-lavenia</loc>
     <lastmod>2026-08-19</lastmod>
   </url>
   <url>
-    <loc>https://www.fordivine.com/crowned-stories/lauren-fields/</loc>
+    <loc>https://www.fordivine.com/crowned-stories/lauren-fields</loc>
     <lastmod>2026-08-19</lastmod>
   </url>
   <url>
-    <loc>https://www.fordivine.com/crowned-stories/colette-vanpaemel/</loc>
+    <loc>https://www.fordivine.com/crowned-stories/colette-vanpaemel</loc>
     <lastmod>2026-08-19</lastmod>
   </url>
   <url>
-    <loc>https://www.fordivine.com/crowned-stories/ali-marie/</loc>
+    <loc>https://www.fordivine.com/crowned-stories/ali-marie</loc>
     <lastmod>2026-08-19</lastmod>
   </url>
   <url>
-    <loc>https://www.fordivine.com/crowned-stories/christa-crawford/</loc>
+    <loc>https://www.fordivine.com/crowned-stories/christa-crawford</loc>
     <lastmod>2026-08-19</lastmod>
   </url>
 </urlset>
