@@ -1,20 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.fordivine.com/</loc>
-    <lastmod>2026-08-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
     <loc>https://www.fordivine.com/discover</loc>
     <lastmod>2026-08-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.fordivine.com/about-us</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -39,5 +33,29 @@
   <url>
     <loc>https://www.fordivine.com/crowned-stories/entrepreneurs-business-builders/</loc>
     <lastmod>2026-08-12</lastmod>
+  </url>
+  <url>
+    <loc>https://www.fordivine.com/crowned-stories/beth-clifford/</loc>
+    <lastmod>2026-08-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.fordivine.com/crowned-stories/roni-lavenia/</loc>
+    <lastmod>2026-08-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.fordivine.com/crowned-stories/lauren-fields/</loc>
+    <lastmod>2026-08-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.fordivine.com/crowned-stories/colette-vanpaemel/</loc>
+    <lastmod>2026-08-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.fordivine.com/crowned-stories/ali-marie/</loc>
+    <lastmod>2026-08-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.fordivine.com/crowned-stories/christa-crawford/</loc>
+    <lastmod>2026-08-19</lastmod>
   </url>
 </urlset>
