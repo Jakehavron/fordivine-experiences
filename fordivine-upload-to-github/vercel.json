@@ -30,6 +30,11 @@
   ],
   "redirects": [
     {
+      "source": "/",
+      "destination": "/discover",
+      "permanent": true
+    },
+    {
       "source": "/assessment",
       "destination": "/assessment/",
       "permanent": false
