@@ -4,15 +4,27 @@
     {
       "source": "/:path*.(jpg|jpeg|png|webp|svg|gif|woff|woff2|ico|mp4|webm)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
       ]
     }
   ],
@@ -30,6 +42,41 @@
     {
       "source": "/crowned-authority-kickstart",
       "destination": "/crowned-authority-kickstart/",
+      "permanent": false
+    },
+    {
+      "source": "/fd-house",
+      "destination": "/about-us",
+      "permanent": true
+    },
+    {
+      "source": "/inquire",
+      "destination": "/discover",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/discover",
+      "permanent": true
+    },
+    {
+      "source": "/retreat",
+      "destination": "https://home.fordivine.com/retreat",
+      "permanent": false
+    },
+    {
+      "source": "/retreat-waitlist",
+      "destination": "https://home.fordivine.com/retreat-waitlist",
+      "permanent": false
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "https://home.fordivine.com/privacy-policy",
+      "permanent": false
+    },
+    {
+      "source": "/terms-of-use",
+      "destination": "https://home.fordivine.com/terms-of-use",
       "permanent": false
     }
   ],
