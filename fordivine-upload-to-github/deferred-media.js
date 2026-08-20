@@ -161,6 +161,26 @@
       link.addEventListener('click', loadScheduler, { passive: true });
     });
 
+    function queueSchedulerAfterPageLoad() {
+      var loadWhenIdle = function () {
+        window.setTimeout(function () {
+          if ('requestIdleCallback' in window) {
+            window.requestIdleCallback(loadScheduler, { timeout: 1000 });
+            return;
+          }
+          loadScheduler();
+        }, 1500);
+      };
+
+      if (document.readyState === 'complete') {
+        loadWhenIdle();
+      } else {
+        window.addEventListener('load', loadWhenIdle, { once: true });
+      }
+    }
+
+    queueSchedulerAfterPageLoad();
+
     if (!('IntersectionObserver' in window)) return;
     var observer = new IntersectionObserver(function (entries) {
       if (entries.some(function (entry) { return entry.isIntersecting; })) {
