@@ -42,9 +42,8 @@
   ['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach(function(eventName) {
     window.addEventListener(eventName, fdLoadTrackingLibraries, { once: true, passive: true });
   });
-  window.addEventListener('load', function() {
-    setTimeout(fdLoadTrackingLibraries, 30000);
-  }, { once: true });
+  // Do not force tracking downloads for passive visitors. Engaged visitors still
+  // initialize analytics on their first pointer, keyboard, scroll, or touch event.
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
@@ -287,9 +286,31 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 <!-- Preload critical assets for LCP -->
 <link rel="preload" href="/fordivine-logo.webp" as="image" type="image/webp">
 <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://fast.vidalytics.com" crossorigin>
+<link rel="preload" href="https://fast.vidalytics.com/video/Sjy1Iha6/CdOMJmwGIL95jZWx/273367/251233__FFMPEG/thumb/thumbnail-5_0.jpg" as="image" fetchpriority="high">
 
-<link rel="stylesheet" href="/fonts.css">
-<link rel="stylesheet" href="/deferred-media.css">
+<style>
+  @font-face{font-family:"Inter";font-style:normal;font-weight:300 800;font-display:swap;src:url("/fonts/inter-latin.woff2") format("woff2")}
+  @font-face{font-family:"Source Sans 3";font-style:normal;font-weight:300 900;font-display:swap;src:url("/fonts/source-sans-3-latin.woff2") format("woff2")}
+  @font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:400 600;font-display:swap;src:url("/fonts/cormorant-garamond-latin.woff2") format("woff2")}
+  @font-face{font-family:"Cormorant Garamond";font-style:italic;font-weight:400 500;font-display:swap;src:url("/fonts/cormorant-garamond-italic-latin.woff2") format("woff2")}
+  @font-face{font-family:"Bebas Neue";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/bebas-neue-latin.woff2") format("woff2")}
+  .fd-deferred-video{position:relative;display:block;width:100%;aspect-ratio:9/16;overflow:hidden;border-radius:inherit;background:#171717;isolation:isolate}
+  .fd-deferred-video[data-ratio="landscape"]{aspect-ratio:16/9}
+  .fd-deferred-video-poster,.fd-deferred-video-shade,.fd-deferred-video-button{position:absolute;inset:0;width:100%;height:100%}
+  .fd-deferred-video-poster{display:block;object-fit:cover}
+  .fd-deferred-video-shade{background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.3));pointer-events:none}
+  .fd-deferred-video-button{z-index:2;display:flex;align-items:center;justify-content:center;padding:0;border:0;background:transparent;color:#fff;cursor:pointer;touch-action:manipulation}
+  .fd-deferred-video-button::before{content:"";width:clamp(54px,14%,78px);aspect-ratio:1;border:1px solid rgba(255,255,255,.72);border-radius:50%;background:rgba(17,17,17,.48);box-shadow:0 10px 34px rgba(0,0,0,.28);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transition:transform .2s ease,background .2s ease}
+  .fd-deferred-video-button::after{content:"";position:absolute;width:0;height:0;margin-left:5px;border-top:9px solid transparent;border-bottom:9px solid transparent;border-left:14px solid #fff}
+  .fd-deferred-video-button:hover::before,.fd-deferred-video-button:focus-visible::before{background:rgba(17,17,17,.72);transform:scale(1.06)}
+  .fd-deferred-video-button:focus-visible{outline:3px solid #fff;outline-offset:-5px}
+  .fd-deferred-video.is-loading::after{content:"Loading video";position:absolute;inset:auto 0 22px;z-index:3;color:#fff;font:700 10px/1.2 Arial,sans-serif;letter-spacing:.14em;text-align:center;text-transform:uppercase;pointer-events:none}
+  .fd-deferred-video.is-loaded::after{content:none}
+  .fd-scheduler-shell{position:relative;width:100%;min-height:620px}
+  .fd-scheduler-placeholder{display:flex;align-items:center;justify-content:center;min-height:620px;padding:32px;border:1px solid rgba(200,184,154,.28);border-radius:18px;color:#6b6254;background:#faf9f7;font:600 12px/1.5 Arial,sans-serif;letter-spacing:.08em;text-align:center;text-transform:uppercase}
+  @media (prefers-reduced-motion:reduce){.fd-deferred-video-button::before{transition:none}}
+</style>
 <script src="/deferred-media.js" defer></script>
 
 <style>
@@ -630,7 +651,12 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     margin: 48px auto 0;
     border-radius: 16px;
     overflow: hidden;
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: #171717;
   }
+  .hero-video-poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+  .hero-video-wrap > [id^="vidalytics_embed_"] { position: relative !important; z-index: 1; }
 
   /* ========== CTA BUTTON ========== */
   .cta-btn {
@@ -2363,10 +2389,11 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 <section class="hero-beams-live" aria-label="Discover hero with champagne beam background">
   <canvas id="hero-beams-canvas" aria-hidden="true"></canvas>
   <section class="hero-section">
-  <div class="hero-badge reveal"><img src="/fd-submark.png" alt="FD" class="hero-badge-logo" width="1345" height="855" loading="eager" fetchpriority="high" decoding="async">Personal Branding Agency</div>
+  <div class="hero-badge reveal"><img src="/fd-submark-64.webp" alt="FD" class="hero-badge-logo" width="64" height="41" loading="eager" decoding="async">Personal Branding Agency</div>
   <h1 class="reveal reveal-delay-1"><span class="hero-title-line">Is your personal brand</span> <span class="hero-title-line">limiting your impact?</span></h1>
   <p class="hero-subtitle reveal reveal-delay-2"><span class="hero-subtitle-line">An unclear, unstructured brand ecosystem </span><span class="hero-subtitle-line">is preventing you from getting </span><span class="hero-subtitle-line"><strong style="color: #e8dfc8; font-weight: 700;">more clients</strong>, <strong style="color: #e8dfc8; font-weight: 700;">stages</strong>, &amp; <strong style="color: #e8dfc8; font-weight: 700;">business growth</strong>.</span></p>
   <div class="hero-video-wrap reveal reveal-delay-3">
+    <img class="hero-video-poster" src="https://fast.vidalytics.com/video/Sjy1Iha6/CdOMJmwGIL95jZWx/273367/251233__FFMPEG/thumb/thumbnail-5_0.jpg" alt="" width="1280" height="720" loading="eager" fetchpriority="high" decoding="async">
     <div id="vidalytics_embed_3aXl6KdXwDoyvaEt" style="width: 100%; position:relative; padding-top: 56.25%;"></div>
     <script type="text/javascript">
     (function (v, i, d, a, l, y, t, c, s) {
@@ -2413,20 +2440,20 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 <section class="trust-bar reveal">
   <p class="trust-bar-label">Our Work Represented In</p>
   <div class="logo-carousel-track">
-    <img src="/logos/mastermind.png" alt="Mastermind.com" class="logo-invert" loading="lazy" width="1204" height="211" decoding="async">
-    <img src="/logos/forbes.png" alt="Forbes" loading="lazy" width="2400" height="931" decoding="async">
-    <img src="/logos/auralis_magazine.png" alt="Auralis Magazine" loading="lazy" width="1838" height="600" decoding="async">
-    <img src="/logos/cbs_news.png" alt="CBS News" loading="lazy" width="2400" height="870" decoding="async">
-    <img src="/logos/yahoo.png" alt="Yahoo" loading="lazy" width="1200" height="500" decoding="async">
-    <img src="/logos/good_morning_america.png" alt="Good Morning America" loading="lazy" width="860" height="476" decoding="async">
-    <img src="/logos/business_insider.png" alt="Business Insider" loading="lazy" width="2704" height="855" decoding="async">
-    <img src="/logos/mastermind.png" alt="Mastermind.com" class="logo-invert" loading="lazy" width="1204" height="211" decoding="async">
-    <img src="/logos/forbes.png" alt="Forbes" loading="lazy" width="2400" height="931" decoding="async">
-    <img src="/logos/auralis_magazine.png" alt="Auralis Magazine" loading="lazy" width="1838" height="600" decoding="async">
-    <img src="/logos/cbs_news.png" alt="CBS News" loading="lazy" width="2400" height="870" decoding="async">
-    <img src="/logos/yahoo.png" alt="Yahoo" loading="lazy" width="1200" height="500" decoding="async">
-    <img src="/logos/good_morning_america.png" alt="Good Morning America" loading="lazy" width="860" height="476" decoding="async">
-    <img src="/logos/business_insider.png" alt="Business Insider" loading="lazy" width="2704" height="855" decoding="async">
+    <img src="/logos/mastermind-400.webp" alt="Mastermind.com" class="logo-invert" loading="lazy" width="400" height="70" decoding="async">
+    <img src="/logos/forbes-200.webp" alt="Forbes" loading="lazy" width="200" height="78" decoding="async">
+    <img src="/logos/auralis-magazine-240.webp" alt="Auralis Magazine" loading="lazy" width="240" height="78" decoding="async">
+    <img src="/logos/cbs-news-220.webp" alt="CBS News" loading="lazy" width="220" height="80" decoding="async">
+    <img src="/logos/yahoo-180.webp" alt="Yahoo" loading="lazy" width="180" height="75" decoding="async">
+    <img src="/logos/good-morning-america-140.webp" alt="Good Morning America" loading="lazy" width="140" height="77" decoding="async">
+    <img src="/logos/business-insider-240.webp" alt="Business Insider" loading="lazy" width="240" height="76" decoding="async">
+    <img src="/logos/mastermind-400.webp" alt="Mastermind.com" class="logo-invert" loading="lazy" width="400" height="70" decoding="async">
+    <img src="/logos/forbes-200.webp" alt="Forbes" loading="lazy" width="200" height="78" decoding="async">
+    <img src="/logos/auralis-magazine-240.webp" alt="Auralis Magazine" loading="lazy" width="240" height="78" decoding="async">
+    <img src="/logos/cbs-news-220.webp" alt="CBS News" loading="lazy" width="220" height="80" decoding="async">
+    <img src="/logos/yahoo-180.webp" alt="Yahoo" loading="lazy" width="180" height="75" decoding="async">
+    <img src="/logos/good-morning-america-140.webp" alt="Good Morning America" loading="lazy" width="140" height="77" decoding="async">
+    <img src="/logos/business-insider-240.webp" alt="Business Insider" loading="lazy" width="240" height="76" decoding="async">
   </div>
 </section>
 
@@ -2455,7 +2482,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
       <div class="card-mini-carousel" data-mini-carousel>
         <div class="card-mini-track">
           <div class="card-mini-slide">
-            <img src="/melanie_portrait.webp" alt="Melanie Mitro" loading="lazy" decoding="async" width="400" height="500">
+            <img src="/melanie_portrait-400.webp" srcset="/melanie_portrait-400.webp 400w, /melanie_portrait-800.webp 800w" sizes="(max-width: 768px) 308px, 400px" alt="Melanie Mitro" loading="lazy" decoding="async" width="400" height="531">
           </div>
           <div class="card-mini-slide">
             <img src="/melanie_paper_logo.webp" alt="Melanie Mitro - Grey Paper Logo" loading="lazy" decoding="async" width="400" height="500">
@@ -2491,7 +2518,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
       <div class="card-mini-carousel" data-mini-carousel>
         <div class="card-mini-track">
           <div class="card-mini-slide">
-            <img src="/greta_bio.webp" alt="Greta Elena-Bosch" loading="lazy" decoding="async" width="400" height="500">
+            <img src="/greta_bio-400.webp" srcset="/greta_bio-400.webp 400w, /greta_bio-800.webp 800w" sizes="(max-width: 768px) 308px, 400px" alt="Greta Elena-Bosch" loading="lazy" decoding="async" width="400" height="532">
           </div>
           <div class="card-mini-slide">
             <img src="/greta_sticker.webp" alt="Greta Elena - G Logo Circle" loading="lazy" decoding="async" width="400" height="500">
@@ -2527,7 +2554,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
       <div class="card-mini-carousel" data-mini-carousel>
         <div class="card-mini-track">
           <div class="card-mini-slide">
-            <img src="/beth_portrait.webp" alt="Beth Clifford" loading="lazy" decoding="async" width="400" height="500">
+            <img src="/beth_portrait-400.webp" srcset="/beth_portrait-400.webp 400w, /beth_portrait-800.webp 800w" sizes="(max-width: 768px) 308px, 400px" alt="Beth Clifford" loading="lazy" decoding="async" width="400" height="532">
           </div>
           <div class="card-mini-slide">
             <img src="/beth_logo.webp" alt="Beth Clifford - Silver Logo" loading="lazy" decoding="async" width="400" height="500">
@@ -3410,7 +3437,8 @@ document.querySelectorAll('.qa-header').forEach(header => {
       height: 0,
       dpr: 1,
       beams: [],
-      lastFrame: 0
+      lastFrame: 0,
+      visible: true
     };
 
     function mobile() { return window.innerWidth <= 768; }
@@ -3520,14 +3548,19 @@ document.querySelectorAll('.qa-header').forEach(header => {
   });
 
   let raf = 0;
-  function isVisible(instance) {
-    const rect = instance.shell.getBoundingClientRect();
-    return rect.bottom > -80 && rect.top < window.innerHeight + 80;
+  if ('IntersectionObserver' in window) {
+    const visibilityObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const instance = instances.find((candidate) => candidate.shell === entry.target);
+        if (instance) instance.visible = entry.isIntersecting;
+      });
+    }, { rootMargin: '80px 0px' });
+    instances.forEach((instance) => visibilityObserver.observe(instance.shell));
   }
   function loop(timestamp) {
     raf = requestAnimationFrame(loop);
     instances.forEach((instance) => {
-      if (!isVisible(instance)) return;
+      if (!instance.visible) return;
       const targetFps = instance.mode === 'section' ? 30 : 45;
       const interval = 1000 / targetFps;
       if (timestamp - instance.lastFrame < interval) return;

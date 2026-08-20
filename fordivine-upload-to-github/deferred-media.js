@@ -158,6 +158,9 @@
     window.fdLoadScheduler = loadScheduler;
 
     document.querySelectorAll('a[href="#book"]').forEach(function (link) {
+      ['pointerenter', 'focus', 'touchstart'].forEach(function (eventName) {
+        link.addEventListener(eventName, loadScheduler, { once: true, passive: eventName !== 'focus' });
+      });
       link.addEventListener('click', function (event) {
         event.preventDefault();
         loadScheduler();
@@ -179,33 +182,13 @@
       });
     });
 
-    function queueSchedulerAfterPageLoad() {
-      var loadWhenIdle = function () {
-        window.setTimeout(function () {
-          if ('requestIdleCallback' in window) {
-            window.requestIdleCallback(loadScheduler, { timeout: 1000 });
-            return;
-          }
-          loadScheduler();
-        }, 1500);
-      };
-
-      if (document.readyState === 'complete') {
-        loadWhenIdle();
-      } else {
-        window.addEventListener('load', loadWhenIdle, { once: true });
-      }
-    }
-
-    queueSchedulerAfterPageLoad();
-
     if (!('IntersectionObserver' in window)) return;
     var observer = new IntersectionObserver(function (entries) {
       if (entries.some(function (entry) { return entry.isIntersecting; })) {
         observer.disconnect();
         loadScheduler();
       }
-    }, { rootMargin: '500px 0px', threshold: 0.01 });
+    }, { rootMargin: '1200px 0px', threshold: 0.01 });
     observer.observe(shell);
   }
 
