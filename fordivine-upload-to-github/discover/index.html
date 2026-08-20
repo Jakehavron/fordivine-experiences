@@ -1,27 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-THTSHBRJ');</script>
-<!-- End Google Tag Manager -->
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q8TH5MKKZ0"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-Q8TH5MKKZ0');
+
+  (function(w) {
+    if (!w.fbq) {
+      var n = w.fbq = function(){ n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+      if (!w._fbq) w._fbq = n;
+      n.push = n;
+      n.loaded = false;
+      n.version = '2.0';
+      n.queue = [];
+    }
+    w.hj = w.hj || function(){ (w.hj.q = w.hj.q || []).push(arguments); };
+    w._hjSettings = { hjid: 6670160, hjsv: 6 };
+  })(window);
+
+  function fdLoadExternalScript(src, marker) {
+    if (document.querySelector('script[data-fd-script="' + marker + '"]')) return;
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = src;
+    script.setAttribute('data-fd-script', marker);
+    document.head.appendChild(script);
+  }
+
+  function fdLoadTrackingLibraries() {
+    if (window.fdTrackingLibrariesLoaded) return;
+    window.fdTrackingLibrariesLoaded = true;
+    fdLoadExternalScript('https://www.googletagmanager.com/gtag/js?id=G-Q8TH5MKKZ0', 'ga4');
+    fdLoadExternalScript('https://connect.facebook.net/en_US/fbevents.js', 'meta');
+    fdLoadExternalScript('https://static.hotjar.com/c/hotjar-' + window._hjSettings.hjid + '.js?sv=' + window._hjSettings.hjsv, 'hotjar');
+  }
+
+  ['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach(function(eventName) {
+    window.addEventListener(eventName, fdLoadTrackingLibraries, { once: true, passive: true });
+  });
+  window.addEventListener('load', function() {
+    setTimeout(fdLoadTrackingLibraries, 30000);
+  }, { once: true });
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 /></noscript>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Personal Branding Agency for Women Entrepreneurs | FORDIVINE</title>
 
 <!-- SEO -->
@@ -257,22 +284,13 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
-<!-- Performance: Preconnect to fonts and third-party services -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://www.googletagmanager.com">
-<link rel="preconnect" href="https://connect.facebook.net" crossorigin>
-<link rel="preconnect" href="https://static.hotjar.com" crossorigin>
-<link rel="preconnect" href="https://fast.vidalytics.com" crossorigin>
-<link rel="preconnect" href="https://app.iclosed.io" crossorigin>
-<link rel="dns-prefetch" href="//www.google-analytics.com">
-<link rel="dns-prefetch" href="//script.hotjar.com">
-
 <!-- Preload critical assets for LCP -->
-<link rel="preload" href="/fordivine-logo.png" as="image">
+<link rel="preload" href="/fordivine-logo.webp" as="image" type="image/webp">
+<link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 
-<!-- Fonts: reduced to only used weights -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=GFS+Didot&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/fonts.css">
+<link rel="stylesheet" href="/deferred-media.css">
+<script src="/deferred-media.js" defer></script>
 
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -1793,7 +1811,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   /* footer TM inherits from .logo-img-wrap .tm */
   .footer-brand p {
     font-size: 13px;
-    color: rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.72);
     margin-top: 14px;
     line-height: 1.7;
     font-weight: 300;
@@ -1801,7 +1819,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   .footer-question-line {
     text-align: center;
     font-size: 12px;
-    color: rgba(255,255,255,0.35);
+    color: rgba(255,255,255,0.72);
     letter-spacing: 0.03em;
     font-weight: 300;
     margin: 0 auto 28px;
@@ -1818,7 +1836,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   .footer-nav { display: flex; gap: 36px; }
   .footer-nav a {
     font-size: 12px;
-    color: rgba(255,255,255,0.45);
+    color: rgba(255,255,255,0.78);
     text-decoration: none;
     font-weight: 500;
     letter-spacing: 0.03em;
@@ -1834,7 +1852,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   }
   .footer-legal a {
     font-size: 11px;
-    color: rgba(255,255,255,0.25);
+    color: rgba(255,255,255,0.72);
     text-decoration: none;
     letter-spacing: 0.03em;
     font-weight: 400;
@@ -1844,7 +1862,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     max-width: 800px;
     margin: 24px auto 0;
     font-size: 10px;
-    color: rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.68);
     line-height: 1.8;
     font-weight: 300;
   }
@@ -1986,22 +2004,39 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   .carousel-dots {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 0;
     margin-top: 36px;
   }
   .carousel-dot {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: none;
+    padding: 0;
+  }
+  .carousel-dot::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: #ddd;
-    border: none;
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    padding: 0;
+    background: #b8b8b8;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease, background 0.3s ease;
   }
   .carousel-dot.active {
+    background: transparent;
+    transform: none;
+  }
+  .carousel-dot.active::after {
     background: var(--charcoal);
-    transform: scale(1.4);
+    transform: translate(-50%, -50%) scale(1.4);
   }
   /* Responsive */
   @media (max-width: 900px) {
@@ -2313,11 +2348,6 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 </style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THTSHBRJ"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
 <!-- ===== AMBIENT BACKGROUND CANVAS ===== -->
 <canvas id="ambient-canvas"></canvas>
 
@@ -2337,18 +2367,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <h1 class="reveal reveal-delay-1"><span class="hero-title-line">Is your personal brand</span> <span class="hero-title-line">limiting your impact?</span></h1>
   <p class="hero-subtitle reveal reveal-delay-2"><span class="hero-subtitle-line">An unclear, unstructured brand ecosystem </span><span class="hero-subtitle-line">is preventing you from getting </span><span class="hero-subtitle-line"><strong style="color: #e8dfc8; font-weight: 700;">more clients</strong>, <strong style="color: #e8dfc8; font-weight: 700;">stages</strong>, &amp; <strong style="color: #e8dfc8; font-weight: 700;">business growth</strong>.</span></p>
   <div class="hero-video-wrap reveal reveal-delay-3">
-    <div id="vidalytics_embed_3aXl6KdXwDoyvaEt" style="width: 100%; position:relative; padding-top: 56.25%;"></div>
-    <script type="text/javascript">
-    (function (v, i, d, a, l, y, t, c, s) {
-        y='_'+d.toLowerCase();c=d+'L';if(!v[d]){v[d]={};}if(!v[c]){v[c]={};}if(!v[y]){v[y]={};}var vl='Loader',vli=v[y][vl],vsl=v[c][vl + 'Script'],vlf=v[c][vl + 'Loaded'],ve='Embed';
-        if (!vsl){vsl=function(u,cb){
-            if(t){cb();return;}s=i.createElement("script");s.type="text/javascript";s.async=1;s.src=u;
-            if(s.readyState){s.onreadystatechange=function(){if(s.readyState==="loaded"||s.readyState=="complete"){s.onreadystatechange=null;vlf=1;cb();}};}else{s.onload=function(){vlf=1;cb();};}
-            i.getElementsByTagName("head")[0].appendChild(s);
-        };}
-        vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
-    })(window, document, 'Vidalytics', 'vidalytics_embed_3aXl6KdXwDoyvaEt', 'https://fast.vidalytics.com/embeds/Sjy1Iha6/3aXl6KdXwDoyvaEt/');
-    </script>
+    <div class="fd-deferred-video" data-vidalytics-id="3aXl6KdXwDoyvaEt" data-ratio="landscape" data-load="click" data-label="Play the FORDIVINE personal branding video" data-poster="https://fast.vidalytics.com/video/Sjy1Iha6/CdOMJmwGIL95jZWx/273367/251233__FFMPEG/thumb/thumbnail-5_0.jpg"></div>
   </div>
 </section>
 
@@ -2369,7 +2388,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="below-video">
   <p class="reveal reveal-delay-1">Built for established female entrepreneurs whose real-world authority has outgrown how they are represented online.</p>
   <p class="reveal reveal-delay-1" style="display:none;">You walk in with a scattered, misaligned brand and walk out with a <strong>Crowned Authority™ Blueprint and Crowned Identity™ Bible</strong> ready to use instantly. Authority is engineered, not just designed.</p>
-  <a href="#book" class="cta-btn on-dark reveal reveal-delay-2" aria-label="Schedule a FORDIVINE discovery call">Schedule Discovery Call</a>
+  <a href="#book" class="cta-btn on-dark reveal reveal-delay-2">Schedule Discovery Call</a>
   <div class="micro-testimonial reveal reveal-delay-2" style="display:none;">
     <div>
       <p class="micro-testimonial-text">"I was nervous to book the call, but it was the most clarifying conversation I have had about my brand in years."</p>
@@ -2408,18 +2427,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- Vidalytics video embed -->
   <div class="vidalytics-wrap reveal">
-    <div id="vidalytics_embed_pIZCIXOhXVvUGLpw" style="width: 100%; position:relative; padding-top: 177.78%;"></div>
-    <script type="text/javascript">
-    (function (v, i, d, a, l, y, t, c, s) {
-        y='_'+d.toLowerCase();c=d+'L';if(!v[d]){v[d]={};}if(!v[c]){v[c]={};}if(!v[y]){v[y]={};}var vl='Loader',vli=v[y][vl],vsl=v[c][vl + 'Script'],vlf=v[c][vl + 'Loaded'],ve='Embed';
-        if (!vsl){vsl=function(u,cb){
-            if(t){cb();return;}s=i.createElement("script");s.type="text/javascript";s.async=1;s.src=u;
-            if(s.readyState){s.onreadystatechange=function(){if(s.readyState==="loaded"||s.readyState=="complete"){s.onreadystatechange=null;vlf=1;cb();}};}else{s.onload=function(){vlf=1;cb();};}
-            i.getElementsByTagName("head")[0].appendChild(s);
-        };}
-        vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
-    })(window, document, 'Vidalytics', 'vidalytics_embed_pIZCIXOhXVvUGLpw', 'https://fast.vidalytics.com/embeds/Sjy1Iha6/pIZCIXOhXVvUGLpw/');
-    </script>
+    <div class="fd-deferred-video" data-vidalytics-id="pIZCIXOhXVvUGLpw" data-load="viewport" data-label="Play the FORDIVINE client testimonial" data-poster="https://fast.vidalytics.com/video/Sjy1Iha6/CerEHPbOfLajOwP2/272508/250525__FFMPEG/thumb/thumbnail-5_0.jpg"></div>
   </div>
 
   <!-- Video testimonial -->
@@ -2673,7 +2681,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <div class="pillars-cta">
-  <a href="#book" class="cta-btn reveal" aria-label="Schedule a FORDIVINE discovery call">SCHEDULE DISCOVERY CALL</a>
+  <a href="#book" class="cta-btn reveal">SCHEDULE DISCOVERY CALL</a>
   <div class="micro-testimonial on-light-micro reveal" style="margin-top: 24px;">
     <div>
       <p class="micro-testimonial-text">&ldquo;The team helped me birth multiple new company brands and have it all be in one ecosystem.&rdquo;</p>
@@ -2691,18 +2699,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="video-reviews-grid">
     <div class="video-review-card reveal">
       <div class="video-review-card-media">
-        <div id="vidalytics_embed_keXT9onFdaEZqvRX" style="width: 100%; position:relative; padding-top: 177.78%;"></div>
-        <script type="text/javascript">
-        (function (v, i, d, a, l, y, t, c, s) {
-            y='_'+d.toLowerCase();c=d+'L';if(!v[d]){v[d]={};}if(!v[c]){v[c]={};}if(!v[y]){v[y]={};}var vl='Loader',vli=v[y][vl],vsl=v[c][vl + 'Script'],vlf=v[c][vl + 'Loaded'],ve='Embed';
-            if (!vsl){vsl=function(u,cb){
-                if(t){cb();return;}s=i.createElement("script");s.type="text/javascript";s.async=1;s.src=u;
-                if(s.readyState){s.onreadystatechange=function(){if(s.readyState==="loaded"||s.readyState=="complete"){s.onreadystatechange=null;vlf=1;cb();}};}else{s.onload=function(){vlf=1;cb();};}
-                i.getElementsByTagName("head")[0].appendChild(s);
-            };}
-            vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
-        })(window, document, 'Vidalytics', 'vidalytics_embed_keXT9onFdaEZqvRX', 'https://fast.vidalytics.com/embeds/Sjy1Iha6/keXT9onFdaEZqvRX/');
-        </script>
+        <div class="fd-deferred-video" data-vidalytics-id="keXT9onFdaEZqvRX" data-load="viewport" data-label="Play Dr. Stephanie Byerly's testimonial" data-poster="https://fast.vidalytics.com/video/Sjy1Iha6/jcnVSbP_9aA4JASp/273975/251757__FFMPEG/thumb/thumbnail-5_0.jpg"></div>
       </div>
       <div class="video-review-card-body">
         <div class="review-stars">★★★★★</div>
@@ -2713,18 +2710,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="video-review-card reveal reveal-delay-1">
       <div class="video-review-card-media">
-        <div id="vidalytics_embed_IKYgElLip9N1Kiwu" style="width: 100%; position:relative; padding-top: 177.78%;"></div>
-        <script type="text/javascript">
-        (function (v, i, d, a, l, y, t, c, s) {
-            y='_'+d.toLowerCase();c=d+'L';if(!v[d]){v[d]={};}if(!v[c]){v[c]={};}if(!v[y]){v[y]={};}var vl='Loader',vli=v[y][vl],vsl=v[c][vl + 'Script'],vlf=v[c][vl + 'Loaded'],ve='Embed';
-            if (!vsl){vsl=function(u,cb){
-                if(t){cb();return;}s=i.createElement("script");s.type="text/javascript";s.async=1;s.src=u;
-                if(s.readyState){s.onreadystatechange=function(){if(s.readyState==="loaded"||s.readyState=="complete"){s.onreadystatechange=null;vlf=1;cb();}};}else{s.onload=function(){vlf=1;cb();};}
-                i.getElementsByTagName("head")[0].appendChild(s);
-            };}
-            vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
-        })(window, document, 'Vidalytics', 'vidalytics_embed_IKYgElLip9N1Kiwu', 'https://fast.vidalytics.com/embeds/Sjy1Iha6/IKYgElLip9N1Kiwu/');
-        </script>
+        <div class="fd-deferred-video" data-vidalytics-id="IKYgElLip9N1Kiwu" data-load="viewport" data-label="Play Amy Lacey's testimonial" data-poster="https://fast.vidalytics.com/video/Sjy1Iha6/rXk2_Sl938WPwa45/273977/251760__FFMPEG/thumb/thumbnail-5_0.jpg"></div>
       </div>
       <div class="video-review-card-body">
         <div class="review-stars">★★★★★</div>
@@ -2735,18 +2721,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="video-review-card reveal reveal-delay-2">
       <div class="video-review-card-media">
-        <div id="vidalytics_embed_PUEDcgR46XbJHzZA" style="width: 100%; position:relative; padding-top: 177.78%;"></div>
-        <script type="text/javascript">
-        (function (v, i, d, a, l, y, t, c, s) {
-            y='_'+d.toLowerCase();c=d+'L';if(!v[d]){v[d]={};}if(!v[c]){v[c]={};}if(!v[y]){v[y]={};}var vl='Loader',vli=v[y][vl],vsl=v[c][vl + 'Script'],vlf=v[c][vl + 'Loaded'],ve='Embed';
-            if (!vsl){vsl=function(u,cb){
-                if(t){cb();return;}s=i.createElement("script");s.type="text/javascript";s.async=1;s.src=u;
-                if(s.readyState){s.onreadystatechange=function(){if(s.readyState==="loaded"||s.readyState=="complete"){s.onreadystatechange=null;vlf=1;cb();}};}else{s.onload=function(){vlf=1;cb();};}
-                i.getElementsByTagName("head")[0].appendChild(s);
-            };}
-            vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
-        })(window, document, 'Vidalytics', 'vidalytics_embed_PUEDcgR46XbJHzZA', 'https://fast.vidalytics.com/embeds/Sjy1Iha6/PUEDcgR46XbJHzZA/');
-        </script>
+        <div class="fd-deferred-video" data-vidalytics-id="PUEDcgR46XbJHzZA" data-load="viewport" data-label="Play Dr. Luiza Andakyan's testimonial" data-poster="https://fast.vidalytics.com/video/Sjy1Iha6/6MjRFfd7zdyf4JHg/273976/251759__FFMPEG/thumb/thumbnail-5_0.jpg"></div>
       </div>
       <div class="video-review-card-body">
         <div class="review-stars">★★★★★</div>
@@ -3024,28 +2999,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="booking-section" id="book">
   <div class="booking-embed reveal">
     <h3>Discover What's Possible For You</h3>
-    <!-- iClosed inline widget begin -->
-    <!-- Patricia UTM injection: reads fd_ref cookie to append attribution -->
-    <script>
-    (function() {
-      var c = document.cookie.match('(^|;)\\s*fd_ref\\s*=\\s*([^;]+)');
-      var baseUrl = 'https://app.iclosed.io/e/jakehavron/discovery-call';
-      if (c && c[2] === 'patricia_dm') {
-        baseUrl += '?utm_source=instagram&utm_medium=dm&utm_campaign=patricia_dm&utm_content=discover';
-      }
-      var widget = document.createElement('div');
-      widget.className = 'iclosed-widget';
-      widget.setAttribute('data-url', baseUrl);
-      widget.setAttribute('title', 'Discovery Call');
-      widget.setAttribute('role', 'region');
-      widget.setAttribute('aria-label', 'Schedule a FORDIVINE discovery call');
-      widget.style.width = '100%';
-      widget.style.height = '620px';
-      document.currentScript.parentNode.insertBefore(widget, document.currentScript.nextSibling);
-    })();
-    </script>
-    <script type="text/javascript" src="https://app.iclosed.io/assets/widget.js" async></script>
-    <!-- iClosed inline widget end -->
+    <div class="fd-scheduler-shell" id="iclosed-scheduler-shell" aria-live="polite">
+      <div class="fd-scheduler-placeholder">Loading the discovery calendar when you reach this section</div>
+    </div>
     <p class="booking-question-line">Got a question? Email <a href="mailto:Hello@fordivine.com?subject=I%20have%20a%20question!%20re%3A%20Discovery%20page&body=Hi%20team!%0A%0AI%20have%20a%20question%20regarding..%20(insert%20your%20details%20here)" class="booking-question-link" aria-label="Email FORDIVINE team">Hello@fordivine.com</a></p>
   </div>
 </section>
@@ -3154,7 +3110,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="cinematic-close-inner">
     <h2 class="reveal">You were not made to<br>be the best kept secret.<br>You are called to be <span class="gold-word" style="background:linear-gradient(135deg,#c8b89a 0%,#e8d5b0 50%,#c8b89a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:inline;">Crowned.</span></h2>
     <div class="cinematic-close-divider reveal"></div>
-    <a href="#book" class="cta-btn on-dark reveal" aria-label="Schedule a FORDIVINE discovery call">Schedule Discovery Call</a>
+    <a href="#book" class="cta-btn on-dark reveal">Schedule Discovery Call</a>
     <div class="micro-testimonial reveal" style="margin-top:32px;">
       <div>
         <p class="micro-testimonial-text">"You gave me the courage and the confidence to realize I am worthy of speaking as an authority online and on stages.<br><br>Now I am getting wayyy more inbound customers and partnerships because people know what I stand for."</p>
@@ -3175,7 +3131,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="footer-nav">
       <a href="/discover">Home</a>
       <a href="/crowned-stories">Crowned Stories</a>
-      <a href="https://www.fordivine.com/discover#book" aria-label="Inquire now on the FORDIVINE Discover page">Inquire Now</a>
+      <a href="https://www.fordivine.com/discover#book">Inquire Now</a>
     </div>
   </div>
   <p class="footer-question-line">Got a question? Email <a href="mailto:Hello@fordivine.com?subject=I%20have%20a%20question!%20re%3A%20Discovery%20page&body=Hi%20team!%0A%0AI%20have%20a%20question%20regarding..%20(insert%20your%20details%20here)" class="footer-question-link">Hello@fordivine.com</a></p>
@@ -3704,16 +3660,8 @@ document.querySelectorAll('.qa-header').forEach(header => {
 })();
 </script>
 
-<!-- Meta Pixel Code (deferred for performance) -->
+<!-- Meta Pixel configuration. The network library is deferred in the document head. -->
 <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
 function fdGetMetaAdvancedMatchingData() {
   var params = new URLSearchParams(window.location.search);
   var data = {};
@@ -4063,18 +4011,6 @@ fbq('track', 'PageView');
     }
   }
 })();
-</script>
-
-<!-- Hotjar Tracking Code (deferred for performance) -->
-<script>
-  (function(h,o,t,j,a,r){
-    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-    h._hjSettings={hjid:6670160,hjsv:6};
-    a=o.getElementsByTagName('head')[0];
-    r=o.createElement('script');r.async=1;
-    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-    a.appendChild(r);
-  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
 
 <script>
