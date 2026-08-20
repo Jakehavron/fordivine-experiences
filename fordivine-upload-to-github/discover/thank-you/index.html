@@ -107,12 +107,10 @@
 
     fbq('init', '958874110071928', fdMetaAdvancedMatchingData);
     fbq('track', 'PageView');
-    fbq('track', 'Schedule', {
-      content_name: 'FORDIVINE Discovery Call Booked',
-      content_category: 'Discovery Call'
-    });
+    // The authoritative Meta booking event is sent once by iClosed when the
+    // call is created. Do not fire a second booking event from this page,
+    // because page reloads would inflate booked-call reporting.
   </script>
-  <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=958874110071928&ev=Schedule&noscript=1"></noscript>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q8TH5MKKZ0"></script>
   <script>
