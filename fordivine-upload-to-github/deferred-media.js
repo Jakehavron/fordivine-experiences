@@ -158,7 +158,25 @@
     window.fdLoadScheduler = loadScheduler;
 
     document.querySelectorAll('a[href="#book"]').forEach(function (link) {
-      link.addEventListener('click', loadScheduler, { passive: true });
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        loadScheduler();
+
+        var bookingSection = document.getElementById('book');
+        if (!bookingSection) return;
+
+        if (window.history && window.history.pushState) {
+          window.history.pushState(null, '', '#book');
+        }
+
+        var root = document.documentElement;
+        var previousScrollBehavior = root.style.scrollBehavior;
+        root.style.scrollBehavior = 'auto';
+        bookingSection.scrollIntoView({ block: 'start' });
+        window.requestAnimationFrame(function () {
+          root.style.scrollBehavior = previousScrollBehavior;
+        });
+      });
     });
 
     function queueSchedulerAfterPageLoad() {
