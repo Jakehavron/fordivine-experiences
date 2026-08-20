@@ -46,6 +46,21 @@
       "permanent": true
     },
     {
+      "source": "/personal-branding-for-entrepreneurs",
+      "destination": "/discover",
+      "permanent": false
+    },
+    {
+      "source": "/personal-branding-for-entrepreneurs/:path*",
+      "destination": "/discover",
+      "permanent": false
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/discover",
+      "permanent": false
+    },
+    {
       "source": "/crowned-stories/index.html",
       "destination": "/crowned-stories",
       "permanent": true

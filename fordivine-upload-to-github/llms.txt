@@ -7,7 +7,6 @@ FORDIVINE builds connected personal brand ecosystems that align positioning, mes
 ## Primary pages
 
 - [Discover FORDIVINE](https://www.fordivine.com/discover): Main commercial page, services, fit criteria, client proof, FAQs, and discovery-call booking.
-- [Personal Branding for Entrepreneurs](https://www.fordivine.com/personal-branding-for-entrepreneurs): How FORDIVINE helps established entrepreneurs build founder-led authority brands.
 - [Crowned Stories](https://www.fordivine.com/crowned-stories): Verified client stories and brand transformations.
 - [About FORDIVINE](https://www.fordivine.com/about-us): Company, founder, and team information.
 
