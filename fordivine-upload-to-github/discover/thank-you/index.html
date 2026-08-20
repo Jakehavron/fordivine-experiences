@@ -78,6 +78,33 @@
     }
 
     var fdMetaAdvancedMatchingData = fdGetMetaAdvancedMatchingData();
+
+    // Keep attribution data available while removing invitee PII and booking
+    // metadata from the visible URL before analytics events are sent.
+    function fdBuildSafeThankYouUrl() {
+      var sourceParams = new URLSearchParams(window.location.search);
+      var safeParams = new URLSearchParams();
+      var safeKeys = [
+        'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
+        'utm_id', 'utm_adgroup', 'utm_matchtype', 'utm_network', 'utm_device',
+        'campaign_id', 'adset_id', 'ad_id', 'fbclid', 'gclid', 'wbraid',
+        'gbraid', 'msclkid'
+      ];
+
+      safeKeys.forEach(function(key) {
+        sourceParams.getAll(key).forEach(function(value) {
+          if (value && value.trim()) safeParams.append(key, value.trim());
+        });
+      });
+
+      var query = safeParams.toString();
+      return '/discover/thank-you' + (query ? '?' + query : '');
+    }
+
+    if (window.history && window.history.replaceState) {
+      window.history.replaceState({}, document.title, fdBuildSafeThankYouUrl());
+    }
+
     fbq('init', '958874110071928', fdMetaAdvancedMatchingData);
     fbq('track', 'PageView');
     fbq('track', 'Schedule', {
