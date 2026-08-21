@@ -3837,7 +3837,7 @@ fbq('track', 'PageView');
     btn.addEventListener('click', function() {
       if (!ctaFired[label]) {
         ctaFired[label] = true;
-        fbq('trackCustom', 'fdv_schedule_cta_click', {
+        fbq('trackCustom', 'fd_schedule_cta_click', {
           content_name: label,
           content_category: 'Discovery Funnel'
         });
@@ -3996,7 +3996,7 @@ fbq('track', 'PageView');
     btn.addEventListener('click', function() {
       if (!ga4CtaFired[label]) {
         ga4CtaFired[label] = true;
-        gtag('event', 'fdv_schedule_cta_click', {
+        gtag('event', 'fd_schedule_cta_click', {
           event_category: 'Discovery Funnel',
           event_label: label
         });
