@@ -1483,6 +1483,8 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     max-width: none;
     white-space: nowrap;
   }
+  .layers-subtitle-mobile { display: none; }
+  .layers-subtitle-mobile-line { display: block; white-space: nowrap; }
   .layers-accordion {
     position: relative;
     overflow: hidden;
@@ -1637,7 +1639,9 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   @media (max-width: 768px) {
     .layers-header { padding: 72px 24px 56px; }
     .layers-title { font-size: clamp(32px, 10vw, 64px); letter-spacing: -0.02em; white-space: nowrap; }
-    .layers-subtitle { font-size: clamp(13px, 3.5vw, 16px); text-align: left; max-width: none; white-space: normal; }
+    .layers-subtitle { font-size: clamp(10px, 3vw, 14px); text-align: left; max-width: none; white-space: normal; }
+    .layers-subtitle-desktop { display: none; }
+    .layers-subtitle-mobile { display: block; }
     .layer-collapsed { padding: 28px 24px; }
     .layer-expanded-inner { padding: 36px 24px; }
     .layer-deliverable { margin-bottom: 30px; padding: 24px; }
@@ -1650,7 +1654,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   @media (max-width: 480px) {
     .layers-header { padding: 56px 16px 40px; }
     .layers-title { font-size: clamp(28px, 9.5vw, 46px); }
-    .layers-subtitle { font-size: 14px; text-align: left; max-width: none; }
+    .layers-subtitle { font-size: clamp(10px, 3vw, 12px); text-align: left; max-width: none; }
     .layer-collapsed { padding: 22px 16px; }
     .layer-expanded-inner { padding: 28px 16px; }
     .layer-deliverable { margin-bottom: 26px; padding: 20px 18px; }
@@ -2746,7 +2750,10 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 <section class="layers-accordion-section">
   <div class="layers-header">
     <h2 class="layers-title reveal">THE FOUR LAYERS</h2>
-    <p class="layers-subtitle reveal">Our team builds every layer of your brand so you get more <span class="copy-accent">clients</span>, <span class="copy-accent">stages</span>, &amp; <span class="copy-accent">business growth</span>.</p>
+    <p class="layers-subtitle reveal">
+      <span class="layers-subtitle-desktop">Our team builds every layer of your brand so you get more <span class="copy-accent">clients</span>, <span class="copy-accent">stages</span>, &amp; <span class="copy-accent">business growth</span>.</span>
+      <span class="layers-subtitle-mobile"><span class="layers-subtitle-mobile-line">Our team builds every layer of your brand so you get</span><span class="layers-subtitle-mobile-line">more <span class="copy-accent">clients</span>, <span class="copy-accent">stages</span>, &amp; <span class="copy-accent">business growth</span>.</span></span>
+    </p>
   </div>
   <div class="layers-accordion">
     <div class="layer-slider"></div>
