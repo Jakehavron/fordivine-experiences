@@ -446,6 +446,9 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   .hero-title-line {
     display: block;
   }
+  .hero-title-mobile {
+    display: none;
+  }
   @media (min-width: 1000px) {
     .hero-section h1 {
       font-size: clamp(44px, 4.5vw, 58px);
@@ -2242,6 +2245,8 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
       letter-spacing: -0.04em;
     }
     .hero-title-line { white-space: nowrap; }
+    .hero-title-desktop { display: none; }
+    .hero-title-mobile { display: block; }
     .hero-badge { font-size: 6.5px; letter-spacing: 0.13em; padding: 4px 10px; gap: 3px; margin-bottom: 24px; }
     .hero-badge-logo { width: 10px; height: 10px; }
     .hero-subtitle,
@@ -2449,7 +2454,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   <canvas id="hero-beams-canvas" aria-hidden="true"></canvas>
   <section class="hero-section">
   <div class="hero-badge reveal"><img src="/fd-submark-64.webp" alt="FD" class="hero-badge-logo" width="64" height="41" loading="eager" decoding="async">PERSONAL BRANDING HOUSE</div>
-  <h1 class="reveal reveal-delay-1"><span class="hero-title-line">Is Your Personal Brand Limiting</span> <span class="hero-title-line">Your Business Growth?</span></h1>
+  <h1 class="reveal reveal-delay-1"><span class="hero-title-desktop"><span class="hero-title-line">Is Your Personal Brand Limiting</span><span class="hero-title-line">Your Business Growth?</span></span><span class="hero-title-mobile" aria-hidden="true"><span class="hero-title-line">Is Your Personal Brand</span><span class="hero-title-line">Limiting Your</span><span class="hero-title-line">Business Growth?</span></span></h1>
   <p class="hero-subtitle reveal reveal-delay-2"><span class="hero-subtitle-line">An unclear and scattered brand keeps you and your business </span><span class="hero-subtitle-line">completely invisible in today's digital landscape.</span></p>
   <div class="hero-video-wrap reveal reveal-delay-3">
     <img class="hero-video-poster" src="https://fast.vidalytics.com/video/Sjy1Iha6/CdOMJmwGIL95jZWx/273367/251233__FFMPEG/thumb/thumbnail-5_0.jpg" alt="" width="1280" height="720" loading="eager" fetchpriority="high" decoding="async">
