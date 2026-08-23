@@ -60,7 +60,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="FORDIVINE">
 <meta property="og:url" content="https://www.fordivine.com/discover">
-<meta property="og:title" content="Personal Branding Agency for Women Entrepreneurs | FORDIVINE">
+<meta property="og:title" content="Personal Branding House for Businesswomen | FORDIVINE">
 <meta property="og:description" content="A done-for-you personal branding experience for established women entrepreneurs whose expertise and businesses have outgrown their current brand.">
 <meta property="og:image" content="https://www.fordivine.com/og-image.jpg">
 <meta property="og:image:width" content="1107">
@@ -68,7 +68,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Personal Branding Agency for Women Entrepreneurs | FORDIVINE">
+<meta name="twitter:title" content="Personal Branding House for Businesswomen | FORDIVINE">
 <meta name="twitter:description" content="A done-for-you personal branding experience for established women entrepreneurs whose expertise and businesses have outgrown their current brand.">
 <meta name="twitter:image" content="https://www.fordivine.com/og-image.jpg">
 
@@ -112,7 +112,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
       "@type": "WebPage",
       "@id": "https://www.fordivine.com/discover#webpage",
       "url": "https://www.fordivine.com/discover",
-      "name": "Personal Branding Agency for Women Entrepreneurs | FORDIVINE",
+      "name": "Personal Branding House for Businesswomen | FORDIVINE",
       "description": "Explore done-for-you personal branding services designed to help established women entrepreneurs unify their expertise, businesses, visual identity, digital presence, and growth systems.",
       "datePublished": "2025-01-15",
       "dateModified": "2026-08-19",
@@ -446,8 +446,16 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   .hero-title-line {
     display: block;
   }
+  @media (min-width: 1000px) {
+    .hero-section h1 {
+      font-size: clamp(44px, 4.5vw, 58px);
+      max-width: 1120px;
+    }
+    .hero-title-line { white-space: nowrap; }
+  }
   .hero-subtitle-line {
-    display: contents;
+    display: block;
+    white-space: nowrap;
   }
   .hero-subtitle strong {
     color: rgba(255,255,255,0.85);
@@ -643,6 +651,49 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   }
   .below-video p:last-of-type { margin-bottom: 48px; }
   .below-video strong { color: rgba(255,255,255,0.88); font-weight: 600; }
+  .below-video .responsive-offer-copy { font-size: 19px; }
+  .below-copy-mobile { display: none; }
+  .below-copy-line {
+    display: block;
+    white-space: nowrap;
+  }
+  .below-video .copy-accent,
+  .layers-subtitle .copy-accent {
+    color: #E8DFC8;
+    display: inline-block;
+    position: relative;
+    z-index: 0;
+    padding-bottom: 0.04em;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .below-video .copy-accent::after,
+  .layers-subtitle .copy-accent::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: -0.08em;
+    right: -0.1em;
+    bottom: -0.14em;
+    height: 0.52em;
+    background: #E8DFC8;
+    clip-path: polygon(0 78%, 7% 42%, 18% 28%, 46% 20%, 73% 9%, 96% 16%, 100% 31%, 98% 49%, 72% 52%, 47% 61%, 22% 69%, 4% 93%);
+    border-radius: 50%;
+    transform: rotate(-1.4deg);
+    transform-origin: center;
+    pointer-events: none;
+  }
+  .below-video .copy-accent:nth-of-type(2)::after,
+  .layers-subtitle .copy-accent:nth-of-type(2)::after { transform: rotate(0.8deg); }
+  .below-video .copy-accent:nth-of-type(3)::after,
+  .layers-subtitle .copy-accent:nth-of-type(3)::after { transform: rotate(-0.6deg); }
+  .layers-subtitle .copy-accent {
+    padding-bottom: 0.12em;
+  }
+  .layers-subtitle .copy-accent::after {
+    bottom: -0.22em;
+    height: 0.46em;
+  }
 
   /* ========== HERO VIDEO EMBED ========== */
   .hero-video-wrap {
@@ -720,7 +771,6 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     box-shadow: 0 16px 48px rgba(168,146,106,0.3);
     transform: translateY(-2px) scale(1.02);
   }
-
   /* ========== TRUST BAR (LOGO CAROUSEL) ========== */
   .trust-bar {
     background: var(--charcoal);
@@ -903,6 +953,9 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     color: rgba(255,255,255,0.88);
     letter-spacing: 0.08em;
     text-transform: uppercase;
+  }
+  .amy-quote-line {
+    display: inline;
   }
   .on-light-micro .micro-testimonial-author {
     color: var(--text-light);
@@ -1354,6 +1407,10 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+  .arch-headline-line {
+    display: block;
+    white-space: nowrap;
+  }
   .arch-intro-sub {
     font-family: var(--body);
     font-size: 16px;
@@ -1422,12 +1479,15 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   .layers-subtitle {
     font-family: var(--display);
     font-weight: 700;
-    font-size: clamp(16px, 1.6vw, 21px);
+    font-size: clamp(14px, 1.6vw, 21px);
     color: rgba(255, 255, 255, 0.7);
     line-height: 1.2;
     letter-spacing: -0.01em;
-    max-width: 680px;
+    max-width: none;
+    white-space: nowrap;
   }
+  .layers-subtitle-mobile { display: none; }
+  .layers-subtitle-mobile-line { display: block; white-space: nowrap; }
   .layers-accordion {
     position: relative;
     overflow: hidden;
@@ -1503,13 +1563,49 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     padding: 48px;
   }
   .layer-subtitle {
-    font-family: var(--serif);
-    font-weight: 400;
+    font-family: var(--display);
+    font-weight: 700;
     font-size: 18px;
-    color: rgba(255,255,255,0.7);
-    font-style: italic;
-    margin-bottom: 32px;
-    letter-spacing: 0.01em;
+    color: var(--white);
+    font-style: normal;
+    margin-bottom: 26px;
+    letter-spacing: -0.01em;
+  }
+  .layer-deliverable {
+    position: relative;
+    margin-bottom: 36px;
+    padding: 28px 30px;
+    border: 1px solid rgba(232, 223, 200, 0.3);
+    border-radius: 2px;
+    background: linear-gradient(135deg, rgba(232, 223, 200, 0.12), rgba(255, 255, 255, 0.035));
+  }
+  .layer-deliverable-label {
+    display: block;
+    margin-bottom: 10px;
+    font-family: var(--body);
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.14em;
+    color: #e8dfc8;
+    text-transform: uppercase;
+  }
+  .layer-deliverable h4 {
+    margin-bottom: 10px;
+    font-family: var(--display);
+    font-size: clamp(22px, 2.4vw, 34px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--white);
+  }
+  .layer-deliverable p {
+    max-width: 900px;
+    font-family: var(--body);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.8);
   }
   .layer-subitems {
     display: grid;
@@ -1517,12 +1613,21 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     gap: 32px;
   }
   .layer-subitem h4 {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
     font-family: var(--display);
     font-weight: 700;
     font-size: 16px;
     color: var(--white);
     margin-bottom: 10px;
     letter-spacing: -0.01em;
+  }
+  .layer-subitem h4::before {
+    content: "•";
+    flex: 0 0 auto;
+    color: #E8DFC8;
+    line-height: 1;
   }
   .layer-subitem p {
     font-family: var(--body);
@@ -1536,10 +1641,13 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   /* Layers accordion responsive */
   @media (max-width: 768px) {
     .layers-header { padding: 72px 24px 56px; }
-    .layers-title { font-size: clamp(36px, 10vw, 64px); letter-spacing: -0.02em; }
-    .layers-subtitle { font-size: clamp(13px, 3.5vw, 16px); text-align: left; max-width: none; }
+    .layers-title { font-size: clamp(32px, 10vw, 64px); letter-spacing: -0.02em; white-space: nowrap; }
+    .layers-subtitle { font-size: clamp(10px, 3vw, 14px); text-align: left; max-width: none; white-space: normal; }
+    .layers-subtitle-desktop { display: none; }
+    .layers-subtitle-mobile { display: block; }
     .layer-collapsed { padding: 28px 24px; }
     .layer-expanded-inner { padding: 36px 24px; }
+    .layer-deliverable { margin-bottom: 30px; padding: 24px; }
     .layer-subitems { grid-template-columns: 1fr; gap: 24px; }
     .layer-name { font-size: clamp(24px, 6vw, 38px); }
     .layer-collapsed .layer-num { font-size: clamp(64px, 18vw, 100px); top: 0.25em; margin-bottom: -0.25em; }
@@ -1548,10 +1656,14 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   }
   @media (max-width: 480px) {
     .layers-header { padding: 56px 16px 40px; }
-    .layers-title { font-size: clamp(32px, 11vw, 52px); }
-    .layers-subtitle { font-size: 14px; text-align: left; max-width: none; }
+    .layers-title { font-size: clamp(28px, 9.5vw, 46px); }
+    .layers-subtitle { font-size: clamp(10px, 3vw, 12px); text-align: left; max-width: none; }
     .layer-collapsed { padding: 22px 16px; }
     .layer-expanded-inner { padding: 28px 16px; }
+    .layer-deliverable { margin-bottom: 26px; padding: 20px 18px; }
+    .layer-deliverable-label { font-size: 10px; }
+    .layer-deliverable h4 { font-size: 22px; }
+    .layer-deliverable p { font-size: 13.5px; line-height: 1.6; }
     .layer-subitems { gap: 20px; }
     .layer-subitem h4 { font-size: 15px; }
     .layer-subitem p { font-size: 13.5px; }
@@ -1630,6 +1742,15 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     color: var(--text-dark);
     margin-bottom: 10px;
     letter-spacing: -0.02em;
+  }
+  .booking-intro-copy {
+    max-width: 440px;
+    margin: 0 auto 28px;
+    font-family: var(--body);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--text-mid);
   }
   .booking-embed .booking-question-line {
     margin-top: 20px;
@@ -1772,12 +1893,16 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   }
   .cinematic-close h2 {
     font-family: var(--display);
-    font-size: clamp(36px, 5vw, 60px);
+    font-size: clamp(36px, 4vw, 50px);
     font-weight: 800;
     color: var(--white);
     line-height: 1.1;
     letter-spacing: -0.02em;
     margin-bottom: 16px;
+  }
+  .cinematic-close-line {
+    display: block;
+    white-space: nowrap;
   }
   .cinematic-close h2 .gold-word {
     background: linear-gradient(135deg, var(--gold) 0%, #e8d5b0 50%, var(--gold) 100%);
@@ -1841,6 +1966,10 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     margin-top: 14px;
     line-height: 1.7;
     font-weight: 300;
+  }
+  .footer-tagline-line {
+    display: block;
+    white-space: nowrap;
   }
   .footer-question-line {
     text-align: center;
@@ -2118,13 +2247,14 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
       display: block;
     }
     .hero-subtitle-line {
-      display: contents;
+      display: block;
+      white-space: nowrap;
     }
     .hero-subtitle,
     .hero-beams-live .hero-subtitle {
       font-size: clamp(13px, 3.3vw, 14px);
       line-height: 1.72;
-      max-width: 365px;
+      max-width: 400px;
       letter-spacing: 0;
     }
 
@@ -2165,7 +2295,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 
     /* Cinematic close */
     .cinematic-close { padding: 72px 28px 96px; }
-    .cinematic-close h2 { font-size: clamp(32px, 7vw, 60px); }
+    .cinematic-close h2 { font-size: clamp(20px, 4.8vw, 37px); }
 
     /* Footer */
     footer { padding: 56px 24px 32px; }
@@ -2193,32 +2323,60 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     .micro-testimonial { margin-top: 20px; }
     .micro-testimonial-text { font-size: 14px; max-width: 300px; }
     .micro-testimonial-author { font-size: 10px; }
+    .cinematic-close .micro-testimonial-text {
+      font-size: clamp(11px, 3.2vw, 13px);
+      line-height: 1.5;
+      max-width: 100%;
+    }
+    .cinematic-close .amy-quote-line {
+      display: block;
+      white-space: nowrap;
+    }
 
     /* Hero */
-    .hero-section { padding: 24px 20px 28px; }
+    .hero-section { padding: 24px 12px 14px; }
     .hero-section h1,
-    .hero-beams-live .hero-section h1 { font-size: clamp(22px, 6.2vw, 29px); }
-    .hero-badge { font-size: 7px; letter-spacing: 0.14em; padding: 5px 11px; gap: 4px; margin-bottom: 28px; }
-    .hero-badge-logo { width: 11px; height: 11px; }
+    .hero-beams-live .hero-section h1 {
+      font-size: clamp(18px, 5.25vw, 21.5px);
+      letter-spacing: -0.04em;
+    }
+    .hero-title-line { white-space: nowrap; }
+    .hero-badge { font-size: 6.5px; letter-spacing: 0.13em; padding: 4px 10px; gap: 3px; margin-bottom: 24px; }
+    .hero-badge-logo { width: 10px; height: 10px; }
     .hero-subtitle,
     .hero-beams-live .hero-subtitle {
-      font-size: 15px;
+      font-size: clamp(10.25px, 3.2vw, 12.5px);
       line-height: 1.5;
-      max-width: 350px;
+      max-width: none;
+      width: 100%;
+      letter-spacing: -0.02em;
     }
     .hero-subtitle-line {
       display: block;
+      white-space: nowrap;
     }
 
     /* Video */
+    .hero-video-wrap { margin-top: 24px; }
     .video-section { padding: 32px 20px 0; }
     .play-circle { width: 96px; height: 96px; }
 
     /* Below video */
-    .below-video { padding: 32px 20px 72px; }
+    .below-video { padding: 16px 20px 72px; }
     .below-video p { font-size: 13.5px; }
+    .below-video .responsive-offer-copy,
+    .hero-beams-live .below-video .responsive-offer-copy {
+      font-size: 12.5px;
+      line-height: 2;
+      letter-spacing: -0.035em;
+      max-width: none;
+      width: calc(100% + 24px);
+      margin-left: -12px;
+      margin-right: -12px;
+    }
+    .below-copy-desktop { display: none; }
+    .below-copy-mobile { display: block; }
     .cta-btn { padding: 18px 36px; font-size: 11px; letter-spacing: 0.12em; width: 100%; max-width: 360px; display: block; margin-left: auto; margin-right: auto; }
-
     /* Pillars (legacy - removed, see layers-accordion responsive above) */
 
     /* Q&A */
@@ -2239,7 +2397,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 
     /* Cinematic close */
     .cinematic-close { padding: 60px 24px 80px; }
-    .cinematic-close h2 { font-size: clamp(20px, 5.3vw, 30px); line-height: 1.2; }
+    .cinematic-close h2 { font-size: clamp(14px, 4.6vw, 20px); line-height: 1.2; letter-spacing: -0.02em; }
     .cinematic-close-divider { margin: 28px auto; }
 
     /* Disclaimer stacked on mobile */
@@ -2255,6 +2413,8 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     .booking-embed button[type="submit"], .booking-embed /* Footer */
     .footer-nav { gap: 10px 16px; }
     .footer-wordmark { height: 13px; }
+    .footer-brand p { font-size: clamp(10.5px, 3vw, 12px); }
+    .footer-disclaimer { font-size: 9.5px; }
     .nav-wordmark { height: 16px; }
   }
 
@@ -2263,7 +2423,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     .hero-section h1,
     .hero-beams-live .hero-section h1 { font-size: clamp(18px, 5.8vw, 24px); }
     .cta-btn { padding: 16px 28px; font-size: 10.5px; max-width: 100%; }
-    .cinematic-close h2 { font-size: clamp(20px, 5.5vw, 28px); }
+    .cinematic-close h2 { font-size: clamp(14px, 4.6vw, 18px); }
     .mini-nav { padding: 12px 16px; }
     .nav-wordmark { height: 14px; }
     .logo-carousel-track img { height: 26px; max-width: 80px; object-fit: contain; }
@@ -2390,8 +2550,8 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   <canvas id="hero-beams-canvas" aria-hidden="true"></canvas>
   <section class="hero-section">
   <div class="hero-badge reveal"><img src="/fd-submark-64.webp" alt="FD" class="hero-badge-logo" width="64" height="41" loading="eager" decoding="async">PERSONAL BRANDING HOUSE</div>
-  <h1 class="reveal reveal-delay-1"><span class="hero-title-line">Is your personal brand</span> <span class="hero-title-line">limiting your impact?</span></h1>
-  <p class="hero-subtitle reveal reveal-delay-2"><span class="hero-subtitle-line">An unclear, unstructured brand ecosystem </span><span class="hero-subtitle-line">is preventing you from getting </span><span class="hero-subtitle-line"><strong style="color: #e8dfc8; font-weight: 700;">more clients</strong>, <strong style="color: #e8dfc8; font-weight: 700;">stages</strong>, &amp; <strong style="color: #e8dfc8; font-weight: 700;">business growth</strong>.</span></p>
+  <h1 class="reveal reveal-delay-1"><span class="hero-title-line">Is Your Personal Brand Limiting</span><span class="hero-title-line">Your Business Growth?</span></h1>
+  <p class="hero-subtitle reveal reveal-delay-2"><span class="hero-subtitle-line">A scattered and unclear brand keeps you</span><span class="hero-subtitle-line">completely invisible in today's digital landscape.</span></p>
   <div class="hero-video-wrap reveal reveal-delay-3">
     <img class="hero-video-poster" src="https://fast.vidalytics.com/video/Sjy1Iha6/CdOMJmwGIL95jZWx/273367/251233__FFMPEG/thumb/thumbnail-5_0.jpg" alt="" width="1280" height="720" loading="eager" fetchpriority="high" decoding="async">
     <div id="vidalytics_embed_3aXl6KdXwDoyvaEt" style="width: 100%; position:relative; padding-top: 56.25%;"></div>
@@ -2424,9 +2584,12 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 
 <!-- ===== BELOW VIDEO ===== -->
 <div class="below-video">
-  <p class="reveal reveal-delay-1">Built for established female entrepreneurs whose real-world authority has outgrown how they are represented online.</p>
+  <p class="responsive-offer-copy reveal reveal-delay-1">
+    <span class="below-copy-desktop"><span class="below-copy-line">We build premium brand ecosystems for business women</span><span class="below-copy-line">to get more <span class="copy-accent">clients</span>, <span class="copy-accent">stages</span>, &amp; <span class="copy-accent">business growth</span>.</span></span>
+    <span class="below-copy-mobile"><span class="below-copy-line">We build premium brand ecosystems for business women</span><span class="below-copy-line">to get more <span class="copy-accent">clients</span>, <span class="copy-accent">stages</span>, &amp; <span class="copy-accent">business growth</span>.</span></span>
+  </p>
   <p class="reveal reveal-delay-1" style="display:none;">You walk in with a scattered, misaligned brand and walk out with a <strong>Crowned Authority™ Blueprint and Crowned Identity™ Bible</strong> ready to use instantly. Authority is engineered, not just designed.</p>
-  <a href="#book" class="cta-btn on-dark reveal reveal-delay-2">Schedule Discovery Call</a>
+  <a href="#book" class="cta-btn on-dark reveal reveal-delay-2" data-cta-label="Hero CTA">Schedule Discovery Call</a>
   <div class="micro-testimonial reveal reveal-delay-2" style="display:none;">
     <div>
       <p class="micro-testimonial-text">"I was nervous to book the call, but it was the most clarifying conversation I have had about my brand in years."</p>
@@ -2437,12 +2600,12 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 </section>
 
 <!-- ===== AS SEEN IN TRUST BAR ===== -->
-<section class="trust-bar reveal">
-  <p class="trust-bar-label">Our Work Represented In</p>
+<section class="trust-bar">
+  <p class="trust-bar-label">Our Brands Have Been Seen In</p>
   <div class="logo-carousel-track">
-    <img src="/logos/mastermind-320.webp" alt="Mastermind.com" class="logo-invert" loading="lazy" width="320" height="56" decoding="async">
-    <img src="/logos/forbes-200.webp" alt="Forbes" loading="lazy" width="200" height="78" decoding="async">
-    <img src="/logos/auralis-magazine-240.webp" alt="Auralis Magazine" loading="lazy" width="240" height="78" decoding="async">
+    <img src="/logos/mastermind-320.webp" alt="Mastermind.com" class="logo-invert" loading="eager" width="320" height="56" decoding="async">
+    <img src="/logos/forbes-200.webp" alt="Forbes" loading="eager" width="200" height="78" decoding="async">
+    <img src="/logos/auralis-magazine-240.webp" alt="Auralis Magazine" loading="eager" width="240" height="78" decoding="async">
     <img src="/logos/cbs-news-220.webp" alt="CBS News" loading="lazy" width="220" height="80" decoding="async">
     <img src="/logos/yahoo-180.webp" alt="Yahoo" loading="lazy" width="180" height="75" decoding="async">
     <img src="/logos/good-morning-america-140.webp" alt="Good Morning America" loading="lazy" width="140" height="77" decoding="async">
@@ -2460,8 +2623,8 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 <!-- ===== SOCIAL PROOF ===== -->
 <section class="social-proof-section">
   <div class="social-proof-card">
-  <h2 class="reveal">Real women. Real results.</h2>
-  <p class="proof-subtitle reveal">YOUR CALLING IS CALLING YOU.</p>
+  <h2 class="reveal">Real Women. Real Transformation.</h2>
+  <p class="proof-subtitle reveal">You Are Called For Greater Impact</p>
 
   <!-- Vidalytics video embed -->
   <div class="vidalytics-wrap reveal">
@@ -2587,22 +2750,25 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
       </div>
     </div>
   </div>
-  <p class="review-disclaimer reveal"><span class="disclaimer-line1">These are real testimonials from FORDIVINE clients.</span><span class="disclaimer-line2"> Individual results may vary.</span></p>
+  <p class="review-disclaimer reveal"><span class="disclaimer-line1">These are real FORDIVINE client testimonials.</span><span class="disclaimer-line2"> Individual experiences and results may vary.</span></p>
   </div><!-- /.social-proof-card -->
 </section>
 
 <!-- ===== AUTHORITY ARCHITECTURE INTRO ===== -->
 <section class="arch-intro">
-  <p class="arch-intro-label reveal">THE FORDIVINE PHILOSOPHY</p>
-  <h2 class="reveal">Your brand is not broken.<br>It's just <span class="accent">missing the architecture.</span></h2>
+  <p class="arch-intro-label reveal">THE FORDIVINE APPROACH</p>
+  <h2 class="reveal"><span class="arch-headline-line">Your Brand Is Not Broken.</span><span class="arch-headline-line accent">It’s Missing the Architecture.</span></h2>
   <div class="arch-intro-line"></div>
 </section>
 
 <!-- ===== 4 LAYERS SCROLL ACCORDION ===== -->
 <section class="layers-accordion-section">
   <div class="layers-header">
-    <h2 class="layers-title reveal">THE 4 LAYERS</h2>
-    <p class="layers-subtitle reveal">to turning your personal brand into a<br>Crowned Authority™ that rises above the sea of noise<br>without losing your soul's essence.</p>
+    <h2 class="layers-title reveal">THE FOUR LAYERS</h2>
+    <p class="layers-subtitle reveal">
+      <span class="layers-subtitle-desktop">Our team builds every layer of your brand so you get more <span class="copy-accent">clients</span>, <span class="copy-accent">stages</span>, &amp; <span class="copy-accent">business growth</span>.</span>
+      <span class="layers-subtitle-mobile"><span class="layers-subtitle-mobile-line">Our team builds every layer of your brand so you get</span><span class="layers-subtitle-mobile-line">more <span class="copy-accent">clients</span>, <span class="copy-accent">stages</span>, &amp; <span class="copy-accent">business growth</span>.</span></span>
+    </p>
   </div>
   <div class="layers-accordion">
     <div class="layer-slider"></div>
@@ -2615,19 +2781,24 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
       </div>
       <div class="layer-expanded">
         <div class="layer-expanded-inner">
-          <p class="layer-subtitle">Strategy That Drives Real Results</p>
+          <p class="layer-subtitle">Strategy That Makes the Entire Brand Make Sense</p>
+          <div class="layer-deliverable">
+            <span class="layer-deliverable-label">Main Deliverable</span>
+            <h4>Crowned Authority Blueprint</h4>
+            <p>Your complete business and marketing strategy, built before a single asset is designed, so your message, offers, audience, and growth plan work together as one.</p>
+          </div>
           <div class="layer-subitems">
             <div class="layer-subitem">
-              <h4>Crowned Authority Blueprint</h4>
-              <p>Your complete marketing strategy mapped out so every piece of your brand works together toward one clear goal.</p>
+              <h4>Brand &amp; Offer Architecture</h4>
+              <p>Your expertise, offers, and vision in one clear ecosystem.</p>
             </div>
             <div class="layer-subitem">
-              <h4>Ideal Avatar Psychology</h4>
-              <p>We research exactly who your audience is, what they need, and what makes them trust and buy from someone like you.</p>
+              <h4>Ideal Client Psychology</h4>
+              <p>Pierce the noise and get seen by your ideal clientele.</p>
             </div>
             <div class="layer-subitem">
-              <h4>Competitive Positioning</h4>
-              <p>We identify what makes your voice different in a crowded market so you stand out without trying to be someone you are not.</p>
+              <h4>Competitive Positioning &amp; White Space</h4>
+              <p>Own a position your competitors cannot authentically replicate.</p>
             </div>
           </div>
         </div>
@@ -2642,19 +2813,24 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
       </div>
       <div class="layer-expanded">
         <div class="layer-expanded-inner">
-          <p class="layer-subtitle">Visuals That Command Attention</p>
+          <p class="layer-subtitle">A visual Identity That Makes Your Brand Magnetic</p>
+          <div class="layer-deliverable">
+            <span class="layer-deliverable-label">Main Deliverable</span>
+            <h4>Crowned Identity Bible</h4>
+            <p>Your complete visual identity system that is strategically designed to make the substance behind your work look premium without losing your unique essence.</p>
+          </div>
           <div class="layer-subitems">
             <div class="layer-subitem">
-              <h4>Crowned Identity Bible</h4>
-              <p>A fully comprehensive brand guide with your visual identity, logo system, color palette, typography, and brand assets all designed by our in-house team.</p>
+              <h4>Strategic Visual Identity</h4>
+              <p>Your unique essence translated into visuals that command trust.</p>
             </div>
             <div class="layer-subitem">
-              <h4>Custom Brand Assets</h4>
-              <p>Original design elements crafted specifically for you. No templates, no AI-generated graphics. Every asset reflects your essence.</p>
+              <h4>Complete Brand Asset System</h4>
+              <p>No more scattered and unclear branding that confuses people.</p>
             </div>
             <div class="layer-subitem">
-              <h4>Brand Reveal Experience</h4>
-              <p>Your entire brand is revealed to you on a zoom call by our team in a powerful moment seeing this God-given vision of yours materialize right in front of your eyes.</p>
+              <h4>Perceived Value Engineering</h4>
+              <p>Open new doors of opportunity and get paid premium.</p>
             </div>
           </div>
         </div>
@@ -2669,19 +2845,24 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
       </div>
       <div class="layer-expanded">
         <div class="layer-expanded-inner">
-          <p class="layer-subtitle">Brand Assets Ready To Use</p>
+          <p class="layer-subtitle">Content That Puts Your Brand Into Motion</p>
+          <div class="layer-deliverable">
+            <span class="layer-deliverable-label">Main Deliverable</span>
+            <h4>Plug-and-Play Content System</h4>
+            <p>Custom social content, captions, and a launch schedule to activate your new brand without leaving you to figure out what to post or how to launch it.</p>
+          </div>
           <div class="layer-subitems">
             <div class="layer-subitem">
-              <h4>Digital HQ</h4>
-              <p>A full website designed and built to convert visitors into leads and position you as the authority in your space.</p>
+              <h4>Conversion-Led Content Strategy</h4>
+              <p>Every piece of content has a purpose for your business goals.</p>
             </div>
             <div class="layer-subitem">
-              <h4>Social Content System</h4>
-              <p>Ready-to-post content assets, templates, and frameworks so you show up consistently without starting from scratch every day.</p>
+              <h4>Ready-to-Post Content Assets</h4>
+              <p>No more guessing what or how to post. We build it for you.</p>
             </div>
             <div class="layer-subitem">
-              <h4>Premium Brand Collateral</h4>
-              <p>Presentation decks, lead magnets, email headers, and every touchpoint designed to match your elevated brand standard.</p>
+              <h4>Repeatable Content Frameworks</h4>
+              <p>Consistency is everything. Without it turning into AI slop.</p>
             </div>
           </div>
         </div>
@@ -2696,19 +2877,24 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
       </div>
       <div class="layer-expanded">
         <div class="layer-expanded-inner">
-          <p class="layer-subtitle">Scalable Systems To Work For You</p>
+          <p class="layer-subtitle">Infrastructure That Keeps Your Brand Working 24/7/365</p>
+          <div class="layer-deliverable">
+            <span class="layer-deliverable-label">Main Deliverables</span>
+            <h4>Digital HQ (Website) + Brand Vault</h4>
+            <p>A two-part brand engine built to attract opportunities externally and keep your entire brand organized and consistent internally.</p>
+          </div>
           <div class="layer-subitems">
             <div class="layer-subitem">
-              <h4>Lead Generation System</h4>
-              <p>Automated funnels and strategies that bring qualified leads to you 24/7 without trading more of your time.</p>
+              <h4>Premium Digital HQ</h4>
+              <p>A website that actually positions you as the authority.</p>
             </div>
             <div class="layer-subitem">
-              <h4>Conversion Architecture</h4>
-              <p>The systems that turn strangers into followers, followers into leads, and leads into paying clients on autopilot.</p>
+              <h4>SEO &amp; GEO Visibility</h4>
+              <p>No more being invisible from Google or AI searches.</p>
             </div>
             <div class="layer-subitem">
-              <h4>Growth & Accountability</h4>
-              <p>Ongoing support, community access, and brand coaching to ensure your brand keeps opening new doors long after launch.</p>
+              <h4>Centralized Brand Vault</h4>
+              <p>Every brand asset with its own guidelines in one place.</p>
             </div>
           </div>
         </div>
@@ -2719,7 +2905,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 </section>
 
 <div class="pillars-cta">
-  <a href="#book" class="cta-btn reveal">SCHEDULE DISCOVERY CALL</a>
+  <a href="#book" class="cta-btn reveal" data-cta-label="Mid-Page CTA">SCHEDULE DISCOVERY CALL</a>
   <div class="micro-testimonial on-light-micro reveal" style="margin-top: 24px;">
     <div>
       <p class="micro-testimonial-text">&ldquo;The team helped me birth multiple new company brands and have it all be in one ecosystem.&rdquo;</p>
@@ -2731,8 +2917,8 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 <!-- ===== MORE REVIEWS + CROWNED STORIES (combined floating card) ===== -->
 <section class="combined-stories-section">
   <div class="combined-stories-card">
-  <h2 class="reveal">See the transformation firsthand.</h2>
-  <p class="proof-subtitle reveal">HEAR IT DIRECTLY FROM THEM.</p>
+  <h2 class="reveal">See the Transformation</h2>
+  <p class="proof-subtitle reveal">Hear Directly From FORDIVINE Clients</p>
 
   <div class="video-reviews-grid">
     <div class="video-review-card reveal">
@@ -2774,7 +2960,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 
 <!-- ===== CLIENT LOGOS MARQUEE ===== -->
 <section class="client-logos-bar">
-  <p class="client-logos-label">63+ Personal Brands Built</p>
+  <p class="client-logos-label">Crowned Authorities™ We’ve Helped Bring to Life</p>
   <div class="client-logo-track">
     <img src="/client-logos/client-amber-havalias-logo-white.png" alt="Amber Havalias" loading="lazy" width="337" height="100" decoding="async">
     <img src="/client-logos/client-amy-lacey-logo-white.png" alt="Amy Lacey" loading="lazy" width="480" height="100" decoding="async">
@@ -2837,7 +3023,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 <section class="video-testimonial-section">
   <div class="video-testimonial-card">
   <h2 class="reveal">More Crowned Stories</h2>
-  <p class="proof-subtitle reveal">Women choosing to amplify their<br class="mobile-br"> God-given calling.</p>
+  <p class="proof-subtitle reveal">Women who grew their businesses with a full brand ecosystem.</p>
 
   <div class="video-reviews-grid">
     <div class="video-review-card reveal">
@@ -3036,7 +3222,8 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 <!-- ===== BOOKING FORM ===== -->
 <section class="booking-section" id="book">
   <div class="booking-embed reveal">
-    <h3>Discover What's Possible For You</h3>
+    <h3>See What Can Be Done For You</h3>
+    <p class="booking-intro-copy">If your personal brand is limiting your business growth, schedule a call with our team today.</p>
     <div class="fd-scheduler-shell" id="iclosed-scheduler-shell" aria-live="polite">
       <div class="fd-scheduler-placeholder">Preparing your discovery calendar</div>
     </div>
@@ -3146,12 +3333,12 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 <!-- ===== CINEMATIC CLOSING ===== -->
 <section class="cinematic-close">
   <div class="cinematic-close-inner">
-    <h2 class="reveal">You were not made to<br>be the best kept secret.<br>You are called to be <span class="gold-word" style="background:linear-gradient(135deg,#c8b89a 0%,#e8d5b0 50%,#c8b89a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:inline;">Crowned.</span></h2>
+    <h2 class="reveal"><span class="cinematic-close-line">You Were Not Made to Be Invisible.</span><span class="cinematic-close-line">You Are Called to Be <span class="gold-word" style="background:linear-gradient(135deg,#c8b89a 0%,#e8d5b0 50%,#c8b89a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:inline;">Crowned.</span></span></h2>
     <div class="cinematic-close-divider reveal"></div>
-    <a href="#book" class="cta-btn on-dark reveal">Schedule Discovery Call</a>
+    <a href="#book" class="cta-btn on-dark reveal" data-cta-label="Closing CTA">Schedule Discovery Call</a>
     <div class="micro-testimonial reveal" style="margin-top:32px;">
       <div>
-        <p class="micro-testimonial-text">"You gave me the courage and the confidence to realize I am worthy of speaking as an authority online and on stages.<br><br>Now I am getting wayyy more inbound customers and partnerships because people know what I stand for."</p>
+        <p class="micro-testimonial-text"><span class="amy-quote-line">"Now I am getting wayyy more inbound customers and</span> <span class="amy-quote-line">partnerships because people know what I stand for."</span></p>
         <p class="micro-testimonial-author">&mdash; AMY LACEY</p>
       </div>
     </div>
@@ -3164,7 +3351,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   <div class="footer-top">
     <div class="footer-brand">
       <a href="/discover" class="logo logo-img-wrap" aria-label="FORDIVINE home"><picture><source srcset="/fordivine-logo.webp" type="image/webp"><img src="/fordivine-logo.png" alt="FORDIVINE" class="footer-wordmark" width="1287" height="201" loading="lazy" decoding="async"></picture></a>
-      <p>An Authority Engineering House helping women<br>become Crowned Authorities™ in their space.</p>
+      <p><span class="footer-tagline-line">A Personal Branding House helping business women</span><span class="footer-tagline-line">become Crowned Authorities™ in their space.</span></p>
     </div>
     <div class="footer-nav">
       <a href="/discover">Home</a>
@@ -3833,7 +4020,7 @@ fbq('track', 'PageView');
   var ctaLabels = ['Hero CTA', 'Mid-Page CTA', 'Closing CTA'];
   var ctaFired = {};
   ctaButtons.forEach(function(btn, index) {
-    var label = ctaLabels[index] || 'CTA ' + (index + 1);
+    var label = btn.getAttribute('data-cta-label') || ctaLabels[index] || 'CTA ' + (index + 1);
     btn.addEventListener('click', function() {
       if (!ctaFired[label]) {
         ctaFired[label] = true;
@@ -3992,7 +4179,7 @@ fbq('track', 'PageView');
   var ga4CtaLabels = ['Hero CTA', 'Mid-Page CTA', 'Closing CTA'];
   var ga4CtaFired = {};
   ga4CtaButtons.forEach(function(btn, index) {
-    var label = ga4CtaLabels[index] || 'CTA ' + (index + 1);
+    var label = btn.getAttribute('data-cta-label') || ga4CtaLabels[index] || 'CTA ' + (index + 1);
     btn.addEventListener('click', function() {
       if (!ga4CtaFired[label]) {
         ga4CtaFired[label] = true;
