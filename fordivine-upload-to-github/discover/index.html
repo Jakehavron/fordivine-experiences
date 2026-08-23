@@ -1715,6 +1715,15 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     margin-bottom: 10px;
     letter-spacing: -0.02em;
   }
+  .booking-intro-copy {
+    max-width: 440px;
+    margin: 0 auto 28px;
+    font-family: var(--body);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--text-mid);
+  }
   .booking-embed .booking-question-line {
     margin-top: 20px;
     font-size: 13px;
@@ -1856,12 +1865,19 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   }
   .cinematic-close h2 {
     font-family: var(--display);
-    font-size: clamp(36px, 5vw, 60px);
+    font-size: clamp(36px, 3.6vw, 46px);
     font-weight: 800;
     color: var(--white);
     line-height: 1.1;
     letter-spacing: -0.02em;
     margin-bottom: 16px;
+  }
+  .cinematic-close-line {
+    display: block;
+    width: 128.2%;
+    margin-left: -14.1%;
+    white-space: nowrap;
+    transform: scaleX(0.78);
   }
   .cinematic-close h2 .gold-word {
     background: linear-gradient(135deg, var(--gold) 0%, #e8d5b0 50%, var(--gold) 100%);
@@ -2250,7 +2266,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 
     /* Cinematic close */
     .cinematic-close { padding: 72px 28px 96px; }
-    .cinematic-close h2 { font-size: clamp(32px, 7vw, 60px); }
+    .cinematic-close h2 { font-size: clamp(17px, 4.45vw, 34px); }
 
     /* Footer */
     footer { padding: 56px 24px 32px; }
@@ -2343,7 +2359,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 
     /* Cinematic close */
     .cinematic-close { padding: 60px 24px 80px; }
-    .cinematic-close h2 { font-size: clamp(20px, 5.3vw, 30px); line-height: 1.2; }
+    .cinematic-close h2 { font-size: clamp(16px, 4.45vw, 21px); line-height: 1.25; letter-spacing: -0.02em; }
     .cinematic-close-divider { margin: 28px auto; }
 
     /* Disclaimer stacked on mobile */
@@ -2367,7 +2383,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     .hero-section h1,
     .hero-beams-live .hero-section h1 { font-size: clamp(18px, 5.8vw, 24px); }
     .cta-btn { padding: 16px 28px; font-size: 10.5px; max-width: 100%; }
-    .cinematic-close h2 { font-size: clamp(20px, 5.5vw, 28px); }
+    .cinematic-close h2 { font-size: clamp(16px, 4.45vw, 17px); }
     .mini-nav { padding: 12px 16px; }
     .nav-wordmark { height: 14px; }
     .logo-carousel-track img { height: 26px; max-width: 80px; object-fit: contain; }
@@ -2858,8 +2874,8 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 <!-- ===== MORE REVIEWS + CROWNED STORIES (combined floating card) ===== -->
 <section class="combined-stories-section">
   <div class="combined-stories-card">
-  <h2 class="reveal">See the transformation firsthand.</h2>
-  <p class="proof-subtitle reveal">HEAR IT DIRECTLY FROM THEM.</p>
+  <h2 class="reveal">See the Transformation</h2>
+  <p class="proof-subtitle reveal">Hear Directly From FORDIVINE Clients</p>
 
   <div class="video-reviews-grid">
     <div class="video-review-card reveal">
@@ -2901,7 +2917,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 
 <!-- ===== CLIENT LOGOS MARQUEE ===== -->
 <section class="client-logos-bar">
-  <p class="client-logos-label">63+ Personal Brands Built</p>
+  <p class="client-logos-label">Crowned Authorities™ We’ve Helped Bring to Life</p>
   <div class="client-logo-track">
     <img src="/client-logos/client-amber-havalias-logo-white.png" alt="Amber Havalias" loading="lazy" width="337" height="100" decoding="async">
     <img src="/client-logos/client-amy-lacey-logo-white.png" alt="Amy Lacey" loading="lazy" width="480" height="100" decoding="async">
@@ -2964,7 +2980,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 <section class="video-testimonial-section">
   <div class="video-testimonial-card">
   <h2 class="reveal">More Crowned Stories</h2>
-  <p class="proof-subtitle reveal">Women choosing to amplify their<br class="mobile-br"> God-given calling.</p>
+  <p class="proof-subtitle reveal">Women who grew their businesses with a full brand ecosystem.</p>
 
   <div class="video-reviews-grid">
     <div class="video-review-card reveal">
@@ -3163,7 +3179,8 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 <!-- ===== BOOKING FORM ===== -->
 <section class="booking-section" id="book">
   <div class="booking-embed reveal">
-    <h3>Discover What's Possible For You</h3>
+    <h3>Discover What Can Be Done For You</h3>
+    <p class="booking-intro-copy">If your personal brand is limiting your business growth, schedule a discovery call with our team today.</p>
     <div class="fd-scheduler-shell" id="iclosed-scheduler-shell" aria-live="polite">
       <div class="fd-scheduler-placeholder">Preparing your discovery calendar</div>
     </div>
@@ -3273,12 +3290,12 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 <!-- ===== CINEMATIC CLOSING ===== -->
 <section class="cinematic-close">
   <div class="cinematic-close-inner">
-    <h2 class="reveal">You were not made to<br>be the best kept secret.<br>You are called to be <span class="gold-word" style="background:linear-gradient(135deg,#c8b89a 0%,#e8d5b0 50%,#c8b89a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:inline;">Crowned.</span></h2>
+    <h2 class="reveal"><span class="cinematic-close-line">You Were Not Made to Be the Best-Kept Secret.</span><span class="cinematic-close-line">You Are Called to Be <span class="gold-word" style="background:linear-gradient(135deg,#c8b89a 0%,#e8d5b0 50%,#c8b89a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:inline;">Crowned.</span></span></h2>
     <div class="cinematic-close-divider reveal"></div>
     <a href="#book" class="cta-btn on-dark reveal" data-cta-label="Closing CTA">Schedule Discovery Call</a>
     <div class="micro-testimonial reveal" style="margin-top:32px;">
       <div>
-        <p class="micro-testimonial-text">"You gave me the courage and the confidence to realize I am worthy of speaking as an authority online and on stages.<br><br>Now I am getting wayyy more inbound customers and partnerships because people know what I stand for."</p>
+        <p class="micro-testimonial-text">"Now I am getting wayyy more inbound customers and partnerships because people know what I stand for."</p>
         <p class="micro-testimonial-author">&mdash; AMY LACEY</p>
       </div>
     </div>
