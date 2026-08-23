@@ -650,7 +650,32 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   }
   .below-video p:last-of-type { margin-bottom: 48px; }
   .below-video strong { color: rgba(255,255,255,0.88); font-weight: 600; }
-  .below-video .copy-accent { color: #E8DFC8; }
+  .below-video .copy-accent {
+    color: #E8DFC8;
+    display: inline-block;
+    position: relative;
+    z-index: 0;
+    padding-bottom: 0.04em;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .below-video .copy-accent::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: -0.08em;
+    right: -0.1em;
+    bottom: -0.14em;
+    height: 0.52em;
+    background: #E8DFC8;
+    clip-path: polygon(0 78%, 7% 42%, 18% 28%, 46% 20%, 73% 9%, 96% 16%, 100% 31%, 98% 49%, 72% 52%, 47% 61%, 22% 69%, 4% 93%);
+    border-radius: 50%;
+    transform: rotate(-1.4deg);
+    transform-origin: center;
+    pointer-events: none;
+  }
+  .below-video .copy-accent:nth-of-type(2)::after { transform: rotate(0.8deg); }
+  .below-video .copy-accent:nth-of-type(3)::after { transform: rotate(-0.6deg); }
 
   /* ========== HERO VIDEO EMBED ========== */
   .hero-video-wrap {
