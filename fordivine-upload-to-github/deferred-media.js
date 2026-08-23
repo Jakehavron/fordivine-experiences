@@ -157,6 +157,57 @@
 
     window.fdLoadScheduler = loadScheduler;
 
+    function scrollToBookingSection() {
+      var bookingSection = document.getElementById('book');
+      if (!bookingSection) return;
+
+      var root = document.documentElement;
+      var previousScrollBehavior = root.style.scrollBehavior;
+      root.style.scrollBehavior = 'auto';
+      bookingSection.scrollIntoView({ block: 'start' });
+      window.requestAnimationFrame(function () {
+        root.style.scrollBehavior = previousScrollBehavior;
+      });
+    }
+
+    function stabilizeDirectBookingLink() {
+      if (window.location.hash !== '#book') return;
+
+      loadScheduler();
+
+      var active = true;
+      var timers = [];
+      var correctionDelays = [0, 100, 300, 700, 1200, 2000, 3200];
+
+      function stopCorrections() {
+        if (!active) return;
+        active = false;
+        timers.forEach(window.clearTimeout);
+        ['wheel', 'touchstart', 'pointerdown', 'keydown'].forEach(function (eventName) {
+          window.removeEventListener(eventName, stopCorrections);
+        });
+      }
+
+      function correctPosition() {
+        if (!active || window.location.hash !== '#book') return;
+        scrollToBookingSection();
+      }
+
+      correctionDelays.forEach(function (delay) {
+        timers.push(window.setTimeout(correctPosition, delay));
+      });
+
+      ['wheel', 'touchstart', 'pointerdown', 'keydown'].forEach(function (eventName) {
+        window.addEventListener(eventName, stopCorrections, { once: true, passive: true });
+      });
+
+      window.addEventListener('load', correctPosition, { once: true });
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(correctPosition);
+      }
+      timers.push(window.setTimeout(stopCorrections, 3400));
+    }
+
     document.querySelectorAll('a[href="#book"]').forEach(function (link) {
       ['pointerenter', 'focus', 'touchstart'].forEach(function (eventName) {
         link.addEventListener(eventName, loadScheduler, { once: true, passive: eventName !== 'focus' });
@@ -172,15 +223,12 @@
           window.history.pushState(null, '', '#book');
         }
 
-        var root = document.documentElement;
-        var previousScrollBehavior = root.style.scrollBehavior;
-        root.style.scrollBehavior = 'auto';
-        bookingSection.scrollIntoView({ block: 'start' });
-        window.requestAnimationFrame(function () {
-          root.style.scrollBehavior = previousScrollBehavior;
-        });
+        scrollToBookingSection();
       });
     });
+
+    stabilizeDirectBookingLink();
+    window.addEventListener('hashchange', stabilizeDirectBookingLink);
 
     if (!('IntersectionObserver' in window)) return;
     var observer = new IntersectionObserver(function (entries) {
