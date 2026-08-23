@@ -954,6 +954,9 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     letter-spacing: 0.08em;
     text-transform: uppercase;
   }
+  .amy-quote-line {
+    display: inline;
+  }
   .on-light-micro .micro-testimonial-author {
     color: var(--text-light);
   }
@@ -2316,6 +2319,15 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     .micro-testimonial { margin-top: 20px; }
     .micro-testimonial-text { font-size: 14px; max-width: 300px; }
     .micro-testimonial-author { font-size: 10px; }
+    .cinematic-close .micro-testimonial-text {
+      font-size: clamp(11px, 3.2vw, 13px);
+      line-height: 1.5;
+      max-width: 100%;
+    }
+    .cinematic-close .amy-quote-line {
+      display: block;
+      white-space: nowrap;
+    }
 
     /* Hero */
     .hero-section { padding: 24px 12px 14px; }
@@ -3320,7 +3332,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     <a href="#book" class="cta-btn on-dark reveal" data-cta-label="Closing CTA">Schedule Discovery Call</a>
     <div class="micro-testimonial reveal" style="margin-top:32px;">
       <div>
-        <p class="micro-testimonial-text">"Now I am getting wayyy more inbound customers and partnerships because people know what I stand for."</p>
+        <p class="micro-testimonial-text"><span class="amy-quote-line">"Now I am getting wayyy more inbound customers and</span> <span class="amy-quote-line">partnerships because people know what I stand for."</span></p>
         <p class="micro-testimonial-author">&mdash; AMY LACEY</p>
       </div>
     </div>
