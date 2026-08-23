@@ -1551,8 +1551,44 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     font-size: 18px;
     color: rgba(255,255,255,0.7);
     font-style: italic;
-    margin-bottom: 32px;
+    margin-bottom: 26px;
     letter-spacing: 0.01em;
+  }
+  .layer-deliverable {
+    position: relative;
+    margin-bottom: 36px;
+    padding: 28px 30px;
+    border: 1px solid rgba(232, 223, 200, 0.3);
+    border-radius: 2px;
+    background: linear-gradient(135deg, rgba(232, 223, 200, 0.12), rgba(255, 255, 255, 0.035));
+  }
+  .layer-deliverable-label {
+    display: block;
+    margin-bottom: 10px;
+    font-family: var(--body);
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.14em;
+    color: #e8dfc8;
+    text-transform: uppercase;
+  }
+  .layer-deliverable h4 {
+    margin-bottom: 10px;
+    font-family: var(--display);
+    font-size: clamp(22px, 2.4vw, 34px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--white);
+  }
+  .layer-deliverable p {
+    max-width: 900px;
+    font-family: var(--body);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.8);
   }
   .layer-subitems {
     display: grid;
@@ -1583,6 +1619,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     .layers-subtitle { font-size: clamp(13px, 3.5vw, 16px); text-align: left; max-width: none; }
     .layer-collapsed { padding: 28px 24px; }
     .layer-expanded-inner { padding: 36px 24px; }
+    .layer-deliverable { margin-bottom: 30px; padding: 24px; }
     .layer-subitems { grid-template-columns: 1fr; gap: 24px; }
     .layer-name { font-size: clamp(24px, 6vw, 38px); }
     .layer-collapsed .layer-num { font-size: clamp(64px, 18vw, 100px); top: 0.25em; margin-bottom: -0.25em; }
@@ -1595,6 +1632,10 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     .layers-subtitle { font-size: 14px; text-align: left; max-width: none; }
     .layer-collapsed { padding: 22px 16px; }
     .layer-expanded-inner { padding: 28px 16px; }
+    .layer-deliverable { margin-bottom: 26px; padding: 20px 18px; }
+    .layer-deliverable-label { font-size: 10px; }
+    .layer-deliverable h4 { font-size: 22px; }
+    .layer-deliverable p { font-size: 13.5px; line-height: 1.6; }
     .layer-subitems { gap: 20px; }
     .layer-subitem h4 { font-size: 15px; }
     .layer-subitem p { font-size: 13.5px; }
@@ -2667,8 +2708,8 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 <!-- ===== 4 LAYERS SCROLL ACCORDION ===== -->
 <section class="layers-accordion-section">
   <div class="layers-header">
-    <h2 class="layers-title reveal">THE 4 LAYERS</h2>
-    <p class="layers-subtitle reveal">We build the four layers of your personal brand so your business is easier to understand, trust, and work with.</p>
+    <h2 class="layers-title reveal">THE FOUR LAYERS</h2>
+    <p class="layers-subtitle reveal">We build every layer of your founder-led brand so your expertise becomes easier to understand, trust, and choose.</p>
   </div>
   <div class="layers-accordion">
     <div class="layer-slider"></div>
@@ -2681,19 +2722,24 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
       </div>
       <div class="layer-expanded">
         <div class="layer-expanded-inner">
-          <p class="layer-subtitle">Strategy That Drives Real Results</p>
+          <p class="layer-subtitle">Strategy That Makes the Entire Brand Make Sense</p>
+          <div class="layer-deliverable">
+            <span class="layer-deliverable-label">Main Deliverable</span>
+            <h4>Crowned Authority Blueprint</h4>
+            <p>Your complete business and marketing strategy, built before a single asset is designed, so your message, offers, audience, and growth plan work together as one.</p>
+          </div>
           <div class="layer-subitems">
             <div class="layer-subitem">
-              <h4>Crowned Authority Blueprint</h4>
-              <p>Your complete marketing strategy mapped out so every piece of your brand works together toward one clear goal.</p>
+              <h4>Brand &amp; Offer Architecture</h4>
+              <p>We build out your expertise, offers, intellectual property, and future vision into one clear business ecosystem.</p>
             </div>
             <div class="layer-subitem">
-              <h4>Ideal Avatar Psychology</h4>
-              <p>We research exactly who your audience is, what they need, and what makes them trust and buy from someone like you.</p>
+              <h4>Ideal Client Psychology &amp; Messaging</h4>
+              <p>We identify what your ideal clients need to hear, trust, and understand so your brand becomes undeniable.</p>
             </div>
             <div class="layer-subitem">
-              <h4>Competitive Positioning</h4>
-              <p>We identify what makes your voice different in a crowded market so you stand out without trying to be someone you are not.</p>
+              <h4>Competitive Positioning &amp; White Space</h4>
+              <p>We find the position only you can own so your brand stands apart without chasing trends or blending into the market.</p>
             </div>
           </div>
         </div>
@@ -2708,19 +2754,24 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
       </div>
       <div class="layer-expanded">
         <div class="layer-expanded-inner">
-          <p class="layer-subtitle">Visuals That Command Attention</p>
+          <p class="layer-subtitle">A visual Identity That Makes Your Brand Magnetic</p>
+          <div class="layer-deliverable">
+            <span class="layer-deliverable-label">Main Deliverable</span>
+            <h4>Crowned Identity Bible</h4>
+            <p>Your complete visual identity system that is strategically designed to make the substance behind your work look premium without losing your unique essence.</p>
+          </div>
           <div class="layer-subitems">
             <div class="layer-subitem">
-              <h4>Crowned Identity Bible</h4>
-              <p>A fully comprehensive brand guide with your visual identity, logo system, color palette, typography, and brand assets all designed by our in-house team.</p>
+              <h4>Strategic Visual Identity</h4>
+              <p>Your logos, colors, typography, and creative direction are built from the strategy behind your brand, not surface-level aesthetics.</p>
             </div>
             <div class="layer-subitem">
-              <h4>Custom Brand Assets</h4>
-              <p>Original design elements crafted specifically for you. No templates, no AI-generated graphics. Every asset reflects your essence.</p>
+              <h4>Complete Brand Asset System</h4>
+              <p>Every core asset is designed to work cohesively across your business, personal brand, speaking, content, and partnerships.</p>
             </div>
             <div class="layer-subitem">
-              <h4>Brand Reveal Experience</h4>
-              <p>Your entire brand is revealed to you on a zoom call by our team in a powerful moment seeing this God-given vision of yours materialize right in front of your eyes.</p>
+              <h4>Perceived Value Engineering</h4>
+              <p>We elevate every visual touchpoint so your ideal clientele are compelled to pay premium to work with you.</p>
             </div>
           </div>
         </div>
@@ -2735,19 +2786,24 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
       </div>
       <div class="layer-expanded">
         <div class="layer-expanded-inner">
-          <p class="layer-subtitle">Brand Assets Ready To Use</p>
+          <p class="layer-subtitle">Content That Puts Your Brand Into Motion</p>
+          <div class="layer-deliverable">
+            <span class="layer-deliverable-label">Main Deliverable</span>
+            <h4>Plug-and-Play Content System</h4>
+            <p>Custom social content, captions, and a launch schedule to activate your new brand without leaving you to figure out what to post or how to launch it.</p>
+          </div>
           <div class="layer-subitems">
             <div class="layer-subitem">
-              <h4>Digital HQ</h4>
-              <p>A full website designed and built to convert visitors into leads and position you as the authority in your space.</p>
+              <h4>Conversion-Led Content Strategy</h4>
+              <p>Every piece of content is connected to a specific message or business outcome instead of being created to just look &quot;pretty&quot;.</p>
             </div>
             <div class="layer-subitem">
-              <h4>Social Content System</h4>
-              <p>Ready-to-post content assets, templates, and frameworks so you show up consistently without starting from scratch every day.</p>
+              <h4>Ready-to-Post Content Assets</h4>
+              <p>You receive professionally designed content with your messaging already built in, ready to publish without relying on generic templates.</p>
             </div>
             <div class="layer-subitem">
-              <h4>Premium Brand Collateral</h4>
-              <p>Presentation decks, lead magnets, email headers, and every touchpoint designed to match your elevated brand standard.</p>
+              <h4>Repeatable Content Frameworks</h4>
+              <p>Your system gives you a clear structure for creating future content without starting from a blank page every time.</p>
             </div>
           </div>
         </div>
@@ -2762,19 +2818,24 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
       </div>
       <div class="layer-expanded">
         <div class="layer-expanded-inner">
-          <p class="layer-subtitle">Scalable Systems To Work For You</p>
+          <p class="layer-subtitle">Infrastructure That Keeps Your Brand Working 24/7/365</p>
+          <div class="layer-deliverable">
+            <span class="layer-deliverable-label">Main Deliverables</span>
+            <h4>Digital HQ (Website) + Brand Vault</h4>
+            <p>A two-part brand engine built to attract opportunities externally and keep your entire brand organized and consistent internally.</p>
+          </div>
           <div class="layer-subitems">
             <div class="layer-subitem">
-              <h4>Lead Generation System</h4>
-              <p>Automated funnels and strategies that bring qualified leads to you 24/7 without trading more of your time.</p>
+              <h4>Conversion-Ready Digital HQ</h4>
+              <p>Your external engine turns your website into a premium destination for ideal clients, speaking opportunities, media, partnerships, and community growth.</p>
             </div>
             <div class="layer-subitem">
-              <h4>Conversion Architecture</h4>
-              <p>The systems that turn strangers into followers, followers into leads, and leads into paying clients on autopilot.</p>
+              <h4>SEO &amp; GEO Visibility</h4>
+              <p>Your Digital HQ is structured for SEO and AI-powered search so the right people can find your expertise when they are actively looking for it.</p>
             </div>
             <div class="layer-subitem">
-              <h4>Growth & Accountability</h4>
-              <p>Ongoing support, community access, and brand coaching to ensure your brand keeps opening new doors long after launch.</p>
+              <h4>Centralized Brand Vault</h4>
+              <p>Your internal engine houses every asset, file, and usage guideline in one organized place so your team can execute without depending on you.</p>
             </div>
           </div>
         </div>
