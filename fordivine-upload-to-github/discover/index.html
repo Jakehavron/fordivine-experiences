@@ -650,6 +650,11 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
   }
   .below-video p:last-of-type { margin-bottom: 48px; }
   .below-video strong { color: rgba(255,255,255,0.88); font-weight: 600; }
+  .below-copy-mobile { display: none; }
+  .below-copy-line {
+    display: block;
+    white-space: nowrap;
+  }
   .below-video .copy-accent {
     color: #E8DFC8;
     display: inline-block;
@@ -2256,6 +2261,18 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
     /* Below video */
     .below-video { padding: 32px 20px 72px; }
     .below-video p { font-size: 13.5px; }
+    .below-video .responsive-offer-copy,
+    .hero-beams-live .below-video .responsive-offer-copy {
+      font-size: 10.5px;
+      line-height: 2;
+      letter-spacing: 0;
+      max-width: none;
+      width: calc(100% + 24px);
+      margin-left: -12px;
+      margin-right: -12px;
+    }
+    .below-copy-desktop { display: none; }
+    .below-copy-mobile { display: block; }
     .cta-btn { padding: 18px 36px; font-size: 11px; letter-spacing: 0.12em; width: 100%; max-width: 360px; display: block; margin-left: auto; margin-right: auto; }
     /* Pillars (legacy - removed, see layers-accordion responsive above) */
 
@@ -2462,7 +2479,10 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 
 <!-- ===== BELOW VIDEO ===== -->
 <div class="below-video">
-  <p class="reveal reveal-delay-1">We build premium brand ecosystems for business women to get more <span class="copy-accent">clients</span>, <span class="copy-accent">stages</span>, &amp; <span class="copy-accent">business growth</span>.</p>
+  <p class="responsive-offer-copy reveal reveal-delay-1">
+    <span class="below-copy-desktop"><span class="below-copy-line">We build premium brand ecosystems for business women</span><span class="below-copy-line">to get more <span class="copy-accent">clients</span>, <span class="copy-accent">stages</span>, &amp; <span class="copy-accent">business growth</span>.</span></span>
+    <span class="below-copy-mobile"><span class="below-copy-line">We build premium, done-for-you brand ecosystems for business women</span><span class="below-copy-line">to get more <span class="copy-accent">clients</span>, <span class="copy-accent">stages</span>, &amp; <span class="copy-accent">business growth</span>.</span></span>
+  </p>
   <p class="reveal reveal-delay-1" style="display:none;">You walk in with a scattered, misaligned brand and walk out with a <strong>Crowned Authority™ Blueprint and Crowned Identity™ Bible</strong> ready to use instantly. Authority is engineered, not just designed.</p>
   <a href="#book" class="cta-btn on-dark reveal reveal-delay-2" data-cta-label="Hero CTA">Schedule Discovery Call</a>
   <div class="micro-testimonial reveal reveal-delay-2" style="display:none;">
