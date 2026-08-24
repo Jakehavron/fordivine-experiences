@@ -1,0 +1,87 @@
+{
+  "status": "approved",
+  "article_slug": "personal-branding-strategies-for-business-women",
+  "article_sha256": "f50c8feaff0eab352f07c82402add68223d3ded9c3ca36fa2fe6d8ff4adf64ec",
+  "article_word_count": 1900,
+  "evaluated_at": "2026-08-23T21:28:48Z",
+  "candidates": [
+    {
+      "id": "position-signal-system",
+      "section_id": "strategy-3",
+      "relationship": "A clear position is repeated as a signal and becomes a connected brand system.",
+      "grammar": "path",
+      "visual_thesis": "One clear position becomes a recognizable brand system.",
+      "score": {
+        "central_thesis": 3,
+        "visual_gain": 3,
+        "editorial_pause": 2,
+        "node_fit": 2,
+        "repetition_penalty": 0,
+        "evidence_penalty": 0,
+        "total": 10
+      }
+    },
+    {
+      "id": "platform-choice",
+      "section_id": "strategy-3",
+      "relationship": "LinkedIn and Instagram serve different buyer-evaluation contexts.",
+      "grammar": "contrast",
+      "visual_thesis": "Choose platforms from buyer behavior, not trends.",
+      "score": {
+        "central_thesis": 2,
+        "visual_gain": 2,
+        "editorial_pause": 1,
+        "node_fit": 2,
+        "repetition_penalty": 3,
+        "evidence_penalty": 0,
+        "total": 4
+      }
+    },
+    {
+      "id": "brand-ecosystem",
+      "section_id": "strategy-7",
+      "relationship": "Strategy coordinates visual identity, website, content, and lead generation.",
+      "grammar": "hub",
+      "visual_thesis": "A brand ecosystem works when every touchpoint reinforces one position.",
+      "score": {
+        "central_thesis": 3,
+        "visual_gain": 2,
+        "editorial_pause": 1,
+        "node_fit": 2,
+        "repetition_penalty": 3,
+        "evidence_penalty": 0,
+        "total": 5
+      }
+    }
+  ],
+  "selected": [
+    {
+      "diagram_id": "personal-brand-compounding-loop",
+      "candidate_id": "position-signal-system",
+      "section_id": "strategy-3",
+      "placement": "after",
+      "placement_percent": 42.9,
+      "grammar": "path",
+      "visual_thesis": "One clear position becomes a recognizable brand system.",
+      "placement_rationale": "Section three completes the position-to-repetition argument and sits at a clean pause before the visual-identity section.",
+      "placement_exception_reason": "",
+      "qa": {
+        "meaning_passed": true,
+        "copy_limits_passed": true,
+        "semantic_html_passed": true,
+        "responsive_passed": true,
+        "no_overflow_320_passed": true,
+        "no_new_claims_passed": true,
+        "editorial_fit_passed": true,
+        "final_passed": true
+      }
+    }
+  ],
+  "second_illustration_decision": {
+    "status": "rejected",
+    "reason": "No second candidate reaches the required score of eight, and the other viable relationships already have nearby comparison or ecosystem modules."
+  },
+  "no_illustration_reason": null,
+  "approved_by": "FORDIVINE Editorial Illustrations",
+  "approved_at": "2026-08-23T21:28:48Z"
+}

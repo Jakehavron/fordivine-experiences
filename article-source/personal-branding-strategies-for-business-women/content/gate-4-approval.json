@@ -1,0 +1,384 @@
+{
+  "gate": 4,
+  "name": "editorial-draft",
+  "status": "approved",
+  "approved_by": "Jake",
+  "approved_at": "2026-08-24T01:30:08.123019+00:00",
+  "evidence_reviewed": [
+    "content/article.ts",
+    "content/editorial-review.json",
+    "content/opportunity-scorecard.json",
+    "content/semantic-brief.json",
+    "content/source-record.json"
+  ],
+  "artifact_snapshot": {
+    "content/article.ts": "347aa566ac8c9ffe73ae6c146b07f3f4fd42eb6153ee6ffc251f43afa4aa1312",
+    "content/opportunity-scorecard.json": "4d706bffe5f14a71fa162b411e4fee4ea9f865d1c93f277bd8bc7533008ed767",
+    "content/semantic-brief.json": "b6d6630648c1a7bdc8551d4ef9bc9f29b99e5af46e01fa10142b9bfc81738568",
+    "content/editorial-review.json": "72090a780e074fc6ba239c6cac90f66a1edd805cd1923ba31641b71c9cf8953a",
+    "content/source-record.json": "b1dfb44cb18f6189ce7e24b94f5fd13e048b66c1a7f01976d6bd22beadf6e602"
+  },
+  "note": "Approved Gate 4 after reviewing the exact regenerated article packet with upgraded semantic evidence.",
+  "history": [
+    {
+      "archived_at": "2026-08-23T20:26:25.106310+00:00",
+      "reason": "Jake requested the hero subheadline be replaced and constrained to two lines on desktop and mobile.",
+      "record": {
+        "gate": 4,
+        "name": "editorial-draft",
+        "status": "approved",
+        "approved_by": "Jake",
+        "approved_at": "2026-08-23T19:38:56.972659+00:00",
+        "evidence_reviewed": [
+          "content/article.ts",
+          "content/editorial-review.json",
+          "content/opportunity-scorecard.json",
+          "content/semantic-brief.json",
+          "content/source-record.json"
+        ],
+        "artifact_snapshot": {
+          "content/article.ts": "7922fc718f4efcb859e4da10b6f0e542c1ada3b9d92bee0833f940bc08eb2caa",
+          "content/opportunity-scorecard.json": "4d5e4ed3e4c83ca2c81acb1d93624ecb1688a3c591b0c6ed5b71899971ca46c1",
+          "content/semantic-brief.json": "ed49f6112b2e4b8c2a875eab095b1e884046a944eaa6632875ea3a02f5d1d71c",
+          "content/editorial-review.json": "6e75374f5c121daf090da4305ba2b2c4acb58f121ff023a6e5d5d2edfa7d1a33",
+          "content/source-record.json": "b1dfb44cb18f6189ce7e24b94f5fd13e048b66c1a7f01976d6bd22beadf6e602"
+        },
+        "note": "Approved Gate 4 after reviewing the full editorial draft and review evidence."
+      }
+    },
+    {
+      "archived_at": "2026-08-23T20:41:45.997570+00:00",
+      "reason": "Approved Gate 4 after reviewing the final two-line hero subheadline and unified FORDIVINE discover CTA destinations.",
+      "record": {
+        "gate": 4,
+        "name": "editorial-draft",
+        "status": "invalidated",
+        "approved_by": "",
+        "approved_at": "",
+        "evidence_reviewed": [],
+        "artifact_snapshot": {},
+        "note": "Jake requested the hero subheadline be replaced and constrained to two lines on desktop and mobile."
+      }
+    },
+    {
+      "archived_at": "2026-08-23T21:17:31.178762+00:00",
+      "reason": "Reopened after Jake Havron supplied revised article copy and paragraph breaks on 2026-08-23.",
+      "record": {
+        "gate": 4,
+        "name": "editorial-draft",
+        "status": "approved",
+        "approved_by": "Jake Havron",
+        "approved_at": "2026-08-23T20:41:45.997570+00:00",
+        "evidence_reviewed": [
+          "content/article.ts",
+          "content/editorial-review.json",
+          "content/opportunity-scorecard.json",
+          "content/semantic-brief.json",
+          "content/source-record.json"
+        ],
+        "artifact_snapshot": {
+          "content/article.ts": "27d7bafb7d6183759d705e88ea2d6d9f730a20b23ef8ca84cc183c21cff25e9b",
+          "content/opportunity-scorecard.json": "4d5e4ed3e4c83ca2c81acb1d93624ecb1688a3c591b0c6ed5b71899971ca46c1",
+          "content/semantic-brief.json": "419ffd344591445340202931a6e44557f67aa12f15d9f88e116d1e0073679ef3",
+          "content/editorial-review.json": "6e75374f5c121daf090da4305ba2b2c4acb58f121ff023a6e5d5d2edfa7d1a33",
+          "content/source-record.json": "b1dfb44cb18f6189ce7e24b94f5fd13e048b66c1a7f01976d6bd22beadf6e602"
+        },
+        "note": "Approved Gate 4 after reviewing the final two-line hero subheadline and unified FORDIVINE discover CTA destinations."
+      }
+    },
+    {
+      "archived_at": "2026-08-23T21:28:31.818081+00:00",
+      "reason": "Approved Gate 4 after reviewing the complete user-edited article copy, revised paragraph breaks, SEO/GEO content lock, source authority, Emily-informed voice, and Human Writing Framework review.",
+      "record": {
+        "gate": 4,
+        "name": "editorial-draft",
+        "status": "invalidated",
+        "approved_by": "",
+        "approved_at": "",
+        "evidence_reviewed": [],
+        "artifact_snapshot": {},
+        "note": "Reopened after Jake Havron supplied revised article copy and paragraph breaks on 2026-08-23."
+      }
+    },
+    {
+      "archived_at": "2026-08-23T23:07:28.463648+00:00",
+      "reason": "Reopened after Jake supplied the newest manuscript revision on 2026-08-23.",
+      "record": {
+        "gate": 4,
+        "name": "editorial-draft",
+        "status": "approved",
+        "approved_by": "Jake Havron",
+        "approved_at": "2026-08-23T21:28:31.818081+00:00",
+        "evidence_reviewed": [
+          "content/article.ts",
+          "content/editorial-review.json",
+          "content/opportunity-scorecard.json",
+          "content/semantic-brief.json",
+          "content/source-record.json"
+        ],
+        "artifact_snapshot": {
+          "content/article.ts": "f27b6fc60f10f7ba05dca9382cdc465f8205d64f42c8006dd5104f255038ee56",
+          "content/opportunity-scorecard.json": "4d5e4ed3e4c83ca2c81acb1d93624ecb1688a3c591b0c6ed5b71899971ca46c1",
+          "content/semantic-brief.json": "419ffd344591445340202931a6e44557f67aa12f15d9f88e116d1e0073679ef3",
+          "content/editorial-review.json": "165c16cf818de17314664d7d3d887b496bbe67cb3663ab539c4d9f0ee4d67aac",
+          "content/source-record.json": "b1dfb44cb18f6189ce7e24b94f5fd13e048b66c1a7f01976d6bd22beadf6e602"
+        },
+        "note": "Approved Gate 4 after reviewing the complete user-edited article copy, revised paragraph breaks, SEO/GEO content lock, source authority, Emily-informed voice, and Human Writing Framework review."
+      }
+    },
+    {
+      "archived_at": "2026-08-23T23:18:58.336214+00:00",
+      "reason": "Approved Gate 4 after reviewing the revised manuscript, evidence-safe impostor-language replacement, journal URL architecture, SEO/GEO content lock, source authority, Emily-informed voice, and Human Writing Framework review.",
+      "record": {
+        "gate": 4,
+        "name": "editorial-draft",
+        "status": "invalidated",
+        "approved_by": "",
+        "approved_at": "",
+        "evidence_reviewed": [],
+        "artifact_snapshot": {},
+        "note": "Reopened after Jake supplied the newest manuscript revision on 2026-08-23."
+      }
+    },
+    {
+      "archived_at": "2026-08-23T23:54:13.353700+00:00",
+      "reason": "Reopened after Jake Havron requested the final URL change to /journal/personal-branding-strategies-for-business-women and the Business Women to Businesswomen title correction.",
+      "record": {
+        "gate": 4,
+        "name": "editorial-draft",
+        "status": "approved",
+        "approved_by": "Jake Havron",
+        "approved_at": "2026-08-23T23:18:58.336214+00:00",
+        "evidence_reviewed": [
+          "content/article.ts",
+          "content/editorial-review.json",
+          "content/opportunity-scorecard.json",
+          "content/semantic-brief.json",
+          "content/source-record.json"
+        ],
+        "artifact_snapshot": {
+          "content/article.ts": "57a6fbf9a6a33a77357cf8d809255c7d1e9782d973c775667cfdfbf44969cc15",
+          "content/opportunity-scorecard.json": "4d5e4ed3e4c83ca2c81acb1d93624ecb1688a3c591b0c6ed5b71899971ca46c1",
+          "content/semantic-brief.json": "cedfbdaf17ed181697c605c97865d002a9f87935c15d7ad13fdbab758ed67fbc",
+          "content/editorial-review.json": "9d1b181ce64e732d476cf845fcfed82b5e99a703e3c3457d5f1c1f80df7b52b4",
+          "content/source-record.json": "b1dfb44cb18f6189ce7e24b94f5fd13e048b66c1a7f01976d6bd22beadf6e602"
+        },
+        "note": "Approved Gate 4 after reviewing the revised manuscript, evidence-safe impostor-language replacement, journal URL architecture, SEO/GEO content lock, source authority, Emily-informed voice, and Human Writing Framework review."
+      }
+    },
+    {
+      "archived_at": "2026-08-23T23:54:59.320074+00:00",
+      "reason": "Approved Gate 4 with the final H1 using Businesswomen, the /journal/personal-branding-strategies-for-business-women URL, and the August 23, 2026 publication date.",
+      "record": {
+        "gate": 4,
+        "name": "editorial-draft",
+        "status": "invalidated",
+        "approved_by": "",
+        "approved_at": "",
+        "evidence_reviewed": [],
+        "artifact_snapshot": {},
+        "note": "Reopened after Jake Havron requested the final URL change to /journal/personal-branding-strategies-for-business-women and the Business Women to Businesswomen title correction."
+      }
+    },
+    {
+      "archived_at": "2026-08-23T23:59:13.962100+00:00",
+      "reason": "Correcting the visible displayDate field to match Jake Havron’s already approved August 23, 2026 publication date.",
+      "record": {
+        "gate": 4,
+        "name": "editorial-draft",
+        "status": "approved",
+        "approved_by": "Jake Havron",
+        "approved_at": "2026-08-23T23:54:59.320074+00:00",
+        "evidence_reviewed": [
+          "content/article.ts",
+          "content/editorial-review.json",
+          "content/opportunity-scorecard.json",
+          "content/semantic-brief.json",
+          "content/source-record.json"
+        ],
+        "artifact_snapshot": {
+          "content/article.ts": "4de58ba9398af8cd4ff1a8b65324d79b1c2eb50ec39ebb30fdee5c74cb5281b2",
+          "content/opportunity-scorecard.json": "4d5e4ed3e4c83ca2c81acb1d93624ecb1688a3c591b0c6ed5b71899971ca46c1",
+          "content/semantic-brief.json": "cedfbdaf17ed181697c605c97865d002a9f87935c15d7ad13fdbab758ed67fbc",
+          "content/editorial-review.json": "9d1b181ce64e732d476cf845fcfed82b5e99a703e3c3457d5f1c1f80df7b52b4",
+          "content/source-record.json": "b1dfb44cb18f6189ce7e24b94f5fd13e048b66c1a7f01976d6bd22beadf6e602"
+        },
+        "note": "Approved Gate 4 with the final H1 using Businesswomen, the /journal/personal-branding-strategies-for-business-women URL, and the August 23, 2026 publication date."
+      }
+    },
+    {
+      "archived_at": "2026-08-23T23:59:26.421510+00:00",
+      "reason": "Re-recorded Jake Havron’s existing Gate 4 approval after correcting the visible displayDate implementation to the already approved August 23, 2026 publication date. No editorial decision changed.",
+      "record": {
+        "gate": 4,
+        "name": "editorial-draft",
+        "status": "invalidated",
+        "approved_by": "",
+        "approved_at": "",
+        "evidence_reviewed": [],
+        "artifact_snapshot": {},
+        "note": "Correcting the visible displayDate field to match Jake Havron’s already approved August 23, 2026 publication date."
+      }
+    },
+    {
+      "archived_at": "2026-08-24T00:15:34.708546+00:00",
+      "reason": "Reopened after Jake requested revised introductory copy and a batched desktop/mobile presentation update for formula sizing, citation affordance, editorial-example alignment, and the two-line Next Move title.",
+      "record": {
+        "gate": 4,
+        "name": "editorial-draft",
+        "status": "approved",
+        "approved_by": "Jake Havron",
+        "approved_at": "2026-08-23T23:59:26.421510+00:00",
+        "evidence_reviewed": [
+          "content/article.ts",
+          "content/editorial-review.json",
+          "content/opportunity-scorecard.json",
+          "content/semantic-brief.json",
+          "content/source-record.json"
+        ],
+        "artifact_snapshot": {
+          "content/article.ts": "472e6368c48a6a0df2114006f6b5ce92d5718b2ade13ba0327703a8c9ff6e552",
+          "content/opportunity-scorecard.json": "4d5e4ed3e4c83ca2c81acb1d93624ecb1688a3c591b0c6ed5b71899971ca46c1",
+          "content/semantic-brief.json": "cedfbdaf17ed181697c605c97865d002a9f87935c15d7ad13fdbab758ed67fbc",
+          "content/editorial-review.json": "9d1b181ce64e732d476cf845fcfed82b5e99a703e3c3457d5f1c1f80df7b52b4",
+          "content/source-record.json": "b1dfb44cb18f6189ce7e24b94f5fd13e048b66c1a7f01976d6bd22beadf6e602"
+        },
+        "note": "Re-recorded Jake Havron’s existing Gate 4 approval after correcting the visible displayDate implementation to the already approved August 23, 2026 publication date. No editorial decision changed."
+      }
+    },
+    {
+      "archived_at": "2026-08-24T00:23:32.690434+00:00",
+      "reason": "Approved Gate 4 for the revised three-paragraph introduction, with all other editorial meaning, evidence, SEO/GEO coverage, and sources unchanged.",
+      "record": {
+        "gate": 4,
+        "name": "editorial-draft",
+        "status": "invalidated",
+        "approved_by": "",
+        "approved_at": "",
+        "evidence_reviewed": [],
+        "artifact_snapshot": {},
+        "note": "Reopened after Jake requested revised introductory copy and a batched desktop/mobile presentation update for formula sizing, citation affordance, editorial-example alignment, and the two-line Next Move title."
+      }
+    },
+    {
+      "archived_at": "2026-08-24T00:39:07.814347+00:00",
+      "reason": "Reopened after Jake Havron approved the complete Human Writing Framework revision for production publication.",
+      "record": {
+        "gate": 4,
+        "name": "editorial-draft",
+        "status": "approved",
+        "approved_by": "Jake Havron",
+        "approved_at": "2026-08-24T00:23:32.690434+00:00",
+        "evidence_reviewed": [
+          "content/article.ts",
+          "content/editorial-review.json",
+          "content/opportunity-scorecard.json",
+          "content/semantic-brief.json",
+          "content/source-record.json"
+        ],
+        "artifact_snapshot": {
+          "content/article.ts": "a3114ffa461fed4ac48b522467e6e9aa527c580bbd452b19b520e8dfe9747966",
+          "content/opportunity-scorecard.json": "4d5e4ed3e4c83ca2c81acb1d93624ecb1688a3c591b0c6ed5b71899971ca46c1",
+          "content/semantic-brief.json": "cedfbdaf17ed181697c605c97865d002a9f87935c15d7ad13fdbab758ed67fbc",
+          "content/editorial-review.json": "9d1b181ce64e732d476cf845fcfed82b5e99a703e3c3457d5f1c1f80df7b52b4",
+          "content/source-record.json": "b1dfb44cb18f6189ce7e24b94f5fd13e048b66c1a7f01976d6bd22beadf6e602"
+        },
+        "note": "Approved Gate 4 for the revised three-paragraph introduction, with all other editorial meaning, evidence, SEO/GEO coverage, and sources unchanged."
+      }
+    },
+    {
+      "archived_at": "2026-08-24T00:41:22.309787+00:00",
+      "reason": "Approved the complete Human Writing Framework revision and explicitly authorized production publication.",
+      "record": {
+        "gate": 4,
+        "name": "editorial-draft",
+        "status": "invalidated",
+        "approved_by": "",
+        "approved_at": "",
+        "evidence_reviewed": [],
+        "artifact_snapshot": {},
+        "note": "Reopened after Jake Havron approved the complete Human Writing Framework revision for production publication."
+      }
+    },
+    {
+      "archived_at": "2026-08-24T00:42:04.758109+00:00",
+      "reason": "Release-preflight scripts refreshed governed scorecard and source artifacts after copy approval.",
+      "record": {
+        "gate": 4,
+        "name": "editorial-draft",
+        "status": "approved",
+        "approved_by": "Jake Havron",
+        "approved_at": "2026-08-24T00:41:22.309787+00:00",
+        "evidence_reviewed": [
+          "content/article.ts",
+          "content/editorial-review.json",
+          "content/opportunity-scorecard.json",
+          "content/semantic-brief.json",
+          "content/source-record.json"
+        ],
+        "artifact_snapshot": {
+          "content/article.ts": "347aa566ac8c9ffe73ae6c146b07f3f4fd42eb6153ee6ffc251f43afa4aa1312",
+          "content/opportunity-scorecard.json": "4d5e4ed3e4c83ca2c81acb1d93624ecb1688a3c591b0c6ed5b71899971ca46c1",
+          "content/semantic-brief.json": "b6d6630648c1a7bdc8551d4ef9bc9f29b99e5af46e01fa10142b9bfc81738568",
+          "content/editorial-review.json": "5b5947d6b8d8882b557d9844dc27d2987c9424c439fb81c1d380a46e9e2134e4",
+          "content/source-record.json": "b1dfb44cb18f6189ce7e24b94f5fd13e048b66c1a7f01976d6bd22beadf6e602"
+        },
+        "note": "Approved the complete Human Writing Framework revision and explicitly authorized production publication."
+      }
+    },
+    {
+      "archived_at": "2026-08-24T00:42:04.793796+00:00",
+      "reason": "Recorded Jake Havron's explicit approval of the complete Human Writing Framework revision and production publication after release-preflight artifact refresh.",
+      "record": {
+        "gate": 4,
+        "name": "editorial-draft",
+        "status": "invalidated",
+        "approved_by": "",
+        "approved_at": "",
+        "evidence_reviewed": [],
+        "artifact_snapshot": {},
+        "note": "Release-preflight scripts refreshed governed scorecard and source artifacts after copy approval."
+      }
+    },
+    {
+      "archived_at": "2026-08-24T01:14:07.599665+00:00",
+      "reason": "Replaced legacy semantic phrase markers with exact article excerpts; visible article copy is unchanged.",
+      "record": {
+        "gate": 4,
+        "name": "editorial-draft",
+        "status": "approved",
+        "approved_by": "Jake Havron",
+        "approved_at": "2026-08-24T00:42:04.793796+00:00",
+        "evidence_reviewed": [
+          "content/article.ts",
+          "content/editorial-review.json",
+          "content/opportunity-scorecard.json",
+          "content/semantic-brief.json",
+          "content/source-record.json"
+        ],
+        "artifact_snapshot": {
+          "content/article.ts": "347aa566ac8c9ffe73ae6c146b07f3f4fd42eb6153ee6ffc251f43afa4aa1312",
+          "content/opportunity-scorecard.json": "4d706bffe5f14a71fa162b411e4fee4ea9f865d1c93f277bd8bc7533008ed767",
+          "content/semantic-brief.json": "b6d6630648c1a7bdc8551d4ef9bc9f29b99e5af46e01fa10142b9bfc81738568",
+          "content/editorial-review.json": "5b5947d6b8d8882b557d9844dc27d2987c9424c439fb81c1d380a46e9e2134e4",
+          "content/source-record.json": "b1dfb44cb18f6189ce7e24b94f5fd13e048b66c1a7f01976d6bd22beadf6e602"
+        },
+        "note": "Recorded Jake Havron's explicit approval of the complete Human Writing Framework revision and production publication after release-preflight artifact refresh."
+      }
+    },
+    {
+      "archived_at": "2026-08-24T01:30:08.123019+00:00",
+      "reason": "Approved Gate 4 after reviewing the exact regenerated article packet with upgraded semantic evidence.",
+      "record": {
+        "gate": 4,
+        "name": "editorial-draft",
+        "status": "invalidated",
+        "approved_by": "",
+        "approved_at": "",
+        "evidence_reviewed": [],
+        "artifact_snapshot": {},
+        "note": "Replaced legacy semantic phrase markers with exact article excerpts; visible article copy is unchanged."
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "status": "captured",
+  "source_type": "AnswerThePublic Content Studio article",
+  "asset_title": "7 Proven Strategies for Women to Build an Authentic Personal Brand Online",
+  "seed_topic": "personal branding strategies for women",
+  "country": "United States",
+  "language": "English",
+  "asset_created_at": "2026-08-16",
+  "retrieved_at": "2026-08-23T02:35:00Z",
+  "retrieved_from": "Logged-in AnswerThePublic project 'fordivine', All Content article editor, asset 6a822f4b92fe6f7d1f78def9",
+  "raw_source_path": "source/raw-answer-the-public.md",
+  "raw_source_sha256": "74c5db1a1c346298aaafe8bd0a610ba4502189b46e59b2f21a089e8ba71da6d2",
+  "verbatim_passages": [],
+  "fordivine_additions": [
+    "Answer-first summary and a stronger established-business-woman audience frame",
+    "Buyer-evidence platform selection instead of unsupported platform claims",
+    "Pew Research Center social-platform evidence with an explicit national-data limitation",
+    "Lindgaard et al. visual-appeal research with a no-trust-or-conversion limitation",
+    "Edelman and LinkedIn original thought-leadership research with methodology context",
+    "Bravata et al. systematic review replacing the unsupported gendered visibility claim",
+    "Teach, Tell, Prove authority framework and visibility filter",
+    "Current FORDIVINE Authority Architecture offer language and governed CTA"
+  ],
+  "evidence_gaps": [],
+  "approved_primary_query": "what are effective strategies for women to build an authentic personal brand online",
+  "approved_by": "Jake Havron",
+  "approved_at": "2026-08-22T00:00:00Z"
+}

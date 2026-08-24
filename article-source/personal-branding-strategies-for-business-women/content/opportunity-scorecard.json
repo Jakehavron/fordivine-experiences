@@ -1,0 +1,111 @@
+{
+  "status": "selected",
+  "scoring_version": "1.0",
+  "evaluated_at": "2026-08-24T00:41:39.360149+00:00",
+  "weights": {
+    "qualified_buyer_value": 25,
+    "conversion_relevance": 20,
+    "first_party_evidence": 15,
+    "search_opportunity": 15,
+    "distinctive_authority": 15,
+    "cannibalization_safety": 5,
+    "production_efficiency": 5
+  },
+  "candidates": [
+    {
+      "id": "established-women-personal-branding",
+      "topic": "7 Personal Branding Strategies for Established Business Women",
+      "primary_query": "what are effective strategies for women to build an authentic personal brand online",
+      "scores": {
+        "qualified_buyer_value": 5,
+        "conversion_relevance": 5,
+        "first_party_evidence": 5,
+        "search_opportunity": 3,
+        "distinctive_authority": 5,
+        "cannibalization_safety": 4,
+        "production_efficiency": 5
+      },
+      "total_score": 93.0,
+      "buyer_evidence": [
+        "The topic directly addresses established women whose expertise has outgrown a fragmented or generic public brand.",
+        "Its final systems decision maps directly to FORDIVINE's done-for-you brand ecosystem and discovery-call path."
+      ],
+      "search_evidence": [
+        "AnswerThePublic generated a 1,799-word Content Studio asset for the exact query, but reports monthly searches as NaN and difficulty as N/A.",
+        "The connected SEMrush API returned error 132 because the account has zero API units, so quantified demand is unavailable and has not been inferred.",
+        "Live results contain generic women-in-business listicles and broad personal-brand guides, leaving room for an evidence-led systems perspective aimed at established buyers."
+      ],
+      "existing_content_checked": [
+        "Google site search for site:fordivine.com/journal personal branding FORDIVINE returned no indexed journal article.",
+        "https://www.fordivine.com/discover",
+        "https://www.fordivine.com/crowned-stories",
+        "https://home.fordivine.com/"
+      ],
+      "result_shape": "Educational seven-part guide with an answer-first summary, evidence citations, diagnostic exercises, and a commercial systems conclusion",
+      "disqualifiers": []
+    },
+    {
+      "id": "custom-vs-template",
+      "topic": "Custom vs. Template Branding: Which Gets Results?",
+      "primary_query": "custom branding vs template branding which gets better results",
+      "scores": {
+        "qualified_buyer_value": 5,
+        "conversion_relevance": 5,
+        "first_party_evidence": 5,
+        "search_opportunity": 4,
+        "distinctive_authority": 5,
+        "cannibalization_safety": 5,
+        "production_efficiency": 5
+      },
+      "total_score": 97.0,
+      "buyer_evidence": [
+        "Comparison intent signals a reader deciding whether to keep a DIY system or invest in strategic brand architecture.",
+        "The decision sits directly before FORDIVINE's core engagement."
+      ],
+      "search_evidence": [
+        "AnswerThePublic reports difficulty 30 and no usable monthly volume.",
+        "The topic was already produced as a separate governed article, so it is retained as a benchmark rather than selected again."
+      ],
+      "existing_content_checked": [
+        "Existing governed article: Custom Branding vs. Templates",
+        "https://www.fordivine.com/discover"
+      ],
+      "result_shape": "Commercial comparison with an educational decision framework",
+      "disqualifiers": []
+    },
+    {
+      "id": "women-online-authority",
+      "topic": "How Women Entrepreneurs Build Real Online Authority",
+      "primary_query": "build online authority women",
+      "scores": {
+        "qualified_buyer_value": 4,
+        "conversion_relevance": 3,
+        "first_party_evidence": 5,
+        "search_opportunity": 3,
+        "distinctive_authority": 4,
+        "cannibalization_safety": 2,
+        "production_efficiency": 4
+      },
+      "total_score": 74.0,
+      "buyer_evidence": [
+        "The topic fits FORDIVINE's authority positioning but is broader and higher-funnel than the selected article."
+      ],
+      "search_evidence": [
+        "AnswerThePublic supplied no monthly volume or difficulty.",
+        "The concept substantially overlaps the selected seven-strategy article."
+      ],
+      "existing_content_checked": [
+        "Current article: 7 Personal Branding Strategies for Established Business Women",
+        "https://www.fordivine.com/discover"
+      ],
+      "result_shape": "Broad educational guide with significant overlap risk",
+      "disqualifiers": []
+    }
+  ],
+  "recommended_topic_id": "custom-vs-template",
+  "selected_topic_id": "established-women-personal-branding",
+  "selection_method": "human-approved",
+  "selection_reason": "Jake explicitly selected and iteratively approved this article for certification. The topic strongly fits the qualified buyer and offer, and the human selection is retained even though a separate commercial-comparison topic scores higher. Search-volume confidence remains limited because AnswerThePublic exposes no usable volume and SEMrush API units are unavailable.",
+  "approved_by": "Jake Havron",
+  "approved_at": "2026-08-22T00:00:00Z"
+}

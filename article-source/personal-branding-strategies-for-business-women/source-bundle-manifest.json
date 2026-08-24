@@ -1,0 +1,16 @@
+{
+  "format_version": 1,
+  "slug": "personal-branding-strategies-for-business-women",
+  "template_version": 46,
+  "files": {
+    "content/article.ts": "f50c8feaff0eab352f07c82402add68223d3ded9c3ca36fa2fe6d8ff4adf64ec",
+    "content/editorial-review.json": "72090a780e074fc6ba239c6cac90f66a1edd805cd1923ba31641b71c9cf8953a",
+    "content/gate-4-approval.json": "c76cbba8f7bba2b3ec8bff8d40b72df5b748dcd49f330d9bd797aae76ad17e9f",
+    "content/illustration-plan.json": "271c680a40598d2bd926606059cb20165e56cfda90d756506ce90e724b5a55cb",
+    "content/opportunity-scorecard.json": "4d706bffe5f14a71fa162b411e4fee4ea9f865d1c93f277bd8bc7533008ed767",
+    "content/semantic-brief.json": "b6d6630648c1a7bdc8551d4ef9bc9f29b99e5af46e01fa10142b9bfc81738568",
+    "content/source-record.json": "b1dfb44cb18f6189ce7e24b94f5fd13e048b66c1a7f01976d6bd22beadf6e602",
+    "source/raw-answer-the-public.md": "74c5db1a1c346298aaafe8bd0a610ba4502189b46e59b2f21a089e8ba71da6d2",
+    "FORDIVINE_TEMPLATE.json": "b0e1153fd0b44d710d206295716a5302536a9c8c803341cba483318d61ad612c"
+  }
+}

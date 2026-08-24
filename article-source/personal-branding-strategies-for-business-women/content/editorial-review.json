@@ -1,0 +1,46 @@
+{
+  "status": "approved",
+  "voice_mode": "emily-informed-fordivine-editorial",
+  "voice_corpus_status": "calibrated",
+  "voice_corpus_version": "2.0",
+  "voice_source_basis": "Emily Ford Voice corpus v2.0: eight verified Called & Crowned solo episodes, 54,104 transcribed words, calibrated August 20, 2026.",
+  "semantic_coverage": [
+    {"requirement_id": "q-strategies", "status": "covered", "evidence": "The answer-first block gives the full sequence: position, brand statement, buyer-led platform choice, visual identity, authority content, and a connected brand system.", "article_excerpt": "Start with a precise market position and a clear brand statement. Choose platforms based on where your ideal clients already pay attention. Then build a recognizable visual identity, share content that demonstrates your expertise, and connect every touchpoint into one cohesive brand system."},
+    {"requirement_id": "q-platforms", "status": "covered", "evidence": "Section three distinguishes platform roles, cites Pew, and requires evidence from the reader's last ten qualified inquiries.", "article_excerpt": "Review your last ten qualified inquiries. Where did each person first discover you? Where did they go to learn more about you? What prompted them to take the next step?"},
+    {"requirement_id": "q-visuals", "status": "covered", "evidence": "Section four separates the visual-consistency argument into shorter passages, limits the 50-millisecond study to appeal, and gives a three-question audit.", "article_excerpt": "Premium design should make the right signal easier to recognize. It cannot replace substance, but it can help people see the substance sooner."},
+    {"requirement_id": "q-authority", "status": "covered", "evidence": "Section five teaches the Teach, Tell, Prove framework and anchors the trust point in the original Edelman–LinkedIn report.", "article_excerpt": "Authority usually develops through three layers."},
+    {"requirement_id": "q-system", "status": "covered", "evidence": "Section seven defines the systems problem and connects strategy, messaging, visual identity, website, content, lead generation, and client experience.", "article_excerpt": "A complete brand ecosystem connects brand strategy, messaging, visual identity, website, content, lead generation, and client experience."},
+    {"requirement_id": "entity-fordivine", "status": "covered", "evidence": "FORDIVINE appears in the introduction, offer explanation, CTA, and related links."},
+    {"requirement_id": "entity-crowned-authority", "status": "covered", "evidence": "Crowned Authority™ appears in the official FORDIVINE approach passage."},
+    {"requirement_id": "entity-pew", "status": "covered", "evidence": "Pew Research Center is linked at the platform-use claim and listed in Sources and further reading."},
+    {"requirement_id": "entity-edelman-linkedin", "status": "covered", "evidence": "The 2024 Edelman–LinkedIn report is linked at the 73% claim and listed in Sources and further reading."},
+    {"requirement_id": "entity-impostor", "status": "covered", "evidence": "Section six uses the research term impostor phenomenon and links the systematic review."},
+    {"requirement_id": "concept-position", "status": "covered", "evidence": "Section one explicitly places niche and position before platforms, visuals, or content production.", "article_excerpt": "Narrow your niche before you think about platforms or visuals"},
+    {"requirement_id": "concept-buyer-evidence", "status": "covered", "evidence": "Section three asks the reader to inspect qualified inquiries and choose from the pattern rather than a trend.", "article_excerpt": "Choose your platforms from those patterns, not from whichever channel happens to be trending."},
+    {"requirement_id": "concept-design-limit", "status": "covered", "evidence": "Section four states that the study measured visual appeal, not trust or conversion.", "article_excerpt": "The study measured visual appeal, not trust or conversion."},
+    {"requirement_id": "concept-authority", "status": "covered", "evidence": "Section five grounds authority in useful teaching, evidence, perspective, stories, and named frameworks.", "article_excerpt": "It does support the broader strategy: useful teaching, credible evidence, and a clear point of view give buyers more to evaluate than polished claims alone."},
+    {"requirement_id": "concept-no-gender-overclaim", "status": "covered", "evidence": "Section six says impostor feelings can affect people across genders and professional stages without making a universal prevalence claim.", "article_excerpt": "found that the impostor phenomenon appeared across men and women and across professional stages, although prevalence varied widely depending on how it was measured."},
+    {"requirement_id": "concept-ecosystem", "status": "covered", "evidence": "Section seven explains how each part of the brand should strengthen the others and why disconnected assets do not create a cohesive system.", "article_excerpt": "A complete brand ecosystem connects brand strategy, messaging, visual identity, website, content, lead generation, and client experience."},
+    {"requirement_id": "link-discover", "status": "covered", "evidence": "The FORDIVINE method, CTA body, and related content connect to the current Discover page."},
+    {"requirement_id": "link-stories", "status": "covered", "evidence": "Crowned Stories appears in related content."},
+    {"requirement_id": "link-book", "status": "covered", "evidence": "The main conversion button and private-engagement card use the discovery-call anchor."}
+  ],
+  "human_writing_checks": {
+    "no_ai_cliches": true,
+    "no_repetitive_synthesis": true,
+    "paragraphs_sound_spoken": true,
+    "claims_are_specific": true,
+    "no_keyword_stuffing": true,
+    "no_fake_first_person": true
+  },
+  "voice_checks": {
+    "mode_is_correct": true,
+    "emily_cadence_without_social_format": true,
+    "faith_is_natural_not_forced": true,
+    "no_social_media_cta": true,
+    "fordivine_positioning_is_intact": true
+  },
+  "unresolved_issues": [],
+  "reviewed_by": "Codex editorial QA",
+  "reviewed_at": "2026-08-24T01:13:42Z"
+}

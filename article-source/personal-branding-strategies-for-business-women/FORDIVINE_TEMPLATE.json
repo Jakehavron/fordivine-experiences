@@ -1,0 +1,22 @@
+{
+  "template_version": 46,
+  "source_commit": "0017bdf",
+  "approved_preview": "https://fordivine-experiences-git-article-personal-bra-aee008-fordivine.vercel.app/journal/personal-branding-strategies-for-business-women",
+  "design_baseline": "Approved responsive editorial system with a true white article canvas, warm bronze #A8926A section numbers and accents, a solid FORDIVINE bone #E8DFC8 active article-navigation card on mobile, a continuous desktop sidebar reading-progress bar, accessible dark text on bronze formula highlights, visible accessible inline-source links, a mobile-fitted brand-statement formula, an evidence callout rule aligned to the cited passage, a measured two-line Next Move title, a real Emily hero image on every viewport, a flush borderless desktop image panel, an enforced portrait mobile hero, automatic long-subheadline sizing with a measured two-line release gate, confident two-line H1 and conversion headlines, a minimal article header containing only the FORDIVINE wordmark and Work With Us CTA, unified header and article CTA destinations at https://www.fordivine.com/discover, autonomous semantic FORDIVINE visual-thinking diagrams, the locked discovery-call conversion panel, protected-preview QA, and fingerprinted Gate 4 editorial approval",
+  "baseline_revision": "v46-mobile-toc-bone-highlight-2026-08-23",
+  "footer_contract_version": 1,
+  "status": "locked",
+  "variable_files": [
+    "content/article.ts",
+    "content/editorial-review.json",
+    "content/gate-4-approval.json",
+    "content/illustration-plan.json",
+    "content/opportunity-scorecard.json",
+    "content/semantic-brief.json",
+    "content/source-record.json",
+    "source/raw-answer-the-public.md",
+    "public/fordivine-editorial-hero.jpg",
+    "public/featured-editorial-v2.png",
+    "public/og.png"
+  ]
+}

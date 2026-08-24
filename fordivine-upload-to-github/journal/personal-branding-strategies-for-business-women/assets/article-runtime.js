@@ -2,7 +2,14 @@
   "use strict";
 
   var GA4_ID = "G-Q8TH5MKKZ0";
-  var ARTICLE_SLUG = "personal-branding-strategies-for-business-women";
+  var manifestNode = document.getElementById("fordivine-article-manifest");
+  var articleManifest = {};
+  try {
+    articleManifest = manifestNode ? JSON.parse(manifestNode.textContent || "{}") : {};
+  } catch (error) {
+    articleManifest = {};
+  }
+  var ARTICLE_SLUG = articleManifest.slug || window.location.pathname.split("/").filter(Boolean).pop() || "article";
 
   window.dataLayer = window.dataLayer || [];
   window.gtag = window.gtag || function () {
@@ -58,23 +65,20 @@
 
     link.addEventListener("click", function () {
       try {
-        var state = {
-          version: 1,
-          articleAssist: {
-            captured_at: new Date().toISOString(),
-            entry: "journal",
-            article: ARTICLE_SLUG,
-            cta: location,
-            landing_page: "/journal/" + ARTICLE_SLUG
-          }
+        var articleAssist = {
+          captured_at: new Date().toISOString(),
+          entry: "journal",
+          article: ARTICLE_SLUG,
+          cta: location,
+          landing_page: "/journal/" + ARTICLE_SLUG
         };
         var existing = JSON.parse(window.sessionStorage.getItem("fd_attribution_v1") || "{}");
         existing.version = 1;
-        existing.articleAssist = state.articleAssist;
+        existing.articleAssist = articleAssist;
         window.sessionStorage.setItem("fd_attribution_v1", JSON.stringify(existing));
         var localExisting = JSON.parse(window.localStorage.getItem("fd_attribution_v1") || "{}");
         localExisting.version = 1;
-        localExisting.articleAssist = state.articleAssist;
+        localExisting.articleAssist = articleAssist;
         window.localStorage.setItem("fd_attribution_v1", JSON.stringify(localExisting));
       } catch (error) {
         // Storage restrictions should not block navigation.
@@ -90,6 +94,9 @@
   });
 
   var progress = document.querySelector(".reading-progress");
+  var tocProgress = document.querySelector(".toc-progress span");
+  var articleBody = document.querySelector(".article-body");
+  var progressFrame = 0;
   var tocLinks = Array.prototype.slice.call(
     document.querySelectorAll('.article-toc a[href^="#"]')
   );
@@ -98,11 +105,21 @@
   });
 
   function updateProgress() {
-    if (!progress) return;
     var root = document.documentElement;
     var available = Math.max(root.scrollHeight - window.innerHeight, 1);
     var percent = Math.min(100, Math.max(0, (window.scrollY / available) * 100));
-    progress.style.width = percent + "%";
+    if (progress) progress.style.width = percent + "%";
+    if (tocProgress && articleBody) {
+      var articleStart = articleBody.getBoundingClientRect().top + window.scrollY;
+      var articleDistance = Math.max(articleBody.offsetHeight - window.innerHeight, 1);
+      var articlePercent = Math.min(100, Math.max(0, ((window.scrollY - articleStart) / articleDistance) * 100));
+      tocProgress.style.width = articlePercent + "%";
+    }
+    progressFrame = 0;
+  }
+
+  function scheduleProgressUpdate() {
+    if (!progressFrame) progressFrame = window.requestAnimationFrame(updateProgress);
   }
 
   function setActive(id) {
@@ -163,6 +180,6 @@
   });
 
   updateProgress();
-  window.addEventListener("scroll", updateProgress, { passive: true });
-  window.addEventListener("resize", updateProgress);
+  window.addEventListener("scroll", scheduleProgressUpdate, { passive: true });
+  window.addEventListener("resize", scheduleProgressUpdate);
 })();
