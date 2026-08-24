@@ -18,6 +18,8 @@
   <link rel="dns-prefetch" href="//script.hotjar.com">
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
+  <script src="/attribution.js?v=20260823-1"></script>
+
   <script>
     (function(w,d,s,u,id){
       if (w.fbq) return;
@@ -88,7 +90,8 @@
         'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
         'utm_id', 'utm_adgroup', 'utm_matchtype', 'utm_network', 'utm_device',
         'campaign_id', 'adset_id', 'ad_id', 'fbclid', 'gclid', 'wbraid',
-        'gbraid', 'msclkid'
+        'gbraid', 'msclkid', 'fd_entry', 'fd_article', 'fd_cta',
+        'fd_article_landing_page', 'fd_first_landing_page', 'fd_first_referrer'
       ];
 
       safeKeys.forEach(function(key) {
@@ -96,6 +99,12 @@
           if (value && value.trim()) safeParams.append(key, value.trim());
         });
       });
+
+      if (window.FDAttribution && typeof window.FDAttribution.safeQueryParams === 'function') {
+        window.FDAttribution.safeQueryParams().forEach(function(value, key) {
+          if (!safeParams.has(key)) safeParams.set(key, value);
+        });
+      }
 
       var query = safeParams.toString();
       return '/discover/thank-you' + (query ? '?' + query : '');
@@ -118,13 +127,17 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-Q8TH5MKKZ0');
-    gtag('event', 'discovery_call_booked', {
+    var fdBookingEvent = {
       event_category: 'booking',
       event_label: 'discover_thank_you_page',
       page_location: 'https://www.fordivine.com/discover/thank-you',
       page_path: '/discover/thank-you',
       send_to: 'G-Q8TH5MKKZ0'
-    });
+    };
+    if (window.FDAttribution) {
+      Object.assign(fdBookingEvent, window.FDAttribution.gaParams());
+    }
+    gtag('event', 'discovery_call_booked', fdBookingEvent);
   </script>
 
   <script>

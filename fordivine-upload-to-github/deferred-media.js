@@ -124,6 +124,9 @@
     if (match && match[2] === 'patricia_dm') {
       url += '?utm_source=instagram&utm_medium=dm&utm_campaign=patricia_dm&utm_content=discover';
     }
+    if (window.FDAttribution && typeof window.FDAttribution.decorateSchedulerUrl === 'function') {
+      url = window.FDAttribution.decorateSchedulerUrl(url);
+    }
     return url;
   }
 
