@@ -326,12 +326,12 @@
     .resource-step-name{margin-bottom:7px;color:#8b7650;font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
     .resource-step-heading h2{font-size:clamp(38px,5vw,58px);line-height:1;letter-spacing:-.045em;text-transform:uppercase;font-weight:800}
     .resource-step-heading .resource-step-copy{max-width:650px;margin-top:13px;color:#686868;font-size:14px;line-height:1.65}
-    .simple-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-    .simple-resource{display:grid;grid-template-columns:200px 1fr;min-height:230px;overflow:hidden;border:1px solid var(--line);border-radius:14px;background:#fff}
+    .simple-grid{display:grid;grid-template-columns:1fr;gap:26px;max-width:1040px;margin:0 auto}
+    .simple-resource{display:grid;grid-template-columns:minmax(310px,.72fr) 1.28fr;min-height:390px;overflow:hidden;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:0 18px 48px rgba(20,20,20,.06)}
     .simple-resource-image{position:relative;overflow:hidden;background:#ded7cd}
     .simple-resource-image img{width:100%;height:100%;object-fit:cover}
     .simple-resource-image::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(20,20,20,.18))}
-    .simple-resource-body{padding:28px;display:flex;flex-direction:column;justify-content:center}
+    .simple-resource-body{padding:38px 42px;display:flex;flex-direction:column;justify-content:center}
     .simple-resource-body small,.audio-card small{color:#8b7650;font-size:9px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
     .simple-resource-body h4{margin-top:10px;font-size:20px;line-height:1.12;letter-spacing:-.025em;text-transform:uppercase}
     .simple-resource-body p{margin-top:13px;color:#666;font-size:12px;line-height:1.62}
@@ -364,6 +364,7 @@
       .step-one-card{grid-template-columns:1fr;gap:34px;padding:38px}
       .assessment-collage{min-height:600px}
       .simple-grid{grid-template-columns:1fr}
+      .simple-resource{grid-template-columns:minmax(240px,.62fr) 1.38fr}
       .audio-grid{grid-template-columns:1fr}
       .audio-card{min-height:0}
       .instagram-grid{grid-template-columns:1fr}
@@ -376,7 +377,7 @@
       .assessment-page{width:46%;border-radius:6px}
       .step-copy{padding:18px 10px 26px}.step-copy h2{font-size:34px}.step-copy>p{font-size:14px}.step-marker{margin-bottom:20px}.step-marker span{width:44px;height:44px}.step-marker strong{font-size:16px}
       .learn-block+.learn-block{margin-top:50px;padding-top:50px}.resource-step-heading{grid-template-columns:58px 1fr;gap:16px;margin-bottom:26px}.resource-step-number{width:58px;height:58px;font-size:16px}.resource-step-name{font-size:11px}.resource-step-heading h2{font-size:34px}.resource-step-heading .resource-step-copy{font-size:13px}
-      .simple-resource{grid-template-columns:1fr;min-height:0}.simple-resource-image{aspect-ratio:1.7/1}.simple-resource-body{padding:24px}
+      .simple-resource{grid-template-columns:1fr;min-height:0}.simple-resource-image{aspect-ratio:1.7/1}.simple-resource-body{padding:26px 24px 30px}
       .follow-section{padding:72px 0}.follow-copy{margin-bottom:30px}.instagram-card{border-radius:14px}.instagram-card-footer{padding:20px}.instagram-card-cta{font-size:8px}
     }
   </style>
