@@ -306,7 +306,7 @@
     /* Simplified resource hub */
     .hero{min-height:610px;padding:82px 32px 92px}
     .hero-inner{max-width:1200px}
-    .hero h1{max-width:1180px}
+    .hero h1{max-width:none;font-size:clamp(40px,5.4vw,68px);white-space:nowrap}
     .hero-title-line{display:block;white-space:nowrap}
     .hero-copy{max-width:760px}
     .step-section{padding:62px 0 100px;background:var(--paper)}
@@ -386,6 +386,7 @@
     .social-feed{overflow:hidden;background:transparent}
     .social-feed-image{display:block;width:100%;height:auto;margin:0}
     @media(max-width:900px){
+      .hero h1{font-size:clamp(32px,5.2vw,44px)}
       .step-one-card{grid-template-columns:1fr;gap:34px;padding:38px}
       .assessment-collage{min-height:600px}
       .simple-grid{grid-template-columns:1fr}
@@ -396,7 +397,7 @@
     }
     @media(max-width:680px){
       .hero{min-height:540px;padding:58px 18px 68px}
-      .hero h1{font-size:clamp(21px,6.4vw,32px);letter-spacing:-.045em}
+      .hero h1{font-size:clamp(17px,5.3vw,25px);letter-spacing:-.055em}
       .step-section{padding:44px 0 76px}.learn-section{padding:76px 0}
       .step-one-card{padding:16px;border-radius:14px;gap:24px}
       .assessment-collage{min-height:410px;border-radius:10px}
@@ -418,8 +419,8 @@
   <main>
     <section class="hero">
       <div class="hero-inner reveal">
-        <div class="eyebrow">Personal Brand Kickstart</div>
-        <h1><span class="hero-title-line">Free Resources to Kickstart</span><span class="hero-title-line">Your Personal Brand</span></h1>
+        <div class="eyebrow">Free Resources</div>
+        <h1><span class="hero-title-line">Kickstart Your Personal Brand</span></h1>
         <p class="hero-copy">Start with the free assessment, then use the masterclasses and podcast episodes below to build a clearer, stronger personal brand.</p>
       </div>
     </section>
