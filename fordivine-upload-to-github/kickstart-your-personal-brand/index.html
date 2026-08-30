@@ -385,14 +385,8 @@
     .social-showcase:hover .social-cta b{transform:translate(3px,-3px)}
     .social-feed{display:flex;flex-direction:column;justify-content:center;padding:32px;background:#f6f4f0}
     .social-house .social-feed{background:#242426}
-    .feed-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
-    .feed-tile{position:relative;aspect-ratio:1.36/1;overflow:hidden;border-radius:6px;background-color:#ddd;background-repeat:no-repeat;background-size:300% auto;background-position-y:bottom;transition:filter .3s ease}
-    .social-emily .feed-tile{background-image:url("/kickstart-your-personal-brand/assets/instagram-itsemily.png")}
-    .social-house .feed-tile{background-image:url("/kickstart-your-personal-brand/assets/instagram-fordivinehouse.png")}
-    .feed-tile:nth-child(1){background-position-x:left}
-    .feed-tile:nth-child(2){background-position-x:center}
-    .feed-tile:nth-child(3){background-position-x:right}
-    .social-showcase:hover .feed-tile{filter:contrast(1.025)}
+    .social-feed-image{display:block;width:min(100%,440px);height:auto;margin:0 auto;border-radius:10px;box-shadow:0 18px 42px rgba(20,20,20,.14);transition:transform .35s ease}
+    .social-showcase:hover .social-feed-image{transform:scale(1.012)}
     @media(max-width:900px){
       .step-one-card{grid-template-columns:1fr;gap:34px;padding:38px}
       .assessment-collage{min-height:600px}
@@ -412,7 +406,7 @@
       .step-copy{padding:18px 10px 26px}.step-copy h2{font-size:34px}.step-copy>p{font-size:14px}.step-display{gap:8px;margin-bottom:20px}.step-display-word,.step-display-number{font-size:34px}
       .learn-block+.learn-block{margin-top:50px;padding-top:50px}.resource-step-heading{grid-template-columns:1fr;gap:14px;margin-bottom:30px}.resource-step-heading h2{font-size:34px}.resource-step-heading .resource-step-copy{font-size:13px}
       .simple-resource{grid-template-columns:1fr;min-height:0}.simple-resource-image{aspect-ratio:1.7/1}.simple-resource-body{padding:26px 24px 30px}
-      .follow-section{padding:72px 0}.follow-step-heading{margin-bottom:30px}.instagram-grid{gap:22px}.social-showcase{border-radius:16px}.social-profile-panel{padding:30px 24px}.instagram-pill{margin-bottom:24px}.profile-avatar{width:84px;height:84px}.social-handle{font-size:27px}.social-proof{margin-top:23px}.social-proof strong{font-size:30px}.social-feed{padding:20px 16px}.feed-grid{gap:4px}
+      .follow-section{padding:72px 0}.follow-step-heading{margin-bottom:30px}.instagram-grid{gap:22px}.social-showcase{border-radius:16px}.social-profile-panel{padding:30px 24px}.instagram-pill{margin-bottom:24px}.profile-avatar{width:84px;height:84px}.social-handle{font-size:27px}.social-proof{margin-top:23px}.social-proof strong{font-size:30px}.social-feed{padding:20px 16px}.social-feed-image{border-radius:8px}
     }
   </style>
 </head>
@@ -533,11 +527,7 @@
               <span class="social-cta">Follow Emily <b>↗</b></span>
             </div>
             <div class="social-feed">
-              <div class="feed-grid" aria-hidden="true">
-                <span class="feed-tile"></span>
-                <span class="feed-tile"></span>
-                <span class="feed-tile"></span>
-              </div>
+              <img class="social-feed-image" src="/kickstart-your-personal-brand/assets/instagram-feed-itsemily.png" alt="Six recent posts from Emily Ford's Instagram feed" width="756" height="725" loading="lazy">
             </div>
           </a>
           <a class="social-showcase social-house" href="https://www.instagram.com/fordivinehouse/" target="_blank" rel="noopener noreferrer" data-resource="instagram_fordivine" aria-label="View FORDIVINE House on Instagram">
@@ -552,11 +542,7 @@
               <span class="social-cta">Follow FORDIVINE <b>↗</b></span>
             </div>
             <div class="social-feed">
-              <div class="feed-grid" aria-hidden="true">
-                <span class="feed-tile"></span>
-                <span class="feed-tile"></span>
-                <span class="feed-tile"></span>
-              </div>
+              <img class="social-feed-image" src="/kickstart-your-personal-brand/assets/instagram-feed-fordivinehouse.png" alt="Six recent posts from FORDIVINE House's Instagram feed" width="735" height="693" loading="lazy">
             </div>
           </a>
         </div>
