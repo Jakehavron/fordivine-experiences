@@ -10,7 +10,7 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/cormorant-garamond-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/kickstart-your-personal-brand/assets/masterclass-foundation.jpg" as="image">
+  <link rel="preload" href="/kickstart-your-personal-brand/assets/report-score-overview.jpg" as="image">
   <script src="/attribution.js?v=20260823-1"></script>
   <script>
     (function () {
@@ -296,12 +296,104 @@
       footer{padding:52px 24px 30px}.footer-top{flex-direction:column;gap:26px}.footer-nav{flex-wrap:wrap;gap:14px 22px}.footer-legal{flex-wrap:wrap;gap:10px 18px}
     }
   </style>
+  <style>
+    /* Simplified two-step resource flow */
+    .hero{min-height:690px;padding:88px 32px 96px}
+    .hero h1{max-width:860px}
+    .hero-copy{max-width:680px}
+    .hero .cta{margin-top:34px}
+    .path-section{padding:58px 0;background:#fff;border-bottom:1px solid var(--line)}
+    .path-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:920px;margin:0 auto}
+    .path-item{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start;padding:8px 46px}
+    .path-item+ .path-item{border-left:1px solid var(--line)}
+    .path-number{font-size:13px;font-weight:800;letter-spacing:.12em;color:#8b7650}
+    .path-item h2{font-size:17px;line-height:1.25;text-transform:uppercase;letter-spacing:-.015em}
+    .path-item p{margin-top:7px;color:#686868;font-size:13px;line-height:1.6}
+    .step-section{padding:106px 0;background:var(--paper)}
+    .step-heading{max-width:760px;margin:0 auto 54px;text-align:center}
+    .step-heading .section-kicker{color:#8b7650}
+    .step-heading .section-title{font-size:clamp(36px,4.8vw,58px)}
+    .step-heading .section-copy{max-width:620px;font-size:16px}
+    .step-one-card{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:58px;padding:54px;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:0 22px 58px rgba(20,20,20,.075)}
+    .assessment-collage{position:relative;min-height:560px;background:#f4f0e8;border-radius:14px;overflow:hidden}
+    .assessment-collage::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at center,transparent 52%,rgba(65,54,38,.06) 100%)}
+    .assessment-page{position:absolute;width:43%;height:auto;border-radius:8px;border:1px solid rgba(45,47,46,.08);background:#fff;box-shadow:0 20px 52px rgba(20,20,20,.16)}
+    .assessment-page:nth-child(1){left:28%;top:4%;z-index:4;transform:rotate(-1deg)}
+    .assessment-page:nth-child(2){left:4%;top:13%;z-index:1;transform:rotate(-6deg)}
+    .assessment-page:nth-child(3){right:4%;top:17%;z-index:2;transform:rotate(6deg)}
+    .assessment-page:nth-child(4){left:31%;bottom:3%;z-index:5;transform:rotate(3deg)}
+    .step-copy{padding:18px 10px}
+    .step-label{display:block;margin-bottom:16px;color:#8b7650;font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase}
+    .step-copy h2{font-size:clamp(34px,4vw,50px);line-height:1.02;letter-spacing:-.04em;text-transform:uppercase}
+    .step-copy>p{margin-top:22px;color:#575757;font-size:16px;line-height:1.72}
+    .step-copy .bullet-list{margin-top:26px}
+    .step-copy .cta{margin-top:30px;background:var(--charcoal);color:#fff;box-shadow:none}
+    .step-copy .cta:hover{background:#111}
+    .learn-section{padding:104px 0 112px;background:var(--cream)}
+    .learn-section .step-heading{margin-bottom:48px}
+    .learn-block+.learn-block{margin-top:68px;padding-top:68px;border-top:1px solid var(--line)}
+    .learn-block-head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:28px}
+    .learn-block-head h3{font-size:clamp(25px,3vw,36px);line-height:1.08;letter-spacing:-.035em;text-transform:uppercase}
+    .learn-block-head p{max-width:420px;color:#686868;font-size:13px;line-height:1.6}
+    .simple-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .simple-resource{display:grid;grid-template-columns:200px 1fr;min-height:230px;overflow:hidden;border:1px solid var(--line);border-radius:14px;background:#fff}
+    .simple-resource-image{position:relative;overflow:hidden;background:#ded7cd}
+    .simple-resource-image img{width:100%;height:100%;object-fit:cover}
+    .simple-resource-image::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(20,20,20,.18))}
+    .simple-resource-body{padding:28px;display:flex;flex-direction:column;justify-content:center}
+    .simple-resource-body small,.audio-card small{color:#8b7650;font-size:9px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+    .simple-resource-body h4{margin-top:10px;font-size:20px;line-height:1.12;letter-spacing:-.025em;text-transform:uppercase}
+    .simple-resource-body p{margin-top:13px;color:#666;font-size:12px;line-height:1.62}
+    .simple-resource-body .placeholder-link{margin-top:18px;font-size:8px}
+    .audio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .audio-card{min-height:245px;padding:30px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid var(--line);border-radius:14px;background:#fff}
+    .audio-icon{width:42px;height:42px;margin:20px 0;display:grid;place-items:center;border-radius:50%;background:var(--charcoal);color:#fff;font-size:13px}
+    .audio-card h4{font-size:20px;line-height:1.12;text-transform:uppercase;letter-spacing:-.025em}
+    .audio-card p{margin-top:12px;color:#666;font-size:12px;line-height:1.62}
+    .audio-card .placeholder-link{margin-top:22px;font-size:8px}
+    .follow-section{padding:72px 0;background:#fff;border-top:1px solid var(--line)}
+    .follow-inner{display:flex;align-items:center;justify-content:space-between;gap:40px}
+    .follow-copy h2{font-size:30px;line-height:1.06;text-transform:uppercase;letter-spacing:-.035em}
+    .follow-copy p{margin-top:8px;color:#666;font-size:13px}
+    .follow-links{display:flex;gap:12px}
+    .follow-link{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border:1px solid var(--line);border-radius:7px;background:#fff;font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;transition:background .2s,color .2s}
+    .follow-link:hover{background:var(--charcoal);color:#fff}
+    .founder-simple{padding:92px 0;background:var(--charcoal);color:#fff;text-align:center}
+    .founder-simple-inner{max-width:760px;margin:0 auto}
+    .founder-simple .section-kicker{color:var(--bone)}
+    .founder-simple h2{font-size:clamp(36px,5vw,58px);line-height:1.03;letter-spacing:-.04em;text-transform:uppercase}
+    .founder-simple p{max-width:650px;margin:22px auto 0;color:rgba(255,255,255,.76);font-size:16px;line-height:1.75}
+    .founder-simple p strong{color:#fff}
+    .founder-simple .signature{margin:26px auto 0}
+    @media(max-width:900px){
+      .step-one-card{grid-template-columns:1fr;gap:34px;padding:38px}
+      .assessment-collage{min-height:600px}
+      .simple-grid{grid-template-columns:1fr}
+      .audio-grid{grid-template-columns:1fr}
+      .audio-card{min-height:210px}
+      .follow-inner{display:block;text-align:center}.follow-links{justify-content:center;margin-top:26px}
+    }
+    @media(max-width:680px){
+      .hero{min-height:610px;padding:62px 18px 72px}
+      .path-section{padding:34px 0}.path-grid{grid-template-columns:1fr}.path-item{padding:20px 8px}.path-item+ .path-item{border-left:0;border-top:1px solid var(--line)}
+      .step-section,.learn-section{padding:76px 0}
+      .step-heading{margin-bottom:36px}.step-heading .section-title{font-size:38px}.step-heading .section-copy{font-size:14px}
+      .step-one-card{padding:16px;border-radius:14px;gap:24px}
+      .assessment-collage{min-height:410px;border-radius:10px}
+      .assessment-page{width:46%;border-radius:6px}
+      .step-copy{padding:18px 10px 26px}.step-copy h2{font-size:34px}.step-copy>p{font-size:14px}
+      .learn-block+.learn-block{margin-top:50px;padding-top:50px}.learn-block-head{display:block}.learn-block-head p{margin-top:12px}
+      .simple-resource{grid-template-columns:1fr;min-height:0}.simple-resource-image{aspect-ratio:1.7/1}.simple-resource-body{padding:24px}
+      .follow-section{padding:58px 0}.follow-links{flex-direction:column}.follow-link{width:100%}
+      .founder-simple{padding:76px 0}.founder-simple h2{font-size:38px}.founder-simple p{font-size:14px}
+    }
+  </style>
 </head>
 <body>
   <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=958874110071928&amp;ev=PageView&amp;noscript=1"></noscript>
   <header class="mini-nav">
     <a href="/discover" aria-label="FORDIVINE home"><picture><source srcset="/fordivine-logo.webp" type="image/webp"><img class="nav-wordmark" src="/fordivine-logo.png" alt="FORDIVINE" width="1287" height="201"></picture></a>
-    <a class="nav-link" href="#free-resources">Explore the resources</a>
+    <a class="nav-link" href="#step-one">Start with Step 1</a>
   </header>
 
   <main>
@@ -309,41 +401,41 @@
       <div class="hero-inner reveal">
         <div class="eyebrow"><img src="/fd-submark-64.webp" alt="" width="64" height="41">Personal Brand Kickstart</div>
         <h1>Your Next Step<br>Starts Here.</h1>
-        <p class="hero-copy">You may not be ready for a full brand build today. That does not mean you need to stay <strong>stuck, scattered, or invisible.</strong> Start with the free tools below to bring your personal brand into clearer focus.</p>
-        <a class="cta" href="/assessment" data-resource="assessment_hero">Take the Free Assessment</a>
-        <p class="cta-note">Get your Crowned Authority™ score and tailored report in about three minutes.</p>
+        <p class="hero-copy">Start with the free assessment to see what your personal brand needs most. Then use your results to choose the resource that helps you <strong>improve it next.</strong></p>
+        <a class="cta" href="#step-one">Start With Step 1</a>
+        <p class="cta-note">Two simple steps. Start with clarity, then keep building.</p>
       </div>
     </section>
 
-    <section class="intro" id="free-resources">
-      <div class="wrap reveal">
-        <p class="section-kicker">Start Building From Here</p>
-        <h2 class="section-title">Free Resources to Kickstart Your Personal Brand</h2>
-        <p class="section-copy">You do not need another pile of information. You need clarity, a strong foundation, and the right next step. Use these resources in order—or begin with the one that speaks to where you are right now.</p>
+    <section class="path-section" id="free-resources" aria-label="Your two-step path">
+      <div class="wrap path-grid">
+        <div class="path-item reveal"><span class="path-number">01</span><div><h2>Take the Assessment</h2><p>Find your strongest areas, biggest gaps, and what to focus on first.</p></div></div>
+        <div class="path-item reveal"><span class="path-number">02</span><div><h2>Learn What to Improve</h2><p>Use the masterclasses and podcasts to strengthen your personal brand.</p></div></div>
       </div>
     </section>
 
-    <section class="assessment">
+    <section class="step-section" id="step-one">
       <div class="wrap">
-        <article class="assessment-card reveal">
-          <div class="assessment-visual" aria-hidden="true">
-            <div class="report-cover">
-              <img class="report-mark" src="/Fordivine_Submark_White.png" alt="" width="174" height="174">
-              <div>
-                <small>FORDIVINE Presents</small>
-                <h3>Crowned Authority™ Assessment</h3>
-              </div>
-              <p>Your personal brand, brought into focus.</p>
-            </div>
+        <div class="step-heading reveal">
+          <p class="section-kicker">Step 1 · Start Here</p>
+          <h2 class="section-title">First, Find Out What Your Brand Needs</h2>
+          <p class="section-copy">Do not guess which part of your brand to work on. Take the free assessment and get a clear starting point in about three minutes.</p>
+        </div>
+        <article class="step-one-card reveal">
+          <div class="assessment-collage" aria-label="Four example pages from a personalized Crowned Authority report">
+            <img class="assessment-page" src="/kickstart-your-personal-brand/assets/report-score-overview.jpg" alt="Example Crowned Authority score overview" width="909" height="1287" loading="eager">
+            <img class="assessment-page" src="/kickstart-your-personal-brand/assets/report-overall-score.jpg" alt="Example personalized overall authority score" width="909" height="1287" loading="eager">
+            <img class="assessment-page" src="/kickstart-your-personal-brand/assets/report-clarity-score.jpg" alt="Example Jewel of Clarity score page" width="909" height="1287" loading="lazy">
+            <img class="assessment-page" src="/kickstart-your-personal-brand/assets/report-action-plan.jpg" alt="Example personalized brand action plan" width="909" height="1287" loading="lazy">
           </div>
-          <div class="assessment-content">
-            <span class="card-label">Start Here · Free 3-Minute Assessment</span>
-            <h2>See What Your Brand Needs Next</h2>
-            <p>Your personal brand is made up of five connected areas. This assessment shows you what is already working, where the gaps are, and what deserves your attention next.</p>
+          <div class="step-copy">
+            <span class="step-label">Free Crowned Authority™ Assessment</span>
+            <h2>Get Your Personal Brand Authority Score</h2>
+            <p>Answer 20 multiple-choice questions across the five areas of your personal brand. You will instantly receive your score and a tailored report showing what deserves your attention.</p>
             <ul class="bullet-list">
-              <li>Receive your Crowned Authority™ score</li>
-              <li>See how you score across all five brand areas</li>
-              <li>Get tailored insights you can act on right away</li>
+              <li>See what is already working</li>
+              <li>Identify the gaps limiting your progress</li>
+              <li>Get custom insights for what to improve next</li>
             </ul>
             <a class="cta" href="/assessment" data-resource="assessment_feature">Take the Free Assessment</a>
           </div>
@@ -351,107 +443,56 @@
       </div>
     </section>
 
-    <section class="resources">
+    <section class="learn-section" id="step-two">
       <div class="wrap">
-        <div class="resources-head reveal">
-          <div>
-            <p class="section-kicker">Learn at Your Own Pace</p>
-            <h2 class="section-title">Go Deeper With Two Free Masterclasses</h2>
+        <div class="step-heading reveal">
+          <p class="section-kicker">Step 2 · Keep Building</p>
+          <h2 class="section-title">Next, Learn What to Improve</h2>
+          <p class="section-copy">Once you know where your brand needs support, use the resources below to work on it. You do not need to consume everything at once.</p>
+        </div>
+
+        <div class="learn-block">
+          <div class="learn-block-head reveal"><h3>Start With a Masterclass</h3><p>Choose the lesson that best matches the stage of your personal brand.</p></div>
+          <div class="simple-grid">
+            <article class="simple-resource reveal">
+              <div class="simple-resource-image"><img src="/kickstart-your-personal-brand/assets/masterclass-foundation.jpg" alt="Abstract architectural artwork in charcoal, ivory, and champagne" width="1440" height="960" loading="lazy"></div>
+              <div class="simple-resource-body"><small>Masterclass 01</small><h4>Build the Foundation of a Brand People Understand</h4><p>Clarify your message, value, and what you want to be known for.</p><span class="placeholder-link">Vimeo link coming soon</span></div>
+            </article>
+            <article class="simple-resource reveal">
+              <div class="simple-resource-image"><img src="/kickstart-your-personal-brand/assets/masterclass-authority.jpg" alt="Editorial ivory and champagne architectural light artwork" width="1440" height="960" loading="lazy"></div>
+              <div class="simple-resource-body"><small>Masterclass 02</small><h4>Turn Your Expertise Into Visible Authority</h4><p>Connect your experience, point of view, and online presence.</p><span class="placeholder-link">Vimeo link coming soon</span></div>
+            </article>
           </div>
-          <p>These masterclasses are being prepared for this resource library. Their Vimeo links will be added here as soon as they are ready.</p>
         </div>
-        <div class="resource-grid">
-          <article class="resource-card reveal">
-            <div class="resource-image">
-              <img src="/kickstart-your-personal-brand/assets/masterclass-foundation.jpg" alt="Abstract architectural artwork in charcoal, ivory, and champagne" width="1440" height="960" loading="eager">
-              <div class="image-shade"></div>
-              <div class="image-copy"><span>Masterclass 01</span><h3>Build the Foundation of a Brand People Understand</h3></div>
-            </div>
-            <div class="resource-body">
-              <p>Learn the foundational decisions that make your message clearer, your value easier to understand, and your personal brand easier to trust.</p>
-              <span class="placeholder-link">Vimeo link coming soon</span>
-            </div>
-          </article>
-          <article class="resource-card reveal">
-            <div class="resource-image">
-              <img src="/kickstart-your-personal-brand/assets/masterclass-authority.jpg" alt="Editorial ivory and champagne architectural light artwork" width="1440" height="960" loading="lazy">
-              <div class="image-shade"></div>
-              <div class="image-copy"><span>Masterclass 02</span><h3>Turn Your Expertise Into Visible Authority</h3></div>
-            </div>
-            <div class="resource-body">
-              <p>Learn how to connect your experience, point of view, and presence so the right people can recognize why your work matters.</p>
-              <span class="placeholder-link">Vimeo link coming soon</span>
-            </div>
-          </article>
+
+        <div class="learn-block">
+          <div class="learn-block-head reveal"><h3>Keep Learning as You Go</h3><p>Listen to the selected episodes or continue with the full Called &amp; Crowned podcast.</p></div>
+          <div class="audio-grid">
+            <article class="audio-card reveal"><div><small>Featured Episode 01</small><span class="audio-icon" aria-hidden="true">▶</span><h4>Personal Branding Episode</h4><p>A selected episode to help bring greater clarity to the brand you are building.</p></div><span class="placeholder-link">Episode link coming soon</span></article>
+            <article class="audio-card reveal"><div><small>Featured Episode 02</small><span class="audio-icon" aria-hidden="true">▶</span><h4>Personal Branding Episode</h4><p>A selected episode to strengthen your message, presence, and visibility.</p></div><span class="placeholder-link">Episode link coming soon</span></article>
+            <article class="audio-card reveal"><div><small>The Podcast</small><span class="audio-icon" aria-hidden="true">▶</span><h4>Called &amp; Crowned</h4><p>Conversations on identity, calling, personal branding, and business.</p></div><span class="placeholder-link">Podcast link coming soon</span></article>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="podcasts">
-      <div class="wrap">
-        <p class="section-kicker reveal">Listen While You Build</p>
-        <h2 class="section-title reveal">Personal Branding Insights for the Road Ahead</h2>
-        <p class="section-copy reveal">Two selected episodes will live here, along with the full Called &amp; Crowned podcast for continued learning and encouragement.</p>
-        <div class="podcast-grid">
-          <article class="podcast-card reveal">
-            <div>
-              <span class="podcast-number">Featured Episode 01</span>
-              <div class="waveform" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-              <h3>Personal Branding Episode</h3>
-              <p>A selected Called &amp; Crowned conversation to help you bring greater clarity to the brand you are building.</p>
-            </div>
-            <span class="placeholder-link">Episode link coming soon</span>
-          </article>
-          <article class="podcast-card reveal">
-            <div>
-              <span class="podcast-number">Featured Episode 02</span>
-              <div class="waveform" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-              <h3>Personal Branding Episode</h3>
-              <p>A second selected episode to help you strengthen your message, your presence, and the way you show up online.</p>
-            </div>
-            <span class="placeholder-link">Episode link coming soon</span>
-          </article>
-          <article class="podcast-card featured reveal">
-            <div>
-              <span class="podcast-number">The Podcast</span>
-              <div class="waveform" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-              <h3>Called &amp; Crowned</h3>
-              <p>Conversations on identity, calling, personal branding, business, and becoming the woman capable of carrying what she is building.</p>
-            </div>
-            <span class="placeholder-link">Podcast link coming soon</span>
-          </article>
+    <section class="follow-section">
+      <div class="wrap follow-inner reveal">
+        <div class="follow-copy"><h2>Stay Connected</h2><p>Get more personal branding guidance from Emily and FORDIVINE.</p></div>
+        <div class="follow-links">
+          <a class="follow-link" href="https://www.instagram.com/itsemily/" target="_blank" rel="noopener noreferrer" data-resource="instagram_emily">Follow Emily ↗</a>
+          <a class="follow-link" href="https://www.instagram.com/fordivinehouse/" target="_blank" rel="noopener noreferrer" data-resource="instagram_fordivine">Follow FORDIVINE ↗</a>
         </div>
       </div>
     </section>
 
-    <section class="social">
-      <div class="wrap">
-        <p class="section-kicker reveal">Stay Connected</p>
-        <h2 class="section-title reveal">Keep Learning With Us</h2>
-        <div class="social-grid">
-          <a class="social-card reveal" href="https://www.instagram.com/itsemily/" target="_blank" rel="noopener noreferrer" data-resource="instagram_emily">
-            <div><small>Instagram</small><h3>Follow Emily Ford</h3></div><span class="arrow" aria-hidden="true">↗</span>
-          </a>
-          <a class="social-card reveal" href="https://www.instagram.com/fordivinehouse/" target="_blank" rel="noopener noreferrer" data-resource="instagram_fordivine">
-            <div><small>Instagram</small><h3>Follow FORDIVINE House</h3></div><span class="arrow" aria-hidden="true">↗</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="founder">
-      <div class="wrap founder-grid">
-        <div class="founder-image reveal"><img src="/Emily.avif" alt="Emily Ford, Founder of FORDIVINE" width="923" height="1024" loading="lazy"></div>
-        <div class="founder-copy reveal">
-          <p class="section-kicker">A Note From Emily</p>
-          <h2>Your Gifts Were Never Meant to Stay Hidden.</h2>
-          <p><strong>I built FORDIVINE because I spent years watching brilliant women stay invisible.</strong></p>
-          <p>Women with real gifts, real callings, and real businesses who kept getting overlooked because their brand did not match who they had become.</p>
-          <p>You were not made to keep your God-given gifts hidden. You were made to <strong>make a difference in this world.</strong></p>
-          <p>Start where you are. Use these resources to find clarity, build your foundation, and take your next step with confidence.</p>
-          <img class="signature" src="/emily-signature.png" alt="Emily Ford signature" width="400" height="120" loading="lazy">
-          <div class="founder-title">Founder &amp; Visionary, FORDIVINE</div>
-        </div>
+    <section class="founder-simple">
+      <div class="wrap founder-simple-inner reveal">
+        <p class="section-kicker">A Note From Emily</p>
+        <h2>Your Gifts Were Never Meant to Stay Hidden.</h2>
+        <p><strong>I built FORDIVINE because I spent years watching brilliant women stay invisible.</strong> Start where you are. Use these resources to find clarity, build your foundation, and take your next step with confidence.</p>
+        <img class="signature" src="/emily-signature.png" alt="Emily Ford signature" width="400" height="120" loading="lazy">
+        <div class="founder-title">Founder &amp; Visionary, FORDIVINE</div>
       </div>
     </section>
   </main>
