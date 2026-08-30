@@ -306,7 +306,7 @@
     /* Simplified resource hub */
     .hero{min-height:610px;padding:82px 32px 92px}
     .hero-inner{max-width:1200px}
-    .hero h1{max-width:none;font-size:clamp(40px,5.4vw,68px);white-space:nowrap}
+    .hero h1{max-width:1180px}
     .hero-title-line{display:block;white-space:nowrap}
     .hero-copy{max-width:760px}
     .step-section{padding:62px 0 100px;background:var(--paper)}
@@ -322,7 +322,7 @@
     .step-display{display:flex;align-items:baseline;gap:12px;margin-bottom:26px;font-family:"Bebas Neue","Arial Narrow",sans-serif;line-height:.76;text-transform:uppercase;color:rgba(24,24,24,.38)}
     .step-display-word{font-size:clamp(38px,4.8vw,60px);letter-spacing:.035em}
     .step-display-number{font-size:clamp(38px,4.8vw,60px);letter-spacing:.035em}
-    .step-copy h2{font-size:clamp(34px,4vw,50px);line-height:1.02;letter-spacing:-.04em;text-transform:uppercase}
+    .step-copy h2{font-size:clamp(30px,3.3vw,40px);line-height:1.02;letter-spacing:-.04em;text-transform:uppercase}
     .assessment-title-line{display:block;white-space:nowrap}
     .step-copy>p{margin-top:22px;color:#575757;font-size:16px;line-height:1.72}
     .step-copy .bullet-list{margin-top:26px}
@@ -332,7 +332,7 @@
     .learn-block+.learn-block{margin-top:68px;padding-top:68px;border-top:1px solid var(--line)}
     .resource-step-heading{display:grid;grid-template-columns:max-content 1fr;gap:34px;align-items:end;margin-bottom:42px}
     .resource-step-heading .step-display{margin-bottom:0}
-    .resource-step-heading h2{font-size:clamp(38px,5vw,58px);line-height:1;letter-spacing:-.045em;text-transform:uppercase;font-weight:800}
+    .resource-step-heading h2{font-size:clamp(32px,4.2vw,50px);line-height:1;letter-spacing:-.045em;text-transform:uppercase;font-weight:800;white-space:nowrap}
     .resource-step-heading .resource-step-copy{max-width:650px;margin-top:13px;color:#686868;font-size:14px;line-height:1.65}
     .simple-grid{display:grid;grid-template-columns:1fr;gap:26px;max-width:1040px;margin:0 auto}
     .simple-resource{display:grid;grid-template-columns:minmax(310px,.72fr) 1.28fr;min-height:390px;overflow:hidden;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:0 18px 48px rgba(20,20,20,.06)}
@@ -385,7 +385,7 @@
     .social-feed{overflow:hidden;background:transparent}
     .social-feed-image{display:block;width:100%;height:auto;margin:0}
     @media(max-width:900px){
-      .hero h1{font-size:clamp(32px,5.2vw,44px)}
+      .resource-step-heading h2{font-size:clamp(24px,3.5vw,32px)}
       .step-one-card{grid-template-columns:1fr;gap:34px;padding:38px}
       .assessment-collage{min-height:600px}
       .simple-grid{grid-template-columns:1fr}
@@ -396,13 +396,13 @@
     }
     @media(max-width:680px){
       .hero{min-height:540px;padding:58px 18px 68px}
-      .hero h1{font-size:clamp(17px,5.3vw,25px);letter-spacing:-.055em}
+      .hero h1{font-size:clamp(21px,6.4vw,32px);letter-spacing:-.045em}
       .step-section{padding:44px 0 76px}.learn-section{padding:76px 0}
       .step-one-card{padding:16px;border-radius:14px;gap:24px}
       .assessment-collage{min-height:410px;border-radius:10px}
       .assessment-page{width:46%;border-radius:6px}
-      .step-copy{padding:18px 10px 26px}.step-copy h2{font-size:34px}.step-copy>p{font-size:14px}.step-display{gap:8px;margin-bottom:20px}.step-display-word,.step-display-number{font-size:34px}
-      .learn-block+.learn-block{margin-top:50px;padding-top:50px}.resource-step-heading{grid-template-columns:1fr;gap:14px;margin-bottom:30px}.resource-step-heading h2{font-size:34px}.resource-step-heading .resource-step-copy{font-size:13px}
+      .step-copy{padding:18px 10px 26px}.step-copy h2{font-size:clamp(20px,6.6vw,28px)}.step-copy>p{font-size:14px}.step-display{gap:8px;margin-bottom:20px}.step-display-word,.step-display-number{font-size:34px}
+      .learn-block+.learn-block{margin-top:50px;padding-top:50px}.resource-step-heading{grid-template-columns:1fr;gap:14px;margin-bottom:30px}.resource-step-heading h2{font-size:clamp(16px,5.1vw,23px)}.resource-step-heading .resource-step-copy{font-size:13px}
       .simple-resource{grid-template-columns:1fr;min-height:0}.simple-resource-image{aspect-ratio:1.7/1}.simple-resource-body{padding:26px 24px 30px}
       .follow-section{padding:72px 0}.follow-step-heading{margin-bottom:30px}.instagram-grid{gap:22px}.social-showcase{border-radius:16px}.social-profile-panel{padding:76px 24px 30px}.instagram-mark{top:22px;left:24px;width:36px;height:36px}.profile-avatar{width:84px;height:84px}.social-handle{font-size:27px}.social-proof{margin-top:23px}.social-proof strong{font-size:30px}
     }
@@ -418,8 +418,7 @@
   <main>
     <section class="hero">
       <div class="hero-inner reveal">
-        <div class="eyebrow">Free Resources</div>
-        <h1><span class="hero-title-line">Kickstart Your Personal Brand</span></h1>
+        <h1><span class="hero-title-line">Free Resources to Kickstart</span><span class="hero-title-line">Your Personal Brand</span></h1>
         <p class="hero-copy">Start with the free assessment, then use the masterclasses and podcast episodes below to build a clearer, stronger personal brand.</p>
       </div>
     </section>
@@ -435,7 +434,7 @@
           </div>
           <div class="step-copy">
             <div class="step-display" aria-label="Step 01"><span class="step-display-word">Step</span><span class="step-display-number">01</span></div>
-            <h2><span class="assessment-title-line">Get Your</span><span class="assessment-title-line">Personal Brand</span><span class="assessment-title-line">Authority Score</span></h2>
+            <h2><span class="assessment-title-line">Get Your Personal</span><span class="assessment-title-line">Brand Authority Score</span></h2>
             <p>Answer 20 multiple-choice questions across the five areas of your personal brand. You will instantly receive your score and a tailored report showing what deserves your attention.</p>
             <ul class="bullet-list">
               <li>See what is already working</li>
