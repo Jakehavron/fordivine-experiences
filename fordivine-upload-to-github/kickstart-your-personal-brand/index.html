@@ -334,6 +334,8 @@
     .step-copy .cta{margin-top:30px;background:var(--charcoal);color:#fff;box-shadow:none}
     .step-copy .cta:hover{background:#111}
     .learn-section{padding:104px 0 112px;background:var(--cream)}
+    .masterclass-block[hidden]{display:none}
+    .masterclass-block[hidden]+.podcast-block{margin-top:0;padding-top:0;border-top:0}
     .learn-block+.learn-block{margin-top:68px;padding-top:68px;border-top:1px solid var(--line)}
     .resource-step-heading{display:grid;grid-template-columns:max-content 1fr;gap:34px;align-items:end;margin-bottom:42px}
     .resource-step-heading .step-display{margin-bottom:0}
@@ -426,7 +428,7 @@
         <h1><span class="hero-title-line">Free Resources to Kickstart</span><span class="hero-title-line">Your Personal Brand</span></h1>
         <div class="hero-copy">
           <p>You are directed here because your answers tell us these specific resources and trainings will best help you in your current situation.</p>
-          <p>Start with the <span class="copy-accent">brand assessment</span>, then use the <span class="copy-accent">masterclasses</span> and <span class="copy-accent">podcast episodes</span> below to build a <span class="copy-accent">clearer personal brand</span>.</p>
+          <p>Start with the <span class="copy-accent">brand assessment</span>, then use <span class="masterclass-reference" hidden>the <span class="copy-accent">masterclasses</span> and </span>the <span class="copy-accent">podcast episodes</span> below to build a <span class="copy-accent">clearer personal brand</span>.</p>
         </div>
       </div>
     </section>
@@ -457,7 +459,7 @@
 
     <section class="learn-section" id="step-two">
       <div class="wrap">
-        <div class="learn-block">
+        <div class="learn-block masterclass-block" hidden>
           <div class="resource-step-heading reveal">
             <div class="step-display" aria-label="Step 02"><span class="step-display-word">Step</span><span class="step-display-number">02</span></div>
             <div><h2>Go Deeper With a Masterclass</h2><p class="resource-step-copy">Dive into two masterclasses that help you workshop your personal brand in real-time.</p></div>
@@ -496,9 +498,9 @@
           </div>
         </div>
 
-        <div class="learn-block">
+        <div class="learn-block podcast-block">
           <div class="resource-step-heading reveal">
-            <div class="step-display" aria-label="Step 03"><span class="step-display-word">Step</span><span class="step-display-number">03</span></div>
+            <div class="step-display" aria-label="Step 02"><span class="step-display-word">Step</span><span class="step-display-number">02</span></div>
             <div><h2>Keep Learning as You Go</h2><p class="resource-step-copy">Listen to these two specific Called &amp; Crowned episodes related to personal branding.</p></div>
           </div>
           <div class="audio-grid">
@@ -516,7 +518,7 @@
     <section class="follow-section">
       <div class="wrap follow-inner reveal">
         <div class="resource-step-heading follow-step-heading">
-          <div class="step-display" aria-label="Step 04"><span class="step-display-word">Step</span><span class="step-display-number">04</span></div>
+          <div class="step-display" aria-label="Step 03"><span class="step-display-word">Step</span><span class="step-display-number">03</span></div>
           <div><h2>Stay Connected and Get Inspo</h2><p class="resource-step-copy">Get more personal branding, leadership, and mindset inspo from Emily and FORDIVINE.</p></div>
         </div>
         <div class="instagram-grid">
