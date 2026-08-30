@@ -10,8 +10,7 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/bebas-neue-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/cormorant-garamond-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/kickstart-your-personal-brand/assets/report-score-overview.jpg" as="image">
+  <link rel="preload" href="/kickstart-your-personal-brand/assets/report-score-overview-640.webp" as="image" type="image/webp">
   <script src="/attribution.js?v=20260823-1"></script>
   <script>
     (function () {
@@ -122,6 +121,12 @@
     ['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach(function (eventName) {
       window.addEventListener(eventName, fdLoadTrackingLibraries, { once: true, passive: true });
     });
+
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(fdLoadTrackingLibraries, { timeout: 3000 });
+    } else {
+      window.setTimeout(fdLoadTrackingLibraries, 2500);
+    }
   </script>
   <style>
     @font-face{font-family:"Inter";font-style:normal;font-weight:300 800;font-display:swap;src:url("/fonts/inter-latin.woff2") format("woff2")}
@@ -143,6 +148,7 @@
     html{scroll-behavior:smooth;overflow-x:hidden}
     body{font-family:"Inter",Arial,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
     a{color:inherit;text-decoration:none}
+    a:focus-visible{outline:3px solid var(--bone);outline-offset:4px}
     img{display:block;max-width:100%}
     button,a{touch-action:manipulation}
     .wrap{width:min(1160px,calc(100% - 96px));margin:0 auto}
@@ -299,13 +305,13 @@
       .founder-image{height:500px}
       .founder-copy h2{font-size:40px}
     }
-    @media(max-width:768px){footer{padding:56px 24px 32px}.footer-top{flex-direction:column;gap:24px}.footer-nav{flex-wrap:wrap;gap:12px 20px}.footer-legal{flex-wrap:wrap;justify-content:center;gap:8px}}
+    @media(max-width:768px){footer{padding:56px 24px 32px}.footer-top{flex-direction:column;gap:24px}.footer-nav{flex-wrap:wrap;gap:4px 12px}.footer-nav a,.footer-legal a{display:inline-flex;align-items:center;min-height:44px;padding:0 4px}.footer-legal{flex-wrap:wrap;justify-content:center;gap:0 8px}}
     @media(max-width:480px){.footer-nav{gap:10px 16px}.footer-wordmark{height:13px}.footer-brand p{font-size:clamp(10.5px,3vw,12px)}.footer-disclaimer{font-size:9.5px}}
   </style>
   <style>
     /* Simplified resource hub */
     .hero{min-height:610px;padding:82px 32px 92px}
-    .hero-inner{max-width:1200px}
+    .hero-inner{width:100%;max-width:1200px;min-width:0}
     .hero h1{max-width:1180px}
     .hero-title-line{display:block;white-space:nowrap}
     .hero-copy{max-width:760px}
@@ -324,7 +330,7 @@
     .assessment-page:nth-child(3){right:4%;top:17%;z-index:2;transform:rotate(6deg)}
     .assessment-page:nth-child(4){left:31%;bottom:3%;z-index:5;transform:rotate(3deg)}
     .step-copy{padding:18px 10px}
-    .step-display{display:flex;align-items:baseline;gap:12px;margin-bottom:26px;font-family:"Bebas Neue","Arial Narrow",sans-serif;line-height:.76;text-transform:uppercase;color:rgba(24,24,24,.38)}
+    .step-display{display:flex;align-items:baseline;gap:12px;margin-bottom:26px;font-family:"Bebas Neue","Arial Narrow",sans-serif;line-height:.76;text-transform:uppercase;color:rgba(24,24,24,.5)}
     .step-display-word{font-size:clamp(38px,4.8vw,60px);letter-spacing:.035em}
     .step-display-number{font-size:clamp(38px,4.8vw,60px);letter-spacing:.035em}
     .step-copy h2{font-size:clamp(30px,3.3vw,40px);line-height:1.02;letter-spacing:-.04em;text-transform:uppercase}
@@ -404,7 +410,7 @@
     }
     @media(max-width:680px){
       .hero{min-height:540px;padding:58px 18px 68px}
-      .hero h1{font-size:clamp(21px,6.4vw,32px);letter-spacing:-.045em}
+      .hero h1{font-size:clamp(17px,5.85vw,30px);letter-spacing:-.045em}
       .step-section{padding:44px 0 76px}.learn-section{padding:76px 0}
       .step-one-card{padding:16px;border-radius:14px;gap:24px}
       .assessment-collage{min-height:410px}
@@ -424,7 +430,7 @@
 
   <main>
     <section class="hero">
-      <div class="hero-inner reveal">
+      <div class="hero-inner">
         <h1><span class="hero-title-line">Free Resources to Kickstart</span><span class="hero-title-line">Your Personal Brand</span></h1>
         <div class="hero-copy">
           <p>You are directed here because your answers tell us these specific resources and trainings will best help you in your current situation.</p>
@@ -437,15 +443,15 @@
       <div class="wrap">
         <article class="step-one-card reveal">
           <div class="assessment-collage" aria-label="Four example pages from a personalized Crowned Authority report">
-            <img class="assessment-page" src="/kickstart-your-personal-brand/assets/report-score-overview.jpg" alt="Example Crowned Authority score overview" width="909" height="1287" loading="eager">
-            <img class="assessment-page" src="/kickstart-your-personal-brand/assets/report-overall-score.jpg" alt="Example personalized overall authority score" width="909" height="1287" loading="eager">
-            <img class="assessment-page" src="/kickstart-your-personal-brand/assets/report-clarity-score.jpg" alt="Example Jewel of Clarity score page" width="909" height="1287" loading="lazy">
-            <img class="assessment-page" src="/kickstart-your-personal-brand/assets/report-action-plan.jpg" alt="Example personalized brand action plan" width="909" height="1287" loading="lazy">
+            <img class="assessment-page" src="/kickstart-your-personal-brand/assets/report-score-overview-640.webp" alt="Example Crowned Authority score overview" width="640" height="906" loading="eager">
+            <img class="assessment-page" src="/kickstart-your-personal-brand/assets/report-overall-score-640.webp" alt="Example personalized overall authority score" width="640" height="906" loading="eager">
+            <img class="assessment-page" src="/kickstart-your-personal-brand/assets/report-clarity-score-640.webp" alt="Example Jewel of Clarity score page" width="640" height="906" loading="lazy">
+            <img class="assessment-page" src="/kickstart-your-personal-brand/assets/report-action-plan-640.webp" alt="Example personalized brand action plan" width="640" height="906" loading="lazy">
           </div>
           <div class="step-copy">
             <div class="step-display" aria-label="Step 01"><span class="step-display-word">Step</span><span class="step-display-number">01</span></div>
             <h2><span class="assessment-title-line">Get Your Personal</span><span class="assessment-title-line">Brand Authority Score</span></h2>
-            <p>Answer  multiple-choice questions across the five areas of your personal brand to instantly receive your score and a tailored report showing what deserves your attention.</p>
+            <p>Answer multiple-choice questions across the five areas of your personal brand to instantly receive your score and a tailored report showing what deserves your attention.</p>
             <ul class="bullet-list">
               <li>See what is already working</li>
               <li>Identify the gaps limiting your progress</li>
@@ -526,7 +532,7 @@
             <div class="social-profile-panel">
               <svg class="instagram-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.25" stroke="currentColor" stroke-width="1.8"/><circle cx="17.35" cy="6.8" r="1.15" fill="currentColor"/></svg>
               <div class="social-identity">
-                <span class="profile-avatar emily-avatar"><span class="profile-avatar-clip"><img src="/kickstart-your-personal-brand/assets/instagram-itsemily.png" alt="Emily Ford" width="940" height="800" loading="lazy"></span></span>
+                <span class="profile-avatar emily-avatar"><span class="profile-avatar-clip"><img src="/kickstart-your-personal-brand/assets/instagram-itsemily.webp" alt="Emily Ford" width="940" height="800" loading="lazy"></span></span>
                 <div><p class="social-name">Emily Ford</p><h3 class="social-handle">@itsemily <span class="verified-badge">✓</span></h3></div>
               </div>
               <div class="social-proof"><strong>515K+</strong><span>followers</span></div>
@@ -534,14 +540,14 @@
               <span class="social-cta">Follow Emily <b>↗</b></span>
             </div>
             <div class="social-feed">
-              <img class="social-feed-image" src="/kickstart-your-personal-brand/assets/instagram-feed-itsemily.png" alt="Six recent posts from Emily Ford's Instagram feed" width="756" height="725" loading="lazy">
+              <img class="social-feed-image" src="/kickstart-your-personal-brand/assets/instagram-feed-itsemily.webp" alt="Six recent posts from Emily Ford's Instagram feed" width="756" height="725" loading="lazy">
             </div>
           </a>
           <a class="social-showcase social-house" href="https://www.instagram.com/fordivinehouse/" target="_blank" rel="noopener noreferrer" data-resource="instagram_fordivine" aria-label="View FORDIVINE House on Instagram">
             <div class="social-profile-panel">
               <svg class="instagram-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.25" stroke="currentColor" stroke-width="1.8"/><circle cx="17.35" cy="6.8" r="1.15" fill="currentColor"/></svg>
               <div class="social-identity">
-                <span class="profile-avatar house-avatar"><span class="profile-avatar-clip"><img src="/kickstart-your-personal-brand/assets/instagram-fordivinehouse.png" alt="FORDIVINE House" width="940" height="800" loading="lazy"></span></span>
+                <span class="profile-avatar house-avatar"><span class="profile-avatar-clip"><img src="/kickstart-your-personal-brand/assets/instagram-fordivinehouse.webp" alt="FORDIVINE House" width="940" height="800" loading="lazy"></span></span>
                 <div><p class="social-name">Personal Branding House</p><h3 class="social-handle">@fordivinehouse</h3></div>
               </div>
               <div class="social-proof"><strong>4.6K+</strong><span>followers</span></div>
@@ -549,7 +555,7 @@
               <span class="social-cta">Follow FORDIVINE <b>↗</b></span>
             </div>
             <div class="social-feed">
-              <img class="social-feed-image" src="/kickstart-your-personal-brand/assets/instagram-feed-fordivinehouse.png" alt="Six recent posts from FORDIVINE House's Instagram feed" width="735" height="693" loading="lazy">
+              <img class="social-feed-image" src="/kickstart-your-personal-brand/assets/instagram-feed-fordivinehouse.webp" alt="Six recent posts from FORDIVINE House's Instagram feed" width="735" height="693" loading="lazy">
             </div>
           </a>
         </div>
