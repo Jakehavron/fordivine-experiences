@@ -353,8 +353,7 @@
     .social-showcase{display:grid;grid-template-columns:.84fr 1.16fr;min-height:420px;overflow:hidden;border:1px solid rgba(20,20,20,.1);border-radius:24px;background:#fff;box-shadow:0 24px 68px rgba(20,20,20,.1);transition:transform .28s ease,box-shadow .28s ease}
     .social-showcase:hover{transform:translateY(-5px);box-shadow:0 34px 78px rgba(20,20,20,.15)}
     .social-profile-panel{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;padding:46px;background:#1d1d1f;color:#fff}
-    .social-house .social-profile-panel{order:2;background:#e9e0d1;color:#1b1b1b}
-    .social-house .social-feed{order:1}
+    .social-house .social-profile-panel{background:#e9e0d1;color:#1b1b1b}
     .instagram-pill{display:inline-flex;align-items:center;align-self:flex-start;gap:8px;margin-bottom:30px;padding:7px 12px;border:1px solid rgba(255,255,255,.16);border-radius:999px;background:rgba(255,255,255,.08);font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
     .social-house .instagram-pill{border-color:rgba(20,20,20,.12);background:rgba(255,255,255,.48)}
     .instagram-dot{width:10px;height:10px;border-radius:3px;background:linear-gradient(135deg,#7b48d6,#df3e73 55%,#f2a33a)}
@@ -381,19 +380,14 @@
     .social-showcase:hover .social-cta b{transform:translate(3px,-3px)}
     .social-feed{display:flex;flex-direction:column;justify-content:center;padding:32px;background:#f6f4f0}
     .social-house .social-feed{background:#242426}
-    .feed-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;color:#696969;font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
-    .social-house .feed-top{color:rgba(255,255,255,.58)}
-    .instagram-wordmark{font-family:Georgia,serif;font-size:15px;font-style:italic;letter-spacing:-.02em;text-transform:none;color:#1b1b1b}
-    .social-house .instagram-wordmark{color:#fff}
     .feed-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
-    .feed-tile{position:relative;aspect-ratio:1.36/1;overflow:hidden;background:#ddd}
-    .feed-tile img{position:absolute;width:300%;max-width:none;height:auto;transition:transform .45s ease}
-    .social-emily .feed-tile img{top:-248%}
-    .social-house .feed-tile img{top:-246%}
-    .feed-tile:nth-child(1) img{left:0}
-    .feed-tile:nth-child(2) img{left:-100%}
-    .feed-tile:nth-child(3) img{left:-200%}
-    .social-showcase:hover .feed-tile img{transform:scale(1.018)}
+    .feed-tile{position:relative;aspect-ratio:1.36/1;overflow:hidden;border-radius:6px;background-color:#ddd;background-repeat:no-repeat;background-size:300% auto;background-position-y:bottom;transition:filter .3s ease}
+    .social-emily .feed-tile{background-image:url("/kickstart-your-personal-brand/assets/instagram-itsemily.png")}
+    .social-house .feed-tile{background-image:url("/kickstart-your-personal-brand/assets/instagram-fordivinehouse.png")}
+    .feed-tile:nth-child(1){background-position-x:left}
+    .feed-tile:nth-child(2){background-position-x:center}
+    .feed-tile:nth-child(3){background-position-x:right}
+    .social-showcase:hover .feed-tile{filter:contrast(1.025)}
     @media(max-width:900px){
       .step-one-card{grid-template-columns:1fr;gap:34px;padding:38px}
       .assessment-collage{min-height:600px}
@@ -401,7 +395,7 @@
       .simple-resource{grid-template-columns:minmax(240px,.62fr) 1.38fr}
       .audio-grid{grid-template-columns:1fr}
       .audio-card{min-height:0}
-      .social-showcase{grid-template-columns:1fr;max-width:700px;margin:0 auto}.social-profile-panel,.social-house .social-profile-panel{order:1}.social-feed,.social-house .social-feed{order:2}
+      .social-showcase{grid-template-columns:1fr;max-width:700px;margin:0 auto}
     }
     @media(max-width:680px){
       .hero{min-height:540px;padding:58px 18px 68px}
@@ -412,7 +406,7 @@
       .step-copy{padding:18px 10px 26px}.step-copy h2{font-size:34px}.step-copy>p{font-size:14px}.step-display{gap:8px;margin-bottom:20px}.step-display-word{font-size:34px}.step-display-number{font-size:82px}
       .learn-block+.learn-block{margin-top:50px;padding-top:50px}.resource-step-heading{grid-template-columns:1fr;gap:14px;margin-bottom:30px}.resource-step-heading h2{font-size:34px}.resource-step-heading .resource-step-copy{font-size:13px}
       .simple-resource{grid-template-columns:1fr;min-height:0}.simple-resource-image{aspect-ratio:1.7/1}.simple-resource-body{padding:26px 24px 30px}
-      .follow-section{padding:72px 0}.follow-copy{margin-bottom:30px}.instagram-grid{gap:22px}.social-showcase{border-radius:16px}.social-profile-panel{padding:30px 24px}.instagram-pill{margin-bottom:24px}.profile-avatar{width:84px;height:84px}.social-handle{font-size:27px}.social-proof{margin-top:23px}.social-proof strong{font-size:30px}.social-feed{padding:20px 16px}.feed-top{margin-bottom:12px}.feed-grid{gap:4px}
+      .follow-section{padding:72px 0}.follow-copy{margin-bottom:30px}.instagram-grid{gap:22px}.social-showcase{border-radius:16px}.social-profile-panel{padding:30px 24px}.instagram-pill{margin-bottom:24px}.profile-avatar{width:84px;height:84px}.social-handle{font-size:27px}.social-proof{margin-top:23px}.social-proof strong{font-size:30px}.social-feed{padding:20px 16px}.feed-grid{gap:4px}
     }
   </style>
 </head>
@@ -530,11 +524,10 @@
               <span class="social-cta">Follow Emily <b>↗</b></span>
             </div>
             <div class="social-feed">
-              <div class="feed-top"><span>From the feed</span><span class="instagram-wordmark">Instagram</span></div>
               <div class="feed-grid" aria-hidden="true">
-                <span class="feed-tile"><img src="/kickstart-your-personal-brand/assets/instagram-itsemily.png" alt="" width="940" height="800" loading="lazy"></span>
-                <span class="feed-tile"><img src="/kickstart-your-personal-brand/assets/instagram-itsemily.png" alt="" width="940" height="800" loading="lazy"></span>
-                <span class="feed-tile"><img src="/kickstart-your-personal-brand/assets/instagram-itsemily.png" alt="" width="940" height="800" loading="lazy"></span>
+                <span class="feed-tile"></span>
+                <span class="feed-tile"></span>
+                <span class="feed-tile"></span>
               </div>
             </div>
           </a>
@@ -550,11 +543,10 @@
               <span class="social-cta">Follow FORDIVINE <b>↗</b></span>
             </div>
             <div class="social-feed">
-              <div class="feed-top"><span>From the feed</span><span class="instagram-wordmark">Instagram</span></div>
               <div class="feed-grid" aria-hidden="true">
-                <span class="feed-tile"><img src="/kickstart-your-personal-brand/assets/instagram-fordivinehouse.png" alt="" width="940" height="800" loading="lazy"></span>
-                <span class="feed-tile"><img src="/kickstart-your-personal-brand/assets/instagram-fordivinehouse.png" alt="" width="940" height="800" loading="lazy"></span>
-                <span class="feed-tile"><img src="/kickstart-your-personal-brand/assets/instagram-fordivinehouse.png" alt="" width="940" height="800" loading="lazy"></span>
+                <span class="feed-tile"></span>
+                <span class="feed-tile"></span>
+                <span class="feed-tile"></span>
               </div>
             </div>
           </a>
