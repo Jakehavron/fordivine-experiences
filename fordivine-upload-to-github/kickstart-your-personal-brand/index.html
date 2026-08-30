@@ -310,6 +310,11 @@
     .hero-title-line{display:block;white-space:nowrap}
     .hero-copy{max-width:760px}
     .hero-copy p+p{margin-top:18px}
+    .hero-copy .copy-accent{color:#e8dfc8;display:inline-block;position:relative;z-index:0;padding-bottom:.04em;font-weight:700;white-space:nowrap}
+    .hero-copy .copy-accent::after{content:"";position:absolute;z-index:-1;left:-.08em;right:-.1em;bottom:-.14em;height:.52em;background:#e8dfc8;clip-path:polygon(0 78%,7% 42%,18% 28%,46% 20%,73% 9%,96% 16%,100% 31%,98% 49%,72% 52%,47% 61%,22% 69%,4% 93%);border-radius:50%;transform:rotate(-1.4deg);transform-origin:center;pointer-events:none}
+    .hero-copy .copy-accent:nth-of-type(2)::after{transform:rotate(.8deg)}
+    .hero-copy .copy-accent:nth-of-type(3)::after{transform:rotate(-.6deg)}
+    .hero-copy .copy-accent:nth-of-type(4)::after{transform:rotate(1.1deg)}
     .step-section{padding:62px 0 100px;background:var(--paper)}
     .step-one-card{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:58px;padding:54px;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:0 22px 58px rgba(20,20,20,.075)}
     .assessment-collage{position:relative;min-height:560px;background:transparent;overflow:visible}
@@ -421,7 +426,7 @@
         <h1><span class="hero-title-line">Free Resources to Kickstart</span><span class="hero-title-line">Your Personal Brand</span></h1>
         <div class="hero-copy">
           <p>You are directed here because your answers tell us these specific resources and trainings will best help you in your current situation.</p>
-          <p>Start with the brand assessment, then use the masterclasses and podcast episodes below to build a clearer personal brand.</p>
+          <p>Start with the <span class="copy-accent">brand assessment</span>, then use the <span class="copy-accent">masterclasses</span> and <span class="copy-accent">podcast episodes</span> below to build a <span class="copy-accent">clearer personal brand</span>.</p>
         </div>
       </div>
     </section>
