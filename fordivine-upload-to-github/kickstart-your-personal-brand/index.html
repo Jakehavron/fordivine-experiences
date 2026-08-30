@@ -305,7 +305,9 @@
   <style>
     /* Simplified resource hub */
     .hero{min-height:610px;padding:82px 32px 92px}
-    .hero h1{max-width:1080px}
+    .hero-inner{max-width:1200px}
+    .hero h1{max-width:1180px}
+    .hero-title-line{display:block;white-space:nowrap}
     .hero-copy{max-width:760px}
     .step-section{padding:62px 0 100px;background:var(--paper)}
     .step-one-card{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:58px;padding:54px;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:0 22px 58px rgba(20,20,20,.075)}
@@ -402,6 +404,7 @@
     }
     @media(max-width:680px){
       .hero{min-height:540px;padding:58px 18px 68px}
+      .hero h1{font-size:clamp(21px,6.4vw,32px);letter-spacing:-.045em}
       .step-section{padding:44px 0 76px}.learn-section{padding:76px 0}
       .step-one-card{padding:16px;border-radius:14px;gap:24px}
       .assessment-collage{min-height:410px;border-radius:10px}
@@ -424,7 +427,7 @@
     <section class="hero">
       <div class="hero-inner reveal">
         <div class="eyebrow">Personal Brand Kickstart</div>
-        <h1>Free Resources to Kickstart<br>Your Personal Brand</h1>
+        <h1><span class="hero-title-line">Free Resources to Kickstart</span><span class="hero-title-line">Your Personal Brand</span></h1>
         <p class="hero-copy">Start with the free assessment, then use the masterclasses and podcast episodes below to build a clearer, stronger personal brand.</p>
       </div>
     </section>
