@@ -238,17 +238,21 @@
     .founder-copy p strong{color:#fff}
     .signature{width:210px;margin-top:28px;filter:brightness(0) invert(1)}
     .founder-title{margin-top:8px;color:rgba(255,255,255,.55);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
-    footer{padding:68px 48px 34px;background:#1d1d1f;color:#fff;border-top:1px solid rgba(255,255,255,.04)}
-    .footer-top{max-width:1040px;margin:0 auto 46px;display:flex;justify-content:space-between;align-items:flex-start;gap:40px}
-    .footer-wordmark{height:18px;width:auto;opacity:.86}
-    .footer-brand p{margin-top:14px;color:rgba(255,255,255,.68);font-size:13px;line-height:1.7}
-    .footer-nav{display:flex;gap:30px}
-    .footer-nav a{color:rgba(255,255,255,.72);font-size:11px;font-weight:650;letter-spacing:.05em}
-    .footer-question{text-align:center;margin:0 auto 24px;color:rgba(255,255,255,.68);font-size:12px}
-    .footer-question a{color:var(--bone);text-decoration:underline;text-underline-offset:3px}
-    .footer-legal{max-width:1040px;margin:0 auto;padding:24px 0;display:flex;justify-content:center;gap:24px;border-top:1px solid rgba(255,255,255,.05)}
-    .footer-legal a{font-size:10px;color:rgba(255,255,255,.62)}
-    .footer-disclaimer{max-width:820px;margin:20px auto 0;text-align:center;color:rgba(255,255,255,.52);font-size:9px;line-height:1.8}
+    footer{background:var(--charcoal);padding:72px 48px 40px;border-top:1px solid rgba(255,255,255,.03)}
+    .footer-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:40px;max-width:1000px;margin:0 auto 56px}
+    .footer-wordmark{height:18px;width:auto;display:block;opacity:.85}
+    .footer-brand .logo{display:flex;align-items:center;gap:2px;text-decoration:none}
+    .footer-brand p{font-size:13px;color:rgba(255,255,255,.72);margin-top:14px;line-height:1.7;font-weight:300}
+    .footer-tagline-line{display:block;white-space:nowrap}
+    .footer-question-line{text-align:center;font-size:12px;color:rgba(255,255,255,.72);letter-spacing:.03em;font-weight:300;margin:0 auto 28px;max-width:1000px}
+    .footer-question-link{color:var(--bone);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;transition:opacity .2s ease}
+    .footer-question-link:hover{opacity:.65}
+    .footer-nav{display:flex;gap:36px}
+    .footer-nav a{font-size:12px;color:rgba(255,255,255,.78);text-decoration:none;font-weight:500;letter-spacing:.03em;transition:color .4s ease}
+    .footer-nav a:hover{color:var(--white)}
+    .footer-legal{display:flex;gap:24px;justify-content:center;padding:24px 0;border-top:1px solid rgba(255,255,255,.04);max-width:1000px;margin:0 auto}
+    .footer-legal a{font-size:11px;color:rgba(255,255,255,.72);text-decoration:none;letter-spacing:.03em;font-weight:400}
+    .footer-disclaimer{text-align:center;max-width:800px;margin:24px auto 0;font-size:10px;color:rgba(255,255,255,.68);line-height:1.8;font-weight:300}
     .reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
     .reveal.visible{opacity:1;transform:none}
     @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.resource-image img,.social-card,.cta{transition:none}}
@@ -294,8 +298,9 @@
       .founder-grid{gap:42px}
       .founder-image{height:500px}
       .founder-copy h2{font-size:40px}
-      footer{padding:52px 24px 30px}.footer-top{flex-direction:column;gap:26px}.footer-nav{flex-wrap:wrap;gap:14px 22px}.footer-legal{flex-wrap:wrap;gap:10px 18px}
     }
+    @media(max-width:768px){footer{padding:56px 24px 32px}.footer-top{flex-direction:column;gap:24px}.footer-nav{flex-wrap:wrap;gap:12px 20px}.footer-legal{flex-wrap:wrap;justify-content:center;gap:8px}}
+    @media(max-width:480px){.footer-nav{gap:10px 16px}.footer-wordmark{height:13px}.footer-brand p{font-size:clamp(10.5px,3vw,12px)}.footer-disclaimer{font-size:9.5px}}
   </style>
   <style>
     /* Simplified resource hub */
@@ -559,14 +564,21 @@
   <footer>
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="/discover" aria-label="FORDIVINE home"><picture><source srcset="/fordivine-logo.webp" type="image/webp"><img class="footer-wordmark" src="/fordivine-logo.png" alt="FORDIVINE" width="1287" height="201" loading="lazy"></picture></a>
-        <p>A Personal Branding House helping businesswomen<br>become Crowned Authorities™ in their space.</p>
+        <a href="/discover" class="logo logo-img-wrap" aria-label="FORDIVINE home"><picture><source srcset="/fordivine-logo.webp" type="image/webp"><img src="/fordivine-logo.png" alt="FORDIVINE" class="footer-wordmark" width="1287" height="201" loading="lazy" decoding="async"></picture></a>
+        <p><span class="footer-tagline-line">A Personal Branding House helping business women</span><span class="footer-tagline-line">become Crowned Authorities™ in their space.</span></p>
       </div>
-      <nav class="footer-nav" aria-label="Footer navigation"><a href="/assessment">Assessment</a><a href="/discover">Discover</a><a href="/about-us">About</a></nav>
+      <div class="footer-nav">
+        <a href="/discover">Home</a>
+        <a href="/crowned-stories">Crowned Stories</a>
+        <a href="https://www.fordivine.com/discover#book">Inquire Now</a>
+      </div>
     </div>
-    <p class="footer-question">Got a question? Email <a href="mailto:Hello@fordivine.com?subject=Question%20about%20the%20personal%20brand%20resources">Hello@fordivine.com</a></p>
-    <div class="footer-legal"><a href="/privacy-policy">Privacy Policy</a><a href="/terms-of-use">Terms of Use</a></div>
-    <p class="footer-disclaimer">Emily Ford and FORDIVINE™'s results are not typical and are not a guarantee of your success. Your results will vary depending on your effort, application, experience, and background. The information contained within this website is the property of Fortitude LLC. Any use of the images, content, or ideas expressed herein without the express written consent of Fortitude LLC is prohibited. Copyright &copy; 2026 FORDIVINE™. All Rights Reserved.</p>
+    <p class="footer-question-line">Got a question? Email <a href="mailto:Hello@fordivine.com?subject=I%20have%20a%20question!%20re%3A%20Discovery%20page&amp;body=Hi%20team!%0A%0AI%20have%20a%20question%20regarding..%20(insert%20your%20details%20here)" class="footer-question-link">Hello@fordivine.com</a></p>
+    <div class="footer-legal">
+      <a href="/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+      <a href="/terms-of-use" target="_blank" rel="noopener">Terms of Service</a>
+    </div>
+    <p class="footer-disclaimer">Emily Ford and FORDIVINE™'s results are not typical and are not a guarantee of your success. Your results will vary depending on your effort, application, experience, and background. We do not give investment, tax, or other professional advice. The information contained within this website is the property of Fortitude LLC. Any use of the images, content, or ideas expressed herein without the express written consent of Fortitude LLC is prohibited. Copyright &copy; 2025 FORDIVINE™. All Rights Reserved.</p>
   </footer>
 
   <script>
