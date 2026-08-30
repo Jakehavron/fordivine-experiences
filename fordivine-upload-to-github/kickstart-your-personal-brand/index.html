@@ -9,6 +9,7 @@
   <link rel="canonical" href="https://www.fordivine.com/kickstart-your-personal-brand">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/bebas-neue-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/cormorant-garamond-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/kickstart-your-personal-brand/assets/report-score-overview.jpg" as="image">
   <script src="/attribution.js?v=20260823-1"></script>
@@ -124,6 +125,7 @@
   </script>
   <style>
     @font-face{font-family:"Inter";font-style:normal;font-weight:300 800;font-display:swap;src:url("/fonts/inter-latin.woff2") format("woff2")}
+    @font-face{font-family:"Bebas Neue";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/bebas-neue-latin.woff2") format("woff2")}
     @font-face{font-family:"Cormorant Garamond";font-style:italic;font-weight:400 500;font-display:swap;src:url("/fonts/cormorant-garamond-italic-latin.woff2") format("woff2")}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{
@@ -310,10 +312,9 @@
     .assessment-page:nth-child(3){right:4%;top:17%;z-index:2;transform:rotate(6deg)}
     .assessment-page:nth-child(4){left:31%;bottom:3%;z-index:5;transform:rotate(3deg)}
     .step-copy{padding:18px 10px}
-    .step-marker{display:flex;align-items:center;gap:13px;margin-bottom:24px;color:#1c1c1c}
-    .step-marker span{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:var(--charcoal);color:#fff;font-size:13px;font-weight:800;letter-spacing:.08em}
-    .step-marker strong{font-size:18px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
-    .step-label{display:block;margin-bottom:16px;color:#8b7650;font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase}
+    .step-display{display:flex;align-items:baseline;gap:12px;margin-bottom:26px;font-family:"Bebas Neue","Arial Narrow",sans-serif;line-height:.76;text-transform:uppercase;color:rgba(24,24,24,.38)}
+    .step-display-word{font-size:clamp(38px,4.8vw,60px);letter-spacing:.035em}
+    .step-display-number{font-size:clamp(88px,10vw,138px);letter-spacing:-.025em}
     .step-copy h2{font-size:clamp(34px,4vw,50px);line-height:1.02;letter-spacing:-.04em;text-transform:uppercase}
     .step-copy>p{margin-top:22px;color:#575757;font-size:16px;line-height:1.72}
     .step-copy .bullet-list{margin-top:26px}
@@ -321,9 +322,8 @@
     .step-copy .cta:hover{background:#111}
     .learn-section{padding:104px 0 112px;background:var(--cream)}
     .learn-block+.learn-block{margin-top:68px;padding-top:68px;border-top:1px solid var(--line)}
-    .resource-step-heading{display:grid;grid-template-columns:76px 1fr;gap:24px;align-items:center;margin-bottom:34px}
-    .resource-step-number{display:grid;place-items:center;width:76px;height:76px;border-radius:50%;background:var(--charcoal);color:#fff;font-size:20px;font-weight:800;letter-spacing:.06em;box-shadow:0 12px 28px rgba(20,20,20,.14)}
-    .resource-step-name{margin-bottom:7px;color:#8b7650;font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+    .resource-step-heading{display:grid;grid-template-columns:minmax(250px,320px) 1fr;gap:34px;align-items:end;margin-bottom:42px}
+    .resource-step-heading .step-display{margin-bottom:0}
     .resource-step-heading h2{font-size:clamp(38px,5vw,58px);line-height:1;letter-spacing:-.045em;text-transform:uppercase;font-weight:800}
     .resource-step-heading .resource-step-copy{max-width:650px;margin-top:13px;color:#686868;font-size:14px;line-height:1.65}
     .simple-grid{display:grid;grid-template-columns:1fr;gap:26px;max-width:1040px;margin:0 auto}
@@ -410,8 +410,8 @@
       .step-one-card{padding:16px;border-radius:14px;gap:24px}
       .assessment-collage{min-height:410px;border-radius:10px}
       .assessment-page{width:46%;border-radius:6px}
-      .step-copy{padding:18px 10px 26px}.step-copy h2{font-size:34px}.step-copy>p{font-size:14px}.step-marker{margin-bottom:20px}.step-marker span{width:44px;height:44px}.step-marker strong{font-size:16px}
-      .learn-block+.learn-block{margin-top:50px;padding-top:50px}.resource-step-heading{grid-template-columns:58px 1fr;gap:16px;margin-bottom:26px}.resource-step-number{width:58px;height:58px;font-size:16px}.resource-step-name{font-size:11px}.resource-step-heading h2{font-size:34px}.resource-step-heading .resource-step-copy{font-size:13px}
+      .step-copy{padding:18px 10px 26px}.step-copy h2{font-size:34px}.step-copy>p{font-size:14px}.step-display{gap:8px;margin-bottom:20px}.step-display-word{font-size:34px}.step-display-number{font-size:82px}
+      .learn-block+.learn-block{margin-top:50px;padding-top:50px}.resource-step-heading{grid-template-columns:1fr;gap:14px;margin-bottom:30px}.resource-step-heading h2{font-size:34px}.resource-step-heading .resource-step-copy{font-size:13px}
       .simple-resource{grid-template-columns:1fr;min-height:0}.simple-resource-image{aspect-ratio:1.7/1}.simple-resource-body{padding:26px 24px 30px}
       .follow-section{padding:72px 0}.follow-copy{margin-bottom:30px}.instagram-grid{gap:22px}.social-showcase{border-radius:16px}.social-profile-panel{padding:30px 24px}.instagram-pill{margin-bottom:24px}.profile-avatar{width:84px;height:84px}.social-handle{font-size:27px}.social-proof{margin-top:23px}.social-proof strong{font-size:30px}.social-feed{padding:20px 16px}.feed-top{margin-bottom:12px}.feed-grid{gap:4px}
     }
@@ -443,8 +443,7 @@
             <img class="assessment-page" src="/kickstart-your-personal-brand/assets/report-action-plan.jpg" alt="Example personalized brand action plan" width="909" height="1287" loading="lazy">
           </div>
           <div class="step-copy">
-            <div class="step-marker"><span>01</span><strong>Step 1</strong></div>
-            <span class="step-label">Free Crowned Authority™ Assessment</span>
+            <div class="step-display" aria-label="Step 01"><span class="step-display-word">Step</span><span class="step-display-number">01</span></div>
             <h2>Get Your Personal Brand Authority Score</h2>
             <p>Answer 20 multiple-choice questions across the five areas of your personal brand. You will instantly receive your score and a tailored report showing what deserves your attention.</p>
             <ul class="bullet-list">
@@ -462,8 +461,8 @@
       <div class="wrap">
         <div class="learn-block">
           <div class="resource-step-heading reveal">
-            <span class="resource-step-number">02</span>
-            <div><p class="resource-step-name">Step 2</p><h2>Choose What to Learn Next</h2><p class="resource-step-copy">Choose the masterclass that best matches the stage of your personal brand.</p></div>
+            <div class="step-display" aria-label="Step 02"><span class="step-display-word">Step</span><span class="step-display-number">02</span></div>
+            <div><h2>Choose What to Learn Next</h2><p class="resource-step-copy">Choose the masterclass that best matches the stage of your personal brand.</p></div>
           </div>
           <div class="simple-grid">
             <article class="simple-resource reveal">
@@ -501,8 +500,8 @@
 
         <div class="learn-block">
           <div class="resource-step-heading reveal">
-            <span class="resource-step-number">03</span>
-            <div><p class="resource-step-name">Step 3</p><h2>Keep Learning as You Go</h2><p class="resource-step-copy">Listen to these two Called &amp; Crowned episodes when you are ready to go deeper.</p></div>
+            <div class="step-display" aria-label="Step 03"><span class="step-display-word">Step</span><span class="step-display-number">03</span></div>
+            <div><h2>Keep Learning as You Go</h2><p class="resource-step-copy">Listen to these two Called &amp; Crowned episodes when you are ready to go deeper.</p></div>
           </div>
           <div class="audio-grid">
             <article class="audio-card reveal">
