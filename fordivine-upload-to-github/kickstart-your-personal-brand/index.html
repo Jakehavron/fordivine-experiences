@@ -345,12 +345,10 @@
     .simple-resource-body h4{margin-top:10px;font-size:20px;line-height:1.12;letter-spacing:-.025em;text-transform:uppercase}
     .simple-resource-body p{margin-top:13px;color:#666;font-size:12px;line-height:1.62}
     .simple-resource-body .placeholder-link{margin-top:18px;font-size:8px}
-    .audio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .audio-card{min-height:245px;padding:30px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid var(--line);border-radius:14px;background:#fff}
-    .audio-icon{width:42px;height:42px;margin:20px 0;display:grid;place-items:center;border-radius:50%;background:var(--charcoal);color:#fff;font-size:13px}
-    .audio-card h4{font-size:20px;line-height:1.12;text-transform:uppercase;letter-spacing:-.025em}
-    .audio-card p{margin-top:12px;color:#666;font-size:12px;line-height:1.62}
-    .audio-card .placeholder-link{margin-top:22px;font-size:8px}
+    .audio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .audio-card{padding:30px;border:1px solid var(--line);border-radius:14px;background:#fff}
+    .audio-card h4{min-height:46px;margin:12px 0 22px;font-size:20px;line-height:1.12;text-transform:uppercase;letter-spacing:-.025em}
+    .podcast-embed{display:block;width:100%;height:175px;overflow:hidden;border:0;border-radius:10px;background:#f2f2f2}
     .follow-section{padding:72px 0;background:#fff;border-top:1px solid var(--line)}
     .follow-inner{display:flex;align-items:center;justify-content:space-between;gap:40px}
     .follow-copy h2{font-size:30px;line-height:1.06;text-transform:uppercase;letter-spacing:-.035em}
@@ -358,19 +356,12 @@
     .follow-links{display:flex;gap:12px}
     .follow-link{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border:1px solid var(--line);border-radius:7px;background:#fff;font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;transition:background .2s,color .2s}
     .follow-link:hover{background:var(--charcoal);color:#fff}
-    .founder-simple{padding:92px 0;background:var(--charcoal);color:#fff;text-align:center}
-    .founder-simple-inner{max-width:760px;margin:0 auto}
-    .founder-simple .section-kicker{color:var(--bone)}
-    .founder-simple h2{font-size:clamp(36px,5vw,58px);line-height:1.03;letter-spacing:-.04em;text-transform:uppercase}
-    .founder-simple p{max-width:650px;margin:22px auto 0;color:rgba(255,255,255,.76);font-size:16px;line-height:1.75}
-    .founder-simple p strong{color:#fff}
-    .founder-simple .signature{margin:26px auto 0}
     @media(max-width:900px){
       .step-one-card{grid-template-columns:1fr;gap:34px;padding:38px}
       .assessment-collage{min-height:600px}
       .simple-grid{grid-template-columns:1fr}
       .audio-grid{grid-template-columns:1fr}
-      .audio-card{min-height:210px}
+      .audio-card{min-height:0}
       .follow-inner{display:block;text-align:center}.follow-links{justify-content:center;margin-top:26px}
     }
     @media(max-width:680px){
@@ -385,7 +376,6 @@
       .learn-block+.learn-block{margin-top:50px;padding-top:50px}.learn-block-head{display:block}.learn-block-head p{margin-top:12px}
       .simple-resource{grid-template-columns:1fr;min-height:0}.simple-resource-image{aspect-ratio:1.7/1}.simple-resource-body{padding:24px}
       .follow-section{padding:58px 0}.follow-links{flex-direction:column}.follow-link{width:100%}
-      .founder-simple{padding:76px 0}.founder-simple h2{font-size:38px}.founder-simple p{font-size:14px}
     }
   </style>
 </head>
@@ -466,11 +456,18 @@
         </div>
 
         <div class="learn-block">
-          <div class="learn-block-head reveal"><h3>Keep Learning as You Go</h3><p>Listen to the selected episodes or continue with the full Called &amp; Crowned podcast.</p></div>
+          <div class="learn-block-head reveal"><h3>Keep Learning as You Go</h3><p>Listen to these two Called &amp; Crowned episodes when you are ready to go deeper.</p></div>
           <div class="audio-grid">
-            <article class="audio-card reveal"><div><small>Featured Episode 01</small><span class="audio-icon" aria-hidden="true">▶</span><h4>Personal Branding Episode</h4><p>A selected episode to help bring greater clarity to the brand you are building.</p></div><span class="placeholder-link">Episode link coming soon</span></article>
-            <article class="audio-card reveal"><div><small>Featured Episode 02</small><span class="audio-icon" aria-hidden="true">▶</span><h4>Personal Branding Episode</h4><p>A selected episode to strengthen your message, presence, and visibility.</p></div><span class="placeholder-link">Episode link coming soon</span></article>
-            <article class="audio-card reveal"><div><small>The Podcast</small><span class="audio-icon" aria-hidden="true">▶</span><h4>Called &amp; Crowned</h4><p>Conversations on identity, calling, personal branding, and business.</p></div><span class="placeholder-link">Podcast link coming soon</span></article>
+            <article class="audio-card reveal">
+              <small>Featured Episode 01</small>
+              <h4>Would I Follow Me Today?</h4>
+              <iframe class="podcast-embed" title="Would I Follow Me Today? podcast episode" allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" loading="lazy" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/us/podcast/would-i-follow-me-today-the-real-reason-people-arent/id1573481905?i=1000770946264"></iframe>
+            </article>
+            <article class="audio-card reveal">
+              <small>Featured Episode 02</small>
+              <h4>Influencer vs. Woman of Influence</h4>
+              <iframe class="podcast-embed" title="Influencer versus Woman of Influence podcast episode" allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" loading="lazy" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/us/podcast/influencer-vs-woman-of-influence-you-might-have-been/id1573481905?i=1000773098641"></iframe>
+            </article>
           </div>
         </div>
       </div>
@@ -480,21 +477,12 @@
       <div class="wrap follow-inner reveal">
         <div class="follow-copy"><h2>Stay Connected</h2><p>Get more personal branding guidance from Emily and FORDIVINE.</p></div>
         <div class="follow-links">
-          <a class="follow-link" href="https://www.instagram.com/itsemily/" target="_blank" rel="noopener noreferrer" data-resource="instagram_emily">Follow Emily ↗</a>
-          <a class="follow-link" href="https://www.instagram.com/fordivinehouse/" target="_blank" rel="noopener noreferrer" data-resource="instagram_fordivine">Follow FORDIVINE ↗</a>
+          <a class="follow-link" href="https://www.instagram.com/itsemily/" target="_blank" rel="noopener noreferrer" data-resource="instagram_emily">Follow @itsemily ↗</a>
+          <a class="follow-link" href="https://www.instagram.com/fordivinehouse/" target="_blank" rel="noopener noreferrer" data-resource="instagram_fordivine">Follow @fordivinehouse ↗</a>
         </div>
       </div>
     </section>
 
-    <section class="founder-simple">
-      <div class="wrap founder-simple-inner reveal">
-        <p class="section-kicker">A Note From Emily</p>
-        <h2>Your Gifts Were Never Meant to Stay Hidden.</h2>
-        <p><strong>I built FORDIVINE because I spent years watching brilliant women stay invisible.</strong> Start where you are. Use these resources to find clarity, build your foundation, and take your next step with confidence.</p>
-        <img class="signature" src="/emily-signature.png" alt="Emily Ford signature" width="400" height="120" loading="lazy">
-        <div class="founder-title">Founder &amp; Visionary, FORDIVINE</div>
-      </div>
-    </section>
   </main>
 
   <footer>
