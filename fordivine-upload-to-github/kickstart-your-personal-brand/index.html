@@ -349,20 +349,28 @@
     .audio-card{padding:30px;border:1px solid var(--line);border-radius:14px;background:#fff}
     .audio-card h4{min-height:46px;margin:12px 0 22px;font-size:20px;line-height:1.12;text-transform:uppercase;letter-spacing:-.025em}
     .podcast-embed{display:block;width:100%;height:175px;overflow:hidden;border:0;border-radius:10px;background:#f2f2f2}
-    .follow-section{padding:72px 0;background:#fff;border-top:1px solid var(--line)}
-    .follow-inner{display:flex;align-items:center;justify-content:space-between;gap:40px}
-    .follow-copy h2{font-size:30px;line-height:1.06;text-transform:uppercase;letter-spacing:-.035em}
-    .follow-copy p{margin-top:8px;color:#666;font-size:13px}
-    .follow-links{display:flex;gap:12px}
-    .follow-link{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border:1px solid var(--line);border-radius:7px;background:#fff;font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;transition:background .2s,color .2s}
-    .follow-link:hover{background:var(--charcoal);color:#fff}
+    .follow-section{padding:96px 0 104px;background:#fff;border-top:1px solid var(--line)}
+    .follow-inner{text-align:center}
+    .follow-copy{max-width:620px;margin:0 auto 38px}
+    .follow-copy h2{font-size:clamp(34px,4.5vw,50px);line-height:1.04;text-transform:uppercase;letter-spacing:-.04em}
+    .follow-copy p{margin-top:12px;color:#666;font-size:14px}
+    .instagram-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;text-align:left}
+    .instagram-card{display:block;overflow:hidden;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:0 20px 56px rgba(20,20,20,.09);transition:transform .25s ease,box-shadow .25s ease}
+    .instagram-card:hover{transform:translateY(-4px);box-shadow:0 28px 66px rgba(20,20,20,.14)}
+    .instagram-preview{position:relative;overflow:hidden;aspect-ratio:1.18/1;background:#f5f5f5;border-bottom:1px solid var(--line)}
+    .instagram-preview img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .45s ease}
+    .instagram-card:hover .instagram-preview img{transform:scale(1.012)}
+    .instagram-card-footer{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:24px 26px}
+    .instagram-card-footer small{display:block;color:#8b7650;font-size:8px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+    .instagram-card-footer h3{margin-top:5px;font-size:20px;line-height:1.1;letter-spacing:-.025em}
+    .instagram-card-cta{flex:0 0 auto;font-size:9px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
     @media(max-width:900px){
       .step-one-card{grid-template-columns:1fr;gap:34px;padding:38px}
       .assessment-collage{min-height:600px}
       .simple-grid{grid-template-columns:1fr}
       .audio-grid{grid-template-columns:1fr}
       .audio-card{min-height:0}
-      .follow-inner{display:block;text-align:center}.follow-links{justify-content:center;margin-top:26px}
+      .instagram-grid{grid-template-columns:1fr}
     }
     @media(max-width:680px){
       .hero{min-height:610px;padding:62px 18px 72px}
@@ -375,7 +383,7 @@
       .step-copy{padding:18px 10px 26px}.step-copy h2{font-size:34px}.step-copy>p{font-size:14px}
       .learn-block+.learn-block{margin-top:50px;padding-top:50px}.learn-block-head{display:block}.learn-block-head p{margin-top:12px}
       .simple-resource{grid-template-columns:1fr;min-height:0}.simple-resource-image{aspect-ratio:1.7/1}.simple-resource-body{padding:24px}
-      .follow-section{padding:58px 0}.follow-links{flex-direction:column}.follow-link{width:100%}
+      .follow-section{padding:72px 0}.follow-copy{margin-bottom:30px}.instagram-card{border-radius:14px}.instagram-card-footer{padding:20px}.instagram-card-cta{font-size:8px}
     }
   </style>
 </head>
@@ -476,9 +484,15 @@
     <section class="follow-section">
       <div class="wrap follow-inner reveal">
         <div class="follow-copy"><h2>Stay Connected</h2><p>Get more personal branding guidance from Emily and FORDIVINE.</p></div>
-        <div class="follow-links">
-          <a class="follow-link" href="https://www.instagram.com/itsemily/" target="_blank" rel="noopener noreferrer" data-resource="instagram_emily">Follow @itsemily ↗</a>
-          <a class="follow-link" href="https://www.instagram.com/fordivinehouse/" target="_blank" rel="noopener noreferrer" data-resource="instagram_fordivine">Follow @fordivinehouse ↗</a>
+        <div class="instagram-grid">
+          <a class="instagram-card" href="https://www.instagram.com/itsemily/" target="_blank" rel="noopener noreferrer" data-resource="instagram_emily" aria-label="View Emily Ford on Instagram">
+            <div class="instagram-preview"><img src="/kickstart-your-personal-brand/assets/instagram-itsemily.png" alt="Preview of Emily Ford's Instagram profile and recent posts" width="940" height="800" loading="lazy"></div>
+            <div class="instagram-card-footer"><div><small>Emily Ford on Instagram</small><h3>@itsemily</h3></div><span class="instagram-card-cta">View Profile ↗</span></div>
+          </a>
+          <a class="instagram-card" href="https://www.instagram.com/fordivinehouse/" target="_blank" rel="noopener noreferrer" data-resource="instagram_fordivine" aria-label="View FORDIVINE House on Instagram">
+            <div class="instagram-preview"><img src="/kickstart-your-personal-brand/assets/instagram-fordivinehouse.png" alt="Preview of FORDIVINE House's Instagram profile and recent posts" width="940" height="800" loading="lazy"></div>
+            <div class="instagram-card-footer"><div><small>FORDIVINE House on Instagram</small><h3>@fordivinehouse</h3></div><span class="instagram-card-cta">View Profile ↗</span></div>
+          </a>
         </div>
       </div>
     </section>
