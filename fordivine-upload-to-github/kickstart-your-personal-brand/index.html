@@ -336,6 +336,11 @@
     .simple-resource-body h4{margin-top:10px;font-size:20px;line-height:1.12;letter-spacing:-.025em;text-transform:uppercase}
     .simple-resource-body p{margin-top:13px;color:#666;font-size:12px;line-height:1.62}
     .simple-resource-body .placeholder-link{margin-top:18px;font-size:8px}
+    .resource-outcomes{display:grid;gap:8px;margin-top:16px;color:#555;font-size:11px;line-height:1.45}
+    .resource-outcomes li{position:relative;padding-left:17px}
+    .resource-outcomes li::before{content:"✓";position:absolute;left:0;top:0;color:#8b7650;font-weight:900}
+    .resource-link{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;min-height:40px;margin-top:20px;padding:0 17px;border-radius:6px;background:var(--charcoal);color:#fff;font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;transition:transform .2s ease,background .2s ease}
+    .resource-link:hover{transform:translateY(-2px);background:#111}
     .audio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
     .audio-card{padding:30px;border:1px solid var(--line);border-radius:14px;background:#fff}
     .audio-card h4{min-height:46px;margin:12px 0 22px;font-size:20px;line-height:1.12;text-transform:uppercase;letter-spacing:-.025em}
@@ -431,7 +436,18 @@
             </article>
             <article class="simple-resource reveal">
               <div class="simple-resource-image"><img src="/kickstart-your-personal-brand/assets/masterclass-authority.jpg" alt="Editorial ivory and champagne architectural light artwork" width="1440" height="960" loading="lazy"></div>
-              <div class="simple-resource-body"><small>Masterclass 02</small><h4>Turn Your Expertise Into Visible Authority</h4><p>Connect your experience, point of view, and online presence.</p><span class="placeholder-link">Vimeo link coming soon</span></div>
+              <div class="simple-resource-body">
+                <small>Masterclass 02</small>
+                <h4>The 7-Step Brand Awareness Campaign Blueprint</h4>
+                <p>Build a focused 40-day campaign that reaches the right people and converts them.</p>
+                <ul class="resource-outcomes">
+                  <li>Build a complete 40-day campaign with clear objectives and consistent execution.</li>
+                  <li>Define your ideal customer, core problem, and messaging that earns attention.</li>
+                  <li>Repurpose one piece of content across platforms without burning out.</li>
+                  <li>Launch confidently using a proven framework for products, rebrands, or new messages.</li>
+                </ul>
+                <a class="resource-link" href="https://us02web.zoom.us/rec/play/qFM72EtBhZr3J6C8NdZsSdtcXA9U6EAy0qtu16fSCjTVSmFMmaUGoPMveKiBy7KV1FdS7KN4ZCNM0u8X.mrPwh2WGNu50lzX5?canPlayFromShare=true&amp;from=share_recording_detail&amp;startTime=1705446142000&amp;componentName=rec-play&amp;originRequestUrl=https%3A%2F%2Fus02web.zoom.us%2Frec%2Fshare%2FSVm1__HsN1Ll0vlqaDBo3DNb4rNY3a5RSD0ll8abpZnPFJbVKTOclImsZCNkytMg.xUC_vhdNRXLG39hg%3FstartTime%3D1705446142000" target="_blank" rel="noopener noreferrer" data-resource="masterclass_two">Watch Masterclass ↗</a>
+              </div>
             </article>
           </div>
         </div>
