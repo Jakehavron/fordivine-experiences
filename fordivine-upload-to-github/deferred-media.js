@@ -3,6 +3,56 @@
 
   var VIDALYTICS_ACCOUNT = 'Sjy1Iha6';
 
+  function revealDeferredImage(image) {
+    if (!image || image.dataset.fdLoaded === 'true') return;
+    if (image.dataset.src) image.src = image.dataset.src;
+    if (image.dataset.srcset) image.srcset = image.dataset.srcset;
+    image.dataset.fdLoaded = 'true';
+  }
+
+  function initDeferredImages() {
+    var images = Array.from(document.querySelectorAll('img[data-fd-lazy]'));
+    if (!images.length) return;
+
+    if (!('IntersectionObserver' in window)) {
+      images.forEach(revealDeferredImage);
+      return;
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        observer.unobserve(entry.target);
+        revealDeferredImage(entry.target);
+      });
+    }, { rootMargin: '320px 0px', threshold: 0.01 });
+
+    images.forEach(function (image) { observer.observe(image); });
+  }
+
+  function initClientLogoLoop() {
+    var track = document.querySelector('.client-logo-track');
+    if (!track || track.dataset.loopReady === 'true') return;
+    track.dataset.loopReady = 'true';
+
+    function buildLoop() {
+      Array.from(track.children).forEach(function (logo) {
+        var clone = logo.cloneNode(true);
+        clone.alt = '';
+        clone.setAttribute('aria-hidden', 'true');
+        clone.setAttribute('role', 'presentation');
+        track.appendChild(clone);
+      });
+      track.classList.add('is-ready');
+    }
+
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(buildLoop, { timeout: 800 });
+    } else {
+      window.setTimeout(buildLoop, 300);
+    }
+  }
+
   function buildVideoPlaceholder(container) {
     if (container.dataset.placeholderReady === 'true') return;
     container.dataset.placeholderReady = 'true';
@@ -244,5 +294,7 @@
   }
 
   initVideos();
+  initDeferredImages();
+  initClientLogoLoop();
   initScheduler();
 })();
