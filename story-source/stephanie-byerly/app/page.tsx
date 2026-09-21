@@ -1,0 +1,107 @@
+import SocialCarousel from './social-carousel';
+import SiteFooter from './site-footer';
+import './site-footer.css';
+import Arrow from './arrow';
+function Check({bullet=false}:{bullet?:boolean}) {return <svg className={bullet?'result-bullet-check':'result-check'} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>}
+function Result({title,description,points,index}:{title:string,description:string,points:string[],index:number}) {return <div className="layer-row" data-layer={index}><h3><button className="layer-collapsed" type="button" aria-expanded="true" aria-controls={`result-panel-${index}`} id={`result-toggle-${index}`}><span className="layer-name">{title}</span><span className="layer-num" aria-hidden="true">{String(index).padStart(2,'0')}</span></button></h3><div className="layer-expanded" id={`result-panel-${index}`} role="region" aria-labelledby={`result-toggle-${index}`}><div className="layer-expanded-inner"><p className="layer-subtitle">{description}</p><ul className="layer-subitems">{points.map(point=><li className="layer-subitem" key={point}><Check bullet/><span>{point}</span></li>)}</ul></div></div></div>}
+
+const schema = {"@context": "https://schema.org", "@type": "Article", "headline": "From a career in medicine to coaching clients and a TEDx speaking opportunity.", "description": "Dr. Stephanie Byerly\u2019s journey from anesthesiologist to a distinct coaching and speaking brand with FORDIVINE.", "author": {"@type": "Organization", "name": "FORDIVINE"}, "about": {"@type": "Person", "name": "Dr. Stephanie Byerly", "jobTitle": "Anesthesiologist, Coach and Speaker"}, "inLanguage": "en-US", "articleSection": "Crowned Stories"};
+export default function StoryPage() { return <>
+<script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema).replace(/</g,"\\u003c")}}/>
+<a className="skip" href="#story">Skip to Stephanie’s story</a>
+  <header className="header"><a href="https://www.fordivine.com/discover" className="wordmark" aria-label="FORDIVINE home"><img src="/crowned-stories/stephanie-byerly/images/fordivine-logo.webp" alt="FORDIVINE" width="1287" height="201"/></a><nav className="site-nav" aria-label="Main navigation"><a href="https://www.fordivine.com/about-us">About Us</a><a href="https://www.fordivine.com/crowned-stories">Crowned Stories</a><a href="https://www.fordivine.com/discover#book">Contact</a><a href="https://www.fordivine.com/discover">Services</a></nav><details className="mobile-menu"><summary>Menu</summary><nav aria-label="Mobile navigation"><a href="https://www.fordivine.com/about-us">About Us</a><a href="https://www.fordivine.com/crowned-stories">Crowned Stories</a><a href="https://www.fordivine.com/discover#book">Contact</a><a href="https://www.fordivine.com/discover">Services</a></nav></details></header>
+
+<main id="story" className="michelle-story stephanie-story" tabIndex={-1}>
+<article>
+<div className="identity-masthead wrap"><a className="back-link" href="https://www.fordivine.com/crowned-stories">All Crowned Stories <Arrow/></a><p className="client-name">Dr. Stephanie Byerly</p><p className="client-role"><span>Anesthesiologist</span><span aria-hidden="true">⊹</span><span>Trauma Coach</span><span aria-hidden="true">⊹</span><span>Speaker</span></p></div>
+<section className="hero" id="overview" aria-labelledby="story-title">
+<div className="hero-layout"><div className="hero-copy"><p className="eyebrow"><span className="section-number" aria-hidden="true">00</span><span className="section-label">The Transformation</span></p>
+<h1 id="story-title">From a career in medicine to coaching clients and a TEDx speaking opportunity.</h1>
+<p className="hero-intro">After more than 25 years in medicine, Dr. Stephanie Byerly wanted to help women through coaching and speaking. FORDIVINE helped her connect her experience to a signature message and build a brand that made her next chapter visible.</p></div>
+<div className="hero-portrait"><img src="/crowned-stories/stephanie-byerly/images/stephanie-portrait.png" alt="Dr. Stephanie Byerly in a burgundy suit with her personal brand monogram" width="923" height="1176" fetchPriority="high"/></div></div>
+<div className="snapshot" aria-label="Her Transformation at a Glance"><h2>Her Transformation at a Glance</h2><div className="snapshot-fields">
+<div><h3>Starting point</h3><p>An accomplished physician with:</p><ul><li>No clear personal brand or website</li><li>A message she struggled to articulate</li><li>Limited visibility beyond medicine</li><li>No clear path into professional speaking</li></ul></div>
+<div><h3>What we built</h3><ul><li>Brand Strategy + Signature Message</li><li>Business + Marketing Blueprint</li><li>Full Visual Identity</li><li>Website + Social Content</li><li>Speaking Materials + Brand Vault</li></ul></div>
+<div><h3>The Results</h3><ul><li>New Paying Coaching Clients</li><li>Upcoming TEDx Speaking Opportunity</li><li>Selected for a Dallas Keynote</li><li>More Visible, Confident Content</li></ul></div>
+</div></div></section>
+<section className="chapter" id="starting-point" tabIndex={-1} aria-labelledby="before-title">
+<p className="chapter-label"><span className="chapter-number" aria-hidden="true">01</span><span>Her Starting Point</span></p>
+<h2 id="before-title">Established in medicine. Uncertain how to build beyond it.</h2>
+<p className="intro">Stephanie had spent decades caring for patients. Her own experience of healing had also led her toward trauma coaching. She wanted to help women, but struggled to bring that purpose into a clear professional identity.</p>
+<p>When she came to FORDIVINE:</p>
+<ul className="problem-list">
+<li><strong>Her experience had no clear expression online.</strong> Scattered posts and an early webinar attempt gave people little sense of her coaching or perspective.</li>
+<li><strong>Her next chapter lacked direction.</strong> She wanted to build beyond her medical role, but previous workshops and mentoring had not given her the brand she needed.</li>
+<li><strong>Speaking outreach was going unanswered.</strong> Without a defined message and professional materials, it was difficult for organizers to see where she fit.</li>
+<li><strong>She questioned whether her voice belonged.</strong> Accomplished in medicine, she felt new to entrepreneurship and unsure how to put herself forward.</li>
+</ul>
+<p className="section-close">After discovering Emily’s content, Stephanie came to FORDIVINE ready to give that next chapter a clear direction.</p>
+</section>
+<section className="chapter" id="the-work" tabIndex={-1} aria-labelledby="unveiling-title">
+<p className="chapter-label"><span className="chapter-number" aria-hidden="true">02</span><span>The Desired Outcomes</span></p>
+<h2 id="unveiling-title">Three goals gave the work direction.</h2>
+<p className="intro">We brought Stephanie’s professional experience, personal perspective, and ambitions together around three priorities.</p>
+<ol className="goal-grid" role="list">
+<li><span className="goal-number" aria-hidden="true">1</span><h3>Establish a distinct voice beyond medicine.</h3><p>Give Stephanie a message and signature methodology that made her perspective recognizable and helped people understand what she could teach.</p></li>
+<li><span className="goal-number" aria-hidden="true">2</span><h3>Make her expertise clear to event organizers.</h3><p>Build a coherent speaking direction and professional marketing materials so organizers could understand her message and its relevance to their audience.</p></li>
+<li><span className="goal-number" aria-hidden="true">3</span><h3>Build a brand that supports her coaching.</h3><p>Help women recognize themselves in her message, understand her work, and see a clear next step toward becoming a client.</p></li>
+</ol></section>
+<section className="chapter blueprint-card" id="business-blueprint" aria-labelledby="blueprint-title">
+<p className="chapter-label"><span>The Business + Marketing Blueprint</span></p>
+<h2 id="blueprint-title">The Art of Becoming UNNUMB</h2>
+<div className="narrative"><p>Stephanie’s work in anesthesiology and her personal experience of healing gave her a distinctive lens on emotional numbness. We helped her articulate that connection through <strong>The Art of Becoming UNNUMB</strong>.</p><p>This signature message gave her coaching, content, and speaking a shared foundation. Her experience could now become a body of work people could recognize and seek her out for.</p></div>
+<figure className="brand-showcase strategy-image" data-asset="strategy-overview"><picture><source media="(max-width: 700px)" srcSet="/crowned-stories/stephanie-byerly/images/brand-strategy-mobile.webp" width="819" height="1110"/><img src="/crowned-stories/stephanie-byerly/images/brand-strategy-desktop.webp" alt="FORDIVINE brand strategy blueprint covering authority, brand strategy, ideal client, voice and message, story and sales message, offer suite, content pillars, and market position" width="1640" height="580" loading="lazy"/></picture><figcaption className="asset-caption">A look inside her Business + Marketing Blueprint, with detailed chapters covering positioning, messaging, ideal clients, offers, and more.</figcaption></figure>
+</section>
+<section className="chapter" id="brand-identity" tabIndex={-1} aria-labelledby="building-title">
+<p className="chapter-label"><span className="chapter-number" aria-hidden="true">03</span><span>The Brand Identity</span></p>
+<h2 id="building-title">A professional presence with room for her personality.</h2>
+<p className="intro">Stephanie wanted vibrancy, warmth, and a touch of gold. Her identity needed to express that energy while carrying the credibility of an experienced physician and emerging speaker.</p>
+<ul className="creative-list">
+<li><strong>Vibrant and personal.</strong> Reflect the light and expressiveness she wanted to bring into her next chapter.</li>
+<li><strong>Polished and professional.</strong> Balance color and shimmer with a considered presentation suited to clients and event organizers.</li>
+<li><strong>Consistent and recognizable.</strong> Connect her website, content, and speaking materials through one visual identity.</li>
+</ul>
+<p className="section-close">The result gave Stephanie a professional presence she could recognize herself in and feel comfortable using.</p>
+<figure className="brand-showcase"><img src="/crowned-stories/stephanie-byerly/images/stephanie-identity.png" alt="UNNUMB identity in gold on a dark navy background" width="1034" height="588" loading="lazy"/><figcaption className="asset-caption">A signature identity connecting her medical background and healing mission.</figcaption></figure>
+<div className="application-grid stephanie-identity-gallery"><figure className="brand-showcase"><img src="/crowned-stories/stephanie-byerly/images/stephanie-moodboard.png" alt="Stephanie Byerly’s brand mood board in navy, burgundy, cream, and gold" width="1034" height="590" loading="lazy"/><figcaption className="asset-caption">Rich textures and feminine strength shaping the brand’s visual direction.</figcaption></figure><figure className="brand-showcase"><img src="/crowned-stories/stephanie-byerly/images/stephanie-palette.png" alt="Stephanie’s brand color palette with parchment, creme, gold, night bordeaux, shadow gray, and onyx" width="1033" height="587" loading="lazy"/><figcaption className="asset-caption">A palette balancing scientific authority, warmth, and gold symbolizing healing.</figcaption></figure></div><figure className="brand-showcase"><img src="/crowned-stories/stephanie-byerly/images/stephanie-brand-marks.png" alt="Stephanie Byerly’s decorative brand marks, monograms, seals, and crossed keys" width="1035" height="587" loading="lazy"/><figcaption className="asset-caption">Custom monograms, seals, and keys expressing trust, wisdom, and transformation.</figcaption></figure><figure className="brand-showcase"><img src="/crowned-stories/stephanie-byerly/images/stephanie-brand-mockup.png" alt="UNNUMB brand applications across a phone display, tags, and embossed stationery" width="1035" height="587" loading="lazy"/><figcaption className="asset-caption">Her visual identity brought together across digital and printed materials.</figcaption></figure><div className="application-grid stephanie-identity-gallery"><figure className="brand-showcase"><img src="/crowned-stories/stephanie-byerly/images/stephanie-hoodie.png" alt="UNNUMB hoodie apparel mockup" width="511" height="590" loading="lazy"/><figcaption className="asset-caption">An apparel concept bringing UNNUMB into everyday life.</figcaption></figure><figure className="brand-showcase"><img src="/crowned-stories/stephanie-byerly/images/stephanie-cap.png" alt="UNNUMB cap apparel mockup" width="510" height="590" loading="lazy"/><figcaption className="asset-caption">A signature cap concept extending recognition beyond the screen.</figcaption></figure></div>
+<figure className="brand-showcase"><img src="/crowned-stories/stephanie-byerly/images/stephanie-stationery.png" alt="Stephanie Byerly’s burgundy envelope with gold lettering and marble-patterned stationery" width="1036" height="592" loading="lazy"/><figcaption className="asset-caption">Gold detailing and rich burgundy carrying her identity into print.</figcaption></figure>
+</section>
+<section className="chapter" id="stepping-into-view" tabIndex={-1} aria-labelledby="activation-title">
+<p className="chapter-label"><span className="chapter-number" aria-hidden="true">04</span><span>The Brand In Action</span></p>
+<p className="asset-eyebrow">Personal Website That Converts</p>
+<h2 id="activation-title">A clear place to discover her work.</h2>
+<p className="intro">Stephanie’s website brought her experience, message, and coaching into one place. Prospective clients and event organizers could understand her work before reaching out, whether they found her through content or a mutual connection.</p>
+<figure className="brand-showcase" data-asset="digital-hq"><img src="/crowned-stories/stephanie-byerly/images/stephanie-digital-hq.png" alt="Stephanie Byerly’s website featuring her portrait, Become UNNUMB headline, and private coaching and speaking invitations" width="1539" height="873" loading="lazy"/><figcaption className="asset-caption">A digital HQ connecting her message, coaching, and speaking opportunities to be easily found by her ideal clientele.</figcaption></figure>
+</section>
+<SocialCarousel/>
+<section className="chapter brand-vault" id="brand-vault" aria-labelledby="vault-title">
+<p className="chapter-label"><span>The Brand Vault</span></p>
+<h2 id="vault-title">Keeping her brand cohesive.</h2>
+<p className="intro balanced-intro">The Brand Vault brought her identity assets and guidelines together, giving Stephanie a consistent reference as she continued creating content and putting her brand to work.</p>
+<figure className="brand-showcase" data-asset="brand-vault"><picture><source media="(max-width: 700px)" srcSet="/crowned-stories/stephanie-byerly/images/stephanie-brand-vault-mobile.png" width="636" height="1285"/><img src="/crowned-stories/stephanie-byerly/images/stephanie-brand-vault-desktop.png" alt="Stephanie Byerly’s Brand Vault with her UNNUMB brand bible, mission, mood board, color palette, logos, fonts, brand pillars, mockups, social graphics, professional photos, and content" width="1368" height="620" loading="lazy"/></picture><figcaption className="asset-caption">A look inside her Brand Vault, with organized collections of logos, colors, fonts, brand guidelines, photos, and content ready to use.</figcaption></figure>
+</section>
+<section className="chapter story-results" id="what-changed" tabIndex={-1} aria-labelledby="results-title">
+<p className="chapter-label"><span className="chapter-number" aria-hidden="true">05</span><span>The Results</span></p>
+<h2 id="results-title" className="two-line-title"><span>Real Results.</span><span>Real Business Outcomes.</span></h2>
+<p className="intro balanced-intro">As Stephanie began putting her brand into practice, her clearer message helped new audiences and existing followers understand her work. Her content and connections opened conversations with organizers, while her materials helped them assess her expertise.</p>
+<div className="layers-accordion" data-results-layers><div className="layer-slider" aria-hidden="true"/>
+<Result index={1} title="New Paying Coaching Clients" description="Stephanie signed paying clients as her message became clearer and more visible." points={['New clients discovered her through her digital presence.','Existing followers took action after recognizing themselves in her message.','Her coaching became a growing part of the business she wanted to build.']}/>
+<Result index={2} title="A TEDx Speaking Opportunity" description="Stephanie secured an upcoming TEDx speaking opportunity, a significant step toward the public platform she had wanted to build." points={['Her signature message gave her a foundation for developing the talk.','Her branding and materials helped make her expertise visible to organizers.']}/>
+<Result index={3} title="Selected for a Dallas Keynote" description="Stephanie was asked to be a main keynote speaker at a women’s medical professional conference in Dallas." points={['The opportunity connects her medical background with the message she now teaches.','Organizers could see her perspective through her content, website, and speaking materials.']}/>
+<Result index={4} title="A More Confident Public Voice" description="Stephanie began creating more content and speaking with greater conviction about the work she wanted to do." points={['She moved beyond static posts to show more of herself and her perspective.','Her signature message gave her a clear direction for what to share.','Her growing visibility also brought podcast interest and invitations.']}/>
+</div></section>
+<section className="chapter lesson" id="the-lesson" tabIndex={-1} aria-labelledby="lesson-title">
+<h2 id="lesson-title" className="chapter-label"><span className="chapter-number" aria-hidden="true">06</span><span>Her Perspective</span></h2>
+<div className="testimonial-panel" >
+<blockquote><p>“After so many years in medicine, I wanted to help women break free from their numb lives and mindsets, but had no clue where to even start.</p><p>I also wasn't even sure how to market the work I do or if it would even be the right thing to do.</p><p>After working with the team, I finally have the clarity and conviction with all that they helped package together for me. Plus I landed the biggest speaking gig of my life because of what they helped create.</p><p>Words can't even fully describe how transformational this journey has been working with them.”</p></blockquote>
+<p className="quote-attribution">- Dr. Stephanie Byerly<span>Anesthesiologist &amp; Trauma Coach</span></p>
+</div>
+<figure className="brand-showcase testimonial-media"><img src="/crowned-stories/stephanie-byerly/images/stephanie-media-kit.jpg" alt="Stephanie Byerly, MD media kit cover featuring her portrait and The Art of Becoming UNNUMB" width="1440" height="809" loading="lazy"/><figcaption className="asset-caption">Her expertise and signature message packaged for speaking and podcast opportunities.</figcaption></figure>
+</section>
+</article>
+<section className="closing" aria-labelledby="closing-title"><h2 id="closing-title">Is Your Personal Brand Limiting Your Business Growth?</h2><div className="closing-copy"><p>A scattered and unclear brand keeps you completely invisible in today’s digital landscape.</p><p>We build premium brand ecosystems for business women to get more <span className="copy-accent">clients</span>, <span className="copy-accent">stages</span>, &amp; <span className="copy-accent">business growth</span>.</p></div><a className="button" href="https://www.fordivine.com/discover#book">Schedule Discovery Call Today</a></section>
+<nav className="next-story" aria-label="Next Crowned Story"><a className="button" href="https://www.fordivine.com/crowned-stories/michelle-roby">View Next Crowned Story <Arrow/></a></nav>
+</main>
+  <SiteFooter/>
+</>;
+}
