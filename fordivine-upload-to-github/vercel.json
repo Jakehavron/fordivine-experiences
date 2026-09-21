@@ -3,6 +3,23 @@
   "trailingSlash": false,
   "headers": [
     {
+      "source": "/crowned-stories/stephanie-byerly",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' https://www.instagram.com https://platform.instagram.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; frame-src https://www.instagram.com https://www.facebook.com; connect-src 'self' https://*.instagram.com https://*.facebook.com https://*.fbcdn.net; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin-allow-popups"
+        }
+      ]
+    },
+    {
       "source": "/:path*.(jpg|jpeg|png|webp|svg|gif|woff|woff2|ico|mp4|webm)",
       "headers": [
         {

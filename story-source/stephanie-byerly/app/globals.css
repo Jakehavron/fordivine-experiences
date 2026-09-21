@@ -502,7 +502,7 @@ section[tabindex="-1"]:focus{outline:none}
 @media(max-width:768px){#what-changed .layer-subitems{grid-template-columns:1fr}}
 
 /* Match Discover’s actual numeral font, not a system fallback. */
-@font-face{font-family:'Bebas Neue';src:url('/crowned-stories/stephanie-byerly/fonts/bebas-neue-latin.woff2') format('woff2');font-style:normal;font-weight:400;font-display:swap}
+
 /* Stack the result evidence with Michelle’s tan SVG checkmarks. */
 #what-changed .layer-subitems{grid-template-columns:1fr;gap:14px}
 #what-changed .layer-subitem{display:flex;align-items:flex-start;gap:10px;font-family:var(--body);font-size:16px;font-weight:400;line-height:1.6;color:#fff}
