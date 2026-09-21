@@ -355,7 +355,7 @@ section[tabindex="-1"]:focus{outline:none}
 @media(prefers-reduced-motion:reduce){.michelle-story .closing .button:before{animation:none}.michelle-story .closing .button{transition:none}}
 
 /* Chapter 5 expandable result cards. */
-.michelle-story .result-accordions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:18px;margin-top:36px}
+.michelle-story .result-accordions{display:grid;grid-template-columns:1fr;align-items:start;gap:18px;margin-top:36px}
 .michelle-story .result-accordion{container-type:inline-size;min-width:0;background:#f8f6f1;border:1px solid #e4ddcf;border-radius:16px;overflow:hidden}
 .michelle-story .result-accordion summary{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:80px;padding:22px 20px;cursor:pointer;list-style:none;color:#171717}
 .michelle-story .result-accordion summary::-webkit-details-marker{display:none}
@@ -370,3 +370,12 @@ section[tabindex="-1"]:focus{outline:none}
 .michelle-story .result-detail li{list-style:disc;font-size:clamp(11px,4.3cqw,16px);line-height:1.5;white-space:nowrap;color:#292929}
 @media(max-width:700px){.michelle-story .result-accordions{grid-template-columns:1fr;gap:12px;margin-top:28px}.michelle-story .result-accordion summary{min-height:64px;padding:18px 12px;gap:6px}.michelle-story .result-chevron{width:14px;height:14px}.michelle-story .result-accordion-title{font-size:clamp(11px,4.3cqw,17px)}.michelle-story .result-detail{padding:18px 12px 22px}.michelle-story .result-detail p{font-size:15px}}
 @media(prefers-reduced-motion:reduce){.michelle-story .result-chevron{transition:none}}
+
+/* Emphasize Chapter 5 outcomes with charcoal and bone. */
+.michelle-story .result-accordion{background:#2a2a2d;border-color:#3b3b3e}
+.michelle-story .result-accordion summary{color:var(--bone)}
+.michelle-story .result-accordion-title{font-size:clamp(24px,3.2cqw,40px);font-weight:800;letter-spacing:-.015em}
+.michelle-story .result-accordion[open] summary{border-bottom-color:#ffffff26}
+.michelle-story .result-detail p{color:#e1e1df}
+.michelle-story .result-detail li{color:var(--bone)}
+@media(max-width:700px){.michelle-story .result-accordion-title{font-size:clamp(15px,6cqw,24px)}}
