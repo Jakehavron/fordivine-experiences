@@ -411,3 +411,10 @@ section[tabindex="-1"]:focus{outline:none}
 @media(max-width:700px){.michelle-story .hero-layout .hero-portrait{width:calc(100% + 24px);max-width:380px;align-self:center;margin-inline:-12px}}
 
 @media(max-width:700px){.michelle-story .mobile-menu{margin-left:auto}.michelle-story .mobile-menu summary{justify-content:flex-end;text-align:right;min-width:44px;gap:0}.michelle-story .mobile-menu nav{right:0}}
+
+/* Accessible chapter numbers, preserving white on the dark chapter. */
+.michelle-story .chapter-number,.michelle-story .hero .section-number{color:#000}
+.michelle-story #the-work .chapter-number{color:#fff}
+.social-count-mobile,.social-count-tablet{display:none}
+@media(min-width:701px) and (max-width:1000px){.social-count-desktop{display:none}.social-count-tablet{display:inline}}
+@media(max-width:700px){.social-count-desktop{display:none}.social-count-mobile{display:inline}}

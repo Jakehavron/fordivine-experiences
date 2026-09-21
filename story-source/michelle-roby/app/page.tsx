@@ -1,4 +1,3 @@
-import StoryExperience from './story-experience';
 import SocialCarousel from './social-carousel';
 import SiteFooter from './site-footer';
 import './site-footer.css';
@@ -19,7 +18,7 @@ return <>
   <div className="hero-layout">
     <div className="hero-copy"><p className="eyebrow"><span className="section-number" aria-hidden="true">00</span><span className="section-label">The transformation</span></p><h1 id="story-title"><span className="hero-headline-mobile"><span>From no digital presence to</span> <span>now getting consulting clients</span> <span>and paid speaking inquiries.</span></span><span className="hero-headline-desktop"><span>From no digital presence to</span> <span>now getting consulting clients</span> <span>and paid speaking inquiries.</span></span></h1>
     <p className="hero-intro">Michelle had built a successful business, but her personal presence online revealed little of the woman behind it. Together, we gave her experience a clear message, a distinctive identity, and a place for people to discover how to work with her.</p></div>
-    <figure className="hero-portrait" data-asset="hero-portrait"><img src="/crowned-stories/michelle-roby/images/michelle-portrait-refined-1000.webp" srcSet="/crowned-stories/michelle-roby/images/michelle-portrait-refined-480.webp 480w, /crowned-stories/michelle-roby/images/michelle-portrait-refined-800.webp 800w, /crowned-stories/michelle-roby/images/michelle-portrait-refined-1000.webp 1000w" sizes="(max-width: 700px) min(380px, calc(100vw - 48px)), (max-width: 1000px) 38vw, 500px" alt="Michelle Roby smiling in a black top beside her green MR brand monogram" width="1254" height="1254" fetchPriority="high"/></figure>
+    <figure className="hero-portrait" data-asset="hero-portrait"><img src="/crowned-stories/michelle-roby/images/michelle-portrait-refined-1000.webp" srcSet="/crowned-stories/michelle-roby/images/michelle-portrait-refined-480.webp 480w, /crowned-stories/michelle-roby/images/michelle-portrait-refined-512.webp 512w, /crowned-stories/michelle-roby/images/michelle-portrait-refined-640.webp 640w, /crowned-stories/michelle-roby/images/michelle-portrait-refined-800.webp 800w, /crowned-stories/michelle-roby/images/michelle-portrait-refined-1000.webp 1000w" sizes="(max-width: 700px) min(380px, calc(100vw - 48px)), (max-width: 1000px) 38vw, 500px" alt="Michelle Roby smiling in a black top beside her green MR brand monogram" width="1254" height="1254" fetchPriority="high"/></figure>
   </div>
   <div className="snapshot" aria-label="Her Transformation at a Glance"><h2>Her Transformation at a Glance</h2><div className="snapshot-fields">
     <div><h3>Starting point</h3><p>An established small business owner with:</p><ul><li>No clarity on brand message or voice</li><li>No personal brand</li><li>No digital presence or ranking</li><li>No secondary revenue verticals</li></ul></div>
@@ -112,7 +111,6 @@ return <>
 </article><section className="closing" aria-labelledby="closing-title"><h2 id="closing-title">Is Your Personal Brand Limiting Your Business Growth?</h2><div className="closing-copy"><p>A scattered and unclear brand keeps you completely invisible in today’s digital landscape.</p><p>We build premium brand ecosystems for business women to get more <strong>clients</strong>, <strong>stages</strong>, &amp; <strong>business growth</strong>.</p></div><a className="button" href="https://www.fordivine.com/discover#book">Schedule Discovery Call Today</a></section>
 <nav className="next-story" aria-label="Next Crowned Story"><a className="button" href="https://www.fordivine.com/crowned-stories/beth-clifford">View Next Crowned Story <Arrow/></a></nav>
 </main>
-  <StoryExperience/>
   <SiteFooter/>
 </>;
 }
