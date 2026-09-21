@@ -379,3 +379,7 @@ section[tabindex="-1"]:focus{outline:none}
 .michelle-story .result-detail p{color:#e1e1df}
 .michelle-story .result-detail li{color:var(--bone)}
 @media(max-width:700px){.michelle-story .result-accordion-title{font-size:clamp(15px,6cqw,24px)}}
+
+.michelle-story .result-check{width:28px;height:28px;flex:none;color:var(--bone)}
+.michelle-story .result-accordion-title{margin-right:auto}
+@media(max-width:700px){.michelle-story .result-check{width:16px;height:16px}.michelle-story .result-accordion-title{font-size:clamp(13px,5.4cqw,22px)}}
