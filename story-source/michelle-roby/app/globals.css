@@ -296,5 +296,32 @@ section[tabindex="-1"]:focus{outline:none}
 }
 .michelle-story .balanced-intro{max-width:1000px}
 
-/* Accessible warm-gold chapter numerals on white and pale-gray cards. */
-.michelle-story .chapter-number,.michelle-story .hero .section-number{color:#8b7548}
+/* User-approved bone chapter numerals and original diagonal arrows. */
+.michelle-story .chapter-number,.michelle-story .hero .section-number{color:var(--bone)}
+.story-arrow{color:var(--bone);-webkit-text-stroke:.45px currentColor;font-weight:700}
+.back-link .story-arrow{font-size:24px;line-height:1}
+.michelle-story #business-blueprint,.michelle-story #brand-identity,.michelle-story #brand-vault,.michelle-story #what-changed{container-type:inline-size}
+.michelle-story .chapter>h2.two-line-title{max-width:none;font-size:clamp(22px,8.8cqw,66px);line-height:1.1}
+.michelle-story .two-line-title>span{display:block;white-space:nowrap}
+.michelle-story .chapter>h2#results-title{font-size:clamp(21px,8cqw,66px)}
+@media(max-width:700px){
+ .client-role{display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;justify-content:flex-start;gap:6px;max-width:none;white-space:nowrap;font-size:clamp(9px,3.1vw,13px);line-height:1.5}
+ .client-role span[aria-hidden]{display:inline-block;margin:0;font-size:1.4em;color:var(--bone);flex:none}
+ .michelle-story .hero-layout{display:flex;flex-direction:column;align-items:stretch;gap:0;container-type:inline-size}
+ .michelle-story .hero-layout>.hero-copy{display:contents;container-type:normal}
+ .michelle-story .hero-layout .eyebrow{order:0}
+ .michelle-story .hero-layout #story-title{order:1}
+ .michelle-story .hero-layout .hero-portrait{order:2;margin:26px auto 0}
+ .michelle-story .hero-layout .hero-intro{order:3;margin-top:26px}
+ .michelle-story .testimonial-panel blockquote{margin:0}
+ .michelle-story .testimonial-panel blockquote p{font-size:21px;line-height:1.55;letter-spacing:0}
+ .michelle-story .testimonial-panel blockquote p+p{margin-top:24px}
+ .michelle-story .quote-attribution{margin-top:28px;font-size:17px}
+ .michelle-story .quote-attribution span{font-size:15px}
+}
+@media(max-width:360px){.michelle-story .testimonial-panel blockquote p{font-size:19px}}
+
+
+/* Match the story navigation links with a close arrow and persistent underline. */
+.michelle-story .back-link{gap:10px;width:fit-content;border-bottom:1px solid #aaa18d;padding-bottom:5px}
+.michelle-story .back-link .story-arrow{order:-1}
