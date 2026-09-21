@@ -509,7 +509,7 @@ section[tabindex="-1"]:focus{outline:none}
  .michelle-story #starting-point>.chapter-label{grid-column:1/-1;grid-row:1}
  .michelle-story #starting-point>#before-title{grid-column:1/-1;grid-row:2}
  .michelle-story #starting-point>.intro{grid-column:1;grid-row:3}
- .michelle-story #starting-point>.profile-comparison{grid-column:2;grid-row:3/7;width:100%;margin:27px 0 0;align-self:start}
+ .michelle-story #starting-point>.profile-comparison{grid-column:2;grid-row:3/7;width:100%;margin:27px 0 0;align-self:start;position:relative;top:calc(-1 * clamp(32px,4vw,64px))}
  .michelle-story #starting-point>.profile-comparison+p{grid-column:1;grid-row:4}
  .michelle-story #starting-point>.problem-list{grid-column:1;grid-row:5}
  .michelle-story #starting-point>.section-close{grid-column:1;grid-row:6;margin-bottom:0}
