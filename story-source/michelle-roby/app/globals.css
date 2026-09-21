@@ -409,3 +409,5 @@ section[tabindex="-1"]:focus{outline:none}
 /* Give the new portrait and monogram generous space without cropping. */
 @media(min-width:701px){.michelle-story .hero-layout{grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:clamp(24px,2.5vw,40px)}.michelle-story .hero-portrait{max-width:500px}}
 @media(max-width:700px){.michelle-story .hero-layout .hero-portrait{width:calc(100% + 24px);max-width:380px;align-self:center;margin-inline:-12px}}
+
+@media(max-width:700px){.michelle-story .mobile-menu{margin-left:auto}.michelle-story .mobile-menu summary{justify-content:flex-end;text-align:right;min-width:44px;gap:0}.michelle-story .mobile-menu nav{right:0}}
