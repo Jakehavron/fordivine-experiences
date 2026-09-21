@@ -465,3 +465,7 @@ section[tabindex="-1"]:focus{outline:none}
 /* Mood board and palette stay paired and display the complete artwork. */
 .michelle-story .application-grid.identity-direction-gallery{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
 .michelle-story .identity-direction-gallery .brand-showcase img{width:100%;height:auto;aspect-ratio:auto;object-fit:contain}
+
+.michelle-story .brand-badges{margin-top:22px;width:100%}
+.michelle-story .brand-badges img{width:100%;height:auto;aspect-ratio:auto;object-fit:contain}
+@media(max-width:700px){.michelle-story .brand-badges{margin-top:18px}}
