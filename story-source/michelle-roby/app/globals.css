@@ -522,3 +522,8 @@ section[tabindex="-1"]:focus{outline:none}
  .michelle-story .caption-mobile{display:inline}
  .michelle-story .asset-caption{white-space:nowrap;text-wrap:nowrap}
 }
+
+@media(max-width:700px){
+ .michelle-story .application-grid.identity-direction-gallery{grid-template-columns:minmax(0,1fr)}
+ .michelle-story .brand-showcase>.asset-caption{font-size:clamp(11px,3.3vw,13px)}
+}
