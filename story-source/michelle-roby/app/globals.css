@@ -386,3 +386,10 @@ section[tabindex="-1"]:focus{outline:none}
 
 @media(max-width:700px){.michelle-story .result-detail li{font-size:15px}.michelle-story .result-detail ul{gap:12px}}
 @media(max-width:700px){.michelle-story .testimonial-panel blockquote,.michelle-story .testimonial-panel .quote-attribution{text-align:left}}
+
+/* White dropdown copy with tan vector checkmarks. */
+.michelle-story .result-detail p,.michelle-story .result-detail li{color:#fff}
+.michelle-story .result-detail ul{padding-left:0;list-style:none}
+.michelle-story .result-detail li{display:flex;align-items:flex-start;gap:10px;list-style:none}
+.michelle-story .result-bullet-check{width:17px;height:17px;margin-top:4px;flex:none;color:#c8b89a}
+.michelle-story .result-detail li>span{min-width:0}
