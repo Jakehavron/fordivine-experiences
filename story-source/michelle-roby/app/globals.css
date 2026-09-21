@@ -469,3 +469,20 @@ section[tabindex="-1"]:focus{outline:none}
 .michelle-story .brand-badges{margin-top:22px;width:100%}
 .michelle-story .brand-badges img{width:100%;height:auto;aspect-ratio:auto;object-fit:contain}
 @media(max-width:700px){.michelle-story .brand-badges{margin-top:18px}}
+
+/* Approved image captions: preserve image corners and allow natural text wrapping. */
+.michelle-story .brand-showcase:has(>.asset-caption){overflow:visible;border-radius:0}
+.michelle-story .brand-showcase:has(>.asset-caption) img{border-radius:20px}
+.michelle-story .brand-showcase>.asset-caption{margin:12px 0 0;padding:0;font:400 14px/1.5 var(--body);color:#626262;text-align:left;letter-spacing:0;text-transform:none;text-wrap:pretty;max-width:100%}
+@media(max-width:700px){.michelle-story .brand-showcase:has(>.asset-caption) img{border-radius:16px}.michelle-story .brand-showcase>.asset-caption{font-size:13px;margin-top:10px}}
+
+/* Match the visible artwork edges, accounting for screenshot whitespace. */
+.michelle-story .brand-showcase>picture{display:block;width:100%}
+.michelle-story .brand-showcase>.asset-caption{display:block;box-sizing:border-box;width:100%}
+.michelle-story .brand-showcase[data-asset="strategy-overview"]>.asset-caption{padding-inline:1.6875% 2.0625%}
+@media(max-width:700px){
+.michelle-story .brand-showcase[data-asset="strategy-overview"]>.asset-caption{padding-inline:2.5641% 3.0525%}
+}
+
+.michelle-story #brand-vault .brand-showcase>.asset-caption{padding-inline:0.66% 0.99%}
+@media(max-width:700px){.michelle-story #brand-vault .brand-showcase>.asset-caption{padding-inline:1.687% 2.3%}}
