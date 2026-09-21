@@ -461,3 +461,7 @@ section[tabindex="-1"]:focus{outline:none}
 .michelle-story .closing .copy-accent::after{content:"";position:absolute;z-index:-1;left:-0.08em;right:-0.1em;bottom:-0.14em;height:0.52em;background:#E8DFC8;clip-path:polygon(0 78%,7% 42%,18% 28%,46% 20%,73% 9%,96% 16%,100% 31%,98% 49%,72% 52%,47% 61%,22% 69%,4% 93%);border-radius:50%;transform:rotate(-1.4deg);transform-origin:center;pointer-events:none}
 .michelle-story .closing .copy-accent:nth-of-type(2)::after{transform:rotate(0.8deg)}
 .michelle-story .closing .copy-accent:nth-of-type(3)::after{transform:rotate(-0.6deg)}
+
+/* Mood board and palette stay paired and display the complete artwork. */
+.michelle-story .application-grid.identity-direction-gallery{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
+.michelle-story .identity-direction-gallery .brand-showcase img{width:100%;height:auto;aspect-ratio:auto;object-fit:contain}
