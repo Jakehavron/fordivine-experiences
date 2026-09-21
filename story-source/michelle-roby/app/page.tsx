@@ -107,7 +107,7 @@ return <>
   </div>
   <figure className="brand-showcase testimonial-media"><img src="/crowned-stories/michelle-roby/images/michelle-media-kit.webp" alt="Michelle Roby’s media kit featuring her portrait and her leadership of Electric Rays Tanning" width="1440" height="809" loading="lazy"/></figure>
 </section>
-</article><section className="closing" aria-labelledby="closing-title"><h2 id="closing-title">Is Your Personal Brand Limiting Your Business Growth?</h2><div className="closing-copy"><p>A scattered and unclear brand keeps you completely invisible in today’s digital landscape.</p><p>We build premium brand ecosystems for business women to get more <strong>clients</strong>, <strong>stages</strong>, &amp; <strong>business growth</strong>.</p></div><a className="button" href="https://www.fordivine.com/discover#book">Schedule Discovery Call Today <Arrow/></a></section>
+</article><section className="closing" aria-labelledby="closing-title"><h2 id="closing-title">Is Your Personal Brand Limiting Your Business Growth?</h2><div className="closing-copy"><p>A scattered and unclear brand keeps you completely invisible in today’s digital landscape.</p><p>We build premium brand ecosystems for business women to get more <strong>clients</strong>, <strong>stages</strong>, &amp; <strong>business growth</strong>.</p></div><a className="button" href="https://www.fordivine.com/discover#book">Schedule Discovery Call Today</a></section>
 <nav className="next-story" aria-label="Next Crowned Story"><a className="button" href="https://www.fordivine.com/crowned-stories/beth-clifford">View Next Crowned Story <Arrow/></a></nav>
 </main>
   <StoryExperience/>
