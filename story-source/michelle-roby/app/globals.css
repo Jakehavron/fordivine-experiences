@@ -514,3 +514,11 @@ section[tabindex="-1"]:focus{outline:none}
  .michelle-story #starting-point>.problem-list{grid-column:1;grid-row:5}
  .michelle-story #starting-point>.section-close{grid-column:1;grid-row:6;margin-bottom:0}
 }
+
+/* Short mobile captions preserve readable sizing and each image's alignment. */
+.michelle-story .caption-mobile{display:none}
+@media(max-width:700px){
+ .michelle-story .caption-desktop{display:none}
+ .michelle-story .caption-mobile{display:inline}
+ .michelle-story .asset-caption{white-space:nowrap;text-wrap:nowrap}
+}
