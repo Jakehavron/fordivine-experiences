@@ -333,5 +333,5 @@ section[tabindex="-1"]:focus{outline:none}
 /* SVG arrows avoid platform-dependent emoji rendering. */
 .story-arrow{display:inline-flex;align-items:center;justify-content:center;width:1em;height:1em;flex:none;vertical-align:middle;-webkit-text-stroke:0}
 .story-arrow svg{display:block;width:100%;height:100%}
-.michelle-story .social-card-label .story-arrow{font-size:20px}
+.michelle-story .social-card-label .story-arrow{font-size:20px;color:#000}
 .michelle-story .social-controls .story-arrow{color:inherit;font-size:24px}
