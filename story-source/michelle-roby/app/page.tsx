@@ -1,4 +1,5 @@
 import SocialCarousel from './social-carousel';
+import ProfileComparison from './profile-comparison';
 import SiteFooter from './site-footer';
 import './site-footer.css';
 import Arrow from './arrow';
@@ -33,6 +34,7 @@ return <>
   <p className="chapter-label"><span className="chapter-number" aria-hidden="true">01</span><span>Her Starting Point</span></p>
   <h2 id="before-title"><span>An established business. An</span> <span>underdeveloped personal brand.</span></h2>
   <p className="intro">Michelle had built Electric Rays to 10 locations. Behind that accomplishment was a woman still questioning how her experience could translate into a public brand of her own.</p>
+  <ProfileComparison/>
   <p>When she came to FORDIVINE:</p>
   <ul className="problem-list">
     <li><strong>Her expertise was difficult to discover.</strong> Her personal social presence consisted largely of older family photographs, with little about her business knowledge or leadership.</li>
