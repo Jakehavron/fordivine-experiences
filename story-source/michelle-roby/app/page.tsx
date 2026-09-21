@@ -2,7 +2,7 @@ import StoryExperience from './story-experience';
 import SocialCarousel from './social-carousel';
 import SiteFooter from './site-footer';
 import './site-footer.css';
-const Arrow = () => <span className="story-arrow" aria-hidden="true">↗</span>;
+import Arrow from './arrow';
 const schema = { '@context': 'https://schema.org', '@graph': [
   { '@type': 'Article', headline: 'From no personal brand or online presence to now getting consulting clients and paid speaking inquiries.', description: 'How Michelle Roby made her experience visible through personal-brand positioning, visual identity, and a website with FORDIVINE.', author: {'@type':'Organization',name:'FORDIVINE',url:'https://www.fordivine.com/'}, publisher:{'@type':'Organization',name:'FORDIVINE',url:'https://www.fordivine.com/'}, about:{'@type':'Person',name:'Michelle Roby',url:'https://michelleroby.com/',jobTitle:'Founder of Electric Rays Tanning'}, inLanguage:'en-US', articleSection:'Crowned Stories' },
   {'@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'FORDIVINE',item:'https://www.fordivine.com/'},{'@type':'ListItem',position:2,name:'Crowned Stories',item:'https://www.fordivine.com/crowned-stories'},{'@type':'ListItem',position:3,name:'Michelle Roby'}]}

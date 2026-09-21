@@ -2,4 +2,4 @@
 :HL["/crowned-stories/michelle-roby/fonts/proxima-regular-optimized.woff2","font",{"crossOrigin":"anonymous","type":"font/woff2"}]
 :HL["/crowned-stories/michelle-roby/images/fordivine-logo.webp","image"]
 :HL["/crowned-stories/michelle-roby/images/michelle-roby-portrait-800.webp","image",{"imageSrcSet":"/crowned-stories/michelle-roby/images/michelle-roby-portrait-480.webp 480w, /crowned-stories/michelle-roby/images/michelle-roby-portrait-600.webp 600w, /crowned-stories/michelle-roby/images/michelle-roby-portrait-800.webp 800w","imageSizes":"(max-width: 700px) 320px, 400px","fetchPriority":"high"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":4112,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4224,"slots":null}}},"staleTime":300,"buildId":"wUrsw7Sko07DGg24-byAl"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4112,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4224,"slots":null}}},"staleTime":300,"buildId":"NbE-Kh1xWifROplSsYfQ0"}
