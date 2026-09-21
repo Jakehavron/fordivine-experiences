@@ -103,7 +103,7 @@ return <>
   <h2 id="lesson-title" className="chapter-label"><span className="chapter-number" aria-hidden="true">06</span><span>The Crowned Lesson</span></h2>
   <div className="testimonial-panel">
     <blockquote><p>“I had spent years building my business, but I struggled to see what I could offer beyond it.</p><p>Working with FORDIVINE helped me put that experience into words and build a brand that felt like me.</p><p>Seeing people reach out about consulting and speaking made those possibilities feel real.”</p></blockquote>
-    <p className="quote-attribution">MICHELLE ROBY<span>Founder of Electric Rays Tanning</span></p>
+    <p className="quote-attribution">- Michelle Roby<span>Founder of Electric Rays Tanning</span></p>
   </div>
   <figure className="brand-showcase testimonial-media"><img src="/crowned-stories/michelle-roby/images/michelle-media-kit.webp" alt="Michelle Roby’s media kit featuring her portrait and her leadership of Electric Rays Tanning" width="1440" height="809" loading="lazy"/></figure>
 </section>

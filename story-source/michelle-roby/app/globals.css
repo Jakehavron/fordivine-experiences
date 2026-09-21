@@ -314,14 +314,16 @@ section[tabindex="-1"]:focus{outline:none}
  .michelle-story .hero-layout .hero-portrait{order:2;margin:26px auto 0}
  .michelle-story .hero-layout .hero-intro{order:3;margin-top:26px}
  .michelle-story .testimonial-panel blockquote{margin:0}
- .michelle-story .testimonial-panel blockquote p{font-size:21px;line-height:1.55;letter-spacing:0}
+ .michelle-story .testimonial-panel blockquote p{font-size:19px;line-height:1.55;letter-spacing:0}
  .michelle-story .testimonial-panel blockquote p+p{margin-top:24px}
  .michelle-story .quote-attribution{margin-top:28px;font-size:17px}
  .michelle-story .quote-attribution span{font-size:15px}
 }
-@media(max-width:360px){.michelle-story .testimonial-panel blockquote p{font-size:19px}}
+@media(max-width:360px){.michelle-story .testimonial-panel blockquote p{font-size:18px}}
 
 
 /* Match the story navigation links with a close arrow and persistent underline. */
 .michelle-story .back-link{gap:10px;width:fit-content;border-bottom:1px solid #aaa18d;padding-bottom:5px}
 .michelle-story .back-link .story-arrow{order:-1}
+
+.michelle-story .quote-attribution{text-transform:none}
