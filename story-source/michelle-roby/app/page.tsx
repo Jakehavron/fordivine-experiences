@@ -69,7 +69,7 @@ return <>
     <li><strong>Personal and recognizable.</strong> Carry a consistent expression of Michelle across her brand materials and website, so each touchpoint feels connected to the same woman.</li>
   </ul>
   <p className="section-close">These choices gave the creative work a clear purpose. The resulting identity needed to feel natural to Michelle and make sense to the people she hoped to reach.</p>
-  <figure className="brand-showcase brand-overview" data-asset="brand-bible"><img src="/crowned-stories/michelle-roby/images/michelle-brand-overview.webp" alt="Michelle Roby’s gold wordmark and monogram on a deep green textured background" width="1263" height="712" loading="lazy"/></figure>
+  <figure className="brand-showcase brand-overview" data-asset="brand-bible"><img src="/crowned-stories/michelle-roby/images/michelle-brand-identity-green-gold.png" alt="Michelle Roby’s gold wordmark and monogram on a deep green textured background" width="1069" height="605" loading="lazy"/></figure>
   <div className="application-grid">
     <figure className="brand-showcase" data-asset="identity-application-1"><img src="/crowned-stories/michelle-roby/images/michelle-brand-monogram.webp" alt="Michelle Roby’s embossed green wordmark and gold business guidance seal" width="723" height="801" loading="lazy"/></figure>
     <figure className="brand-showcase" data-asset="identity-application-2"><img src="/crowned-stories/michelle-roby/images/michelle-business-cards.webp" alt="Green and cream Michelle Roby business cards displayed on a black tray" width="724" height="803" loading="lazy"/></figure>
