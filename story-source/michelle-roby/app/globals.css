@@ -403,3 +403,5 @@ section[tabindex="-1"]:focus{outline:none}
  #story-title .hero-headline-mobile{display:none}
  #story-title .hero-headline-desktop{display:block}
 }
+
+@media(max-width:700px){.michelle-story .hero-layout #story-title{width:calc(100% + 12px);max-width:calc(100% + 12px);font-size:clamp(15px,6cqw,30px);line-height:1.15}}
