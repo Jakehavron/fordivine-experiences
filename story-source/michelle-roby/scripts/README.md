@@ -6,4 +6,4 @@ The menu, carousel, results accordion, and Instagram comparison use the standalo
 
 Publish the exported directory at `/crowned-stories/michelle-roby/`. The script filename is content-hashed for cache invalidation. Original portrait and responsive variants live in the deployed images directory; retain them when rebuilding the source mirror.
 
-The Chapter 1 Instagram comparison uses lossless WebP assets made from the approved original screenshot crops. Both layers share one phone frame. Keep the original photo pixels when updating assets; do not regenerate them. The native range supports keyboard control, pointer capture supports dragging, and Before/After buttons reveal either endpoint.
+The Chapter 1 Instagram comparison uses lossless WebP assets made from the approved original screenshot crops. Both layers share one phone frame. Keep the original photo pixels when updating assets; do not regenerate them. A single pointer controller handles dragging without native range interference. Horizontal gestures reveal the images; vertical gestures scroll the page. The accessible slider supports arrow keys, Home/End, and Page Up/Down.
