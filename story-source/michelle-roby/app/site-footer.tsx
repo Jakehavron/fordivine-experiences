@@ -2,7 +2,7 @@ export default function SiteFooter() {
 return <footer className="discovery-footer">
   <div className="footer-top">
     <div className="footer-brand">
-      <a href="https://www.fordivine.com/discover" className="logo logo-img-wrap" aria-label="FORDIVINE home"><picture><img src="/crowned-stories/michelle-roby/images/fordivine-logo.png" alt="FORDIVINE" className="footer-wordmark" width="1287" height="201" loading="lazy" decoding="async"/></picture></a>
+      <a href="https://www.fordivine.com/discover" className="logo logo-img-wrap" aria-label="FORDIVINE home"><picture><img src="/crowned-stories/michelle-roby/images/fordivine-logo.webp" alt="FORDIVINE" className="footer-wordmark" width="1287" height="201" loading="lazy" decoding="async"/></picture></a>
       <p><span className="footer-tagline-line">A Personal Branding House helping business women</span><span className="footer-tagline-line">become Crowned Authorities™ in their space.</span></p>
     </div>
     <div className="footer-nav">

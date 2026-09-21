@@ -1,4 +1,4 @@
-@font-face{font-family:Discovery Inter;src:url('/crowned-stories/michelle-roby/fonts/inter-latin.woff2') format('woff2');font-weight:300 800;font-display:swap}
+@font-face{font-family:Discovery Inter;src:url('/crowned-stories/michelle-roby/fonts/inter-latin-optimized.woff2') format('woff2');font-weight:300 800;font-display:swap}
 .discovery-footer{--charcoal:#2a2a2d;--bone:#c8b89a;--white:#fff;--display:'Discovery Inter',sans-serif;font-family:'Discovery Inter',sans-serif;margin-top:80px;color:#fff;border-radius:0}
 .discovery-footer{background:var(--charcoal);padding:72px 48px 40px;border-top:1px solid rgba(255,255,255,0.03);}
 .discovery-footer .footer-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:40px;max-width:1000px;margin:0 auto 56px;}

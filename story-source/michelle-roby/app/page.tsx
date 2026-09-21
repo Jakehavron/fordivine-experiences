@@ -11,7 +11,7 @@ export default function StoryPage() {
 return <>
   <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema).replace(/</g,'\\u003c')}}/>
   <a className="skip" href="#story">Skip to Michelle’s story</a>
-  <header className="header"><a href="https://www.fordivine.com/discover" className="wordmark" aria-label="FORDIVINE home"><img src="/crowned-stories/michelle-roby/images/fordivine-logo.png" alt="FORDIVINE" width="1287" height="201"/></a><nav className="site-nav" aria-label="Main navigation"><a href="https://www.fordivine.com/about-us">About Us</a><a href="https://www.fordivine.com/crowned-stories">Crowned Stories</a><a href="https://www.fordivine.com/discover">Contact</a><a href="https://www.fordivine.com/discover">Services</a></nav><details className="mobile-menu"><summary>Menu <span aria-hidden="true">+</span></summary><nav aria-label="Mobile navigation"><a href="https://www.fordivine.com/about-us">About Us</a><a href="https://www.fordivine.com/crowned-stories">Crowned Stories</a><a href="https://www.fordivine.com/discover">Contact</a><a href="https://www.fordivine.com/discover">Services</a></nav></details></header>
+  <header className="header"><a href="https://www.fordivine.com/discover" className="wordmark" aria-label="FORDIVINE home"><img src="/crowned-stories/michelle-roby/images/fordivine-logo.webp" alt="FORDIVINE" width="1287" height="201"/></a><nav className="site-nav" aria-label="Main navigation"><a href="https://www.fordivine.com/about-us">About Us</a><a href="https://www.fordivine.com/crowned-stories">Crowned Stories</a><a href="https://www.fordivine.com/discover">Contact</a><a href="https://www.fordivine.com/discover">Services</a></nav><details className="mobile-menu"><summary>Menu <span aria-hidden="true">+</span></summary><nav aria-label="Mobile navigation"><a href="https://www.fordivine.com/about-us">About Us</a><a href="https://www.fordivine.com/crowned-stories">Crowned Stories</a><a href="https://www.fordivine.com/discover">Contact</a><a href="https://www.fordivine.com/discover">Services</a></nav></details></header>
 <main id="story" className="michelle-story" tabIndex={-1}>
 <article>
       <div className="identity-masthead wrap"><a className="back-link" href="https://www.fordivine.com/crowned-stories">All Crowned Stories <span aria-hidden="true">↗</span></a><p className="client-name">Michelle Roby</p><p className="client-role"><span>Founder of Electric Rays Tanning</span><span aria-hidden="true">⊹</span><span>Small Business Owner</span></p></div>
@@ -19,7 +19,7 @@ return <>
   <div className="hero-layout">
     <div><p className="eyebrow"><span className="section-number" aria-hidden="true">00</span><span className="section-label">The transformation</span></p><h1 id="story-title"><span>From no personal brand</span> <span>or online presence to now</span> <span>getting consulting clients</span> <span>and paid speaking inquiries.</span></h1>
     <p>Michelle had built a successful business, but her personal presence online revealed little of the woman behind it. Together, we gave her experience a clear message, a distinctive identity, and a place for people to discover how to work with her.</p></div>
-    <figure className="hero-portrait" data-asset="hero-portrait"><img src="/crowned-stories/michelle-roby/images/michelle-roby-portrait.png" alt="Michelle Roby smiling in a black top" width="1254" height="1254" fetchPriority="high"/></figure>
+    <figure className="hero-portrait" data-asset="hero-portrait"><img src="/crowned-stories/michelle-roby/images/michelle-roby-portrait-800.webp" srcSet="/crowned-stories/michelle-roby/images/michelle-roby-portrait-480.webp 480w, /crowned-stories/michelle-roby/images/michelle-roby-portrait-600.webp 600w, /crowned-stories/michelle-roby/images/michelle-roby-portrait-800.webp 800w" sizes="(max-width: 700px) 320px, 400px" alt="Michelle Roby smiling in a black top" width="1254" height="1254" fetchPriority="high"/></figure>
   </div>
   <div className="snapshot" aria-label="Her Transformation at a Glance"><h2>Her Transformation at a Glance</h2><div className="snapshot-fields">
     <div><h3>Starting point</h3><p>An established small business owner with:</p><ul><li>No clarity on brand message or voice</li><li>No personal brand</li><li>No digital presence or ranking</li><li>No secondary revenue verticals</li></ul></div>
@@ -55,7 +55,7 @@ return <>
   <h2 id="blueprint-title">Your Brand Positioned In The White Space</h2>
   <div className="narrative"><p>We know how to extract the Brand DNA of who Michelle is while also researching the entire market so she can be authentically herself while not getting lost in the sea of noise or looking like everyone else.</p>
   <p>This is how you own your space as a Crowned Authority.</p></div>
-  <figure className="brand-showcase strategy-image" data-asset="strategy-overview"><picture><source media="(max-width: 700px)" srcSet="/crowned-stories/michelle-roby/images/michelle-strategy-mobile.png" width="819" height="1110"/><img src="/crowned-stories/michelle-roby/images/michelle-strategy-desktop.png" alt="Brand strategy blueprint covering authority, brand strategy, ideal client, voice and message, story and sales message, offer suite, content pillars, and market position" width="1640" height="580" loading="lazy"/></picture></figure>
+  <figure className="brand-showcase strategy-image" data-asset="strategy-overview"><picture><source media="(max-width: 700px)" srcSet="/crowned-stories/michelle-roby/images/michelle-strategy-mobile.webp" width="819" height="1110"/><img src="/crowned-stories/michelle-roby/images/michelle-strategy-desktop.webp" alt="Brand strategy blueprint covering authority, brand strategy, ideal client, voice and message, story and sales message, offer suite, content pillars, and market position" width="1640" height="580" loading="lazy"/></picture></figure>
 </section>
 <section className="chapter" id="brand-identity" tabIndex={-1} aria-labelledby="building-title">
   <p className="chapter-label"><span className="chapter-number" aria-hidden="true">03</span><span>Building the Crown</span></p>
@@ -67,12 +67,12 @@ return <>
     <li><strong>Personal and recognizable.</strong> Carry a consistent expression of Michelle across her brand materials and website, so each touchpoint feels connected to the same woman.</li>
   </ul>
   <p className="section-close">These choices gave the creative work a clear purpose. The resulting identity needed to feel natural to Michelle and make sense to the people she hoped to reach.</p>
-  <figure className="brand-showcase brand-overview" data-asset="brand-bible"><img src="/crowned-stories/michelle-roby/images/michelle-brand-overview.png" alt="Michelle Roby’s gold wordmark and monogram on a deep green textured background" width="1263" height="712" loading="lazy"/></figure>
+  <figure className="brand-showcase brand-overview" data-asset="brand-bible"><img src="/crowned-stories/michelle-roby/images/michelle-brand-overview.webp" alt="Michelle Roby’s gold wordmark and monogram on a deep green textured background" width="1263" height="712" loading="lazy"/></figure>
   <div className="application-grid">
-    <figure className="brand-showcase" data-asset="identity-application-1"><img src="/crowned-stories/michelle-roby/images/michelle-brand-monogram.png" alt="Michelle Roby’s embossed green wordmark and gold business guidance seal" width="723" height="801" loading="lazy"/></figure>
-    <figure className="brand-showcase" data-asset="identity-application-2"><img src="/crowned-stories/michelle-roby/images/michelle-business-cards.png" alt="Green and cream Michelle Roby business cards displayed on a black tray" width="724" height="803" loading="lazy"/></figure>
-    <figure className="brand-showcase" data-asset="identity-application-3"><img src="/crowned-stories/michelle-roby/images/michelle-branded-letter.png" alt="Michelle Roby’s branded letter inside a deep green envelope with gold lettering" width="726" height="802" loading="lazy"/></figure>
-    <figure className="brand-showcase" data-asset="identity-application-4"><img src="/crowned-stories/michelle-roby/images/michelle-brand-mission.png" alt="Michelle Roby’s mission statement, portrait, and branded stationery in an editorial arrangement" width="722" height="801" loading="lazy"/></figure>
+    <figure className="brand-showcase" data-asset="identity-application-1"><img src="/crowned-stories/michelle-roby/images/michelle-brand-monogram.webp" alt="Michelle Roby’s embossed green wordmark and gold business guidance seal" width="723" height="801" loading="lazy"/></figure>
+    <figure className="brand-showcase" data-asset="identity-application-2"><img src="/crowned-stories/michelle-roby/images/michelle-business-cards.webp" alt="Green and cream Michelle Roby business cards displayed on a black tray" width="724" height="803" loading="lazy"/></figure>
+    <figure className="brand-showcase" data-asset="identity-application-3"><img src="/crowned-stories/michelle-roby/images/michelle-branded-letter.webp" alt="Michelle Roby’s branded letter inside a deep green envelope with gold lettering" width="726" height="802" loading="lazy"/></figure>
+    <figure className="brand-showcase" data-asset="identity-application-4"><img src="/crowned-stories/michelle-roby/images/michelle-brand-mission.webp" alt="Michelle Roby’s mission statement, portrait, and branded stationery in an editorial arrangement" width="722" height="801" loading="lazy"/></figure>
   </div>
 </section>
 <section className="chapter" id="stepping-into-view" tabIndex={-1} aria-labelledby="activation-title">
@@ -80,7 +80,7 @@ return <>
   <p className="asset-eyebrow">Personal Website That Converts</p>
   <h2 id="activation-title">Let Your Ideal Client Find You First</h2>
   <p className="intro">Through an optimized website, people searching on Google or asking their AI for solutions that Michelle provides, she will be the one that shows up and makes it clear she’s the right fit.</p>
-  <figure className="brand-showcase" data-asset="digital-hq"><img src="/crowned-stories/michelle-roby/images/michelle-digital-hq.png" alt="Michelle Roby’s Digital HQ website, featuring her portrait and the headline Build a business that works for your real life" width="1574" height="948" loading="lazy"/></figure>
+  <figure className="brand-showcase" data-asset="digital-hq"><img src="/crowned-stories/michelle-roby/images/michelle-digital-hq.webp" alt="Michelle Roby’s Digital HQ website, featuring her portrait and the headline Build a business that works for your real life" width="1574" height="948" loading="lazy"/></figure>
   <p className="caption">A place to understand Michelle’s experience and take the next step.</p>
 </section>
 <SocialCarousel/>
@@ -88,7 +88,7 @@ return <>
   <p className="chapter-label"><span>THE BRAND VAULT</span></p>
   <h2 id="vault-title">Keep Your Brand Consistent</h2>
   <p className="intro balanced-intro">Have everything housed in one place with clear guidelines, do’s and don’ts, and never have to wonder how to put your brand into action again.</p>
-  <figure className="brand-showcase"><picture><source media="(max-width: 700px)" srcSet="/crowned-stories/michelle-roby/images/michelle-brand-vault-mobile.png" width="652" height="1070"/><img src="/crowned-stories/michelle-roby/images/michelle-brand-vault-desktop.png" alt="Michelle Roby’s Brand Vault with her brand bible, mission, mood board, color palette, logos, logo file types, fonts, brand pillars, mockups, and social media graphics" width="1515" height="516" loading="lazy"/></picture></figure>
+  <figure className="brand-showcase"><picture><source media="(max-width: 700px)" srcSet="/crowned-stories/michelle-roby/images/michelle-brand-vault-mobile.webp" width="652" height="1070"/><img src="/crowned-stories/michelle-roby/images/michelle-brand-vault-desktop.webp" alt="Michelle Roby’s Brand Vault with her brand bible, mission, mood board, color palette, logos, logo file types, fonts, brand pillars, mockups, and social media graphics" width="1515" height="516" loading="lazy"/></picture></figure>
 </section>
 <section className="chapter story-results" id="what-changed" tabIndex={-1} aria-labelledby="results-title">
   <p className="chapter-label"><span className="chapter-number" aria-hidden="true">05</span><span>Crowned Authority Reigning</span></p>
@@ -105,7 +105,7 @@ return <>
     <blockquote><p>“I had spent years building my business, but I struggled to see what I could offer beyond it. Working with FORDIVINE helped me put that experience into words and build a brand that felt like me.</p><p>Seeing people reach out about consulting and speaking made those possibilities feel real.”</p></blockquote>
     <p className="quote-attribution">MICHELLE ROBY<span>Founder of Electric Rays Tanning</span></p>
   </div>
-  <figure className="brand-showcase testimonial-media"><img src="/crowned-stories/michelle-roby/images/michelle-media-kit.jpg" alt="Michelle Roby’s media kit featuring her portrait and her leadership of Electric Rays Tanning" width="1440" height="809" loading="lazy"/></figure>
+  <figure className="brand-showcase testimonial-media"><img src="/crowned-stories/michelle-roby/images/michelle-media-kit.webp" alt="Michelle Roby’s media kit featuring her portrait and her leadership of Electric Rays Tanning" width="1440" height="809" loading="lazy"/></figure>
 </section>
 </article><section className="closing" aria-labelledby="closing-title"><h2 id="closing-title">Is Your Personal Brand Limiting Your Business Growth?</h2><div className="closing-copy"><p>A scattered and unclear brand keeps you completely invisible in today’s digital landscape.</p><p>We build premium brand ecosystems for business women to get more <strong>clients</strong>, <strong>stages</strong>, &amp; <strong>business growth</strong>.</p></div><a className="button" href="https://www.fordivine.com/discover#book">Schedule Discovery Call Today <Arrow/></a></section>
 <nav className="next-story" aria-label="Next Crowned Story"><a className="button" href="https://www.fordivine.com/crowned-stories/beth-clifford">View Next Crowned Story <Arrow/></a></nav>
