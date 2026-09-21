@@ -393,3 +393,13 @@ section[tabindex="-1"]:focus{outline:none}
 .michelle-story .result-detail li{display:flex;align-items:flex-start;gap:10px;list-style:none}
 .michelle-story .result-bullet-check{width:17px;height:17px;margin-top:4px;flex:none;color:#c8b89a}
 .michelle-story .result-detail li>span{min-width:0}
+
+/* Wider, three-line Chapter 0 headline on desktop. */
+#story-title .hero-headline-desktop{display:none}
+#story-title .hero-headline-mobile>span,#story-title .hero-headline-desktop>span{display:block;white-space:nowrap}
+@media(min-width:701px){
+ .michelle-story .hero-layout{grid-template-columns:minmax(0,1.7fr) minmax(0,.7fr);gap:clamp(24px,3vw,48px)}
+ .michelle-story .hero-layout #story-title{font-size:clamp(24px,5.65cqw,52px);line-height:1.12}
+ #story-title .hero-headline-mobile{display:none}
+ #story-title .hero-headline-desktop{display:block}
+}
