@@ -553,3 +553,11 @@ section[tabindex="-1"]:focus{outline:none}
 
 /* Match the display font's bold geometry while the web font downloads. */
 @font-face{font-family:'Helvetica Display Fallback';src:local('Arial Bold'),local('Helvetica Bold'),local('Liberation Sans Bold'),local('Roboto Bold');font-style:normal;font-weight:400 800}
+
+/* Concise mobile captions; full descriptions remain available on desktop. */
+.stephanie-story .caption-mobile{display:none}
+@media(max-width:700px){
+ .stephanie-story .caption-desktop{display:none}
+ .stephanie-story .caption-mobile{display:inline}
+ .stephanie-story .brand-showcase>.asset-caption{font-size:clamp(11px,3.3vw,13px);white-space:nowrap;text-wrap:nowrap}
+}
