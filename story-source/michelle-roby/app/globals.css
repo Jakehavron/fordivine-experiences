@@ -314,12 +314,12 @@ section[tabindex="-1"]:focus{outline:none}
  .michelle-story .hero-layout .hero-portrait{order:2;margin:26px auto 0}
  .michelle-story .hero-layout .hero-intro{order:3;margin-top:26px}
  .michelle-story .testimonial-panel blockquote{margin:0}
- .michelle-story .testimonial-panel blockquote p{font-size:19px;line-height:1.55;letter-spacing:0}
+ .michelle-story .testimonial-panel blockquote p{font-size:18px;line-height:1.55;letter-spacing:0}
  .michelle-story .testimonial-panel blockquote p+p{margin-top:24px}
  .michelle-story .quote-attribution{margin-top:28px;font-size:17px}
  .michelle-story .quote-attribution span{font-size:15px}
 }
-@media(max-width:360px){.michelle-story .testimonial-panel blockquote p{font-size:18px}}
+@media(max-width:360px){.michelle-story .testimonial-panel blockquote p{font-size:17px}}
 
 
 /* Match the story navigation links with a close arrow and persistent underline. */
@@ -327,3 +327,5 @@ section[tabindex="-1"]:focus{outline:none}
 .michelle-story .back-link .story-arrow{order:-1}
 
 .michelle-story .quote-attribution{text-transform:none}
+
+@media(max-width:700px){.michelle-story .back-link{font-size:12px;gap:7px;letter-spacing:.02em}.michelle-story .back-link .story-arrow{font-size:20px}.michelle-story .testimonial-panel blockquote p{text-wrap:pretty}}
