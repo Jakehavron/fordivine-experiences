@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 const socialTitle = "Michelle Roby's Brand Transformation | FORDIVINE";
 const description = 'See how Michelle Roby turned her business experience with no digital presence into a personal brand that attracted consulting clients and paid speaking inquiries.';
-const socialImage = {url:'/crowned-stories/michelle-roby/images/michelle-brand-overview.png',width:1263,height:712,alt:'Michelle Roby’s gold wordmark and monogram on a deep green textured background'};
+const socialImage = {url:'/crowned-stories/michelle-roby/images/michelle-media-kit-share.jpg',width:1440,height:809,alt:'Michelle Roby media kit cover featuring her portrait and business leadership expertise'};
 export const metadata: Metadata = {
   metadataBase:new URL('https://www.fordivine.com'),
   title:'Michelle Roby’s Brand Transformation | FORDIVINE',
