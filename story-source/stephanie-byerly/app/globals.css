@@ -605,3 +605,8 @@ section[tabindex="-1"]:focus{outline:none}
  .stephanie-story #the-lesson .testimonial-panel blockquote p{font-size:clamp(24px,2.2vw,32px);line-height:1.45;letter-spacing:-.015em}
  .stephanie-story #the-lesson .testimonial-panel blockquote p+p{margin-top:.85em}
 }
+
+/* Match the comparison counts without altering either source screenshot. */
+.stephanie-story .profile-compare-layer{position:absolute;inset:0;pointer-events:none}
+.stephanie-story .profile-counts{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.stephanie-story .profile-counts text{font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;font-size:29px;font-weight:600;letter-spacing:0;fill:#0b0e11}
