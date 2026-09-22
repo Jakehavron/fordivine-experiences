@@ -1,15 +1,16 @@
 import type { Metadata } from 'next';
 import './globals.css';
 const socialTitle = 'Dr. Stephanie Byerly’s Brand Transformation | FORDIVINE';
-const description = 'How Dr. Stephanie Byerly built a distinct coaching and speaking brand with FORDIVINE, attracting paying clients and new speaking opportunities.';
+const description = 'See how Dr. Stephanie Byerly turned 25+ years in medicine into a personal brand that attracted paying coaching clients and speaking opportunities.';
+const socialImage = {url:'/crowned-stories/stephanie-byerly/images/stephanie-media-kit.jpg',width:1440,height:809,alt:'Dr. Stephanie Byerly, MD media kit cover featuring her portrait and The Art of Becoming UNNUMB'};
 export const metadata: Metadata = {
   metadataBase:new URL('https://www.fordivine.com'),
-  title:'Dr. Stephanie Byerly | Crowned Stories | FORDIVINE',
+  title:socialTitle,
   description,
   robots:{index:true,follow:true},
   alternates:{canonical:"https://www.fordivine.com/crowned-stories/stephanie-byerly"},
-  openGraph:{title:socialTitle,description,type:'article',locale:'en_US',url:'https://www.fordivine.com/crowned-stories/stephanie-byerly',images:[{url:'/crowned-stories/stephanie-byerly/images/stephanie-media-kit.jpg',width:1440,height:809,alt:'Dr. Stephanie Byerly, MD'}]},
-  twitter:{card:'summary_large_image',title:socialTitle,description,images:['/crowned-stories/stephanie-byerly/images/stephanie-media-kit.jpg']},
+  openGraph:{title:socialTitle,description,type:'article',locale:'en_US',url:'https://www.fordivine.com/crowned-stories/stephanie-byerly',images:[socialImage]},
+  twitter:{card:'summary_large_image',title:socialTitle,description,images:[socialImage]},
   icons:{
     icon:[
       {url:'/crowned-stories/stephanie-byerly/fordivine-icon-light.png',media:'(prefers-color-scheme: light)',type:'image/png'},
