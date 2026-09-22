@@ -589,3 +589,13 @@ section[tabindex="-1"]:focus{outline:none}
  .stephanie-story #starting-point>.problem-list{grid-column:1;grid-row:5}
  .stephanie-story #starting-point>.section-close{grid-column:1;grid-row:6;margin-bottom:0}
 }
+
+/* Give the two mobile posts more room and show the media without tiny embed chrome. */
+@media(max-width:700px){
+ .stephanie-story .instagram-track{width:calc(100% + 40px);max-width:none;margin-inline:-20px;grid-auto-columns:calc((100% - 10px)/2);gap:10px}
+ .stephanie-story .instagram-embed-wrap{height:125cqw}
+ .stephanie-story .instagram-embed-wrap .instagram-media{transform:translateY(-54px)}
+ .stephanie-story .instagram-card .instagram-direct-link{font-size:12px;padding:10px;min-height:44px;align-items:center;white-space:nowrap}
+ .stephanie-story .instagram-link-detail{display:none}
+ .stephanie-story .instagram-card{border-radius:12px}
+}
