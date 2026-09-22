@@ -527,3 +527,7 @@ section[tabindex="-1"]:focus{outline:none}
  .michelle-story .application-grid.identity-direction-gallery{grid-template-columns:minmax(0,1fr)}
  .michelle-story .brand-showcase>.asset-caption{font-size:clamp(11px,3.3vw,13px)}
 }
+
+/* Place the slider instruction above the comparison phone. */
+.profile-comparison #profile-compare-help{margin:0 0 14px;text-align:center}
+@media(max-width:700px){.profile-comparison #profile-compare-help{margin-bottom:12px}}
