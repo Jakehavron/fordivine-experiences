@@ -561,3 +561,31 @@ section[tabindex="-1"]:focus{outline:none}
  .stephanie-story .caption-mobile{display:inline}
  .stephanie-story .brand-showcase>.asset-caption{font-size:clamp(11px,3.3vw,13px);white-space:nowrap;text-wrap:nowrap}
 }
+
+/* One fixed phone frame, with the original screenshots revealed by a divider. */
+.stephanie-story .profile-comparison{--reveal:50%;width:min(100%,370px);margin:36px auto 42px;isolation:isolate}
+.stephanie-story .profile-compare-stage{position:relative;width:100%;aspect-ratio:880/1788;user-select:none;-webkit-user-select:none;touch-action:pan-y}
+.stephanie-story .profile-compare-stage img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain;pointer-events:none}
+.stephanie-story .profile-compare-after{clip-path:inset(0 0 0 calc(100% - var(--reveal)))}
+.stephanie-story .profile-compare-divider{position:absolute;left:calc(100% - var(--reveal));top:3%;bottom:3%;width:1px;background:linear-gradient(180deg,#bda77d40,#d8c8a5 18%,#b59b70 50%,#d8c8a5 82%,#bda77d40);transform:translateX(-50%);pointer-events:none;box-shadow:0 0 0 1px #17171720}
+.stephanie-story .profile-compare-divider>span{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:60px;height:38px;border-radius:3px;border:1px solid #c7b38b;background:linear-gradient(145deg,#313330,#161815);color:#e8dfc8;box-shadow:0 1px 0 #ffffff1f inset,0 4px 12px #0003;transition:box-shadow .18s ease,border-color .18s ease}
+.stephanie-story .profile-compare-divider svg{width:40px;height:24px}
+.stephanie-story .profile-compare-range{position:absolute;inset:0;display:block;margin:0;width:100%;height:100%;opacity:0;cursor:ew-resize;touch-action:pan-y}
+.stephanie-story .profile-compare-stage:has(.profile-compare-range:focus-visible) .profile-compare-divider>span{outline:2px solid #262826;outline-offset:4px}
+.stephanie-story .profile-comparison figcaption{margin:18px -12px 0;text-align:center;font:400 14px/1.5 var(--body);color:#555}
+@media(max-width:700px){.stephanie-story .profile-comparison{width:min(100%,310px);margin-block:26px 32px}.stephanie-story .profile-comparison figcaption{font-size:13px}.stephanie-story .profile-compare-divider>span{width:54px;height:36px}}
+
+.stephanie-story .profile-compare-stage:is(:hover,:focus-within) .profile-compare-divider>span{border-color:#e8dfc8;box-shadow:0 1px 0 #ffffff2a inset,0 5px 16px #0004}
+@media(prefers-reduced-motion:reduce){.stephanie-story .profile-compare-divider>span{transition:none}}
+
+/* Desktop: retain the chapter heading and keep its narrative beside the phone. */
+@media(min-width:1001px){
+ .stephanie-story #starting-point{display:grid;grid-template-columns:minmax(0,1fr) clamp(260px,27vw,340px);grid-template-rows:auto auto auto auto auto 1fr;column-gap:clamp(32px,4vw,64px);align-items:start}
+ .stephanie-story #starting-point>.chapter-label{grid-column:1/-1;grid-row:1}
+ .stephanie-story #starting-point>#before-title{grid-column:1/-1;grid-row:2}
+ .stephanie-story #starting-point>.intro{grid-column:1;grid-row:3}
+ .stephanie-story #starting-point>.profile-comparison{grid-column:2;grid-row:3/7;width:100%;margin:27px 0 0;align-self:start;position:relative;top:calc(-1 * clamp(32px,4vw,64px))}
+ .stephanie-story #starting-point>.profile-comparison+p{grid-column:1;grid-row:4}
+ .stephanie-story #starting-point>.problem-list{grid-column:1;grid-row:5}
+ .stephanie-story #starting-point>.section-close{grid-column:1;grid-row:6;margin-bottom:0}
+}

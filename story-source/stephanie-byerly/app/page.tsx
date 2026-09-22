@@ -1,3 +1,4 @@
+import ProfileComparison from './profile-comparison';
 import SocialCarousel from './social-carousel';
 import SiteFooter from './site-footer';
 import './site-footer.css';
@@ -28,6 +29,7 @@ export default function StoryPage() { return <>
 <p className="chapter-label"><span className="chapter-number" aria-hidden="true">01</span><span>Her Starting Point</span></p>
 <h2 id="before-title">Established in medicine. Uncertain how to build beyond it.</h2>
 <p className="intro">Stephanie had spent decades caring for patients. Her own experience of healing had also led her toward trauma coaching. She wanted to help women, but struggled to bring that purpose into a clear professional identity.</p>
+<ProfileComparison/>
 <p>When she came to FORDIVINE:</p>
 <ul className="problem-list">
 <li><strong>Her experience had no clear expression online.</strong> Scattered posts and an early webinar attempt gave people little sense of her coaching or perspective.</li>

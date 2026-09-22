@@ -1,0 +1,16 @@
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+const source=fs.readFileSync('scripts/story-interactions.js','utf8').split('// Original-image comparison:')[1];
+const handlers={},attrs={};let capture=null,reveal=50;
+const control={setAttribute:(k,v)=>attrs[k]=v,addEventListener:(k,v)=>handlers[k]=v,focus(){},setPointerCapture:p=>capture=p,hasPointerCapture:p=>capture===p,releasePointerCapture:()=>capture=null};
+const figure={querySelector:s=>s.includes('stage')?{getBoundingClientRect:()=>({left:20,width:300})}:control,style:{setProperty:(k,v)=>reveal=parseFloat(v)}};
+vm.runInNewContext('// Original-image comparison:'+source,{document:{querySelectorAll:()=>[figure]}});
+const e=(x,y=50,extra={})=>({clientX:x,clientY:y,pointerId:1,isPrimary:true,button:0,pointerType:'touch',preventDefault(){},...extra});
+const pos=()=>100-reveal;
+handlers.pointerdown(e(175));assert.equal(pos(),50);handlers.pointermove(e(235));assert.equal(pos(),70);handlers.pointermove(e(115));assert.equal(pos(),30);handlers.pointerup(e(115));assert.equal(capture,null);
+handlers.pointerdown(e(110));handlers.pointermove(e(110.5,56));assert.equal(pos(),30);assert.equal(capture,null);handlers.pointerup(e(110.5,56));assert.equal(pos(),30);
+handlers.pointerdown(e(260));handlers.pointerup(e(260));assert.equal(pos(),80);
+handlers.pointerdown(e(260));handlers.pointermove(e(260.8,50));assert.equal(pos(),80);handlers.pointermove(e(280.5));assert(Math.abs(pos()-86.8333333333)<1e-6);handlers.pointercancel(e(280.5));assert.equal(capture,null);
+handlers.pointermove(e(50));assert(Math.abs(pos()-86.8333333333)<1e-6);
+handlers.keydown({key:'Home',preventDefault(){}});assert.equal(pos(),0);handlers.keydown({key:'ArrowRight',preventDefault(){}});assert.equal(pos(),2);handlers.keydown({key:'End',preventDefault(){}});assert.equal(pos(),100);handlers.keydown({key:'ArrowLeft',shiftKey:true,preventDefault(){}});assert.equal(pos(),90);
+handlers.pointerdown(e(100,50,{pointerType:'mouse'}));assert(Math.abs(pos()-26.6666666667)<1e-6);handlers.pointermove(e(500));assert.equal(pos(),100);handlers.pointermove(e(-30));assert.equal(pos(),0);handlers.pointerup(e(-30));
+console.log('PASS: touch follows finger both ways, no grab jump, fractional movement, vertical scroll handoff, tap, cancellation, keyboard direction, mouse drag and edge bounds.');
