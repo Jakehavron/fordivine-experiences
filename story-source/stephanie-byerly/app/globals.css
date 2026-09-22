@@ -599,3 +599,9 @@ section[tabindex="-1"]:focus{outline:none}
  .stephanie-story .instagram-link-detail{display:none}
  .stephanie-story .instagram-card{border-radius:12px}
 }
+
+/* Keep the longer client perspective comfortable to read on desktop. */
+@media(min-width:701px){
+ .stephanie-story #the-lesson .testimonial-panel blockquote p{font-size:clamp(24px,2.2vw,32px);line-height:1.45;letter-spacing:-.015em}
+ .stephanie-story #the-lesson .testimonial-panel blockquote p+p{margin-top:.85em}
+}
