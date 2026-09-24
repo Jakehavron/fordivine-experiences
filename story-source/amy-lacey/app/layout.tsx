@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   robots:{index:true,follow:true},
   alternates:{canonical:"https://www.fordivine.com/crowned-stories/amy-lacey"},
   openGraph:{title:socialTitle,description,type:'article',locale:'en_US',url:'https://www.fordivine.com/crowned-stories/amy-lacey',images:[{url:'https://www.fordivine.com/crowned-stories/amy-lacey/images/amy-identity-v1.webp',width:1030,height:584,alt:'Amy Lacey signature brand identity by FORDIVINE'}]},
-  twitter:{card:'summary_large_image',title:socialTitle,description,images:[{url:'https://www.fordivine.com/crowned-stories/amy-lacey/images/amy-identity-v1.webp',alt:'Amy Lacey signature brand identity by FORDIVINE'}]},
+  twitter:{card:'summary_large_image',title:socialTitle,description,images:[{url:'https://www.fordivine.com/crowned-stories/amy-lacey/images/amy-stationery-v1.webp',alt:'Faithfully Found mockups with translucent envelopes and branded stationery, created for Amy Lacey by FORDIVINE'}]},
   icons:{
     icon:[
       {url:'/crowned-stories/amy-lacey/fordivine-icon-light.png',media:'(prefers-color-scheme: light)',type:'image/png'},
