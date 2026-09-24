@@ -7,7 +7,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'sha256-426F5BHWvcXg1mpNF9I8slvkNILaWynuJVgnxUJ4d5g=' 'sha256-Q6aSAdx5QfFe4Fnycr7R0O32O62Sr96dWdWMrLl/hs0=' 'sha256-jVPWDPcYTuw6Xohvl/XdSsF0pYzcQFyaIK078t3bZMo=' 'strict-dynamic' 'self' https://*.vidalytics.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://*.vidalytics.com; img-src 'self' data: blob: https://*.vidalytics.com; font-src 'self' data: https://*.vidalytics.com; media-src 'self' blob: https://*.vidalytics.com; connect-src 'self' https://*.vidalytics.com; worker-src 'self' blob: https://*.vidalytics.com; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
+          "value": "default-src 'self'; script-src 'sha256-426F5BHWvcXg1mpNF9I8slvkNILaWynuJVgnxUJ4d5g=' 'sha256-0OaGIgV4HKLCJfHhcbdhP9iCUYCVy7BIxM/RG3C/TUA=' 'sha256-jVPWDPcYTuw6Xohvl/XdSsF0pYzcQFyaIK078t3bZMo=' 'strict-dynamic' 'self' https://*.vidalytics.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://*.vidalytics.com; img-src 'self' data: blob: https://*.vidalytics.com; font-src 'self' data: https://*.vidalytics.com; media-src 'self' blob: https://*.vidalytics.com; connect-src 'self' https://*.vidalytics.com; worker-src 'self' blob: https://*.vidalytics.com; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
         },
         {
           "key": "X-Frame-Options",
@@ -24,7 +24,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'sha256-426F5BHWvcXg1mpNF9I8slvkNILaWynuJVgnxUJ4d5g=' 'sha256-Q6aSAdx5QfFe4Fnycr7R0O32O62Sr96dWdWMrLl/hs0=' 'sha256-jVPWDPcYTuw6Xohvl/XdSsF0pYzcQFyaIK078t3bZMo=' 'strict-dynamic' 'self' https://*.vidalytics.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://*.vidalytics.com; img-src 'self' data: blob: https://*.vidalytics.com; font-src 'self' data: https://*.vidalytics.com; media-src 'self' blob: https://*.vidalytics.com; connect-src 'self' https://*.vidalytics.com; worker-src 'self' blob: https://*.vidalytics.com; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
+          "value": "default-src 'self'; script-src 'sha256-426F5BHWvcXg1mpNF9I8slvkNILaWynuJVgnxUJ4d5g=' 'sha256-0OaGIgV4HKLCJfHhcbdhP9iCUYCVy7BIxM/RG3C/TUA=' 'sha256-jVPWDPcYTuw6Xohvl/XdSsF0pYzcQFyaIK078t3bZMo=' 'strict-dynamic' 'self' https://*.vidalytics.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://*.vidalytics.com; img-src 'self' data: blob: https://*.vidalytics.com; font-src 'self' data: https://*.vidalytics.com; media-src 'self' blob: https://*.vidalytics.com; connect-src 'self' https://*.vidalytics.com; worker-src 'self' blob: https://*.vidalytics.com; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
         },
         {
           "key": "X-Frame-Options",
@@ -41,7 +41,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'sha256-426F5BHWvcXg1mpNF9I8slvkNILaWynuJVgnxUJ4d5g=' 'sha256-Q6aSAdx5QfFe4Fnycr7R0O32O62Sr96dWdWMrLl/hs0=' 'sha256-jVPWDPcYTuw6Xohvl/XdSsF0pYzcQFyaIK078t3bZMo=' 'strict-dynamic' 'self' https://*.vidalytics.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://*.vidalytics.com; img-src 'self' data: blob: https://*.vidalytics.com; font-src 'self' data: https://*.vidalytics.com; media-src 'self' blob: https://*.vidalytics.com; connect-src 'self' https://*.vidalytics.com; worker-src 'self' blob: https://*.vidalytics.com; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
+          "value": "default-src 'self'; script-src 'sha256-426F5BHWvcXg1mpNF9I8slvkNILaWynuJVgnxUJ4d5g=' 'sha256-0OaGIgV4HKLCJfHhcbdhP9iCUYCVy7BIxM/RG3C/TUA=' 'sha256-jVPWDPcYTuw6Xohvl/XdSsF0pYzcQFyaIK078t3bZMo=' 'strict-dynamic' 'self' https://*.vidalytics.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://*.vidalytics.com; img-src 'self' data: blob: https://*.vidalytics.com; font-src 'self' data: https://*.vidalytics.com; media-src 'self' blob: https://*.vidalytics.com; connect-src 'self' https://*.vidalytics.com; worker-src 'self' blob: https://*.vidalytics.com; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
         },
         {
           "key": "X-Frame-Options",
