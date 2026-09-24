@@ -793,6 +793,6 @@ section[tabindex="-1"]:focus{outline:none}
 .journal-ready .journal-enhanced{visibility:visible}
 @media(max-width:700px){.journal-track{max-width:360px}}
 
-/* Keep each approved opening sentence on one line at every viewport width. */
-.stephanie-story .hero-layout #story-title.amy-two-line-headline{font-size:min(44px,5.7cqw);line-height:1.18;text-wrap:nowrap}
-#story-title.amy-two-line-headline>span{display:block;white-space:nowrap}
+/* Keep the approved opening headline on three lines at every viewport width. */
+.stephanie-story .hero-layout #story-title.amy-three-line-headline{font-size:min(44px,5.7cqw);line-height:1.18;text-wrap:nowrap}
+#story-title.amy-three-line-headline>span{display:block;white-space:nowrap}
