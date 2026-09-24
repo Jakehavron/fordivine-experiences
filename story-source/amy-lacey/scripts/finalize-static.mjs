@@ -17,6 +17,23 @@ html = html.replace(/<script\b([^>]*)>[\s\S]*?<\/script>/gi, (tag, attrs) => {
 html = html.replace(/<link\b[^>]*>/gi, tag => /\bas=["']script["']|\brel=["']modulepreload["']/i.test(tag) ? '' : tag);
 if (!schemaCount || /<script[^>]*\bsrc=["'][^"']*\/_next\//i.test(html)) throw Error('Static HTML validation failed');
 html = html.replace('</body>', `<script src="/crowned-stories/amy-lacey/${scriptName}" integrity="${integrity}" defer></script></body>`);
+// React hoists this responsive image hint after the inline styles. Put it before
+// styles/fonts so the preload scanner can discover the LCP portrait immediately.
+const portraitHints = [...html.matchAll(/<link\b[^>]*>/gi)].map(match => match[0]).filter(tag => /\brel="preload"/i.test(tag) && /\bas="image"/i.test(tag) && /amy-portrait-/.test(tag));
+if (portraitHints.length !== 1) throw Error('Expected one responsive portrait preload');
+html = html.replace(portraitHints[0], '');
+html = html.replace(/(<meta\b[^>]*name="viewport"[^>]*>)/i, '$1' + portraitHints[0]);
+if (html.indexOf(portraitHints[0]) > html.indexOf('<style')) throw Error('Portrait preload must precede styles');
+// React and explicit head markup can both emit font hints; retain one per font.
+const fontHints = new Set();
+html = html.replace(/<link\b[^>]*>/gi, tag => {
+  if (!/\brel="preload"/i.test(tag) || !/\bas="font"/i.test(tag)) return tag;
+  const href = tag.match(/\bhref="([^"]+)"/i)?.[1];
+  if (!href) return tag;
+  if (fontHints.has(href)) return '';
+  fontHints.add(href);
+  return tag;
+});
 // Hash-based CSP keeps the exported static page strict without reusable nonces.
 // strict-dynamic lets this trusted entrypoint load the journal and Vidalytics.
 const schemaHashes = [...html.matchAll(/<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi)]
