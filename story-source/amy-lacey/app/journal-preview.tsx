@@ -1,0 +1,6 @@
+import pages from './journal-pages.json';
+import Arrow from './arrow';
+export default function JournalPreview(){return <div className="journal-preview" data-journal>
+<div className="journal-stage"><div className="journal-track" id="journal-pages" role="region" aria-roledescription="carousel" aria-label="Faithfully Found journal preview" tabIndex={0}>{pages.map(page=><figure className="journal-page" key={page.number} role="group" aria-roledescription="slide" aria-label={`Page ${page.number} of 9: ${page.title}`}><img src={page.src} alt={`Faithfully Found journal, page ${page.number}: ${page.title}`} width={page.width} height={page.height} loading="lazy" decoding="async"/><figcaption className="journal-transcript"><span>{page.title}</span><p>{page.text}</p></figcaption></figure>)}</div></div>
+<div className="journal-controls journal-enhanced"><button type="button" data-journal-prev aria-label="Previous journal page" aria-controls="journal-pages" disabled><Arrow direction="left"/></button><p data-journal-status aria-live="polite" aria-atomic="true">Page 1 of 9</p><button type="button" data-journal-next aria-label="Next journal page" aria-controls="journal-pages"><Arrow direction="right"/></button></div>
+</div>}

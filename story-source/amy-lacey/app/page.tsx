@@ -1,0 +1,111 @@
+import JournalPreview from './journal-preview';
+import SocialCarousel from './social-carousel';
+import SiteFooter from './site-footer';
+import './site-footer.css';
+import Arrow from './arrow';
+function Check({bullet=false}:{bullet?:boolean}) {return <svg className={bullet?'result-bullet-check':'result-check'} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>}
+function Result({title,description,points,index}:{title:string,description:string,points:string[],index:number}) {return <div className="layer-row" data-layer={index}><h3><button className="layer-collapsed" type="button" aria-expanded="true" aria-controls={`result-panel-${index}`} id={`result-toggle-${index}`}><span className="layer-name">{title}</span><span className="layer-num" aria-hidden="true">{String(index).padStart(2,'0')}</span></button></h3><div className="layer-expanded" id={`result-panel-${index}`} role="region" aria-labelledby={`result-toggle-${index}`}><div className="layer-expanded-inner"><p className="layer-subtitle">{description}</p><ul className="layer-subitems">{points.map(point=><li className="layer-subitem" key={point}><Check bullet/><span>{point}</span></li>)}</ul></div></div></div>}
+
+const schema = {"@context":"https://schema.org","@type":"Article","headline":"A personal brand built to carry her next chapter.","description":"How FORDIVINE helped Amy Lacey clarify her message and build a founder-led brand around her next chapter.","author":{"@type":"Organization","name":"FORDIVINE"},"about":{"@type":"Person","name":"Amy Lacey","jobTitle":"Founder, Speaker and Mentor"},"inLanguage":"en-US","articleSection":"Crowned Stories"};
+export default function StoryPage() { return <>
+<script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema).replace(/</g,"\\u003c")}}/>
+<a className="skip" href="#story">Skip to Amy’s story</a>
+  <header className="header"><a href="https://www.fordivine.com/discover" className="wordmark" aria-label="FORDIVINE home"><img src="/crowned-stories/amy-lacey/images/fordivine-logo.webp" alt="FORDIVINE" width="1287" height="201"/></a><nav className="site-nav" aria-label="Main navigation"><a href="https://www.fordivine.com/about-us">About Us</a><a href="https://www.fordivine.com/crowned-stories">Crowned Stories</a><a href="https://www.fordivine.com/discover#book">Contact</a><a href="https://www.fordivine.com/discover">Services</a></nav><details className="mobile-menu"><summary>Menu</summary><nav aria-label="Mobile navigation"><a href="https://www.fordivine.com/about-us">About Us</a><a href="https://www.fordivine.com/crowned-stories">Crowned Stories</a><a href="https://www.fordivine.com/discover#book">Contact</a><a href="https://www.fordivine.com/discover">Services</a></nav></details></header>
+
+<main id="story" className="michelle-story stephanie-story" tabIndex={-1}>
+<article>
+<div className="identity-masthead wrap"><a className="back-link" href="https://www.fordivine.com/crowned-stories">All Crowned Stories <Arrow/></a><p className="client-name">Amy Lacey</p><p className="client-role"><span>Founder</span><span aria-hidden="true">⊹</span><span>Mentor</span><span aria-hidden="true">⊹</span><span>Speaker</span></p></div>
+<section className="hero" id="overview" aria-labelledby="story-title">
+<div className="hero-layout"><div className="hero-copy"><p className="eyebrow"><span className="section-number" aria-hidden="true">00</span><span className="section-label">The Transformation</span></p>
+<h1 id="story-title">A personal brand built to carry her next chapter.</h1>
+<p className="hero-intro">After selling her cauliflower pizza crust company, Amy Lacey wanted to be known for more than the business she had built. FORDIVINE helped her define her signature message and create a personal brand with room for her faith, speaking, and the ventures she would lead next.</p></div>
+<div className="hero-portrait"><img src="/crowned-stories/amy-lacey/images/amy-portrait-v1.webp" sizes="(max-width: 700px) min(320px, calc(100vw - 72px)), (max-width: 1200px) 34vw, 440px" alt="Amy Lacey in a light blue jacket with her AL monogram" width="1166" height="2000" fetchPriority="high"/></div></div>
+<div className="snapshot" aria-label="Her Transformation at a Glance"><h2>Her Transformation at a Glance</h2><div className="snapshot-fields">
+<div><h3>Starting point</h3><p>An accomplished founder with:</p><ul><li>A reputation tied to a former company</li><li>A scattered personal presence online</li><li>No clear message for her next chapter</li><li>A desire to bring her faith into her work</li></ul></div>
+<div><h3>What we built</h3><ul><li>Brand Strategy + Signature Message</li><li>Business + Marketing Blueprint</li><li>Faithfully Found + Signature IP</li><li>Visual Identity + Speaking Materials</li><li>Content Direction + Brand Vault</li></ul></div>
+<div><h3>The Results</h3><ul><li>More Speaking + Podcast Opportunities</li><li>A More Visible Founder</li><li>Faithfully Found Brought to Life</li><li>A Foundation for Multiple Ventures</li></ul></div>
+</div></div></section>
+<section className="chapter" id="starting-point" tabIndex={-1} aria-labelledby="before-title">
+<p className="chapter-label"><span className="chapter-number" aria-hidden="true">01</span><span>Her Starting Point</span></p>
+<h2 id="before-title">Her business had sold. Her identity was still tied to it.</h2>
+<p className="intro">Amy had already built and sold a successful company. But the reputation she had earned kept bringing her back to the same story. She wanted to speak about more of her life, share her faith, and lead women into their own next chapter.</p>
+<p>When she came to FORDIVINE:</p>
+<ul className="problem-list">
+<li><strong>Her past success dominated her public identity.</strong> Speaking invitations often centered on the cauliflower business, even as she wanted to teach from a broader body of experience.</li>
+<li><strong>Her digital presence lacked a clear direction.</strong> Disconnected posts gave people little sense of her message or the woman leading her newer ventures.</li>
+<li><strong>She struggled to articulate what came next.</strong> Advice from different directions had added noise without giving her a message she could confidently own.</li>
+<li><strong>She wanted her faith to have a natural place.</strong> It mattered deeply to her, and she wanted to express it honestly while remaining approachable to a wider audience.</li>
+</ul>
+<p className="section-close">After hearing Emily speak at a business event, Amy recognized the kind of support she needed: a team that could clarify the direction and build the brand with her.</p>
+</section>
+<section className="chapter" id="the-work" tabIndex={-1} aria-labelledby="unveiling-title">
+<p className="chapter-label"><span className="chapter-number" aria-hidden="true">02</span><span>The Desired Outcomes</span></p>
+<h2 id="unveiling-title">Build around the woman leading it all.</h2>
+<p className="intro">The work centered on giving Amy a personal brand that could hold her experience, her convictions, and several distinct paths forward.</p>
+<ol className="goal-grid" role="list">
+<li><span className="goal-number" aria-hidden="true">1</span><h3>Own a message beyond her former company.</h3><p>Translate Amy’s lived experience into a signature message and intellectual property she could use across speaking, content, and personal development.</p></li>
+<li><span className="goal-number" aria-hidden="true">2</span><h3>Show up as a professional speaker.</h3><p>Give organizers a clear understanding of what she teaches, supported by speaking materials and a visual presence that reflect her experience.</p></li>
+<li><span className="goal-number" aria-hidden="true">3</span><h3>Lead an ecosystem with room to grow.</h3><p>Establish Amy as the recognizable founder behind her ventures, allowing people to connect with her and follow the parts of her work that serve them.</p></li>
+</ol></section>
+<section className="chapter blueprint-card" id="business-blueprint" aria-labelledby="blueprint-title">
+<p className="chapter-label"><span>The Business + Marketing Blueprint</span></p>
+<h2 id="blueprint-title">One founder. A message with room to grow.</h2>
+<div className="narrative"><p>We helped Amy define her signature message, develop her intellectual property, and create <strong>Faithfully Found</strong>, a faith-based personal development brand rooted in her experience and convictions.</p><p>The strategy placed Amy at the center. Her speaking career, Faithfully Found, and her existing wellness company, Livyond, could each have a distinct purpose while benefiting from a recognizable founder.</p><p>This gave her a way to build beyond the company she had sold, with a personal identity that could continue across ventures.</p></div>
+<figure className="brand-showcase strategy-image" data-asset="strategy-overview"><picture><source media="(max-width: 700px)" srcSet="/crowned-stories/amy-lacey/images/brand-strategy-mobile.webp" width="819" height="1110"/><img src="/crowned-stories/amy-lacey/images/brand-strategy-desktop.webp" alt="FORDIVINE Business and Marketing Blueprint dashboard covering positioning, messaging, ideal clients, offers, and content strategy" width="1640" height="580" loading="lazy"/></picture><figcaption className="asset-caption"><span className="caption-desktop">A look inside her Business + Marketing Blueprint, with detailed chapters covering positioning, messaging, ideal clients, offers, and more.</span><span className="caption-mobile">Inside look of her strategy blueprint dashboard</span></figcaption></figure>
+</section>
+<section className="chapter" id="brand-identity" tabIndex={-1} aria-labelledby="building-title">
+<p className="chapter-label"><span className="chapter-number" aria-hidden="true">03</span><span>The Brand Identity</span></p>
+<h2 id="building-title">A presence that felt like her.</h2>
+<p className="intro">Amy wanted her faith and lived experience to be visible in a brand that felt warm, considered, and professional. The identity needed to support both an honest personal message and the credibility of an experienced founder.</p>
+<ul className="creative-list">
+<li><strong>Grounded in her convictions.</strong> Give Faithfully Found a distinct expression rooted in faith, resilience, forgiveness, and legacy.</li>
+<li><strong>Warm and assured.</strong> Pair soft neutrals with deep blue and dark tones, creating a calm, polished setting for her message.</li>
+<li><strong>Consistent across her work.</strong> Connect her content, speaking materials, and personal development assets through a recognizable identity.</li>
+</ul>
+<p className="section-close">At the brand reveal, Amy was moved to tears. Seeing the message and identity together helped her recognize how she could bring more of herself into her work.</p>
+<figure className="brand-showcase"><img src="/crowned-stories/amy-lacey/images/amy-identity-v1.webp" alt="Amy Lacey signature wordmark on textured deep blue" width="1030" height="584" loading="lazy"/><figcaption className="asset-caption"><span className="caption-desktop">Amy’s name takes the lead in a signature identity built around the founder.</span><span className="caption-mobile">Her signature brand identity materialized</span></figcaption></figure>
+<div className="application-grid stephanie-identity-gallery"><figure className="brand-showcase"><img src="/crowned-stories/amy-lacey/images/amy-moodboard-v1.webp" alt="Amy’s mood board with soft neutrals, blue tailoring, a cross, speaking, and coastal imagery" width="1032" height="587" loading="lazy"/><figcaption className="asset-caption"><span className="caption-desktop">A visual direction bringing faith, personal warmth, and a professional presence together.</span><span className="caption-mobile">Mood board to guide visual direction</span></figcaption></figure><figure className="brand-showcase"><img src="/crowned-stories/amy-lacey/images/amy-palette-v1.webp" alt="Amy’s palette: Shepherd’s Wool, Desert Sand, Morning Manna, Jordan Blue, Night Watch, and Power Black" width="1033" height="586" loading="lazy"/><figcaption className="asset-caption"><span className="caption-desktop">Soft neutrals, Jordan Blue, and deep dark tones give her brand warmth and a composed presence.</span><span className="caption-mobile">Soft neutrals with depth and warmth</span></figcaption></figure></div>
+<figure className="brand-showcase"><img src="/crowned-stories/amy-lacey/images/amy-marks-v1.webp" alt="Faithfully Found logo variations, dove emblem, and FF monogram" width="1030" height="586" loading="lazy"/><figcaption className="asset-caption"><span className="caption-desktop">Faithfully Found’s wordmarks, doves, and monogram give her message a recognizable visual language.</span><span className="caption-mobile">Faithfully Found marks and monogram</span></figcaption></figure><figure className="brand-showcase"><img src="/crowned-stories/amy-lacey/images/amy-stationery-v1.webp" alt="Faithfully Found stationery presentation with translucent envelopes and branded inserts" width="1033" height="590" loading="lazy"/><figcaption className="asset-caption"><span className="caption-desktop">Layered stationery concepts carry Faithfully Found’s message into a tangible brand experience.</span><span className="caption-mobile">Her faith-based brand carried into print</span></figcaption></figure>
+<div className="application-grid stephanie-identity-gallery"><figure className="brand-showcase"><img src="/crowned-stories/amy-lacey/images/amy-seal-v1.webp" alt="Embossed Faithfully Found dove and cross seal on an envelope" width="510" height="587" loading="lazy"/><figcaption className="asset-caption"><span className="caption-desktop">An embossed dove-and-cross seal brings the brand’s faith symbolism into a quiet tactile detail.</span><span className="caption-mobile">Faith expressed in the smallest details</span></figcaption></figure><figure className="brand-showcase"><img src="/crowned-stories/amy-lacey/images/amy-business-cards-v1.webp" alt="Faithfully Found business card mockup in dark blue with gold lettering" width="520" height="586" loading="lazy"/><figcaption className="asset-caption"><span className="caption-desktop">Business card concepts connect Amy’s name and professional roles with the Faithfully Found identity.</span><span className="caption-mobile">A recognizable introduction to her work</span></figcaption></figure></div>
+</section>
+<section className="chapter" id="stepping-into-view" tabIndex={-1} aria-labelledby="activation-title">
+<p className="chapter-label"><span className="chapter-number" aria-hidden="true">04</span><span>The Brand In Action</span></p>
+<p className="asset-eyebrow">The Faithfully Found 90-Day Journal</p>
+<h2 id="activation-title">Her message became a daily practice.</h2>
+<p className="intro">Faithfully Found gave Amy a clear message. The 90-day journal gave her audience a way to bring it into everyday life. We helped turn that direction into a guided experience built around faith, healing, purpose, and legacy.</p>
+<p>From the cover to the daily reflection pages, the journal carries the same identity, voice, and intention. Scripture, personal prompts, and space for prayer invite women to spend time with the message and make it their own.</p>
+<JournalPreview/>
+</section>
+<SocialCarousel/>
+<section className="chapter brand-vault" id="brand-vault" aria-labelledby="vault-title">
+<p className="chapter-label"><span>The Brand Vault</span></p>
+<h2 id="vault-title">Keeping her brand cohesive.</h2>
+<p className="intro balanced-intro">The Brand Vault brings her strategy, visual identity, and content assets into one place. Amy and her team have a shared reference for keeping her message and presentation consistent as the work grows.</p>
+<figure className="brand-showcase" data-asset="brand-vault"><picture><source media="(max-width: 700px)" srcSet="/crowned-stories/amy-lacey/images/amy-vault-mobile-v1.webp" width="667" height="1222"/><img src="/crowned-stories/amy-lacey/images/amy-vault-desktop-v1.webp" alt="Amy Lacey’s Brand Vault with brand strategy, visual identity, photography, and content assets" width="1366" height="657" loading="lazy"/></picture><figcaption className="asset-caption"><span className="caption-desktop">A look inside her Brand Vault, with organized collections of logos, colors, fonts, brand guidelines, photos, and content ready to use.</span><span className="caption-mobile">Inside look of the brand vault dashboard</span></figcaption></figure>
+</section>
+<section className="chapter story-results" id="what-changed" tabIndex={-1} aria-labelledby="results-title">
+<p className="chapter-label"><span className="chapter-number" aria-hidden="true">05</span><span>The Results</span></p>
+<h2 id="results-title" className="two-line-title"><span>A Clearer Voice.</span><span>A New Chapter in Motion.</span></h2>
+<p className="intro balanced-intro">Amy began using her brand to show up more personally, speak from a defined message, and connect her audience with the work she leads. Her next chapter is still unfolding, with a foundation she can continue to build on.</p>
+<div className="layers-accordion" data-results-layers><div className="layer-slider" aria-hidden="true"/>
+<Result index={1} title="More Speaking + Podcast Opportunities" description="Amy is receiving more speaking and podcast opportunities, with a defined message that draws on more than the company she sold." points={['Her experience is organized into a body of work she can teach.','Her speaking materials communicate that message with a consistent professional identity.','She can introduce the work she wants to be known for in this next chapter.']}/>
+<Result index={2} title="A More Visible Founder" description="Amy is showing up more personally in her content and sharing the experiences behind her work." points={['Her voice and perspective have a clearer place in her online presence.','She is speaking more openly about faith and the subjects that matter to her audience.','Her wellness content helps people connect with the founder behind Livyond.']}/>
+<Result index={3} title="Faithfully Found in Practice" description="The brand gives Amy a home for faith-based personal development and tools that carry her message." points={['Faithfully Found has a defined message and visual identity.','Her 90-day journal is one way her personal development work is reaching people.','A shared brand foundation can support future products, services, and teaching.']}/>
+<Result index={4} title="Momentum Across Her Ventures" description="As Amy became more visible as a founder, her team reported growing interest and sign-ups at Livyond. FORDIVINE’s work focused on Amy’s personal brand and Faithfully Found." points={['Her personal brand connects her speaking, Faithfully Found, and wellness work.','People can connect with her story and discover the ventures she leads.','She has a foundation for growing beyond any one company.']}/>
+</div></section>
+<section className="chapter lesson" id="the-lesson" tabIndex={-1} aria-labelledby="lesson-title">
+<h2 id="lesson-title" className="chapter-label"><span className="chapter-number" aria-hidden="true">06</span><span>Her Perspective</span></h2>
+<div className="testimonial-panel perspective-summary">
+<p>Seeing the brand come together was emotional for Amy. The message, intellectual property, and visual identity felt like an expression of the woman she wanted people to know.</p>
+<p>She could bring her faith forward and speak about the work that mattered to her with greater clarity. For Amy, that meant having a way to step into her next chapter while continuing to learn, grow, and build.</p>
+<p className="perspective-note">Her experience, as shared by the FORDIVINE team.</p>
+</div>
+
+</section>
+</article>
+<section className="closing" aria-labelledby="closing-title"><h2 id="closing-title">Is Your Personal Brand Limiting Your Business Growth?</h2><div className="closing-copy"><p>A scattered and unclear brand keeps you completely invisible in today’s digital landscape.</p><p>We build premium brand ecosystems for business women to get more <span className="copy-accent">clients</span>, <span className="copy-accent">stages</span>, &amp; <span className="copy-accent">business growth</span>.</p></div><a className="button" href="https://www.fordivine.com/discover#book">Schedule Discovery Call Today</a></section>
+<nav className="next-story" aria-label="Next Crowned Story"><a className="button" href="https://www.fordivine.com/crowned-stories/michelle-roby">View Next Crowned Story <Arrow/></a></nav>
+</main>
+  <SiteFooter/>
+</>;
+}
