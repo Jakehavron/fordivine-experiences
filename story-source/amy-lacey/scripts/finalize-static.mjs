@@ -1,7 +1,7 @@
 import {readFile, writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 // This route is published as static HTML, not as a Next.js runtime application.
-// Its only JS behaviors live in story-interactions.js; including scroll-responsive results and the Instagram carousel.
+// Its only JS behaviors live in story-interactions.js; including scroll-responsive results and the video carousel.
 const script = await readFile(new URL('./story-interactions.js', import.meta.url), 'utf8');
 const hash = createHash('sha256').update(script).digest('hex').slice(0,12);
 const scriptName = `story-interactions-${hash}.js`;
@@ -15,6 +15,6 @@ html = html.replace(/<script\b([^>]*)>[\s\S]*?<\/script>/gi, (tag, attrs) => {
 });
 html = html.replace(/<link\b[^>]*>/gi, tag => /\bas=["']script["']|\brel=["']modulepreload["']/i.test(tag) ? '' : tag);
 if (!schemaCount || /<script[^>]*\bsrc=["'][^"']*\/_next\//i.test(html)) throw Error('Static HTML validation failed');
-html = html.replace('</body>', `<script src="/crowned-stories/amy-lacey/vendor/page-flip-2.0.7.js" defer></script><script src="/crowned-stories/amy-lacey/${scriptName}" defer></script></body>`);
+html = html.replace('</body>', `<script src="/crowned-stories/amy-lacey/${scriptName}" defer></script></body>`);
 await writeFile('out/index.html', html);
 console.log(`Static story: ${Buffer.byteLength(html)} HTML bytes, ${Buffer.byteLength(script)} JS bytes. Structured data preserved.`);

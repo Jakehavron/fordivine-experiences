@@ -783,3 +783,12 @@ section[tabindex="-1"]:focus{outline:none}
 
 .stephanie-story .closing-phrase{white-space:nowrap}
 @media(max-width:700px){.stephanie-story .closing h2{font-size:clamp(28px,8vw,36px)}}
+
+/* Preserve the portrait's visible size while advertising its actual bitmap width. */
+.stephanie-story .hero-portrait picture{display:block;width:100%}
+.stephanie-story .hero-portrait img{width:74.28039%;height:auto;aspect-ratio:1166/2000;margin-inline:auto}
+/* Reserve identical journal space before and after the flip library initializes. */
+.journal-track{max-width:440px;aspect-ratio:2/3}
+.journal-enhanced{display:flex;visibility:hidden}
+.journal-ready .journal-enhanced{visibility:visible}
+@media(max-width:700px){.journal-track{max-width:360px}}
