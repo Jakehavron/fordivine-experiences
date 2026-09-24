@@ -578,14 +578,14 @@ section[tabindex="-1"]:focus{outline:none}
 .stephanie-story .profile-compare-stage:is(:hover,:focus-within) .profile-compare-divider>span{border-color:#e8dfc8;box-shadow:0 1px 0 #ffffff2a inset,0 5px 16px #0004}
 @media(prefers-reduced-motion:reduce){.stephanie-story .profile-compare-divider>span{transition:none}}
 
-/* Desktop: retain the chapter heading and keep its narrative beside the phone. */
+/* Desktop: keep the starting-point narrative beside the testimonial. */
 @media(min-width:1001px){
  .stephanie-story #starting-point{display:grid;grid-template-columns:minmax(0,1fr) clamp(260px,27vw,340px);grid-template-rows:auto auto auto auto auto 1fr;column-gap:clamp(32px,4vw,64px);align-items:start}
  .stephanie-story #starting-point>.chapter-label{grid-column:1/-1;grid-row:1}
  .stephanie-story #starting-point>#before-title{grid-column:1/-1;grid-row:2}
  .stephanie-story #starting-point>.intro{grid-column:1;grid-row:3}
- .stephanie-story #starting-point>.profile-comparison{grid-column:2;grid-row:3/7;width:100%;margin:27px 0 0;align-self:start;position:relative;top:calc(-1 * clamp(32px,4vw,64px))}
- .stephanie-story #starting-point>.profile-comparison+p{grid-column:1;grid-row:4}
+ .stephanie-story #starting-point>.starting-testimonial{grid-column:2;grid-row:3/7;width:100%;margin:27px 0 0;align-self:start;position:relative;top:calc(-1 * clamp(32px,4vw,64px))}
+ .stephanie-story #starting-point>.starting-testimonial+p{grid-column:1;grid-row:4}
  .stephanie-story #starting-point>.problem-list{grid-column:1;grid-row:5}
  .stephanie-story #starting-point>.section-close{grid-column:1;grid-row:6;margin-bottom:0}
 }
@@ -614,3 +614,112 @@ section[tabindex="-1"]:focus{outline:none}
 /* Place the slider instruction above the comparison phone. */
 .profile-comparison #profile-compare-help{margin:0 0 14px;text-align:center}
 @media(max-width:700px){.profile-comparison #profile-compare-help{margin-bottom:12px}}
+
+/* Testimonial and social activation layout. */
+.fd-deferred-video {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  border-radius: inherit;
+  background: #171717;
+  isolation: isolate;
+}
+
+.fd-deferred-video[data-ratio="landscape"] {
+  aspect-ratio: 16 / 9;
+}
+
+.fd-deferred-video-poster,
+.fd-deferred-video-shade,
+.fd-deferred-video-button {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.fd-deferred-video-poster {
+  display: block;
+  object-fit: cover;
+}
+
+.fd-deferred-video-shade {
+  background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.30));
+  pointer-events: none;
+}
+
+.fd-deferred-video-button {
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.fd-deferred-video-button::before {
+  content: "";
+  width: clamp(54px, 14%, 78px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(255,255,255,0.72);
+  border-radius: 50%;
+  background: rgba(17,17,17,0.48);
+  box-shadow: 0 10px 34px rgba(0,0,0,0.28);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.fd-deferred-video-button::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  margin-left: 5px;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 14px solid #ffffff;
+}
+
+.fd-deferred-video-button:hover::before,
+.fd-deferred-video-button:focus-visible::before {
+  background: rgba(17,17,17,0.72);
+  transform: scale(1.06);
+}
+
+.fd-deferred-video-button:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: -5px;
+}
+
+.fd-deferred-video.is-loading::after {
+  content: "Loading video";
+  position: absolute;
+  inset: auto 0 22px;
+  z-index: 3;
+  color: #ffffff;
+  font: 700 10px/1.2 Arial, sans-serif;
+  letter-spacing: 0.14em;
+  text-align: center;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.fd-deferred-video.is-loaded::after {
+  content: none;
+}
+
+
+.stephanie-story .starting-testimonial{width:min(100%,340px);margin:28px auto 32px;border-radius:16px;overflow:hidden}
+.stephanie-story .social-activation-layout{display:grid;grid-template-columns:minmax(0,1fr) clamp(260px,27vw,320px);gap:clamp(32px,4vw,64px);align-items:center}
+.stephanie-story .social-activation-layout>.profile-comparison{width:100%;margin:0}
+.stephanie-story .social-activation-copy .intro{margin-bottom:0;text-wrap:pretty}
+.stephanie-story .social-activation-layout+.social-carousel-heading{margin-top:32px}
+@media(min-width:1001px){.stephanie-story #starting-point>.starting-testimonial{margin:0;top:0}}
+@media(max-width:1000px){.stephanie-story .social-activation-layout{grid-template-columns:1fr;gap:28px}.stephanie-story .social-activation-layout>.profile-comparison{width:min(100%,310px);margin:0 auto}.stephanie-story .social-activation-layout+.social-carousel-heading{margin-top:28px}}

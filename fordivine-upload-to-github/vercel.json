@@ -58,7 +58,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' https://www.instagram.com https://platform.instagram.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; frame-src https://www.instagram.com https://www.facebook.com; connect-src 'self' https://*.instagram.com https://*.facebook.com https://*.fbcdn.net; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
+          "value": "default-src 'self'; script-src 'self' blob: https://*.vidalytics.com https://www.instagram.com https://platform.instagram.com; style-src https://*.vidalytics.com 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; frame-src https://www.instagram.com https://www.facebook.com; connect-src https://*.vidalytics.com 'self' https://*.instagram.com https://*.facebook.com https://*.fbcdn.net; media-src 'self' blob: https://*.vidalytics.com; worker-src 'self' blob: https://*.vidalytics.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
         },
         {
           "key": "X-Frame-Options",

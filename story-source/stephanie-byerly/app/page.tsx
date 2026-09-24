@@ -1,4 +1,3 @@
-import ProfileComparison from './profile-comparison';
 import SocialCarousel from './social-carousel';
 import SiteFooter from './site-footer';
 import './site-footer.css';
@@ -29,7 +28,7 @@ export default function StoryPage() { return <>
 <p className="chapter-label"><span className="chapter-number" aria-hidden="true">01</span><span>Her Starting Point</span></p>
 <h2 id="before-title">Established in medicine. Uncertain how to build beyond it.</h2>
 <p className="intro">Stephanie had spent decades caring for patients. Her own experience of healing had also led her toward trauma coaching. She wanted to help women, but struggled to bring that purpose into a clear professional identity.</p>
-<ProfileComparison/>
+<aside className="starting-testimonial" aria-label="Stephanie’s video testimonial"><div className="fd-deferred-video" data-vidalytics-id="keXT9onFdaEZqvRX" data-load="viewport" data-label="Play Dr. Stephanie Byerly’s testimonial" data-poster="https://fast.vidalytics.com/video/Sjy1Iha6/jcnVSbP_9aA4JASp/273975/251757__FFMPEG/thumb/thumbnail-5_0.jpg"></div><noscript><a href="https://preview.vidalytics.com/embeds/Sjy1Iha6/jcnVSbP_9aA4JASp/">Watch Stephanie’s testimonial</a></noscript></aside>
 <p>When she came to FORDIVINE:</p>
 <ul className="problem-list">
 <li><strong>Her experience had no clear expression online.</strong> Scattered posts and an early webinar attempt gave people little sense of her coaching or perspective.</li>
