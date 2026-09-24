@@ -723,3 +723,6 @@ section[tabindex="-1"]:focus{outline:none}
 .stephanie-story .social-activation-layout+.social-carousel-heading{margin-top:32px}
 @media(min-width:1001px){.stephanie-story #starting-point>.starting-testimonial{margin:0;top:0}}
 @media(max-width:1000px){.stephanie-story .social-activation-layout{grid-template-columns:1fr;gap:28px}.stephanie-story .social-activation-layout>.profile-comparison{width:min(100%,310px);margin:0 auto}.stephanie-story .social-activation-layout+.social-carousel-heading{margin-top:28px}}
+
+/* Align desktop social copy with the top of the comparison instead of centering it. */
+@media(min-width:1001px){.stephanie-story .social-activation-copy{align-self:start}}
