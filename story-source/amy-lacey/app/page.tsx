@@ -29,6 +29,7 @@ export default function StoryPage() { return <>
 <p className="chapter-label"><span className="chapter-number" aria-hidden="true">01</span><span>Her Starting Point</span></p>
 <h2 id="before-title">Her business had sold. Her identity was still tied to it.</h2>
 <p className="intro">Amy had already built and sold a successful company. But the reputation she had earned kept bringing her back to the same story. She wanted to speak about more of her life, share her faith, and lead women into their own next chapter.</p>
+<figure className="amy-testimonial-video" aria-label="Amy Lacey’s video testimonial"><div className="fd-deferred-video" data-vidalytics-id="IKYgElLip9N1Kiwu" data-load="viewport" data-label="Play Amy Lacey’s testimonial" data-poster="https://fast.vidalytics.com/video/Sjy1Iha6/rXk2_Sl938WPwa45/273977/251760__FFMPEG/thumb/thumbnail-5_0.jpg"></div><noscript><a href="https://www.fordivine.com/discover">Watch Amy’s testimonial on Discover</a></noscript></figure>
 <p>When she came to FORDIVINE:</p>
 <ul className="problem-list">
 <li><strong>Her past success dominated her public identity.</strong> Speaking invitations often centered on the cauliflower business, even as she wanted to teach from a broader body of experience.</li>
