@@ -1,6 +1,6 @@
 import Arrow from './arrow';
 const reels = [
- {number:5,title:'Creative brand film',type:'Music + visual storytelling'},
+ {number:5,title:'Podcast Launch Creative',type:'Music + visual storytelling'},
  {number:2,title:'Beyond the cauliflower company',type:'Amy’s voice'},
  {number:3,title:'Creative brand film',type:'Music + visual storytelling'},
  {number:4,title:'Serve the person',type:'Amy’s voice'},
