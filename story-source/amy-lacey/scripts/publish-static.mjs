@@ -11,3 +11,14 @@ await writeFile(path.join(target,'index.html'),html);
 const script=html.match(/src="\/crowned-stories\/amy-lacey\/(story-interactions-[a-f0-9]+\.js)"/)[1];
 await cp(path.join(source,'out',script),path.join(target,script));
 console.log('Published static output:',target);
+
+// Keep the exact script hashes in the response policy synchronized on every build.
+const configPath=path.resolve(target,'../../vercel.json');
+const config=JSON.parse(await readFile(configPath,'utf8'));
+const headers=JSON.parse(await readFile(path.join(source,'out/security-headers.json'),'utf8'));
+for(const route of ['/crowned-stories/amy-lacey','/crowned-stories/amy-lacey/','/crowned-stories/amy-lacey/index.html']){
+ const rule=config.headers.find(rule=>rule.source===route);
+ if(rule)rule.headers=[...rule.headers.filter(header=>!headers.some(next=>next.key.toLowerCase()===header.key.toLowerCase())),...headers];
+ else config.headers.unshift({source:route,headers});
+}
+await writeFile(configPath,JSON.stringify(config,null,2)+'\n');
