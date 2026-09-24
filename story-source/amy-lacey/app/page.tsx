@@ -96,10 +96,13 @@ export default function StoryPage() { return <>
 </div></section>
 <section className="chapter lesson" id="the-lesson" tabIndex={-1} aria-labelledby="lesson-title">
 <h2 id="lesson-title" className="chapter-label"><span className="chapter-number" aria-hidden="true">06</span><span>Her Perspective</span></h2>
-<div className="testimonial-panel">
+<div className="testimonial-panel amy-perspective-layout">
+<div className="amy-perspective-copy">
 <blockquote><p>“You gave me the courage and the confidence to realize I am worthy of speaking as an authority online and on stages.</p>
 <p>Now I am getting wayyy more inbound customers and partnerships because people know what I stand for.”</p></blockquote>
 <p className="quote-attribution">Amy Lacey<span>Founder of Livyond, Keynote Speaker</span></p>
+</div>
+<img className="amy-perspective-photo" src="/crowned-stories/amy-lacey/images/amy-perspective-960.webp" srcSet="/crowned-stories/amy-lacey/images/amy-perspective-640.webp 640w, /crowned-stories/amy-lacey/images/amy-perspective-960.webp 960w, /crowned-stories/amy-lacey/images/amy-perspective-1280.webp 1280w" sizes="(max-width: 700px) calc(100vw - 72px), (max-width: 1000px) 40vw, 440px" width="1280" height="1919" loading="lazy" decoding="async" alt="Amy Lacey smiling while seated at the Faithfully Found podcast microphone"/>
 </div>
 
 </section>

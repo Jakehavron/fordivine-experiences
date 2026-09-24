@@ -768,3 +768,8 @@ section[tabindex="-1"]:focus{outline:none}
 }
 @media(max-width:700px){.stephanie-story .amy-testimonial-video{width:min(100%,310px);margin-block:26px 32px}}
 @media(prefers-reduced-motion:reduce){.fd-deferred-video-button::before{transition:none}}
+
+/* Amy's own perspective, paired with her podcast portrait. */
+.stephanie-story #the-lesson .amy-perspective-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(30px,5vw,72px);align-items:center;text-align:left;max-width:1100px}
+.stephanie-story .amy-perspective-photo{display:block;width:100%;height:auto;border-radius:16px}
+@media(max-width:700px){.stephanie-story #the-lesson .amy-perspective-layout{grid-template-columns:minmax(0,1fr);gap:32px}.stephanie-story .amy-perspective-photo{max-width:440px;margin-inline:auto}}
