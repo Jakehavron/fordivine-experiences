@@ -59,6 +59,8 @@
 
     var poster = document.createElement('img');
     poster.className = 'fd-deferred-video-poster';
+    if (container.dataset.posterSizes) poster.sizes = container.dataset.posterSizes;
+    if (container.dataset.posterSrcset) poster.srcset = container.dataset.posterSrcset;
     poster.src = container.dataset.poster;
     poster.alt = '';
     poster.decoding = 'async';
