@@ -773,3 +773,13 @@ section[tabindex="-1"]:focus{outline:none}
 .stephanie-story #the-lesson .amy-perspective-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(30px,5vw,72px);align-items:center;text-align:left;max-width:1100px}
 .stephanie-story .amy-perspective-photo{display:block;width:100%;height:auto;border-radius:16px}
 @media(max-width:700px){.stephanie-story #the-lesson .amy-perspective-layout{grid-template-columns:minmax(0,1fr);gap:32px}.stephanie-story .amy-perspective-photo{max-width:440px;margin-inline:auto}}
+
+/* Keep short final words attached and headings balanced at changing widths. */
+.stephanie-story :is(.hero-intro,.chapter>p,.problem-list li,.creative-list li,.goal-grid p,.snapshot li,.layer-subtitle,.layer-subitem span,.closing-copy p){text-wrap:pretty}
+.stephanie-story :is(#story-title,.chapter>h2:not(.chapter-label),.goal-grid h3,.snapshot h2,.reel-caption h3,.closing h2){text-wrap:balance}
+#what-changed .layers-accordion:not(.layers-ready) .layer-expanded{transition:none}
+
+#what-changed .layers-anchor-settle :is(.layer-expanded,.layer-num,.layer-slider){transition:none!important}
+
+.stephanie-story .closing-phrase{white-space:nowrap}
+@media(max-width:700px){.stephanie-story .closing h2{font-size:clamp(28px,8vw,36px)}}
