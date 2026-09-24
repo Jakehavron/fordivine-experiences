@@ -1,19 +1,3 @@
-// Native video posters download even with preload="none". Request reel thumbnails
-// only as the section approaches so they cannot compete with the opening portrait.
-(() => {
-  const videos = [...document.querySelectorAll('video[data-poster]')];
-  const reveal = video => { video.poster = video.dataset.poster; };
-  if (!('IntersectionObserver' in window)) { videos.forEach(reveal); return; }
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      reveal(entry.target);
-      observer.unobserve(entry.target);
-    });
-  }, {rootMargin:'600px'});
-  videos.forEach(video => observer.observe(video));
-})();
-
 // Fetch below-the-fold display fonts shortly before their sections are visible.
 (() => {
   const definitions = [["#what-changed", "@font-face{font-family:'Bebas Neue';src:url('/crowned-stories/amy-lacey/fonts/bebas-neue-latin.woff2') format('woff2');font-style:normal;font-weight:400;font-display:swap}"], [".discovery-footer", "@font-face{font-family:Discovery Inter;src:url('/crowned-stories/amy-lacey/fonts/inter-latin-optimized.woff2') format('woff2');font-weight:300 800;font-display:swap}"]];
