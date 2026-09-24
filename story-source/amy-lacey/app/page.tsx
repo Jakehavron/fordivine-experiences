@@ -96,10 +96,10 @@ export default function StoryPage() { return <>
 </div></section>
 <section className="chapter lesson" id="the-lesson" tabIndex={-1} aria-labelledby="lesson-title">
 <h2 id="lesson-title" className="chapter-label"><span className="chapter-number" aria-hidden="true">06</span><span>Her Perspective</span></h2>
-<div className="testimonial-panel perspective-summary">
-<p>Seeing the brand come together was emotional for Amy. The message, intellectual property, and visual identity felt like an expression of the woman she wanted people to know.</p>
-<p>She could bring her faith forward and speak about the work that mattered to her with greater clarity. For Amy, that meant having a way to step into her next chapter while continuing to learn, grow, and build.</p>
-<p className="perspective-note">Her experience, as shared by the FORDIVINE team.</p>
+<div className="testimonial-panel">
+<blockquote><p>“You gave me the courage and the confidence to realize I am worthy of speaking as an authority online and on stages.</p>
+<p>Now I am getting wayyy more inbound customers and partnerships because people know what I stand for.”</p></blockquote>
+<p className="quote-attribution">Amy Lacey<span>Founder of Livyond, Keynote Speaker</span></p>
 </div>
 
 </section>
