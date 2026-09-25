@@ -26,7 +26,7 @@ export default function StoryPage() { return <>
 </div></div></section>
 <section className="chapter" id="starting-point" tabIndex={-1} aria-labelledby="before-title">
 <p className="chapter-label"><span className="chapter-number" aria-hidden="true">01</span><span>Her Starting Point</span></p>
-<h2 id="before-title">Established in medicine. Uncertain how to build beyond it.</h2>
+<h2 id="before-title">Authority in Medicine.<br/>No Authority beyond it.</h2>
 <p className="intro">Stephanie had spent decades caring for patients. Her own experience of healing had also led her toward trauma coaching. She wanted to help women, but struggled to bring that purpose into a clear professional identity.</p>
 <aside className="starting-testimonial" aria-label="Stephanie’s video testimonial"><div className="fd-deferred-video" data-vidalytics-id="keXT9onFdaEZqvRX" data-load="viewport" data-label="Play Dr. Stephanie Byerly’s testimonial" data-poster="https://fast.vidalytics.com/video/Sjy1Iha6/jcnVSbP_9aA4JASp/273975/251757__FFMPEG/thumb/thumbnail-5_0.jpg"></div><noscript><a href="https://preview.vidalytics.com/embeds/Sjy1Iha6/jcnVSbP_9aA4JASp/">Watch Stephanie’s testimonial</a></noscript></aside>
 <p>When she came to FORDIVINE:</p>
