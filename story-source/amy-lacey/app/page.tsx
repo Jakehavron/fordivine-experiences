@@ -28,7 +28,7 @@ export default function StoryPage() { return <>
 </div></div></section>
 <section className="chapter" id="starting-point" tabIndex={-1} aria-labelledby="before-title">
 <p className="chapter-label"><span className="chapter-number" aria-hidden="true">01</span><span>Her Starting Point</span></p>
-<h2 id="before-title">Her business had sold.<br />Her identity + voice went with it.</h2>
+<h2 id="before-title"><span>Her business had sold.</span><span>Her identity was still tied to it.</span></h2>
 <p className="intro">Amy had already built and sold a successful company. But the reputation she had earned kept bringing her back to the same story. She wanted to speak about more of her life, share her faith, and lead women into their own next chapter.</p>
 <figure className="amy-testimonial-video" aria-label="Amy Lacey’s video testimonial"><div className="fd-deferred-video" data-vidalytics-id="IKYgElLip9N1Kiwu" data-load="viewport" data-label="Play Amy Lacey’s testimonial" data-poster="/crowned-stories/amy-lacey/images/amy-testimonial-poster-340.webp" data-poster-srcset="/crowned-stories/amy-lacey/images/amy-testimonial-poster-340.webp 340w, /crowned-stories/amy-lacey/images/amy-testimonial-poster-480.webp 480w" data-poster-sizes="(max-width: 700px) min(310px, calc(100vw - 72px)), 340px"></div><noscript><a href="https://www.fordivine.com/discover">Watch Amy’s testimonial on Discover</a></noscript></figure>
 <script type="application/ld+json" data-vidalytics-video="IKYgElLip9N1Kiwu" dangerouslySetInnerHTML={{__html:JSON.stringify(amyVideoSchema).replace(/</g,"\\u003c")}}/>
