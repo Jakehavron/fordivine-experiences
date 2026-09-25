@@ -470,7 +470,7 @@
   }
 
   function enhanceMobileNav(meta) {
-    if (doc.querySelector('[data-cs-mobile-nav]')) return;
+    if (doc.querySelector('[data-cs-mobile-nav], [data-cs-navigation="logo-only"]')) return;
 
     const navLinks = [
       { label: 'Home', href: '/discover', match: '/discover' },
