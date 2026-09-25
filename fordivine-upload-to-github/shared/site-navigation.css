@@ -1,0 +1,45 @@
+/* FORDIVINE shared navigation. All pages use this header. */
+@font-face{font-family:FDNav;src:url('/crowned-stories/stephanie-byerly/fonts/proxima-regular-optimized.woff2') format('woff2');font-display:swap}
+[data-fd-old-navigation]{display:none!important}
+.fd-site-header,.fd-site-header *{box-sizing:border-box;margin:0;padding:0}
+.fd-site-header{position:relative!important;inset:auto!important;z-index:10002;display:flex!important;flex:none;order:-1000;align-items:center;justify-content:space-between;gap:24px;width:100%;max-width:none;height:74px;padding:0 40px;background:#2d2f2e;color:#fff;border:0;border-radius:0;font:16px/1.5 FDNav,Arial,sans-serif;text-transform:none;letter-spacing:normal}
+.fd-site-header a{color:inherit;text-decoration:none;letter-spacing:normal;text-transform:none;border:0;box-shadow:none;background:none}
+.fd-site-header .fd-home{display:inline-flex;align-items:center;flex-shrink:0;min-height:44px;line-height:1}
+.fd-site-header .fd-home img{display:block;width:auto!important;height:18px!important;max-width:none;object-fit:contain;filter:none}
+.fd-site-header .fd-desktop-nav{display:flex;position:static;align-items:center;justify-content:space-between;width:75%;height:auto;padding:0;gap:20px;background:none;border:0;box-shadow:none}
+.fd-site-header .fd-desktop-nav a{font:600 18px/1.5 FDNav,Arial,sans-serif;white-space:nowrap;min-height:44px;display:flex;align-items:center}
+.fd-site-header .fd-menu{display:none}
+.fd-site-header a:focus-visible,.fd-site-header summary:focus-visible{outline:3px solid #cfbfa4;outline-offset:3px}
+@media(max-width:1000px){.fd-site-header{padding-inline:28px}.fd-site-header .fd-desktop-nav{width:73%}}
+@media(max-width:700px){
+.fd-site-header{height:70px;padding:0 22px}
+.fd-site-header .fd-home img{height:16px!important}
+.fd-site-header .fd-desktop-nav{display:none}
+.fd-site-header .fd-menu{display:block;position:relative;color:inherit}
+.fd-site-header summary{display:flex;align-items:center;justify-content:flex-end;gap:10px;min-width:44px;min-height:44px;cursor:pointer;list-style:none;font:16px/1.5 FDNav,Arial,sans-serif}
+.fd-site-header summary::-webkit-details-marker{display:none}
+.fd-site-header summary svg{display:block;flex-shrink:0;width:20px;height:20px}
+.fd-site-header .fd-mobile-nav{display:flex;position:absolute;inset:52px 0 auto auto;flex-direction:column;gap:4px;width:240px;max-width:calc(100vw - 32px);height:auto;padding:15px;background:#f5f5f5;color:#171717;border:0;border-radius:16px;box-shadow:0 15px 40px #0003;text-align:left}
+.fd-site-header .fd-mobile-nav a{display:flex;align-items:center;min-height:46px;padding:8px 12px;font:18px/1.5 FDNav,Arial,sans-serif}
+}
+
+/* Shared responsive footer. */
+[data-fd-old-footer]{display:none!important}
+.fd-site-footer,.fd-site-footer *{box-sizing:border-box;margin:0;padding:0}
+.fd-site-footer{position:relative;display:block;width:100%;max-width:none;padding:48px 40px 30px;background:#202020;color:#fff;border:0;border-radius:0;text-align:left;font:16px/1.5 FDNav,Arial,sans-serif;letter-spacing:normal}
+.fd-site-footer a{color:inherit;text-decoration:none;background:none;border:0;letter-spacing:normal;text-transform:none}
+.fd-site-footer a:hover{text-decoration:underline}
+.fd-site-footer a:focus-visible{outline:3px solid #cfbfa4;outline-offset:4px}
+.fd-site-footer .fd-footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;margin-bottom:28px}
+.fd-site-footer .fd-footer-logo{display:inline-flex;align-items:center;min-height:44px}
+.fd-site-footer .fd-footer-wordmark{display:block;width:auto!important;height:22px!important;max-width:none;filter:none}
+.fd-site-footer .fd-footer-brand p{margin-top:12px;color:#c9c9c9;font:16px/1.5 FDNav,Arial,sans-serif}
+.fd-site-footer .fd-footer-tagline-line{display:block}
+.fd-site-footer .fd-footer-nav{display:flex;align-items:center;flex-wrap:wrap;gap:12px 28px}
+.fd-site-footer .fd-footer-nav a{display:inline-flex;align-items:center;min-height:44px;font:16px/1.5 FDNav,Arial,sans-serif}
+.fd-site-footer .fd-footer-question-line{font:16px/1.5 FDNav,Arial,sans-serif;margin-bottom:20px;color:#c9c9c9}
+.fd-site-footer .fd-footer-question-link{text-decoration:underline;color:#fff}
+.fd-site-footer .fd-footer-legal{display:flex;flex-wrap:wrap;gap:8px 24px;margin-bottom:16px}
+.fd-site-footer .fd-footer-legal a{display:inline-flex;align-items:center;min-height:44px;font:14px/1.5 FDNav,Arial,sans-serif;color:#c9c9c9}
+.fd-site-footer .fd-footer-disclaimer{max-width:1100px;color:#aaa;font:12px/1.7 FDNav,Arial,sans-serif}
+@media(max-width:700px){.fd-site-footer{padding:32px 22px 24px}.fd-site-footer .fd-footer-top{flex-direction:column;gap:20px;margin-bottom:20px}.fd-site-footer .fd-footer-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;gap:4px 20px}.fd-site-footer .fd-footer-tagline-line{display:inline}.fd-site-footer .fd-footer-tagline-line+.fd-footer-tagline-line:before{content:' '}.fd-site-footer .fd-footer-wordmark{height:20px!important}}
