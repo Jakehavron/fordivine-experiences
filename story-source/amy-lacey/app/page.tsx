@@ -89,7 +89,7 @@ export default function StoryPage() { return <>
 </section>
 <section className="chapter story-results" id="what-changed" tabIndex={-1} aria-labelledby="results-title">
 <p className="chapter-label"><span className="chapter-number" aria-hidden="true">05</span><span>The Results</span></p>
-<h2 id="results-title" className="two-line-title"><span>A Clearer Voice.</span><span>A New Chapter in Motion.</span></h2>
+<h2 id="results-title" className="two-line-title"><span>A new Identity to embody.</span><span>A brand ecosystem to grow in.</span></h2>
 <p className="intro balanced-intro">Amy began using her brand to show up more personally, speak from a defined message, and connect her audience with the work she leads. Her next chapter is still unfolding, with a foundation she can continue to build on.</p>
 <div className="layers-accordion" data-results-layers><div className="layer-slider" aria-hidden="true"/>
 <Result index={1} title="More Speaking + Podcast Opportunities" description="Amy is receiving more speaking and podcast opportunities, with a defined message that draws on more than the company she sold." points={['Her experience is organized into a body of work she can teach.','Her speaking materials communicate that message with a consistent professional identity.','She can introduce the work she wants to be known for in this next chapter.']}/>
