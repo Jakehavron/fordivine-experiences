@@ -798,6 +798,3 @@ section[tabindex="-1"]:focus{outline:none}
 #story-title.amy-three-line-headline>span{display:block;white-space:nowrap}
 .stephanie-story #stepping-into-view .journal-description{max-width:620px;margin:28px auto 0;text-align:center;text-wrap:pretty}
 @media(max-width:700px){.stephanie-story #stepping-into-view .journal-description{margin-top:24px}}
-.stephanie-story #the-work{container-type:inline-size}
-.stephanie-story #unveiling-title{font-size:min(66px,8cqw);max-width:none;line-height:1.1}
-.stephanie-story #unveiling-title>span{display:block;white-space:nowrap}
