@@ -798,3 +798,19 @@ section[tabindex="-1"]:focus{outline:none}
 #story-title.amy-three-line-headline>span{display:block;white-space:nowrap}
 .stephanie-story #stepping-into-view .journal-description{max-width:620px;margin:28px auto 0;text-align:center;text-wrap:pretty}
 @media(max-width:700px){.stephanie-story #stepping-into-view .journal-description{margin-top:24px}}
+
+/* Approved responsive heading line breaks. */
+.stephanie-story :is(h1,h2)>.heading-mobile{display:none!important}
+.stephanie-story :is(.heading-desktop,.heading-mobile)>span{display:block;white-space:nowrap}
+.stephanie-story #blueprint-title{font-size:min(66px,8cqw);max-width:none;line-height:1.1}
+.stephanie-story #blueprint-title>span{display:block;white-space:nowrap}
+.stephanie-story #before-title>.heading-desktop{white-space:normal}
+@media(max-width:700px){
+ .stephanie-story :is(h1,h2)>.heading-desktop{display:none!important}
+ .stephanie-story :is(h1,h2)>.heading-mobile{display:block!important}
+ .stephanie-story :is(#stepping-into-view,#social-content){container-type:inline-size}
+ .stephanie-story .hero-layout #story-title.amy-three-line-headline{font-size:6cqw}
+ .stephanie-story #before-title{font-size:7.5cqw;line-height:1.12}
+ .stephanie-story #activation-title,.stephanie-story #social-title{font-size:8cqw;line-height:1.12;max-width:none}
+ .stephanie-story .chapter>h2#results-title{font-size:6.5cqw;line-height:1.12}
+}
