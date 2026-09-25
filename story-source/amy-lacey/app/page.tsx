@@ -53,13 +53,13 @@ export default function StoryPage() { return <>
 </ol></section>
 <section className="chapter blueprint-card" id="business-blueprint" aria-labelledby="blueprint-title">
 <p className="chapter-label"><span>The Business + Marketing Blueprint</span></p>
-<h2 id="blueprint-title">One founder. A message with room to grow.</h2>
+<h2 id="blueprint-title">A full brand ecosystem as a founder-led brand.</h2>
 <div className="narrative"><p>We helped Amy define her signature message, develop her intellectual property, and create <strong>Faithfully Found</strong>, a faith-based personal development brand rooted in her experience and convictions.</p><p>The strategy placed Amy at the center. Her speaking career, Faithfully Found, and her existing wellness company, Livyond, could each have a distinct purpose while benefiting from a recognizable founder.</p><p>This gave her a way to build beyond the company she had sold, with a personal identity that could continue across ventures.</p></div>
 <figure className="brand-showcase strategy-image" data-asset="strategy-overview"><picture><source media="(max-width: 700px)" srcSet="/crowned-stories/amy-lacey/images/brand-strategy-mobile.webp" width="819" height="1110"/><img src="/crowned-stories/amy-lacey/images/brand-strategy-desktop.webp" alt="FORDIVINE Business and Marketing Blueprint dashboard covering positioning, messaging, ideal clients, offers, and content strategy" width="1640" height="580" loading="lazy"/></picture><figcaption className="asset-caption"><span className="caption-desktop">A look inside her Business + Marketing Blueprint, with detailed chapters covering positioning, messaging, ideal clients, offers, and more.</span><span className="caption-mobile">Inside look of her strategy blueprint dashboard</span></figcaption></figure>
 </section>
 <section className="chapter" id="brand-identity" tabIndex={-1} aria-labelledby="building-title">
 <p className="chapter-label"><span className="chapter-number" aria-hidden="true">03</span><span>The Brand Identity</span></p>
-<h2 id="building-title">A presence that felt like her.</h2>
+<h2 id="building-title">Finally a new identity to embody.</h2>
 <p className="intro">Amy wanted her faith and lived experience to be visible in a brand that felt warm, considered, and professional. The identity needed to support both an honest personal message and the credibility of an experienced founder.</p>
 <ul className="creative-list">
 <li><strong>Grounded in her convictions.</strong> Give Faithfully Found a distinct expression rooted in faith, resilience, forgiveness, and legacy.</li>
@@ -75,7 +75,7 @@ export default function StoryPage() { return <>
 <section className="chapter" id="stepping-into-view" tabIndex={-1} aria-labelledby="activation-title">
 <p className="chapter-label"><span className="chapter-number" aria-hidden="true">04</span><span>The Brand In Action</span></p>
 <p className="asset-eyebrow">The Faithfully Found 90-Day Journal</p>
-<h2 id="activation-title">Her message became a daily practice.</h2>
+<h2 id="activation-title">A Journal to expand her community + impact</h2>
 <p className="intro">Faithfully Found gave Amy a clear message. The 90-day journal gave her audience a way to bring it into everyday life. We helped turn that direction into a guided experience built around faith, healing, purpose, and legacy.</p>
 <p>From the cover to the daily reflection pages, the journal carries the same identity, voice, and intention. Scripture, personal prompts, and space for prayer invite women to spend time with the message and make it their own.</p>
 <JournalPreview/>
