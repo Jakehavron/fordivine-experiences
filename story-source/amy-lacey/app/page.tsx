@@ -44,7 +44,7 @@ export default function StoryPage() { return <>
 </section>
 <section className="chapter" id="the-work" tabIndex={-1} aria-labelledby="unveiling-title">
 <p className="chapter-label"><span className="chapter-number" aria-hidden="true">02</span><span>The Desired Outcomes</span></p>
-<h2 id="unveiling-title">Build a brand ecosystem the right way.</h2>
+<h2 id="unveiling-title"><span>Build a brand ecosystem</span><span>the right way.</span></h2>
 <p className="intro">The work centered on giving Amy a personal brand that could hold her experience, her convictions, and several distinct paths forward.</p>
 <ol className="goal-grid" role="list">
 <li><span className="goal-number" aria-hidden="true">1</span><h3>Own a message beyond her former company.</h3><p>Translate Amy’s lived experience into a signature message and intellectual property she could use across speaking, content, and personal development.</p></li>
