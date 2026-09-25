@@ -462,8 +462,8 @@ section[tabindex="-1"]:focus{outline:none}
 
 /* Crop Instagram’s footer while retaining its profile header and 4:5 media stage. */
 .stephanie-story .instagram-card{container-type:inline-size}
-.stephanie-story .instagram-embed-wrap{height:calc(125cqw + 54px * var(--embed-scale,1));min-height:0;overflow:clip;overflow-clip-margin:0}
-.stephanie-story .instagram-embed-wrap .instagram-media{width:var(--embed-width,326px)!important;max-width:none!important;zoom:var(--embed-scale,1)}
+.stephanie-story .instagram-embed-wrap{height:calc(var(--embed-media-height, 407.5px) + 54px * var(--embed-scale,1));min-height:0;overflow:hidden;position:relative}
+.stephanie-story .instagram-embed-wrap .instagram-media{width:100%!important;min-width:100%!important;max-width:none!important}
 
 /* Four posts across on desktop; retain the existing mobile layout and crop. */
 @media(min-width:1001px){
@@ -593,7 +593,7 @@ section[tabindex="-1"]:focus{outline:none}
 /* Give the two mobile posts more room and show the media without tiny embed chrome. */
 @media(max-width:700px){
  .stephanie-story .instagram-track{width:calc(100% + 40px);max-width:none;margin-inline:-20px;grid-auto-columns:calc((100% - 10px)/2);gap:10px}
- .stephanie-story .instagram-embed-wrap{height:125cqw}
+ .stephanie-story .instagram-embed-wrap{height:auto;aspect-ratio:4/5}
  .stephanie-story .instagram-embed-wrap .instagram-media{transform:translateY(-54px)}
  .stephanie-story .instagram-card .instagram-direct-link{font-size:12px;padding:10px;min-height:44px;align-items:center;white-space:nowrap}
  .stephanie-story .instagram-link-detail{display:none}
@@ -726,3 +726,6 @@ section[tabindex="-1"]:focus{outline:none}
 
 /* Align desktop social copy with the top of the comparison instead of centering it. */
 @media(min-width:1001px){.stephanie-story .social-activation-copy{align-self:start}}
+
+/* Scale the container, never the iframe viewport: consistent mobile browser cropping. */
+.stephanie-story .instagram-embed-stage{width:var(--embed-width,326px);transform:scale(var(--embed-scale,1));transform-origin:top left}
