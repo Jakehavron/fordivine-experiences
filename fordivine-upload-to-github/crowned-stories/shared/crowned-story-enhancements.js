@@ -470,15 +470,13 @@
   }
 
   function enhanceMobileNav(meta) {
-    if (doc.querySelector('[data-cs-mobile-nav], [data-cs-navigation="logo-only"]')) return;
+    if (doc.querySelector('[data-cs-mobile-nav], [data-cs-navigation="custom"]')) return;
 
     const navLinks = [
-      { label: 'Home', href: '/discover', match: '/discover' },
-      { label: 'About Us', href: '/about-us', match: '/about-us' },
-      { label: 'Crowned Stories', href: '/crowned-stories', match: '/crowned-stories' },
       { label: 'Services', href: '/discover', match: '/discover' },
-      { label: 'Contact', href: '/discover#book', match: '/discover' },
-      { label: 'Email', href: 'mailto:hello@fordivine.com', match: 'mailto:' }
+      { label: 'Crowned Stories', href: '/crowned-stories', match: '/crowned-stories' },
+      { label: 'Inquire', href: '/discover#book', match: '/discover#book' },
+      { label: 'About Us', href: '/about-us', match: '/about-us' }
     ];
 
     const currentPath = window.location.pathname.replace(/\/+$/, '') || '/';

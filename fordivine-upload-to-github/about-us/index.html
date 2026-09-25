@@ -503,30 +503,27 @@ footer .framer-z86ie5 {
 }
 
 
-/* Match the Crowned Stories header at every viewport size. */
-.about-site-nav {
-  box-sizing: border-box;
-  position: relative;
-  z-index: 3;
-  display: flex;
-  flex: none;
-  order: -1000;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  width: 100%;
-  padding: 20px 42px;
-  background: #2d2f2e;
-  color: #fff;
-}
-.about-site-logo { display: inline-flex; align-items: center; line-height: 1; }
-.about-site-wordmark { width: auto; height: 18px; display: block; }
-@media (max-width: 768px) {
-  .about-site-nav { padding: 14px 20px; }
-}
-@media (max-width: 520px) {
-  .about-site-nav { gap: 14px; }
-  .about-site-wordmark { height: 14px; }
+/* Shared visual pattern used by Stephanie Byerly's story header. */
+@font-face { font-family:"About Nav Proxima";src:url('/crowned-stories/stephanie-byerly/fonts/proxima-regular-optimized.woff2') format('woff2');font-display:swap; }
+
+.about-site-nav { box-sizing:border-box;position:relative;z-index:80;display:flex;flex:none;order:-1000;align-items:center;justify-content:space-between;width:100%;height:74px;padding:0 40px;background:#2d2f2e;color:#fff;font-family:"About Nav Proxima",Arial,sans-serif;line-height:1.5; }
+.about-site-logo { display:inline-flex;align-items:center;min-height:44px;line-height:1; }
+.about-site-wordmark { width:auto;height:18px;display:block; }
+.about-desktop-menu { display:flex;align-items:center;justify-content:space-between;width:75%; }
+.about-site-nav a { color:inherit;text-decoration:none; }
+.about-desktop-menu a { font-size:18px;font-weight:600; }
+.about-dropdown { display:none; }
+.about-site-nav a:focus-visible,.about-dropdown summary:focus-visible { outline:3px solid #9a8460;outline-offset:3px; }
+@media(max-width:1000px) { .about-site-nav { padding-inline:28px; }.about-desktop-menu { width:73%; } }
+@media(max-width:700px) {
+ .about-site-nav { height:70px;padding:0 22px; }
+ .about-site-wordmark { height:16px; }
+ .about-desktop-menu { display:none; }
+ .about-dropdown { display:block;position:relative; }
+ .about-dropdown summary { cursor:pointer;display:flex;align-items:center;justify-content:flex-end;min-width:44px;min-height:44px;font-size:16px;list-style:none; }
+ .about-dropdown summary::-webkit-details-marker { display:none; }
+ .about-dropdown nav { position:absolute;top:52px;right:0;display:flex;flex-direction:column;gap:4px;width:240px;max-width:calc(100vw - 32px);padding:15px;background:#f5f5f5;color:#171717;border-radius:16px;box-shadow:0 15px 40px #0003; }
+ .about-dropdown nav a { display:flex;align-items:center;min-height:46px;padding:8px 12px;font-size:18px; }
 }
 
 /* ===== MOBILE RESPONSIVE (max-width: 809px) ===== */
@@ -584,14 +581,12 @@ footer .framer-z86ie5 {
 
 <!-- Start of bodyStart -->
 <!-- End of bodyStart -->
-<div data-framer-generated-page="" data-framer-hydrate-v2='{"routeId":"UdXKukCe6","localeId":"default","breakpoints":[{"hash":"1r1pdg9","mediaQuery":"(min-width: 1200px)"},{"hash":"rz00x6","mediaQuery":"(min-width: 810px) and (max-width: 1199.98px)"},{"hash":"9p77tx","mediaQuery":"(max-width: 809.98px)"},{"hash":"1s35zb","mediaQuery":"(min-width: 1200px)"},{"hash":"1smg0tm","mediaQuery":"(min-width: 810px) and (max-width: 1199.98px)"},{"hash":"gclt0c","mediaQuery":"(max-width: 809.98px)"}]}' data-framer-page-optimized-at="2026-05-11T14:59:04.932Z" data-framer-ssr-released-at="2026-05-08T10:11:54.854Z" id="main"><!--$--><!--$--><style data-framer-html-style="">:root body { background: var(--token-24837cba-ff61-4e23-87ee-372ea0bee4e7, rgb(45, 47, 46)); }</style><div class="framer-xpzst framer-1s35zb" data-layout-template="true" data-selection="true" style="--1g7jkl4:visible;--jxe88c:var(--token-24837cba-ff61-4e23-87ee-372ea0bee4e7, rgb(45, 47, 46));min-height:100vh;width:auto"><nav data-cs-navigation="logo-only" class="about-site-nav" aria-label="Main navigation">
-      <a href="/discover" class="about-site-logo" aria-label="FORDIVINE home">
+<div data-framer-generated-page="" data-framer-hydrate-v2='{"routeId":"UdXKukCe6","localeId":"default","breakpoints":[{"hash":"1r1pdg9","mediaQuery":"(min-width: 1200px)"},{"hash":"rz00x6","mediaQuery":"(min-width: 810px) and (max-width: 1199.98px)"},{"hash":"9p77tx","mediaQuery":"(max-width: 809.98px)"},{"hash":"1s35zb","mediaQuery":"(min-width: 1200px)"},{"hash":"1smg0tm","mediaQuery":"(min-width: 810px) and (max-width: 1199.98px)"},{"hash":"gclt0c","mediaQuery":"(max-width: 809.98px)"}]}' data-framer-page-optimized-at="2026-05-11T14:59:04.932Z" data-framer-ssr-released-at="2026-05-08T10:11:54.854Z" id="main"><!--$--><!--$--><style data-framer-html-style="">:root body { background: var(--token-24837cba-ff61-4e23-87ee-372ea0bee4e7, rgb(45, 47, 46)); }</style><div class="framer-xpzst framer-1s35zb" data-layout-template="true" data-selection="true" style="--1g7jkl4:visible;--jxe88c:var(--token-24837cba-ff61-4e23-87ee-372ea0bee4e7, rgb(45, 47, 46));min-height:100vh;width:auto"><header class="about-site-nav" data-cs-navigation="custom"><a href="/discover" class="about-site-logo" aria-label="FORDIVINE home">
         <picture>
           <source srcset="/fordivine-logo.webp" type="image/webp">
           <img src="/fordivine-logo.png" alt="FORDIVINE" class="about-site-wordmark" width="1287" height="201" loading="eager" fetchpriority="high" decoding="async">
         </picture>
-      </a>
-    </nav><style data-framer-html-style="">html body { background: var(--token-24837cba-ff61-4e23-87ee-372ea0bee4e7, rgb(67, 67, 67)); }
+      </a><nav class="about-desktop-menu" aria-label="Main navigation"><a href="/discover">Services</a><a href="/crowned-stories">Crowned Stories</a><a href="/discover#book">Inquire</a><a href="/about-us">About Us</a></nav><details class="about-dropdown"><summary>Menu</summary><nav aria-label="Mobile navigation"><a href="/discover">Services</a><a href="/crowned-stories">Crowned Stories</a><a href="/discover#book">Inquire</a><a href="/about-us">About Us</a></nav></details></header><style data-framer-html-style="">html body { background: var(--token-24837cba-ff61-4e23-87ee-372ea0bee4e7, rgb(67, 67, 67)); }
 
 
 /* ===== MOBILE IMAGE FIX CSS ===== */
