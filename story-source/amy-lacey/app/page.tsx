@@ -77,8 +77,8 @@ export default function StoryPage() { return <>
 <p className="asset-eyebrow">The Faithfully Found 90-Day Journal</p>
 <h2 id="activation-title">A Journal to expand her community + impact</h2>
 <p className="intro">Faithfully Found gave Amy a clear message. The 90-day journal gave her audience a way to bring it into everyday life. We helped turn that direction into a guided experience built around faith, healing, purpose, and legacy.</p>
-<p>From the cover to the daily reflection pages, the journal carries the same identity, voice, and intention. Scripture, personal prompts, and space for prayer invite women to spend time with the message and make it their own.</p>
 <JournalPreview/>
+<p className="journal-description">From the design itself to the verbiage within, the journal carries the same identity and voice we designed to invite women to partake and make it their own.</p>
 </section>
 <SocialCarousel/>
 <section className="chapter brand-vault" id="brand-vault" aria-labelledby="vault-title">
