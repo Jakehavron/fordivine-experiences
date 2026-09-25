@@ -731,3 +731,6 @@ section[tabindex="-1"]:focus{outline:none}
 .stephanie-story .instagram-embed-stage{width:var(--embed-width,326px);transform:scale(var(--embed-scale,1));transform-origin:top left}
 
 @media(max-width:700px){.stephanie-story #before-title{font-size:clamp(22px,6.92vw,27px)}}
+
+/* Keep Stephanie’s full name on one readable line on mobile. */
+@media(max-width:700px){.stephanie-story .client-name{font-size:clamp(28px,9.5vw,66px);white-space:nowrap;text-wrap:nowrap}}
