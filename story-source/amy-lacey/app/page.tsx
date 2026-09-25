@@ -15,7 +15,7 @@ export default function StoryPage() { return <>
 
 <main id="story" className="michelle-story stephanie-story" tabIndex={-1}>
 <article>
-<div className="identity-masthead wrap"><a className="back-link" href="https://www.fordivine.com/crowned-stories">All Crowned Stories <Arrow/></a><p className="client-name">Amy Lacey</p><p className="client-role"><span>Wellness Entrepreneur</span><span aria-hidden="true">⊹</span><span>Keynote Speaker</span></p></div>
+<div className="identity-masthead wrap"><p className="client-name">Amy Lacey</p><p className="client-role"><span>Wellness Entrepreneur</span><span aria-hidden="true">⊹</span><span>Keynote Speaker</span></p></div>
 <section className="hero" id="overview" aria-labelledby="story-title">
 <div className="hero-layout"><div className="hero-copy"><p className="eyebrow"><span className="section-number" aria-hidden="true">00</span><span className="section-label">The Transformation</span></p>
 <h1 id="story-title" className="amy-three-line-headline"><span className="heading-desktop"><span>From selling her company</span><span>and losing her identity with it</span><span>to now having a brand she fully owns.</span></span><span className="heading-mobile"><span>From selling her company</span><span>and losing her identity with it to</span><span>now having a brand she fully owns.</span></span></h1>

@@ -13,7 +13,7 @@ export default function StoryPage() { return <>
 
 <main id="story" className="michelle-story stephanie-story" tabIndex={-1}>
 <article>
-<div className="identity-masthead wrap"><a className="back-link" href="https://www.fordivine.com/crowned-stories">All Crowned Stories <Arrow/></a><p className="client-name">Dr. Stephanie Byerly</p><p className="client-role"><span>Anesthesiologist</span><span aria-hidden="true">⊹</span><span>Trauma Coach</span><span aria-hidden="true">⊹</span><span>Speaker</span></p></div>
+<div className="identity-masthead wrap"><p className="client-name">Dr. Stephanie Byerly</p><p className="client-role"><span>Anesthesiologist</span><span aria-hidden="true">⊹</span><span>Trauma Coach</span><span aria-hidden="true">⊹</span><span>Speaker</span></p></div>
 <section className="hero" id="overview" aria-labelledby="story-title">
 <div className="hero-layout"><div className="hero-copy"><p className="eyebrow"><span className="section-number" aria-hidden="true">00</span><span className="section-label">The Transformation</span></p>
 <h1 id="story-title">From a career in medicine to coaching clients and a TEDx speaking opportunity.</h1>
