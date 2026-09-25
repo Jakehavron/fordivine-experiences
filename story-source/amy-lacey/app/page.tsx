@@ -110,7 +110,7 @@ export default function StoryPage() { return <>
 
 </section>
 </article>
-<section className="closing" aria-labelledby="closing-title"><h2 id="closing-title">Is Your Personal Brand Limiting Your <span className="closing-phrase">Business Growth?</span></h2><div className="closing-copy"><p>A scattered and unclear brand keeps you completely invisible in today’s digital landscape.</p><p>We build premium brand ecosystems for business women to get more <span className="copy-accent">clients,</span> <span className="copy-accent">stages,</span> &amp; <span className="copy-accent">business growth.</span></p></div><a className="button" href="https://www.fordivine.com/discover#book">Schedule Discovery Call Today</a></section>
+<section className="closing" aria-labelledby="closing-title"><h2 id="closing-title">Is Your Personal Brand Limiting Your <span className="closing-phrase">Business Growth?</span></h2><div className="closing-copy"><p>A scattered and unclear brand keeps you completely invisible in today’s digital landscape.</p><p>We build premium brand ecosystems for businesswomen to get more <span className="copy-accent">clients,</span> <span className="copy-accent">stages,</span> &amp; <span className="copy-accent">business growth.</span></p></div><a className="button" href="https://www.fordivine.com/discover#book">Schedule Discovery Call Today</a></section>
 <nav className="next-story" aria-label="Next Crowned Story"><a className="button" href="https://www.fordivine.com/crowned-stories/michelle-roby">View Next Crowned Story <Arrow/></a></nav>
 </main>
   <SiteFooter/>
