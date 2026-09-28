@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 const socialTitle = 'Dr. Stephanie Byerly’s Brand Transformation | FORDIVINE';
 const description = 'See how Dr. Stephanie Byerly turned 25+ years in medicine into a personal brand that attracted paying coaching clients and speaking opportunities.';
-const socialImage = {url:'/crowned-stories/stephanie-byerly/images/stephanie-media-kit.jpg',width:1440,height:809,alt:'Dr. Stephanie Byerly, MD media kit cover featuring her portrait and The Art of Becoming UNNUMB'};
+const socialImage = {url:'/crowned-stories/stephanie-byerly/images/stephanie-media-kit-cover-20260928-social.jpg',width:1440,height:809,alt:'Dr. Stephanie Byerly, MD media kit cover featuring her portrait and The Art of Becoming UNNUMB'};
 export const metadata: Metadata = {
   metadataBase:new URL('https://www.fordivine.com'),
   title:socialTitle,
