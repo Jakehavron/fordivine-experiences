@@ -13,11 +13,11 @@ export const metadata: Metadata = {
   twitter:{card:'summary_large_image',title:socialTitle,description,images:[socialImage]},
   icons:{
     icon:[
-      {url:'/crowned-stories/michelle-roby/fordivine-icon-light.png',media:'(prefers-color-scheme: light)',type:'image/png'},
-      {url:'/crowned-stories/michelle-roby/fordivine-icon-dark.png',media:'(prefers-color-scheme: dark)',type:'image/png'}
+      {url:'/favicon-fd-light.png',media:'(prefers-color-scheme: light)',type:'image/png'},
+      {url:'/favicon-fd-dark.png',media:'(prefers-color-scheme: dark)',type:'image/png'}
     ],
-    shortcut:'/crowned-stories/michelle-roby/fordivine-icon-light.png',
-    apple:'/crowned-stories/michelle-roby/fordivine-apple-icon.png'
+    shortcut:'/favicon-fd-light.png',
+    apple:'/favicon-fd-apple.png'
   }
 };
 export default function RootLayout({children}:Readonly<{children:React.ReactNode}>){return <html lang="en"><head><link rel="stylesheet" href="/shared/site-navigation.css"/><link rel="preload" href="/crowned-stories/michelle-roby/fonts/helvetica-bold-optimized.woff2" as="font" type="font/woff2" crossOrigin="anonymous"/><link rel="preload" href="/crowned-stories/michelle-roby/fonts/proxima-regular-optimized.woff2" as="font" type="font/woff2" crossOrigin="anonymous"/></head><body>{children}</body></html>}
