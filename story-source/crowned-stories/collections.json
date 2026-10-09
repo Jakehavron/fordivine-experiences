@@ -1,0 +1,111 @@
+{
+  "categories": [
+    [
+      "entrepreneurs-business-builders",
+      "Founders & Business Owners",
+      "For women building a business around their experience, reputation, and next chapter."
+    ],
+    [
+      "coaches-speakers-authors",
+      "Speakers, Authors & Consultants",
+      "For women turning their expertise into a clear message, a platform, and opportunities to be heard."
+    ],
+    [
+      "health-wellness-beauty",
+      "Health & Wellness Professionals",
+      "For women bringing their clinical, wellness, and industry experience into a personal brand."
+    ]
+  ],
+  "stories": {
+    "ali-marie": {
+      "name": "Ali Marie",
+      "role": "LifeSpa Executive, Advisor & Consultant",
+      "desc": "From solely a corporate executive to now owning an established personal brand being seen as a respected thought leader.",
+      "image": "/ali_marie.webp"
+    },
+    "christa-crawford": {
+      "name": "Christa Crawford",
+      "role": "NWM Top 1% Leader, Lifestyle & Beauty Entrepreneur",
+      "desc": "From being seen solely as a NWM top leader to now a multi-faceted brand amplifying her God-given calling to help women build their dream life.",
+      "image": "/christa_crawford.webp"
+    },
+    "beth-clifford": {
+      "name": "Beth Clifford",
+      "role": "Sales Consultant, Author, Podcast Host",
+      "desc": "From a successful but invisible sales consultant to a recognized authority with a bestselling book and premium brand.",
+      "image": "/beth_clifford.webp"
+    },
+    "roni-lavenia": {
+      "name": "Roni LaVenia",
+      "role": "Speaker, Author, Mental Health Advocate",
+      "desc": "From overwhelmed family business owner to now an empowered speaker, author, and mental health advocate.",
+      "image": "/roni_lavenia.webp"
+    },
+    "lauren-fields": {
+      "name": "Lauren Fields",
+      "role": "Founder of Fieldswell, Wellness Entrepreneur",
+      "desc": "From a wishful idea of having her own wellness clinic to successfully launching and growing Fieldswell, her own wellness clinic & brand.",
+      "image": "/lauren_fields.webp"
+    },
+    "colette-vanpaemel": {
+      "name": "Colette Vanpaemel",
+      "role": "Beauty Entrepreneur, Speaker",
+      "desc": "From feeling stuck in her mid-life to now a brand empowering women and also growing her beauty company.",
+      "image": "/colette_vanpaemel.webp"
+    },
+    "michelle-roby": {
+      "name": "Michelle Roby",
+      "role": "Business Owner, Consultant & Speaker",
+      "desc": "From no digital presence to consulting clients and paid speaking inquiries.",
+      "image": "/crowned-stories/michelle-roby/images/michelle-portrait-refined-640.webp"
+    },
+    "stephanie-byerly": {
+      "name": "Dr. Stephanie Byerly",
+      "role": "Anesthesiologist, Coach & Speaker",
+      "desc": "From 25+ years in medicine to a personal brand attracting coaching clients and speaking opportunities.",
+      "image": "/crowned-stories/stephanie-byerly/images/stephanie-portrait-640.webp"
+    },
+    "amy-lacey": {
+      "name": "Amy Lacey",
+      "role": "Founder, Author & Keynote Speaker",
+      "desc": "A clear message and a personal brand built around faith, speaking, and her next chapter.",
+      "image": "/crowned-stories/amy-lacey/images/amy-portrait-420-v3.webp"
+    }
+  },
+  "members": {
+    "entrepreneurs-business-builders": [
+      "michelle-roby",
+      "amy-lacey",
+      "beth-clifford",
+      "roni-lavenia",
+      "lauren-fields",
+      "colette-vanpaemel",
+      "christa-crawford"
+    ],
+    "coaches-speakers-authors": [
+      "michelle-roby",
+      "stephanie-byerly",
+      "amy-lacey",
+      "beth-clifford",
+      "roni-lavenia",
+      "colette-vanpaemel",
+      "ali-marie"
+    ],
+    "health-wellness-beauty": [
+      "stephanie-byerly",
+      "lauren-fields",
+      "ali-marie"
+    ]
+  },
+  "order": [
+    "michelle-roby",
+    "stephanie-byerly",
+    "amy-lacey",
+    "beth-clifford",
+    "roni-lavenia",
+    "lauren-fields",
+    "colette-vanpaemel",
+    "christa-crawford",
+    "ali-marie"
+  ]
+}

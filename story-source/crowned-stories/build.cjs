@@ -19,6 +19,7 @@ async function build() {
   const pattern = /(<div class="proof-carousel-slide"[^>]*>\s*)(<img[^>]+>)/g;
   for (const match of [...html.matchAll(pattern)]) {
     const tag = match[2], src = tag.match(/src="([^"]+)"/)[1];
+    if (src.startsWith('/crowned-stories/media/performance-v1/')) continue;
     const source = path.join(root, src.slice(1));
     const meta = await sharp(source).metadata();
     const maxWidth = Math.floor(Math.min(meta.width, meta.height * 0.75));
@@ -44,6 +45,8 @@ async function build() {
   });
   fs.writeFileSync(path.join(root,'crowned-stories/index.html'), html);
   fs.copyFileSync(path.join(__dirname,'deferred-media.js'),path.join(root,'crowned-stories/media/deferred-media-v2.js'));
+  for (const name of ['collections-v1.css', 'collection-tracking-v1.js']) fs.copyFileSync(path.join(__dirname, name), path.join(root, 'crowned-stories/media', name));
+  for (const name of fs.readdirSync(path.join(__dirname, 'collections'))) fs.copyFileSync(path.join(__dirname, 'collections', name), path.join(root, 'crowned-stories', path.basename(name, '.html'), 'index.html'));
   console.log(JSON.stringify({images,originalBytes:originals,selected600pxBytes:mobileBytes,savedBytes:originals-mobileBytes}));
 }
 build().catch(error => {console.error(error);process.exitCode=1;});

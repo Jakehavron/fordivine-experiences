@@ -9,3 +9,11 @@ The first testimonial poster is rendered in HTML with eager/high priority. The p
 The Source Sans 3 fallback uses Arial's average ASCII letter/digit advance (85.1184% size-adjust) and the target font's 1024/-400/0 metrics, normalized against 1000 units per em and that size adjustment. Source Sans 3 remains preloaded and font-display: swap is preserved.
 
 Validation: compare content and metadata to the previous build, verify carousel buttons/keyboard controls, expanded stories and FAQs, video controls, responsive layout at 390px and desktop, and all image URLs. No captions or security headers are changed.
+
+## Collection organization (2026-10-09)
+
+The hub and `collections/*.html` are the editable sources for the four collection pages. The hub source was synchronized with production to preserve the shared navigation, footer, favicons, FAQ schema, and optimized media added after the previous source build. Run `node build-collections.cjs` for collection-only changes; the original media build is still available when regenerating images. `collections.json` documents membership and the approved card text; edit rendered HTML alongside this inventory when changing a collection.
+
+Existing URLs stay stable. Individual story HTML/media are outside this build. Original testimonials remain verbatim. Collection pages may cross-list the same story.
+
+`collection-tracking-v1.js` emits `crowned_category_click`, `crowned_story_click`, `crowned_discover_click`, and `crowned_navigation_click` to the existing GA4 property G-Q8TH5MKKZ0. Parameters include source_page, link_destination, story_slug, story_category, link_placement, and card_position. No internal UTM parameters are added. A session-only story-click assist expires after 24 hours and is read by the existing attribution helper on discovery/scheduler events. It indicates a click, never a confirmed story view or completed booking. GA4 custom dimensions/report configuration are outside this source deployment; event receipt should be checked in the property's DebugView/Realtime.

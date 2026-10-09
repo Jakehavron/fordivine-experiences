@@ -116,13 +116,22 @@
     return state;
   }
 
+  function storyClickParams() {
+    try {
+      var click = JSON.parse(window.sessionStorage.getItem('fd_story_click_v1') || 'null');
+      if (!click || !isFresh(click.captured_at, 24 * 60 * 60 * 1000)) return {};
+      return { crowned_story_clicked: true, crowned_story_slug: clean(click.story_slug, 120), crowned_story_category: clean(click.story_category, 120), crowned_story_placement: clean(click.link_placement, 80) };
+    } catch (error) { return {}; }
+  }
+
   function gaParams() {
     var state = currentState();
     var assist = state.articleAssist;
-    if (!assist) return { article_assisted: false };
+    if (!assist) return Object.assign({ article_assisted: false }, storyClickParams());
 
     var ageDays = Math.max(0, Math.floor((Date.now() - Date.parse(assist.captured_at)) / 86400000));
     return {
+      ...storyClickParams(),
       article_assisted: true,
       article_entry: assist.entry,
       article_slug: assist.article,
@@ -159,6 +168,8 @@
       url.searchParams.set('fd_article_landing_page', assist.landing_page);
     }
 
+    var storyClick = storyClickParams();
+    Object.keys(storyClick).forEach(function (key) { url.searchParams.set('fd_' + key, String(storyClick[key])); });
     return url.toString();
   }
 
@@ -180,6 +191,8 @@
       params.set('fd_cta', assist.cta);
       params.set('fd_article_landing_page', assist.landing_page);
     }
+    var storyClick = storyClickParams();
+    Object.keys(storyClick).forEach(function (key) { params.set('fd_' + key, String(storyClick[key])); });
     return params;
   }
 
@@ -192,6 +205,9 @@
   };
 
   var capturedState = capture();
+  if (/^\/discover\/?$/.test(window.location.pathname) && storyClickParams().crowned_story_clicked && typeof window.gtag === 'function') {
+    window.gtag('event', 'crowned_story_assisted_discover', gaParams());
+  }
   if (/^\/discover\/?$/.test(window.location.pathname) && capturedState.articleAssist && typeof window.gtag === 'function') {
     window.gtag('event', 'article_assisted_discover_visit', gaParams());
   }
