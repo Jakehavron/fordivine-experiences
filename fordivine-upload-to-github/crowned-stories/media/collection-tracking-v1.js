@@ -29,7 +29,19 @@
       try { window.sessionStorage.setItem('fd_story_click_v1', JSON.stringify({ captured_at: new Date().toISOString(), story_slug: story, story_category: params.story_category, link_placement: params.link_placement, source_page: params.source_page })); } catch (_) {}
     }
     if (typeof window.fdLoadTrackingLibraries === 'function') window.fdLoadTrackingLibraries();
-    if (typeof window.gtag === 'function') window.gtag('event', name, params);
+    if (typeof window.gtag === 'function') {
+      // Give a first-interaction event time to leave before same-tab navigation.
+      // Modified clicks, downloads, and new tabs retain native browser behavior.
+      if (event.type === 'click' && !event.defaultPrevented && !event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey && !link.hasAttribute('download') && (!link.target || link.target === '_self') && typeof event.preventDefault === 'function') {
+        event.preventDefault();
+        var navigated = false;
+        var navigate = function () { if (!navigated) { navigated = true; window.location.assign(url.href); } };
+        params.event_callback = navigate;
+        params.event_timeout = 800;
+        window.setTimeout(navigate, 850);
+      }
+      window.gtag('event', name, params);
+    }
   }
   document.addEventListener('click', track);
   document.addEventListener('auxclick', track);
