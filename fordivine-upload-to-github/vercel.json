@@ -99,6 +99,105 @@
   ],
   "redirects": [
     {
+      "source": "/privacy-policy",
+      "has": [
+        {
+          "type": "host",
+          "value": "home.fordivine.com"
+        }
+      ],
+      "destination": "https://www.fordivine.com/privacy-policy",
+      "permanent": true
+    },
+    {
+      "source": "/terms-of-use",
+      "has": [
+        {
+          "type": "host",
+          "value": "home.fordivine.com"
+        }
+      ],
+      "destination": "https://www.fordivine.com/terms-of-use",
+      "permanent": true
+    },
+    {
+      "source": "/fd-house",
+      "has": [
+        {
+          "type": "host",
+          "value": "home.fordivine.com"
+        }
+      ],
+      "destination": "https://www.fordivine.com/about-us",
+      "permanent": true
+    },
+    {
+      "source": "/about-us",
+      "has": [
+        {
+          "type": "host",
+          "value": "home.fordivine.com"
+        }
+      ],
+      "destination": "https://www.fordivine.com/about-us",
+      "permanent": true
+    },
+    {
+      "source": "/inquire",
+      "has": [
+        {
+          "type": "host",
+          "value": "home.fordivine.com"
+        }
+      ],
+      "destination": "https://www.fordivine.com/discover#book",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "has": [
+        {
+          "type": "host",
+          "value": "home.fordivine.com"
+        }
+      ],
+      "destination": "https://www.fordivine.com/discover#book",
+      "permanent": true
+    },
+    {
+      "source": "/crowned-stories",
+      "has": [
+        {
+          "type": "host",
+          "value": "home.fordivine.com"
+        }
+      ],
+      "destination": "https://www.fordivine.com/crowned-stories",
+      "permanent": true
+    },
+    {
+      "source": "/crowned-stories/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "home.fordivine.com"
+        }
+      ],
+      "destination": "https://www.fordivine.com/crowned-stories/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "home.fordivine.com"
+        }
+      ],
+      "destination": "https://www.fordivine.com/discover",
+      "permanent": true
+    },
+    {
       "source": "/",
       "destination": "/discover",
       "permanent": true
@@ -170,23 +269,13 @@
     },
     {
       "source": "/retreat",
-      "destination": "https://home.fordivine.com/retreat",
-      "permanent": false
+      "destination": "/discover",
+      "permanent": true
     },
     {
       "source": "/retreat-waitlist",
-      "destination": "https://home.fordivine.com/retreat-waitlist",
-      "permanent": false
-    },
-    {
-      "source": "/privacy-policy",
-      "destination": "https://home.fordivine.com/privacy-policy",
-      "permanent": false
-    },
-    {
-      "source": "/terms-of-use",
-      "destination": "https://home.fordivine.com/terms-of-use",
-      "permanent": false
+      "destination": "/discover",
+      "permanent": true
     }
   ],
   "rewrites": [
