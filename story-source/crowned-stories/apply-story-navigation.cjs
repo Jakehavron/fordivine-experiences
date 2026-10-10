@@ -9,27 +9,32 @@ function storyNavigation(html,slug){
  if(!category)throw Error('Unknown story '+slug);
  const [id,label]=category,members=data.members[id],next=members[(members.indexOf(slug)+1)%members.length];
  const name=data.stories[slug].name,nextName=data.stories[next].name,url='/crowned-stories/'+id;
- html=html.replace(/<!-- fd-story-breadcrumb -->[\s\S]*?<!-- \/fd-story-breadcrumb -->/g,'').replace(/<!-- fd-story-navigation -->[\s\S]*?<!-- \/fd-story-navigation -->/g,'<!-- fd-story-nav-slot -->');
+ html=html.replace(/<!-- fd-story-breadcrumb -->[\s\S]*?<!-- \/fd-story-breadcrumb -->/g,'').replace(/<!-- fd-story-navigation -->[\s\S]*?<!-- \/fd-story-navigation -->/g,'');
  const attrs=(placement,story='')=>`data-story-nav="${placement}" data-cs-category="${id}"${story?` data-cs-story="${story}"`:''}`;
  const crumb=`<!-- fd-story-breadcrumb --><nav class="fd-story-breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/crowned-stories" ${attrs('breadcrumb')}>Crowned Stories</a></li><li><a href="${url}" ${attrs('breadcrumb')}>${esc(label)}</a></li><li><span aria-current="page">${esc(name)}</span></li></ol></nav><!-- /fd-story-breadcrumb -->`;
  const nav=`<!-- fd-story-navigation --><nav id="fd-story-explore" class="fd-story-navigation" aria-label="Explore more Crowned Stories"><a href="${url}" ${attrs('category_return')}>← Explore more ${esc(label)} stories</a><a class="fd-story-next" href="/crowned-stories/${next}" ${attrs('next_story',next)}>Next story: ${esc(nextName)} →</a></nav><!-- /fd-story-navigation -->`;
  if(html.includes('<article>'))html=html.replace('<article>','<article>'+crumb);
  else {const header=html.indexOf('</header>');if(header<0)throw Error('Missing header');html=html.slice(0,header+9)+crumb+html.slice(header+9);}
+ // Remove the retired legacy next-story block, then place navigation after the closing CTA.
+ function endOfElement(start,tag){let depth=0;const re=new RegExp('<'+tag+'\\b[^>]*>|<\\/'+tag+'>','g');re.lastIndex=start;let m;while((m=re.exec(html))){depth+=m[0].startsWith('</')?-1:1;if(!depth)return re.lastIndex;}throw Error('Unclosed '+tag+' in '+slug);}
  const legacy=/<div\b[^>]*data-framer-name="CTA More work"[^>]*>/g.exec(html);
- if(html.includes('<!-- fd-story-nav-slot -->'))html=html.replace('<!-- fd-story-nav-slot -->',nav);
- else if(legacy){let depth=0,end=0;const re=/<div\b[^>]*>|<\/div>/g;re.lastIndex=legacy.index;let m;while((m=re.exec(html))){depth+=m[0]==='</div>'?-1:1;if(!depth){end=re.lastIndex;break;}}if(!end)throw Error('Unclosed next story navigation');html=html.slice(0,legacy.index)+nav+html.slice(end);}
- else if(html.includes('<section class="closing"'))html=html.replace('<section class="closing"',nav+'<section class="closing"');
- else { // Reapply to legacy exports where the original navigation was already replaced.
-  const marker=html.indexOf('fd-inquiry-desktop');
-  if(marker<0)throw Error('Missing navigation insertion point for '+slug);
-  const start=html.lastIndexOf('<div',marker);html=html.slice(0,start)+nav+html.slice(start);
+ if(legacy){const end=endOfElement(legacy.index,'div');html=html.slice(0,legacy.index)+html.slice(end);}
+ const closing=/<section\b[^>]*class="closing"[^>]*>/g.exec(html);
+ let insertion;
+ if(closing)insertion=endOfElement(closing.index,'section');
+ else {
+  const variants=Array.from(html.matchAll(/<div\b[^>]*class="[^"]*\bfd-inquiry-(?:desktop|tablet|phone)\b[^"]*"[^>]*>/g));
+  if(!variants.length)throw Error('Missing closing CTA in '+slug);
+  insertion=endOfElement(variants[variants.length-1].index,'div');
  }
+ html=html.slice(0,insertion)+nav+html.slice(insertion);
  let found=false;
  const schema={'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[['Crowned Stories','https://www.fordivine.com/crowned-stories'],[label,'https://www.fordivine.com'+url],[name,'https://www.fordivine.com/crowned-stories/'+slug]].map(([name,item],i)=>({'@type':'ListItem',position:i+1,name,item}))};
  html=html.replace(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/g,(tag,json)=>{let d;try{d=JSON.parse(json)}catch{return tag}function visit(x){if(!x||typeof x!=='object')return;if(x['@type']==='BreadcrumbList'){x.itemListElement=schema.itemListElement;found=true;}for(const v of Object.values(x))if(v&&typeof v==='object')visit(v);}visit(d);return tag.replace(json,JSON.stringify(d));});
  if(!found)html=html.replace('</head>',`<script type="application/ld+json">${JSON.stringify(schema)}</script></head>`);
  if(!html.includes('/story-navigation-v1.css'))html=html.replace('</head>','<link rel="stylesheet" href="/crowned-stories/media/story-navigation-v1.css"></head>');
  if(!html.includes('/story-navigation-v1.js'))html=html.replace('</body>','<script src="/crowned-stories/media/story-navigation-v1.js" defer></script></body>');
+ html=html.replace(/story-navigation-v1\.css(?:\?[^"]*)?/g,'story-navigation-v1.css?v=20261009-below-cta');
  return html;
 }
 module.exports={storyNavigation};
