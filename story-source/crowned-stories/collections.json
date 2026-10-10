@@ -21,55 +21,64 @@
       "name": "Ali Marie",
       "role": "LifeSpa Executive, Advisor & Consultant",
       "desc": "From solely a corporate executive to now owning an established personal brand being seen as a respected thought leader.",
-      "image": "/ali_marie.webp"
+      "image": "/ali_marie.webp",
+      "card_title": "From executive authority to a personal brand inspiring her LifeSpa team."
     },
     "christa-crawford": {
       "name": "Christa Crawford",
       "role": "NWM Top 1% Leader, Lifestyle & Beauty Entrepreneur",
       "desc": "From being seen solely as a NWM top leader to now a multi-faceted brand amplifying her God-given calling to help women build their dream life.",
-      "image": "/christa_crawford.webp"
+      "image": "/christa_crawford.webp",
+      "card_title": "From direct sales success to a personal brand uniting faith, family, and leadership."
     },
     "beth-clifford": {
       "name": "Beth Clifford",
       "role": "Sales Consultant, Author, Podcast Host",
       "desc": "From a successful but invisible sales consultant to a recognized authority with a bestselling book and premium brand.",
-      "image": "/beth_clifford.webp"
+      "image": "/beth_clifford.webp",
+      "card_title": "From corporate leader to author, podcast host, and independent consultant."
     },
     "roni-lavenia": {
       "name": "Roni LaVenia",
       "role": "Speaker, Author, Mental Health Advocate",
       "desc": "From overwhelmed family business owner to now an empowered speaker, author, and mental health advocate.",
-      "image": "/roni_lavenia.webp"
+      "image": "/roni_lavenia.webp",
+      "card_title": "From family business stress to sharing her story and speaking to business leaders."
     },
     "lauren-fields": {
       "name": "Lauren Fields",
       "role": "Founder of Fieldswell, Wellness Entrepreneur",
       "desc": "From a wishful idea of having her own wellness clinic to successfully launching and growing Fieldswell, her own wellness clinic & brand.",
-      "image": "/lauren_fields.webp"
+      "image": "/lauren_fields.webp",
+      "card_title": "From an unclear vision to launching Fieldswell, her own wellness clinic and brand."
     },
     "colette-vanpaemel": {
       "name": "Colette Vanpaemel",
       "role": "Beauty Entrepreneur, Speaker",
       "desc": "From feeling stuck in her mid-life to now a brand empowering women and also growing her beauty company.",
-      "image": "/colette_vanpaemel.webp"
+      "image": "/colette_vanpaemel.webp",
+      "card_title": "From scattered content to a clear midlife message and new affiliate partners."
     },
     "michelle-roby": {
       "name": "Michelle Roby",
       "role": "Business Owner, Consultant & Speaker",
       "desc": "From no digital presence to consulting clients and paid speaking inquiries.",
-      "image": "/crowned-stories/michelle-roby/images/michelle-portrait-refined-640.webp"
+      "image": "/crowned-stories/michelle-roby/images/michelle-portrait-refined-640.webp",
+      "card_title": "From no digital presence to now getting consulting clients and paid speaking inquiries."
     },
     "stephanie-byerly": {
       "name": "Dr. Stephanie Byerly",
       "role": "Anesthesiologist, Coach & Speaker",
       "desc": "From 25+ years in medicine to a personal brand attracting coaching clients and speaking opportunities.",
-      "image": "/crowned-stories/stephanie-byerly/images/stephanie-portrait-640.webp"
+      "image": "/crowned-stories/stephanie-byerly/images/stephanie-portrait-640.webp",
+      "card_title": "From a career in medicine to coaching clients and a TEDx speaking opportunity."
     },
     "amy-lacey": {
       "name": "Amy Lacey",
       "role": "Founder, Author & Keynote Speaker",
       "desc": "A clear message and a personal brand built around faith, speaking, and her next chapter.",
-      "image": "/crowned-stories/amy-lacey/images/amy-portrait-420-v3.webp"
+      "image": "/crowned-stories/amy-lacey/images/amy-portrait-420-v3.webp",
+      "card_title": "From selling her company and losing her identity to now having a brand she fully owns."
     }
   },
   "members": {
