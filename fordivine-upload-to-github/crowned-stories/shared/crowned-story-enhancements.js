@@ -149,7 +149,7 @@
 
   function enhanceLongHeroTitles(meta) {
     if (meta.slug !== 'colette-vanpaemel') return;
-    const candidates = Array.from(doc.querySelectorAll('h1, [data-framer-component-type="RichTextContainer"], p, span'));
+    const candidates = Array.from(doc.querySelectorAll('h1'));
     const titleText = 'colette vanpaemel';
     candidates.forEach((el) => {
       const normalized = el.textContent.replace(/\s+/g, ' ').trim().toLowerCase();

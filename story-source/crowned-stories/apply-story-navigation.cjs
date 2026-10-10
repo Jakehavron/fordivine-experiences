@@ -44,13 +44,15 @@ function storyNavigation(html,slug){
  if(!found)html=html.replace('</head>',`<script type="application/ld+json">${JSON.stringify(schema)}</script></head>`);
  if(!html.includes('/story-navigation-v1.css'))html=html.replace('</head>','<link rel="stylesheet" href="/crowned-stories/media/story-navigation-v1.css"></head>');
  if(!html.includes('/story-navigation-v1.js'))html=html.replace('</body>','<script src="/crowned-stories/media/story-navigation-v1.js" defer></script></body>');
+ if(!html.includes('/story-layout-v1.css'))html=html.replace('</head>','<link rel="stylesheet" href="/crowned-stories/media/story-layout-v1.css"></head>');
  html=html.replace(/story-navigation-v1\.css(?:\?[^"]*)?/g,'story-navigation-v1.css?v=20261009-below-cta');
+ html=html.replace(/crowned-story-enhancements\.js(?:\?[^"]*)?/g,'crowned-story-enhancements.js?v=20261009-heading-scope');
  return html;
 }
 module.exports={storyNavigation};
 if(require.main===module){
  fs.mkdirSync(path.join(root,'media'),{recursive:true});
  for(const slug of Object.keys(data.stories)){const f=path.join(root,slug,'index.html');fs.writeFileSync(f,storyNavigation(fs.readFileSync(f,'utf8'),slug));}
- for(const asset of ['story-navigation-v1.css','story-navigation-v1.js','story-ending-v1.css'])fs.copyFileSync(path.join(__dirname,asset),path.join(root,'media',asset));
+ for(const asset of ['story-navigation-v1.css','story-navigation-v1.js','story-ending-v1.css','story-layout-v1.css'])fs.copyFileSync(path.join(__dirname,asset),path.join(root,'media',asset));
  console.log('Updated navigation on all nine stories.');
 }

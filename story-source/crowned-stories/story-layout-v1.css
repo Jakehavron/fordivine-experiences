@@ -1,0 +1,10 @@
+/* Keep shared endings aligned at desktop, tablet, and phone sizes. */
+.closing + .fd-story-navigation{max-width:1440px;margin-left:auto;margin-right:auto}
+.fd-story-ending .closing h2{line-height:1.05;letter-spacing:-.025em}
+@media(max-width:1000px){.michelle-story .closing + .fd-story-navigation{width:calc(100% - 32px)}.michelle-story .two-line-title span{white-space:normal;overflow-wrap:normal}}
+@media(max-width:700px){.michelle-story .closing + .fd-story-navigation{width:calc(100% - 24px)}.michelle-story .closing h2{font-size:38px;line-height:1.05;letter-spacing:-.025em}}
+/* Keep the existing direct Instagram link readable until its embed replaces it. */
+.stephanie-story .instagram-embed-stage:has(>blockquote){width:100%;height:100%;transform:none}
+.stephanie-story .instagram-embed-wrap blockquote.instagram-media{display:flex;align-items:center;justify-content:center;width:100%;height:100%;min-height:0;transform:none;padding:24px;background:#f5f4f0;text-align:center;font:400 16px/1.5 'Proxima Nova',Arial,sans-serif}
+.stephanie-story .instagram-embed-wrap blockquote.instagram-media a{color:#2d2f2e;text-decoration:underline;text-underline-offset:4px}
+@media(max-width:700px){.michelle-story .closing h2 .closing-phrase{white-space:normal}}
