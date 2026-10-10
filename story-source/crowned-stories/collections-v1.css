@@ -9,3 +9,6 @@
 /* Match the hub typography to the Crowned Story pages, including existing testimonials and FAQs. */
 .cs-hub{font-family:'Proxima Nova',Arial,sans-serif}.cs-hub main,.cs-hub .cs-library,.cs-hub main p,.cs-hub main button,.cs-hub main a{font-family:'Proxima Nova',Arial,sans-serif}.cs-hub main h1,.cs-hub main h2,.cs-hub main h3,.cs-hub .cs-featured-name,.cs-hub .cs-featured-cta{font-family:'Helvetica Display',Helvetica,Arial,sans-serif;font-weight:400}.cs-hub .cs-heading p,.cs-hub .stories-proof-subcopy{font-family:'Proxima Nova',Arial,sans-serif}.cs-featured-card[data-cs-story="michelle-roby"] .cs-featured-portrait img{object-fit:contain;object-position:center center}.cs-featured-card[data-cs-story="michelle-roby"] .cs-featured-portrait{background:#e2ddcf}
 @media(max-width:760px){.cs-featured-copy .cs-featured-name{font-size:20px}.cs-featured-cta{font-size:14px;padding:12px 18px;gap:16px;white-space:nowrap}}
+
+/* The descriptive hub title stays on one desktop line without forcing mobile overflow. */
+.cs-hub .stories-proof-title{font-size:clamp(28px,4.3vw,62px);line-height:1.12;letter-spacing:-.035em;text-transform:none}.cs-hub .stories-proof-title-line{white-space:nowrap}@media(max-width:760px){.cs-hub .stories-proof-title{font-size:clamp(28px,7.4vw,42px)}.cs-hub .stories-proof-title-line{white-space:normal;text-wrap:balance}}
