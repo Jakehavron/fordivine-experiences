@@ -1,7 +1,6 @@
 (() => {
   const hero = document.querySelector('#fd-video-hero');
   const videos = [...hero.querySelectorAll('video')];
-  const button = hero.querySelector('.fd-about-motion');
   const compact = matchMedia('(max-width:809.98px)');
   const reduced = matchMedia('(prefers-reduced-motion:reduce)');
   let paused = reduced.matches;
@@ -12,8 +11,6 @@
   }
   function sync() {
     document.body.dataset.aboutMotionPaused = String(paused);
-    button.textContent = paused ? 'Play motion' : 'Pause motion';
-    button.setAttribute('aria-pressed', String(paused));
     videos.forEach(video => {
       const active = video.classList.contains(compact.matches ? 'hero-video-mobile' : 'hero-video-desktop');
       if (!active || paused || !heroInView || document.hidden) { video.pause(); return; }
@@ -34,7 +31,6 @@
       if (paused || !heroInView || document.hidden || video !== videos[compact.matches ? 1 : 0]) video.pause();
     });
   });
-  button.addEventListener('click', () => { paused = !paused; sync(); });
   compact.addEventListener('change', sync);
   reduced.addEventListener('change', () => { paused = reduced.matches; sync(); });
   document.addEventListener('visibilitychange', sync);
