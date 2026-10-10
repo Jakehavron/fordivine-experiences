@@ -20,5 +20,5 @@ body.cs-hub,.cs-hub .page-shell,.cs-hub main,.cs-hub .stories-proof-section,.cs-
 /* Keep the story-link arrow adjacent to its label. */
 :is(.cs-hub,.cs-topic) .cs-featured-cta{align-self:flex-start;justify-content:flex-start;gap:12px}
 
-/* Use a white backdrop for the three transparent portraits. */
-.cs-featured-card:is([data-cs-story="michelle-roby"],[data-cs-story="stephanie-byerly"],[data-cs-story="amy-lacey"]) .cs-featured-portrait{background:#fff}
+/* Use a soft off-white backdrop for subtle contrast behind the three portraits. */
+.cs-featured-card:is([data-cs-story="michelle-roby"],[data-cs-story="stephanie-byerly"],[data-cs-story="amy-lacey"]) .cs-featured-portrait{background:#f5f4f0}
