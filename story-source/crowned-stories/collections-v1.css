@@ -22,3 +22,6 @@ body.cs-hub,.cs-hub .page-shell,.cs-hub main,.cs-hub .stories-proof-section,.cs-
 
 /* Use a soft off-white backdrop for subtle contrast behind the three portraits. */
 .cs-featured-card:is([data-cs-story="michelle-roby"],[data-cs-story="stephanie-byerly"],[data-cs-story="amy-lacey"]) .cs-featured-portrait{background:#f5f4f0}
+
+/* Match the shadow on the More Voices, More Possibilities cards. */
+:is(.cs-hub,.cs-topic) .cs-featured-card{box-shadow:0 22px 70px rgba(0,0,0,.2)}
