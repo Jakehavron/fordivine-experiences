@@ -1,0 +1,42 @@
+/* About-page QA repairs. Scoped to this page; other page templates are unchanged. */
+#about-content{scroll-margin-top:112px}
+.fd-about-skip{position:fixed;top:12px;left:12px;z-index:10010;padding:12px 18px;background:#fff;color:#171717;border-radius:8px;transform:translateY(-160%);font:600 16px/1.4 Arial,sans-serif}
+.fd-about-skip:focus{transform:none}
+.fd-about-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+#fd-video-hero{height:100svh!important;min-height:360px!important;background:#171717 url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663434805712/gQIoHjcjEzdoOnyf.jpg') center/cover no-repeat}
+#fd-video-hero:before,#fd-video-hero:after{display:none!important}
+#fd-video-hero video{transform:none!important;filter:none!important}
+.fd-about-motion{position:absolute;z-index:5;right:24px;bottom:24px;padding:12px 18px;min-height:44px;border:1px solid #ffffff80;border-radius:30px;background:#171717cc;color:#fff;cursor:pointer;font:600 14px/1.4 Arial,sans-serif}
+a:focus-visible,button:focus-visible{outline:3px solid #b49a65;outline-offset:4px}
+.fd-about-motion:focus-visible{outline-color:#fff}
+.fd-about-film{position:relative;width:100%;height:100%;min-height:160px;background:#222;overflow:hidden}
+.fd-about-film .fd-about-film-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
+.fd-about-film iframe{opacity:0;pointer-events:none;transition:opacity .3s}
+.fd-about-film[data-playing=true] iframe{opacity:1}
+.fd-about-film-link{position:absolute;bottom:20px;left:20px;padding:12px 18px;border-radius:24px;background:#171717d9;color:#fff!important;min-height:44px;font:600 14px/1.4 Arial,sans-serif;text-decoration:none;z-index:2}
+.fd-about-film[data-playing=true] .fd-about-film-link{opacity:0;pointer-events:none}
+.fd-about-film[data-playing=true] .fd-about-film-link:focus-visible,.fd-about-film[data-playing=true]:hover .fd-about-film-link{opacity:1;pointer-events:auto}
+.fd-about-social{display:flex!important;align-items:center!important;justify-content:center!important;width:44px!important;height:44px!important;color:#fff!important}
+.fd-about-social svg{display:block;flex:none;width:22px;height:22px}
+.framer-114u35t a[href="/discover"][aria-label="FORDIVINE home"]{min-height:44px}
+.fd-site-footer .fd-footer-nav a,.fd-site-footer .fd-footer-legal a,.fd-site-footer .fd-footer-question-link{display:inline-flex;align-items:center;min-height:44px}
+.fd-site-footer .fd-footer-logo{min-height:44px}
+html:has(.fd-glass-header[data-open=true]){overflow:hidden}
+body[data-about-motion-paused=true] [data-cs-ticker] ul{animation-play-state:paused!important}
+@media(max-width:809.98px){
+/* These constraints respond to rotation and resizing, instead of running once at load. */
+.framer-HHcAF :is(.framer-1iusbs3,.framer-e4d17f,.framer-v2h98p,.framer-8aca6a,.framer-16plcfi,.framer-eq4can,.framer-js26o1,.framer-1jv58xa,.framer-1g10fnm,.framer-anv2qh,.framer-1sy157k,.framer-1m7wj8l,.framer-1i60hxt,.framer-1lcplne,.framer-1dhom5i,.framer-2jq361,.framer-1e5wbzt,.framer-1ql0cfx,.framer-1umgt6m,.framer-e2g60q,.framer-s1qjs0){height:auto!important;min-height:0!important;max-height:none!important;overflow:visible!important}
+.framer-HHcAF :is(.framer-1g10fnm,.framer-anv2qh,.framer-1sy157k,.framer-1m7wj8l){flex-direction:column!important;width:100%!important}
+.framer-HHcAF :is(.framer-1i60hxt,.framer-1lcplne,.framer-1dhom5i,.framer-2jq361,.framer-1ql0cfx){width:100%!important;min-width:0!important;flex:1 1 auto!important}
+.framer-HHcAF :is(.framer-48sysv,.framer-epq8jb,.framer-10v7gew){width:100%!important;min-width:0!important}
+.framer-HHcAF :is(.framer-aaxte3,.framer-1o1s0h6,.framer-1oc7i2h,.framer-1kv1p7y),.framer-vimeo{display:none!important}
+.framer-HHcAF .mobile-img-block{padding:0!important;margin:24px 0 0!important;max-width:100%}
+.framer-HHcAF .mobile-img-block img{height:auto!important;max-height:640px;object-fit:cover}
+.fd-about-motion{right:16px;bottom:16px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*:before,*:after{animation:none!important;transition:none!important}[data-cs-reveal],[data-cs-media-shell]{opacity:1!important;transform:none!important}}
+
+.fd-about-film-pause{display:none;position:absolute;right:20px;bottom:20px;z-index:3;min-height:44px;padding:12px 18px;border:1px solid #ffffff80;border-radius:24px;background:#171717d9;color:#fff;cursor:pointer;font:600 14px/1.4 Arial,sans-serif}
+.fd-about-film[data-playing=true] .fd-about-film-pause{display:block}
+
+@media(max-width:809.98px){.framer-HHcAF .framer-1umgt6m>.mobile-img-block{order:3}}
