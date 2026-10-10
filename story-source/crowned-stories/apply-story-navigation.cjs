@@ -19,6 +19,16 @@ function storyNavigation(html,slug){
  function endOfElement(start,tag){let depth=0;const re=new RegExp('<'+tag+'\\b[^>]*>|<\\/'+tag+'>','g');re.lastIndex=start;let m;while((m=re.exec(html))){depth+=m[0].startsWith('</')?-1:1;if(!depth)return re.lastIndex;}throw Error('Unclosed '+tag+' in '+slug);}
  const legacy=/<div\b[^>]*data-framer-name="CTA More work"[^>]*>/g.exec(html);
  if(legacy){const end=endOfElement(legacy.index,'div');html=html.slice(0,legacy.index)+html.slice(end);}
+ // Replace every retired responsive inquiry variant with one stable shared ending.
+ const oldInquiry=/<div\b[^>]*class="[^"]*\bfd-inquiry-(?:desktop|tablet|phone)\b[^"]*"[^>]*>/g;
+ let inquiry, firstInquiry=-1;
+ while((inquiry=oldInquiry.exec(html))){
+  if(firstInquiry<0)firstInquiry=inquiry.index;
+  const end=endOfElement(inquiry.index,'div');
+  html=html.slice(0,inquiry.index)+html.slice(end);oldInquiry.lastIndex=inquiry.index;
+ }
+ if(firstInquiry>=0)html=html.slice(0,firstInquiry)+fs.readFileSync(path.join(__dirname,'story-ending.html'),'utf8')+html.slice(firstInquiry);
+ if(html.includes('class="fd-story-ending"')&&!html.includes('/story-ending-v1.css'))html=html.replace('</head>','<link rel="stylesheet" href="/crowned-stories/media/story-ending-v1.css"></head>');
  const closing=/<section\b[^>]*class="closing"[^>]*>/g.exec(html);
  let insertion;
  if(closing)insertion=endOfElement(closing.index,'section');
@@ -41,6 +51,6 @@ module.exports={storyNavigation};
 if(require.main===module){
  fs.mkdirSync(path.join(root,'media'),{recursive:true});
  for(const slug of Object.keys(data.stories)){const f=path.join(root,slug,'index.html');fs.writeFileSync(f,storyNavigation(fs.readFileSync(f,'utf8'),slug));}
- for(const asset of ['story-navigation-v1.css','story-navigation-v1.js'])fs.copyFileSync(path.join(__dirname,asset),path.join(root,'media',asset));
+ for(const asset of ['story-navigation-v1.css','story-navigation-v1.js','story-ending-v1.css'])fs.copyFileSync(path.join(__dirname,asset),path.join(root,'media',asset));
  console.log('Updated navigation on all nine stories.');
 }
