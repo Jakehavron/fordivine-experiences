@@ -334,7 +334,12 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 .agency-intro p{font-family:var(--body);font-size:clamp(14px,1.4vw,18px);line-height:1.6;font-weight:400;color:rgba(255,255,255,.85);max-width:660px;margin:0 auto;}
 @media(max-width:600px){.agency-intro-section{padding:40px 20px;}.agency-intro h2{margin-bottom:18px;}.agency-intro p{font-size:14px;}}
 </style>
-<link rel="stylesheet" href="/shared/glass-navigation.css?v=1"></head>
+<link rel="stylesheet" href="/shared/glass-navigation.css?v=1"><style id="discover-floating-navigation">
+/* Float navigation over the hero, with room for the headline below it. */
+.fd-glass-header{height:0}
+.hero-beams-live .hero-section{padding-top:156px}
+@media(max-width:991px){.hero-beams-live .hero-section{padding-top:124px}}
+</style></head>
 <body><header class="fd-glass-header" data-cs-navigation="custom"><svg class="fd-glass-defs" xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true" focusable="false"><defs><filter id="fd-nav-distortion" x="-20%" y="-50%" width="140%" height="200%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.001 0.005" numOctaves="1" seed="17" result="noise"/><feGaussianBlur in="noise" stdDeviation="3" result="softMap"/><feDisplacementMap in="SourceGraphic" in2="softMap" scale="18" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><div class="fd-nav-blur"></div><nav class="fd-nav-bar" aria-label="Main navigation"><span class="fd-nav-glass" aria-hidden="true"><span class="fd-nav-refraction"></span></span><a class="fd-nav-home" href="/" aria-label="FORDIVINE home"><img src="/shared/nav-fd.png" alt="FD" width="1345" height="855"></a><div class="fd-nav-links" id="fd-navigation"><span class="fd-nav-switch" aria-hidden="true"></span><a class="fd-nav-link" href="/discover">Services</a><a class="fd-nav-link" href="/crowned-stories">Crowned Stories</a><a class="fd-nav-link" href="/about-us">About</a><a class="fd-nav-link" href="/discover#book">Inquire</a></div><button class="fd-nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="fd-navigation"><span class="fd-nav-button-bg"></span><span class="fd-nav-line"></span><span class="fd-nav-line"></span><span class="fd-nav-line"></span></button></nav></header>
 <!-- ===== AMBIENT BACKGROUND CANVAS ===== -->
 <canvas id="ambient-canvas"></canvas>
@@ -351,7 +356,7 @@ src="https://www.facebook.com/tr?id=958874110071928&ev=PageView&noscript=1"
 <section class="hero-beams-live" aria-label="Discover hero with champagne beam background">
   <canvas id="hero-beams-canvas" aria-hidden="true"></canvas>
   <section class="hero-section">
-  <div class="hero-badge reveal"><img src="/fd-submark-64.webp" alt="FD" class="hero-badge-logo" width="64" height="41" loading="eager" decoding="async">PERSONAL BRANDING HOUSE</div>
+  
   <h1 class="reveal reveal-delay-1"><span class="hero-title-line">Is Your Personal Brand Limiting</span><span class="hero-title-line">Your Business Growth?</span></h1>
   <p class="hero-subtitle reveal reveal-delay-2"><span class="hero-subtitle-line">A scattered and unclear brand keeps you</span><span class="hero-subtitle-line">completely invisible in today's digital landscape.</span></p>
   <div class="hero-video-wrap">
