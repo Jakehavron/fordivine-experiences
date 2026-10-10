@@ -1,3 +1,4 @@
+import { storyNavigation } from '../../crowned-stories/apply-story-navigation.cjs';
 import {readFile, writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 // This route is published as static HTML, not as a Next.js runtime application.
@@ -60,5 +61,6 @@ await writeFile('out/security-headers.json', JSON.stringify([
   {key: 'X-Frame-Options', value: 'SAMEORIGIN'},
   {key: 'Cross-Origin-Opener-Policy', value: 'same-origin'}
 ], null, 2) + '\n');
+html = storyNavigation(html, 'amy-lacey');
 await writeFile('out/index.html', html);
 console.log(`Static story: ${Buffer.byteLength(html)} HTML bytes, ${Buffer.byteLength(script)} JS bytes. Structured data preserved.`);

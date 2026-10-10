@@ -1,3 +1,4 @@
+import { storyNavigation } from '../../crowned-stories/apply-story-navigation.cjs';
 import {readFile, writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 // This route is published as static HTML, not as a Next.js runtime application.
@@ -16,5 +17,6 @@ html = html.replace(/<script\b([^>]*)>[\s\S]*?<\/script>/gi, (tag, attrs) => {
 html = html.replace(/<link\b[^>]*>/gi, tag => /\bas=["']script["']|\brel=["']modulepreload["']/i.test(tag) ? '' : tag);
 if (!schemaCount || /<script[^>]*\bsrc=["'][^"']*\/_next\//i.test(html)) throw Error('Static HTML validation failed');
 html = html.replace('</body>', `<script src="/crowned-stories/michelle-roby/${scriptName}" defer></script></body>`);
+html = storyNavigation(html, 'michelle-roby');
 await writeFile('out/index.html', html);
 console.log(`Static story: ${Buffer.byteLength(html)} HTML bytes, ${Buffer.byteLength(script)} JS bytes. Structured data preserved.`);
