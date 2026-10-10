@@ -19,3 +19,6 @@ body.cs-hub,.cs-hub .page-shell,.cs-hub main,.cs-hub .stories-proof-section,.cs-
 
 /* Keep the story-link arrow adjacent to its label. */
 :is(.cs-hub,.cs-topic) .cs-featured-cta{align-self:flex-start;justify-content:flex-start;gap:12px}
+
+/* Match the three transparent portraits to Ali Marie’s blue-gray photo backdrop. */
+.cs-featured-card:is([data-cs-story="michelle-roby"],[data-cs-story="stephanie-byerly"],[data-cs-story="amy-lacey"]) .cs-featured-portrait{background:#7c8387}
