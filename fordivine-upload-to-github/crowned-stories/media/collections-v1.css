@@ -44,14 +44,14 @@ body.cs-hub,.cs-hub .page-shell,.cs-hub main,.cs-hub .stories-proof-section,.cs-
 /* Featured desktop summary: identity and link left, verified hero results right. */
 .cs-featured-details{display:contents}.cs-featured-results{display:none}
 @media(min-width:1001px){
-.cs-hub [data-cs-placement="featured"] .cs-featured-details{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);column-gap:24px;align-items:start;border-top:1px solid #d3d0c7;padding-top:24px}
-.cs-hub [data-cs-placement="featured"] .cs-featured-person{grid-column:1;grid-row:1;border:0;padding:0}
-.cs-hub [data-cs-placement="featured"] .cs-featured-name{font-size:24px;margin-bottom:8px}
-.cs-hub [data-cs-placement="featured"] .cs-featured-profession{font-size:14px;line-height:1.5}
-.cs-hub [data-cs-placement="featured"] .cs-featured-cta{grid-column:1;grid-row:2;margin-top:24px}
-.cs-hub [data-cs-placement="featured"] .cs-featured-results{display:block;grid-column:2;grid-row:1/3;padding-left:22px;border-left:1px solid #e6e3db}
-.cs-hub [data-cs-placement="featured"] .cs-results-label{margin:0 0 10px;font-size:11px;font-weight:700;line-height:1.4;letter-spacing:1.2px;text-transform:uppercase;color:#62645d}
-.cs-hub [data-cs-placement="featured"] .cs-featured-results ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
-.cs-hub [data-cs-placement="featured"] .cs-featured-results li{position:relative;padding-left:17px;font-size:14px;line-height:1.4;color:#2d2f2e}
-.cs-hub [data-cs-placement="featured"] .cs-featured-results li:before{content:'✓';position:absolute;left:0;top:0;color:#9a8460;font-size:13px;font-weight:700}
+:is(.cs-hub,.cs-topic) .cs-results-card .cs-featured-details{display:grid;grid-template-columns:max-content minmax(0,1fr);column-gap:20px;align-items:start;border-top:1px solid #d3d0c7;padding-top:24px}
+:is(.cs-hub,.cs-topic) .cs-results-card .cs-featured-person{grid-column:1;grid-row:1;border:0;padding:0}
+:is(.cs-hub,.cs-topic) .cs-results-card .cs-featured-name{font-size:22px;margin-bottom:8px}
+:is(.cs-hub,.cs-topic) .cs-results-card .cs-featured-profession{font-size:12px;line-height:1.5;white-space:nowrap}
+:is(.cs-hub,.cs-topic) .cs-results-card .cs-featured-cta{grid-column:1;grid-row:2;margin-top:24px}
+:is(.cs-hub,.cs-topic) .cs-results-card .cs-featured-results{display:block;grid-column:2;grid-row:1/3;padding-left:22px;border-left:1px solid #e6e3db}
+:is(.cs-hub,.cs-topic) .cs-results-card .cs-results-label{margin:0 0 10px;font-size:11px;font-weight:700;line-height:1.4;letter-spacing:1.2px;text-transform:uppercase;color:#62645d}
+:is(.cs-hub,.cs-topic) .cs-results-card .cs-featured-results ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+:is(.cs-hub,.cs-topic) .cs-results-card .cs-featured-results li{position:relative;padding-left:17px;font-size:14px;line-height:1.4;color:#2d2f2e}
+:is(.cs-hub,.cs-topic) .cs-results-card .cs-featured-results li:before{content:'✓';position:absolute;left:0;top:0;color:#9a8460;font-size:13px;font-weight:700}
 }
