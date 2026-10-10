@@ -30,8 +30,8 @@ body.cs-hub,.cs-hub .page-shell,.cs-hub main,.cs-hub .stories-proof-section,.cs-
 @media(prefers-reduced-motion:no-preference){
   :is(.cs-hub,.cs-topic) .cs-featured-card{
     --cs-scroll-emphasis:0;
-    transition:box-shadow .2s ease;
-    transform:translateY(calc(-12px * var(--cs-scroll-emphasis)));
-    box-shadow:0 calc(22px + 6px * var(--cs-scroll-emphasis)) calc(70px + 8px * var(--cs-scroll-emphasis)) rgba(0,0,0,calc(.2 + .035 * var(--cs-scroll-emphasis)));
+    transition:none;
+    transform:translateY(calc(-18px * var(--cs-scroll-emphasis))) scale(calc(.975 + .025 * var(--cs-scroll-emphasis)));
+    box-shadow:0 calc(8px + 14px * var(--cs-scroll-emphasis)) calc(24px + 46px * var(--cs-scroll-emphasis)) rgba(0,0,0,calc(.07 + .13 * var(--cs-scroll-emphasis)));
   }
 }

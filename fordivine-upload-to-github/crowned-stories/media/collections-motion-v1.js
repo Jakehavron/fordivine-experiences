@@ -12,16 +12,23 @@
       if (reducedMotion.matches) return 0;
       var rect = card.getBoundingClientRect();
       var previous = strengths.get(card) || 0;
-      var center = rect.top + rect.height / 2 + previous * 12;
+      var center = rect.top + rect.height / 2 + previous * 18;
       var distance = Math.abs(center - viewport / 2);
       var range = viewport * 0.45 + card.offsetHeight * 0.15;
       var strength = Math.max(0, 1 - distance / range);
       return strength * strength * (3 - 2 * strength);
     });
+    var moving = false;
     cards.forEach(function (card, index) {
-      strengths.set(card, values[index]);
-      card.style.setProperty('--cs-scroll-emphasis', values[index].toFixed(4));
+      var previous = strengths.get(card) || 0;
+      var difference = values[index] - previous;
+      var next = reducedMotion.matches || Math.abs(difference) < 0.001
+        ? values[index] : previous + difference * 0.16;
+      if (Math.abs(values[index] - next) >= 0.001) moving = true;
+      strengths.set(card, next);
+      card.style.setProperty('--cs-scroll-emphasis', next.toFixed(4));
     });
+    if (moving) schedule();
   }
   function schedule() {
     if (!frame) frame = window.requestAnimationFrame(update);
