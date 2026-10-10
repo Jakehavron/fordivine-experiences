@@ -55,3 +55,10 @@ body.cs-hub,.cs-hub .page-shell,.cs-hub main,.cs-hub .stories-proof-section,.cs-
 :is(.cs-hub,.cs-topic) .cs-results-card .cs-featured-results li{position:relative;padding-left:17px;font-size:14px;line-height:1.4;color:#2d2f2e}
 :is(.cs-hub,.cs-topic) .cs-results-card .cs-featured-results li:before{content:'✓';position:absolute;left:0;top:0;color:#9a8460;font-size:13px;font-weight:700}
 }
+
+/* Give the remaining stories room for the approved result summaries. */
+@media(min-width:1001px){
+:is(.cs-hub,.cs-topic) .cs-results-card-expanded .cs-featured-details{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);column-gap:16px}
+:is(.cs-hub,.cs-topic) .cs-results-card-expanded .cs-featured-profession{white-space:normal}
+:is(.cs-hub,.cs-topic) .cs-results-card-expanded .cs-featured-results{padding-left:16px}
+}
