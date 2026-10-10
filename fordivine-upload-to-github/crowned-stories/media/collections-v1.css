@@ -86,3 +86,18 @@ body.cs-hub,.cs-hub .page-shell,.cs-hub main,.cs-hub .stories-proof-section,.cs-
 /* Underline the label only, so the arrow never acquires a detached baseline. */
 :is(.cs-hub,.cs-topic) .cs-featured-cta .cs-cta-label{font-size:inherit;font-weight:inherit;line-height:inherit}
 :is(.cs-hub,.cs-topic) .cs-featured-card:is(:hover,:focus-visible) .cs-cta-label{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+
+/* Match the shared floating navigation's translucent glass and champagne selection. */
+.cs-library .cs-collection-nav a{position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;min-height:44px;max-width:100%;box-sizing:border-box;border:0;border-radius:100px;background:#f7f7f6;color:#2a2a2d;font-weight:600;box-shadow:0 8px 24px rgba(20,20,24,.14),0 2px 6px rgba(20,20,24,.08);transition:box-shadow .2s ease,transform .2s ease;text-align:center}
+.cs-library .cs-collection-nav a:before{content:'';position:absolute;inset:0;z-index:-2;border-radius:inherit;pointer-events:none;background:rgba(250,250,249,.52)}
+.cs-library .cs-collection-nav a:after{content:'';position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;background:radial-gradient(ellipse at 24% 0%,rgba(255,255,255,.48),transparent 62%),linear-gradient(155deg,rgba(255,255,255,.5),rgba(255,255,255,.08) 42%,rgba(255,255,255,.22));box-shadow:inset 1px 2px 1px rgba(255,255,255,.85),inset -1px -1px 1px rgba(255,255,255,.5),inset 0 0 0 1px rgba(255,255,255,.3)}
+@supports ((backdrop-filter:blur(10px)) or (-webkit-backdrop-filter:blur(10px))){.cs-library .cs-collection-nav a{background:transparent}.cs-library .cs-collection-nav a:before{backdrop-filter:blur(10px) saturate(135%);-webkit-backdrop-filter:blur(10px) saturate(135%);filter:url('#fd-nav-distortion')}}
+.cs-library .cs-collection-nav a[aria-current=page],.cs-library .cs-collection-nav a:hover{background:transparent;color:#2a2a2d}
+.cs-library .cs-collection-nav a[aria-current=page]:before{background:linear-gradient(180deg,rgba(238,230,212,.92),rgba(232,223,200,.88))}
+.cs-library .cs-collection-nav a[aria-current=page]{box-shadow:0 8px 24px rgba(20,20,24,.14),0 2px 6px rgba(20,20,24,.08),0 0 0 1px rgba(200,184,154,.7)}
+.cs-library .cs-collection-nav a:hover:before{background:rgba(238,230,212,.82)}
+.cs-library .cs-collection-nav a:focus-visible{outline:3px solid #b9a987;outline-offset:4px}
+@media(max-width:767px),(prefers-reduced-motion:reduce){.cs-library .cs-collection-nav a:before{filter:none}}
+@media(prefers-reduced-motion:reduce){.cs-library .cs-collection-nav a{transition:none}}
+@media(prefers-reduced-transparency:reduce){.cs-library .cs-collection-nav a:before{background:#f7f7f6;backdrop-filter:none;-webkit-backdrop-filter:none;filter:none}.cs-library .cs-collection-nav a[aria-current=page]:before{background:#e8dfc8}.cs-library .cs-collection-nav a:after{background:none}}
+@media(forced-colors:active){.cs-library .cs-collection-nav a{background:Canvas;color:CanvasText;border:1px solid CanvasText}.cs-library .cs-collection-nav a:before,.cs-library .cs-collection-nav a:after{display:none}.cs-library .cs-collection-nav a[aria-current=page]{background:Highlight;color:HighlightText}}
