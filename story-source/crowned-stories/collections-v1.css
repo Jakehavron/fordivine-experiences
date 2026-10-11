@@ -113,3 +113,5 @@ body.cs-hub,.cs-hub .page-shell,.cs-hub main,.cs-hub .stories-proof-section,.cs-
 
 /* Keep story links visibly actionable on touch screens without requiring hover. */
 @media(max-width:767px){:is(.cs-hub,.cs-topic) .cs-featured-cta .cs-cta-label{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}}
+
+@media(max-width:760px){:is(.cs-hub,.cs-topic) .cs-featured-card[data-cs-story="michelle-roby"] .cs-featured-copy h3{font-size:clamp(17px,7cqw,32px);text-wrap:wrap}.cs-michelle-title-first{display:block;white-space:nowrap;text-transform:capitalize}}
