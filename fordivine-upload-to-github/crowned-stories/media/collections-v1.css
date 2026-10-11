@@ -104,3 +104,5 @@ body.cs-hub,.cs-hub .page-shell,.cs-hub main,.cs-hub .stories-proof-section,.cs-
 
 /* Keep the mobile Crowned Stories introduction close to the floating navigation. */
 @media(max-width:991px){.cs-hub .stories-proof-section{padding-top:24px}}
+
+@media(max-width:600px){.cs-hub .cs-heading .cs-featured-intro{font-size:clamp(12px,3.6vw,18px);line-height:1.6}.cs-featured-intro>span{display:block;white-space:nowrap}}
