@@ -101,3 +101,6 @@ body.cs-hub,.cs-hub .page-shell,.cs-hub main,.cs-hub .stories-proof-section,.cs-
 @media(prefers-reduced-motion:reduce){.cs-library .cs-collection-nav a{transition:none}}
 @media(prefers-reduced-transparency:reduce){.cs-library .cs-collection-nav a:before{background:#f7f7f6;backdrop-filter:none;-webkit-backdrop-filter:none;filter:none}.cs-library .cs-collection-nav a[aria-current=page]:before{background:#e8dfc8}.cs-library .cs-collection-nav a:after{background:none}}
 @media(forced-colors:active){.cs-library .cs-collection-nav a{background:Canvas;color:CanvasText;border:1px solid CanvasText}.cs-library .cs-collection-nav a:before,.cs-library .cs-collection-nav a:after{display:none}.cs-library .cs-collection-nav a[aria-current=page]{background:Highlight;color:HighlightText}}
+
+/* Keep the mobile Crowned Stories introduction close to the floating navigation. */
+@media(max-width:991px){.cs-hub .stories-proof-section{padding-top:24px}}
