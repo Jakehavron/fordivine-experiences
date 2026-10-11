@@ -106,3 +106,6 @@ body.cs-hub,.cs-hub .page-shell,.cs-hub main,.cs-hub .stories-proof-section,.cs-
 @media(max-width:991px){.cs-hub .stories-proof-section{padding-top:24px}}
 
 @media(max-width:600px){.cs-hub .cs-heading .cs-featured-intro{font-size:clamp(12px,3.6vw,18px);line-height:1.6}.cs-featured-intro>span{display:block;white-space:nowrap}}
+
+.cs-voices-mobile{display:none}
+@media(max-width:767px){.cs-voices-desktop{display:none}.cs-voices-mobile{display:block;font-size:clamp(26px,6.8vw,36px);white-space:nowrap}}
