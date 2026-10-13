@@ -82,7 +82,7 @@ return <>
   <p className="chapter-label"><span className="chapter-number" aria-hidden="true">04</span><span>The Brand In Action</span></p>
   <p className="asset-eyebrow">Personal Website That Converts</p>
   <h2 id="activation-title">Let Your Ideal Client Find You First</h2>
-  <p className="intro">Through an optimized website, people searching on Google or asking their AI for solutions that Michelle provides, she will be the one that shows up and makes it clear she’s the right fit.</p>
+  <p className="intro">Her website was designed to help people discover her expertise, understand her consulting and speaking services, and take the next step to work with her.</p>
   <figure className="brand-showcase" data-asset="digital-hq"><img src="/crowned-stories/michelle-roby/images/michelle-digital-hq.webp" alt="Michelle Roby’s Digital HQ website, featuring her portrait and the headline Build a business that works for your real life" width="1574" height="948" loading="lazy"/><figcaption className="asset-caption"><span className="caption-desktop">A digital HQ connecting her message, coaching, and speaking opportunities to be easily found by her ideal clientele.</span><span className="caption-mobile">A digital HQ for her expertise to be found</span></figcaption></figure>
 
 </section>
