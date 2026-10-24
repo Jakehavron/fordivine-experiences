@@ -1,12 +1,25 @@
 {
-  "provider": null,
+  "provider": "RadarKit",
   "article_id": null,
   "editor_url": null,
-  "captured_at": null,
-  "fields": {},
-  "links": [],
-  "metrics": {},
+  "captured_at": "2026-10-24T23:39:14.951407+00:00",
+  "fields": {
+    "original_title": "Brand Strategy Before Design: Why Order Matters for Growth",
+    "raw_body_path": "source/raw-source.md",
+    "current_title": "Brand Strategy Before Design: What to Clarify First"
+  },
+  "links": [
+    "https://www.ipsos.com/sites/default/files/Ipsos%20B2B%20Buyer%20Journey%20Report%208.18.26%20launch.pdf",
+    "https://www.dash.app/blog/branding-statistics",
+    "https://www.fordivine.com/assessment"
+  ],
+  "metrics": {
+    "score": null,
+    "readability": null,
+    "search_volume": null
+  },
   "unknowns": [
-    "Source not imported"
+    "RadarKit article ID/editor URL and original capture timestamp unavailable.",
+    "No verified before/after RadarKit score or reload evidence."
   ]
 }

@@ -1,26 +1,153 @@
 {
-  "status": "fixture",
-  "primary_query": null,
-  "search_intent": null,
-  "target_buyer": null,
-  "business_outcome": "Qualified visit to https://www.fordivine.com/discover",
-  "distinct_point_of_view": null,
-  "direct_answer_requirement": null,
-  "required_questions": [],
-  "required_entities": [],
-  "required_concepts": [],
-  "required_internal_links": [],
+  "status": "approved",
+  "primary_query": "brand strategy before design",
+  "search_intent": "Informational guidance on what to clarify before commissioning brand design.",
+  "target_buyer": "Accomplished women entrepreneurs preparing a brand redesign",
+  "business_outcome": "Qualified discovery booking at https://www.fordivine.com/discover#book",
+  "distinct_point_of_view": "Clarify audience, positioning, offer and proof before briefing a designer.",
+  "direct_answer_requirement": "Brand strategy before design clarifies who you serve, what you want to be known for, and why someone should choose you. Those decisions give your visual identity a clear job to do.",
+  "required_questions": [
+    {
+      "id": "q-order",
+      "question": "Why should brand strategy come before design?"
+    },
+    {
+      "id": "q-define",
+      "question": "What should brand strategy define?"
+    },
+    {
+      "id": "q-agency",
+      "question": "How do you know if an agency prioritizes brand strategy before design?"
+    }
+  ],
+  "required_entities": [
+    {
+      "id": "e-brand",
+      "name": "FORDIVINE"
+    },
+    {
+      "id": "e-assessment",
+      "name": "Crowned Authority Assessment"
+    },
+    {
+      "id": "e-ipsos",
+      "name": "Ipsos"
+    },
+    {
+      "id": "e-dash",
+      "name": "Dash.app"
+    }
+  ],
+  "required_concepts": [
+    {
+      "id": "c-design",
+      "concept": "Strategy guides the designer’s brief"
+    },
+    {
+      "id": "c-measure",
+      "concept": "Measure inquiry quality and offer understanding"
+    },
+    {
+      "id": "c-proof",
+      "concept": "Support the promise with experience, results and testimonials"
+    }
+  ],
+  "required_internal_links": [
+    {
+      "id": "l-assessment",
+      "href": "https://www.fordivine.com/assessment"
+    },
+    {
+      "id": "l-discover",
+      "href": "https://www.fordivine.com/discover#book"
+    }
+  ],
   "source_authority_review": {
     "policy_version": "1.0",
-    "status": "incomplete",
+    "status": "approved",
     "forbes_excluded": true,
     "personal_brand_competitors_excluded": true,
-    "reviewed_by": null,
-    "reviewed_at": null
+    "reviewed_by": "Codex",
+    "reviewed_at": "2026-10-24T23:39:14.951407+00:00"
   },
-  "claims": [],
-  "forbidden_claims": [],
+  "claims": [
+    {
+      "personal_brand_competitor": false,
+      "substitute_service_conflict": false,
+      "audience_leakage_risk": "low",
+      "freshness_checked": true,
+      "access": "open",
+      "decision": "approved",
+      "verified_at": "2026-10-24T23:39:14.951407+00:00",
+      "id": "ipsos-ai",
+      "claim": "70% of B2B participants use AI tools during vendor selection.",
+      "source_url": "https://www.ipsos.com/sites/default/files/Ipsos%20B2B%20Buyer%20Journey%20Report%208.18.26%20launch.pdf",
+      "source_name": "Ipsos",
+      "source_title": "2026 B2B Buyer Journey: The Power of AI and Trusted Relationships",
+      "source_tier": "primary-research",
+      "citation_role": "material-claim",
+      "decision_reason": "Original report and methodology reviewed; wording identifies participants rather than all buyers.",
+      "status": "verified",
+      "original_source_confirmed": true,
+      "methodology_visible": true,
+      "supporting_excerpt": "70% of participants leverage AI in their vendor selection process",
+      "source_location": "PDF printed page 12; methodology pages 24–25",
+      "limitation": "288 US B2B decision-makers; nonprobability purposive unweighted online sample, May 20–June 1, 2026. Does not establish that vague messaging always causes exclusion."
+    },
+    {
+      "personal_brand_competitor": false,
+      "substitute_service_conflict": false,
+      "audience_leakage_risk": "low",
+      "freshness_checked": true,
+      "access": "open",
+      "decision": "approved",
+      "verified_at": "2026-10-24T23:39:14.951407+00:00",
+      "id": "dash-consistency",
+      "claim": "Dash.app reports 68% of companies connect brand consistency with revenue growth.",
+      "source_url": "https://www.dash.app/blog/branding-statistics",
+      "source_name": "Dash.app",
+      "source_title": "Branding statistics you need to know in 2026",
+      "source_tier": "secondary-approved-exception",
+      "citation_role": "material-claim",
+      "decision_reason": "Jake explicitly requested retention of the Dash statistic with attribution; not represented as primary research.",
+      "status": "attribution-verified",
+      "primary": false,
+      "source_support_checked": true,
+      "original_source_confirmed": false,
+      "exception_approved_by": "Jake Havron",
+      "exception_approved_at": "2026-10-24",
+      "exception_approval_note": "User: “This is what the statistic says for dash app so you can use it.” Existing evidence/approval-scope.json confirms 68% retained with Dash attribution.",
+      "attribution": "Dash.app",
+      "limitation": "Secondary roundup links to MarketingLTB; original study and causality not independently verified.",
+      "supporting_excerpt": "68% of companies say brand consistency adds 10–20% to revenue growth"
+    },
+    {
+      "personal_brand_competitor": false,
+      "substitute_service_conflict": false,
+      "audience_leakage_risk": "low",
+      "freshness_checked": true,
+      "access": "open",
+      "decision": "approved",
+      "verified_at": "2026-10-24T23:39:14.951407+00:00",
+      "id": "assessment-areas",
+      "claim": "Crowned Authority Assessment evaluates Clarity, Identity, Structure, Voice and Visibility.",
+      "source_url": "https://www.fordivine.com/assessment",
+      "source_name": "FORDIVINE",
+      "source_title": "Crowned Authority Assessment",
+      "source_tier": "first-party-official",
+      "citation_role": "first-party-claim",
+      "decision_reason": "Live official assessment page confirms the five areas.",
+      "status": "verified",
+      "original_source_confirmed": true,
+      "supporting_excerpt": "Clarity, Identity, Structure, Voice, Visibility"
+    }
+  ],
+  "forbidden_claims": [
+    "Do not imply the Ipsos sample represents all B2B buyers.",
+    "Do not identify Dash as the original research or independently established causation.",
+    "Do not invent RadarKit metrics or guarantee business outcomes."
+  ],
   "verbatim_passages": [],
-  "approved_by": null,
-  "approved_at": null
+  "approved_by": "Codex reconciliation of Jake’s selected article and approved direction",
+  "approved_at": "2026-10-24T23:39:14.951407+00:00"
 }

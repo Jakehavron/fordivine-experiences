@@ -1,7 +1,7 @@
 import type { ArticleData } from "../lib/article-schema";
 
 export const article: ArticleData = {
-  "status": "draft",
+  "status": "ready",
   "slug": "brand-strategy-before-design",
   "canonical": "https://www.fordivine.com/journal/brand-strategy-before-design",
   "seoTitle": "Brand Strategy Before Design: What to Clarify First | FORDIVINE",
@@ -24,9 +24,9 @@ export const article: ArticleData = {
   "readMinutes": 5,
   "hero": {
     "src": "/fordivine-editorial-hero.jpg",
-    "alt": "Existing template cover, pending a custom FORDIVINE image",
-    "width": 1536,
-    "height": 1024
+    "alt": "Woman in a gray suit beside the FORDIVINE wordmark",
+    "width": 1600,
+    "height": 1931
   },
   "shortAnswer": {
     "headline": "Your brand needs direction before it needs design.",
@@ -38,7 +38,7 @@ export const article: ArticleData = {
       "When your public presence no longer reflects your actual caliber, updating your logo or website is tempting. Rushing into aesthetic updates without clarity often results in a costly cycle of reinvention."
     ],
     "supporting": [
-      "A polished visual identity cannot fix unclear business positioning. Real authority requires establishing your core value before opening design software."
+      "A polished visual identity cannot fix unclear business positioning. Clarify the value you offer before opening design software."
     ],
     "close": ""
   },
@@ -50,7 +50,7 @@ export const article: ArticleData = {
       "blocks": [
         {
           "type": "paragraph",
-          "content": "Jumping straight into logo color palettes and templates without strategic grounding creates friction. Your public persona will quickly feel disconnected from the real value proposition you deliver to clients."
+          "content": "Choosing a logo, color palette, or template before clarifying your message can create friction. Your public presence may not explain the value you deliver to clients."
         },
         {
           "type": "paragraph",
@@ -63,13 +63,13 @@ export const article: ArticleData = {
               "href": "https://www.ipsos.com/sites/default/files/Ipsos%20B2B%20Buyer%20Journey%20Report%208.18.26%20launch.pdf"
             },
             {
-              "text": " shows that 70% of B2B participants use AI tools during vendor selection. Vague messaging means automated systems and discerning buyers will overlook your firm regardless of how sleek your design system looks."
+              "text": " shows that 70% of B2B participants use AI tools during vendor selection. For FORDIVINE, the practical takeaway is to make your offer easy for both buyers and AI tools to understand."
             }
           ]
         },
         {
           "type": "paragraph",
-          "content": "Investing in brand strategy before design prevents this expensive churn. A strategic foundation ensures your brand personality commands genuine authority from day one."
+          "content": "Investing in brand strategy before design helps avoid this expensive churn. Clear positioning gives your brand personality a consistent direction from day one."
         }
       ]
     },
@@ -80,11 +80,11 @@ export const article: ArticleData = {
       "blocks": [
         {
           "type": "paragraph",
-          "content": "True brand strategy acts as an operational blueprint. It defines your core value proposition, clarifies your audience, and outlines your distinct brand positioning."
+          "content": "Brand strategy gives your team a plan to work from. It defines your core value proposition, clarifies your audience, and outlines your distinct brand positioning."
         },
         {
           "type": "paragraph",
-          "content": "This work replaces guesswork with concrete market reality. It pinpoints the critical customer touchpoints where trust must be established to win business."
+          "content": "This work grounds decisions in what you learn about your market. It identifies where prospective clients need more information before deciding to work with you."
         },
         {
           "type": "paragraph",
@@ -96,11 +96,11 @@ export const article: ArticleData = {
         },
         {
           "type": "paragraph",
-          "content": "An effective discovery phase evaluates audience motivations, category gaps, and your career milestones. It reveals your genuine point of view and shapes reliable competitive differentiation."
+          "content": "An effective discovery phase evaluates audience motivations, category gaps, and your career milestones. Use those findings to explain your point of view and what distinguishes your work."
         },
         {
           "type": "paragraph",
-          "content": "Auditing past client wins grounds your positioning statement in real evidence. This step translates your lived expertise into undeniable authority that sets you apart."
+          "content": "Auditing past client wins grounds your positioning statement in real evidence. Use those examples to show prospective clients what your expertise looks like in practice."
         },
         {
           "type": "heading",
@@ -108,11 +108,11 @@ export const article: ArticleData = {
         },
         {
           "type": "paragraph",
-          "content": "Before selecting typography, you must establish a coherent messaging architecture. This framework gives you the language to communicate peer-to-peer with high-level buyers."
+          "content": "Before selecting typography, establish your core messages. They give you consistent language for explaining your work to prospective clients."
         },
         {
           "type": "paragraph",
-          "content": "Defining your brand personality creates a reliable verbal system under strong brand governance. It ensures your keynote talks, articles, and sales calls sound cohesive and memorable."
+          "content": "Define how your brand should sound, then document that guidance. Your team can use it to keep keynote talks, articles, and sales calls consistent."
         }
       ]
     },
@@ -127,11 +127,11 @@ export const article: ArticleData = {
         },
         {
           "type": "paragraph",
-          "content": "Your color palette typography and layout choices are picked to support your competitive differentiation rather than short-lived internet fads. This focus helps you build brand equity quickly."
+          "content": "Your color palette, typography, and layout choices are picked to support your competitive differentiation rather than short-lived internet fads. This focus helps you build brand equity over time."
         },
         {
           "type": "paragraph",
-          "content": "A well-planned design system adapts easily across keynotes, white papers, and digital channels. It also cuts down on endless revision cycles because work is measured against business goals."
+          "content": "A well-planned design system adapts easily across keynotes, white papers, and digital channels. It can also reduce repeated revisions by giving everyone shared business goals to review the work against."
         }
       ]
     },
@@ -161,7 +161,7 @@ export const article: ArticleData = {
         },
         {
           "type": "paragraph",
-          "content": "Providing clear operational standards turns team members into confident brand advocates. They protect your brand equity across every customer touchpoints."
+          "content": "Providing clear operational standards turns team members into confident brand advocates. They protect your brand equity across every customer touchpoint."
         }
       ]
     },
@@ -172,11 +172,11 @@ export const article: ArticleData = {
       "blocks": [
         {
           "type": "paragraph",
-          "content": "A strong brand strategy delivers commercial outcomes rather than vanity metrics. It shortens sales conversations because qualified buyers arrive already trusting your expertise."
+          "content": "Judge your brand strategy by business outcomes, not just attention. It can help shorten sales conversations when qualified buyers arrive already trusting your expertise."
         },
         {
           "type": "paragraph",
-          "content": "You can track strategic resonance through inbound partnership inquiries, higher conversion rates, and the ability to command premium pricing without pushback."
+          "content": "Track partnership inquiries and conversion rates over time, alongside the questions prospects ask about your pricing."
         },
         {
           "type": "paragraph",
@@ -191,7 +191,7 @@ export const article: ArticleData = {
       "blocks": [
         {
           "type": "paragraph",
-          "content": "Building brand is an intentional process that begins with an honest audit of your current brand footprint. Emily Ford established FORDIVINE to give accomplished women entrepreneurs a comprehensive path to market prominence."
+          "content": "Building a brand is an intentional process that begins with an honest audit of your current brand footprint. Emily Ford established FORDIVINE to give accomplished women entrepreneurs a comprehensive path to market prominence."
         },
         {
           "type": "paragraph",
@@ -233,7 +233,7 @@ export const article: ArticleData = {
         },
         {
           "type": "paragraph",
-          "content": "The first step is achieving strategic clarity around your ideal customers, distinct point of view, and value proposition. Nailing your positioning problem must come before producing visual assets or hiring a web designer."
+          "content": "The first step is achieving strategic clarity around your ideal customers, distinct point of view, and value proposition. Clarify those decisions before producing visual assets or hiring a web designer."
         },
         {
           "type": "heading",

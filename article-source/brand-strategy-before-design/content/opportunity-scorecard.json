@@ -1,7 +1,7 @@
 {
-  "status": "fixture",
+  "status": "selected",
   "scoring_version": "1.0",
-  "evaluated_at": null,
+  "evaluated_at": "2026-10-24T23:39:14.951407+00:00",
   "weights": {
     "qualified_buyer_value": 25,
     "conversion_relevance": 20,
@@ -13,30 +13,27 @@
   },
   "candidates": [
     {
-      "id": "replace-me",
-      "topic": "Template fixture",
-      "primary_query": "replace me",
-      "scores": {
-        "qualified_buyer_value": 0,
-        "conversion_relevance": 0,
-        "first_party_evidence": 0,
-        "search_opportunity": 0,
-        "distinctive_authority": 0,
-        "cannibalization_safety": 0,
-        "production_efficiency": 0
-      },
+      "id": "brand-strategy-before-design",
+      "topic": "Brand Strategy Before Design: What to Clarify First",
+      "primary_query": "brand strategy before design",
+      "scores": null,
       "total_score": null,
-      "buyer_evidence": [],
+      "buyer_relevance": "Accomplished women entrepreneurs considering a brand redesign need to clarify their audience, positioning, offer and proof.",
+      "search_intent": "Informational guidance on what to clarify before commissioning brand design.",
+      "overlap_observation": "This is the existing user-selected article at /journal/brand-strategy-before-design. No comparative keyword or cannibalization audit is recorded; no competing topic is being invented.",
+      "disqualifiers": [],
+      "buyer_evidence": [
+        "Existing manuscript and approved FORDIVINE discovery CTA"
+      ],
       "search_evidence": [],
       "existing_content_checked": [],
-      "result_shape": "unknown",
-      "disqualifiers": ["Template fixture"]
+      "result_shape": "unknown"
     }
   ],
   "recommended_topic_id": null,
-  "selected_topic_id": null,
-  "selection_method": null,
-  "selection_reason": null,
-  "approved_by": null,
-  "approved_at": null
+  "selected_topic_id": "brand-strategy-before-design",
+  "selection_method": "user-selected-article",
+  "selection_reason": "Jake supplied and iteratively approved this RadarKit article; preserve his selection without manufacturing scores.",
+  "approved_by": "Jake Havron (existing conversation; reconciled by Codex)",
+  "approved_at": "2026-10-24"
 }

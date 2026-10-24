@@ -1,11 +1,23 @@
 {
   "gate": 4,
   "name": "editorial-draft",
-  "status": "pending",
-  "approved_by": "",
-  "approved_at": "",
-  "evidence_reviewed": [],
-  "artifact_snapshot": {},
-  "note": "",
+  "status": "approved",
+  "approved_by": "Codex under Jake Havron’s explicit release fine-tuning authorization",
+  "approved_at": "2026-10-24T23:41:23.884126+00:00",
+  "evidence_reviewed": [
+    "evidence/manuscript.md",
+    "content/editorial-decisions.json",
+    "evidence/approval-scope.json",
+    "evidence/reconciliation-notes.json"
+  ],
+  "artifact_snapshot": {
+    "content/article.ts": "b64412dc0cab95fb0f0935530c76b1a234c60799d538444fb39b740db82afc13",
+    "content/opportunity-scorecard.json": "ac9dc75d1567b42b5af31d1ac2b5ad3aa43c526d3502a4b64d101f8c761c7fc4",
+    "content/semantic-brief.json": "0561022238c3bb988173edc2da11823674b5441bcf501def6fda91e0e7d633b8",
+    "content/editorial-review.json": "312e39a11d0e8c3de993e2f4aa79731fa8e3489e5a3990e6f606f8574084003b",
+    "content/source-record.json": "da57d057720f2d94f0fafab94a5940e3d227a5b9b1083a541a1583633bb3be69",
+    "content/editorial-decisions.json": "1bdea8de66448193a9dcc60fdf6d17cc358c88e1233e4a3ff5ccbce1b1a639f5"
+  },
+  "note": "Authorization basis: existing approved RadarKit article with seven selected edits and later approved design/CTA decisions; current user instructed to run checks and fix/update release issues. Codex applied and reviewed only recorded final copyediting and metadata/accessibility corrections. This seal records delegated execution approval, not a claim that Jake personally reviewed this exact final fingerprint or individually approved every new line. No production publication authorization is recorded.",
   "history": []
 }

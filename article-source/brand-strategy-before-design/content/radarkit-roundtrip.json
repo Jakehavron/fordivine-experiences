@@ -1,8 +1,8 @@
 {
-  "status": "not-requested",
-  "authorization": null,
+  "status": "verification-unavailable",
+  "authorization": "Earlier user asked to plug this into RadarKit for an updated score assessment.",
   "article_url": null,
-  "approved_scope": null,
+  "approved_scope": "Existing article update; saved/reloaded status not independently recovered.",
   "approved_fields_sha256": null,
   "saved_at": null,
   "reloaded_at": null,
@@ -56,5 +56,6 @@
       "expected": null,
       "observed_after_reload": null
     }
-  ]
+  ],
+  "note": "Do not infer successful writeback or improved scores from the request. Preserve unavailable metrics until inspected."
 }

@@ -1,4 +1,335 @@
 {
   "version": 1,
-  "changes": []
+  "changes": [
+    {
+      "id": "approved-1",
+      "location": "Title",
+      "reason": "Improve clarity and remove unsupported certainty.",
+      "before": "Brand Strategy Before Design: Why Order Matters for Growth",
+      "after": "Brand Strategy Before Design: What to Clarify First",
+      "status": "approved",
+      "decided_by": "Jake Havron",
+      "decision_quote": "Prior approved edits recorded in evidence/changes.json and evidence/approval-scope.json.",
+      "decided_at": "2026-10-24"
+    },
+    {
+      "id": "approved-2",
+      "location": "First heading",
+      "reason": "Improve clarity and remove unsupported certainty.",
+      "before": "Why Starting with Visual Identity Leads to Full Rebrand and Brand Identity System",
+      "after": "Why a Redesign Can Leave the Real Problem Unsolved",
+      "status": "approved",
+      "decided_by": "Jake Havron",
+      "decision_quote": "Prior approved edits recorded in evidence/changes.json and evidence/approval-scope.json.",
+      "decided_at": "2026-10-24"
+    },
+    {
+      "id": "approved-3",
+      "location": "Strategy heading",
+      "reason": "Improve clarity and remove unsupported certainty.",
+      "before": "What Brand Strategy Actually Delivers Before Brand Guidelines Work Begins",
+      "after": "What Your Brand Strategy Should Define",
+      "status": "approved",
+      "decided_by": "Jake Havron",
+      "decision_quote": "Prior approved edits recorded in evidence/changes.json and evidence/approval-scope.json.",
+      "decided_at": "2026-10-24"
+    },
+    {
+      "id": "approved-4",
+      "location": "Opening promise",
+      "reason": "Improve clarity and remove unsupported certainty.",
+      "before": "Building your brand strategy before design ensures every aesthetic choice communicates your depth, commands premium fees, and attracts aligned partnerships through clear brand guidelines.",
+      "after": "Brand strategy before design clarifies who you serve, what you want to be known for, and why someone should choose you. Those decisions give your visual identity a clear job to do.",
+      "status": "approved",
+      "decided_by": "Jake Havron",
+      "decision_quote": "Prior approved edits recorded in evidence/changes.json and evidence/approval-scope.json.",
+      "decided_at": "2026-10-24"
+    },
+    {
+      "id": "approved-5",
+      "location": "Design argument",
+      "reason": "Improve clarity and remove unsupported certainty.",
+      "before": "Design without strategy is just decorative art.",
+      "after": "Strong design makes your positioning easier to recognize. A clear strategic brief gives designers the audience, message, and business goals their work needs to support.",
+      "status": "approved",
+      "decided_by": "Jake Havron",
+      "decision_quote": "Prior approved edits recorded in evidence/changes.json and evidence/approval-scope.json.",
+      "decided_at": "2026-10-24"
+    },
+    {
+      "id": "approved-6",
+      "location": "Commercial outcomes",
+      "reason": "Improve clarity and remove unsupported certainty.",
+      "before": "When your public perception matches your actual achievements, customer loyalty and referrals increase across every venture you launch.",
+      "after": "Track whether the updated brand attracts better-fit inquiries, helps prospects understand your offer, and gives referral partners a clearer way to describe your work.",
+      "status": "approved",
+      "decided_by": "Jake Havron",
+      "decision_quote": "Prior approved edits recorded in evidence/changes.json and evidence/approval-scope.json.",
+      "decided_at": "2026-10-24"
+    },
+    {
+      "id": "approved-7",
+      "location": "Agency selection",
+      "reason": "Improve clarity and remove unsupported certainty.",
+      "before": "If a vendor shows mockups during initial conversations without analyzing your business, they are prioritizing surface visuals over real business strategy.",
+      "after": "Ask what research and positioning decisions will guide the design. Early visual examples can help explain a direction, but the agency should be able to show how its recommendations connect to your audience and business goals.",
+      "status": "approved",
+      "decided_by": "Jake Havron",
+      "decision_quote": "Prior approved edits recorded in evidence/changes.json and evidence/approval-scope.json.",
+      "decided_at": "2026-10-24"
+    },
+    {
+      "id": "grammar-palette",
+      "location": "article.ts",
+      "reason": "Narrow grammar/accessibility correction under latest authorized fine-tuning.",
+      "before": "Your color palette typography and layout choices",
+      "after": "Your color palette, typography, and layout choices",
+      "status": "approved",
+      "decided_by": "Codex under Jake’s current authorization",
+      "decision_quote": "Yes go and fix that or update it.",
+      "decided_at": "2026-10-24"
+    },
+    {
+      "id": "grammar-touchpoint",
+      "location": "article.ts",
+      "reason": "Narrow grammar/accessibility correction under latest authorized fine-tuning.",
+      "before": "every customer touchpoints",
+      "after": "every customer touchpoint",
+      "status": "approved",
+      "decided_by": "Codex under Jake’s current authorization",
+      "decision_quote": "Yes go and fix that or update it.",
+      "decided_at": "2026-10-24"
+    },
+    {
+      "id": "grammar-brand",
+      "location": "article.ts",
+      "reason": "Narrow grammar/accessibility correction under latest authorized fine-tuning.",
+      "before": "Building brand is an intentional process",
+      "after": "Building a brand is an intentional process",
+      "status": "approved",
+      "decided_by": "Codex under Jake’s current authorization",
+      "decision_quote": "Yes go and fix that or update it.",
+      "decided_at": "2026-10-24"
+    },
+    {
+      "id": "hero-alt",
+      "location": "article.ts",
+      "reason": "Narrow grammar/accessibility correction under latest authorized fine-tuning.",
+      "before": "Existing template cover, pending a custom FORDIVINE image",
+      "after": "Woman in a gray suit beside the FORDIVINE wordmark",
+      "status": "approved",
+      "decided_by": "Codex under Jake’s current authorization",
+      "decision_quote": "Yes go and fix that or update it.",
+      "decided_at": "2026-10-24"
+    },
+    {
+      "id": "release-qualifier-1",
+      "location": "article.ts",
+      "reason": "Narrow qualification removes guaranteed outcome under authorized release fine-tuning; not represented as separate user line approval.",
+      "before": "Investing in brand strategy before design prevents this expensive churn.",
+      "after": "Investing in brand strategy before design helps avoid this expensive churn.",
+      "status": "approved",
+      "decided_by": "Codex under Jake’s release fine-tuning authorization",
+      "decision_quote": "Yes go and fix that or update it.",
+      "decided_at": "2026-10-24"
+    },
+    {
+      "id": "release-qualifier-2",
+      "location": "article.ts",
+      "reason": "Narrow qualification removes guaranteed outcome under authorized release fine-tuning; not represented as separate user line approval.",
+      "before": "A strategic foundation ensures your brand personality commands genuine authority from day one.",
+      "after": "A strategic foundation gives your brand personality a consistent foundation from day one.",
+      "status": "approved",
+      "decided_by": "Codex under Jake’s release fine-tuning authorization",
+      "decision_quote": "Yes go and fix that or update it.",
+      "decided_at": "2026-10-24"
+    },
+    {
+      "id": "release-qualifier-3",
+      "location": "article.ts",
+      "reason": "Narrow qualification removes guaranteed outcome under authorized release fine-tuning; not represented as separate user line approval.",
+      "before": "This focus helps you build brand equity quickly.",
+      "after": "This focus helps you build brand equity over time.",
+      "status": "approved",
+      "decided_by": "Codex under Jake’s release fine-tuning authorization",
+      "decision_quote": "Yes go and fix that or update it.",
+      "decided_at": "2026-10-24"
+    },
+    {
+      "id": "release-qualifier-4",
+      "location": "article.ts",
+      "reason": "Narrow qualification removes guaranteed outcome under authorized release fine-tuning; not represented as separate user line approval.",
+      "before": "Vague messaging means automated systems and discerning buyers will overlook your firm",
+      "after": "Vague messaging means automated systems and discerning buyers may overlook your firm",
+      "status": "approved",
+      "decided_by": "Codex under Jake’s release fine-tuning authorization",
+      "decision_quote": "Yes go and fix that or update it.",
+      "decided_at": "2026-10-24"
+    },
+    {
+      "id": "release-qualifier-5",
+      "location": "article.ts",
+      "reason": "Qualify sales outcome under authorized release fine-tuning.",
+      "before": "It shortens sales conversations because qualified buyers arrive already trusting your expertise.",
+      "after": "It can help shorten sales conversations when qualified buyers arrive already trusting your expertise.",
+      "status": "approved",
+      "decided_by": "Codex under Jake’s release fine-tuning authorization",
+      "decision_quote": "Yes go and fix that or update it.",
+      "decided_at": "2026-10-24"
+    },
+    {
+      "id": "final-copyedit-1",
+      "location": "article.ts",
+      "reason": "Authorized final editorial fine-tuning: remove repetition, awkward phrasing or unsupported certainty without changing section order, topic, statistics or conversion.",
+      "before": "Real authority requires establishing your core value before opening design software.",
+      "after": "Clarify the value you offer before opening design software.",
+      "status": "approved",
+      "decided_by": "Codex under Jake’s final fine-tuning authorization",
+      "decision_quote": "Yes go and fix that or update it.",
+      "decided_at": "2026-10-24T23:41:11.917361+00:00"
+    },
+    {
+      "id": "final-copyedit-2",
+      "location": "article.ts",
+      "reason": "Authorized final editorial fine-tuning: remove repetition, awkward phrasing or unsupported certainty without changing section order, topic, statistics or conversion.",
+      "before": "Jumping straight into logo color palettes and templates without strategic grounding creates friction. Your public persona will quickly feel disconnected from the real value proposition you deliver to clients.",
+      "after": "Choosing a logo, color palette, or template before clarifying your message can create friction. Your public presence may not explain the value you deliver to clients.",
+      "status": "approved",
+      "decided_by": "Codex under Jake’s final fine-tuning authorization",
+      "decision_quote": "Yes go and fix that or update it.",
+      "decided_at": "2026-10-24T23:41:11.917361+00:00"
+    },
+    {
+      "id": "final-copyedit-3",
+      "location": "article.ts",
+      "reason": "Authorized final editorial fine-tuning: remove repetition, awkward phrasing or unsupported certainty without changing section order, topic, statistics or conversion.",
+      "before": "Vague messaging means automated systems and discerning buyers may overlook your firm regardless of how sleek your design system looks.",
+      "after": "For FORDIVINE, the practical takeaway is to make your offer easy for both buyers and AI tools to understand.",
+      "status": "approved",
+      "decided_by": "Codex under Jake’s final fine-tuning authorization",
+      "decision_quote": "Yes go and fix that or update it.",
+      "decided_at": "2026-10-24T23:41:11.917361+00:00"
+    },
+    {
+      "id": "final-copyedit-4",
+      "location": "article.ts",
+      "reason": "Authorized final editorial fine-tuning: remove repetition, awkward phrasing or unsupported certainty without changing section order, topic, statistics or conversion.",
+      "before": "A strategic foundation gives your brand personality a consistent foundation from day one.",
+      "after": "Clear positioning gives your brand personality a consistent direction from day one.",
+      "status": "approved",
+      "decided_by": "Codex under Jake’s final fine-tuning authorization",
+      "decision_quote": "Yes go and fix that or update it.",
+      "decided_at": "2026-10-24T23:41:11.917361+00:00"
+    },
+    {
+      "id": "final-copyedit-5",
+      "location": "article.ts",
+      "reason": "Authorized final editorial fine-tuning: remove repetition, awkward phrasing or unsupported certainty without changing section order, topic, statistics or conversion.",
+      "before": "True brand strategy acts as an operational blueprint.",
+      "after": "Brand strategy gives your team a plan to work from.",
+      "status": "approved",
+      "decided_by": "Codex under Jake’s final fine-tuning authorization",
+      "decision_quote": "Yes go and fix that or update it.",
+      "decided_at": "2026-10-24T23:41:11.917361+00:00"
+    },
+    {
+      "id": "final-copyedit-6",
+      "location": "article.ts",
+      "reason": "Authorized final editorial fine-tuning: remove repetition, awkward phrasing or unsupported certainty without changing section order, topic, statistics or conversion.",
+      "before": "This work replaces guesswork with concrete market reality. It pinpoints the critical customer touchpoints where trust must be established to win business.",
+      "after": "This work grounds decisions in what you learn about your market. It identifies where prospective clients need more information before deciding to work with you.",
+      "status": "approved",
+      "decided_by": "Codex under Jake’s final fine-tuning authorization",
+      "decision_quote": "Yes go and fix that or update it.",
+      "decided_at": "2026-10-24T23:41:11.917361+00:00"
+    },
+    {
+      "id": "final-copyedit-7",
+      "location": "article.ts",
+      "reason": "Authorized final editorial fine-tuning: remove repetition, awkward phrasing or unsupported certainty without changing section order, topic, statistics or conversion.",
+      "before": "It reveals your genuine point of view and shapes reliable competitive differentiation.",
+      "after": "Use those findings to explain your point of view and what distinguishes your work.",
+      "status": "approved",
+      "decided_by": "Codex under Jake’s final fine-tuning authorization",
+      "decision_quote": "Yes go and fix that or update it.",
+      "decided_at": "2026-10-24T23:41:11.917361+00:00"
+    },
+    {
+      "id": "final-copyedit-8",
+      "location": "article.ts",
+      "reason": "Authorized final editorial fine-tuning: remove repetition, awkward phrasing or unsupported certainty without changing section order, topic, statistics or conversion.",
+      "before": "This step translates your lived expertise into undeniable authority that sets you apart.",
+      "after": "Use those examples to show prospective clients what your expertise looks like in practice.",
+      "status": "approved",
+      "decided_by": "Codex under Jake’s final fine-tuning authorization",
+      "decision_quote": "Yes go and fix that or update it.",
+      "decided_at": "2026-10-24T23:41:11.917361+00:00"
+    },
+    {
+      "id": "final-copyedit-9",
+      "location": "article.ts",
+      "reason": "Authorized final editorial fine-tuning: remove repetition, awkward phrasing or unsupported certainty without changing section order, topic, statistics or conversion.",
+      "before": "Before selecting typography, you must establish a coherent messaging architecture. This framework gives you the language to communicate peer-to-peer with high-level buyers.",
+      "after": "Before selecting typography, establish your core messages. They give you consistent language for explaining your work to prospective clients.",
+      "status": "approved",
+      "decided_by": "Codex under Jake’s final fine-tuning authorization",
+      "decision_quote": "Yes go and fix that or update it.",
+      "decided_at": "2026-10-24T23:41:11.917361+00:00"
+    },
+    {
+      "id": "final-copyedit-10",
+      "location": "article.ts",
+      "reason": "Authorized final editorial fine-tuning: remove repetition, awkward phrasing or unsupported certainty without changing section order, topic, statistics or conversion.",
+      "before": "Defining your brand personality creates a reliable verbal system under strong brand governance. It ensures your keynote talks, articles, and sales calls sound cohesive and memorable.",
+      "after": "Define how your brand should sound, then document that guidance. Your team can use it to keep keynote talks, articles, and sales calls consistent.",
+      "status": "approved",
+      "decided_by": "Codex under Jake’s final fine-tuning authorization",
+      "decision_quote": "Yes go and fix that or update it.",
+      "decided_at": "2026-10-24T23:41:11.917361+00:00"
+    },
+    {
+      "id": "final-copyedit-11",
+      "location": "article.ts",
+      "reason": "Authorized final editorial fine-tuning: remove repetition, awkward phrasing or unsupported certainty without changing section order, topic, statistics or conversion.",
+      "before": "It also cuts down on endless revision cycles because work is measured against business goals.",
+      "after": "It can also reduce repeated revisions by giving everyone shared business goals to review the work against.",
+      "status": "approved",
+      "decided_by": "Codex under Jake’s final fine-tuning authorization",
+      "decision_quote": "Yes go and fix that or update it.",
+      "decided_at": "2026-10-24T23:41:11.917361+00:00"
+    },
+    {
+      "id": "final-copyedit-12",
+      "location": "article.ts",
+      "reason": "Authorized final editorial fine-tuning: remove repetition, awkward phrasing or unsupported certainty without changing section order, topic, statistics or conversion.",
+      "before": "A strong brand strategy delivers commercial outcomes rather than vanity metrics.",
+      "after": "Judge your brand strategy by business outcomes, not just attention.",
+      "status": "approved",
+      "decided_by": "Codex under Jake’s final fine-tuning authorization",
+      "decision_quote": "Yes go and fix that or update it.",
+      "decided_at": "2026-10-24T23:41:11.917361+00:00"
+    },
+    {
+      "id": "final-copyedit-13",
+      "location": "article.ts",
+      "reason": "Authorized final editorial fine-tuning: remove repetition, awkward phrasing or unsupported certainty without changing section order, topic, statistics or conversion.",
+      "before": "You can track strategic resonance through inbound partnership inquiries, higher conversion rates, and the ability to command premium pricing without pushback.",
+      "after": "Track partnership inquiries and conversion rates over time, alongside the questions prospects ask about your pricing.",
+      "status": "approved",
+      "decided_by": "Codex under Jake’s final fine-tuning authorization",
+      "decision_quote": "Yes go and fix that or update it.",
+      "decided_at": "2026-10-24T23:41:11.917361+00:00"
+    },
+    {
+      "id": "final-copyedit-14",
+      "location": "article.ts",
+      "reason": "Authorized final editorial fine-tuning: remove repetition, awkward phrasing or unsupported certainty without changing section order, topic, statistics or conversion.",
+      "before": "Nailing your positioning problem must come before producing visual assets or hiring a web designer.",
+      "after": "Clarify those decisions before producing visual assets or hiring a web designer.",
+      "status": "approved",
+      "decided_by": "Codex under Jake’s final fine-tuning authorization",
+      "decision_quote": "Yes go and fix that or update it.",
+      "decided_at": "2026-10-24T23:41:11.917361+00:00"
+    }
+  ]
 }

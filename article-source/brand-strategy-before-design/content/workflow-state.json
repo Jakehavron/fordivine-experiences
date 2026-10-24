@@ -1,18 +1,27 @@
 {
-  "stage": "imported-draft",
+  "stage": "layout-preview",
   "image": {
     "status": "placeholder",
-    "preview_authorization": null,
-    "publish_placeholder_authorization": null
+    "preview_authorization": "Jake: top image can remain a placeholder.",
+    "publish_placeholder_authorization": {
+      "approved_by": "Jake Havron",
+      "recorded_at": "2026-10-24T23:39:14.951407+00:00",
+      "quote": "Just keep the same image used for now. That's fine.",
+      "scope": "Current /fordivine-editorial-hero.jpg for this article publication; not blanket future image approval."
+    }
   },
   "cover_recipe": {
-    "status": "unresolved",
-    "searched_locations": []
+    "status": "not-required-for-this-release",
+    "reason": "User explicitly approved current cover."
   },
-  "pending": [
-    "Import real source",
-    "Editorial approval",
-    "Final cover",
-    "Release QA"
-  ]
+  "pending": [],
+  "release_checks": {
+    "status": "pending",
+    "checks": [
+      "production-build Lighthouse",
+      "static export and rendered QA",
+      "links and metadata"
+    ],
+    "note": "QA follows export; these are not unresolved input dependencies. Not approved for production."
+  }
 }

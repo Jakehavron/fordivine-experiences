@@ -1,16 +1,16 @@
 {
-  "status": "incomplete",
-  "article_slug": "authentic-personal-brand-online",
-  "article_sha256": null,
-  "article_word_count": 0,
-  "evaluated_at": null,
+  "status": "approved",
+  "article_slug": "brand-strategy-before-design",
+  "article_sha256": "5dd6890bba4bbfadc23004d1f5dd40ee34154d8970336cf9eaeea67397c6324c",
+  "article_word_count": 949,
+  "evaluated_at": "2026-10-24T23:39:14.951407+00:00",
   "candidates": [],
   "selected": [],
   "second_illustration_decision": {
     "status": "not-applicable",
-    "reason": "Template fixture; evaluate the completed article before release."
+    "reason": "No first illustration selected; the concise article and checklist do not need a second explanatory diagram."
   },
-  "no_illustration_reason": null,
-  "approved_by": null,
-  "approved_at": null
+  "no_illustration_reason": "The article explains one simple ordering decision and already has a five-item designer briefing checklist. An added path or hub diagram would repeat that text without clarifying a complex relationship.",
+  "approved_by": "Codex editorial assessment",
+  "approved_at": "2026-10-24T23:39:14.951407+00:00"
 }
