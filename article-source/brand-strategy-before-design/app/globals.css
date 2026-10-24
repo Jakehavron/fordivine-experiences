@@ -267,7 +267,7 @@ blockquote { margin: 58px 0; padding: 0; border: 0; font-size: clamp(27px, 3vw, 
   .article-hero:has(.article-headline--extra-long) .hero-copy { padding-inline: 12px; }
   .article-headline { margin: 0 0 24px; font-size: clamp(31px, 8.5vw, 34px); line-height: 1.02; text-wrap: balance; }
   .article-headline--medium { font-size: clamp(24px, 6.7vw, 28px); }
-  .article-headline--long { font-size: clamp(16px, 4.6vw, 18px); line-height: 1.04; letter-spacing: -.032em; text-wrap: wrap; }
+  .article-headline--long { font-size: clamp(22px, 6.7vw, 28px); line-height: 1.04; letter-spacing: -.032em; text-wrap: balance; }
   .article-headline--extra-long { font-size: clamp(17.5px, 5.4vw, 32px); line-height: 1.04; letter-spacing: -.045em; text-wrap: wrap; }
   .dek { font-size: 18px; line-height: 1.58; }
   .dek--long { font-size: 17px; line-height: 1.5; letter-spacing: -.01em; }
@@ -350,7 +350,7 @@ blockquote { margin: 58px 0; padding: 0; border: 0; font-size: clamp(27px, 3vw, 
 @media (max-width: 340px) {
   .hero-copy { padding-left: 18px; padding-right: 18px; }
   .article-headline--medium { font-size: 22px; }
-  .article-headline--long { font-size: 16px; letter-spacing: -.028em; }
+  .article-headline--long { font-size: 22px; letter-spacing: -.028em; }
   .article-headline--extra-long { font-size: 17.5px; letter-spacing: -.045em; }
   .dek--long { font-size: 14px; line-height: 1.45; letter-spacing: -.012em; }
   .formula-card > p { font-size: 18px; line-height: 1.58; }
