@@ -1,7 +1,7 @@
 {
-  "template_version": 46,
+  "template_version": 48,
   "source_commit": "7900fef",
-  "baseline_revision": "v46-mobile-toc-bone-highlight-2026-08-23",
+  "baseline_revision": "v48-discover-chrome-tree-navigation-2026-10-24",
   "created_at": "2026-10-24T19:28:55.836381+00:00",
   "status": "draft",
   "variable_files": [
@@ -12,9 +12,13 @@
     "content/opportunity-scorecard.json",
     "content/semantic-brief.json",
     "content/source-record.json",
-    "source/raw-answer-the-public.md",
+    "source/raw-source.md",
     "public/fordivine-editorial-hero.jpg",
     "public/featured-editorial-v2.png",
-    "public/og.png"
+    "public/og.png",
+    "content/editorial-decisions.json",
+    "content/workflow-state.json",
+    "content/source-inventory.json",
+    "content/radarkit-roundtrip.json"
   ]
 }

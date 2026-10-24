@@ -1,8 +1,9 @@
+import DiscoverHeader from "./DiscoverHeader";
 import Image from "next/image";
 import { Fragment, type ReactNode } from "react";
 import templateManifest from "../../FORDIVINE_TEMPLATE.json";
 import type { ArticleBlock, ArticleData, EpisodeModule, RichText } from "../../lib/article-schema";
-import { articleManifest, buildArticleJsonLd } from "../../lib/article-schema";
+import { articleManifest, buildArticleJsonLd, buildFaqJsonLd } from "../../lib/article-schema";
 import ArticleNavigator from "./ArticleNavigator";
 import EpisodeEmbed from "./EpisodeEmbed";
 import FordivineFooter from "../FordivineFooter";
@@ -64,6 +65,7 @@ function Diagram({ block }: { block: Extract<ArticleBlock, { type: "diagram" }> 
 
 function Block({ block }: { block: ArticleBlock }) {
   switch (block.type) {
+    case "faq": return <div className="article-faq">{block.items.map((item, i) => <div key={i}><h3>{item.question}</h3><p>{item.answer}</p></div>)}</div>;
     case "paragraph":
       return <p className={block.variant === "transition" ? "section-transition" : undefined}><Rich content={block.content} /></p>;
     case "blockquote":
@@ -118,20 +120,14 @@ export default function ArticleTemplate({ article }: { article: ArticleData }) {
       <div className="reading-progress" aria-hidden="true" />
       <script id="fordivine-article-manifest" type="application/json" dangerouslySetInnerHTML={{ __html: safeJson(manifest) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJson(buildArticleJsonLd(article)) }} />
+      {buildFaqJsonLd(article) ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJson(buildFaqJsonLd(article)) }} /> : null}
 
-      <header className="site-header">
-        <a className="publication-mark" href="https://www.fordivine.com/discover" aria-label="FORDIVINE home">
-          <Image src="/fordivine-logo-white.png" alt="FORDIVINE" width={1287} height={201} />
-        </a>
-        <nav aria-label="Journal actions">
-          <a className="header-cta" href="https://www.fordivine.com/discover">Work With Us</a>
-        </nav>
-      </header>
+      <DiscoverHeader />
 
       <article id="article">
         <section className="article-hero">
           <div className="hero-copy">
-            <h1 className={headlineClassName(article.h1)} data-headline-max-lines="2">{article.h1}</h1>
+            <h1 className={headlineClassName(article.h1)} data-headline-max-lines={article.headlineMaxLines ?? 2}>{article.h1}</h1>
             <p className={dekClassName(article.dek)} data-headline-max-lines="2">{article.dek}</p>
             <div className="article-meta">
               <span>By {article.author.name}</span>

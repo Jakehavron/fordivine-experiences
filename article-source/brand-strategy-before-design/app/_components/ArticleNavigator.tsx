@@ -1,74 +1,21 @@
-"use client";
-
-import { useEffect, useState } from "react";
+import Script from "next/script";
 
 type NavigatorSection = { id: string; navLabel: string };
-
 export default function ArticleNavigator({ sections, readMinutes }: { sections: NavigatorSection[]; readMinutes: number }) {
-  const [active, setActive] = useState(sections[0]?.id ?? "");
-  const [readingProgress, setReadingProgress] = useState(0);
-
-  useEffect(() => {
-    const nodes = sections
-      .map(({ id }) => document.getElementById(id))
-      .filter((node): node is HTMLElement => Boolean(node));
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
-        if (visible?.target.id) setActive(visible.target.id);
-      },
-      { rootMargin: "-18% 0px -68% 0px", threshold: 0 },
-    );
-    nodes.forEach((node) => observer.observe(node));
-    return () => observer.disconnect();
-  }, [sections]);
-
-  useEffect(() => {
-    let frame = 0;
-    const updateProgress = () => {
-      frame = 0;
-      const articleBody = document.querySelector<HTMLElement>(".article-body");
-      if (!articleBody) return;
-      const start = articleBody.getBoundingClientRect().top + window.scrollY;
-      const distance = Math.max(1, articleBody.offsetHeight - window.innerHeight);
-      const nextProgress = Math.min(100, Math.max(0, ((window.scrollY - start) / distance) * 100));
-      setReadingProgress(nextProgress);
-    };
-    const scheduleProgressUpdate = () => {
-      if (!frame) frame = window.requestAnimationFrame(updateProgress);
-    };
-    updateProgress();
-    window.addEventListener("scroll", scheduleProgressUpdate, { passive: true });
-    window.addEventListener("resize", scheduleProgressUpdate);
-    return () => {
-      window.removeEventListener("scroll", scheduleProgressUpdate);
-      window.removeEventListener("resize", scheduleProgressUpdate);
-      if (frame) window.cancelAnimationFrame(frame);
-    };
-  }, []);
-
-  return (
-    <aside className="article-toc" aria-label="Article contents">
-      <div className="toc-heading">
-        <p>In this article</p>
-        <span className="toc-meta"><span>{readMinutes} min</span><span>{sections.length} sections</span></span>
+  return <aside className="article-toc article-tree-toc" aria-label="Article contents">
+    <details className="tree-disclosure" open>
+      <summary className="tree-summary"><span>In this article</span><span className="tree-summary-meta">{readMinutes} min<span className="tree-chevron" aria-hidden="true">⌄</span></span></summary>
+      <div className="tree-panel">
+        <nav className="tree-nav" aria-label="Article sections" data-tree-nav>
+          <div className="tree-rail" aria-hidden="true"><span className="tree-rail-base" /><span className="tree-terminal" /><span className="tree-rail-accent" /><span className="tree-marker" /></div>
+          <span className="tree-pill" aria-hidden="true" />
+          <ol>{sections.map(({ id, navLabel }, index) => <li key={id} className={index === 0 ? "is-active" : ""}>
+            <a href={`#${id}`} aria-current={index === 0 ? "location" : undefined}>{navLabel}</a>
+          </li>)}</ol>
+        </nav>
+        <a className="toc-top" href="#article">Return to top ↑</a>
       </div>
-      <ol>
-        {sections.map(({ id, navLabel }, index) => (
-          <li key={id} className={active === id ? "is-active" : ""}>
-            <a href={`#${id}`} aria-current={active === id ? "location" : undefined}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              {navLabel}
-            </a>
-          </li>
-        ))}
-      </ol>
-      <div className="toc-progress" aria-hidden="true">
-        <span style={{ width: `${readingProgress}%` }} />
-      </div>
-      <a className="toc-top" href="#article">Return to top ↑</a>
-    </aside>
-  );
+    </details>
+    <Script src="/article-tree-nav.js" strategy="afterInteractive" />
+  </aside>;
 }

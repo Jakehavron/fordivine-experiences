@@ -9,6 +9,7 @@ export type RichTextPart = {
 export type RichText = string | RichTextPart[];
 
 export type ArticleBlock =
+  | { type: "faq"; items: Array<{ question: string; answer: string }> }
   | { type: "paragraph"; content: RichText; variant?: "transition" }
   | { type: "blockquote"; content: string }
   | { type: "heading"; content: string }
@@ -55,6 +56,8 @@ export type ArticleData = {
   canonical: string;
   seoTitle: string;
   h1: string;
+  headlineMaxLines?: 2 | 3;
+  headlineWrapReason?: string;
   description: string;
   socialDescription: string;
   dek: string;
@@ -161,4 +164,14 @@ export function articleManifest(article: ArticleData) {
     sections: article.sections.map(({ id, navLabel, title }) => ({ id, navLabel, title })),
     sourceCount: article.sources.length,
   };
+}
+
+export function buildFaqJsonLd(article: ArticleData) {
+  const items = article.sections.flatMap(section => [...section.blocks, ...(section.after ?? [])])
+    .flatMap(block => block.type === "faq" ? block.items : []);
+  return items.length ? {
+    "@context": "https://schema.org", "@type": "FAQPage",
+    mainEntity: items.map(item => ({ "@type": "Question", name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer } }))
+  } : null;
 }

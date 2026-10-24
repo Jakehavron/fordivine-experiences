@@ -1,0 +1,18 @@
+{
+  "stage": "imported-draft",
+  "image": {
+    "status": "placeholder",
+    "preview_authorization": null,
+    "publish_placeholder_authorization": null
+  },
+  "cover_recipe": {
+    "status": "unresolved",
+    "searched_locations": []
+  },
+  "pending": [
+    "Import real source",
+    "Editorial approval",
+    "Final cover",
+    "Release QA"
+  ]
+}
