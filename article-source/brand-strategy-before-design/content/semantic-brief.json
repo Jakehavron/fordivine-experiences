@@ -1,0 +1,26 @@
+{
+  "status": "fixture",
+  "primary_query": null,
+  "search_intent": null,
+  "target_buyer": null,
+  "business_outcome": "Qualified visit to https://www.fordivine.com/discover",
+  "distinct_point_of_view": null,
+  "direct_answer_requirement": null,
+  "required_questions": [],
+  "required_entities": [],
+  "required_concepts": [],
+  "required_internal_links": [],
+  "source_authority_review": {
+    "policy_version": "1.0",
+    "status": "incomplete",
+    "forbes_excluded": true,
+    "personal_brand_competitors_excluded": true,
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "claims": [],
+  "forbidden_claims": [],
+  "verbatim_passages": [],
+  "approved_by": null,
+  "approved_at": null
+}

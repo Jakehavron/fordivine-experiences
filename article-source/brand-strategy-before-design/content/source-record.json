@@ -1,0 +1,19 @@
+{
+  "status": "incomplete",
+  "source_type": "template-fixture",
+  "asset_title": "7 Proven Strategies for Women to Build an Authentic Personal Brand Online",
+  "seed_topic": "personal brand online",
+  "country": "unknown",
+  "language": "English",
+  "asset_created_at": null,
+  "retrieved_at": null,
+  "retrieved_from": "template fixture",
+  "raw_source_path": "source/raw-answer-the-public.md",
+  "raw_source_sha256": null,
+  "verbatim_passages": [],
+  "fordivine_additions": [],
+  "evidence_gaps": ["Replace this fixture with the complete AnswerThePublic source record."],
+  "approved_primary_query": null,
+  "approved_by": null,
+  "approved_at": null
+}

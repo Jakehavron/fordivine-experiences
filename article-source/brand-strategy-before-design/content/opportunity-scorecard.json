@@ -1,0 +1,42 @@
+{
+  "status": "fixture",
+  "scoring_version": "1.0",
+  "evaluated_at": null,
+  "weights": {
+    "qualified_buyer_value": 25,
+    "conversion_relevance": 20,
+    "first_party_evidence": 15,
+    "search_opportunity": 15,
+    "distinctive_authority": 15,
+    "cannibalization_safety": 5,
+    "production_efficiency": 5
+  },
+  "candidates": [
+    {
+      "id": "replace-me",
+      "topic": "Template fixture",
+      "primary_query": "replace me",
+      "scores": {
+        "qualified_buyer_value": 0,
+        "conversion_relevance": 0,
+        "first_party_evidence": 0,
+        "search_opportunity": 0,
+        "distinctive_authority": 0,
+        "cannibalization_safety": 0,
+        "production_efficiency": 0
+      },
+      "total_score": null,
+      "buyer_evidence": [],
+      "search_evidence": [],
+      "existing_content_checked": [],
+      "result_shape": "unknown",
+      "disqualifiers": ["Template fixture"]
+    }
+  ],
+  "recommended_topic_id": null,
+  "selected_topic_id": null,
+  "selection_method": null,
+  "selection_reason": null,
+  "approved_by": null,
+  "approved_at": null
+}

@@ -1,0 +1,26 @@
+{
+  "status": "incomplete",
+  "voice_mode": "emily-informed-fordivine-editorial",
+  "voice_corpus_status": "calibrated",
+  "voice_corpus_version": "2.0",
+  "voice_source_basis": "Emily Ford Voice corpus v2.0: eight verified Called & Crowned solo episodes, 54,104 transcribed words, calibrated August 20, 2026.",
+  "semantic_coverage": [],
+  "human_writing_checks": {
+    "no_ai_cliches": false,
+    "no_repetitive_synthesis": false,
+    "paragraphs_sound_spoken": false,
+    "claims_are_specific": false,
+    "no_keyword_stuffing": false,
+    "no_fake_first_person": false
+  },
+  "voice_checks": {
+    "mode_is_correct": false,
+    "emily_cadence_without_social_format": false,
+    "faith_is_natural_not_forced": false,
+    "no_social_media_cta": false,
+    "fordivine_positioning_is_intact": false
+  },
+  "unresolved_issues": ["Template fixture"],
+  "reviewed_by": null,
+  "reviewed_at": null
+}

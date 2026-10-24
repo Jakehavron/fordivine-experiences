@@ -1,0 +1,16 @@
+{
+  "status": "incomplete",
+  "article_slug": "authentic-personal-brand-online",
+  "article_sha256": null,
+  "article_word_count": 0,
+  "evaluated_at": null,
+  "candidates": [],
+  "selected": [],
+  "second_illustration_decision": {
+    "status": "not-applicable",
+    "reason": "Template fixture; evaluate the completed article before release."
+  },
+  "no_illustration_reason": null,
+  "approved_by": null,
+  "approved_at": null
+}
