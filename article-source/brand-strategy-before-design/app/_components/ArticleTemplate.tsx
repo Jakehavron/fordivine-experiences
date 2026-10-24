@@ -1,3 +1,4 @@
+import Script from "next/script";
 import DiscoverHeader from "./DiscoverHeader";
 import Image from "next/image";
 import { Fragment, type ReactNode } from "react";
@@ -143,11 +144,13 @@ export default function ArticleTemplate({ article }: { article: ArticleData }) {
         <div className="article-shell">
           <ArticleNavigator sections={article.sections} readMinutes={article.readMinutes} />
           <div className="article-body">
-            <section className="short-answer" aria-labelledby="short-answer-title">
-              <p className="short-answer__label">The short answer</p>
-              <h2 id="short-answer-title">{article.shortAnswer.question}</h2>
+            <section className="short-answer takeaway-card" data-tilt-card aria-labelledby="short-answer-title">
+              <p className="short-answer__label">At a glance</p>
+              <h2 id="short-answer-title">Your brand needs direction before it needs design.</h2>
               <p>{article.shortAnswer.answer}</p>
+              <span className="takeaway-glare" aria-hidden="true" />
             </section>
+            <Script src="/takeaway-tilt.js" strategy="afterInteractive" />
 
             <div className="intro">
               <div className="lead-group">{article.intro.leads.map((lead) => <p className="lead" key={lead}>{lead}</p>)}</div>

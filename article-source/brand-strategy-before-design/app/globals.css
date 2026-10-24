@@ -398,3 +398,13 @@ blockquote { margin: 58px 0; padding: 0; border: 0; font-size: clamp(27px, 3vw, 
  .article-tree-toc ol{display:flex;gap:2px}.article-tree-toc li:last-child:nth-child(odd){grid-column:auto}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.tree-chevron{transition:none}}
+
+/* Article-only interactive takeaway preview. */
+.short-answer.takeaway-card{background:#fff;color:var(--black);border:1px solid #e5e3de;border-radius:16px;padding:clamp(24px,4vw,42px);margin:0 0 64px;box-shadow:0 4px 16px rgb(0 0 0 / .035),0 18px 44px -28px rgb(0 0 0 / .15);transform:perspective(1000px) rotateX(0deg) rotateY(0deg);isolation:isolate}
+.takeaway-card .short-answer__label{color:#726f68!important;font-size:10px!important;font-weight:600!important;letter-spacing:.16em;text-transform:uppercase;line-height:1.5}
+.takeaway-card h2{max-width:620px;font-size:clamp(25px,2.5vw,33px);line-height:1.14;margin:18px 0 18px;letter-spacing:-.035em}
+.short-answer.takeaway-card>p:not(.short-answer__label){position:relative;z-index:1;max-width:600px;color:#56534e;font-size:16px;line-height:1.7;font-weight:400;margin:0}
+.takeaway-glare{position:absolute;inset:0;pointer-events:none;z-index:2;background:radial-gradient(circle at var(--glare-x,50%) var(--glare-y,50%),#171714,transparent 60%);opacity:0;transition:opacity .25s}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){.takeaway-card[data-hovered=true]{will-change:transform}.takeaway-card[data-hovered=true] .takeaway-glare{opacity:.03}}
+@media(max-width:600px){.short-answer.takeaway-card{margin:0 0 44px;padding:25px 23px;border-radius:16px}.takeaway-card h2{font-size:26px}.short-answer.takeaway-card>p:not(.short-answer__label){font-size:15px;line-height:1.7}}
+@media(prefers-reduced-motion:reduce){.takeaway-card{transform:none!important}.takeaway-glare{display:none}}
