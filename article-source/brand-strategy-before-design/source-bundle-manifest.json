@@ -1,0 +1,21 @@
+{
+  "format_version": 1,
+  "slug": "brand-strategy-before-design",
+  "template_version": 50,
+  "files": {
+    "FORDIVINE_TEMPLATE.json": "b7af2a84e53b9101699f581637f85cd12d0898326471da443a3a0097f59e0347",
+    "content/article.ts": "5dd6890bba4bbfadc23004d1f5dd40ee34154d8970336cf9eaeea67397c6324c",
+    "content/editorial-decisions.json": "1bdea8de66448193a9dcc60fdf6d17cc358c88e1233e4a3ff5ccbce1b1a639f5",
+    "content/editorial-review.json": "312e39a11d0e8c3de993e2f4aa79731fa8e3489e5a3990e6f606f8574084003b",
+    "content/gate-4-approval.json": "20c8d1f27c60888599773b0563d73f0c6596ffa466f1cd6b97b48ba74bb122a0",
+    "content/illustration-plan.json": "24f14064577a6d6b03294b45ed659c85e830cdc0b90555cc0d73c0a53237f6e8",
+    "content/opportunity-scorecard.json": "ac9dc75d1567b42b5af31d1ac2b5ad3aa43c526d3502a4b64d101f8c761c7fc4",
+    "content/radarkit-roundtrip.json": "8a16927867b578ce8dab9417f6aea4eab128937eed6c37b30256e38fe86669a3",
+    "content/semantic-brief.json": "0561022238c3bb988173edc2da11823674b5441bcf501def6fda91e0e7d633b8",
+    "content/source-inventory.json": "77317f380b936100b41be9dae06c1ec02966eb543f0da52115daf6ca4178743c",
+    "content/source-record.json": "da57d057720f2d94f0fafab94a5940e3d227a5b9b1083a541a1583633bb3be69",
+    "content/workflow-state.json": "341e284a87903f93c8f0ec02fa3ec25f8824dd712b88ba4a7f95709455ca15a5",
+    "source/raw-answer-the-public.md": "b4d430e1c2ffdc14a89482c81993d6395108132ba7b7336df8a79e0eb50a19da",
+    "source/raw-source.md": "b4d430e1c2ffdc14a89482c81993d6395108132ba7b7336df8a79e0eb50a19da"
+  }
+}
