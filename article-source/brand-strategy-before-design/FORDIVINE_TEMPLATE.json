@@ -1,9 +1,9 @@
 {
-  "template_version": 49,
+  "template_version": 50,
   "source_commit": "7900fef",
   "approved_preview": "https://fordivine-experiences-git-article-personal-bra-aee008-fordivine.vercel.app/journal/personal-branding-strategies-for-business-women",
-  "design_baseline": "Discover shared glass navbar and complete footer; bronze diamond tree navigation and collapsible mobile contents; article-specific At a glance white tilt card; exact Crowned Stories closing banner and discover#book destination. Preserve approved editorial layout, two-line article H1, sources, diagrams and approval gates. CTA headline follows Crowned Stories responsive sizing, without a two-line limit.",
-  "baseline_revision": "v49-crowned-cta-at-a-glance-2026-10-24",
+  "design_baseline": "Discover shared glass navbar and complete footer; bronze diamond tree navigation and collapsible mobile contents; article-specific At a glance white tilt card; exact Crowned Stories closing banner and discover#book destination. Preserve approved editorial layout, two-line article H1, sources, diagrams and approval gates. CTA headline follows Crowned Stories responsive sizing, without a two-line limit. v50 removes Explore FORDIVINE/related-reading; closing CTA leads directly to shared footer.",
+  "baseline_revision": "v50-direct-cta-footer-2026-10-24",
   "footer_contract_version": 2,
   "status": "locked",
   "variable_files": [

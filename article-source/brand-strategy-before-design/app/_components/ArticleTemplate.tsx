@@ -192,10 +192,7 @@ export default function ArticleTemplate({ article }: { article: ArticleData }) {
           </section>
         </div>
 
-        <section className="related-reading" id="related-reading" aria-labelledby="related-title">
-          <div className="related-heading"><div><h2 id="related-title">Explore FORDIVINE</h2></div><a href="https://www.fordivine.com/discover">Visit FORDIVINE ↗</a></div>
-          <div className="related-grid">{article.related.map((item, index) => <a href={item.href} className={`related-card related-card--${item.variant}`} key={`${item.variant}-${item.href}-${index}`}><span className="related-card__visual">{item.eyebrow}</span><h3>{item.title}</h3><span className="related-card__link">{item.label} ↗</span></a>)}</div>
-        </section>
+
       </article>
 
       <FordivineFooter />
