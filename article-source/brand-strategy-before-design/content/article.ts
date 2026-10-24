@@ -29,6 +29,7 @@ export const article: ArticleData = {
     "height": 1024
   },
   "shortAnswer": {
+    "headline": "Your brand needs direction before it needs design.",
     "question": "Why should brand strategy come before design?",
     "answer": "Brand strategy before design clarifies who you serve, what you want to be known for, and why someone should choose you. Those decisions give your visual identity a clear job to do."
   },
@@ -275,10 +276,10 @@ export const article: ArticleData = {
     }
   ],
   "conversion": {
-    "title": "Ready for a complete brand upgrade?",
+    "title": "Is Your Personal Brand Limiting Your Business Growth?",
     "body": "FORDIVINE builds the complete brand ecosystem around who you have become, including your strategy, visual identity, website, content systems, and lead generation.",
-    "ctaLabel": "Schedule a Discovery Call",
-    "ctaHref": "https://www.fordivine.com/discover"
+    "ctaLabel": "Schedule Discovery Call Today",
+    "ctaHref": "https://www.fordivine.com/discover#book"
   },
   "related": [
     {

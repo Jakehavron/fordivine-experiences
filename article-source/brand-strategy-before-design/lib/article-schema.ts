@@ -68,7 +68,7 @@ export type ArticleData = {
   displayDate: string;
   readMinutes: number;
   hero: { src: string; alt: string; width: number; height: number };
-  shortAnswer: { question: string; answer: string };
+  shortAnswer: { question: string; headline?: string; answer: string };
   intro: { leads: string[]; supporting: string[]; close: string };
   episodeModule?: EpisodeModule;
   sections: ArticleSectionData[];

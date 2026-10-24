@@ -21,10 +21,6 @@ function headlineClassName(title: string): string {
   return "article-headline";
 }
 
-function conversionHeadlineClassName(title: string): string {
-  const length = Array.from(title.trim().replace(/\s+/g, " ")).length;
-  return length > 31 ? "conversion-headline conversion-headline--long" : "conversion-headline";
-}
 
 function dekClassName(dek: string): string {
   const length = Array.from(dek.trim().replace(/\s+/g, " ")).length;
@@ -146,7 +142,7 @@ export default function ArticleTemplate({ article }: { article: ArticleData }) {
           <div className="article-body">
             <section className="short-answer takeaway-card" data-tilt-card aria-labelledby="short-answer-title">
               <p className="short-answer__label">At a glance</p>
-              <h2 id="short-answer-title">Your brand needs direction before it needs design.</h2>
+              <h2 id="short-answer-title">{article.shortAnswer.headline ?? article.shortAnswer.question}</h2>
               <p>{article.shortAnswer.answer}</p>
               <span className="takeaway-glare" aria-hidden="true" />
             </section>
@@ -185,13 +181,16 @@ export default function ArticleTemplate({ article }: { article: ArticleData }) {
           </div>
         </div>
 
-        <section className="conversion-panel">
-          <div><h2 className={conversionHeadlineClassName(article.conversion.title)} data-headline-max-lines="2">{article.conversion.title}</h2></div>
-          <div className="conversion-copy">
-            <p>{article.conversion.body}</p>
-            <a className="conversion-cta" href={article.conversion.ctaHref}>{article.conversion.ctaLabel} <span aria-hidden="true">↗</span></a>
-          </div>
-        </section>
+        <div className="crowned-cta-surround">
+          <section className="closing conversion-panel" aria-labelledby="closing-title">
+            <h2 id="closing-title">Is Your Personal Brand Limiting Your Business Growth?</h2>
+            <div className="closing-copy">
+              <p>A scattered and unclear brand keeps you completely invisible in today’s digital landscape.</p>
+              <p>We build premium brand ecosystems for businesswomen to get more <span className="copy-accent">clients,</span> <span className="copy-accent">stages,</span> &amp; <span className="copy-accent">business growth.</span></p>
+            </div>
+            <a className="button conversion-cta" href="https://www.fordivine.com/discover#book">Schedule Discovery Call Today</a>
+          </section>
+        </div>
 
         <section className="related-reading" id="related-reading" aria-labelledby="related-title">
           <div className="related-heading"><div><h2 id="related-title">Explore FORDIVINE</h2></div><a href="https://www.fordivine.com/discover">Visit FORDIVINE ↗</a></div>

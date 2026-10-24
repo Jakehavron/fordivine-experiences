@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import "./site-chrome.css";
+import "./crowned-cta.css";
 
 export const metadata: Metadata = {
   title: "FORDIVINE Journal",
