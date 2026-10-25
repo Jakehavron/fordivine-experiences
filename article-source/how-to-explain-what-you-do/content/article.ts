@@ -3,7 +3,7 @@ import type { ArticleData } from "../lib/article-schema";
 export const article: ArticleData = {
   "status": "ready",
   "slug": "how-to-explain-what-you-do",
-  "canonical": "https://www.fordivine.com/journal/how-to-explain-what-you-do",
+  "canonical": "https://www.fordivine.com/resources/how-to-explain-what-you-do",
   "seoTitle": "How to Explain What You Do Clearly | FORDIVINE",
   "h1": "How to Explain What You Do",
   "description": "Explain your work clearly with a practical introduction framework, sample bios, and messaging advice for consultants, authors, and speakers.",

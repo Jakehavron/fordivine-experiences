@@ -3,7 +3,7 @@ import type { ArticleData } from "../lib/article-schema";
 export const article: ArticleData = {
   status: "ready",
   slug: "personal-branding-strategies-for-business-women",
-  canonical: "https://www.fordivine.com/journal/personal-branding-strategies-for-business-women",
+  canonical: "https://www.fordivine.com/resources/personal-branding-strategies-for-business-women",
   seoTitle: "Personal Branding Strategies for Businesswomen | FORDIVINE",
   h1: "7 Personal Branding Strategies for Established Businesswomen",
   description: "Seven personal branding strategies for established women to clarify their positioning, earn trust and build one cohesive brand system.",
