@@ -22,7 +22,7 @@ export const article: ArticleData = {
   "datePublished": "2026-10-25",
   "dateModified": "2026-10-25",
   "displayDate": "October 25, 2026",
-  "readMinutes": 14,
+  "readMinutes": 9,
   "hero": {
     "src": "/fordivine-editorial-hero.jpg",
     "alt": "A white-gloved hand holds a FORDIVINE card reading: The voice of a crowd vs the voice of a crown.",
@@ -126,7 +126,17 @@ export const article: ArticleData = {
       "blocks": [
         {
           "type": "paragraph",
-          "content": "Clear phrasing always beats clever wordplay. Your unique value proposition explains why a particular client should consider your work: who you serve, the problem or outcome you address, and the experience or approach that makes the offer credible."
+          "content": "Clear phrasing always beats clever wordplay. Your unique value proposition explains why a particular client should consider your work."
+        },
+        {
+          "type": "audit",
+          "marker": "bullet",
+          "title": "Your value proposition should explain",
+          "items": [
+            "Who you serve.",
+            "The problem or outcome you address.",
+            "The experience or approach that makes the offer credible."
+          ]
         },
         {
           "type": "paragraph",
@@ -414,12 +424,14 @@ export const article: ArticleData = {
           "content": "Record a baseline and ask how they found you. Treat changes as evidence to investigate, especially if pricing, outreach, or advertising also changed."
         },
         {
-          "type": "heading",
-          "content": "Decide How Much Help You Actually Need"
-        },
-        {
-          "type": "paragraph",
-          "content": "If your positioning is settled and a few assets need clearer language, a focused copywriting engagement may be enough. If the audience, offer, and direction are unresolved, begin with personal branding strategy. If you need to coordinate brand messaging, design, a website, and content, evaluate a broader agency scope."
+          "type": "audit",
+          "marker": "bullet",
+          "title": "Decide How Much Help You Actually Need",
+          "items": [
+            "If your positioning is settled and a few assets need clearer language, a focused copywriting engagement may be enough.",
+            "If the audience, offer, and direction are unresolved, begin with personal branding strategy.",
+            "If you need to coordinate brand messaging, design, a website, and content, evaluate a broader agency scope."
+          ]
         },
         {
           "type": "paragraph",
