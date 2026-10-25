@@ -1,0 +1,24 @@
+{
+  "format_version": 1,
+  "slug": "personal-brand-and-messaging-help",
+  "template_version": 58,
+  "files": {
+    "FORDIVINE_TEMPLATE.json": "51da8e6d19c3d71ca968aec2d1578c5a394e816e68d3f8daafd1cc6f53a9ad66",
+    "content/article.ts": "c808f0b6bec011f3771ae61c0426100aa09cab386d1ed21854dbd4f4d8460271",
+    "content/editorial-decisions.json": "7770b9dba285dbdf9d002b4ed7c2a2d7159db7de7e955321e225c6940b14fbe8",
+    "content/editorial-review.json": "4fee74a423c1ddb2d1808a6739174c4311f02714d619c438f8b2ccbe304a2a60",
+    "content/gate-4-approval.json": "556bf243b7afdc6feed3eaed5dd84d85239a8b2324136886a8bbe6d25e8d0084",
+    "content/illustration-plan.json": "5ff00a8a6efe8b162b843d239bcfb2be8493501e25ad058268aa91e514f7e2fb",
+    "content/opportunity-scorecard.json": "baa9be6606911af5c309aa58a45354d03b6587227d82ad7fb739a70a78d8b394",
+    "content/radarkit-roundtrip.json": "57373ed791ef90af96b3e967dad998917d6be41b68b67f25781a5acb3e995075",
+    "content/semantic-brief.json": "01e524ab75fe2d5f7277390e6cab4da98106a10578f961b46932f8089725c28a",
+    "content/source-inventory.json": "d2ff1a3220c8eb49087ed348de08352ebcc3cbd43836dba4e706aea891fe0222",
+    "content/source-record.json": "7d76764ca92d2332a5fa1f8057b8bef1b5e985c3d7e4bc5d312b9e62f200be36",
+    "content/workflow-state.json": "d55aa9f4ba7dfe0cda3fb466356905c331155868642c8474016d2d9f583bfdc3",
+    "source/approved-radarkit-body.html": "d21051ffec237beb38b4792a7aaa18ca96e9da8748c67f9d0ccd3baaa0e976c6",
+    "source/approved-radarkit-fields.json": "c5cc098a2a52f161ba1a9c72345fd2385b7e46868edc813487a284c3c17b861c",
+    "source/coverage-radarkit-body.html": "2e418926820a938377df5653757763f9ca6ab7b0e3187fb0000ea1803d1d68ef",
+    "source/radarkit-before-sync.json": "7d1189130718837e5afa94b23939d1b53246d827cc395ae6c4398eae6b120502",
+    "source/raw-source.md": "9777c9df9c80e4cb6d658a94bf2179e831d91c2269085c8046927fce4af52470"
+  }
+}

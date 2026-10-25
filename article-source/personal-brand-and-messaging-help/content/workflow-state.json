@@ -1,0 +1,43 @@
+{
+  "stage": "layout-preview",
+  "article_id": 553,
+  "template_version": 58,
+  "manuscript_approval": "Okay approved. Go ahead and run the full release testing so we can get this ready to publish.",
+  "production_changed": false,
+  "radarkit_changed": true,
+  "cover_recipe": {
+    "status": "unresolved",
+    "searched_locations": [
+      "~/.codex/skills",
+      "2026-10-24/new-chat skill and project assets"
+    ]
+  },
+  "cover_asset": {
+    "status": "user-selected-final",
+    "source": "/Users/jakehavron/Downloads/Screenshot 2026-10-25 at 12.45.02\u202fPM.png",
+    "authorization": "I attached the cover image I want you to use.",
+    "path": "public/fordivine-editorial-hero.jpg",
+    "width": 1183,
+    "height": 1492,
+    "sha256": "8fb6e6328430ef851a3d710e05487c78f81a76dab89dd6df429e2cdb98b2ad20",
+    "delivery_note": "JPEG encoding of the same approved supplied cover; exporter requires this filename. Original PNG preserved."
+  },
+  "qa": {
+    "editorial": "prepared",
+    "responsive": "Focused final-cover/headline checks passed at 320,390,768,1440; full release QA pending",
+    "lighthouse": "not-run",
+    "footer": "not-run",
+    "static_export": "not-run"
+  },
+  "baseline_backup": "/Users/jakehavron/Documents/ChatGPT/Resources/article-553-v53-before-latest-update",
+  "latest_update_authorization": "Okay time to use the Latest version update on the fordivine-blog-publisher for this radar kit article",
+  "updated_at": "2026-10-25T19:49:21.720003+00:00",
+  "radarkit_sync": "body-and-h1-verified; separate metadata unavailable",
+  "latest_radarkit_score": 82,
+  "image": {
+    "status": "final",
+    "path": "public/fordivine-editorial-hero.jpg",
+    "authorization": "I attached the cover image I want you to use."
+  },
+  "pending": []
+}

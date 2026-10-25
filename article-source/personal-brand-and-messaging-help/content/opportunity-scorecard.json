@@ -1,0 +1,29 @@
+{
+  "status": "selected",
+  "scoring_version": "1.0",
+  "evaluated_at": "2026-10-25T17:47:52.809043+00:00",
+  "candidates": [
+    {
+      "id": "radarkit-553",
+      "topic": "Personal Brand and Messaging Help: A Strategic Guide",
+      "primary_query": "personal brand and messaging help",
+      "buyer_relevance": "Established businesswomen seeking specialist help translating expertise into positioning and usable messaging.",
+      "search_intent": "Understand the service, diagnose the gap, and choose a partner.",
+      "overlap_observation": "Local repository includes broad personal branding strategies and how-to-explain-what-you-do; adjacent brand-strategy-before-design draft is present. Keep this article focused on messaging engagement scope and partner selection. RadarKit 554 is a separate audit draft; retain only a short audit here.",
+      "existing_content_checked": [
+        "fordivine-experiences/article-source/personal-branding-strategies-for-business-women",
+        "fordivine-experiences/article-source/how-to-explain-what-you-do",
+        "2026-10-24/new-chat/article-brand-strategy",
+        "Browser title: Personal Brand Audit for Business Owners article 554"
+      ],
+      "disqualifiers": [],
+      "search_volume": null
+    }
+  ],
+  "recommended_topic_id": "radarkit-553",
+  "selected_topic_id": "radarkit-553",
+  "selection_method": "user-selected-article",
+  "selection_reason": "Jake supplied the exact RadarKit editor URL and invoked the publisher skill.",
+  "approved_by": "Jake (topic selection)",
+  "approved_at": "2026-10-25T17:47:52.809043+00:00"
+}

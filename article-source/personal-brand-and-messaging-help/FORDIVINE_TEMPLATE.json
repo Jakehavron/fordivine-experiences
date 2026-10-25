@@ -1,0 +1,26 @@
+{
+  "template_version": 58,
+  "source_commit": "7900fef",
+  "approved_preview": "https://fordivine-experiences-git-article-personal-bra-aee008-fordivine.vercel.app/journal/personal-branding-strategies-for-business-women",
+  "design_baseline": "Discover shared glass navbar and complete footer; bronze diamond tree navigation and collapsible mobile contents; article-specific At a glance white tilt card; exact Crowned Stories closing banner and discover#book destination. Preserve approved editorial layout, two-line article H1, sources, diagrams and approval gates. CTA headline follows Crowned Stories responsive sizing, without a two-line limit. v50 removes Explore FORDIVINE/related-reading; closing CTA leads directly to shared footer. v51 adds explicit bullet and ordered markers for article lists; legacy unmarked lists retain their existing presentation. v55 defaults audit lists to semantic bullets unless numbered explicitly, removes side rules from example blocks, and supplies a concise passing editorial fixture. Preserve regular-weight introductions, current favicon assets, and the Discover shell. v56 emits X/Twitter image alt text from the approved hero description; visual rendering is unchanged. v57 uses /resources article routes and Resources index/footer navigation; preserves v56 editorial styling. v58 gives optional FAQ questions semantic h3 headings, bold responsive 23\u201328px type and clear spacing above regular-weight answers.",
+  "baseline_revision": "v58-faq-question-hierarchy-2026-10-25",
+  "footer_contract_version": 3,
+  "status": "locked",
+  "variable_files": [
+    "content/article.ts",
+    "content/editorial-review.json",
+    "content/gate-4-approval.json",
+    "content/illustration-plan.json",
+    "content/opportunity-scorecard.json",
+    "content/semantic-brief.json",
+    "content/source-record.json",
+    "source/raw-source.md",
+    "public/fordivine-editorial-hero.jpg",
+    "public/featured-editorial-v2.png",
+    "public/og.png",
+    "content/editorial-decisions.json",
+    "content/workflow-state.json",
+    "content/source-inventory.json",
+    "content/radarkit-roundtrip.json"
+  ]
+}
