@@ -1,0 +1,19 @@
+{
+  "source_commit": "2cdae6610b6201fd37bf6c3ae52f6182435258b1",
+  "preview_url": "https://fordivine-experiences-i2tkkphof-fordivine.vercel.app/journal/brand-strategy-before-design",
+  "files": {
+    "assets/article-runtime.js": "fcf688de9283e0b8731c30204ecfcd135c5adcd9273b86e296907ab60701a3ab",
+    "assets/article-tree-nav.js": "a3056d28917264b07066ab9009581a05dd5004b1c79d4dc4d0b77a346f77f61d",
+    "assets/article.css": "ad9cd9f81da9fde357bea753c253fe9a20c0ea138d82ce2d58514044f8800eec",
+    "assets/favicon.svg": "e6d2e59b7b5bbb0342e0fb496dfc262decbfe4426bbb7b047aec8d467d1dc6f7",
+    "assets/featured-editorial-v2.png": "cba617e68c433fc3dafb6b4c8292bc9ccc720492b87e6ae1b6d081c2489871ff",
+    "assets/fordivine-editorial-hero-1400.jpg": "1b145a88907b1e7d04695d499c3525a4fed0c1dd9dd2f264f2ca2660f19fde9d",
+    "assets/fordivine-editorial-hero-750.jpg": "cc4cc80aca91c6cbc39bb6723882cebaef99005cf4bf6c18baf40febdecc50c1",
+    "assets/fordivine-editorial-hero.jpg": "17698348c372ffecd101039af9b159df6df06fe24a5748287e658fc4d369d9b0",
+    "assets/fordivine-logo-black.png": "b6dc77e76b3101dc796d5ef29a4346aec441c5cd9ecb2c95562d374a2ad7eb6e",
+    "assets/fordivine-logo-white.png": "dc469c45d8a7585f654dba96f3bee4231758865bb312240c16d25a468aaab782",
+    "assets/og.png": "9a15566da8c83572d41b31333eea295b877e68c2c84f6dbe044b95e786e7379d",
+    "assets/takeaway-tilt.js": "2b54f731f4cca027aabf91e7e0fa48cd0398c723882702ba2dff7b0eaf9efed7",
+    "index.html": "1695ad7770350105cf058b450042b62cc14bd2619d411a878b58774147034394"
+  }
+}

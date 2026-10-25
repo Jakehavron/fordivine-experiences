@@ -1,5 +1,5 @@
 {
-  "stage": "layout-preview",
+  "stage": "release-candidate",
   "image": {
     "status": "placeholder",
     "preview_authorization": "Jake: top image can remain a placeholder.",
@@ -16,12 +16,8 @@
   },
   "pending": [],
   "release_checks": {
-    "status": "pending",
-    "checks": [
-      "production-build Lighthouse",
-      "static export and rendered QA",
-      "links and metadata"
-    ],
-    "note": "QA follows export; these are not unresolved input dependencies. Not approved for production."
+    "status": "passed",
+    "evidence": "evidence/release-summary.json",
+    "note": "Final protected static preview verified. Production publication and production indexing audit have not occurred."
   }
 }
