@@ -1,0 +1,135 @@
+{
+  "status": "approved",
+  "primary_query": "personal brand and messaging help",
+  "search_intent": "Informational and commercial investigation: service scope and partner evaluation.",
+  "target_buyer": "Established businesswomen whose expertise spans ventures or a professional transition.",
+  "business_outcome": "Qualified discovery call for suitable readers.",
+  "distinct_point_of_view": "Hire for decisions and usable messaging deliverables, supported by evidence; impressive language alone cannot do the work.",
+  "direct_answer_requirement": "Define the help and its tangible outputs immediately.",
+  "required_questions": [
+    {
+      "id": "q-help",
+      "question": "What should personal brand and messaging help deliver?"
+    },
+    {
+      "id": "q-partner",
+      "question": "How should a business owner choose a partner?"
+    },
+    {
+      "id": "q-results",
+      "question": "Can branding guarantee business opportunities?"
+    }
+  ],
+  "required_entities": [
+    {
+      "id": "e-brand",
+      "name": "FORDIVINE"
+    },
+    {
+      "id": "e-blueprint",
+      "name": "Crowned Authority Blueprint"
+    }
+  ],
+  "required_concepts": [
+    {
+      "id": "c-proof",
+      "concept": "Evidence and positioning must match."
+    },
+    {
+      "id": "c-multiple",
+      "concept": "Keep multiple ventures coherent without forcing every offer into one sentence."
+    }
+  ],
+  "required_internal_links": [
+    {
+      "id": "l-assessment",
+      "href": "https://www.fordivine.com/assessment"
+    },
+    {
+      "id": "l-discover",
+      "href": "https://www.fordivine.com/discover#book"
+    }
+  ],
+  "source_authority_review": {
+    "policy_version": "1.0",
+    "status": "approved",
+    "forbes_excluded": true,
+    "personal_brand_competitors_excluded": true,
+    "reviewed_by": "Codex source audit",
+    "reviewed_at": "2026-10-25T17:47:52.809043+00:00"
+  },
+  "claims": [
+    {
+      "id": "assessment",
+      "claim": "Assessment evaluates Clarity, Identity, Structure, Voice and Visibility.",
+      "status": "verified",
+      "source_url": "https://www.fordivine.com/assessment",
+      "source_name": "FORDIVINE Crowned Authority Assessment",
+      "source_title": "FORDIVINE Crowned Authority Assessment",
+      "source_tier": "first-party-official",
+      "citation_role": "first-party-claim",
+      "original_source_confirmed": true,
+      "methodology_visible": false,
+      "personal_brand_competitor": false,
+      "substitute_service_conflict": false,
+      "audience_leakage_risk": "low",
+      "access": "open",
+      "open_alternative_checked": true,
+      "freshness_checked": true,
+      "decision": "approved",
+      "decision_reason": "Exact first-party support read on October 25, 2026; attribution and scope retained.",
+      "supporting_excerpt": "It evaluates your brand across the Five Jewels of Authority: Clarity, Identity, Voice, Visibility, and Structure."
+    },
+    {
+      "id": "offer",
+      "claim": "Blueprint covers strategy; Identity Bible is the visual identity system.",
+      "status": "verified",
+      "source_url": "https://www.fordivine.com/discover",
+      "source_name": "FORDIVINE Discover",
+      "source_title": "FORDIVINE Discover",
+      "source_tier": "first-party-official",
+      "citation_role": "first-party-claim",
+      "original_source_confirmed": true,
+      "methodology_visible": false,
+      "personal_brand_competitor": false,
+      "substitute_service_conflict": false,
+      "audience_leakage_risk": "low",
+      "access": "open",
+      "open_alternative_checked": true,
+      "freshness_checked": true,
+      "decision": "approved",
+      "decision_reason": "Exact first-party support read on October 25, 2026; attribution and scope retained.",
+      "supporting_excerpt": "Your complete visual identity system that is strategically designed to make the substance behind your work look premium without losing your unique essence."
+    },
+    {
+      "id": "thought-leadership",
+      "claim": "55% of hidden decision-makers in the 2025 study use thought leadership in vendor vetting.",
+      "status": "verified",
+      "source_url": "https://www.edelman.com/sites/g/files/aatuss191/files/2025-07/2025%20Edelman-LinkedIn%20B2B%20Thought%20Leadership%20Impact%20Report_FINAL.pdf",
+      "source_name": "2025 Edelman–LinkedIn B2B Thought Leadership Impact Report",
+      "source_title": "2025 Edelman–LinkedIn B2B Thought Leadership Impact Report",
+      "source_tier": "industry-original-research",
+      "citation_role": "material-claim",
+      "original_source_confirmed": true,
+      "methodology_visible": true,
+      "personal_brand_competitor": false,
+      "substitute_service_conflict": false,
+      "audience_leakage_risk": "low",
+      "access": "open",
+      "open_alternative_checked": true,
+      "freshness_checked": true,
+      "decision": "approved",
+      "decision_reason": "Exact first-party support read on October 25, 2026; attribution and scope retained.",
+      "supporting_excerpt": "55% of hidden decision-makers use thought leadership as part of their vetting process.",
+      "methodology": "Report pages 4–5 and 8: LinkedIn-member online survey, United States, March 17–April 3, 2025, 1,934 executives overall. Hidden decision-maker subset; self-reported attitudes, not a controlled revenue study."
+    }
+  ],
+  "forbidden_claims": [
+    "Guaranteed contracts, board seats, premium prices or inbound demand",
+    "Original 44%, 54% and 71% statistics without original evidence",
+    "3-7-27 as a validated attention rule",
+    "Universal 3C, 5P or 7-pillar definitions"
+  ],
+  "approved_by": "FORDIVINE Blog Publisher (working semantic brief; manuscript pending Jake)",
+  "approved_at": "2026-10-25T17:47:52.809043+00:00"
+}
