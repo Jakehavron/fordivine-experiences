@@ -10,3 +10,8 @@
 .article-body .article-faq p { margin: 0; font-weight: 400; }
 @media (min-width: 768px) { .article-body .article-faq { gap: 44px; } }
 
+/* Jake-approved article-specific mobile title fit; allow wrapping if text is enlarged. */
+@media (max-width: 600px) {
+  .article-hero .article-headline { font-size: clamp(21px, calc(7.1vw - 1.5px), 34px); text-wrap: wrap; }
+}
+
