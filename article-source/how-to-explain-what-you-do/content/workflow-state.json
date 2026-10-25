@@ -1,5 +1,5 @@
 {
-  "stage": "layout-preview",
+  "stage": "release-candidate",
   "image": {
     "status": "final",
     "preview_authorization": "Original image supplied within selected draft retained for requested review preview; final asset decision pending.",
@@ -30,7 +30,8 @@
     "readability_revision": "Passed affected preview checks; see evidence/readability-2026-10-25/summary.json. Final static release QA remains pending.",
     "bullet_revision": "Layout, build, lint, fixture and accessibility passed. Source preview performance 83 fails release threshold; final static QA pending. See evidence/bullets-2026-10-25/summary.json.",
     "regular_intro_revision": "Build, lint, template and four-width article/fixture checks passed. Accessibility 100 both devices. Mobile LCP fails release budget; final static release QA pending.",
-    "subtitle_revision": "Approved exact subtitle applied; build, lint, four-width subtitle fit, regular-weight intro and manifest checks passed. Final static release QA remains pending."
+    "subtitle_revision": "Approved exact subtitle applied; build, lint, four-width subtitle fit, regular-weight intro and manifest checks passed. Final static release QA remains pending.",
+    "final_static_preview": "Passed: responsive, rendered metadata/schema, links, footer, manual content comparison; three cold-cache mobile and desktop Lighthouse runs each 100 performance/accessibility/best practices."
   },
   "preview_url": "https://fordivine-experiences-2kk9z0huh-fordivine.vercel.app/journal/how-to-explain-what-you-do",
   "article_sha256": "611937613ab0585fa834996f99cc44a49560cd0a70af140498d00516c5ed5fb8",
