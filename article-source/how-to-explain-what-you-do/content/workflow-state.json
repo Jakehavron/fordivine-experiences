@@ -1,15 +1,15 @@
 {
-  "stage": "release-candidate",
+  "stage": "published",
   "image": {
     "status": "final",
-    "preview_authorization": "Original image supplied within selected draft retained for requested review preview; final asset decision pending.",
-    "publish_placeholder_authorization": null,
     "path": "public/fordivine-editorial-hero.jpg",
     "approved_by": "Jake",
-    "approved_at": "2026-10-25T00:46:31.389860+00:00",
-    "decision_quote": "Okay awesome. Go and continue with your recommendations and for now just keep the same image we use for the other articles for this one.",
-    "source": "https://www.fordivine.com/journal/personal-branding-strategies-for-business-women/assets/fordivine-editorial-hero.jpg",
-    "scope": "Approved retained image for Article 551; production publication explicitly authorized on 2026-10-25."
+    "approved_at": "2026-10-25T17:38:41.091696+00:00",
+    "decision_quote": "You can also replace the hero section image and use this one. Make sure it's properly sized and fitted for both desktop and mobile.",
+    "source": "User-supplied IMG_3293.jpg",
+    "scope": "Replace and publish the hero image as part of the authorized publication update; preserve subject and fit desktop/mobile.",
+    "width": 1320,
+    "height": 1612
   },
   "cover_recipe": {
     "status": "unresolved",
@@ -31,7 +31,8 @@
     "bullet_revision": "Layout, build, lint, fixture and accessibility passed. Source preview performance 83 fails release threshold; final static QA pending. See evidence/bullets-2026-10-25/summary.json.",
     "regular_intro_revision": "Build, lint, template and four-width article/fixture checks passed. Accessibility 100 both devices. Mobile LCP fails release budget; final static release QA pending.",
     "subtitle_revision": "Approved exact subtitle applied; build, lint, four-width subtitle fit, regular-weight intro and manifest checks passed. Final static release QA remains pending.",
-    "final_static_preview": "Passed: responsive, rendered metadata/schema, links, footer, manual content comparison; three cold-cache mobile and desktop Lighthouse runs each 100 performance/accessibility/best practices."
+    "final_static_preview": "Passed: responsive, rendered metadata/schema, links, footer, manual content comparison; three cold-cache mobile and desktop Lighthouse runs each 100 performance/accessibility/best practices.",
+    "production_verification": "HTTP 200; exact package matches; canonical, index/follow, sitemap and robots verified. Final production performance batch in progress."
   },
   "preview_url": "https://fordivine-experiences-2kk9z0huh-fordivine.vercel.app/journal/how-to-explain-what-you-do",
   "article_sha256": "611937613ab0585fa834996f99cc44a49560cd0a70af140498d00516c5ed5fb8",
@@ -39,5 +40,7 @@
     "approved_by": "Jake",
     "approved_at": "2026-10-25T17:26:01.230670+00:00",
     "decision_quote": "Okay great, now go and publish it and do Your QA review and checks"
-  }
+  },
+  "live_url": "https://www.fordivine.com/journal/how-to-explain-what-you-do",
+  "production_commit": "be0d4d4f66e36d5946ba7b76201a571b5200c444"
 }
