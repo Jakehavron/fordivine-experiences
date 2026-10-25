@@ -1,0 +1,59 @@
+/* FORDIVINE shared navigation. All pages use this header. */
+@font-face{font-family:FDNav;src:url('/crowned-stories/stephanie-byerly/fonts/proxima-regular-optimized.woff2') format('woff2');font-display:swap}
+[data-fd-old-navigation]{display:none!important}
+.fd-site-header,.fd-site-header *{box-sizing:border-box;margin:0;padding:0}
+.fd-site-header{position:relative!important;inset:auto!important;z-index:10002;display:flex!important;flex:none;order:-1000;align-items:center;justify-content:space-between;gap:24px;width:100%;max-width:none;height:74px;padding:0 40px;background:#2d2f2e;color:#fff;border:0;border-radius:0;font:16px/1.5 FDNav,Arial,sans-serif;text-transform:none;letter-spacing:normal}
+.fd-site-header a{color:inherit;text-decoration:none;letter-spacing:normal;text-transform:none;border:0;box-shadow:none;background:none}
+.fd-site-header .fd-home{display:inline-flex;align-items:center;flex-shrink:0;min-height:44px;line-height:1}
+.fd-site-header .fd-home img{display:block;width:auto!important;height:18px!important;max-width:none;object-fit:contain;filter:none}
+.fd-site-header .fd-desktop-nav{display:flex;position:static;align-items:center;justify-content:space-between;width:75%;height:auto;padding:0;gap:20px;background:none;border:0;box-shadow:none}
+.fd-site-header .fd-desktop-nav a{font:600 18px/1.5 FDNav,Arial,sans-serif;white-space:nowrap;min-height:44px;display:flex;align-items:center}
+.fd-site-header .fd-menu{display:none}
+.fd-site-header a:focus-visible,.fd-site-header summary:focus-visible{outline:3px solid #cfbfa4;outline-offset:3px}
+@media(max-width:1000px){.fd-site-header{padding-inline:28px}.fd-site-header .fd-desktop-nav{width:73%}}
+@media(max-width:700px){
+.fd-site-header{height:70px;padding:0 22px}
+.fd-site-header .fd-home img{height:16px!important}
+.fd-site-header .fd-desktop-nav{display:none}
+.fd-site-header .fd-menu{display:block;position:relative;color:inherit}
+.fd-site-header summary{display:flex;align-items:center;justify-content:flex-end;gap:10px;min-width:44px;min-height:44px;cursor:pointer;list-style:none;font:16px/1.5 FDNav,Arial,sans-serif}
+.fd-site-header summary::-webkit-details-marker{display:none}
+.fd-site-header summary svg{display:block;flex-shrink:0;width:20px;height:20px}
+.fd-site-header .fd-mobile-nav{display:flex;position:absolute;inset:52px 0 auto auto;flex-direction:column;gap:4px;width:240px;max-width:calc(100vw - 32px);height:auto;padding:15px;background:#f5f5f5;color:#171717;border:0;border-radius:16px;box-shadow:0 15px 40px #0003;text-align:left}
+.fd-site-header .fd-mobile-nav a{display:flex;align-items:center;min-height:46px;padding:8px 12px;font:18px/1.5 FDNav,Arial,sans-serif}
+}
+
+/* Exact Discover footer styles, scoped to keep every page identical. */
+@font-face{font-family:FDDiscoveryInter;src:url('/shared/nav-inter.woff2') format('woff2');font-style:normal;font-weight:300 800;font-display:swap}
+[data-fd-old-footer]{display:none!important}
+.fd-site-footer,.fd-site-footer *{box-sizing:border-box;margin:0;padding:0}
+.fd-site-footer{--charcoal:#2a2a2d;--white:#fff;--bone:#c8b89a;--display:FDDiscoveryInter,Arial,sans-serif;display:block;position:relative;width:100%;max-width:none;color:#fff;font:400 16px/normal FDDiscoveryInter,Arial,sans-serif;font-family:FDDiscoveryInter,Arial,sans-serif;letter-spacing:normal;text-align:left;border-radius:0;-webkit-font-smoothing:antialiased}
+.fd-site-footer a{background:none;border:0;text-transform:none}
+.fd-site-footer img{max-width:none}
+.fd-site-footer .fd-logo-img-wrap{position:relative;display:inline-flex;align-items:flex-start;text-decoration:none;gap:1px;}
+.fd-site-footer{background:var(--charcoal);padding:72px 48px 40px;border-top:1px solid rgba(255,255,255,0.03);}
+.fd-site-footer .fd-footer-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:40px;max-width:1000px;margin:0 auto 56px;}
+.fd-site-footer .fd-footer-wordmark{height:18px;width:auto;display:block;opacity:0.85;}
+.fd-site-footer .fd-footer-brand .fd-logo-img-wrap .tm{font-size:8px;margin-top:1px;}
+.fd-site-footer .fd-footer-brand .fd-footer-logo{display:flex;align-items:center;gap:2px;text-decoration:none;}
+.fd-site-footer .fd-footer-brand .fd-logo-orig{font-family:var(--display);font-weight:800;font-size:13px;color:var(--white);text-decoration:none;text-transform:uppercase;letter-spacing:3px;}
+.fd-site-footer .fd-footer-brand p{font-size:13px;color:rgba(255,255,255,0.72);margin-top:14px;line-height:1.7;font-weight:300;}
+.fd-site-footer .fd-footer-tagline-line{display:block;white-space:nowrap;}
+.fd-site-footer .fd-footer-question-line{text-align:center;font-size:12px;color:rgba(255,255,255,0.72);letter-spacing:0.03em;font-weight:300;margin:0 auto 28px;max-width:1000px;}
+.fd-site-footer .fd-footer-question-link{color:var(--bone);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;transition:opacity 0.2s ease;}
+.fd-site-footer .fd-footer-question-link:hover{opacity:0.65;}
+.fd-site-footer .fd-footer-nav{display:flex;gap:36px;}
+.fd-site-footer .fd-footer-nav a{font-size:12px;color:rgba(255,255,255,0.78);text-decoration:none;font-weight:500;letter-spacing:0.03em;transition:color 0.4s ease;}
+.fd-site-footer .fd-footer-nav a:hover{color:var(--white);}
+.fd-site-footer .fd-footer-legal{display:flex;gap:24px;justify-content:center;padding:24px 0;border-top:1px solid rgba(255,255,255,0.04);max-width:1000px;margin:0 auto;}
+.fd-site-footer .fd-footer-legal a{font-size:11px;color:rgba(255,255,255,0.72);text-decoration:none;letter-spacing:0.03em;font-weight:400;}
+.fd-site-footer .fd-footer-disclaimer{text-align:center;max-width:800px;margin:24px auto 0;font-size:10px;color:rgba(255,255,255,0.68);line-height:1.8;font-weight:300;}
+@media (max-width:768px){.fd-site-footer{padding:56px 24px 32px;}
+.fd-site-footer .fd-footer-top{flex-direction:column;gap:24px;}
+.fd-site-footer .fd-footer-nav{flex-wrap:wrap;gap:12px 20px;}
+.fd-site-footer .fd-footer-legal{flex-wrap:wrap;justify-content:center;gap:8px;}
+}
+@media (max-width:480px){.fd-site-footer .fd-footer-wordmark{height:13px;}
+.fd-site-footer .fd-footer-brand p{font-size:clamp(10.5px,3vw,12px);}
+.fd-site-footer .fd-footer-disclaimer{font-size:9.5px;}
+}
