@@ -2,14 +2,14 @@
   "stage": "published",
   "image": {
     "status": "final",
-    "preview_authorization": "Original image supplied within selected draft retained for requested review preview; final asset decision pending.",
-    "publish_placeholder_authorization": null,
     "path": "public/fordivine-editorial-hero.jpg",
     "approved_by": "Jake",
-    "approved_at": "2026-10-25T00:46:31.389860+00:00",
-    "decision_quote": "Okay awesome. Go and continue with your recommendations and for now just keep the same image we use for the other articles for this one.",
-    "source": "https://www.fordivine.com/journal/personal-branding-strategies-for-business-women/assets/fordivine-editorial-hero.jpg",
-    "scope": "Approved retained image for Article 551; production publication explicitly authorized on 2026-10-25."
+    "approved_at": "2026-10-25T17:38:41.091696+00:00",
+    "decision_quote": "You can also replace the hero section image and use this one. Make sure it's properly sized and fitted for both desktop and mobile.",
+    "source": "User-supplied IMG_3293.jpg",
+    "scope": "Replace and publish the hero image as part of the authorized publication update; preserve subject and fit desktop/mobile.",
+    "width": 1320,
+    "height": 1612
   },
   "cover_recipe": {
     "status": "unresolved",

@@ -24,9 +24,9 @@ export const article: ArticleData = {
   "readMinutes": 8,
   "hero": {
     "src": "/fordivine-editorial-hero.jpg",
-    "alt": "A woman in a tailored suit and statement glasses at FORDIVINE.",
-    "width": 1600,
-    "height": 1931
+    "alt": "A speaker wearing a headset microphone stands behind a clear podium.",
+    "width": 1320,
+    "height": 1612
   },
   "shortAnswer": {
     "question": "How do you explain what you do when you are a consultant, author, and speaker?",
