@@ -26,13 +26,30 @@
     document.head.appendChild(attributionScript);
   }
 
-  if (!document.querySelector('script[data-fd-article-ga4]')) {
+  function loadAnalytics() {
+    if (document.querySelector('script[data-fd-article-ga4]')) return;
     var analyticsScript = document.createElement("script");
     analyticsScript.async = true;
     analyticsScript.src = "https://www.googletagmanager.com/gtag/js?id=" + GA4_ID;
     analyticsScript.setAttribute("data-fd-article-ga4", "true");
     document.head.appendChild(analyticsScript);
   }
+
+  // Queue events immediately, but let the page and hero paint before the
+  // analytics library competes for bandwidth. This applies to every visitor.
+  function scheduleAnalytics() {
+    window.requestAnimationFrame(function () {
+      window.requestAnimationFrame(function () {
+        if ("requestIdleCallback" in window) {
+          window.requestIdleCallback(loadAnalytics, { timeout: 1500 });
+        } else {
+          window.setTimeout(loadAnalytics, 0);
+        }
+      });
+    });
+  }
+  if (document.readyState === "complete") scheduleAnalytics();
+  else window.addEventListener("load", scheduleAnalytics, { once: true });
 
   function ctaLocation(link, index) {
     if (link.classList.contains("publication-mark")) return "header_logo";
