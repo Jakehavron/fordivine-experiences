@@ -1,0 +1,113 @@
+{
+  "status": "approved",
+  "evaluated_at": "2026-10-25T19:49:39.902503+00:00",
+  "approved_by": "Codex editorial evaluation; Jake approved current diagram-free layout",
+  "approved_at": "2026-10-25T19:49:39.902503+00:00",
+  "candidates": [
+    {
+      "id": "audit",
+      "section_id": "section-2",
+      "relationship": "Audit criteria",
+      "grammar": "hub",
+      "visual_thesis": "Compare the same brand details across public touchpoints.",
+      "score": {
+        "central_thesis": 3,
+        "visual_gain": 1,
+        "editorial_pause": 1,
+        "node_fit": 2,
+        "repetition_penalty": 3,
+        "evidence_penalty": 0,
+        "total": 4
+      }
+    },
+    {
+      "id": "positioning",
+      "section_id": "section-3",
+      "relationship": "Decision and expression",
+      "grammar": "path",
+      "visual_thesis": "A value proposition guides a personal brand statement.",
+      "score": {
+        "central_thesis": 3,
+        "visual_gain": 1,
+        "editorial_pause": 1,
+        "node_fit": 1,
+        "repetition_penalty": 3,
+        "evidence_penalty": 0,
+        "total": 3
+      }
+    },
+    {
+      "id": "pillars",
+      "section_id": "section-4",
+      "relationship": "Perspective and offers",
+      "grammar": "hub",
+      "visual_thesis": "Connect distinct offers through a coherent point of view.",
+      "score": {
+        "central_thesis": 2,
+        "visual_gain": 1,
+        "editorial_pause": 1,
+        "node_fit": 1,
+        "repetition_penalty": 0,
+        "evidence_penalty": 0,
+        "total": 5
+      }
+    },
+    {
+      "id": "repurpose",
+      "section_id": "section-5",
+      "relationship": "Idea across formats",
+      "grammar": "hub",
+      "visual_thesis": "Adapt useful expertise to formats your audience uses.",
+      "score": {
+        "central_thesis": 2,
+        "visual_gain": 1,
+        "editorial_pause": 1,
+        "node_fit": 2,
+        "repetition_penalty": 3,
+        "evidence_penalty": 0,
+        "total": 3
+      }
+    },
+    {
+      "id": "consistency",
+      "section_id": "section-6",
+      "relationship": "Reference across touchpoints",
+      "grammar": "hub",
+      "visual_thesis": "Use one brand reference to guide public messaging.",
+      "score": {
+        "central_thesis": 2,
+        "visual_gain": 1,
+        "editorial_pause": 1,
+        "node_fit": 2,
+        "repetition_penalty": 3,
+        "evidence_penalty": 0,
+        "total": 3
+      }
+    },
+    {
+      "id": "scope",
+      "section_id": "section-7",
+      "relationship": "Partner deliverables",
+      "grammar": "path",
+      "visual_thesis": "Agree on scope and evidence before choosing a partner.",
+      "score": {
+        "central_thesis": 3,
+        "visual_gain": 1,
+        "editorial_pause": 1,
+        "node_fit": 2,
+        "repetition_penalty": 3,
+        "evidence_penalty": 0,
+        "total": 4
+      }
+    }
+  ],
+  "selected": [],
+  "second_illustration_decision": {
+    "status": "not-applicable",
+    "reason": "No candidate adds enough explanatory value beyond the approved examples and bullet modules."
+  },
+  "no_illustration_reason": "This is a practical buying guide. Audit, repurposing, consistency and scope concepts already have scannable bullet modules. The positioning distinction is demonstrated in a complete example. A venture hub would oversimplify the separate audience and offer decisions without making them meaningfully faster to grasp. Preserve the approved layout.",
+  "article_slug": "personal-brand-and-messaging-help",
+  "article_sha256": "0feb5e173779192829d1465a342169b25fb5c3b82fdd5b6066cdbf87c6182096",
+  "article_word_count": 2937
+}

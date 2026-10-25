@@ -1,0 +1,96 @@
+{
+  "status": "approved",
+  "voice_mode": "emily-informed-fordivine-editorial",
+  "voice_corpus_status": "calibrated",
+  "voice_corpus_version": "2.0",
+  "voice_source_basis": "Emily Ford Voice corpus v2.0: eight verified Called & Crowned solo episodes, 54,104 transcribed words, calibrated August 20, 2026.",
+  "semantic_coverage": [
+    {
+      "requirement_id": "q-help",
+      "status": "covered",
+      "article_excerpt": "It helps you define your audience, positioning, offers, proof, and voice, then translate those decisions into usable language for your website, profiles, and sales materials. Choose the scope around the gap in your business and agree on the deliverables before work begins.",
+      "evidence": "Exact passage answers the named requirement in the proposed article."
+    },
+    {
+      "requirement_id": "q-partner",
+      "status": "covered",
+      "article_excerpt": "Ask a personal branding partner to explain how they move from interviews and research to positioning decisions, then from those decisions to finished assets.",
+      "evidence": "Exact passage answers the named requirement in the proposed article."
+    },
+    {
+      "requirement_id": "q-results",
+      "status": "covered",
+      "article_excerpt": "It cannot guarantee a speaking invitation, a board appointment, or a consulting contract.",
+      "evidence": "Exact passage answers the named requirement in the proposed article."
+    },
+    {
+      "requirement_id": "c-proof",
+      "status": "covered",
+      "article_excerpt": "Be precise about your role in the results, the situations where your approach helps, and its limits.",
+      "evidence": "Exact passage answers the named requirement in the proposed article."
+    },
+    {
+      "requirement_id": "c-multiple",
+      "status": "covered",
+      "article_excerpt": "Begin with the perspective that links your work, then give each offer its own audience and purpose.",
+      "evidence": "Exact passage answers the named requirement in the proposed article."
+    },
+    {
+      "requirement_id": "e-brand",
+      "status": "covered",
+      "article_excerpt": "FORDIVINE",
+      "evidence": "Exact passage answers the named requirement in the proposed article."
+    },
+    {
+      "requirement_id": "e-blueprint",
+      "status": "covered",
+      "article_excerpt": "Crowned Authority Blueprint",
+      "evidence": "Exact passage answers the named requirement in the proposed article."
+    },
+    {
+      "requirement_id": "l-assessment",
+      "status": "covered",
+      "article_excerpt": "https://www.fordivine.com/assessment",
+      "evidence": "Exact passage answers the named requirement in the proposed article."
+    },
+    {
+      "requirement_id": "l-discover",
+      "status": "covered",
+      "article_excerpt": "https://www.fordivine.com/discover#book",
+      "evidence": "Exact passage answers the named requirement in the proposed article."
+    }
+  ],
+  "human_writing_checks": {
+    "no_ai_cliches": true,
+    "no_repetitive_synthesis": true,
+    "paragraphs_sound_spoken": true,
+    "claims_are_specific": true,
+    "no_keyword_stuffing": true,
+    "no_fake_first_person": true
+  },
+  "voice_checks": {
+    "mode_is_correct": true,
+    "emily_cadence_without_social_format": true,
+    "faith_is_natural_not_forced": true,
+    "no_social_media_cta": true,
+    "fordivine_positioning_is_intact": true
+  },
+  "unresolved_issues": [],
+  "reviewed_by": "Codex editorial self-review (not Gate 4 human approval)",
+  "reviewed_at": "2026-10-25T19:37:31.909Z",
+  "voice_controls": {
+    "conviction": "high",
+    "warmth": "medium",
+    "faith_explicitness": "low",
+    "commercial_directness": "high"
+  },
+  "composition_review": {
+    "reader_outcome": "Choose an appropriate scope and prepare a useful brief.",
+    "section_contribution": "Retains original topic order; diagnostic, implementation and partner-selection roles differ.",
+    "examples": "Positioning example and completed brief explicitly illustrative.",
+    "formatting": "Parallel scope questions are bullets; final preparation steps remain ordered.",
+    "metadata": "Resources canonical, page headline, SEO and social descriptions reviewed together.",
+    "overlap": "Commercial evaluation focus differs from the existing introduction-writing resource."
+  },
+  "coverage_revision_review": "Retains topic order, complete hypothetical examples, substantiated research, commercial scope, and outcomes caveat. Added audit, statement test, distribution and voice guidance address practical decisions. No invented facts or results. No malformed keyword suggestions inserted."
+}

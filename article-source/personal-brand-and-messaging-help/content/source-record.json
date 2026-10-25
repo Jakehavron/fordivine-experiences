@@ -1,0 +1,22 @@
+{
+  "status": "captured",
+  "source_type": "radarkit",
+  "asset_title": "Personal Brand and Messaging Help: A Strategic Guide",
+  "seed_topic": "personal brand and messaging help",
+  "country": "unknown",
+  "language": "English",
+  "retrieved_from": "https://radarkit.ai/content/44901a89c7f9f3172a7adbcb/article/553/editor",
+  "retrieved_at": "2026-10-25T17:47:52.809043+00:00",
+  "raw_source_path": "source/raw-source.md",
+  "approved_primary_query": "personal brand and messaging help",
+  "approved_by": "Jake (supplied article selection only)",
+  "approved_at": "2026-10-25T17:47:52.809043+00:00",
+  "evidence_gaps": [],
+  "capture_note": "Existing Markdown download matched against the signed-in article 553 browser text and both source links. Preserved bytes; browser export attempt timed out.",
+  "raw_source_sha256": "9777c9df9c80e4cb6d658a94bf2179e831d91c2269085c8046927fce4af52470",
+  "historical_capture_limitations": [
+    "Separate SEO title, description and FAQ-schema fields unavailable; export omits cover image.",
+    "Original article score unavailable; 65 and 80 shown as Avg and Top benchmarks, not article score."
+  ],
+  "resolution_note": "Original score subsequently captured as 72 (source/radarkit-before-sync.json); revised score 82 (evidence/coverage-after-sync.json). Separate RadarKit metadata unavailable, retained as historical limitation in radarkit-roundtrip.json; website metadata authored and approved in article.ts. Final cover supplied and approved by Jake. No missing evidence is used to support a published claim."
+}
