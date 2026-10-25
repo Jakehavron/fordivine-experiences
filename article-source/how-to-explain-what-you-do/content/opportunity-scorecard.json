@@ -1,0 +1,20 @@
+{
+  "status": "selected",
+  "selection_method": "user-selected-article",
+  "selected_topic_id": "radarkit-551",
+  "selection_reason": "Jake supplied this exact draft for editorial review and preview.",
+  "approved_by": "Jake Havron",
+  "approved_at": "2026-10-25T00:15:12.581722+00:00",
+  "candidates": [
+    {
+      "id": "radarkit-551",
+      "topic": "How to Explain What You Do as a Consultant, Author, Speaker",
+      "primary_query": "how to explain what you do as a consultant author and speaker",
+      "buyer_relevance": "Established women extending business expertise into consulting, books and speaking.",
+      "search_intent": "Practical introductions and professional bio examples.",
+      "overlap_observation": "Distinct from the published broad personal branding strategies article and the separate strategy-before-design draft; focused on explaining work. Main has no matching governed source route.",
+      "disqualifiers": []
+    }
+  ],
+  "evaluated_at": "2026-10-25T00:15:35.529786+00:00"
+}

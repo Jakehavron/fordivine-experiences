@@ -1,0 +1,16 @@
+{
+  "status": "approved",
+  "article_slug": "how-to-explain-what-you-do",
+  "article_sha256": "611937613ab0585fa834996f99cc44a49560cd0a70af140498d00516c5ed5fb8",
+  "article_word_count": 2137,
+  "evaluated_at": "2026-10-25T00:46:31.389860+00:00",
+  "candidates": [],
+  "selected": [],
+  "second_illustration_decision": {
+    "status": "not-applicable",
+    "reason": "No first diagram: the introduction formula and bio examples already convey the relationship directly."
+  },
+  "no_illustration_reason": "The two-sentence formula and concrete bio examples explain the decision directly; no inline diagram adds distinct meaning.",
+  "approved_by": "Agent editorial evaluation; no additional diagram needed in approved manuscript",
+  "approved_at": "2026-10-25T00:46:31.389860+00:00"
+}

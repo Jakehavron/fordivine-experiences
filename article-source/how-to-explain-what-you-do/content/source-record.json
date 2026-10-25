@@ -1,0 +1,30 @@
+{
+  "status": "captured",
+  "source_type": "radarkit",
+  "asset_title": "How to Explain What You Do as a Consultant, Author, Speaker",
+  "seed_topic": "explain what I do consultant author speaker",
+  "country": "unknown",
+  "language": "English",
+  "retrieved_at": "2026-10-25T00:15:12.581722+00:00",
+  "retrieved_from": "https://radarkit.ai/content/44901a89c7f9f3172a7adbcb/article/551/editor",
+  "raw_source_path": "source/raw-source.md",
+  "approved_primary_query": "how to explain what you do as a consultant author and speaker",
+  "approved_by": "Jake Havron (topic selection in current request)",
+  "approved_at": "2026-10-24T23:49:18.357642+00:00",
+  "verbatim_passages": [],
+  "fordivine_additions": [
+    "Two-sentence introduction framework",
+    "Clearly labeled hypothetical examples",
+    "Public Michelle Roby case context",
+    "Intent-matched FAQs"
+  ],
+  "cover_source": "https://radarkit.ai/content/44901a89c7f9f3172a7adbcb/article/551/images/thumbnail-how-to-explain-what-.png",
+  "cover_status": "Shared published-article portrait approved by Jake for Article 551",
+  "raw_source_sha256": "e90a5d5f2908c8a30ab66a1ad6c4271523ad874505b08451e85123ab9dfabab6",
+  "capture_limitations": [
+    "Separate SEO title, description and FAQ schema unavailable in captured export.",
+    "Unsaved-recovery banner was not acted on; downloaded current editor body."
+  ],
+  "evidence_gaps": [],
+  "capture_limitations_disposition": "Preserved as unknown source metadata; not factual dependencies for approved replacement metadata and visible FAQ. Original export remains untouched."
+}
