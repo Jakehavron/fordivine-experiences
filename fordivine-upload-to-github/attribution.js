@@ -105,10 +105,10 @@
     if (article) {
       state.articleAssist = {
         captured_at: now,
-        entry: clean(params.get('fd_entry'), 80) || 'journal',
+        entry: clean(params.get('fd_entry'), 80) || 'resources',
         article: article,
         cta: clean(params.get('fd_cta'), 120) || 'unknown',
-        landing_page: '/journal/' + article
+        landing_page: '/resources/' + article
       };
     }
 

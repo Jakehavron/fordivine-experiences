@@ -26,13 +26,30 @@
     document.head.appendChild(attributionScript);
   }
 
-  if (!document.querySelector('script[data-fd-article-ga4]')) {
+  function loadAnalytics() {
+    if (document.querySelector('script[data-fd-article-ga4]')) return;
     var analyticsScript = document.createElement("script");
     analyticsScript.async = true;
     analyticsScript.src = "https://www.googletagmanager.com/gtag/js?id=" + GA4_ID;
     analyticsScript.setAttribute("data-fd-article-ga4", "true");
     document.head.appendChild(analyticsScript);
   }
+
+  // Queue events immediately, but let the page and hero paint before the
+  // analytics library competes for bandwidth. This applies to every visitor.
+  function scheduleAnalytics() {
+    window.requestAnimationFrame(function () {
+      window.requestAnimationFrame(function () {
+        if ("requestIdleCallback" in window) {
+          window.requestIdleCallback(loadAnalytics, { timeout: 1500 });
+        } else {
+          window.setTimeout(loadAnalytics, 0);
+        }
+      });
+    });
+  }
+  if (document.readyState === "complete") scheduleAnalytics();
+  else window.addEventListener("load", scheduleAnalytics, { once: true });
 
   function ctaLocation(link, index) {
     if (link.classList.contains("publication-mark")) return "header_logo";
@@ -42,8 +59,8 @@
     if (link.classList.contains("related-card--method")) return "related_method";
     if (link.classList.contains("related-card--next")) return "related_private_engagements";
     if (link.closest(".related-heading")) return "related_visit_fordivine";
-    if (link.closest(".footer-nav") && /inquire/i.test(link.textContent)) return "footer_inquire";
-    if (link.closest(".footer-nav")) return "footer_home";
+    if (link.closest(".footer-nav, .fd-footer-nav") && /inquire/i.test(link.textContent)) return "footer_inquire";
+    if (link.closest(".footer-nav, .fd-footer-nav")) return "footer_home";
     if (link.closest(".strategy")) return "inline_crowned_authority_framework";
     return "discover_link_" + (index + 1);
   }
@@ -53,7 +70,7 @@
   ).forEach(function (link, index) {
     var location = ctaLocation(link, index);
     var destination = new URL(link.href, window.location.origin);
-    destination.searchParams.set("fd_entry", "journal");
+    destination.searchParams.set("fd_entry", "resources");
     destination.searchParams.set("fd_article", ARTICLE_SLUG);
     destination.searchParams.set("fd_cta", location);
 
@@ -67,10 +84,10 @@
       try {
         var articleAssist = {
           captured_at: new Date().toISOString(),
-          entry: "journal",
+          entry: "resources",
           article: ARTICLE_SLUG,
           cta: location,
-          landing_page: "/journal/" + ARTICLE_SLUG
+          landing_page: "/resources/" + ARTICLE_SLUG
         };
         var existing = JSON.parse(window.sessionStorage.getItem("fd_attribution_v1") || "{}");
         existing.version = 1;
@@ -98,7 +115,7 @@
   var articleBody = document.querySelector(".article-body");
   var progressFrame = 0;
   var tocLinks = Array.prototype.slice.call(
-    document.querySelectorAll('.article-toc a[href^="#"]')
+    document.querySelectorAll('.article-toc:not(.article-tree-toc) a[href^="#"]')
   );
   var sectionLinks = tocLinks.filter(function (link) {
     return link.getAttribute("href") !== "#article";

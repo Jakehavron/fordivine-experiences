@@ -3,23 +3,23 @@
   "name": "editorial-draft",
   "status": "approved",
   "approved_by": "Jake",
-  "approved_at": "2026-10-25T17:38:41.422132+00:00",
+  "approved_at": "2026-10-25T18:39:16.775742+00:00",
   "evidence_reviewed": [
     "consultant-author-speaker/evidence/publication-2026-10-25/new-hero/Review-Packet.md"
   ],
   "artifact_snapshot": {
-    "content/article.ts": "77a957232af4dfbeb5af6ce5ddd84f0743dbe45e47216925dfc6df0e37fd7d25",
+    "content/article.ts": "6b694c88b68e22bab1981aee6f4f4368699550ead6a4bcba1abb003fd8c55698",
     "content/opportunity-scorecard.json": "63264c9b6eb82f32c2ff317be82f1c406968a83fecec6cc13d37bc5635129c98",
     "content/semantic-brief.json": "571b8c41901d1a71e2fdfab2ba12dd471d850dc795d3cb4ff07c76f1d3e833ca",
     "content/editorial-review.json": "a9f88964aea43e762eabc6af528ac01e558043e703a4a2d66044b86cb6f0542d",
     "content/source-record.json": "4a6c24d274aa7a09a9c8ef33110d43a61b0e7c9226ae08f1a559caaa911fd7f6",
     "content/editorial-decisions.json": "59ce8e6e03ac0eca5408efe9d3ac526cf699678af69eb13ab7bb5de703306f63"
   },
-  "note": "Existing approved manuscript retained; user explicitly requested supplied IMG_3293.jpg replacement with responsive fitting. Only hero dimensions and descriptive alt updated.",
+  "note": "Go ahead and switch Journal to Resources, including the URLs. Set up the proper redirects, update the skill for future articles, and thoroughly check everything before and after publishing.",
   "history": [
     {
       "archived_at": "2026-10-25T00:47:02.598623+00:00",
-      "reason": "Administrative final-image metadata and standard section IDs; no manuscript copy change. Preserve Jake’s existing approval.",
+      "reason": "Administrative final-image metadata and standard section IDs; no manuscript copy change. Preserve Jake\u2019s existing approval.",
       "record": {
         "gate": 4,
         "name": "editorial-draft",
@@ -52,7 +52,7 @@
         "approved_at": "",
         "evidence_reviewed": [],
         "artifact_snapshot": {},
-        "note": "Administrative final-image metadata and standard section IDs; no manuscript copy change. Preserve Jake’s existing approval."
+        "note": "Administrative final-image metadata and standard section IDs; no manuscript copy change. Preserve Jake\u2019s existing approval."
       }
     },
     {
@@ -114,6 +114,29 @@
           "content/editorial-decisions.json": "59ce8e6e03ac0eca5408efe9d3ac526cf699678af69eb13ab7bb5de703306f63"
         },
         "note": "Explicit approval to publish current reviewed article: Okay great, now go and publish it and do Your QA review and checks"
+      }
+    },
+    {
+      "archived_at": "2026-10-25T18:39:16.775478+00:00",
+      "reason": "Explicitly authorized namespace migration; manuscript unchanged",
+      "record": {
+        "gate": 4,
+        "name": "editorial-draft",
+        "status": "approved",
+        "approved_by": "Jake",
+        "approved_at": "2026-10-25T17:38:41.422132+00:00",
+        "evidence_reviewed": [
+          "consultant-author-speaker/evidence/publication-2026-10-25/new-hero/Review-Packet.md"
+        ],
+        "artifact_snapshot": {
+          "content/article.ts": "77a957232af4dfbeb5af6ce5ddd84f0743dbe45e47216925dfc6df0e37fd7d25",
+          "content/opportunity-scorecard.json": "63264c9b6eb82f32c2ff317be82f1c406968a83fecec6cc13d37bc5635129c98",
+          "content/semantic-brief.json": "571b8c41901d1a71e2fdfab2ba12dd471d850dc795d3cb4ff07c76f1d3e833ca",
+          "content/editorial-review.json": "a9f88964aea43e762eabc6af528ac01e558043e703a4a2d66044b86cb6f0542d",
+          "content/source-record.json": "4a6c24d274aa7a09a9c8ef33110d43a61b0e7c9226ae08f1a559caaa911fd7f6",
+          "content/editorial-decisions.json": "59ce8e6e03ac0eca5408efe9d3ac526cf699678af69eb13ab7bb5de703306f63"
+        },
+        "note": "Existing approved manuscript retained; user explicitly requested supplied IMG_3293.jpg replacement with responsive fitting. Only hero dimensions and descriptive alt updated."
       }
     }
   ]
