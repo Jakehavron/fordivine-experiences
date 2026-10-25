@@ -110,7 +110,6 @@
     });
   });
 
-  var progress = document.querySelector(".reading-progress");
   var tocProgress = document.querySelector(".toc-progress span");
   var articleBody = document.querySelector(".article-body");
   var progressFrame = 0;
@@ -122,10 +121,6 @@
   });
 
   function updateProgress() {
-    var root = document.documentElement;
-    var available = Math.max(root.scrollHeight - window.innerHeight, 1);
-    var percent = Math.min(100, Math.max(0, (window.scrollY / available) * 100));
-    if (progress) progress.style.width = percent + "%";
     if (tocProgress && articleBody) {
       var articleStart = articleBody.getBoundingClientRect().top + window.scrollY;
       var articleDistance = Math.max(articleBody.offsetHeight - window.innerHeight, 1);
@@ -199,4 +194,48 @@
   updateProgress();
   window.addEventListener("scroll", scheduleProgressUpdate, { passive: true });
   window.addEventListener("resize", scheduleProgressUpdate);
+})();
+
+/* FORDIVINE article-only reading progress. Contents navigation remains independent. */
+(function () {
+  'use strict';
+  function boot() {
+    var bar = document.querySelector('.reading-progress');
+    var article = document.querySelector('.article-body');
+    if (!bar || !article || bar.dataset.articleProgressReady) return;
+    var end = article.querySelector('#next-move');
+    // A missing endpoint is a QA failure; never silently substitute the page footer.
+    if (!end) { bar.style.display = 'none'; return; }
+    bar.dataset.articleProgressReady = 'true';
+    bar.style.animation = 'none';
+    bar.style.transition = 'none';
+    bar.style.width = '100%';
+    bar.style.transform = 'scaleX(0)';
+    bar.style.display = 'block';
+    var frame = 0;
+    function update() {
+      frame = 0;
+      var viewport = window.innerHeight;
+      var start = Math.max(0, article.getBoundingClientRect().top + window.scrollY - viewport);
+      var finish = Math.max(0, end.getBoundingClientRect().bottom + window.scrollY - viewport);
+      var value = finish > start ? (window.scrollY - start) / (finish - start) : (window.scrollY >= finish ? 1 : 0);
+      bar.style.transform = 'scaleX(' + Math.min(1, Math.max(0, value)) + ')';
+    }
+    function schedule() { if (!frame) frame = requestAnimationFrame(update); }
+    update();
+    window.addEventListener('scroll', schedule, {passive:true});
+    window.addEventListener('resize', schedule);
+    window.addEventListener('pageshow', schedule);
+    window.addEventListener('load', schedule);
+    if (document.fonts) document.fonts.ready.then(schedule);
+    if ('ResizeObserver' in window) {
+      var observer = new ResizeObserver(schedule);
+      observer.observe(article);
+      observer.observe(end);
+      var hero = document.querySelector('.article-hero');
+      if (hero) observer.observe(hero);
+    }
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot, {once:true});
+  else boot();
 })();
