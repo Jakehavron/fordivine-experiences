@@ -1,0 +1,119 @@
+{
+  "status": "approved",
+  "primary_query": "how to explain what you do as a consultant author and speaker",
+  "search_intent": "Explain multifaceted work clearly, with usable introductions and bios.",
+  "target_buyer": "Established woman with consulting, authorship, or speaking expertise and an unclear public message.",
+  "business_outcome": "Qualified visit to https://www.fordivine.com/discover",
+  "distinct_point_of_view": "A clear introduction depends on prioritizing audience and expertise before listing delivery formats.",
+  "direct_answer_requirement": "Start with who you help and the specific result you help them achieve. Then explain how your consulting, writing, and speaking support that work. Use one clear sentence for the value of your expertise and a second for how people can work with you. Add a relevant example or credential when the conversation calls for it.",
+  "source_authority_review": {
+    "policy_version": "1.0",
+    "status": "approved",
+    "forbes_excluded": true,
+    "personal_brand_competitors_excluded": true,
+    "reviewed_by": "FORDIVINE Blog Publisher",
+    "reviewed_at": "2026-10-24T23:49:18.357642+00:00"
+  },
+  "claims": [
+    {
+      "id": "michelle",
+      "claim": "Michelle Roby’s case describes business experience organized into consulting and speaking offers.",
+      "source_url": "https://www.fordivine.com/crowned-stories/michelle-roby",
+      "source_name": "FORDIVINE",
+      "source_title": "Michelle Roby’s Brand Transformation",
+      "source_tier": "first-party-official",
+      "citation_role": "first-party-claim",
+      "status": "verified",
+      "audience_leakage_risk": "low",
+      "access": "open",
+      "decision": "approved",
+      "decision_reason": "Current first-party public page directly supports limited description. No numerical or causal outcome claims included.",
+      "personal_brand_competitor": false,
+      "substitute_service_conflict": false,
+      "original_source_confirmed": true,
+      "freshness_checked": true,
+      "methodology_visible": false
+    },
+    {
+      "id": "services",
+      "claim": "FORDIVINE brings strategy, messaging, visual identity, content, and websites together for established women.",
+      "source_url": "https://www.fordivine.com/discover",
+      "source_name": "FORDIVINE",
+      "source_title": "FORDIVINE Brand Engagement",
+      "source_tier": "first-party-official",
+      "citation_role": "first-party-claim",
+      "status": "verified",
+      "audience_leakage_risk": "low",
+      "access": "open",
+      "decision": "approved",
+      "decision_reason": "Current first-party public page directly supports limited description. No numerical or causal outcome claims included.",
+      "personal_brand_competitor": false,
+      "substitute_service_conflict": false,
+      "original_source_confirmed": true,
+      "freshness_checked": true,
+      "methodology_visible": false
+    }
+  ],
+  "forbidden_claims": [
+    "Invented client examples presented as fact",
+    "Guaranteed revenue or speaking bookings",
+    "Unverified LinkedIn limits or engagement sweet spots",
+    "The unrelated 38% independent-talent statistic"
+  ],
+  "verbatim_passages": [],
+  "approved_by": "FORDIVINE Blog Publisher (research review)",
+  "approved_at": "2026-10-24T23:49:18.357642+00:00",
+  "required_questions": [
+    {
+      "id": "intro",
+      "question": "How do I explain all three roles?",
+      "excerpt": "Start with who you help and the specific result you help them achieve. Then explain how your consulting, writing, and speaking support that work. Use one clear sentence for the value of your expertise and a second for how people can work with you. Add a relevant example or credential when the conversation calls for it."
+    },
+    {
+      "id": "length",
+      "question": "How long should the introduction be?",
+      "excerpt": "Start with one or two sentences and leave room for a response."
+    }
+  ],
+  "required_entities": [
+    {
+      "id": "brand",
+      "name": "FORDIVINE",
+      "excerpt": "FORDIVINE"
+    },
+    {
+      "id": "roles",
+      "name": "consulting",
+      "excerpt": "consulting"
+    }
+  ],
+  "required_concepts": [
+    {
+      "id": "examples",
+      "concept": "Usable examples distinguished from client evidence",
+      "excerpt": "These are invented examples for adaptation, not client quotes."
+    },
+    {
+      "id": "proof",
+      "concept": "Honest relevant proof",
+      "excerpt": "A speaking inquiry is different from a booked engagement."
+    },
+    {
+      "id": "bio",
+      "concept": "Bio templates",
+      "excerpt": "Third-person speaker bio template"
+    }
+  ],
+  "required_internal_links": [
+    {
+      "id": "discovery",
+      "href": "https://www.fordivine.com/discover",
+      "excerpt": "https://www.fordivine.com/discover"
+    },
+    {
+      "id": "michelle",
+      "href": "https://www.fordivine.com/crowned-stories/michelle-roby",
+      "excerpt": "https://www.fordivine.com/crowned-stories/michelle-roby"
+    }
+  ]
+}

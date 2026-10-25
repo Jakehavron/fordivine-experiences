@@ -1,0 +1,81 @@
+{
+  "status": "approved",
+  "voice_mode": "emily-informed-fordivine-editorial",
+  "voice_corpus_status": "calibrated",
+  "voice_corpus_version": "2.0",
+  "voice_source_basis": "Verified solo-episode corpus and long-form-editorial-voice; no invented Emily first-person material.",
+  "semantic_coverage": [
+    {
+      "requirement_id": "intro",
+      "status": "covered",
+      "article_excerpt": "Start with who you help, the outcome they want, and the main concern your approach addresses. Then explain how your consulting, writing, and speaking support that work. Use one sentence to make the value clear and a second to explain how people can work with you. Choose a concern you can credibly address.",
+      "evidence": "Exact manuscript passage or destination satisfies this requirement."
+    },
+    {
+      "requirement_id": "length",
+      "status": "covered",
+      "article_excerpt": "Start with one or two sentences and leave room for a response.",
+      "evidence": "Exact manuscript passage or destination satisfies this requirement."
+    },
+    {
+      "requirement_id": "brand",
+      "status": "covered",
+      "article_excerpt": "FORDIVINE",
+      "evidence": "Exact manuscript passage or destination satisfies this requirement."
+    },
+    {
+      "requirement_id": "roles",
+      "status": "covered",
+      "article_excerpt": "consulting",
+      "evidence": "Exact manuscript passage or destination satisfies this requirement."
+    },
+    {
+      "requirement_id": "examples",
+      "status": "covered",
+      "article_excerpt": "These are invented examples for adaptation, not client quotes.",
+      "evidence": "Exact manuscript passage or destination satisfies this requirement."
+    },
+    {
+      "requirement_id": "proof",
+      "status": "covered",
+      "article_excerpt": "A speaking inquiry is different from a booked engagement.",
+      "evidence": "Exact manuscript passage or destination satisfies this requirement."
+    },
+    {
+      "requirement_id": "bio",
+      "status": "covered",
+      "article_excerpt": "Third-person speaker bio template",
+      "evidence": "Exact manuscript passage or destination satisfies this requirement."
+    },
+    {
+      "requirement_id": "discovery",
+      "status": "covered",
+      "article_excerpt": "https://www.fordivine.com/discover",
+      "evidence": "Exact manuscript passage or destination satisfies this requirement."
+    },
+    {
+      "requirement_id": "michelle",
+      "status": "covered",
+      "article_excerpt": "https://www.fordivine.com/crowned-stories/michelle-roby",
+      "evidence": "Exact manuscript passage or destination satisfies this requirement."
+    }
+  ],
+  "human_writing_checks": {
+    "no_ai_cliches": true,
+    "no_repetitive_synthesis": true,
+    "paragraphs_sound_spoken": true,
+    "claims_are_specific": true,
+    "no_keyword_stuffing": true,
+    "no_fake_first_person": true
+  },
+  "voice_checks": {
+    "mode_is_correct": true,
+    "emily_cadence_without_social_format": true,
+    "faith_is_natural_not_forced": true,
+    "no_social_media_cta": true,
+    "fordivine_positioning_is_intact": true
+  },
+  "unresolved_issues": [],
+  "reviewed_by": "FORDIVINE Blog Publisher (agent editorial review, not human Gate 4 approval)",
+  "reviewed_at": "2026-10-25T17:09:51.260476+00:00"
+}

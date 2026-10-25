@@ -1,0 +1,97 @@
+{
+  "gate": 4,
+  "name": "editorial-draft",
+  "status": "approved",
+  "approved_by": "Jake",
+  "approved_at": "2026-10-25T17:26:01.535085+00:00",
+  "evidence_reviewed": [
+    "consultant-author-speaker/evidence/publication-2026-10-25/Review-Packet.md"
+  ],
+  "artifact_snapshot": {
+    "content/article.ts": "605090dd020a0fc47c673862de87702619d47a20826c60ced899911c169dcb03",
+    "content/opportunity-scorecard.json": "63264c9b6eb82f32c2ff317be82f1c406968a83fecec6cc13d37bc5635129c98",
+    "content/semantic-brief.json": "571b8c41901d1a71e2fdfab2ba12dd471d850dc795d3cb4ff07c76f1d3e833ca",
+    "content/editorial-review.json": "a9f88964aea43e762eabc6af528ac01e558043e703a4a2d66044b86cb6f0542d",
+    "content/source-record.json": "4a6c24d274aa7a09a9c8ef33110d43a61b0e7c9226ae08f1a559caaa911fd7f6",
+    "content/editorial-decisions.json": "59ce8e6e03ac0eca5408efe9d3ac526cf699678af69eb13ab7bb5de703306f63"
+  },
+  "note": "Explicit approval to publish current reviewed article: Okay great, now go and publish it and do Your QA review and checks",
+  "history": [
+    {
+      "archived_at": "2026-10-25T00:47:02.598623+00:00",
+      "reason": "Administrative final-image metadata and standard section IDs; no manuscript copy change. Preserve Jake’s existing approval.",
+      "record": {
+        "gate": 4,
+        "name": "editorial-draft",
+        "status": "approved",
+        "approved_by": "Jake",
+        "approved_at": "2026-10-25T00:46:41.683710+00:00",
+        "evidence_reviewed": [
+          "/Users/jakehavron/Documents/ChatGPT/Resources/consultant-author-speaker/evidence/Complete-Visible-Manuscript.md",
+          "/Users/jakehavron/Documents/ChatGPT/Resources/consultant-author-speaker/evidence/Approved-Review-Packet.md"
+        ],
+        "artifact_snapshot": {
+          "content/article.ts": "4a4ff61d09ec41b386c10748259a6c8e80812cc5bf6d48eed6f865140b0e5f05",
+          "content/opportunity-scorecard.json": "63264c9b6eb82f32c2ff317be82f1c406968a83fecec6cc13d37bc5635129c98",
+          "content/semantic-brief.json": "571b8c41901d1a71e2fdfab2ba12dd471d850dc795d3cb4ff07c76f1d3e833ca",
+          "content/editorial-review.json": "699cc4c5fc7960f24c32753f3c7b80ea7ae5f22760e5feba7dec4a7d86890d73",
+          "content/source-record.json": "2cf6f022ad89c6937d144ff4fe4a1eb7a9bcf34f107a95ed7ac3829c61a5434e",
+          "content/editorial-decisions.json": "2b23bb615633bac0e794c42d29a5f274b01d116ceee96513ff4846f41f8db830"
+        },
+        "note": "Okay awesome. Go and continue with your recommendations and for now just keep the same image we use for the other articles for this one. Scope: existing preview manuscript and recommendations accepted, shared published-article portrait retained; no RadarKit sync or production publication."
+      }
+    },
+    {
+      "archived_at": "2026-10-25T00:47:02.920473+00:00",
+      "reason": "Okay awesome. Go and continue with your recommendations and for now just keep the same image we use for the other articles for this one. Existing manuscript approval carried forward; only image metadata and internal section IDs changed. No production authorization.",
+      "record": {
+        "gate": 4,
+        "name": "editorial-draft",
+        "status": "invalidated",
+        "approved_by": "",
+        "approved_at": "",
+        "evidence_reviewed": [],
+        "artifact_snapshot": {},
+        "note": "Administrative final-image metadata and standard section IDs; no manuscript copy change. Preserve Jake’s existing approval."
+      }
+    },
+    {
+      "archived_at": "2026-10-25T17:04:06.857562+00:00",
+      "reason": "Requested October 25 formula revision and proposed borderless presentation; preserve previous approved manuscript in history. New changed passages prepared for review.",
+      "record": {
+        "gate": 4,
+        "name": "editorial-draft",
+        "status": "approved",
+        "approved_by": "Jake",
+        "approved_at": "2026-10-25T00:47:02.920473+00:00",
+        "evidence_reviewed": [
+          "/Users/jakehavron/Documents/ChatGPT/Resources/consultant-author-speaker/evidence/Complete-Visible-Manuscript.md",
+          "/Users/jakehavron/Documents/ChatGPT/Resources/consultant-author-speaker/evidence/Approved-Review-Packet.md"
+        ],
+        "artifact_snapshot": {
+          "content/article.ts": "023117d9c34c006cc4f0eb0f9113113b4427c0f71ba382264c7003ac30cb88eb",
+          "content/opportunity-scorecard.json": "63264c9b6eb82f32c2ff317be82f1c406968a83fecec6cc13d37bc5635129c98",
+          "content/semantic-brief.json": "571b8c41901d1a71e2fdfab2ba12dd471d850dc795d3cb4ff07c76f1d3e833ca",
+          "content/editorial-review.json": "699cc4c5fc7960f24c32753f3c7b80ea7ae5f22760e5feba7dec4a7d86890d73",
+          "content/source-record.json": "4a6c24d274aa7a09a9c8ef33110d43a61b0e7c9226ae08f1a559caaa911fd7f6",
+          "content/editorial-decisions.json": "ba753d1ea78b6cbf8031e78df38af38af257c919622692a839151db373443355"
+        },
+        "note": "Okay awesome. Go and continue with your recommendations and for now just keep the same image we use for the other articles for this one. Existing manuscript approval carried forward; only image metadata and internal section IDs changed. No production authorization."
+      }
+    },
+    {
+      "archived_at": "2026-10-25T17:26:01.535085+00:00",
+      "reason": "Explicit approval to publish current reviewed article: Okay great, now go and publish it and do Your QA review and checks",
+      "record": {
+        "gate": 4,
+        "name": "editorial-draft",
+        "status": "invalidated",
+        "approved_by": "",
+        "approved_at": "",
+        "evidence_reviewed": [],
+        "artifact_snapshot": {},
+        "note": "Requested October 25 formula revision and proposed borderless presentation; preserve previous approved manuscript in history. New changed passages prepared for review."
+      }
+    }
+  ]
+}
