@@ -1,0 +1,61 @@
+{
+  "status": "verification-unavailable",
+  "authorization": "Earlier user asked to plug this into RadarKit for an updated score assessment.",
+  "article_url": null,
+  "approved_scope": "Existing article update; saved/reloaded status not independently recovered.",
+  "approved_fields_sha256": null,
+  "saved_at": null,
+  "reloaded_at": null,
+  "before": {
+    "observed_at": null,
+    "score": null,
+    "word_count": null,
+    "readability": null,
+    "unavailable_reasons": {}
+  },
+  "after": {
+    "observed_at": null,
+    "score": null,
+    "word_count": null,
+    "readability": null,
+    "unavailable_reasons": {}
+  },
+  "fields": [
+    {
+      "name": "body",
+      "action": "unavailable",
+      "reason": "Not captured",
+      "expected": null,
+      "observed_after_reload": null
+    },
+    {
+      "name": "title",
+      "action": "unavailable",
+      "reason": "Not captured",
+      "expected": null,
+      "observed_after_reload": null
+    },
+    {
+      "name": "seo_title",
+      "action": "unavailable",
+      "reason": "Not captured",
+      "expected": null,
+      "observed_after_reload": null
+    },
+    {
+      "name": "description",
+      "action": "unavailable",
+      "reason": "Not captured",
+      "expected": null,
+      "observed_after_reload": null
+    },
+    {
+      "name": "faq_schema",
+      "action": "unavailable",
+      "reason": "Not captured",
+      "expected": null,
+      "observed_after_reload": null
+    }
+  ],
+  "note": "Do not infer successful writeback or improved scores from the request. Preserve unavailable metrics until inspected."
+}

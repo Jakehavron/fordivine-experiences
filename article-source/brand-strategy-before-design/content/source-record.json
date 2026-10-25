@@ -1,0 +1,27 @@
+{
+  "status": "captured",
+  "source_type": "radarkit-article",
+  "asset_title": "Brand Strategy Before Design: Why Order Matters for Growth",
+  "seed_topic": "brand strategy before design",
+  "country": "unknown",
+  "language": "English",
+  "asset_created_at": null,
+  "retrieved_at": "2026-10-24T23:39:14.951407+00:00",
+  "retrieved_from": "Existing local RadarKit import: source/raw-source.md; original editor URL unavailable in recovered records.",
+  "raw_source_path": "source/raw-source.md",
+  "raw_source_sha256": "b4d430e1c2ffdc14a89482c81993d6395108132ba7b7336df8a79e0eb50a19da",
+  "verbatim_passages": [],
+  "fordivine_additions": [
+    "Approved seven editorial changes recorded in evidence/changes.json",
+    "Short answer, designer briefing checklist, assessment correction and discovery CTA",
+    "Shared navigation/footer and article design approved in conversation"
+  ],
+  "evidence_gaps": [],
+  "approved_primary_query": "brand strategy before design",
+  "approved_by": "Jake Havron (user-selected article)",
+  "approved_at": "2026-10-24",
+  "provenance_limitations": [
+    "RadarKit article ID/editor URL and original capture timestamp unavailable.",
+    "No verified before/after RadarKit score or reload evidence."
+  ]
+}
