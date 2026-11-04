@@ -1,0 +1,23 @@
+{
+  "stage": "release-candidate",
+  "image": {
+    "status": "placeholder",
+    "preview_authorization": "Jake: top image can remain a placeholder.",
+    "publish_placeholder_authorization": {
+      "approved_by": "Jake Havron",
+      "recorded_at": "2026-10-24T23:39:14.951407+00:00",
+      "quote": "Just keep the same image used for now. That's fine.",
+      "scope": "Current /fordivine-editorial-hero.jpg for this article publication; not blanket future image approval."
+    }
+  },
+  "cover_recipe": {
+    "status": "not-required-for-this-release",
+    "reason": "User explicitly approved current cover."
+  },
+  "pending": [],
+  "release_checks": {
+    "status": "passed",
+    "evidence": "evidence/release-summary.json",
+    "note": "Final protected static preview verified. Production publication and production indexing audit have not occurred."
+  }
+}

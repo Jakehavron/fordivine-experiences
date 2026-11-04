@@ -1,0 +1,146 @@
+{
+  "status": "passed-preview-qa",
+  "testedCommit": "2cdae6610b6201fd37bf6c3ae52f6182435258b1",
+  "deploymentId": "dpl_GvEt2qcRqSDGttxcVGRm4ngy24WL",
+  "url": "https://fordivine-experiences-i2tkkphof-fordivine.vercel.app/journal/brand-strategy-before-design",
+  "productionPublished": false,
+  "lighthouse": {
+    "mobile": {
+      "status": "passed",
+      "scores": {
+        "performance": 0.99,
+        "accessibility": 1,
+        "best-practices": 1,
+        "seo": 0.69
+      },
+      "runs": [
+        {
+          "run": 1,
+          "scores": {
+            "performance": 0.99,
+            "accessibility": 1,
+            "best-practices": 1,
+            "seo": 0.69
+          },
+          "metrics": {
+            "largest-contentful-paint": 1864.6088000000004,
+            "cumulative-layout-shift": 0,
+            "total-blocking-time": 73.5
+          },
+          "passed": true
+        },
+        {
+          "run": 2,
+          "scores": {
+            "performance": 0.99,
+            "accessibility": 1,
+            "best-practices": 1,
+            "seo": 0.69
+          },
+          "metrics": {
+            "largest-contentful-paint": 1979.8764999999999,
+            "cumulative-layout-shift": 0,
+            "total-blocking-time": 75.5
+          },
+          "passed": true
+        },
+        {
+          "run": 3,
+          "scores": {
+            "performance": 0.99,
+            "accessibility": 1,
+            "best-practices": 1,
+            "seo": 0.69
+          },
+          "metrics": {
+            "largest-contentful-paint": 2008.2244,
+            "cumulative-layout-shift": 0,
+            "total-blocking-time": 69
+          },
+          "passed": true
+        }
+      ]
+    },
+    "desktop": {
+      "status": "passed",
+      "scores": {
+        "performance": 1,
+        "accessibility": 1,
+        "best-practices": 1,
+        "seo": 0.69
+      },
+      "runs": [
+        {
+          "run": 1,
+          "scores": {
+            "performance": 1,
+            "accessibility": 1,
+            "best-practices": 1,
+            "seo": 0.69
+          },
+          "metrics": {
+            "largest-contentful-paint": 369.1629,
+            "cumulative-layout-shift": 0.001053030966348539,
+            "total-blocking-time": 0
+          },
+          "passed": true
+        },
+        {
+          "run": 2,
+          "scores": {
+            "performance": 1,
+            "accessibility": 1,
+            "best-practices": 1,
+            "seo": 0.69
+          },
+          "metrics": {
+            "largest-contentful-paint": 406.9736,
+            "cumulative-layout-shift": 3.9824154335580655e-05,
+            "total-blocking-time": 0
+          },
+          "passed": true
+        },
+        {
+          "run": 3,
+          "scores": {
+            "performance": 1,
+            "accessibility": 1,
+            "best-practices": 1,
+            "seo": 0.69
+          },
+          "metrics": {
+            "largest-contentful-paint": 415.10690000000005,
+            "cumulative-layout-shift": 0.001053030966348539,
+            "total-blocking-time": 0
+          },
+          "passed": true
+        }
+      ]
+    }
+  },
+  "seoNote": "Preview SEO raw score 69: intentional noindex audit only; all remaining automated SEO audits pass. Production SEO and indexing must be checked after authorized publication.",
+  "checks": {
+    "build": "passed",
+    "lint": "passed",
+    "editorial": "passed; approved Dash secondary-source attribution exception retained",
+    "links": "30 discovered; 0 failures; 0 warnings",
+    "metadata": "passed",
+    "footer": "contract v2 passed",
+    "responsive": "320/390/768/1440 passed; 0 browser errors",
+    "skillTests": "36 tests, local Pillow test skipped; all 8 image/export tests passed in remote Pillow environment"
+  },
+  "remaining": [
+    "Explicit production publication action",
+    "Set publication date to actual launch date; production robots and sitemap diff",
+    "Verify live production route and rerun Lighthouse"
+  ],
+  "radarkit": "Prior score/save/reload evidence unavailable; no score claimed.",
+  "fullRawEvidenceSnapshot": {
+    "id": "snap_SqaR0vAjHm49fCDt7abDagtWNXz4",
+    "expiresAt": 1793491449997,
+    "rawReportsPath": "/vercel/evidence/verified-*-run-*.json",
+    "browserEvidencePath": "/vercel/evidence/deployed-layout.json"
+  },
+  "evidenceArchive": "lighthouse-reports.tar.xz: six measurements and gates, screenshot payloads omitted",
+  "skillCommit": "0a2e571a857e51613ca3838aafcd18ba1ad15b21"
+}

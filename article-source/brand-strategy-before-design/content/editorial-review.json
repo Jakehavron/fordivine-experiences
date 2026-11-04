@@ -1,0 +1,100 @@
+{
+  "status": "approved",
+  "voice_mode": "emily-informed-fordivine-editorial",
+  "voice_corpus_status": "calibrated",
+  "voice_corpus_version": "2.0",
+  "voice_source_basis": "Emily Ford Voice corpus v2.0: eight verified Called & Crowned solo episodes, 54,104 transcribed words, calibrated August 20, 2026.",
+  "semantic_coverage": [
+    {
+      "requirement_id": "q-order",
+      "status": "covered",
+      "evidence": "Present in the current article data.",
+      "article_excerpt": "Brand strategy before design clarifies who you serve, what you want to be known for, and why someone should choose you. Those decisions give your visual identity a clear job to do."
+    },
+    {
+      "requirement_id": "q-define",
+      "status": "covered",
+      "evidence": "Present in the current article data.",
+      "article_excerpt": "It defines your core value proposition, clarifies your audience, and outlines your distinct brand positioning."
+    },
+    {
+      "requirement_id": "q-agency",
+      "status": "covered",
+      "evidence": "Present in the current article data.",
+      "article_excerpt": "Ask what research and positioning decisions will guide the design."
+    },
+    {
+      "requirement_id": "e-brand",
+      "status": "covered",
+      "evidence": "Present in the current article data."
+    },
+    {
+      "requirement_id": "e-assessment",
+      "status": "covered",
+      "evidence": "Present in the current article data."
+    },
+    {
+      "requirement_id": "e-ipsos",
+      "status": "covered",
+      "evidence": "Present in the current article data."
+    },
+    {
+      "requirement_id": "e-dash",
+      "status": "covered",
+      "evidence": "Present in the current article data."
+    },
+    {
+      "requirement_id": "c-design",
+      "status": "covered",
+      "evidence": "Present in the current article data.",
+      "article_excerpt": "A clear strategic brief gives designers the audience, message, and business goals their work needs to support."
+    },
+    {
+      "requirement_id": "c-measure",
+      "status": "covered",
+      "evidence": "Present in the current article data.",
+      "article_excerpt": "Track whether the updated brand attracts better-fit inquiries, helps prospects understand your offer, and gives referral partners a clearer way to describe your work."
+    },
+    {
+      "requirement_id": "c-proof",
+      "status": "covered",
+      "evidence": "Present in the current article data.",
+      "article_excerpt": "Proof: What experience, results, or testimonials support your promise?"
+    },
+    {
+      "requirement_id": "l-assessment",
+      "status": "covered",
+      "evidence": "Present in the current article data."
+    },
+    {
+      "requirement_id": "l-discover",
+      "status": "covered",
+      "evidence": "Present in the current article data."
+    }
+  ],
+  "human_writing_checks": {
+    "no_ai_cliches": true,
+    "no_repetitive_synthesis": true,
+    "paragraphs_sound_spoken": true,
+    "claims_are_specific": true,
+    "no_keyword_stuffing": true,
+    "no_fake_first_person": true
+  },
+  "voice_checks": {
+    "mode_is_correct": true,
+    "emily_cadence_without_social_format": true,
+    "faith_is_natural_not_forced": true,
+    "no_social_media_cta": true,
+    "fordivine_positioning_is_intact": true
+  },
+  "unresolved_issues": [],
+  "reviewed_by": "Codex, editorial review after authorized release copyediting",
+  "reviewed_at": "2026-10-24T23:41:11.917361+00:00",
+  "review_notes": [
+    "Re-read all seven sections and metadata after targeted cleanup; the review assesses the stated checks, not a claim of perfect prose or Emily authorship.",
+    "Removed repeated authority assertions, mechanical phrasing and guaranteed growth/pricing outcomes; preserved technical terms needed for the article and approved section structure.",
+    "Ipsos-derived recommendation is explicitly framed as FORDIVINE’s takeaway, separate from the verified statistic.",
+    "Dash wording/statistic remains the user-selected, attributed secondary-source exception; underlying causality is not independently verified.",
+    "The article uses FORDIVINE organizational voice, a practical briefing checklist and discovery CTA; no invented first-person Emily experience or forced faith language."
+  ]
+}

@@ -1,0 +1,55 @@
+/* Exact Crowned Stories closing styles, scoped to the article CTA. */
+.crowned-cta-surround{background:#2d2f2e;padding:70px 0 56px;--display:"Crowned CTA Display",Helvetica,Arial,sans-serif;--body:"Crowned CTA Body",Arial,sans-serif;--ease:cubic-bezier(.22,1,.36,1);font-family:var(--body);color:#171717}
+.crowned-cta-surround .closing.conversion-panel h2{font-family:var(--display);font-weight:400;letter-spacing:-.025em;line-height:1.05;text-wrap:balance;margin:0;max-width:none}
+.crowned-cta-surround .closing p{line-height:1.6;font-family:var(--body);font-weight:400}
+@font-face{font-family:Crowned CTA Display;src:url(https://www.fordivine.com/crowned-stories/michelle-roby/fonts/helvetica-bold-optimized.woff2)format("woff2");font-style:normal;font-weight:400 800;font-display:swap}
+@font-face{font-family:Crowned CTA Body;src:url(https://www.fordivine.com/crowned-stories/michelle-roby/fonts/proxima-regular-optimized.woff2)format("woff2");font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:Crowned CTA Body;src:url(https://www.fordivine.com/crowned-stories/michelle-roby/fonts/proxima-bold-optimized.woff2)format("woff2");font-style:normal;font-weight:600 800;font-display:swap}
+.crowned-cta-surround .button{width:fit-content;min-height:60px;font-family:var(--display);border-bottom:1px solid #171717;grid-column:2;justify-content:flex-start;align-items:center;gap:22px;margin-top:22px;padding-bottom:5px;font-size:24px;line-height:1.2;display:inline-flex}
+.crowned-cta-surround .button,.crowned-cta-surround .button span{transition:transform .22s var(--ease)}
+.crowned-cta-surround .button span{order:-1;font-size:38px}
+.crowned-cta-surround .button:hover{transform:translateY(-1px)}
+.crowned-cta-surround .button:hover span{transform:translate(3px,-3px)}
+@media (max-width:700px){.crowned-cta-surround .button{gap:14px;margin-top:25px;font-size:20px}
+.crowned-cta-surround .button span{font-size:32px}}
+@media (max-width:360px){.crowned-cta-surround .button{gap:10px;font-size:18px}}
+.crowned-cta-surround .closing{color:#171717;background:#f5f5f5;border-radius:32px;width:calc(100% - 40px);min-width:0;max-width:1440px;margin:24px auto 0;padding:80px 40px}
+.crowned-cta-surround .closing{background:#fff;grid-template-columns:1.1fr .9fr;gap:28px 7vw;margin-top:70px;display:grid}
+.crowned-cta-surround .closing h2{grid-row:1/3;font-size:clamp(38px,4.7vw,64px)}
+.crowned-cta-surround .closing p{color:#626262;max-width:62ch;font-size:20px}
+.crowned-cta-surround .closing .button{margin-top:0;font-size:23px}
+@media (min-width:701px) and (max-width:1000px){.crowned-cta-surround .closing{width:calc(100% - 32px);padding:65px 30px}
+.crowned-cta-surround .closing .button{font-size:21px}}
+@media (max-width:700px){.crowned-cta-surround .closing{border-radius:24px;width:calc(100% - 24px);margin-top:16px;padding:46px 24px}
+.crowned-cta-surround .closing{margin-top:44px}
+.crowned-cta-surround .closing{display:block}
+.crowned-cta-surround .closing h2{font-size:38px}
+.crowned-cta-surround .closing p{margin:25px 0;font-size:18px}
+.crowned-cta-surround .closing .button{max-width:100%;font-size:20px}}
+@media (max-width:360px){.crowned-cta-surround .closing{padding-inline:20px}
+.crowned-cta-surround .closing .button{font-size:18px}}
+.crowned-cta-surround .closing .button{min-height:48px;padding:8px 0;line-height:1.35}
+.crowned-cta-surround .closing-copy{grid-area:1/2}
+.crowned-cta-surround .closing .closing-copy p{margin:0}
+.crowned-cta-surround .closing .closing-copy p+p{margin-top:22px}
+@media (max-width:700px){.crowned-cta-surround .closing-copy{margin-top:25px}}
+.crowned-cta-surround .closing .button{isolation:isolate;font-family:var(--body);text-transform:uppercase;letter-spacing:.16em;color:#1a1a1a;text-align:center;cursor:pointer;background:#e8dfc8;border:none;border-radius:6px;min-height:56px;padding:20px 40px;font-size:12px;font-weight:600;line-height:1.4;text-decoration:none;transition:all .5s cubic-bezier(.16,1,.3,1);display:inline-block;position:relative;overflow:hidden;box-shadow:0 18px 55px #a8926a40,0 0 0 1px #a8926a33}
+.crowned-cta-surround .closing .button:before{content:"";pointer-events:none;background:linear-gradient(90deg,#0000,#ffffff38,#0000);width:35%;height:100%;animation:discovery-shimmer 4s ease-in-out 2s infinite;position:absolute;top:0;left:0;transform:translate(-200%)skew(-20deg)}
+.crowned-cta-surround .closing .button:after{content:"";opacity:0;pointer-events:none;background:linear-gradient(135deg,#c8b89a26,#0000 50%);border-radius:6px;transition:opacity .5s;position:absolute;inset:0}
+@media (hover:hover){.crowned-cta-surround .closing .button:hover{background:#9a8460;transform:translateY(-2px)scale(1.02);box-shadow:0 16px 48px #a8926a4d}
+.crowned-cta-surround .closing .button:hover:after{opacity:1}}
+.crowned-cta-surround .closing .button:focus-visible{outline-offset:4px;outline:3px solid #9a8460}
+.crowned-cta-surround .closing .button:active{transform:translateY(1px)}
+@media (max-width:700px){.crowned-cta-surround .closing .button{letter-spacing:.12em;width:100%;max-width:360px;margin:34px auto 0;padding:18px 20px;font-size:11px;display:block}}
+@media (max-width:360px){.crowned-cta-surround .closing .button{max-width:100%;padding:16px 12px;font-size:10.5px}}
+@keyframes discovery-shimmer{0%{transform:translate(-200%)skew(-20deg)}to{transform:translate(400%)skew(-20deg)}}
+@media (prefers-reduced-motion:reduce){.crowned-cta-surround .closing .button:before{animation:none}
+.crowned-cta-surround .closing .button{transition:none}}
+.crowned-cta-surround .closing .copy-accent{color:#000;z-index:0;white-space:nowrap;padding-bottom:.04em;font-weight:700;display:inline-block;position:relative}
+.crowned-cta-surround .closing .copy-accent:after{content:"";z-index:-1;clip-path:polygon(0 78%,7% 42%,18% 28%,46% 20%,73% 9%,96% 16%,100% 31%,98% 49%,72% 52%,47% 61%,22% 69%,4% 93%);transform-origin:50%;pointer-events:none;background:#e8dfc8;border-radius:50%;height:.52em;position:absolute;bottom:-.14em;left:-.08em;right:-.1em;transform:rotate(-1.4deg)}
+.crowned-cta-surround .closing .copy-accent:nth-of-type(2):after{transform:rotate(.8deg)}
+.crowned-cta-surround .closing .copy-accent:nth-of-type(3):after{transform:rotate(-.6deg)}
+/* The surrounding band owns spacing formerly provided by the story page. */
+.crowned-cta-surround .closing{margin-top:0}
+.crowned-cta-surround .conversion-cta{background-image:none;animation:none}
+@media(max-width:700px){.crowned-cta-surround{padding:44px 0}}
