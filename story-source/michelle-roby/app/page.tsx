@@ -30,7 +30,7 @@ return <>
 <section className="chapter" id="starting-point" tabIndex={-1} aria-labelledby="before-title">
   <p className="chapter-label"><span className="chapter-number" aria-hidden="true">01</span><span>Her Starting Point</span></p>
   <h2 id="before-title"><span>An established business. An</span> <span>underdeveloped personal brand.</span></h2>
-  <p className="intro">Michelle had built Electric Rays to 10 locations. Behind that accomplishment was a woman still questioning how her experience could translate into a public brand of her own.</p>
+  <p className="intro">Michelle had built Electric Rays to nine locations. Behind that accomplishment was a woman still questioning how her experience could translate into a public brand of her own.</p>
   <ProfileComparison/>
   <p>When she came to FORDIVINE:</p>
   <ul className="problem-list">
