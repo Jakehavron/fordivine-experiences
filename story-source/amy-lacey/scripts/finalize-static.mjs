@@ -37,11 +37,15 @@ html = html.replace(/<link\b[^>]*>/gi, tag => {
 });
 // Hash-based CSP keeps the exported static page strict without reusable nonces.
 // strict-dynamic lets this trusted entrypoint load the journal and Vidalytics.
+// Story navigation rewrites the breadcrumb script, so hash the HTML after it runs.
+html = storyNavigation(html, 'amy-lacey');
+const navScript = await readFile(new URL('../../crowned-stories/story-navigation-v1.js', import.meta.url));
+const navHash = "'sha256-" + createHash('sha256').update(navScript).digest('base64') + "'";
 const schemaHashes = [...html.matchAll(/<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi)]
   .map(match => "'sha256-" + createHash('sha256').update(match[1]).digest('base64') + "'");
 const csp = [
   "default-src 'self'",
-  `script-src '${integrity}' ${schemaHashes.join(' ')} 'strict-dynamic' 'self' https://*.vidalytics.com`,
+  `script-src '${integrity}' ${navHash} ${schemaHashes.join(' ')} 'strict-dynamic' 'self' https://*.vidalytics.com`,
   "script-src-attr 'none'",
   "style-src 'self' 'unsafe-inline' https://*.vidalytics.com",
   "img-src 'self' data: blob: https://*.vidalytics.com",
@@ -61,6 +65,5 @@ await writeFile('out/security-headers.json', JSON.stringify([
   {key: 'X-Frame-Options', value: 'SAMEORIGIN'},
   {key: 'Cross-Origin-Opener-Policy', value: 'same-origin'}
 ], null, 2) + '\n');
-html = storyNavigation(html, 'amy-lacey');
 await writeFile('out/index.html', html);
 console.log(`Static story: ${Buffer.byteLength(html)} HTML bytes, ${Buffer.byteLength(script)} JS bytes. Structured data preserved.`);

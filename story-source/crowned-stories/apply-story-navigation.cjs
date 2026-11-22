@@ -1,5 +1,6 @@
 const fs=require('node:fs');
 const path=require('node:path');
+const crypto=require('node:crypto');
 const data=require('./collections.json');
 const root=path.resolve(__dirname,'../../fordivine-upload-to-github/crowned-stories');
 const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
@@ -39,11 +40,12 @@ function storyNavigation(html,slug){
  }
  html=html.slice(0,insertion)+nav+html.slice(insertion);
  let found=false;
- const schema={'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[['Crowned Stories','https://www.fordivine.com/crowned-stories'],[label,'https://www.fordivine.com'+url],[name,'https://www.fordivine.com/crowned-stories/'+slug]].map(([name,item],i)=>({'@type':'ListItem',position:i+1,name,item}))};
+ const schema={'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[['Crowned Stories','https://www.fordivine.com/crowned-stories'],[label,'https://www.fordivine.com'+url],[name,'https://www.fordivine.com/crowned-stories/'+slug]].map(([name,item],i)=>({'@type':'ListItem',position:i+1,name,item:{'@type':'WebPage','@id':item,name}}))};
  html=html.replace(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/g,(tag,json)=>{let d;try{d=JSON.parse(json)}catch{return tag}function visit(x){if(!x||typeof x!=='object')return;if(x['@type']==='BreadcrumbList'){x.itemListElement=schema.itemListElement;found=true;}for(const v of Object.values(x))if(v&&typeof v==='object')visit(v);}visit(d);return tag.replace(json,JSON.stringify(d));});
  if(!found)html=html.replace('</head>',`<script type="application/ld+json">${JSON.stringify(schema)}</script></head>`);
  if(!html.includes('/story-navigation-v1.css'))html=html.replace('</head>','<link rel="stylesheet" href="/crowned-stories/media/story-navigation-v1.css"></head>');
- if(!html.includes('/story-navigation-v1.js'))html=html.replace('</body>','<script src="/crowned-stories/media/story-navigation-v1.js" defer></script></body>');
+const navIntegrity='sha256-'+crypto.createHash('sha256').update(fs.readFileSync(path.join(__dirname,'story-navigation-v1.js'))).digest('base64');
+ if(!html.includes('/story-navigation-v1.js'))html=html.replace('</body>',`<script src="/crowned-stories/media/story-navigation-v1.js" integrity="${navIntegrity}" defer></script></body>`);
  if(!html.includes('/story-layout-v1.css'))html=html.replace('</head>','<link rel="stylesheet" href="/crowned-stories/media/story-layout-v1.css"></head>');
  html=html.replace(/story-navigation-v1\.css(?:\?[^"]*)?/g,'story-navigation-v1.css?v=20261009-below-cta');
  html=html.replace(/crowned-story-enhancements\.js(?:\?[^"]*)?/g,'crowned-story-enhancements.js?v=20261009-heading-scope');
