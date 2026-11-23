@@ -1,7 +1,6 @@
 (function () {
   "use strict";
 
-  var GA4_ID = "G-Q8TH5MKKZ0";
   var manifestNode = document.getElementById("fordivine-article-manifest");
   var articleManifest = {};
   try {
@@ -11,13 +10,6 @@
   }
   var ARTICLE_SLUG = articleManifest.slug || window.location.pathname.split("/").filter(Boolean).pop() || "article";
 
-  window.dataLayer = window.dataLayer || [];
-  window.gtag = window.gtag || function () {
-    window.dataLayer.push(arguments);
-  };
-  window.gtag("js", new Date());
-  window.gtag("config", GA4_ID);
-
   if (!window.FDAttribution && !document.querySelector('script[data-fd-attribution]')) {
     var attributionScript = document.createElement("script");
     attributionScript.async = true;
@@ -25,31 +17,6 @@
     attributionScript.setAttribute("data-fd-attribution", "true");
     document.head.appendChild(attributionScript);
   }
-
-  function loadAnalytics() {
-    if (document.querySelector('script[data-fd-article-ga4]')) return;
-    var analyticsScript = document.createElement("script");
-    analyticsScript.async = true;
-    analyticsScript.src = "https://www.googletagmanager.com/gtag/js?id=" + GA4_ID;
-    analyticsScript.setAttribute("data-fd-article-ga4", "true");
-    document.head.appendChild(analyticsScript);
-  }
-
-  // Queue events immediately, but let the page and hero paint before the
-  // analytics library competes for bandwidth. This applies to every visitor.
-  function scheduleAnalytics() {
-    window.requestAnimationFrame(function () {
-      window.requestAnimationFrame(function () {
-        if ("requestIdleCallback" in window) {
-          window.requestIdleCallback(loadAnalytics, { timeout: 1500 });
-        } else {
-          window.setTimeout(loadAnalytics, 0);
-        }
-      });
-    });
-  }
-  if (document.readyState === "complete") scheduleAnalytics();
-  else window.addEventListener("load", scheduleAnalytics, { once: true });
 
   function ctaLocation(link, index) {
     if (link.classList.contains("publication-mark")) return "header_logo";
