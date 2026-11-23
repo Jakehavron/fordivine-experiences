@@ -198,6 +198,16 @@
       "permanent": true
     },
     {
+      "source": "/discover/crowned-stories/index.html",
+      "destination": "/crowned-stories",
+      "statusCode": 301
+    },
+    {
+      "source": "/discover/crowned-stories",
+      "destination": "/crowned-stories",
+      "statusCode": 301
+    },
+    {
       "source": "/journal",
       "destination": "/resources",
       "permanent": true
