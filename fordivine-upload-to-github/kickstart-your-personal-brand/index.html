@@ -12,6 +12,7 @@
   <link rel="preload" href="/fonts/bebas-neue-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/kickstart-your-personal-brand/assets/report-score-overview-640.webp" as="image" type="image/webp">
   <script src="/attribution.js?v=20260823-1"></script>
+  <script src="/shared/hotjar.js" data-fd-hj-when="manual"></script>
   <script>
     (function () {
       var params = new URLSearchParams(window.location.search);
@@ -90,8 +91,6 @@
       }
       fbq('init', '958874110071928', window.fdKickstartAdvancedMatching || {});
       fbq('track', 'PageView');
-      w.hj = w.hj || function(){ (w.hj.q = w.hj.q || []).push(arguments); };
-      w._hjSettings = { hjid: 6670160, hjsv: 6 };
     })(window);
 
     function fdLoadExternalScript(src, marker) {
@@ -108,7 +107,7 @@
       window.fdKickstartTrackingLoaded = true;
       fdLoadExternalScript('https://www.googletagmanager.com/gtag/js?id=G-Q8TH5MKKZ0', 'ga4');
       fdLoadExternalScript('https://connect.facebook.net/en_US/fbevents.js', 'meta');
-      fdLoadExternalScript('https://static.hotjar.com/c/hotjar-' + window._hjSettings.hjid + '.js?sv=' + window._hjSettings.hjsv, 'hotjar');
+      if (window.fdLoadHotjar) window.fdLoadHotjar();
       var eventData = {
         event_category: 'nurture',
         event_label: 'kickstart_personal_brand_view',

@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="/shared/ga4.js"></script>
+<script src="/shared/hotjar.js" data-fd-hj-when="manual"></script>
 <script>
   (function(w) {
     if (!w.fbq) {
@@ -14,8 +15,6 @@
       n.version = '2.0';
       n.queue = [];
     }
-    w.hj = w.hj || function(){ (w.hj.q = w.hj.q || []).push(arguments); };
-    w._hjSettings = { hjid: 6670160, hjsv: 6 };
   })(window);
 
   function fdLoadExternalScript(src, marker) {
@@ -31,7 +30,7 @@
     if (window.fdTrackingLibrariesLoaded) return;
     window.fdTrackingLibrariesLoaded = true;
     fdLoadExternalScript('https://connect.facebook.net/en_US/fbevents.js', 'meta');
-    fdLoadExternalScript('https://static.hotjar.com/c/hotjar-' + window._hjSettings.hjid + '.js?sv=' + window._hjSettings.hjsv, 'hotjar');
+    if (window.fdLoadHotjar) window.fdLoadHotjar();
   }
 
   ['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach(function(eventName) {
