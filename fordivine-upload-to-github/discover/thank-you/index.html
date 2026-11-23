@@ -121,12 +121,8 @@
     // because page reloads would inflate booked-call reporting.
   </script>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q8TH5MKKZ0"></script>
+  <script src="/shared/ga4.js" data-fd-ga4-when="immediate"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-Q8TH5MKKZ0');
     var fdBookingEvent = {
       event_category: 'booking',
       event_label: 'discover_thank_you_page',
@@ -137,7 +133,17 @@
     if (window.FDAttribution) {
       Object.assign(fdBookingEvent, window.FDAttribution.gaParams());
     }
-    gtag('event', 'discovery_call_booked', fdBookingEvent);
+    var fdBookingGuardKey = 'fd_discovery_call_booked';
+    var alreadySent = false;
+    try {
+      alreadySent = window.sessionStorage.getItem(fdBookingGuardKey) === '1';
+    } catch (e) {}
+    if (!alreadySent) {
+      gtag('event', 'discovery_call_booked', fdBookingEvent);
+      try {
+        window.sessionStorage.setItem(fdBookingGuardKey, '1');
+      } catch (e) {}
+    }
   </script>
 
   <script>

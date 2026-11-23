@@ -3,12 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="/shared/ga4.js"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-Q8TH5MKKZ0');
-
   (function(w) {
     if (!w.fbq) {
       var n = w.fbq = function(){ n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
@@ -34,7 +30,6 @@
   function fdLoadTrackingLibraries() {
     if (window.fdTrackingLibrariesLoaded) return;
     window.fdTrackingLibrariesLoaded = true;
-    fdLoadExternalScript('https://www.googletagmanager.com/gtag/js?id=G-Q8TH5MKKZ0', 'ga4');
     fdLoadExternalScript('https://connect.facebook.net/en_US/fbevents.js', 'meta');
     fdLoadExternalScript('https://static.hotjar.com/c/hotjar-' + window._hjSettings.hjid + '.js?sv=' + window._hjSettings.hjsv, 'hotjar');
   }
@@ -42,8 +37,6 @@
   ['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach(function(eventName) {
     window.addEventListener(eventName, fdLoadTrackingLibraries, { once: true, passive: true });
   });
-  // Do not force tracking downloads for passive visitors. Engaged visitors still
-  // initialize analytics on their first pointer, keyboard, scroll, or touch event.
 </script>
 <script src="/attribution.js?v=20260905-1" defer></script>
 <noscript><img height="1" width="1" style="display:none"

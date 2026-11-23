@@ -31,13 +31,9 @@
   <!-- Inline media styles to preserve first-paint layout without another request. -->
   <style data-crowned-media>.fd-deferred-video{position:relative;display:block;width:100%;aspect-ratio:9/16;overflow:hidden;border-radius:inherit;background:#171717;isolation:isolate}.fd-deferred-video[data-ratio=landscape]{aspect-ratio:16/9}.fd-deferred-video-button,.fd-deferred-video-poster,.fd-deferred-video-shade{position:absolute;inset:0;width:100%;height:100%}.fd-deferred-video-poster{display:block;object-fit:cover}.fd-deferred-video-shade{background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.3));pointer-events:none}.fd-deferred-video-button{z-index:2;display:flex;align-items:center;justify-content:center;padding:0;border:0;background:0 0;color:#fff;cursor:pointer;touch-action:manipulation}.fd-deferred-video-button::before{content:"";width:clamp(54px,14%,78px);aspect-ratio:1;border:1px solid rgba(255,255,255,.72);border-radius:50%;background:rgba(17,17,17,.48);box-shadow:0 10px 34px rgba(0,0,0,.28);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transition:transform .2s ease,background .2s ease}.fd-deferred-video-button::after{content:"";position:absolute;width:0;height:0;margin-left:5px;border-top:9px solid transparent;border-bottom:9px solid transparent;border-left:14px solid #fff}.fd-deferred-video-button:focus-visible::before,.fd-deferred-video-button:hover::before{background:rgba(17,17,17,.72);transform:scale(1.06)}.fd-deferred-video-button:focus-visible{outline:3px solid #ffffff;outline-offset:-5px}.fd-deferred-video.is-loading::after{content:"Loading video";position:absolute;inset:auto 0 22px;z-index:3;color:#fff;font:700 10px/1.2 Arial,sans-serif;letter-spacing:.14em;text-align:center;text-transform:uppercase;pointer-events:none}.fd-deferred-video.is-loaded::after{content:none}.fd-scheduler-shell{position:relative;width:100%;min-height:620px}.fd-scheduler-placeholder{display:flex;align-items:center;justify-content:center;min-height:620px;padding:32px;border:1px solid rgba(200,184,154,.28);border-radius:18px;color:#6b6254;background:#faf9f7;font:600 12px/1.5 Arial,sans-serif;letter-spacing:.08em;text-align:center;text-transform:uppercase}@media (prefers-reduced-motion:reduce){.fd-deferred-video-button::before{transition:none}}</style>
   <script src="/crowned-stories/media/deferred-media-v2.js" defer></script>
+  <script src="/shared/ga4.js"></script>
 
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-Q8TH5MKKZ0');
-
     (function(w) {
       if (!w.fbq) {
         var n = w.fbq = function(){ n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
@@ -66,7 +62,6 @@
     function fdLoadTrackingLibraries() {
       if (window.fdTrackingLibrariesLoaded) return;
       window.fdTrackingLibrariesLoaded = true;
-      fdLoadExternalScript('https://www.googletagmanager.com/gtag/js?id=G-Q8TH5MKKZ0', 'ga4');
       fdLoadExternalScript('https://connect.facebook.net/en_US/fbevents.js', 'meta');
       fdLoadExternalScript('https://static.hotjar.com/c/hotjar-' + window._hjSettings.hjid + '.js?sv=' + window._hjSettings.hjsv, 'hotjar');
     }
