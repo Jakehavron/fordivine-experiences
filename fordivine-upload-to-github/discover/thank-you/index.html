@@ -18,6 +18,11 @@
   <link rel="dns-prefetch" href="//script.hotjar.com">
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
+  <script>
+    // FD: keep the iClosed redirect parameters before any script rewrites the URL.
+    window.__fdIclosedParams = window.location.search;
+  </script>
+
   <script src="/attribution.js?v=20260823-1"></script>
 
   <script>
@@ -123,27 +128,85 @@
 
   <script src="/shared/ga4.js" data-fd-ga4-when="immediate"></script>
   <script>
-    var fdBookingEvent = {
+(function () {
+  var AW_SEND_TO = 'AW-18105449390/s9GICPCyosAdEK73rLlD';
+  var BOOKING_VALUE = 400;
+  var DISCOVERY_EVENT_ID = '34452';
+  var DISCOVERY_LINK_PREFIX = 'jakehavron/discovery-call';
+
+  var p = new URLSearchParams(window.__fdIclosedParams || '');
+  var callId = (p.get('previewId') || '').trim();
+  var eventId = (p.get('event_type_uuid') || '').trim();
+  var linkPrefix = (p.get('link_prefix') || '').trim();
+  var host = window.location.hostname;
+
+  // Fire only for a real Discovery Call booking redirect on the live domain.
+  var isLiveHost = host === 'www.fordivine.com' || host === 'fordivine.com';
+  var isDiscovery = eventId === DISCOVERY_EVENT_ID || linkPrefix === DISCOVERY_LINK_PREFIX;
+  if (!isLiveHost || !isDiscovery || !/^[A-Za-z0-9_-]{1,64}$/.test(callId)) return;
+
+  // One conversion per iClosed call, even across reloads and new sessions.
+  var guardKey = 'fd_booking_sent_' + callId;
+  try { if (window.localStorage.getItem(guardKey) === '1') return; } catch (e) {}
+
+  function normEmail(v) {
+    v = (v || '').trim().toLowerCase();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)) return '';
+    var parts = v.split('@');
+    if (parts[1] === 'gmail.com' || parts[1] === 'googlemail.com') {
+      parts[0] = parts[0].replace(/\./g, '');
+    }
+    return parts.join('@');
+  }
+  function normPhone(v) {
+    var raw = (v || '').trim();
+    var d = raw.replace(/[^0-9]/g, '');
+    if (d.length === 10) return '+1' + d;                         // US number without country code
+    if (d.length === 11 && d.charAt(0) === '1') return '+' + d;   // US number with 1
+    if (raw.charAt(0) === '+' && d.length >= 8 && d.length <= 15) return '+' + d;
+    return '';
+  }
+  function sha256(s) {
+    if (!s || !window.crypto || !window.crypto.subtle || !window.TextEncoder) return Promise.resolve('');
+    return window.crypto.subtle.digest('SHA-256', new TextEncoder().encode(s)).then(function (buf) {
+      return Array.prototype.map.call(new Uint8Array(buf), function (b) {
+        return ('0' + b.toString(16)).slice(-2);
+      }).join('');
+    }).catch(function () { return ''; });
+  }
+
+  var email = normEmail(p.get('Invitee_email') || p.get('invitee_email'));
+  var phone = normPhone(p.get('text_reminder_number'));
+
+  Promise.all([sha256(email), sha256(phone)]).then(function (h) {
+    // Enhanced conversions: hashed in the browser, never sent in clear text.
+    var userData = {};
+    if (h[0]) userData.sha256_email_address = h[0];
+    if (h[1]) userData.sha256_phone_number = h[1];
+    if (h[0] || h[1]) gtag('set', 'user_data', userData);
+
+    gtag('event', 'conversion', {
+      send_to: AW_SEND_TO,
+      value: BOOKING_VALUE,
+      currency: 'USD',
+      transaction_id: callId
+    });
+
+    var ga = {
+      send_to: 'G-Q8TH5MKKZ0',
+      value: BOOKING_VALUE,
+      currency: 'USD',
+      transaction_id: callId,
+      booking_id: callId,
       event_category: 'booking',
-      event_label: 'discover_thank_you_page',
-      page_location: 'https://www.fordivine.com/discover/thank-you',
-      page_path: '/discover/thank-you',
-      send_to: 'G-Q8TH5MKKZ0'
+      event_label: 'discover_thank_you_page'
     };
-    if (window.FDAttribution) {
-      Object.assign(fdBookingEvent, window.FDAttribution.gaParams());
-    }
-    var fdBookingGuardKey = 'fd_discovery_call_booked';
-    var alreadySent = false;
-    try {
-      alreadySent = window.sessionStorage.getItem(fdBookingGuardKey) === '1';
-    } catch (e) {}
-    if (!alreadySent) {
-      gtag('event', 'discovery_call_booked', fdBookingEvent);
-      try {
-        window.sessionStorage.setItem(fdBookingGuardKey, '1');
-      } catch (e) {}
-    }
+    if (window.FDAttribution) Object.assign(ga, window.FDAttribution.gaParams());
+    gtag('event', 'discovery_call_booked', ga);
+
+    try { window.localStorage.setItem(guardKey, '1'); } catch (e) {}
+  });
+})();
   </script>
 
   <script src="/shared/hotjar.js"></script>
