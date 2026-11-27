@@ -1,5 +1,7 @@
 (function (scriptEl) {
   var GA4_ID = "G-Q8TH5MKKZ0";
+  var ADS_ID = "AW-18105449390";
+  var CONSENT_REQUIRED_REGIONS = ["AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO","SK","SI","ES","SE","IS","LI","NO","GB","CH"];
 
   if (window.__fdGa4Initialized === GA4_ID) return;
   if (window.__fdGa4Initialized) return;
@@ -21,8 +23,25 @@
   }
 
   function queueConfig() {
+    // Consent mode v2 defaults. Must run before any config call.
+    // EEA, UK and Switzerland: denied (there is no consent banner).
+    window.gtag("consent", "default", {
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+      analytics_storage: "denied",
+      region: CONSENT_REQUIRED_REGIONS
+    });
+    // Everywhere else (the ads target the US only): granted.
+    window.gtag("consent", "default", {
+      ad_storage: "granted",
+      ad_user_data: "granted",
+      ad_personalization: "granted",
+      analytics_storage: "granted"
+    });
     window.gtag("js", new Date());
     window.gtag("config", GA4_ID);
+    window.gtag("config", ADS_ID);
   }
 
   function startImmediate() {
