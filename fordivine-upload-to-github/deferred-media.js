@@ -182,8 +182,17 @@
     return url;
   }
 
-  function loadScheduler() {
-    var shell = document.getElementById('iclosed-scheduler-shell');
+  function readCookie(name) {
+    var cookies = document.cookie ? document.cookie.split(';') : [];
+    var prefix = name + '=';
+    for (var i = 0; i < cookies.length; i++) {
+      var cookie = cookies[i].replace(/^\s+/, '');
+      if (cookie.indexOf(prefix) === 0) return cookie.slice(prefix.length);
+    }
+    return '';
+  }
+
+  function mountScheduler(shell) {
     if (!shell || shell.dataset.loaded === 'true') return;
     shell.dataset.loaded = 'true';
 
@@ -204,6 +213,29 @@
       script.dataset.iclosedWidget = 'true';
       document.head.appendChild(script);
     }
+  }
+
+  // The widget reads _fbp from this page when it creates the iframe. Load the
+  // pixel here, but do not start Hotjar, and do not hold the scheduler past 1.5s.
+  function loadScheduler() {
+    var shell = document.getElementById('iclosed-scheduler-shell');
+    if (!shell || shell.dataset.loaded === 'true' || shell.dataset.loading === 'true') return;
+    if (typeof window.fdLoadMetaPixel !== 'function') {
+      mountScheduler(shell);
+      return;
+    }
+
+    shell.dataset.loading = 'true';
+    window.fdLoadMetaPixel();
+
+    var started = Date.now();
+    (function waitForFbp() {
+      if (readCookie('_fbp') || Date.now() - started >= 1500) {
+        mountScheduler(shell);
+        return;
+      }
+      window.setTimeout(waitForFbp, 50);
+    })();
   }
 
   function initScheduler() {

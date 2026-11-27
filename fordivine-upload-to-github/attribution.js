@@ -173,6 +173,39 @@
     return url.toString();
   }
 
+  function readCookie(name) {
+    var cookies = document.cookie ? document.cookie.split(';') : [];
+    var prefix = name + '=';
+    for (var i = 0; i < cookies.length; i++) {
+      var cookie = cookies[i].replace(/^\s+/, '');
+      if (cookie.indexOf(prefix) === 0) return cookie.slice(prefix.length);
+    }
+    return '';
+  }
+
+  function isFordivineHost(hostname) {
+    var host = String(hostname || '').toLowerCase();
+    return host === 'fordivine.com' || host.endsWith('.fordivine.com');
+  }
+
+  // iClosed reads _fbc from the parent page when it builds the scheduler iframe.
+  // The pixel writes this same value later; set it first when the click id is
+  // already known and the cookie is still missing. Discover only, so other
+  // pages that share this file keep their current cookie behavior.
+  function ensureDiscoverFbcCookie(state) {
+    if (!/^\/discover\/?$/.test(window.location.pathname)) return;
+    if (readCookie('_fbc')) return;
+
+    var fbclid = clean(new URLSearchParams(window.location.search).get('fbclid'), 500);
+    if (!fbclid && state && state.acquisition) fbclid = clean(state.acquisition.fbclid, 500);
+    if (!fbclid || /[\s;,]/.test(fbclid)) return;
+
+    var cookie = '_fbc=fb.1.' + Date.now() + '.' + fbclid +
+      '; Path=/; Max-Age=' + (90 * 24 * 60 * 60) + '; SameSite=Lax; Secure';
+    if (isFordivineHost(window.location.hostname)) cookie += '; Domain=.fordivine.com';
+    document.cookie = cookie;
+  }
+
   function safeQueryParams() {
     var state = currentState();
     var params = new URLSearchParams();
@@ -205,6 +238,7 @@
   };
 
   var capturedState = capture();
+  ensureDiscoverFbcCookie(capturedState);
   if (/^\/discover\/?$/.test(window.location.pathname) && storyClickParams().crowned_story_clicked && typeof window.gtag === 'function') {
     window.gtag('event', 'crowned_story_assisted_discover', gaParams());
   }
